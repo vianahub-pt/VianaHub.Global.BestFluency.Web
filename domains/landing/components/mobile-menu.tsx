@@ -69,7 +69,11 @@ export function MobileMenu({ locale }: MobileMenuProps) {
   }, [isOpen]);
 
   return (
-    <div className="relative lg:hidden">
+    // NOTA: o wrapper NÃO pode ser `relative` — o painel `absolute inset-x-0`
+    // resolve o containing block no container `relative` do header
+    // (largura total da viewport em mobile). Com `relative` aqui, o painel
+    // mediria apenas a largura do botão (44 px) e os links/CTA quebrariam.
+    <div className="lg:hidden">
       <button
         ref={triggerRef}
         type="button"
