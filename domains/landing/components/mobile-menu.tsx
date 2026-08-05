@@ -35,6 +35,7 @@ export function MobileMenu({ locale }: MobileMenuProps) {
   const [isOpen, setIsOpen] = useState(false);
   const panelRef = useRef<HTMLDivElement>(null);
   const triggerRef = useRef<HTMLButtonElement>(null);
+  const wrapperRef = useRef<HTMLDivElement>(null);
 
   const closeMenu = () => setIsOpen(false);
 
@@ -68,12 +69,27 @@ export function MobileMenu({ locale }: MobileMenuProps) {
     return () => document.removeEventListener("keydown", handleKeyDown);
   }, [isOpen]);
 
+  // Fecha ao clicar/tocar fora do wrapper (botão + painel) e devolve o foco
+  // ao botão. O wrapper inclui o botão de toggle, evitando o edge case em que
+  // o pointerdown fecharia o menu e o click subsequente o reabriria.
+  useEffect(() => {
+    if (!isOpen) return;
+    function handlePointerDown(event: PointerEvent) {
+      if (!wrapperRef.current?.contains(event.target as Node)) {
+        setIsOpen(false);
+        triggerRef.current?.focus();
+      }
+    }
+    document.addEventListener("pointerdown", handlePointerDown);
+    return () => document.removeEventListener("pointerdown", handlePointerDown);
+  }, [isOpen]);
+
   return (
     // NOTA: o wrapper NÃO pode ser `relative` — o painel `absolute inset-x-0`
     // resolve o containing block no container `relative` do header
     // (largura total da viewport em mobile). Com `relative` aqui, o painel
     // mediria apenas a largura do botão (44 px) e os links/CTA quebrariam.
-    <div className="lg:hidden">
+    <div ref={wrapperRef} className="lg:hidden">
       <button
         ref={triggerRef}
         type="button"
