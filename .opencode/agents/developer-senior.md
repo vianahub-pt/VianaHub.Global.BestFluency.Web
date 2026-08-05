@@ -160,7 +160,7 @@ git pull origin develop
 git checkout -b feature/issue-NUMERO-slug
 # ... implementar ...
 git push origin feature/issue-NUMERO-slug
-gh pr create --repo vianahub-pt/VianaHub.Global.Best Fluency.Web --base develop --title "feat: título" --body "Closes #NUMERO"
+gh pr create --repo vianahub-pt/VianaHub.Global.BestFluency.Web --base develop --title "feat: título" --body "Closes #NUMERO"
 ```
 
 ## Fluxo hotfix
@@ -171,7 +171,7 @@ git pull origin main
 git checkout -b hotfix/issue-NUMERO-slug
 # ... corrigir ...
 git push origin hotfix/issue-NUMERO-slug
-gh pr create --repo vianahub-pt/VianaHub.Global.Best Fluency.Web --base main --title "fix: título" --body "Closes #NUMERO"
+gh pr create --repo vianahub-pt/VianaHub.Global.BestFluency.Web --base main --title "fix: título" --body "Closes #NUMERO"
 ```
 
 ---
@@ -187,8 +187,8 @@ gh pr create --repo vianahub-pt/VianaHub.Global.Best Fluency.Web --base main --t
 - **i18n:** Textos visíveis em `locales/{locale}/common.json` (padrão: pt-PT)
 - **Styling:** Tailwind CSS + shadcn/ui
 - **Rotas:** Respeitar `trailingSlash: true`
-- **Static export:** Compatível com Azure Static Web Apps
-- **gh commands:** Sempre usar `--repo vianahub-pt/VianaHub.Global.Best Fluency.Web`
+- **Publicação:** arquitetura static-first independente de fornecedor de hosting
+- **gh commands:** Sempre usar `--repo vianahub-pt/VianaHub.Global.BestFluency.Web`
 
 ---
 
@@ -260,13 +260,13 @@ git push origin feature/issue-NUMERO-slug
 ### Feature / Melhoria / Correção (padrão)
 
 ```bash
-gh pr create --repo vianahub-pt/VianaHub.Global.Best Fluency.Web --base develop --title "feat: título" --body "Closes #NUMERO"
+gh pr create --repo vianahub-pt/VianaHub.Global.BestFluency.Web --base develop --title "feat: título" --body "Closes #NUMERO"
 ```
 
 ### Hotfix de produção
 
 ```bash
-gh pr create --repo vianahub-pt/VianaHub.Global.Best Fluency.Web --base main --title "fix: título" --body "Closes #NUMERO"
+gh pr create --repo vianahub-pt/VianaHub.Global.BestFluency.Web --base main --title "fix: título" --body "Closes #NUMERO"
 ```
 
 ## 8. Comentar na issue
@@ -315,3 +315,12 @@ O Developer Senior é o **único autorizado a resolver conflitos de merge**. Qua
 - Não criar complexidade desnecessária
 - Não alterar arquitetura sem justificativa
 - **Automação:** executar automaticamente e notificar coordinator ao finalizar
+
+## Adenda obrigatória: arquitetura Mobile-First e multilíngue
+
+- CSS base para smartphone, com breakpoints progressivos `min-width` em 48rem, 64rem e 90rem; nunca usar desktop como base nem largura máxima corretiva.
+- Geração estática das rotas `/`, `/en/`, `/es/`, `/fr/`, `/de/`, `/it/` e `/pt-br/`, com `lang`, metadata, canonical, `hreflang`, `x-default` e sitemap.
+- Todos os locales (`pt-PT`, `en-US`, `es-ES`, `fr-FR`, `de-DE`, `it-IT`, `pt-BR`) têm as mesmas chaves e nenhum fallback silencioso.
+- Usar `srcset`/`sizes`, AVIF/WebP, dimensões reservadas, fontes reduzidas, `font-display: swap`, lazy loading abaixo da dobra e prevenção de CLS.
+- Implementar navegação móvel acessível, temas sem flash, `color-scheme`, persistência, contraste AA e `prefers-reduced-motion`.
+- Manter arquitetura, Docker e cache independentes de fornecedor específico.

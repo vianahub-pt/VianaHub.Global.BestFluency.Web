@@ -289,12 +289,32 @@ Após mover o card para **For Deploy**, o Coordinator deve verificar periodicame
 
 ```powershell
 # Verificar estado do PR
-gh pr view PR_NUMERO --repo vianahub-pt/VianaHub.Global.Best Fluency.Web --json state,mergedAt
+gh pr view PR_NUMERO --repo vianahub-pt/VianaHub.Global.BestFluency.Web --json state,mergedAt
 ```
 
 - Se `state == "MERGED"`, mover card para **Done** e notificar o usuário.
 - Se `state == "OPEN"`, aguardar e repetir a verificação a cada 5 minutos.
 - Se `state == "CLOSED"` (sem merge), notificar o usuário para decisão.
+
+---
+
+# Adenda obrigatória — idiomas e Mobile-First
+
+## Idiomas
+
+- `pt-PT` é a versão principal em `/`.
+- Publicar `en-US` em `/en/`, `es-ES` em `/es/`, `fr-FR` em `/fr/`, `de-DE` em `/de/`, `it-IT` em `/it/` e `pt-BR` em `/pt-br/`.
+- Não utilizar a variante britânica, não depender apenas de `Accept-Language` e não trocar idioma apenas por JavaScript sem URL própria.
+- Exigir preferência persistida, `lang`, canonical autorreferencial, `hreflang` recíproco, `x-default` para `/`, sitemap completo, metadata traduzida e exatamente as mesmas chaves em todos os locales.
+- Proibir fallback silencioso que misture idiomas; marca, nomes próprios e morada não devem ser traduzidos incorretamente.
+
+## Mobile-First
+
+- O desenvolvimento começa em smartphone e expande com `min-width` para 48rem, 64rem e 90rem; não aceitar abordagem desktop como base nem correções por largura máxima.
+- Validar primeiro 360, 375, 390 e 412 px, depois 768, 1024, 1280 e 1440 px.
+- Toda issue de interface deve conter critérios de mobile, responsividade, light/dark, i18n, acessibilidade e performance.
+- A landing deve manter CTA do Hero visível no primeiro viewport, toque mínimo de 44 × 44 px, menu/tema/idioma acessíveis, sem overflow ou dependência de hover.
+- Issues globais de arquitetura, navegação, Hero, temas ou i18n passam por Senior e UI/UX; QA usa `QA_LANDING_FULL` e Lighthouse Mobile (três execuções, mediana).
 
 ---
 

@@ -17,6 +17,14 @@ Toda comunicação com o usuário e issues do GitHub Projects será em **portugu
 - Não usar português europeu (pt-PT), mesmo que o código ou as chaves de i18n usem essa variante.
 - Usar termos pt-BR: usuário, contato, endereço, excluir, cadastro, equipe, arquivo e senha.
 
+## Requisito transversal da landing page
+
+- `pt-PT` é o idioma principal em `/`; usar `/en/` (`en-US`), `/es/` (`es-ES`), `/fr/` (`fr-FR`), `/de/` (`de-DE`), `/it/` (`it-IT`) e `/pt-br/` (`pt-BR`). Nunca utilizar a variante britânica.
+- Exigir URL própria, `lang`, canonical autorreferencial, `hreflang` recíproco, `x-default` para `/`, sitemap completo, tradução integral e conjunto idêntico de chaves sem fallback silencioso.
+- Confirmar antes do encaminhamento: comportamento mobile, responsividade, light/dark, i18n, acessibilidade e performance.
+- Issues de arquitetura global, navegação, Hero, temas ou internacionalização passam primeiro por `developer-senior` e `ui-ux`.
+- A sequência da landing é: arquitetura, tokens/temas, i18n, navegação móvel, Hero móvel, componentes móveis, tablet, desktop, SEO/analytics, infraestrutura e QA integral.
+
 ## Uso obrigatório dos agentes especializados
 
 - Para implementação, encaminhar exclusivamente para `developer-junior`, `developer-pleno`, `developer-senior` ou `ui-ux`, conforme a matriz de roteamento.
@@ -338,7 +346,7 @@ Entrega: notificação ao coordinator com resultado.
 
 ```bash
 # 1. Obter node ID da issue (1 chamada)
-$issueNodeId = gh issue view NUMERO --repo vianahub-pt/VianaHub.Global.Best Fluency.Web --json id --jq '.id'
+$issueNodeId = gh issue view NUMERO --repo vianahub-pt/VianaHub.Global.BestFluency.Web --json id --jq '.id'
 
 # 2. Obter ITEM_ID do board (1 chamada)
 $boardData = gh project item-list 1 --owner vianahub-pt --format json | ConvertFrom-Json
@@ -346,7 +354,7 @@ $item = $boardData | Where-Object { $_.content.id -eq $issueNodeId }
 
 # 3. Se não estiver no board, adicionar (1 chamada)
 if (-not $item) {
-    $newItem = gh project item-add 1 --owner vianahub-pt --url "https://github.com/vianahub-pt/VianaHub.Global.Best Fluency.Web/issues/NUMERO" --format json | ConvertFrom-Json
+    $newItem = gh project item-add 1 --owner vianahub-pt --url "https://github.com/vianahub-pt/VianaHub.Global.BestFluency.Web/issues/NUMERO" --format json | ConvertFrom-Json
     $itemId = $newItem.id
 } else {
     $itemId = $item.id
@@ -357,7 +365,7 @@ gh project item-edit --project-id PVT_kwHODGRT384BZCnv --id $itemId --field-id P
 
 # 5. Assign físico quando mover para In Progress (1 chamada adicional)
 if ($optionId -eq "47fc9ee4") {
-    gh issue edit NUMERO --repo vianahub-pt/VianaHub.Global.Best Fluency.Web --add-assignee @me
+    gh issue edit NUMERO --repo vianahub-pt/VianaHub.Global.BestFluency.Web --add-assignee @me
 }
 ```
 
@@ -366,8 +374,8 @@ if ($optionId -eq "47fc9ee4") {
 # Regras Centrais
 
 - **Board:** `https://github.com/users/vianahub-pt/projects/5`
-- **Repositório:** `vianahub-pt/VianaHub.Global.Best Fluency.Web`
-- **Comandos gh:** Sempre usar `--repo vianahub-pt/VianaHub.Global.Best Fluency.Web`
+- **Repositório:** `vianahub-pt/VianaHub.Global.BestFluency.Web`
+- **Comandos gh:** Sempre usar `--repo vianahub-pt/VianaHub.Global.BestFluency.Web`
 - **Assign:** Coordinator faz assign para o Developer
 - **NUNCA** criar branches, implementar, commitar, push ou criar PR
 - **NUNCA** parar para pedir/solicitar informações ao usuário enquanto o processo/fluxo de desenvolvimento estiver acontecendo — o processo deve obrigatoriamente ser contínuo. As únicas intervenções do usuário serão aprovar o PR e fazer o merge
@@ -402,7 +410,7 @@ Após mover o card para **For Deploy**, o Coordinator deve verificar periodicame
 
 ```powershell
 # Verificar estado do PR
-gh pr view PR_NUMERO --repo vianahub-pt/VianaHub.Global.Best Fluency.Web --json state,mergedAt
+gh pr view PR_NUMERO --repo vianahub-pt/VianaHub.Global.BestFluency.Web --json state,mergedAt
 ```
 
 - Se `state == "MERGED"`, mover card para **Done** e notificar o usuário.
@@ -436,7 +444,7 @@ Se mesmo bug reportado 2 vezes na mesma issue → escalar para usuário com hist
 ## Status do Fluxo
 
 ### Card
-- Link: https://github.com/vianahub-pt/VianaHub.Global.Best Fluency.Web/issues/NUMERO
+- Link: https://github.com/vianahub-pt/VianaHub.Global.BestFluency.Web/issues/NUMERO
 - Status: [Status Atual]
 - Modo: [FAST_PATH|STANDARD_PATH|FULL_PATH]
 - PR: [Link PR se existir]

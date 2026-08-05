@@ -130,7 +130,7 @@ git pull origin develop
 git checkout -b feature/issue-NUMERO-slug
 # ... implementar ...
 git push origin feature/issue-NUMERO-slug
-gh pr create --repo vianahub-pt/VianaHub.Global.Best Fluency.Web --base develop --title "feat: título" --body "Closes #NUMERO"
+gh pr create --repo vianahub-pt/VianaHub.Global.BestFluency.Web --base develop --title "feat: título" --body "Closes #NUMERO"
 ```
 
 ## Fluxo hotfix
@@ -141,7 +141,7 @@ git pull origin main
 git checkout -b hotfix/issue-NUMERO-slug
 # ... corrigir ...
 git push origin hotfix/issue-NUMERO-slug
-gh pr create --repo vianahub-pt/VianaHub.Global.Best Fluency.Web --base main --title "fix: título" --body "Closes #NUMERO"
+gh pr create --repo vianahub-pt/VianaHub.Global.BestFluency.Web --base main --title "fix: título" --body "Closes #NUMERO"
 ```
 
 ---
@@ -153,8 +153,8 @@ gh pr create --repo vianahub-pt/VianaHub.Global.Best Fluency.Web --base main --t
 - **i18n:** Textos visíveis em `locales/{locale}/common.json` (padrão: pt-PT)
 - **Styling:** Tailwind CSS + shadcn/ui
 - **Rotas:** Respeitar `trailingSlash: true`
-- **Static export:** Compatível com Azure Static Web Apps
-- **gh commands:** Sempre usar `--repo vianahub-pt/VianaHub.Global.Best Fluency.Web`
+- **Publicação:** não assumir fornecedor específico de hosting
+- **gh commands:** Sempre usar `--repo vianahub-pt/VianaHub.Global.BestFluency.Web`
 
 ---
 
@@ -216,13 +216,13 @@ git push origin fix/issue-NUMERO-slug
 ### Feature / Melhoria / Correção (padrão)
 
 ```bash
-gh pr create --repo vianahub-pt/VianaHub.Global.Best Fluency.Web --base develop --title "feat: título" --body "Closes #NUMERO"
+gh pr create --repo vianahub-pt/VianaHub.Global.BestFluency.Web --base develop --title "feat: título" --body "Closes #NUMERO"
 ```
 
 ### Hotfix de produção
 
 ```bash
-gh pr create --repo vianahub-pt/VianaHub.Global.Best Fluency.Web --base main --title "fix: título" --body "Closes #NUMERO"
+gh pr create --repo vianahub-pt/VianaHub.Global.BestFluency.Web --base main --title "fix: título" --body "Closes #NUMERO"
 ```
 
 ## 7. Comentar na issue
@@ -265,3 +265,9 @@ Se ao fazer `git pull origin develop` ou ao criar o PR ocorrer um **conflito de 
 - Nunca expor tokens, secrets ou dados sensíveis
 - Evitar `any`, dependências novas, lógica duplicada
 - **Automação:** executar automaticamente e notificar coordinator ao finalizar
+
+## Adenda obrigatória: correções mobile e i18n
+
+- Corrigir espaçamento em 360 px, botão menor que 44 × 44 px, texto cortado, overflow localizado, foco, `aria-label`, alt text, tema e mensagem de WhatsApp.
+- Garantir ajustes de texto nos sete locales (`pt-PT`, `en-US`, `es-ES`, `fr-FR`, `de-DE`, `it-IT`, `pt-BR`) sem fallback silencioso.
+- Validar light/dark e smartphone antes de concluir; não alterar breakpoints globais, arquitetura de temas/i18n, navegação, SEO internacional ou infraestrutura.

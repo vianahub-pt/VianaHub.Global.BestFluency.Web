@@ -194,7 +194,7 @@ git pull origin develop
 git checkout -b feature/issue-NUMERO-ui-ux-slug
 # ... implementar ...
 git push origin feature/issue-NUMERO-ui-ux-slug
-gh pr create --repo vianahub-pt/VianaHub.Global.Best Fluency.Web --base develop --title "feat(ui): título" --body "Closes #NUMERO"
+gh pr create --repo vianahub-pt/VianaHub.Global.BestFluency.Web --base develop --title "feat(ui): título" --body "Closes #NUMERO"
 ```
 
 ## Fluxo hotfix
@@ -205,7 +205,7 @@ git pull origin main
 git checkout -b hotfix/issue-NUMERO-ui-ux-slug
 # ... corrigir ...
 git push origin hotfix/issue-NUMERO-ui-ux-slug
-gh pr create --repo vianahub-pt/VianaHub.Global.Best Fluency.Web --base main --title "fix(ui): título" --body "Closes #NUMERO"
+gh pr create --repo vianahub-pt/VianaHub.Global.BestFluency.Web --base main --title "fix(ui): título" --body "Closes #NUMERO"
 ```
 
 ---
@@ -219,8 +219,8 @@ gh pr create --repo vianahub-pt/VianaHub.Global.Best Fluency.Web --base main --t
 - **Temas:** Usar variáveis CSS e tokens semânticos
 - **i18n:** Textos visíveis em `locales/{locale}/common.json` (padrão: pt-PT)
 - **Rotas:** Respeitar `trailingSlash: true`
-- **Static export:** Compatível com Azure Static Web Apps
-- **gh commands:** Sempre usar `--repo vianahub-pt/VianaHub.Global.Best Fluency.Web`
+- **Publicação:** independente de fornecedor de hosting
+- **gh commands:** Sempre usar `--repo vianahub-pt/VianaHub.Global.BestFluency.Web`
 
 ---
 
@@ -319,13 +319,13 @@ git push origin feature/issue-NUMERO-ui-ux-slug
 ### Feature / Melhoria / Correção (padrão)
 
 ```bash
-gh pr create --repo vianahub-pt/VianaHub.Global.Best Fluency.Web --base develop --title "feat(ui): título" --body "Closes #NUMERO"
+gh pr create --repo vianahub-pt/VianaHub.Global.BestFluency.Web --base develop --title "feat(ui): título" --body "Closes #NUMERO"
 ```
 
 ### Hotfix de produção
 
 ```bash
-gh pr create --repo vianahub-pt/VianaHub.Global.Best Fluency.Web --base main --title "fix(ui): título" --body "Closes #NUMERO"
+gh pr create --repo vianahub-pt/VianaHub.Global.BestFluency.Web --base main --title "fix(ui): título" --body "Closes #NUMERO"
 ```
 
 ## 8. Comentar na issue
@@ -365,3 +365,11 @@ Enviar ao `kanban-coordinator`:
 - Não criar overflow horizontal
 - Não finalizar sem validações do modo indicado
 - **Automação:** executar automaticamente e notificar coordinator ao finalizar
+
+## Adenda obrigatória: Mobile-First e idiomas
+
+- Criar wireframes e componentes primeiro para 360, 375, 390 e 412 px; só depois validar 768, 1024, 1280 e 1440 px.
+- Usar CSS base de smartphone e breakpoints progressivos `min-width`; garantir áreas de toque de pelo menos 44 × 44 px, foco visível, teclado, orientação vertical/horizontal e nenhum conteúdo dependente de hover.
+- Preservar CTA no Hero, reduzir decoração, validar light/dark, WCAG AA, `prefers-reduced-motion`, LCP e ausência de overflow antes de tablet/desktop.
+- Projetar `pt-PT` (`/`), `en-US` (`/en/`), `es-ES` (`/es/`), `fr-FR` (`/fr/`), `de-DE` (`/de/`), `it-IT` (`/it/`) e `pt-BR` (`/pt-br/`); não usar a variante britânica.
+- Traduzir metadata, CTAs, FAQ, alt text e WhatsApp sem alterar marca, nomes próprios ou morada.

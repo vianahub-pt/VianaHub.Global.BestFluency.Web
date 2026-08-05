@@ -270,7 +270,7 @@ Apresentar imediatamente abaixo do Hero, em quatro itens curtos:
 - `Aulas individuais`
 - `Turmas até 8 alunos`
 - `Presencial na Amadora`
-- `Online em Portugal`
+- `Aulas online`
 
 Opcional, caso não torne a área excessivamente carregada:
 

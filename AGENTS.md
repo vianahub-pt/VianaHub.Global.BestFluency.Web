@@ -20,7 +20,7 @@ Toda comunicação com o usuário, issues e comentários deve ser em **portuguê
 |--------|----------|
 | `.opencode/agents/` | 7 agentes: `kanban-coordinator`, `po`, `developer-junior`, `developer-pleno`, `developer-senior`, `ui-ux`, `qa` |
 | `.opencode/instructions/kanban-flow.md` | Instruções compartilhadas do fluxo Kanban |
-| `locales/{locale}/common.json` | Traduções: `pt-PT`, `pt-BR`, `en-US`, `es-ES` |
+| `locales/{locale}/common.json` | Traduções: `pt-PT`, `en-US`, `es-ES`, `fr-FR`, `de-DE`, `it-IT`, `pt-BR` |
 | `AGENTS.md` | Este arquivo |
 
 ---
@@ -57,6 +57,9 @@ Status: `Backlog -> To do -> In Progress -> For Tests -> In Test -> For Deploy -
 - **Anti-loop:** mesmo bug reportado 2 vezes na mesma issue → escalar para o usuário
 - **Build obrigatório:** executar `npm run build` antes de `git push` (quando aplicável ao repo de destino)
 - **Conflito de merge:** developer não resolve sozinho — escalar para `kanban-coordinator` que aciona `developer-senior`
+- **Idiomas da landing:** `pt-PT` na raiz `/`, `en-US` em `/en/`, `es-ES` em `/es/`, `fr-FR` em `/fr/`, `de-DE` em `/de/`, `it-IT` em `/it/` e `pt-BR` em `/pt-br/`; não utilizar a variante britânica
+- **SEO internacional:** cada idioma deve ter URL própria, `lang`, canonical autorreferencial, `hreflang` recíproco, `x-default` para `/` e presença no sitemap
+- **Mobile-First:** smartphone é a base de design, CSS e QA; validar 360/375/390/412 antes de 768/1024/1280/1440, sem overflow horizontal e com temas light/dark acessíveis
 
 ---
 
@@ -70,6 +73,9 @@ locales/
   pt-BR/common.json
   en-US/common.json
   es-ES/common.json
+  fr-FR/common.json
+  de-DE/common.json
+  it-IT/common.json
 ```
 
 Chaves de i18n seguem padrão `namespace.chave` (ex: `auth.login.title`).

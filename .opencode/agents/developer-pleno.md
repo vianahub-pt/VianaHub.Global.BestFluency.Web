@@ -167,7 +167,7 @@ git pull origin develop
 git checkout -b feature/issue-NUMERO-slug
 # ... implementar ...
 git push origin feature/issue-NUMERO-slug
-gh pr create --repo vianahub-pt/VianaHub.Global.Best Fluency.Web --base develop --title "feat: título" --body "Closes #NUMERO"
+gh pr create --repo vianahub-pt/VianaHub.Global.BestFluency.Web --base develop --title "feat: título" --body "Closes #NUMERO"
 ```
 
 ## Fluxo hotfix
@@ -178,7 +178,7 @@ git pull origin main
 git checkout -b hotfix/issue-NUMERO-slug
 # ... corrigir ...
 git push origin hotfix/issue-NUMERO-slug
-gh pr create --repo vianahub-pt/VianaHub.Global.Best Fluency.Web --base main --title "fix: título" --body "Closes #NUMERO"
+gh pr create --repo vianahub-pt/VianaHub.Global.BestFluency.Web --base main --title "fix: título" --body "Closes #NUMERO"
 ```
 
 ---
@@ -194,8 +194,8 @@ gh pr create --repo vianahub-pt/VianaHub.Global.Best Fluency.Web --base main --t
 - **i18n:** Textos visíveis em `locales/{locale}/common.json` (padrão: pt-PT)
 - **Styling:** Tailwind CSS + shadcn/ui
 - **Rotas:** Respeitar `trailingSlash: true`
-- **Static export:** Compatível com Azure Static Web Apps
-- **gh commands:** Sempre usar `--repo vianahub-pt/VianaHub.Global.Best Fluency.Web`
+- **Publicação:** respeitar a infraestrutura definida pela issue sem assumir fornecedor específico
+- **gh commands:** Sempre usar `--repo vianahub-pt/VianaHub.Global.BestFluency.Web`
 
 ---
 
@@ -266,13 +266,13 @@ git push origin feature/issue-NUMERO-slug
 ### Feature / Melhoria / Correção (padrão)
 
 ```bash
-gh pr create --repo vianahub-pt/VianaHub.Global.Best Fluency.Web --base develop --title "feat: título" --body "Closes #NUMERO"
+gh pr create --repo vianahub-pt/VianaHub.Global.BestFluency.Web --base develop --title "feat: título" --body "Closes #NUMERO"
 ```
 
 ### Hotfix de produção
 
 ```bash
-gh pr create --repo vianahub-pt/VianaHub.Global.Best Fluency.Web --base main --title "fix: título" --body "Closes #NUMERO"
+gh pr create --repo vianahub-pt/VianaHub.Global.BestFluency.Web --base main --title "fix: título" --body "Closes #NUMERO"
 ```
 
 ## 8. Comentar na issue
@@ -320,3 +320,10 @@ Se ao fazer `git pull origin develop` ou ao criar o PR ocorrer um **conflito de 
 - Evitar `any`, dependências sem justificativa, lógica duplicada
 - Documentar decisões técnicas no PR ou comentário da issue
 - **Automação:** executar automaticamente e notificar coordinator ao finalizar
+
+## Adenda obrigatória: implementação Mobile-First
+
+- Implementar primeiro para smartphone e validar 360, 375, 390 e 412 px antes dos breakpoints.
+- Usar HTML semântico, toque e teclado, foco visível, áreas de toque de pelo menos 44 × 44 px, light/dark e ausência de overflow.
+- Usar traduções em `pt-PT`, `en-US`, `es-ES`, `fr-FR`, `de-DE`, `it-IT` e `pt-BR`, sem strings visíveis ou fallback misto.
+- Preservar performance mobile: JavaScript mínimo, imagens responsivas, lazy loading e `prefers-reduced-motion`.

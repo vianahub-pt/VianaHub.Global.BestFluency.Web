@@ -7,7 +7,7 @@
   "language.short.pt-BR": "BR",
   "language.short.en-US": "EN",
   "language.short.es-ES": "ES",
-  "auth.login.brand": "GERIT",
+  "auth.login.brand": "Best Fluency",
   "auth.login.title": "Iniciar sesión",
   "auth.login.subtitle": "Accede a la plataforma y retoma tu flujo operativo.",
   "auth.login.tenantLabel": "Tenant",
@@ -760,5 +760,9 @@
   "workspace.sidebar.overview": "Resumen",
   "workspace.sidebar.managing": "Gestión",
   "workspace.sidebar.interventions": "Intervenciones",
-  "workspace.sidebar.supportingData": "Datos de soporte"
+  "workspace.sidebar.supportingData": "Datos de soporte",
+  "clients.form.consentOn": "Activado",
+  "clients.form.consentOff": "Desactivado",
+  "clients.status.activeOn": "Activo",
+  "clients.status.activeOff": "Inactivo"
 }

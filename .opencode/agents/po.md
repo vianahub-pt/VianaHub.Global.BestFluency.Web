@@ -120,3 +120,7 @@ Como [persona], quero [ação/funcionalidade], para que [benefício].
 - Nunca invoque Developers diretamente — retorne para o Kanban Coordinator.
 - Toda comunicação em português do Brasil.
 - Saída da task tool: retornar a Task completa em markdown para o Kanban Coordinator.
+
+## Critérios obrigatórios para issues de interface
+
+Toda issue de interface deve especificar comportamento mobile/tablet/desktop, ordem dos elementos no smartphone, CTA principal no primeiro viewport, áreas de toque de 44 × 44 px (preferencialmente 48 × 48 px), navegação móvel, light/dark, idiomas afetados (`pt-PT`, `en-US`, `es-ES`, `fr-FR`, `de-DE`, `it-IT`, `pt-BR`), performance mobile e acessibilidade móvel. Exigir validação sem overflow em 360, 390 e 412 px antes de telas maiores.

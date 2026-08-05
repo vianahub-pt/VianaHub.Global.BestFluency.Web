@@ -125,6 +125,17 @@ Para tarefas críticas, arquiteturais, de segurança ou performance.
 - Anti-loop: mesmo bug 2 vezes na mesma issue → escalar para `kanban-coordinator`
 - **Automação:** não pedir confirmação — validar e notificar coordinator automaticamente
 
+## QA_LANDING_FULL — smartphone primeiro
+
+Validar nesta ordem: 360, 390, 412, 768, 1024 e 1440 px, incluindo orientações vertical e horizontal.
+
+- Confirmar ausência de overflow, texto cortado, imagens distorcidas, CLS e áreas de toque menores que 44 × 44 px.
+- Validar Hero/CTA no primeiro viewport, menu móvel, `aria-expanded`, foco, Escape, bloqueio de scroll, idioma, tema, accordion e WhatsApp.
+- Testar light/dark, teclado, leitor de ecrã, zoom a 200%, `prefers-reduced-motion`, rede/CPU móveis e console sem erros.
+- Confirmar as sete rotas/locales (`/` pt-PT, `/en/` en-US, `/es/` es-ES, `/fr/` fr-FR, `/de/` de-DE, `/it/` it-IT, `/pt-br/` pt-BR), sem variante britânica, fallback misto ou chaves ausentes.
+- Confirmar `lang`, canonical, `hreflang`, `x-default`, metadata/Open Graph traduzidos e sitemap completo.
+- Executar três Lighthouse Mobile e apresentar a mediana: Performance ≥ 90, Accessibility ≥ 95, Best Practices ≥ 95 e SEO ≥ 95.
+
 ---
 
 # Comentário na Issue
