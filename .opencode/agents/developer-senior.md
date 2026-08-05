@@ -43,6 +43,20 @@ Para features complexas, refatorações, bugs críticos, alterações arquitetur
 - `npm run build`
 - `npx tsc --project tsconfig.typecheck.json --noEmit`
 
+## LANDING_PAGE_FULL
+
+Para issues globais da landing page: arquitetura, navegação, Hero, temas, i18n, SEO internacional, performance ou infraestrutura. O Senior executa o escopo arquitetural/funcional; o escopo visual/temas é executado pelo `ui-ux` no mesmo modo.
+
+**Validações obrigatórias:**
+- Todas do `FULL_PATH`
+- Mobile-first: validar 360, 375, 390 e 412 px antes dos breakpoints maiores
+- Sete locales (`pt-PT`, `en-US`, `es-ES`, `fr-FR`, `de-DE`, `it-IT`, `pt-BR`) com as mesmas chaves e sem fallback silencioso
+- SEO internacional: `lang`, canonical autorreferencial, `hreflang` recíproco, `x-default` e sitemap
+- Temas light/dark sem flash, contraste AA e `prefers-reduced-motion`
+- Build Docker e smoke test local quando a entrega tocar infraestrutura de publicação
+
+**QA esperado:** `QA_LANDING_FULL`.
+
 ## STANDARD_PATH
 
 Para correções complexas localizadas que não envolvem múltiplos domínios nem alteração arquitetural.
