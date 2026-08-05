@@ -72,16 +72,28 @@ export function MobileMenu({ locale }: MobileMenuProps) {
   // Fecha ao clicar/tocar fora do wrapper (botão + painel) e devolve o foco
   // ao botão. O wrapper inclui o botão de toggle, evitando o edge case em que
   // o pointerdown fecharia o menu e o click subsequente o reabriria.
+  //
+  // O retorno de foco é diferido com `setTimeout(0)` — e não aplicado
+  // diretamente no `pointerdown` — porque o browser reaplica o foco default
+  // no `mousedown`/`touchend` subsequente, revertendo o foco para `body`.
+  // O atraso garante que o foco seja aplicado após os eventos de input do
+  // navegador, tanto para mouse quanto para toque.
   useEffect(() => {
     if (!isOpen) return;
+    let focusTimeout: ReturnType<typeof setTimeout> | undefined;
     function handlePointerDown(event: PointerEvent) {
       if (!wrapperRef.current?.contains(event.target as Node)) {
         setIsOpen(false);
-        triggerRef.current?.focus();
+        focusTimeout = setTimeout(() => {
+          triggerRef.current?.focus();
+        }, 0);
       }
     }
     document.addEventListener("pointerdown", handlePointerDown);
-    return () => document.removeEventListener("pointerdown", handlePointerDown);
+    return () => {
+      document.removeEventListener("pointerdown", handlePointerDown);
+      if (focusTimeout !== undefined) clearTimeout(focusTimeout);
+    };
   }, [isOpen]);
 
   return (
