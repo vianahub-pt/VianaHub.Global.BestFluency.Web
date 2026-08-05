@@ -1,4 +1,4 @@
-import { getLocale, type LocaleCode } from "@/core/config/locales";
+import type { LocaleCode } from "@/core/config/locales";
 import { site } from "@/core/config/site";
 import { getLandingContent } from "@/domains/landing/content";
 import { WhatsAppLink } from "@/shared/components/whatsapp-link";

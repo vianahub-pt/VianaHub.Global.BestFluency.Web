@@ -2,17 +2,27 @@
 
 import { Moon, Sun } from "lucide-react";
 import { useTheme } from "next-themes";
-import { useEffect, useState } from "react";
+import { useSyncExternalStore } from "react";
+
+const emptySubscribe = () => () => {};
+const getClientSnapshot = () => true;
+const getServerSnapshot = () => false;
 
 /**
  * Alternância de tema com área de toque >= 44x44px e estado resolvido
  * apenas após a montagem (evita mismatch de hidratação).
+ *
+ * O guard de montagem usa useSyncExternalStore (cliente = true, servidor =
+ * false) em vez de setState em efeito, evitando renders em cascata e o
+ * aviso react-hooks/set-state-in-effect.
  */
 export function ThemeToggle({ label }: { label: string }) {
   const { resolvedTheme, setTheme } = useTheme();
-  const [mounted, setMounted] = useState(false);
-
-  useEffect(() => setMounted(true), []);
+  const mounted = useSyncExternalStore(
+    emptySubscribe,
+    getClientSnapshot,
+    getServerSnapshot,
+  );
 
   const isDark = mounted && resolvedTheme === "dark";
 

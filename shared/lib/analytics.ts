@@ -84,7 +84,6 @@ export function trackEvent(event: AnalyticsEvent): void {
   window.dataLayer.push({ event: event.name, ...event.params });
 
   if (process.env.NODE_ENV !== "production") {
-    // eslint-disable-next-line no-console
     console.debug("[analytics]", event.name, event.params);
   }
 }
