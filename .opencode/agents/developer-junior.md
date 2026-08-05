@@ -1,7 +1,7 @@
 ---
 description: Developer Junior - implementa tarefas frontend simples, correções localizadas e ajustes visuais/i18n
 mode: subagent
-model: opencode-go/grok-4.5
+model: opencode/big-pickle
 temperature: 0.2
 permission:
   edit: allow

@@ -1,7 +1,7 @@
 ---
 description: Coordena o fluxo PO -> Developer/UiUx -> QA no board compartilhado
 mode: primary
-model: opencode-go/gpt-5.6-luna
+model: opencode/big-pickle
 temperature: 0.2
 ---
 
