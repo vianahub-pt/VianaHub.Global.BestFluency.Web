@@ -85,6 +85,23 @@ Para tarefas críticas, arquiteturais, de segurança ou performance.
 
 ---
 
+## QA_LANDING_FULL
+
+Para entregas `LANDING_PAGE_FULL` — issues globais da landing page (arquitetura, navegação, Hero, temas, i18n, SEO internacional, performance, infraestrutura). Smartphone primeiro.
+
+**Validações obrigatórias:**
+- Todas do QA_FULL
+- **Matriz mobile:** validar nesta ordem 360, 390, 412, 768, 1024 e 1440 px, incluindo orientações vertical e horizontal; confirmar ausência de overflow, texto cortado, imagens distorcidas, CLS e áreas de toque menores que 44 × 44 px.
+- **Funcionalidade móvel:** Hero/CTA no primeiro viewport, menu móvel, `aria-expanded`, foco, Escape, bloqueio de scroll, idioma, tema, accordion e WhatsApp.
+- **Temas:** light/dark validados sem flash de tema e com contraste AA.
+- **Acessibilidade:** teclado, leitor de ecrã, zoom a 200% e `prefers-reduced-motion`.
+- **i18n:** as sete rotas/locales (`/` pt-PT, `/en/` en-US, `/es/` es-ES, `/fr/` fr-FR, `/de/` de-DE, `/it/` it-IT, `/pt-br/` pt-BR), sem variante britânica, fallback misto ou chaves ausentes.
+- **SEO internacional:** `lang`, canonical autorreferencial, `hreflang` recíproco, `x-default`, metadata/Open Graph traduzidos e sitemap completo.
+- **Performance:** rede/CPU móveis e console sem erros; três execuções de Lighthouse Mobile com mediana — Performance ≥ 90, Accessibility ≥ 95, Best Practices ≥ 95 e SEO ≥ 95.
+- **Docker:** quando a entrega tocar Dockerfile, compose ou infraestrutura de publicação — build da imagem e smoke test local do contentor, validando as sete rotas/locales servidas.
+
+---
+
 # Critério de Aprovação
 
 ## Aprovar quando:
@@ -124,17 +141,6 @@ Para tarefas críticas, arquiteturais, de segurança ou performance.
 - Justificar a recomendação
 - Anti-loop: mesmo bug 2 vezes na mesma issue → escalar para `kanban-coordinator`
 - **Automação:** não pedir confirmação — validar e notificar coordinator automaticamente
-
-## QA_LANDING_FULL — smartphone primeiro
-
-Validar nesta ordem: 360, 390, 412, 768, 1024 e 1440 px, incluindo orientações vertical e horizontal.
-
-- Confirmar ausência de overflow, texto cortado, imagens distorcidas, CLS e áreas de toque menores que 44 × 44 px.
-- Validar Hero/CTA no primeiro viewport, menu móvel, `aria-expanded`, foco, Escape, bloqueio de scroll, idioma, tema, accordion e WhatsApp.
-- Testar light/dark, teclado, leitor de ecrã, zoom a 200%, `prefers-reduced-motion`, rede/CPU móveis e console sem erros.
-- Confirmar as sete rotas/locales (`/` pt-PT, `/en/` en-US, `/es/` es-ES, `/fr/` fr-FR, `/de/` de-DE, `/it/` it-IT, `/pt-br/` pt-BR), sem variante britânica, fallback misto ou chaves ausentes.
-- Confirmar `lang`, canonical, `hreflang`, `x-default`, metadata/Open Graph traduzidos e sitemap completo.
-- Executar três Lighthouse Mobile e apresentar a mediana: Performance ≥ 90, Accessibility ≥ 95, Best Practices ≥ 95 e SEO ≥ 95.
 
 ---
 

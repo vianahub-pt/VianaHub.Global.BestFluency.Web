@@ -41,6 +41,8 @@ Board padrão para todos os repositórios e aplicações:
 
 O repositório deve ser resolvido dinamicamente pelo workspace atual.
 
+Os IDs do Project 5 (projeto, campos e opções de status) usados pelos agentes são **referência dinâmica**: devem ser resolvidos a partir do board acima (ex.: `gh project field-list 5 --owner vianahub-pt --format json`) e nunca copiados de outros projects.
+
 ---
 
 # Convenções de Branch e PR
@@ -69,7 +71,7 @@ O `kanban-coordinator` deve passar aos agentes especializados **APENAS**:
 
 - **O que fazer** (ação objetiva e específica)
 - **Onde está** (link da issue/PR)
-- **Modo de execução** (FAST_PATH, STANDARD_PATH, FULL_PATH ou variantes QA/UI)
+- **Modo de execução** (FAST_PATH, STANDARD_PATH, FULL_PATH, LANDING_PAGE_FULL ou variantes QA/UI)
 - **O que entregar de volta** (resultado esperado)
 
 **NUNCA incluir nos handoffs:**
@@ -146,6 +148,7 @@ O `kanban-coordinator` classifica cada tarefa em um dos três modos antes de faz
 | `FAST_PATH` | Tarefa trivial, alteração mínima, baixo risco. **Sempre** `developer-junior`. | `git diff --check` + lint (se aplicável). **NÃO** build/typecheck por padrão. |
 | `STANDARD_PATH` | Tarefa funcional intermediária, padrão existente | `git diff --check` + lint + typecheck |
 | `FULL_PATH` | Tarefa complexa, crítica, arquitetural | `git diff --check` + lint + build + typecheck |
+| `LANDING_PAGE_FULL` | Issue global da landing: arquitetura, navegação, Hero, temas, i18n, SEO internacional, performance ou infraestrutura. Executado por `developer-senior` (arquitetura/funcional) e/ou `ui-ux` (visual/temas) | Todas do `FULL_PATH` + mobile-first (360/375/390/412 px primeiro), sete locales sem fallback, SEO internacional e temas light/dark |
 
 ## Para QA (QA_FAST / QA_STANDARD / QA_FULL)
 
@@ -154,6 +157,7 @@ O `kanban-coordinator` classifica cada tarefa em um dos três modos antes de faz
 | `QA_FAST` | Tarefa trivial, Developer já reportou validação suficiente | Revisão de código + critérios de aceite. Sem reexecução de build/lint. |
 | `QA_STANDARD` | Tarefa de média complexidade | Lint + build/typecheck + validação funcional |
 | `QA_FULL` | Tarefa crítica, arquitetural, segurança | Todas do STANDARD + UI manual + contratos + acessibilidade + segurança |
+| `QA_LANDING_FULL` | Validação integral de entregas `LANDING_PAGE_FULL` | Todas do `QA_FULL` + matriz mobile, i18n (sete locales), temas light/dark, SEO internacional, Lighthouse Mobile (três execuções, mediana) e Docker |
 
 ## Para UI/UX (UI_FAST / UI_STANDARD / UI_FULL)
 
@@ -162,6 +166,19 @@ O `kanban-coordinator` classifica cada tarefa em um dos três modos antes de faz
 | `UI_FAST` | Ajuste visual simples, localizado | `git diff --check` + lint (se aplicável). Sem build. |
 | `UI_STANDARD` | Melhoria de layout, responsividade, componente visual | `git diff --check` + lint + typecheck |
 | `UI_FULL` | Template, tema, design system, alteração global | `git diff --check` + lint + build + typecheck |
+
+## Modos Landing (LANDING_PAGE_FULL / QA_LANDING_FULL)
+
+Modos dedicados a issues globais da landing page: arquitetura, navegação, Hero, temas, i18n, SEO internacional, performance e infraestrutura.
+
+Separação de responsabilidades:
+
+- `kanban-coordinator`: classifica a issue como `LANDING_PAGE_FULL`, define o executor (`developer-senior` e/ou `ui-ux`) e indica `QA_LANDING_FULL` como QA esperado.
+- `developer-senior`: executa `LANDING_PAGE_FULL` no escopo arquitetural/funcional.
+- `ui-ux`: executa `LANDING_PAGE_FULL` no escopo visual/temas.
+- `qa`: valida no modo `QA_LANDING_FULL`, que inclui matriz mobile, i18n, temas, SEO, Lighthouse Mobile (três execuções, mediana) e Docker.
+
+`QA_LANDING_FULL` é o único modo de QA aceito para entregas `LANDING_PAGE_FULL`.
 
 ---
 
@@ -314,7 +331,7 @@ gh pr view PR_NUMERO --repo vianahub-pt/VianaHub.Global.BestFluency.Web --json s
 - Validar primeiro 360, 375, 390 e 412 px, depois 768, 1024, 1280 e 1440 px.
 - Toda issue de interface deve conter critérios de mobile, responsividade, light/dark, i18n, acessibilidade e performance.
 - A landing deve manter CTA do Hero visível no primeiro viewport, toque mínimo de 44 × 44 px, menu/tema/idioma acessíveis, sem overflow ou dependência de hover.
-- Issues globais de arquitetura, navegação, Hero, temas ou i18n passam por Senior e UI/UX; QA usa `QA_LANDING_FULL` e Lighthouse Mobile (três execuções, mediana).
+- Issues globais de arquitetura, navegação, Hero, temas ou i18n passam por Senior e UI/UX no modo `LANDING_PAGE_FULL`; QA usa `QA_LANDING_FULL` e Lighthouse Mobile (três execuções, mediana).
 
 ---
 

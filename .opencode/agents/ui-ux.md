@@ -64,6 +64,19 @@ Para criação de templates, temas, design system, alterações globais de ident
 
 **Build:** Obrigatório.
 
+## LANDING_PAGE_FULL
+
+Para issues globais da landing page no escopo visual/temas: navegação, Hero, temas light/dark, responsividade ampla e identidade visual global. O escopo arquitetural/funcional é executado pelo `developer-senior` no mesmo modo.
+
+**Validações obrigatórias:**
+- Todas do `UI_FULL`
+- Mobile-first: validar 360, 375, 390 e 412 px antes dos breakpoints maiores
+- Sete locales (`pt-PT`, `en-US`, `es-ES`, `fr-FR`, `de-DE`, `it-IT`, `pt-BR`) sem fallback silencioso
+- Temas light/dark sem flash, contraste AA e `prefers-reduced-motion`
+
+**Build:** Obrigatório.
+**QA esperado:** `QA_LANDING_FULL`.
+
 ---
 
 # Escopo do UI/UX Specialist

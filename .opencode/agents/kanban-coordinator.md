@@ -41,7 +41,7 @@ O handoff para agentes especializados deve conter **APENAS**:
 
 - O que fazer (ação objetiva e específica)
 - Onde está (link da issue/PR)
-- Modo de execução: `FAST_PATH`, `STANDARD_PATH` ou `FULL_PATH`
+- Modo de execução: `FAST_PATH`, `STANDARD_PATH`, `FULL_PATH` ou `LANDING_PAGE_FULL`
 - O que entregar de volta (resultado esperado)
 
 **NUNCA incluir:** contexto completo da issue, o que outros fizeram, comandos executados, validações realizadas, análises de complexidade ou histórico.
@@ -104,6 +104,14 @@ Exemplos:
 - Query keys globais
 
 **Handoff:** Instrução objetiva + modo `FULL_PATH`.
+
+## LANDING_PAGE_FULL
+
+**Critérios:** Issue global da landing page — arquitetura, navegação, Hero, temas, i18n, SEO internacional, performance ou infraestrutura.
+
+**Roteamento:** `developer-senior` (escopo arquitetural/funcional) e/ou `ui-ux` (escopo visual/temas), conforme a demanda. QA esperado: `QA_LANDING_FULL`.
+
+**Handoff:** Instrução objetiva + modo `LANDING_PAGE_FULL`.
 
 ---
 
@@ -196,6 +204,7 @@ Em caso de dúvida:
 | Grid/filtro/paginação/API existente | `developer-pleno` | `STANDARD_PATH` | `QA_STANDARD` |
 | Auth, tenant, segurança, core, platform, shared crítico | `developer-senior` | `FULL_PATH` | `QA_FULL` |
 | Redesign, tema global, login, dashboard, shell | `ui-ux` | `UI_FULL` | `QA_FULL` |
+| Issue global da landing (arquitetura, navegação, Hero, temas, i18n, SEO) | `developer-senior` e/ou `ui-ux` | `LANDING_PAGE_FULL` | `QA_LANDING_FULL` |
 | Ajuste visual localizado sem redesign | `developer-junior` | `FAST_PATH` | `QA_FAST` |
 
 ---
@@ -234,8 +243,8 @@ O handoff para subagentes deve ter **no máximo** este formato:
 Issue: #NUMERO
 Ação: [ação objetiva]
 Agente: [developer-junior | developer-pleno | developer-senior | ui-ux]
-Modo: [FAST_PATH | STANDARD_PATH | FULL_PATH]
-QA esperado: [QA_FAST | QA_STANDARD | QA_FULL]
+Modo: [FAST_PATH | STANDARD_PATH | FULL_PATH | LANDING_PAGE_FULL]
+QA esperado: [QA_FAST | QA_STANDARD | QA_FULL | QA_LANDING_FULL]
 Entrega: branch, alteração mínima, commit, push, PR e notificação ao coordinator.
 ```
 
@@ -273,7 +282,7 @@ Passar **apenas**:
 ## 3. Classificar Modo e Complexity
 
 Avaliar a tarefa e definir:
-- **Modo:** `FAST_PATH`, `STANDARD_PATH` ou `FULL_PATH`
+- **Modo:** `FAST_PATH`, `STANDARD_PATH`, `FULL_PATH` ou `LANDING_PAGE_FULL`
 - **Developer:** `developer-junior`, `developer-pleno`, `developer-senior` ou `ui-ux`
 
 ## 4. Handoff para Developer
@@ -282,8 +291,8 @@ Avaliar a tarefa e definir:
 Issue: #NUMERO
 Ação: [ação objetiva e específica]
 Agente: [developer-junior | developer-pleno | developer-senior]
-Modo: [FAST_PATH | STANDARD_PATH | FULL_PATH]
-QA esperado: [QA_FAST | QA_STANDARD | QA_FULL]
+Modo: [FAST_PATH | STANDARD_PATH | FULL_PATH | LANDING_PAGE_FULL]
+QA esperado: [QA_FAST | QA_STANDARD | QA_FULL | QA_LANDING_FULL]
 Entrega: branch, alteração mínima, commit, push, PR e notificação ao coordinator.
 ```
 
@@ -293,8 +302,8 @@ Entrega: branch, alteração mínima, commit, push, PR e notificação ao coordi
 Issue: #NUMERO
 Ação: [ação visual/UX objetiva]
 Agente: ui-ux
-Modo: [UI_FAST | UI_STANDARD | UI_FULL]
-QA esperado: [QA_FAST | QA_STANDARD | QA_FULL]
+Modo: [UI_FAST | UI_STANDARD | UI_FULL | LANDING_PAGE_FULL]
+QA esperado: [QA_FAST | QA_STANDARD | QA_FULL | QA_LANDING_FULL]
 Entrega: branch, alteração mínima, commit, push, PR e notificação ao coordinator.
 ```
 
@@ -303,7 +312,7 @@ Entrega: branch, alteração mínima, commit, push, PR e notificação ao coordi
 ```md
 Issue: #NUMERO
 PR: #PR_NUMERO
-Modo: [QA_FAST | QA_STANDARD | QA_FULL]
+Modo: [QA_FAST | QA_STANDARD | QA_FULL | QA_LANDING_FULL]
 Ação: validar critérios de aceite, aprovar ou reprovar com motivo.
 Entrega: notificação ao coordinator com resultado.
 ```
@@ -327,20 +336,23 @@ Entrega: notificação ao coordinator com resultado.
 - Usar IDs fixos em cache (não consultar toda vez)
 - Máximo 3-4 chamadas por movimentação
 
-## IDs do Board
+## IDs do Board (Project 5 — referência dinâmica)
+
+Os IDs abaixo pertencem ao Project 5 (`https://github.com/users/vianahub-pt/projects/5`) e servem **apenas como cache**. Se alguma consulta ou mutação falhar, re-resolver com `gh project field-list 5 --owner vianahub-pt --format json` e atualizar este cache. **Nunca** usar IDs de outros projects.
 
 | Status | OPTION_ID |
 |--------|-----------|
 | Backlog | `f75ad846` |
-| To do | `eda9b53c` |
+| To do | `9e6af2c3` |
 | In Progress | `47fc9ee4` |
-| For Tests | `a42b88c6` |
-| In Test | `94a9d6f6` |
-| For Deploy | `add10e44` |
+| For Tests | `f973e55c` |
+| In Test | `9e6ffd94` |
+| For Deploy | `5ead0a41` |
 | Done | `98236657` |
 
-**FIELD_ID:** `PVTSSF_lAHODGRT384BZCnvzhUEIlE`
-**PROJECT_ID:** `PVT_kwHODGRT384BZCnv`
+**FIELD_ID:** `PVTSSF_lAHODGRT384BfbHuzhZuH2Y`
+**PROJECT_ID:** `PVT_kwHODGRT384BfbHu`
+**PROJECT_NUMBER:** `5`
 
 ## Procedimento para Mover Card
 
@@ -349,19 +361,19 @@ Entrega: notificação ao coordinator com resultado.
 $issueNodeId = gh issue view NUMERO --repo vianahub-pt/VianaHub.Global.BestFluency.Web --json id --jq '.id'
 
 # 2. Obter ITEM_ID do board (1 chamada)
-$boardData = gh project item-list 1 --owner vianahub-pt --format json | ConvertFrom-Json
+$boardData = gh project item-list 5 --owner vianahub-pt --format json | ConvertFrom-Json
 $item = $boardData | Where-Object { $_.content.id -eq $issueNodeId }
 
 # 3. Se não estiver no board, adicionar (1 chamada)
 if (-not $item) {
-    $newItem = gh project item-add 1 --owner vianahub-pt --url "https://github.com/vianahub-pt/VianaHub.Global.BestFluency.Web/issues/NUMERO" --format json | ConvertFrom-Json
+    $newItem = gh project item-add 5 --owner vianahub-pt --url "https://github.com/vianahub-pt/VianaHub.Global.BestFluency.Web/issues/NUMERO" --format json | ConvertFrom-Json
     $itemId = $newItem.id
 } else {
     $itemId = $item.id
 }
 
 # 4. Mover para o status desejado (1 chamada)
-gh project item-edit --project-id PVT_kwHODGRT384BZCnv --id $itemId --field-id PVTSSF_lAHODGRT384BZCnvzhUEIlE --single-select-option-id OPTION_ID
+gh project item-edit --project-id PVT_kwHODGRT384BfbHu --id $itemId --field-id PVTSSF_lAHODGRT384BfbHuzhZuH2Y --single-select-option-id OPTION_ID
 
 # 5. Assign físico quando mover para In Progress (1 chamada adicional)
 if ($optionId -eq "47fc9ee4") {
