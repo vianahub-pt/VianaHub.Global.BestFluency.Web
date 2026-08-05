@@ -18,6 +18,22 @@ export interface LandingContent {
     toggleTheme: string;
     languageSwitcherLabel: string;
   };
+  nav: {
+    ariaLabel: string;
+    menuAriaLabel: string;
+    menuLabel: string;
+    closeMenuLabel: string;
+    ctaLabel: string;
+    ctaAriaLabel: string;
+    whatsappMessage: string;
+    links: {
+      modalities: string;
+      method: string;
+      bestKids: string;
+      testimonials: string;
+      faq: string;
+    };
+  };
   foundation: {
     eyebrow: string;
     notice: string;

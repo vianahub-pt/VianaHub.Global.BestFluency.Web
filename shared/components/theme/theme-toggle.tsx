@@ -4,13 +4,16 @@ import { Moon, Sun } from "lucide-react";
 import { useTheme } from "next-themes";
 import { useSyncExternalStore } from "react";
 
+import { buttonVariants } from "@/shared/components/ui/button";
+
 const emptySubscribe = () => () => {};
 const getClientSnapshot = () => true;
 const getServerSnapshot = () => false;
 
 /**
- * Alternância de tema com área de toque >= 44x44px e estado resolvido
- * apenas após a montagem (evita mismatch de hidratação).
+ * Alternância de tema com área de toque >= 44x44px (size="icon" do design
+ * system) e estado resolvido apenas após a montagem (evita mismatch de
+ * hidratação).
  *
  * O guard de montagem usa useSyncExternalStore (cliente = true, servidor =
  * false) em vez de setState em efeito, evitando renders em cascata e o
@@ -31,7 +34,7 @@ export function ThemeToggle({ label }: { label: string }) {
       type="button"
       onClick={() => setTheme(isDark ? "light" : "dark")}
       aria-label={label}
-      className="inline-flex h-11 w-11 items-center justify-center rounded-md border border-border bg-background text-foreground transition-colors hover:bg-muted focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring"
+      className={buttonVariants({ variant: "outline", size: "icon" })}
     >
       {mounted ? (
         isDark ? (

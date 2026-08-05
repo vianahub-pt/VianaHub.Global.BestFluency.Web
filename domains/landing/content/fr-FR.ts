@@ -16,6 +16,24 @@ export const frFR: LandingContent = {
     toggleTheme: "Basculer entre thème clair et sombre",
     languageSwitcherLabel: "Choisir la langue",
   },
+  nav: {
+    ariaLabel: "Navigation principale",
+    menuAriaLabel: "Menu de navigation",
+    menuLabel: "Ouvrir le menu",
+    closeMenuLabel: "Fermer le menu",
+    ctaLabel: "Réserver un cours d'essai",
+    ctaAriaLabel:
+      "Ouvrir une conversation WhatsApp pour réserver un cours d'essai (nouvelle fenêtre)",
+    whatsappMessage:
+      "Bonjour ! Je souhaite réserver un cours d'essai d'anglais à Best Fluency.",
+    links: {
+      modalities: "Modalités",
+      method: "Méthode",
+      bestKids: "Best Kids",
+      testimonials: "Témoignages",
+      faq: "FAQ",
+    },
+  },
   foundation: {
     eyebrow: "BEST FLUENCY LANGUAGE SCHOOL · AMADORA ET EN LIGNE",
     notice:

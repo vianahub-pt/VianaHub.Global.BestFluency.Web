@@ -16,6 +16,24 @@ export const itIT: LandingContent = {
     toggleTheme: "Cambia tra tema chiaro e scuro",
     languageSwitcherLabel: "Seleziona la lingua",
   },
+  nav: {
+    ariaLabel: "Navigazione principale",
+    menuAriaLabel: "Menu di navigazione",
+    menuLabel: "Apri menu",
+    closeMenuLabel: "Chiudi menu",
+    ctaLabel: "Prenota una lezione di prova",
+    ctaAriaLabel:
+      "Apri una conversazione WhatsApp per prenotare una lezione di prova (nuova finestra)",
+    whatsappMessage:
+      "Ciao! Vorrei prenotare una lezione di prova di inglese alla Best Fluency.",
+    links: {
+      modalities: "Modalità",
+      method: "Metodo",
+      bestKids: "Best Kids",
+      testimonials: "Testimonianze",
+      faq: "FAQ",
+    },
+  },
   foundation: {
     eyebrow: "BEST FLUENCY LANGUAGE SCHOOL · AMADORA E ONLINE",
     notice:

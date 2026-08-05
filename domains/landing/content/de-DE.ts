@@ -16,6 +16,24 @@ export const deDE: LandingContent = {
     toggleTheme: "Zwischen hellem und dunklem Design wechseln",
     languageSwitcherLabel: "Sprache auswählen",
   },
+  nav: {
+    ariaLabel: "Hauptnavigation",
+    menuAriaLabel: "Navigationsmenü",
+    menuLabel: "Menü öffnen",
+    closeMenuLabel: "Menü schließen",
+    ctaLabel: "Probestunde buchen",
+    ctaAriaLabel:
+      "WhatsApp-Unterhaltung öffnen, um eine Probestunde zu buchen (neues Fenster)",
+    whatsappMessage:
+      "Hallo! Ich möchte gerne eine Englisch-Probestunde bei Best Fluency buchen.",
+    links: {
+      modalities: "Unterrichtsformen",
+      method: "Methode",
+      bestKids: "Best Kids",
+      testimonials: "Erfahrungsberichte",
+      faq: "FAQ",
+    },
+  },
   foundation: {
     eyebrow: "BEST FLUENCY LANGUAGE SCHOOL · AMADORA UND ONLINE",
     notice:

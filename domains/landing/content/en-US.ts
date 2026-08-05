@@ -16,6 +16,24 @@ export const enUS: LandingContent = {
     toggleTheme: "Toggle light and dark theme",
     languageSwitcherLabel: "Select language",
   },
+  nav: {
+    ariaLabel: "Main navigation",
+    menuAriaLabel: "Navigation menu",
+    menuLabel: "Open menu",
+    closeMenuLabel: "Close menu",
+    ctaLabel: "Book a trial lesson",
+    ctaAriaLabel:
+      "Open a WhatsApp conversation to book a trial lesson (new window)",
+    whatsappMessage:
+      "Hello! I would like to book a trial English lesson at Best Fluency.",
+    links: {
+      modalities: "Modalities",
+      method: "Method",
+      bestKids: "Best Kids",
+      testimonials: "Testimonials",
+      faq: "FAQ",
+    },
+  },
   foundation: {
     eyebrow: "BEST FLUENCY LANGUAGE SCHOOL · AMADORA AND ONLINE",
     notice:
