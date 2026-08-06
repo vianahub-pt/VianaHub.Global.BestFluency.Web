@@ -191,6 +191,7 @@ export const enUS: LandingContent = {
   },
 
   testimonials: {
+    starsAriaLabel: "stars",
     h2: "What Best Fluency students say",
     subtitle: "Real experiences from people who are learning and growing with us.",
     items: [
