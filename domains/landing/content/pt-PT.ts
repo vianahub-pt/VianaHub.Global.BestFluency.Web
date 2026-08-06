@@ -15,6 +15,24 @@ export const ptPT: LandingContent = {
     toggleTheme: "Alternar tema claro e escuro",
     languageSwitcherLabel: "Selecionar idioma",
   },
+  nav: {
+    ariaLabel: "Navegação principal",
+    menuAriaLabel: "Menu de navegação",
+    menuLabel: "Abrir menu",
+    closeMenuLabel: "Fechar menu",
+    ctaLabel: "Marcar aula experimental",
+    ctaAriaLabel:
+      "Abrir conversa no WhatsApp para marcar uma aula experimental (nova janela)",
+    whatsappMessage:
+      "Olá! Gostaria de marcar uma aula experimental de inglês na Best Fluency.",
+    links: {
+      modalities: "Modalidades",
+      method: "Método",
+      bestKids: "Best Kids",
+      testimonials: "Depoimentos",
+      faq: "FAQ",
+    },
+  },
   foundation: {
     eyebrow: "BEST FLUENCY LANGUAGE SCHOOL · AMADORA E ONLINE",
     notice:
