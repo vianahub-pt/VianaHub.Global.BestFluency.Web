@@ -1,7 +1,7 @@
 import { notFound } from "next/navigation";
 
 import { localeCodeForSegment } from "@/core/config/locales";
-import { FoundationPage } from "@/domains/landing/components/foundation-page";
+import { LandingPage } from "@/domains/landing/components/landing-page";
 
 type Params = Promise<{ locale: string }>;
 
@@ -11,5 +11,5 @@ export default async function LocalePage({ params }: { params: Params }) {
   const code = localeCodeForSegment(segment);
   if (!code) notFound();
 
-  return <FoundationPage locale={code} />;
+  return <LandingPage locale={code} />;
 }
