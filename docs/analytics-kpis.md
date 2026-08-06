@@ -51,9 +51,14 @@ Emissor: `WhatsAppLink` → helper central `trackWhatsAppClick(section, ctaLabel
 | `modality` | enum | condicional | `individual`, `group` ou `best_kids` |
 | `utm_source` / `utm_medium` / `utm_campaign` / `utm_term` / `utm_content` | string | condicional | UTM da sessão, quando disponíveis |
 
-Os UTM são lidos de `location.search` **uma única vez por sessão** (client-side,
-guardado) e reutilizados em todos os eventos — preservando a atribuição da
-campanha mesmo com navegação entre os 7 idiomas.
+Os UTM são lidos de `location.search` **uma única vez por sessão** (client-side)
+e persistidos no `sessionStorage` (`best-fluency:utm:session`), sendo
+reutilizados em todos os eventos — preservando a atribuição da campanha mesmo
+com navegação SPA entre os 7 idiomas. A persistência em `sessionStorage` é
+necessária porque a navegação SPA do Next.js App Router cria novas instâncias
+do módulo por chunk/segmento de rota (uma cache apenas em memória seria
+reiniciada ao trocar de idioma). Navegações seguintes **sem** UTM na URL não
+sobrescrevem os UTM capturados na entrada da sessão.
 
 ### `phone_click` — clique no telefone (footer)
 
@@ -131,7 +136,7 @@ Com o token preenchido (ou não — o evento de clique independe do beacon):
 5. Confirmar que `section`/`cta_label`/`modality` batem com a tabela acima e que
    os UTM de teste aparecem **em todos** os eventos (lidos uma vez na sessão).
 6. Navegar para outra rota de idioma (`/en/`) e clicar num CTA: os UTM devem
-   persistir (cache de sessão).
+   persistir (sessionStorage, não sobrescritos por URLs sem UTM).
 7. Verificar que NENHUM request para `googletagmanager.com`, `googleadservices`
    ou `facebook.net` aparece na aba Network.
 8. Confirmar que o beacon `static.cloudflareinsights.com/beacon.min.js` só é
@@ -139,7 +144,7 @@ Com o token preenchido (ou não — o evento de clique independe do beacon):
 
 ## Arquivos relacionados
 
-- `shared/lib/analytics.ts` — modelo de eventos, UTM de sessão, `trackWhatsAppClick`
+- `shared/lib/analytics.ts` — modelo de eventos, UTM de sessão (sessionStorage), `trackWhatsAppClick`
 - `shared/components/whatsapp-link.tsx` — CTA WhatsApp com evento
 - `shared/components/phone-link.tsx` — CTA telefone com evento
 - `shared/components/analytics/cloudflare-web-analytics.tsx` — beacon CF
