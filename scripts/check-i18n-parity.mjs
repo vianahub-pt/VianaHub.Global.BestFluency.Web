@@ -134,19 +134,51 @@ if (contents.has(REFERENCE_CODE)) {
   }
 }
 
-// --- 5. Relatório final ---
+// --- 5. Paridade do contrato de conteúdo da landing (issue #8) ---
+// O contrato TS (domains/landing/content/{code}.ts) é tipado: o typecheck
+// garante que todos os locales implementam exatamente as mesmas chaves de
+// LandingContent. Esta verificação adicional protege o build contra ficheiros
+// de conteúdo em falta ou sem a tipagem do contrato (rede de segurança extra
+// sobre o gate de common.json, sem alterar o comportamento existente).
+const contentDir = join(rootDir, "domains", "landing", "content");
+const contentTypesPath = join(contentDir, "types.ts");
+
+if (!existsSync(contentTypesPath)) {
+  fail("domains/landing/content/types.ts em falta (contrato LandingContent).");
+} else {
+  const typesSrc = readFileSync(contentTypesPath, "utf8");
+  if (!/export interface LandingContent\b/.test(typesSrc)) {
+    fail("domains/landing/content/types.ts nao declara o contrato LandingContent.");
+  }
+
+  for (const code of sortedExpected) {
+    const contentFile = join(contentDir, `${code}.ts`);
+    if (!existsSync(contentFile)) {
+      fail(`domains/landing/content/${code}.ts em falta (contrato de conteúdo).`);
+      continue;
+    }
+    const contentSrc = readFileSync(contentFile, "utf8");
+    if (!contentSrc.includes(": LandingContent")) {
+      fail(
+        `domains/landing/content/${code}.ts nao implementa o contrato LandingContent.`,
+      );
+    }
+  }
+}
+
+// --- 6. Relatório final ---
 if (errors.length > 0) {
   console.error("[i18n-parity] FALHOU — a paridade de i18n nao esta garantida:");
   for (const error of errors) {
     console.error(`  - ${error}`);
   }
   console.error(
-    "[i18n-parity] Corrija os ficheiros em locales/ e volte a executar o build.",
+    "[i18n-parity] Corrija os ficheiros em locales/ ou domains/landing/content/ e volte a executar o build.",
   );
   process.exit(1);
 }
 
 const keyCount = flattenKeys(contents.get(REFERENCE_CODE)).size;
 ok(
-  `OK — ${registeredCodes.length} locales × ${keyCount} chaves, sem chaves em falta nem extras.`,
+  `OK — ${registeredCodes.length} locales × ${keyCount} chaves em common.json e contrato de conteúdo presentes nos ${sortedExpected.length} locales.`,
 );
