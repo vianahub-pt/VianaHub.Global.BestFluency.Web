@@ -155,6 +155,8 @@ export interface LandingContent {
   testimonials: {
     h2: string;
     subtitle: string;
+    /** Sufixo localizado do nome acessível das estrelas (ex.: "estrelas"). */
+    starsAriaLabel: string;
     items: {
       name: string;
       source: string;

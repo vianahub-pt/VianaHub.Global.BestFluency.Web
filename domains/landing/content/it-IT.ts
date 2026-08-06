@@ -191,6 +191,7 @@ export const itIT: LandingContent = {
   },
 
   testimonials: {
+    starsAriaLabel: "stelle",
     h2: "Cosa dicono gli studenti di Best Fluency",
     subtitle: "Esperienze reali di chi sta imparando e crescendo con noi.",
     items: [

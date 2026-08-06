@@ -12,6 +12,7 @@ export const analyticsSections = [
   "hero",
   "individual",
   "group",
+  "in_person",
   "best_kids",
   "testimonials",
   "journey",
