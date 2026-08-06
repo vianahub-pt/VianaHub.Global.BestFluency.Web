@@ -36,6 +36,14 @@ export function MobileMenu({ locale }: MobileMenuProps) {
   const panelRef = useRef<HTMLDivElement>(null);
   const triggerRef = useRef<HTMLButtonElement>(null);
   const wrapperRef = useRef<HTMLDivElement>(null);
+  // Timer do retorno de foco ao fechar por clique fora. Vive numa ref para
+  // sobreviver ao re-render do React (que roda os cleanups dos effects
+  // `[isOpen]` na microtask) e só é limpo no unmount — caso contrário o
+  // `clearTimeout` cancelaria o `setTimeout(0)` antes da macrotask executar o
+  // `focus()`, deixando o `activeElement` em `body` (bug #2, 2ª ocorrência).
+  const focusTimeoutRef = useRef<ReturnType<typeof setTimeout> | undefined>(
+    undefined,
+  );
 
   const closeMenu = () => setIsOpen(false);
 
@@ -76,25 +84,37 @@ export function MobileMenu({ locale }: MobileMenuProps) {
   // O retorno de foco é diferido com `setTimeout(0)` — e não aplicado
   // diretamente no `pointerdown` — porque o browser reaplica o foco default
   // no `mousedown`/`touchend` subsequente, revertendo o foco para `body`.
-  // O atraso garante que o foco seja aplicado após os eventos de input do
-  // navegador, tanto para mouse quanto para toque.
+  // O timer é guardado na ref `focusTimeoutRef` e NÃO é limpo no cleanup
+  // deste effect: o cleanup roda na microtask do re-render do React (quando
+  // o `isOpen` vira `false`) e cancelaria o `setTimeout(0)` antes da
+  // macrotask executar o `focus()`. A limpeza ocorre apenas no unmount (ver
+  // effect abaixo), garantindo que o foco retorne ao botão após o dismiss.
   useEffect(() => {
     if (!isOpen) return;
-    let focusTimeout: ReturnType<typeof setTimeout> | undefined;
     function handlePointerDown(event: PointerEvent) {
       if (!wrapperRef.current?.contains(event.target as Node)) {
         setIsOpen(false);
-        focusTimeout = setTimeout(() => {
+        focusTimeoutRef.current = setTimeout(() => {
           triggerRef.current?.focus();
+          focusTimeoutRef.current = undefined;
         }, 0);
       }
     }
     document.addEventListener("pointerdown", handlePointerDown);
     return () => {
       document.removeEventListener("pointerdown", handlePointerDown);
-      if (focusTimeout !== undefined) clearTimeout(focusTimeout);
     };
   }, [isOpen]);
+
+  // Limpa o timer do retorno de foco APENAS no unmount do componente.
+  useEffect(() => {
+    return () => {
+      if (focusTimeoutRef.current !== undefined) {
+        clearTimeout(focusTimeoutRef.current);
+        focusTimeoutRef.current = undefined;
+      }
+    };
+  }, []);
 
   return (
     // NOTA: o wrapper NÃO pode ser `relative` — o painel `absolute inset-x-0`
