@@ -1,5 +1,3 @@
-import Image from "next/image";
-
 import type { LocaleCode } from "@/core/config/locales";
 import { site } from "@/core/config/site";
 import { getLandingContent } from "@/domains/landing/content";
@@ -27,11 +25,14 @@ export function SiteFooter({ locale }: { locale: LocaleCode }) {
       <div className="mx-auto w-full max-w-7xl px-4 py-10 md:px-8">
         <div className="flex flex-col gap-8 md:flex-row md:items-start md:justify-between">
           <div className="flex items-center gap-3">
-            <Image
-              src="/logo.jpeg"
+            {/* eslint-disable-next-line @next/next/no-img-element -- srcSet responsivo não é suportado por next/image com images.unoptimized (spec §25). */}
+            <img
+              src="/logo-160.webp"
+              srcSet="/logo-80.webp 80w, /logo-160.webp 160w"
+              sizes="40px"
               alt=""
-              width={777}
-              height={779}
+              width={160}
+              height={160}
               loading="lazy"
               className="h-10 w-10 rounded-full object-cover"
             />

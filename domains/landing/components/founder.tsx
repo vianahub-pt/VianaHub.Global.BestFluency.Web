@@ -8,8 +8,8 @@ import { SectionHeading } from "@/shared/components/ui/section-heading";
  * Fundadora (spec §15).
  *
  * - H2 + três parágrafos no contrato de conteúdo;
- * - fotografia autorizada public/ceo.jpeg (400×400) com dimensões explícitas
- *   e lazy loading (abaixo da dobra);
+ * - fotografia autorizada public/ceo.jpeg (400×400, otimizada para
+ *   public/ceo.webp) com dimensões explícitas e lazy loading (abaixo da dobra);
  * - desktop: texto e fotografia lado a lado; mobile: texto antes da imagem
  *   (teste de leitura da spec);
  * - sem afirmações profissionais que não constem no contrato.
@@ -41,7 +41,7 @@ export function Founder({ locale }: { locale: LocaleCode }) {
 
           <div className="lg:order-first lg:justify-self-center">
             <Image
-              src="/ceo.jpeg"
+              src="/ceo.webp"
               alt={founder.imageAlt}
               width={400}
               height={400}
