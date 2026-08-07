@@ -1,0 +1,130 @@
+# ===========================================================================
+# nginx.conf.template — modo HTTP (sem certificados montados).
+#
+# Usado quando /etc/nginx/certs não contém fullchain.pem + privkey.pem
+# (dev local / primeiro arranque). Serve o export estático em HTTP na porta
+# interna 8080 (pública 80 no Compose). Com certificados montados, o
+# docker-entrypoint.sh usa nginx.ssl.conf.template (HTTPS + redirect).
+#
+# Container executa como usuário não-root (uid 101), por isso as portas
+# internas são 8080/8443 (>= 1024) e as públicas 80/443 são mapeadas no
+# docker-compose.yml.
+# ===========================================================================
+
+load_module /etc/nginx/modules/ngx_http_brotli_filter_module.so;
+load_module /etc/nginx/modules/ngx_http_brotli_static_module.so;
+
+user nginx;
+worker_processes auto;
+pid /tmp/nginx.pid;
+
+error_log /dev/stderr notice;
+
+events {
+    worker_connections 1024;
+}
+
+http {
+    include /etc/nginx/mime.types;
+    default_type application/octet-stream;
+
+    # Logs para stdout/stderr (aceite: logs no stdout/stderr do container).
+    log_format main '$remote_addr - $remote_user [$time_local] "$request" '
+                    '$status $body_bytes_sent "$http_referer" '
+                    '"$http_user_agent" "$http_x_forwarded_for"';
+    access_log /dev/stdout main;
+
+    sendfile on;
+    tcp_nopush on;
+    tcp_nodelay on;
+    keepalive_timeout 65;
+    server_tokens off;
+
+    # ---- Compressão na origem (Brotli preferido, gzip como fallback) ----
+    gzip on;
+    gzip_vary on;
+    gzip_comp_level 5;
+    gzip_min_length 1024;
+    gzip_proxied any;
+    gzip_types
+        application/javascript
+        application/json
+        application/manifest+json
+        application/rss+xml
+        application/xml
+        image/svg+xml
+        text/css
+        text/plain
+        text/xml;
+
+    brotli on;
+    brotli_comp_level 6;
+    brotli_min_length 1024;
+    brotli_static on;
+    brotli_types
+        application/javascript
+        application/json
+        application/manifest+json
+        application/rss+xml
+        application/xml
+        image/svg+xml
+        text/css
+        text/plain
+        text/xml;
+
+    server {
+        listen 8080;
+        server_name _;
+
+        root /usr/share/nginx/html;
+        index index.html;
+
+        include /etc/nginx/conf.d/security-headers.conf;
+
+        # Endpoint de saúde (aceite: healthcheck funcional; sem ficheiro).
+        location = /healthz {
+            access_log off;
+            default_type text/plain;
+            return 200 "ok\n";
+        }
+
+        # Página 404 própria do export (404.html gerado pelo Next.js).
+        # internal: só é servida via error_page, nunca por acesso direto.
+        error_page 404 /404.html;
+        location = /404.html {
+            internal;
+            include /etc/nginx/conf.d/security-headers.conf;
+            add_header Cache-Control "no-cache";
+        }
+
+        # Assets com hash do Next (_next/static): cache longo + immutable.
+        location ^~ /_next/static/ {
+            include /etc/nginx/conf.d/security-headers.conf;
+            add_header Cache-Control "public, max-age=31536000, immutable";
+            try_files $uri =404;
+        }
+
+        # Assets sem hash (public/, ex.: logo, og-image, imagens de secção):
+        # cache curto + revalidação (nomes não imutáveis após redeploy).
+        location ~* \.(?:avif|webp|png|jpe?g|gif|svg|ico|woff2?|css|js)$ {
+            include /etc/nginx/conf.d/security-headers.conf;
+            add_header Cache-Control "public, max-age=3600, must-revalidate";
+            try_files $uri =404;
+        }
+
+        # HTML: revalidação no browser (no-cache = guarda mas revalida).
+        location ~* \.html$ {
+            include /etc/nginx/conf.d/security-headers.conf;
+            add_header Cache-Control "no-cache";
+            try_files $uri =404;
+        }
+
+        # Fallback puro estático (sem serviço de app dinâmico): diretórios de
+        # locale servem o index.html; rota inexistente resolve em 404 própria.
+        location / {
+            include /etc/nginx/conf.d/security-headers.conf;
+            add_header Cache-Control "no-cache";
+            try_files $uri $uri/ =404;
+        }
+    }
+}

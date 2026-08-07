@@ -1,0 +1,16 @@
+# Security headers — incluído no server e em cada location que adiciona
+# headers próprios (no Nginx, add_header num location substitui os do server).
+#
+# O placeholder ${CSP_DEFAULT_SRC} é substituído pelo docker-entrypoint.sh
+# (variável de ambiente CSP_DEFAULT_SRC; default 'self' — ver runbook-deploy.md).
+#
+# Nota CSP: o export estático do Next.js usa scripts inline de bootstrap
+# (RSC/theme), por isso script-src precisa de 'unsafe-inline' — sem nonces num
+# artefacto 100% estático. O token de analytics é injetado APENAS quando
+# NEXT_PUBLIC_CF_WEB_ANALYTICS_TOKEN está preenchido (issue #12); os hosts do
+# beacon já ficam permitidos para não exigir rebuild quando o token for ativado.
+add_header Content-Security-Policy "default-src ${CSP_DEFAULT_SRC}; script-src 'self' 'unsafe-inline' https://static.cloudflareinsights.com; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob:; font-src 'self' data:; connect-src 'self' https://cloudflareinsights.com; object-src 'none'; base-uri 'self'; frame-ancestors 'none'; form-action 'self';" always;
+add_header X-Content-Type-Options "nosniff" always;
+add_header Referrer-Policy "strict-origin-when-cross-origin" always;
+add_header X-Frame-Options "DENY" always;
+add_header Permissions-Policy "camera=(), microphone=(), geolocation=(), payment=(), usb=()" always;
