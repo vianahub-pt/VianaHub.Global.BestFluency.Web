@@ -12,6 +12,10 @@ const nextConfig: NextConfig = {
     // os assets são pré-otimizados (AVIF/WebP + srcset) na pipeline de assets.
     unoptimized: true,
   },
+  // Workaround para vercel/next.js#85374: achata os payloads RSC do export
+  // estático no formato pontilhado que o runtime do browser solicita (evita
+  // 404 de prefetch no console). Remover quando o upstream corrigir.
+  adapterPath: require.resolve("./build/adapter.js"),
 };
 
 export default nextConfig;
