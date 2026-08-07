@@ -1,6 +1,4 @@
-import Image from "next/image";
 import Link from "next/link";
-
 import { getLocale, type LocaleCode } from "@/core/config/locales";
 import { site } from "@/core/config/site";
 import { getLandingContent } from "@/domains/landing/content";
@@ -35,12 +33,14 @@ export function SiteHeader({ locale }: { locale: LocaleCode }) {
           className="flex min-h-11 items-center gap-3 rounded-md focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring"
           aria-label={site.name}
         >
-          <Image
-            src="/logo.jpeg"
+          {/* eslint-disable-next-line @next/next/no-img-element -- srcSet responsivo não é suportado por next/image com images.unoptimized (spec §25); o hero mantém next/image com fetchPriority para o LCP. */}
+          <img
+            src="/logo-160.webp"
+            srcSet="/logo-80.webp 80w, /logo-160.webp 160w"
+            sizes="40px"
             alt=""
-            width={777}
-            height={779}
-            priority
+            width={160}
+            height={160}
             className="h-9 w-9 rounded-full object-cover"
           />
           <span className="text-base font-semibold tracking-tight">

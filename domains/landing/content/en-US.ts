@@ -31,7 +31,7 @@ export const enUS: LandingContent = {
     closeMenuLabel: "Close menu",
     ctaLabel: "Book a trial lesson",
     ctaAriaLabel:
-      "Open a WhatsApp conversation to book a trial lesson (new window)",
+      "Book a trial lesson: open a WhatsApp conversation (new window)",
     whatsappMessage: TRIAL_MESSAGE,
     links: {
       modalities: "Modalities",
@@ -49,7 +49,7 @@ export const enUS: LandingContent = {
   },
   cta: {
     whatsappLabel: "Chat with us on WhatsApp",
-    whatsappAriaLabel: "Open a WhatsApp conversation with Best Fluency (new window)",
+    whatsappAriaLabel: "Chat with us on WhatsApp: open a WhatsApp conversation with Best Fluency (new window)",
     whatsappMessage: INFO_MESSAGE,
   },
   notFound: {
@@ -76,7 +76,7 @@ export const enUS: LandingContent = {
       "Develop your communication for work, studies, travel and everyday situations.",
     ctaLabel: "Book a trial lesson",
     ctaAriaLabel:
-      "Open a WhatsApp conversation to book a trial lesson (new window)",
+      "Book a trial lesson: open a WhatsApp conversation (new window)",
     ctaWhatsappMessage: TRIAL_MESSAGE,
     secondaryCtaLabel: "Explore the lesson options",
     imageAlt: "Best Fluency teacher during a personalized English lesson",
@@ -101,7 +101,7 @@ export const enUS: LandingContent = {
       note: "In person or online",
       ctaLabel: "I want to learn more about one-on-one lessons",
       ctaAriaLabel:
-        "Open a WhatsApp conversation to get information about one-on-one lessons (new window)",
+        "I want to learn more about one-on-one lessons: open a WhatsApp conversation (new window)",
       whatsappMessage:
         "Hello! I would like to receive information about Best Fluency's one-on-one English lessons.",
     },
@@ -111,7 +111,7 @@ export const enUS: LandingContent = {
       note: "Subject to group formation and availability",
       ctaLabel: "I want to learn more about the groups",
       ctaAriaLabel:
-        "Open a WhatsApp conversation to get information about the groups (new window)",
+        "I want to learn more about the groups: open a WhatsApp conversation (new window)",
       whatsappMessage:
         "Hello! I would like to receive information about Best Fluency's English groups.",
     },
@@ -148,7 +148,7 @@ export const enUS: LandingContent = {
       "A close and welcoming space to learn English with personalized support.",
     ],
     ctaLabel: "View location",
-    ctaAriaLabel: "Open Best Fluency's location on Google Maps (new window)",
+    ctaAriaLabel: "View location: open Best Fluency's location on Google Maps (new window)",
   },
 
   bestKids: {
@@ -184,7 +184,7 @@ export const enUS: LandingContent = {
     ],
     ctaLabel: "Get to know Best Kids",
     ctaAriaLabel:
-      "Open a WhatsApp conversation to get to know Best Kids (new window)",
+      "Get to know Best Kids: open a WhatsApp conversation (new window)",
     whatsappMessage:
       "Hello! I would like more information about Best Kids lessons.",
     imageAlt: "Faísca, Best Kids mascot, in English lessons for children",
@@ -224,7 +224,7 @@ export const enUS: LandingContent = {
     ],
     ctaLabel: "Book a trial lesson",
     ctaAriaLabel:
-      "Open a WhatsApp conversation to book a trial lesson (new window)",
+      "Book a trial lesson: open a WhatsApp conversation (new window)",
     whatsappMessage: TRIAL_MESSAGE,
   },
 
@@ -262,7 +262,7 @@ export const enUS: LandingContent = {
     ],
     ctaLabel: "Take the first step",
     ctaAriaLabel:
-      "Open a WhatsApp conversation to take the first step (new window)",
+      "Take the first step: open a WhatsApp conversation (new window)",
     whatsappMessage: INFO_MESSAGE,
   },
 
@@ -335,7 +335,7 @@ export const enUS: LandingContent = {
     text: "Talk to us on WhatsApp, ask your questions and discover the lesson option that best suits your level, goals and routine.",
     ctaLabel: "Book a trial lesson",
     ctaAriaLabel:
-      "Open a WhatsApp conversation to book a trial lesson (new window)",
+      "Book a trial lesson: open a WhatsApp conversation (new window)",
     whatsappMessage:
       "Hello! I would like to receive information and book a trial English lesson at Best Fluency.",
     complement: "In-person lessons in Amadora and online.",

@@ -69,6 +69,7 @@ export function Testimonials({ locale }: { locale: LocaleCode }) {
 
                 {item.stars !== null ? (
                   <p
+                    role="img"
                     className="mt-3 flex items-center gap-1 text-accent"
                     aria-label={`${item.stars} ${testimonials.starsAriaLabel}`}
                   >

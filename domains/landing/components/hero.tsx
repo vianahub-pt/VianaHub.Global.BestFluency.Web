@@ -85,6 +85,7 @@ export function Hero({ locale }: { locale: LocaleCode }) {
                 width={1200}
                 height={900}
                 priority
+                fetchPriority="high"
                 className="h-auto w-full"
               />
             </div>

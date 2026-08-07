@@ -31,7 +31,7 @@ export const ptPT: LandingContent = {
     closeMenuLabel: "Fechar menu",
     ctaLabel: "Marcar aula experimental",
     ctaAriaLabel:
-      "Abrir conversa no WhatsApp para marcar uma aula experimental (nova janela)",
+      "Marcar aula experimental — abrir conversa no WhatsApp (nova janela)",
     whatsappMessage: TRIAL_MESSAGE,
     links: {
       modalities: "Modalidades",
@@ -49,7 +49,7 @@ export const ptPT: LandingContent = {
   },
   cta: {
     whatsappLabel: "Falar connosco no WhatsApp",
-    whatsappAriaLabel: "Abrir conversa no WhatsApp com a Best Fluency (nova janela)",
+    whatsappAriaLabel: "Falar connosco no WhatsApp — abrir conversa com a Best Fluency (nova janela)",
     whatsappMessage: INFO_MESSAGE,
   },
   notFound: {
@@ -76,7 +76,7 @@ export const ptPT: LandingContent = {
       "Desenvolva a comunicação para o trabalho, os estudos, as viagens e as situações do dia a dia.",
     ctaLabel: "Marcar aula experimental",
     ctaAriaLabel:
-      "Abrir conversa no WhatsApp para marcar uma aula experimental (nova janela)",
+      "Marcar aula experimental — abrir conversa no WhatsApp (nova janela)",
     ctaWhatsappMessage: TRIAL_MESSAGE,
     secondaryCtaLabel: "Conhecer as modalidades",
     imageAlt: "Professora da Best Fluency durante uma aula de inglês personalizada",
@@ -101,7 +101,7 @@ export const ptPT: LandingContent = {
       note: "Presencial ou online",
       ctaLabel: "Quero saber mais sobre aulas individuais",
       ctaAriaLabel:
-        "Abrir conversa no WhatsApp para receber informações sobre aulas individuais (nova janela)",
+        "Quero saber mais sobre aulas individuais — abrir conversa no WhatsApp (nova janela)",
       whatsappMessage:
         "Olá! Gostaria de receber informações sobre as aulas individuais de inglês da Best Fluency.",
     },
@@ -111,7 +111,7 @@ export const ptPT: LandingContent = {
       note: "Sujeito à formação de turma e disponibilidade",
       ctaLabel: "Quero saber mais sobre as turmas",
       ctaAriaLabel:
-        "Abrir conversa no WhatsApp para receber informações sobre as turmas (nova janela)",
+        "Quero saber mais sobre as turmas — abrir conversa no WhatsApp (nova janela)",
       whatsappMessage:
         "Olá! Gostaria de receber informações sobre as turmas de inglês da Best Fluency.",
     },
@@ -148,7 +148,7 @@ export const ptPT: LandingContent = {
       "Um espaço próximo e acolhedor para aprender inglês com acompanhamento personalizado.",
     ],
     ctaLabel: "Ver localização",
-    ctaAriaLabel: "Abrir a localização da Best Fluency no Google Maps (nova janela)",
+    ctaAriaLabel: "Ver localização — abrir a localização da Best Fluency no Google Maps (nova janela)",
   },
 
   bestKids: {
@@ -184,7 +184,7 @@ export const ptPT: LandingContent = {
     ],
     ctaLabel: "Conhecer a Best Kids",
     ctaAriaLabel:
-      "Abrir conversa no WhatsApp para conhecer a Best Kids (nova janela)",
+      "Conhecer a Best Kids — abrir conversa no WhatsApp (nova janela)",
     whatsappMessage:
       "Olá! Gostaria de receber mais informações sobre as aulas Best Kids.",
     imageAlt: "Faísca, mascote da Best Kids, nas aulas de inglês para crianças",
@@ -224,7 +224,7 @@ export const ptPT: LandingContent = {
     ],
     ctaLabel: "Marcar aula experimental",
     ctaAriaLabel:
-      "Abrir conversa no WhatsApp para marcar uma aula experimental (nova janela)",
+      "Marcar aula experimental — abrir conversa no WhatsApp (nova janela)",
     whatsappMessage: TRIAL_MESSAGE,
   },
 
@@ -262,7 +262,7 @@ export const ptPT: LandingContent = {
     ],
     ctaLabel: "Dar o primeiro passo",
     ctaAriaLabel:
-      "Abrir conversa no WhatsApp para dar o primeiro passo (nova janela)",
+      "Dar o primeiro passo — abrir conversa no WhatsApp (nova janela)",
     whatsappMessage: INFO_MESSAGE,
   },
 
@@ -335,7 +335,7 @@ export const ptPT: LandingContent = {
     text: "Fale connosco pelo WhatsApp, esclareça as suas dúvidas e descubra a modalidade mais adequada ao seu nível, aos seus objetivos e à sua rotina.",
     ctaLabel: "Marcar aula experimental",
     ctaAriaLabel:
-      "Abrir conversa no WhatsApp para marcar uma aula experimental (nova janela)",
+      "Marcar aula experimental — abrir conversa no WhatsApp (nova janela)",
     whatsappMessage:
       "Olá! Gostaria de receber informações e marcar uma aula experimental de inglês na Best Fluency.",
     complement: "Aulas presenciais na Amadora e online.",

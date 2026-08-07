@@ -31,7 +31,7 @@ export const esES: LandingContent = {
     closeMenuLabel: "Cerrar menú",
     ctaLabel: "Reservar clase de prueba",
     ctaAriaLabel:
-      "Abrir una conversación de WhatsApp para reservar una clase de prueba (nueva ventana)",
+      "Reservar clase de prueba — abrir una conversación de WhatsApp (nueva ventana)",
     whatsappMessage: TRIAL_MESSAGE,
     links: {
       modalities: "Modalidades",
@@ -49,7 +49,7 @@ export const esES: LandingContent = {
   },
   cta: {
     whatsappLabel: "Hable con nosotros por WhatsApp",
-    whatsappAriaLabel: "Abrir una conversación de WhatsApp con Best Fluency (nueva ventana)",
+    whatsappAriaLabel: "Hable con nosotros por WhatsApp — abrir una conversación con Best Fluency (nueva ventana)",
     whatsappMessage: INFO_MESSAGE,
   },
   notFound: {
@@ -76,7 +76,7 @@ export const esES: LandingContent = {
       "Desarrolla la comunicación para el trabajo, los estudios, los viajes y las situaciones del día a día.",
     ctaLabel: "Reservar clase de prueba",
     ctaAriaLabel:
-      "Abrir una conversación de WhatsApp para reservar una clase de prueba (nueva ventana)",
+      "Reservar clase de prueba — abrir una conversación de WhatsApp (nueva ventana)",
     ctaWhatsappMessage: TRIAL_MESSAGE,
     secondaryCtaLabel: "Conocer las modalidades",
     imageAlt: "Profesora de Best Fluency durante una clase de inglés personalizada",
@@ -101,7 +101,7 @@ export const esES: LandingContent = {
       note: "Presencial u online",
       ctaLabel: "Quiero saber más sobre las clases individuales",
       ctaAriaLabel:
-        "Abrir una conversación de WhatsApp para recibir información sobre las clases individuales (nueva ventana)",
+        "Quiero saber más sobre las clases individuales — abrir una conversación de WhatsApp (nueva ventana)",
       whatsappMessage:
         "¡Hola! Me gustaría recibir información sobre las clases individuales de inglés de Best Fluency.",
     },
@@ -111,7 +111,7 @@ export const esES: LandingContent = {
       note: "Sujeto a la formación del grupo y a la disponibilidad",
       ctaLabel: "Quiero saber más sobre los grupos",
       ctaAriaLabel:
-        "Abrir una conversación de WhatsApp para recibir información sobre los grupos (nueva ventana)",
+        "Quiero saber más sobre los grupos — abrir una conversación de WhatsApp (nueva ventana)",
       whatsappMessage:
         "¡Hola! Me gustaría recibir información sobre los grupos de inglés de Best Fluency.",
     },
@@ -148,7 +148,7 @@ export const esES: LandingContent = {
       "Un espacio cercano y acogedor para aprender inglés con acompañamiento personalizado.",
     ],
     ctaLabel: "Ver ubicación",
-    ctaAriaLabel: "Abrir la ubicación de Best Fluency en Google Maps (nueva ventana)",
+    ctaAriaLabel: "Ver ubicación — abrir la ubicación de Best Fluency en Google Maps (nueva ventana)",
   },
 
   bestKids: {
@@ -184,7 +184,7 @@ export const esES: LandingContent = {
     ],
     ctaLabel: "Conocer Best Kids",
     ctaAriaLabel:
-      "Abrir una conversación de WhatsApp para conocer Best Kids (nueva ventana)",
+      "Conocer Best Kids — abrir una conversación de WhatsApp (nueva ventana)",
     whatsappMessage:
       "¡Hola! Me gustaría recibir más información sobre las clases Best Kids.",
     imageAlt: "Faísca, mascota de Best Kids, en las clases de inglés para niños",
@@ -224,7 +224,7 @@ export const esES: LandingContent = {
     ],
     ctaLabel: "Reservar clase de prueba",
     ctaAriaLabel:
-      "Abrir una conversación de WhatsApp para reservar una clase de prueba (nueva ventana)",
+      "Reservar clase de prueba — abrir una conversación de WhatsApp (nueva ventana)",
     whatsappMessage: TRIAL_MESSAGE,
   },
 
@@ -262,7 +262,7 @@ export const esES: LandingContent = {
     ],
     ctaLabel: "Dar el primer paso",
     ctaAriaLabel:
-      "Abrir una conversación de WhatsApp para dar el primer paso (nueva ventana)",
+      "Dar el primer paso — abrir una conversación de WhatsApp (nueva ventana)",
     whatsappMessage: INFO_MESSAGE,
   },
 
@@ -335,7 +335,7 @@ export const esES: LandingContent = {
     text: "Habla con nosotros por WhatsApp, aclara tus dudas y descubre la modalidad más adecuada a tu nivel, tus objetivos y tu rutina.",
     ctaLabel: "Reservar clase de prueba",
     ctaAriaLabel:
-      "Abrir una conversación de WhatsApp para reservar una clase de prueba (nueva ventana)",
+      "Reservar clase de prueba — abrir una conversación de WhatsApp (nueva ventana)",
     whatsappMessage:
       "¡Hola! Me gustaría recibir información y reservar una clase de prueba de inglés en Best Fluency.",
     complement: "Clases presenciales en Amadora y online.",
