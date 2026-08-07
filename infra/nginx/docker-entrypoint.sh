@@ -20,7 +20,7 @@ set -eu
 # Export OBRIGATÓRIO: o envsubst é um processo externo e só vê variáveis de
 # ambiente exportadas. Sem export, docker run direto (sem compose) renderizava
 # `default-src ;` vazio (QA, bug de média severidade).
-export CSP_DEFAULT_SRC="${CSP_DEFAULT_SRC:-self}"
+export CSP_DEFAULT_SRC="${CSP_DEFAULT_SRC:-'self'}"
 
 echo "[entrypoint] CSP_DEFAULT_SRC=${CSP_DEFAULT_SRC}" >&2
 
