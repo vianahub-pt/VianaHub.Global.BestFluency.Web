@@ -22,8 +22,14 @@ export const site = {
    */
   indexable: process.env.NEXT_PUBLIC_SITE_INDEXABLE === "true",
 
-  /** Token do Cloudflare Web Analytics (sem cookies; vazio = desativado). */
-  cfAnalyticsToken: process.env.NEXT_PUBLIC_CF_ANALYTICS_TOKEN ?? "",
+  /**
+   * Token do Cloudflare Web Analytics (sem cookies; vazio = desativado).
+   *
+   * Ativado por `NEXT_PUBLIC_CF_WEB_ANALYTICS_TOKEN` (ver docs/analytics-kpis.md
+   * e .env.example). O token real será fornecido quando o domínio definitivo
+   * estiver publicado — enquanto vazio, o beacon não é injetado (spec §22).
+   */
+  cfAnalyticsToken: process.env.NEXT_PUBLIC_CF_WEB_ANALYTICS_TOKEN ?? "",
 
   /** Contactos confirmados (spec §12, §19 e §20). */
   phoneDisplay: "+351 21 474 4028",

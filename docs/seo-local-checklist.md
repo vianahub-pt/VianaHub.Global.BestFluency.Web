@@ -32,7 +32,7 @@ Antes de qualquer ação externa, o build de produção deve ser gerado com:
 ```bash
 NEXT_PUBLIC_SITE_URL=https://<dominio-definitivo>/   # domínio confirmado
 NEXT_PUBLIC_SITE_INDEXABLE=true                      # remove noindex das rotas
-NEXT_PUBLIC_CF_ANALYTICS_TOKEN=<token>               # Cloudflare Web Analytics
+NEXT_PUBLIC_CF_WEB_ANALYTICS_TOKEN=<token>             # Cloudflare Web Analytics (ver docs/analytics-kpis.md)
 npm run build
 ```
 
