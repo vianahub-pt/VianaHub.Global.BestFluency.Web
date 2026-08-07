@@ -29,7 +29,7 @@
 #   SSH_PORT      porta SSH (default: 22)
 #   NEXT_PUBLIC_SITE_URL / NEXT_PUBLIC_SITE_INDEXABLE /
 #   NEXT_PUBLIC_CF_WEB_ANALYTICS_TOKEN   argumentos de build da imagem
-#   CSP_DEFAULT_SRC / HSTS_ENABLED / HSTS_MAX_AGE   runtime do container
+#   CSP_DEFAULT_SRC / HSTS_ENABLED / HSTS_MAX_AGE / HSTS_PRELOAD   runtime do container
 #   ORIGIN_CHECK_URL   URL alternativa para validação pós-deploy (ex.: o IP
 #                      direto da origem antes do DNS/Cloudflare estar pronto)
 # ===========================================================================
@@ -199,6 +199,7 @@ remote_deploy() {
     CSP_DEFAULT_SRC=\"\${CSP_DEFAULT_SRC:-'self'}\" \
     HSTS_ENABLED=\"\${HSTS_ENABLED:-0}\" \
     HSTS_MAX_AGE=\"\${HSTS_MAX_AGE:-31536000}\" \
+    HSTS_PRELOAD=\"\${HSTS_PRELOAD:-0}\" \
       docker compose up -d --no-build
     docker image prune -f >/dev/null 2>&1 || true
   "
@@ -274,18 +275,29 @@ validate() {
     fi
   }
 
-  check "healthcheck (${base_url}/healthz responde 200)" \
-    curl -fsS -o /dev/null -w '%{http_code}' "${base_url}/healthz" | grep -q '^200$'
-  check "página raiz (${base_url}/ responde 200)" \
-    curl -fsS -o /dev/null -w '%{http_code}' "${base_url}/" | grep -q '^200$'
-  check "conteúdo da raiz contém 'Best Fluency'" \
-    curl -fsS "${base_url}/" | grep -qi 'Best Fluency'
-  check "locale /en/ responde 200" \
-    curl -fsS -o /dev/null -w '%{http_code}' "${base_url}/en/" | grep -q '^200$'
+  # Código HTTP extraído ANTES do check. Motivo: o padrão antigo
+  # `check ... | grep -q '^200$'` aplicava o pipe ao STDOUT da função (o log):
+  # o grep -q saía ao encontrar "200" no próprio label -> SIGPIPE no echo ->
+  # pipeline 141 com pipefail -> `set -e` matava o script no 1.º check; e o
+  # grep no label dava falso positivo. Extrair o código e testá-lo remove
+  # ambos (QA issue #14, defeito 4).
+  local http_code
+  http_code="$(curl -fsS -o /dev/null -w '%{http_code}' "${base_url}/healthz" || true)"
+  check "healthcheck (${base_url}/healthz responde 200)" test "${http_code}" = "200"
+
+  http_code="$(curl -fsS -o /dev/null -w '%{http_code}' "${base_url}/" || true)"
+  check "página raiz (${base_url}/ responde 200)" test "${http_code}" = "200"
+
+  local root_body
+  root_body="$(curl -fsS "${base_url}/" || true)"
+  check "conteúdo da raiz contém 'Best Fluency'" grep -qi 'Best Fluency' <<<"${root_body}"
+
+  http_code="$(curl -fsS -o /dev/null -w '%{http_code}' "${base_url}/en/" || true)"
+  check "locale /en/ responde 200" test "${http_code}" = "200"
 
   # Página 404 própria (404.html do export).
-  check "rota inexistente responde 404 com página própria" \
-    curl -s -o /dev/null -w '%{http_code}' "${base_url}/rota-inexistente-xyz" | grep -q '^404$'
+  http_code="$(curl -s -o /dev/null -w '%{http_code}' "${base_url}/rota-inexistente-xyz" || true)"
+  check "rota inexistente responde 404 com página própria" test "${http_code}" = "404"
 
   # Security headers na resposta HTML.
   local html_headers
@@ -312,19 +324,22 @@ validate() {
     else
       log "INFO - CF-Cache-Status ausente (validação direta à origem / sem proxy)."
     fi
+
+    # Compressão na origem: Brotli quando o cliente suporta. Usa o CAMINHO
+    # COMPLETO do asset (o export do Next tem subdiretórios, ex.:
+    # /_next/static/chunks/app/layout-xxx.js). Antes, o basename truncava o
+    # caminho e a validação dava falso negativo (QA, bug de baixa severidade).
+    local asset_headers_br
+    asset_headers_br="$(curl -fsSI -H 'Accept-Encoding: br' "${base_url}${asset_path}" 2>/dev/null || true)"
+    if grep -qi 'content-encoding: br' <<<"${asset_headers_br}"; then
+      log "OK   - compressão Brotli ativa na origem"
+    elif grep -qi 'content-encoding: gzip' <<<"${asset_headers_br}"; then
+      log "OK   - compressão Gzip ativa na origem (Brotli indisponível para este asset)"
+    else
+      log "INFO - Content-Encoding não detetado no asset (pode estar fora do tamanho mínimo ou já comprimido)."
+    fi
   else
     log "INFO - não foi possível extrair asset hashed da página raiz."
-  fi
-
-  # Compressão na origem: Brotli quando o cliente suporta.
-  local accept_encoding
-  accept_encoding="$(curl -fsSI -H 'Accept-Encoding: br' "${base_url}/_next/static/chunks/$(basename "${asset_path:-_none}")" 2>/dev/null || true)"
-  if grep -qi 'content-encoding: br' <<<"${accept_encoding}"; then
-    log "OK   - compressão Brotli ativa na origem"
-  elif grep -qi 'content-encoding: gzip' <<<"${accept_encoding}"; then
-    log "OK   - compressão Gzip ativa na origem (Brotli indisponível para este asset)"
-  else
-    log "INFO - Content-Encoding não detetado no asset (pode estar fora do tamanho mínimo ou já comprimido)."
   fi
 
   if [ "${fail}" = "1" ]; then

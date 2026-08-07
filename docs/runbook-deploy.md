@@ -56,7 +56,7 @@
 | `infra/nginx/nginx.conf.template` | Config HTTP (8080): compressão Brotli+gzip, cache headers, 404 própria, `/healthz`, security headers, `try_files` estático. |
 | `infra/nginx/nginx.ssl.conf.template` | Config HTTPS na origem (8443) + redirect HTTP→HTTPS (8080); TLS 1.2+; mesmo site/headers. |
 | `infra/nginx/security-headers.conf.template` | CSP (configurável por env), `X-Content-Type-Options`, `Referrer-Policy`, `X-Frame-Options`, `Permissions-Policy`. |
-| `infra/nginx/docker-entrypoint.sh` | Renderiza o CSP, deteta certificados e escolhe a config (HTTP ou HTTPS), ativa HSTS só com `HSTS_ENABLED=1`. |
+| `infra/nginx/docker-entrypoint.sh` | Renderiza o CSP, deteta certificados e escolhe a config (HTTP ou HTTPS), ativa HSTS só com `HSTS_ENABLED=1` (`preload` apenas com `HSTS_PRELOAD=1`). |
 | `scripts/deploy.sh` | Deploy reproduzível: build → upload (scp) → backup → swap → validação; `--rollback`, `--dry-run`, purge CF opcional. |
 
 ### Versões fixadas (reprodutibilidade)
@@ -156,6 +156,7 @@ NEXT_PUBLIC_CF_WEB_ANALYTICS_TOKEN=<TOKEN_REAL_CF>
 CSP_DEFAULT_SRC='self'
 HSTS_ENABLED=0            # virar 1 apenas após validar HTTPS completo
 HSTS_MAX_AGE=31536000
+HSTS_PRELOAD=0            # preload é opt-in: só virar 1 após confirmar subdomínios
 ```
 
 Montar os certificados (Cloudflare Origin CA):
@@ -298,7 +299,9 @@ curl -fsSI "https://<DOMINIO>${ASSET}" | grep -i cf-cache-status
      `/en/`, 404, security headers, sem erros de certificado.
    - Depois: `HSTS_ENABLED=1` no `.env` remoto + redeploy (o header é emitido
      pela origem), **ou** ativar HSTS no painel Cloudflare (`Edge Certificates
-     > HSTS`). Não ativar `preload` sem confirmar a política de subdomínios.
+     > HSTS`). Não ativar `preload` sem confirmar a política de subdomínios:
+     o header sai sem `preload` por padrão; só incluir com `HSTS_PRELOAD=1`
+     após confirmar todos os subdomínios servem HTTPS (requisito do hstspreload.org).
 
 ### 8.3 Cache
 
@@ -387,7 +390,7 @@ Recomendado (após o deploy real):
 | `Referrer-Policy` | `strict-origin-when-cross-origin` | — |
 | `X-Frame-Options` | `DENY` (e `frame-ancestors 'none'` no CSP) | — |
 | `Permissions-Policy` | `camera=(), microphone=(), geolocation=(), payment=(), usb=()` | — |
-| `Strict-Transport-Security` | ausente por padrão | `HSTS_ENABLED=1` (após validação) |
+| `Strict-Transport-Security` | ausente por padrão | `HSTS_ENABLED=1` (após validação); `preload` só com `HSTS_PRELOAD=1` |
 
 > **CSP e export estático:** o Next.js emite scripts inline de bootstrap
 > (RSC/theme) — por isso `script-src` inclui `'unsafe-inline'`. Nonces não são

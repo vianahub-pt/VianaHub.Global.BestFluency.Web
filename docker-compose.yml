@@ -42,6 +42,9 @@ services:
       # HSTS: manter 0 até validar HTTPS/subdomínios no lançamento (ver runbook).
       HSTS_ENABLED: ${HSTS_ENABLED:-0}
       HSTS_MAX_AGE: ${HSTS_MAX_AGE:-31536000}
+      # HSTS preload é OPT-IN: só ativar após confirmar a política de subdomínios
+      # e pedir inclusão na lista (runbook secção 8.2).
+      HSTS_PRELOAD: ${HSTS_PRELOAD:-0}
     # --- Certificados da origem (Cloudflare Origin CA) ----------------------
     # Descomente quando tiver os certificados (ver docs/runbook-deploy.md):
     #   ./certs/fullchain.pem + ./certs/privkey.pem

@@ -79,7 +79,21 @@ http {
         listen 8080;
         server_name _;
         include /etc/nginx/conf.d/security-headers.conf;
-        return 301 https://$host$request_uri;
+
+        # Endpoint de saúde ANTES do redirect 301: o HEALTHCHECK do container
+        # consulta http://127.0.0.1:8080/healthz. ATENÇÃO: um `return` no nível
+        # do server é processado ANTES da seleção de location (fase de rewrite
+        # do server), por isso o 301 fica DENTRO de `location /` — assim o
+        # match exato `= /healthz` tem precedência e responde 200 (QA, aceite #3).
+        location = /healthz {
+            access_log off;
+            default_type text/plain;
+            return 200 "ok\n";
+        }
+
+        location / {
+            return 301 https://$host$request_uri;
+        }
     }
 
     # HTTPS na origem — usado pelo Cloudflare em modo Full (strict).

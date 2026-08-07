@@ -17,7 +17,10 @@
 set -eu
 
 # CSP configurável por env (default 'self' — ver docs/runbook-deploy.md).
-: "${CSP_DEFAULT_SRC:='self'}"
+# Export OBRIGATÓRIO: o envsubst é um processo externo e só vê variáveis de
+# ambiente exportadas. Sem export, docker run direto (sem compose) renderizava
+# `default-src ;` vazio (QA, bug de média severidade).
+export CSP_DEFAULT_SRC="${CSP_DEFAULT_SRC:-self}"
 
 echo "[entrypoint] CSP_DEFAULT_SRC=${CSP_DEFAULT_SRC}" >&2
 
@@ -38,11 +41,17 @@ if [ "$TLS" = "1" ]; then
     cp /etc/nginx/nginx.ssl.conf.template /etc/nginx/nginx.conf
 
     # HSTS apenas após validação completa de HTTPS + subdomínios (ver runbook).
+    # `preload` é OPT-IN via HSTS_PRELOAD=1: o runbook (secção 8.2) manda
+    # confirmar a política de subdomínios antes de pedir inclusão na lista
+    # HSTS preload (QA, bug de baixa severidade).
     if [ "${HSTS_ENABLED:-0}" = "1" ]; then
         HSTS_MAX_AGE="${HSTS_MAX_AGE:-31536000}"
-        printf 'add_header Strict-Transport-Security "max-age=%s; includeSubDomains; preload" always;\n' \
-            "${HSTS_MAX_AGE}" >> /etc/nginx/conf.d/security-headers.conf
-        echo "[entrypoint] HSTS ativo (max-age=${HSTS_MAX_AGE})." >&2
+        HSTS_HEADER="max-age=${HSTS_MAX_AGE}; includeSubDomains"
+        if [ "${HSTS_PRELOAD:-0}" = "1" ]; then
+            HSTS_HEADER="${HSTS_HEADER}; preload"
+        fi
+        printf 'add_header Strict-Transport-Security "%s" always;\n' "${HSTS_HEADER}" >> /etc/nginx/conf.d/security-headers.conf
+        echo "[entrypoint] HSTS ativo (${HSTS_HEADER})." >&2
     else
         echo "[entrypoint] HSTS desativado (HSTS_ENABLED=1 para ativar após validação)." >&2
     fi
