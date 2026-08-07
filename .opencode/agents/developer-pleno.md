@@ -1,7 +1,7 @@
 ---
 description: Developer Pleno - implementa features frontend intermediárias, CRUDs, formulários, grids e integrações com API existente
 mode: subagent
-model: opencode/big-pickle
+model: opencode-go/mimo-v2.5-pro
 temperature: 0.2
 permission:
   edit: allow

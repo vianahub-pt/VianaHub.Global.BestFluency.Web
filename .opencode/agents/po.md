@@ -1,7 +1,7 @@
 ---
 description: Product Owner — analisa demandas, escreve Tasks em BDD e define classificação/complexidade
 mode: subagent
-model: opencode/big-pickle
+model: opencode-go/deepseek-v4-pro
 temperature: 0.2
 permission:
   edit: deny

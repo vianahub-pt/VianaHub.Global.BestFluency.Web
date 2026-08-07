@@ -1,7 +1,7 @@
 ---
 description: Developer Senior - implementa features complexas, refatorações, arquitetura frontend, segurança e integrações críticas
 mode: subagent
-model: opencode/big-pickle
+model: opencode-go/kimi-k3
 temperature: 0.1
 permission:
   edit: allow

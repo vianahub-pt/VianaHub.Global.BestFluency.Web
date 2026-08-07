@@ -1,7 +1,7 @@
 ---
 description: QA - valida implementações frontend React/Next.js e recomenda correções por senioridade
 mode: subagent
-model: opencode/big-pickle
+model: opencode-go/minimax-m3
 temperature: 0.1
 permission:
   edit: deny

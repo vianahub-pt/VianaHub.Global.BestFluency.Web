@@ -1,7 +1,7 @@
 ---
 description: UI/UX Specialist - cria e evolui interfaces modernas, mobile-first, responsivas, templates e temas
 mode: subagent
-model: opencode/big-pickle
+model: opencode-go/qwen3.7-plus
 temperature: 0.15
 permission:
   edit: allow
