@@ -439,3 +439,7 @@ next-env.d.ts
 # Variáveis de ambiente locais (manter .env.example versionado)
 .env*
 !.env.example
+
+# Certificados da origem (Cloudflare Origin CA) montados em runtime — nunca
+# versionar; produzidos no lançamento (docs/runbook-deploy.md)
+certs/

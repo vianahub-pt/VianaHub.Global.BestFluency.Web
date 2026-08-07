@@ -1,0 +1,56 @@
+# ===========================================================================
+# docker-compose.yml — produção (VPS Hostinger) / validação local.
+#
+# - Portas públicas APENAS 80 (HTTP) e 443 (HTTPS); a aplicação não é exposta
+#   em nenhuma porta de desenvolvimento (Next dev/serve não correm aqui).
+# - restart: unless-stopped (aceite).
+# - Logs para stdout/stderr (config no nginx: access_log/error_log).
+# - Nenhuma credencial no ficheiro: valores vêm do ambiente de quem executa
+#   (ou dos defaults seguros do .env.example).
+# - TLS na origem: monte os certificados em ./certs (Cloudflare Origin CA) e
+#   o entrypoint ativa HTTPS automaticamente. Sem certs, serve apenas HTTP
+#   (útil para validação local; NUNCA para produção sem Cloudflare na frente).
+#
+# Uso:
+#   docker compose build --build-arg NEXT_PUBLIC_SITE_URL=https://<DOMINIO> ...
+#   docker compose up -d
+# ===========================================================================
+
+services:
+  web:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+        # URL pública definitiva — obrigatória no lançamento (domínio pendente).
+        NEXT_PUBLIC_SITE_URL: ${NEXT_PUBLIC_SITE_URL:-http://localhost:3000}
+        # Indexação: manter false até ao lançamento oficial (evita noindex no
+        # arranque; virar true apenas com o domínio definitivo publicado).
+        NEXT_PUBLIC_SITE_INDEXABLE: ${NEXT_PUBLIC_SITE_INDEXABLE:-false}
+        # Token Cloudflare Web Analytics (issue #12): vazio = beacon desativado.
+        # Preencher apenas com o token real do domínio publicado.
+        NEXT_PUBLIC_CF_WEB_ANALYTICS_TOKEN: ${NEXT_PUBLIC_CF_WEB_ANALYTICS_TOKEN:-}
+    image: best-fluency-web:${IMAGE_TAG:-latest}
+    restart: unless-stopped
+    ports:
+      # Apenas portas públicas 80/443 -> portas internas não-root 8080/8443.
+      - "80:8080"
+      - "443:8443"
+    environment:
+      # CSP configurável por env (default 'self').
+      CSP_DEFAULT_SRC: ${CSP_DEFAULT_SRC:-'self'}
+      # HSTS: manter 0 até validar HTTPS/subdomínios no lançamento (ver runbook).
+      HSTS_ENABLED: ${HSTS_ENABLED:-0}
+      HSTS_MAX_AGE: ${HSTS_MAX_AGE:-31536000}
+    # --- Certificados da origem (Cloudflare Origin CA) ----------------------
+    # Descomente quando tiver os certificados (ver docs/runbook-deploy.md):
+    #   ./certs/fullchain.pem + ./certs/privkey.pem
+    # O diretório ./certs está no .gitignore e NUNCA entra na imagem nem no repo.
+    # volumes:
+    #   - ./certs:/etc/nginx/certs:ro
+    # -----------------------------------------------------------------------
+    logging:
+      driver: json-file
+      options:
+        max-size: "10m"
+        max-file: "3"

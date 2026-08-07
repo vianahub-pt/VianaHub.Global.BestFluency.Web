@@ -1,0 +1,148 @@
+# ===========================================================================
+# nginx.ssl.conf.template — modo HTTPS na origem (certificados montados).
+#
+# Usado quando /etc/nginx/certs contém fullchain.pem + privkey.pem. Serve o
+# export estático em HTTPS na porta interna 8443 (pública 443 no Compose) e
+# redireciona HTTP (8080 / pública 80) para HTTPS — defesa em profundidade;
+# o redirect principal é o "Always Use HTTPS" do Cloudflare.
+#
+# Cloudflare SSL/TLS em Full (strict) exige certificado VÁLIDO na origem.
+# Recomendado: Cloudflare Origin CA certificate (ver docs/runbook-deploy.md).
+#
+# TLS mínimo: TLSv1.2 + TLSv1.3. HSTS fica DESATIVADO por padrão (o entrypoint
+# só o adiciona com HSTS_ENABLED=1, após validar HTTPS/subdomínios no
+# lançamento — ver runbook).
+# ===========================================================================
+
+load_module /etc/nginx/modules/ngx_http_brotli_filter_module.so;
+load_module /etc/nginx/modules/ngx_http_brotli_static_module.so;
+
+user nginx;
+worker_processes auto;
+pid /tmp/nginx.pid;
+
+error_log /dev/stderr notice;
+
+events {
+    worker_connections 1024;
+}
+
+http {
+    include /etc/nginx/mime.types;
+    default_type application/octet-stream;
+
+    log_format main '$remote_addr - $remote_user [$time_local] "$request" '
+                    '$status $body_bytes_sent "$http_referer" '
+                    '"$http_user_agent" "$http_x_forwarded_for"';
+    access_log /dev/stdout main;
+
+    sendfile on;
+    tcp_nopush on;
+    tcp_nodelay on;
+    keepalive_timeout 65;
+    server_tokens off;
+
+    # ---- Compressão na origem (Brotli preferido, gzip como fallback) ----
+    gzip on;
+    gzip_vary on;
+    gzip_comp_level 5;
+    gzip_min_length 1024;
+    gzip_proxied any;
+    gzip_types
+        application/javascript
+        application/json
+        application/manifest+json
+        application/rss+xml
+        application/xml
+        image/svg+xml
+        text/css
+        text/plain
+        text/xml;
+
+    brotli on;
+    brotli_comp_level 6;
+    brotli_min_length 1024;
+    brotli_static on;
+    brotli_types
+        application/javascript
+        application/json
+        application/manifest+json
+        application/rss+xml
+        application/xml
+        image/svg+xml
+        text/css
+        text/plain
+        text/xml;
+
+    # HTTP -> HTTPS (origem; defesa em profundidade).
+    server {
+        listen 8080;
+        server_name _;
+        include /etc/nginx/conf.d/security-headers.conf;
+        return 301 https://$host$request_uri;
+    }
+
+    # HTTPS na origem — usado pelo Cloudflare em modo Full (strict).
+    server {
+        listen 8443 ssl;
+        http2 on;
+        server_name _;
+
+        ssl_certificate /etc/nginx/certs/fullchain.pem;
+        ssl_certificate_key /etc/nginx/certs/privkey.pem;
+
+        # TLS mínimo conforme política (não negociar abaixo de 1.2).
+        ssl_protocols TLSv1.2 TLSv1.3;
+        ssl_session_cache shared:SSL:10m;
+        ssl_session_timeout 1d;
+        ssl_session_tickets off;
+
+        root /usr/share/nginx/html;
+        index index.html;
+
+        include /etc/nginx/conf.d/security-headers.conf;
+
+        # Endpoint de saúde (aceite: healthcheck funcional; sem ficheiro).
+        location = /healthz {
+            access_log off;
+            default_type text/plain;
+            return 200 "ok\n";
+        }
+
+        # Página 404 própria do export (404.html gerado pelo Next.js).
+        error_page 404 /404.html;
+        location = /404.html {
+            internal;
+            include /etc/nginx/conf.d/security-headers.conf;
+            add_header Cache-Control "no-cache";
+        }
+
+        # Assets com hash do Next (_next/static): cache longo + immutable.
+        location ^~ /_next/static/ {
+            include /etc/nginx/conf.d/security-headers.conf;
+            add_header Cache-Control "public, max-age=31536000, immutable";
+            try_files $uri =404;
+        }
+
+        # Assets sem hash (public/, ex.: logo, og-image, imagens de secção).
+        location ~* \.(?:avif|webp|png|jpe?g|gif|svg|ico|woff2?|css|js)$ {
+            include /etc/nginx/conf.d/security-headers.conf;
+            add_header Cache-Control "public, max-age=3600, must-revalidate";
+            try_files $uri =404;
+        }
+
+        # HTML: revalidação no browser (no-cache = guarda mas revalida).
+        location ~* \.html$ {
+            include /etc/nginx/conf.d/security-headers.conf;
+            add_header Cache-Control "no-cache";
+            try_files $uri =404;
+        }
+
+        # Fallback puro estático (sem serviço de app dinâmico).
+        location / {
+            include /etc/nginx/conf.d/security-headers.conf;
+            add_header Cache-Control "no-cache";
+            try_files $uri $uri/ =404;
+        }
+    }
+}
