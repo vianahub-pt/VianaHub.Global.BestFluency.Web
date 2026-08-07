@@ -31,7 +31,7 @@ export const itIT: LandingContent = {
     closeMenuLabel: "Chiudi menu",
     ctaLabel: "Prenota una lezione di prova",
     ctaAriaLabel:
-      "Apri una conversazione WhatsApp per prenotare una lezione di prova (nuova finestra)",
+      "Prenota una lezione di prova — apri una conversazione WhatsApp (nuova finestra)",
     whatsappMessage: TRIAL_MESSAGE,
     links: {
       modalities: "Modalità",
@@ -49,7 +49,7 @@ export const itIT: LandingContent = {
   },
   cta: {
     whatsappLabel: "Scrivici su WhatsApp",
-    whatsappAriaLabel: "Apri una conversazione WhatsApp con Best Fluency (nuova finestra)",
+    whatsappAriaLabel: "Scrivici su WhatsApp — apri una conversazione WhatsApp con Best Fluency (nuova finestra)",
     whatsappMessage: INFO_MESSAGE,
   },
   notFound: {
@@ -76,7 +76,7 @@ export const itIT: LandingContent = {
       "Sviluppa la comunicazione per il lavoro, gli studi, i viaggi e la vita di tutti i giorni.",
     ctaLabel: "Prenota una lezione di prova",
     ctaAriaLabel:
-      "Apri una conversazione WhatsApp per prenotare una lezione di prova (nuova finestra)",
+      "Prenota una lezione di prova — apri una conversazione WhatsApp (nuova finestra)",
     ctaWhatsappMessage: TRIAL_MESSAGE,
     secondaryCtaLabel: "Scopri le modalità",
     imageAlt: "Insegnante di Best Fluency durante una lezione di inglese personalizzata",
@@ -101,7 +101,7 @@ export const itIT: LandingContent = {
       note: "In presenza o online",
       ctaLabel: "Voglio saperne di più sulle lezioni individuali",
       ctaAriaLabel:
-        "Apri una conversazione WhatsApp per ricevere informazioni sulle lezioni individuali (nuova finestra)",
+        "Voglio saperne di più sulle lezioni individuali — apri una conversazione WhatsApp (nuova finestra)",
       whatsappMessage:
         "Ciao! Vorrei ricevere informazioni sulle lezioni individuali di inglese di Best Fluency.",
     },
@@ -111,7 +111,7 @@ export const itIT: LandingContent = {
       note: "Soggetto alla formazione del gruppo e alla disponibilità",
       ctaLabel: "Voglio saperne di più sui gruppi",
       ctaAriaLabel:
-        "Apri una conversazione WhatsApp per ricevere informazioni sui gruppi (nuova finestra)",
+        "Voglio saperne di più sui gruppi — apri una conversazione WhatsApp (nuova finestra)",
       whatsappMessage:
         "Ciao! Vorrei ricevere informazioni sui gruppi di inglese di Best Fluency.",
     },
@@ -148,7 +148,7 @@ export const itIT: LandingContent = {
       "Uno spazio vicino e accogliente per imparare l'inglese con un accompagnamento personalizzato.",
     ],
     ctaLabel: "Vedi la posizione",
-    ctaAriaLabel: "Apri la posizione di Best Fluency su Google Maps (nuova finestra)",
+    ctaAriaLabel: "Vedi la posizione — apri la posizione di Best Fluency su Google Maps (nuova finestra)",
   },
 
   bestKids: {
@@ -184,7 +184,7 @@ export const itIT: LandingContent = {
     ],
     ctaLabel: "Scopri Best Kids",
     ctaAriaLabel:
-      "Apri una conversazione WhatsApp per scoprire Best Kids (nuova finestra)",
+      "Scopri Best Kids — apri una conversazione WhatsApp (nuova finestra)",
     whatsappMessage:
       "Ciao! Vorrei ricevere maggiori informazioni sulle lezioni Best Kids.",
     imageAlt: "Faísca, mascotte di Best Kids, nelle lezioni di inglese per bambini",
@@ -224,7 +224,7 @@ export const itIT: LandingContent = {
     ],
     ctaLabel: "Prenota una lezione di prova",
     ctaAriaLabel:
-      "Apri una conversazione WhatsApp per prenotare una lezione di prova (nuova finestra)",
+      "Prenota una lezione di prova — apri una conversazione WhatsApp (nuova finestra)",
     whatsappMessage: TRIAL_MESSAGE,
   },
 
@@ -262,7 +262,7 @@ export const itIT: LandingContent = {
     ],
     ctaLabel: "Fai il primo passo",
     ctaAriaLabel:
-      "Apri una conversazione WhatsApp per fare il primo passo (nuova finestra)",
+      "Fai il primo passo — apri una conversazione WhatsApp (nuova finestra)",
     whatsappMessage: INFO_MESSAGE,
   },
 
@@ -335,7 +335,7 @@ export const itIT: LandingContent = {
     text: "Scrivici su WhatsApp, chiarisci i tuoi dubbi e scopri la modalità più adatta al tuo livello, ai tuoi obiettivi e alla tua routine.",
     ctaLabel: "Prenota una lezione di prova",
     ctaAriaLabel:
-      "Apri una conversazione WhatsApp per prenotare una lezione di prova (nuova finestra)",
+      "Prenota una lezione di prova — apri una conversazione WhatsApp (nuova finestra)",
     whatsappMessage:
       "Ciao! Vorrei ricevere informazioni e prenotare una lezione di prova di inglese alla Best Fluency.",
     complement: "Lezioni in presenza ad Amadora e online.",

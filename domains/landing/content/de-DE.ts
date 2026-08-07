@@ -31,7 +31,7 @@ export const deDE: LandingContent = {
     closeMenuLabel: "Menü schließen",
     ctaLabel: "Probestunde buchen",
     ctaAriaLabel:
-      "WhatsApp-Unterhaltung öffnen, um eine Probestunde zu buchen (neues Fenster)",
+      "Probestunde buchen — WhatsApp-Unterhaltung öffnen (neues Fenster)",
     whatsappMessage: TRIAL_MESSAGE,
     links: {
       modalities: "Unterrichtsformen",
@@ -49,7 +49,7 @@ export const deDE: LandingContent = {
   },
   cta: {
     whatsappLabel: "Schreiben Sie uns auf WhatsApp",
-    whatsappAriaLabel: "WhatsApp-Unterhaltung mit Best Fluency öffnen (neues Fenster)",
+    whatsappAriaLabel: "Schreiben Sie uns auf WhatsApp — WhatsApp-Unterhaltung mit Best Fluency öffnen (neues Fenster)",
     whatsappMessage: INFO_MESSAGE,
   },
   notFound: {
@@ -76,7 +76,7 @@ export const deDE: LandingContent = {
       "Entwickeln Sie Ihre Kommunikation für Arbeit, Studium, Reisen und den Alltag.",
     ctaLabel: "Probestunde buchen",
     ctaAriaLabel:
-      "WhatsApp-Unterhaltung öffnen, um eine Probestunde zu buchen (neues Fenster)",
+      "Probestunde buchen — WhatsApp-Unterhaltung öffnen (neues Fenster)",
     ctaWhatsappMessage: TRIAL_MESSAGE,
     secondaryCtaLabel: "Unterrichtsformen entdecken",
     imageAlt: "Lehrerin von Best Fluency während einer persönlichen Englischstunde",
@@ -101,7 +101,7 @@ export const deDE: LandingContent = {
       note: "Vor Ort oder online",
       ctaLabel: "Ich möchte mehr über Einzelunterricht erfahren",
       ctaAriaLabel:
-        "WhatsApp-Unterhaltung öffnen, um Informationen über Einzelunterricht zu erhalten (neues Fenster)",
+        "Ich möchte mehr über Einzelunterricht erfahren — WhatsApp-Unterhaltung öffnen (neues Fenster)",
       whatsappMessage:
         "Hallo! Ich möchte gerne Informationen über den Englisch-Einzelunterricht von Best Fluency erhalten.",
     },
@@ -111,7 +111,7 @@ export const deDE: LandingContent = {
       note: "Abhängig von der Gruppenzusammenstellung und Verfügbarkeit",
       ctaLabel: "Ich möchte mehr über die Gruppen erfahren",
       ctaAriaLabel:
-        "WhatsApp-Unterhaltung öffnen, um Informationen über die Gruppen zu erhalten (neues Fenster)",
+        "Ich möchte mehr über die Gruppen erfahren — WhatsApp-Unterhaltung öffnen (neues Fenster)",
       whatsappMessage:
         "Hallo! Ich möchte gerne Informationen über die Englischgruppen von Best Fluency erhalten.",
     },
@@ -148,7 +148,7 @@ export const deDE: LandingContent = {
       "Ein naher und einladender Ort, um Englisch mit persönlicher Betreuung zu lernen.",
     ],
     ctaLabel: "Standort ansehen",
-    ctaAriaLabel: "Standort von Best Fluency auf Google Maps öffnen (neues Fenster)",
+    ctaAriaLabel: "Standort ansehen — Standort von Best Fluency auf Google Maps öffnen (neues Fenster)",
   },
 
   bestKids: {
@@ -184,7 +184,7 @@ export const deDE: LandingContent = {
     ],
     ctaLabel: "Best Kids kennenlernen",
     ctaAriaLabel:
-      "WhatsApp-Unterhaltung öffnen, um Best Kids kennenzulernen (neues Fenster)",
+      "Best Kids kennenlernen — WhatsApp-Unterhaltung öffnen (neues Fenster)",
     whatsappMessage:
       "Hallo! Ich möchte gerne weitere Informationen über die Best Kids Kurse erhalten.",
     imageAlt: "Faísca, das Maskottchen von Best Kids, im Englischunterricht für Kinder",
@@ -224,7 +224,7 @@ export const deDE: LandingContent = {
     ],
     ctaLabel: "Probestunde buchen",
     ctaAriaLabel:
-      "WhatsApp-Unterhaltung öffnen, um eine Probestunde zu buchen (neues Fenster)",
+      "Probestunde buchen — WhatsApp-Unterhaltung öffnen (neues Fenster)",
     whatsappMessage: TRIAL_MESSAGE,
   },
 
@@ -262,7 +262,7 @@ export const deDE: LandingContent = {
     ],
     ctaLabel: "Den ersten Schritt machen",
     ctaAriaLabel:
-      "WhatsApp-Unterhaltung öffnen, um den ersten Schritt zu machen (neues Fenster)",
+      "Den ersten Schritt machen — WhatsApp-Unterhaltung öffnen (neues Fenster)",
     whatsappMessage: INFO_MESSAGE,
   },
 
@@ -335,7 +335,7 @@ export const deDE: LandingContent = {
     text: "Schreiben Sie uns auf WhatsApp, klären Sie Ihre Fragen und entdecken Sie die Unterrichtsform, die am besten zu Ihrem Niveau, Ihren Zielen und Ihrem Alltag passt.",
     ctaLabel: "Probestunde buchen",
     ctaAriaLabel:
-      "WhatsApp-Unterhaltung öffnen, um eine Probestunde zu buchen (neues Fenster)",
+      "Probestunde buchen — WhatsApp-Unterhaltung öffnen (neues Fenster)",
     whatsappMessage:
       "Hallo! Ich möchte gerne Informationen erhalten und eine Englisch-Probestunde bei Best Fluency buchen.",
     complement: "Präsenzunterricht in Amadora und online.",
