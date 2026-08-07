@@ -427,3 +427,19 @@ FodyWeavers.xsd
 *.msix
 *.msm
 *.msp
+
+# ---------------------------------------------------------
+# Next.js / Node (landing static-first)
+# ---------------------------------------------------------
+.next/
+out/
+next-env.d.ts
+*.tsbuildinfo
+
+# Variáveis de ambiente locais (manter .env.example versionado)
+.env*
+!.env.example
+
+# Certificados da origem (Cloudflare Origin CA) montados em runtime — nunca
+# versionar; produzidos no lançamento (docs/runbook-deploy.md)
+certs/

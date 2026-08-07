@@ -1,0 +1,177 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+/*
+ * ============================================================================
+ * Design system Mobile-First — Best Fluency (issue #2)
+ * ----------------------------------------------------------------------------
+ * Tokens semânticos preto / branco / dourado + cinzentos neutros, nos temas
+ * claro e escuro. Documentação completa em docs/design-system.md.
+ *
+ * Os códigos hexadecimais oficiais da marca ainda não foram fornecidos
+ * (spec §6 / §31). Os valores abaixo são placeholders configuráveis:
+ * alterar apenas --brand-* aqui quando a identidade oficial chegar.
+ *
+ * Contraste validado para WCAG 2.2 AA (texto normal ≥ 4.5:1):
+ * - accent (dourado) light ≈ 5.1:1 sobre branco e 5.1:1 para texto branco;
+ * - accent (dourado) dark  ≈ 11:1  sobre o fundo escuro;
+ * - muted-foreground       ≈ 7.8:1 (light) e 8.6:1 (dark).
+ * ============================================================================
+ */
+:root {
+  /*
+   * Papéis cromáticos da marca (spec §6). No tema escuro os papéis invertem:
+   * brand-black torna-se o "preto" claro (texto/títulos) e brand-white o
+   * fundo escuro. Dourado mantém-se como destaque em ambos os temas.
+   */
+  --brand-black: hsl(0 0% 4%);
+  --brand-white: hsl(0 0% 100%);
+  --brand-gold: hsl(42 70% 32%);
+
+  /* Superfícies e texto (shadcn/ui). */
+  --background: var(--brand-white);
+  --foreground: var(--brand-black);
+  --card: hsl(0 0% 100%);
+  --card-foreground: hsl(0 0% 4%);
+  --popover: hsl(0 0% 100%);
+  --popover-foreground: hsl(0 0% 4%);
+  --primary: hsl(0 0% 9%);
+  --primary-foreground: hsl(0 0% 98%);
+  --secondary: hsl(0 0% 96%);
+  --secondary-foreground: hsl(0 0% 9%);
+  --muted: hsl(0 0% 96%);
+  --muted-foreground: hsl(0 0% 32%);
+  --accent: var(--brand-gold);
+  --accent-foreground: hsl(0 0% 100%);
+  --destructive: hsl(0 72% 45%);
+  --destructive-foreground: hsl(0 0% 98%);
+  --border: hsl(0 0% 90%);
+  --input: hsl(0 0% 90%);
+  --ring: var(--brand-gold);
+  --radius: 0.625rem;
+
+  /*
+   * Área de toque mínima de 44 × 44 px (spec §23). Nos componentes usar
+   * h-11 / min-h-11 (equivalente a 2.75rem) — nunca menos.
+   */
+  --touch-target: 2.75rem;
+}
+
+.dark {
+  --brand-black: hsl(0 0% 98%);
+  --brand-white: hsl(0 0% 5%);
+  --brand-gold: hsl(45 85% 55%);
+
+  --background: var(--brand-white);
+  --foreground: hsl(0 0% 98%);
+  --card: hsl(0 0% 8%);
+  --card-foreground: hsl(0 0% 98%);
+  --popover: hsl(0 0% 8%);
+  --popover-foreground: hsl(0 0% 98%);
+  --primary: hsl(0 0% 98%);
+  --primary-foreground: hsl(0 0% 9%);
+  --secondary: hsl(0 0% 14%);
+  --secondary-foreground: hsl(0 0% 98%);
+  --muted: hsl(0 0% 14%);
+  --muted-foreground: hsl(0 0% 68%);
+  --accent: var(--brand-gold);
+  --accent-foreground: hsl(0 0% 9%);
+  --destructive: hsl(0 70% 55%);
+  --destructive-foreground: hsl(0 0% 98%);
+  --border: hsl(0 0% 20%);
+  --input: hsl(0 0% 22%);
+  --ring: var(--brand-gold);
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+
+  /* Papéis cromáticos da marca disponíveis como utilities (text-brand-gold, etc.). */
+  --color-brand-black: var(--brand-black);
+  --color-brand-white: var(--brand-white);
+  --color-brand-gold: var(--brand-gold);
+
+  /*
+   * Mobile-first (AGENTS.md): expansão por min-width para 48rem, 64rem e
+   * 90rem. sm/md/lg mantêm os defaults Tailwind (40/48/64rem); xl = 90rem.
+   */
+  --breakpoint-xl: 90rem;
+}
+
+/*
+ * Animação subtil do avião da rota (RoutePath). Usa a propriedade `translate`
+ * (independente de `transform`) para não conflitar com rotações do ícone.
+ * O utilitário motion-safe apenas a aplica quando não há preferência por
+ * movimento reduzido (spec §16 / §23).
+ */
+@keyframes route-plane {
+  0%,
+  100% {
+    translate: 0 0;
+  }
+  50% {
+    translate: 0 0.25rem;
+  }
+}
+
+@layer base {
+  * {
+    border-color: var(--border);
+  }
+
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 5.5rem;
+  }
+
+  body {
+    background-color: var(--background);
+    color: var(--foreground);
+    font-family:
+      ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto,
+      "Helvetica Neue", Arial, sans-serif;
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--ring);
+    outline-offset: 2px;
+  }
+
+  /* Respeito por prefers-reduced-motion (spec §23). */
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+}

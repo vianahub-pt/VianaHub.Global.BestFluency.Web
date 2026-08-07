@@ -1,0 +1,21 @@
+# Normaliza quebras de linha: checkout com CRLF no Windows, commit sempre LF.
+* text=auto
+
+# Artefatos Docker/shell precisam de LF estrito (CRLF quebra scripts sh/nginx).
+*.sh text eol=lf
+Dockerfile text eol=lf
+.dockerignore text eol=lf
+docker-compose.yml text eol=lf
+*.template text eol=lf
+*.conf text eol=lf
+
+# Artefatos binários/imagens nunca são "texto".
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.webp binary
+*.avif binary
+*.ico binary
+*.svg binary
+*.woff binary
+*.woff2 binary

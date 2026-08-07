@@ -1,0 +1,44 @@
+# ---------------------------------------------------------------------------
+# .dockerignore — contexto de build da imagem de produção (Dockerfile).
+# Mantém o contexto pequeno e garante que NENHUM segredo/artefato local entre
+# na imagem. O build é reproduzível: tudo o que a imagem precisa está no repo
+# (ou é descarregado com versões pinadas durante o build).
+# ---------------------------------------------------------------------------
+
+# VCS e ferramentas
+.git
+.gitignore
+.gitattributes
+
+# Configuração de agentes/instruções (não entra na imagem)
+.opencode
+
+# Dependências e artefactos de build locais (recriados dentro do container)
+node_modules
+.next
+out
+*.tsbuildinfo
+next-env.d.ts
+
+# Segredos e variáveis de ambiente — NUNCA entram na imagem
+.env
+.env.*
+!.env.example
+
+# Logs
+*.log
+npm-debug.log*
+
+# Certificados locais de teste/produção (montados em runtime, nunca na imagem)
+certs
+
+# Documentação e ficheiros não necessários ao build
+docs
+README.md
+LICENSE
+
+# Editores/IDE
+.vscode
+.idea
+*.suo
+*.user
