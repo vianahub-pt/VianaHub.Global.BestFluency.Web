@@ -23,13 +23,16 @@ export function InfoBar({ locale }: { locale: LocaleCode }) {
   const content = getLandingContent(locale);
 
   return (
-    <section aria-label={content.infoBar.items.join(", ")}>
+    <section
+      aria-label={content.infoBar.items.join(", ")}
+      className="bg-muted/40"
+    >
       <div className="mx-auto w-full max-w-7xl px-4 py-8 md:px-8">
         <ul className="grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
           {content.infoBar.items.map((item, index) => (
             <li
               key={item}
-              className="flex min-h-12 items-center gap-3 rounded-lg border border-border bg-muted/40 px-4 py-3"
+              className="flex min-h-12 items-center gap-3 rounded-lg border border-border bg-card px-4 py-3 shadow-sm"
             >
               <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-accent/15 text-accent">
                 {itemIcons[index]}

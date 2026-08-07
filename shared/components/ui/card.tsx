@@ -3,7 +3,8 @@ import type { HTMLAttributes } from "react";
 import { cn } from "@/shared/lib/utils";
 
 /**
- * Card base do design system (issue #2).
+ * Card base do design system — alinhado com a estrutura canónica shadcn/ui
+ * (issue #29).
  *
  * Primitivo para as secções em grelha da landing (Modalidades, Método,
  * Depoimentos...). Mobile-first: os cards empilham por padrão no telemóvel
@@ -56,4 +57,10 @@ export function CardDescription({
 
 export function CardContent({ className, ...props }: HTMLAttributes<HTMLDivElement>) {
   return <div className={cn("p-6 pt-0", className)} {...props} />;
+}
+
+export function CardFooter({ className, ...props }: HTMLAttributes<HTMLDivElement>) {
+  return (
+    <div className={cn("flex items-center p-6 pt-0", className)} {...props} />
+  );
 }

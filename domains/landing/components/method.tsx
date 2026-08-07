@@ -27,7 +27,7 @@ export function Method({ locale }: { locale: LocaleCode }) {
     <section
       id="metodo"
       aria-labelledby="method-title"
-      className="scroll-mt-24 border-t border-border"
+      className="scroll-mt-24 border-t border-border bg-muted/40"
     >
       <div className="mx-auto w-full max-w-7xl px-4 py-14 md:px-8 md:py-20">
         <SectionHeading
