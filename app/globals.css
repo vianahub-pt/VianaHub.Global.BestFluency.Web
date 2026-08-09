@@ -129,7 +129,7 @@
   --radius-xl: calc(var(--radius) + 4px);
 
   /* Tipografia */
-  --font-display: var(--font-bitcount-ink);
+  --font-display: var(--font-bungee);
 
   /* Papéis cromáticos da marca disponíveis como utilities (text-brand-gold, etc.). */
   --color-brand-black: var(--brand-black);

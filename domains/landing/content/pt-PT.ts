@@ -70,7 +70,10 @@ export const ptPT: LandingContent = {
   },
 
   hero: {
-    title: "Pare de travar. Comece a falar inglês com confiança.",
+    title1: "Pare de travar.",
+    title2: "Comece a falar",
+    title3: "inglês com",
+    title4: "confiança!",
     text: "Aulas práticas e personalizadas para crianças, jovens e adultos, em formato individual ou em turmas reduzidas com um máximo de 8 alunos.",
     ctaLabel: "Marcar aula experimental",
     ctaAriaLabel:

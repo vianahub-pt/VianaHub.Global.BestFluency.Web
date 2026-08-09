@@ -10,17 +10,54 @@ export function Hero({ locale }: { locale: LocaleCode }) {
   const hero = getLandingContent(locale).hero;
 
   return (
-    <section aria-labelledby="hero-title" className="border-b border-border">
+    <section
+      aria-labelledby="hero-title"
+      className="
+    border-b
+    border-border
+    bg-linear-to-br
+    from-white
+    via-[#f7f1e7]
+    to-[#926f34]/30
+
+    dark:from-black
+    dark:via-[#17130d]
+    dark:to-[#926f34]/35
+  "
+    >
       <div className="mx-auto w-full max-w-7xl px-4 py-10 md:px-8 md:py-20 lg:py-24">
         <div className="mx-auto flex max-w-4xl flex-col items-center text-center">
           <h1
             id="hero-title"
-            className="font-display text-4xl font-semibold leading-[1.05] text-balance sm:text-5xl md:text-6xl lg:text-7xl"
+            className="
+            font-display 
+            text-5xl
+            font-bold 
+            leading-[1.6]
+            tracking-normal 
+            text-balance
+            sm:text-5xl 
+            md:text-6xl 
+            lg:text-7xl"
           >
-            {hero.title}
+            <span className="text-[#926f34] dark:text-[#926f34]">
+              {hero.title1}
+            </span>{" "}
+            <br />
+            <span className="text-[#000000] dark:text-[#ffffff]">
+              {hero.title2}
+            </span>{" "}
+            <br />
+            <span className="text-[#926f34] dark:text-[#926f34]">
+              {hero.title3}
+            </span>{" "}
+            <br />
+            <span className="text-[#000000] dark:text-[#ffffff]">
+              {hero.title4}
+            </span>
           </h1>
 
-          <p className="mt-5 max-w-3xl text-base leading-7 text-muted-foreground sm:text-lg sm:leading-8">
+          <p className="mt-10 max-w-3xl text-base text-[#000000] dark:text-[#ffffff] font-bold leading-7 text-muted-foreground sm:text-lg sm:leading-8">
             {hero.text}
           </p>
 

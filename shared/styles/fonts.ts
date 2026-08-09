@@ -1,8 +1,8 @@
-import { Bitcount_Ink } from "next/font/google";
+import { Bungee } from "next/font/google";
 
-export const bitcountInk = Bitcount_Ink({
+export const bungee = Bungee({
+  weight: "400",
   subsets: ["latin"],
   display: "swap",
-  variable: "--font-bitcount-Ink",
-  adjustFontFallback: false,
+  variable: "--font-bungee",
 });

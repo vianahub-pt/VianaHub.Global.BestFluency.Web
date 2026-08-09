@@ -26,24 +26,25 @@ export function SiteHeader({ locale }: { locale: LocaleCode }) {
   const content = getLandingContent(locale);
 
   return (
-    <header className="sticky top-0 z-40 border-b border-border bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/80">
+    <header className="sticky top-0 z-40 border-b border-border bg-background-[#926f34] bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/80">
       <div className="relative mx-auto flex w-full max-w-7xl items-center justify-between gap-x-4 px-4 py-3 md:px-8">
         <Link
           href={localeMeta.path}
-          className="flex min-h-11 items-center gap-3 rounded-md focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring"
+          className="
+          flex 
+          min-h-11
+          items-center gap-3 rounded-md focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring"
           aria-label={site.name}
         >
-          {/* eslint-disable-next-line @next/next/no-img-element -- srcSet responsivo não é suportado por next/image com images.unoptimized (spec §25); o hero mantém next/image com fetchPriority para o LCP. */}
-          <img
-            src="/logo-160.webp"
-            srcSet="/logo-80.webp 80w, /logo-160.webp 160w"
-            sizes="40px"
-            alt=""
-            width={160}
-            height={160}
-            className="h-9 w-9 rounded-full object-cover"
-          />
-          <span className="text-base font-semibold tracking-tight">
+          <span
+            className="
+          text-base
+          sm:text-1xl 
+          md:text-2xl 
+          lg:text-3xl           
+          font-semibold
+          tracking-tight"
+          >
             {site.shortName}
           </span>
         </Link>
@@ -64,7 +65,10 @@ export function SiteHeader({ locale }: { locale: LocaleCode }) {
               section="header"
               ctaLabel={content.nav.ctaLabel}
               ariaLabel={content.nav.ctaAriaLabel}
-              className={buttonVariants({ variant: "primary", size: "default" })}
+              className={buttonVariants({
+                variant: "primary",
+                size: "default",
+              })}
             >
               {content.nav.ctaLabel}
             </WhatsAppLink>
