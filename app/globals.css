@@ -1,21 +1,28 @@
 @import "tailwindcss";
+@import "tw-animate-css";
 
 @custom-variant dark (&:where(.dark, .dark *));
 
 /*
  * ============================================================================
- * Design system Mobile-First — Best Fluency (issue #2)
+ * Design system Mobile-First — Best Fluency (issue #2, refinado na issue #29)
  * ----------------------------------------------------------------------------
- * Tokens semânticos preto / branco / dourado + cinzentos neutros, nos temas
- * claro e escuro. Documentação completa em docs/design-system.md.
+ * Tokens semânticos da identidade oficial Best Fluency — preto, branco e
+ * dourado (spec §6) — nos temas claro e escuro. Documentação completa em
+ * docs/design-system.md.
  *
- * Os códigos hexadecimais oficiais da marca ainda não foram fornecidos
- * (spec §6 / §31). Os valores abaixo são placeholders configuráveis:
- * alterar apenas --brand-* aqui quando a identidade oficial chegar.
+ * Identidade cromática oficial:
+ * - dourado de marca: #D4AF37 (token --gold) para superfícies de destaque
+ *   (CTA gold, chips) com texto quase-preto (--gold-foreground) ≈ 8:1;
+ * - dourado de texto (--accent): variante mais escura no tema claro para
+ *   manter AA como texto/ícone sobre branco; no tema escuro usa o dourado
+ *   brilhante sobre o preto profundo;
+ * - preto profundo do tema escuro: #0A0A0A (--background no .dark).
  *
  * Contraste validado para WCAG 2.2 AA (texto normal ≥ 4.5:1):
  * - accent (dourado) light ≈ 5.1:1 sobre branco e 5.1:1 para texto branco;
  * - accent (dourado) dark  ≈ 11:1  sobre o fundo escuro;
+ * - gold #D4AF37 com gold-foreground ≈ 8:1 em ambos os temas;
  * - muted-foreground       ≈ 7.8:1 (light) e 8.6:1 (dark).
  * ============================================================================
  */
@@ -28,6 +35,12 @@
   --brand-black: hsl(0 0% 4%);
   --brand-white: hsl(0 0% 100%);
   --brand-gold: hsl(42 70% 32%);
+
+  /* Dourado oficial #D4AF37 para superfícies de destaque (CTA gold, chips). */
+  --gold: hsl(46 65% 52%);
+  --gold-foreground: hsl(0 0% 9%);
+
+  color-scheme: light;
 
   /* Superfícies e texto (shadcn/ui). */
   --background: var(--brand-white);
@@ -60,8 +73,15 @@
 
 .dark {
   --brand-black: hsl(0 0% 98%);
-  --brand-white: hsl(0 0% 5%);
+  /* Preto profundo oficial do tema escuro: #0A0A0A. */
+  --brand-white: hsl(0 0% 4%);
   --brand-gold: hsl(45 85% 55%);
+
+  /* O dourado oficial #D4AF37 mantém-se como superfície de destaque. */
+  --gold: hsl(46 65% 52%);
+  --gold-foreground: hsl(0 0% 9%);
+
+  color-scheme: dark;
 
   --background: var(--brand-white);
   --foreground: hsl(0 0% 98%);
@@ -113,6 +133,8 @@
   --color-brand-black: var(--brand-black);
   --color-brand-white: var(--brand-white);
   --color-brand-gold: var(--brand-gold);
+  --color-gold: var(--gold);
+  --color-gold-foreground: var(--gold-foreground);
 
   /*
    * Mobile-first (AGENTS.md): expansão por min-width para 48rem, 64rem e

@@ -9,10 +9,14 @@
  * Requer `sharp` (já presente como dependência transitiva do Next.js).
  *
  * Gera:
- *   public/logo-80.webp    — logótipo 80×80  (1x do render a 40px)
- *   public/logo-160.webp   — logótipo 160×160 (2x/retina)
- *   public/ceo.webp        — fotografia da fundadora 400×400
+ *   public/logo-80.webp                            — logótipo 80×80  (1x do render a 40px)
+ *   public/logo-160.webp                           — logótipo 160×160 (2x/retina; imagem do Hero, issue #29)
+ *   public/logo-320.webp                           — logótipo 320×320 (retina do Hero)
+ *   public/ceo.webp                                — fotografia da fundadora 400×400
  */
+import { mkdirSync, statSync } from "node:fs";
+import { dirname } from "node:path";
+
 import sharp from "sharp";
 
 const SOURCES = [
@@ -21,6 +25,7 @@ const SOURCES = [
     outputs: [
       { file: "public/logo-80.webp", width: 80, height: 80, quality: 82 },
       { file: "public/logo-160.webp", width: 160, height: 160, quality: 82 },
+      { file: "public/logo-320.webp", width: 320, height: 320, quality: 82 },
     ],
   },
   {
@@ -29,17 +34,40 @@ const SOURCES = [
       { file: "public/ceo.webp", width: 400, height: 400, quality: 82 },
     ],
   },
+  {
+    input: "public/assets/kids-pt-br.webp",
+    outputs: [
+      {
+        file: "public/assets/pt-BR/kids-pt-br-480.webp",
+        width: 480,
+        height: 720,
+        quality: 80,
+      },
+      {
+        file: "public/assets/pt-BR/kids-pt-br-960.webp",
+        width: 960,
+        height: 1440,
+        quality: 80,
+      },
+      {
+        file: "public/assets/pt-BR/kids-pt-br-1440.webp",
+        width: 1440,
+        height: 2160,
+        quality: 80,
+      },
+    ],
+  },
 ];
 
 let changed = 0;
 for (const { input, outputs } of SOURCES) {
   for (const { file, width, height, quality } of outputs) {
-    await sharp(input)
-      .resize(width, height)
-      .webp({ quality })
-      .toFile(file);
-    const { size } = await sharp(file).metadata();
-    console.log(`[optimize-images] ${file} (${width}x${height}) ${formatBytes(size)}`);
+    mkdirSync(dirname(file), { recursive: true });
+    await sharp(input).resize(width, height).webp({ quality }).toFile(file);
+    const { size } = statSync(file);
+    console.log(
+      `[optimize-images] ${file} (${width}x${height}) ${formatBytes(size)}`,
+    );
     changed += 1;
   }
 }

@@ -38,7 +38,7 @@ export function Faq({ locale }: { locale: LocaleCode }) {
     <section
       id="faq"
       aria-labelledby="faq-title"
-      className="scroll-mt-24 border-t border-border"
+      className="scroll-mt-24 border-t border-border bg-muted/40"
     >
       <div className="mx-auto w-full max-w-3xl px-4 py-14 md:px-8 md:py-20">
         <SectionHeading

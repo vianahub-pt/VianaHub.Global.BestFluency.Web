@@ -1,5 +1,4 @@
 import { MessageCircle } from "lucide-react";
-import Image from "next/image";
 
 import { type LocaleCode } from "@/core/config/locales";
 import { getLandingContent } from "@/domains/landing/content";
@@ -10,7 +9,7 @@ import { WhatsAppLink } from "@/shared/components/whatsapp-link";
 import { cn } from "@/shared/lib/utils";
 
 /**
- * Hero da landing (spec §8).
+ * Hero da landing (spec §8, imagem atualizada na issue #29).
  *
  * - eyebrow (Badge), H1 único, texto principal e texto complementar;
  * - CTA principal de WhatsApp "Marcar aula experimental" com mensagem
@@ -19,16 +18,15 @@ import { cn } from "@/shared/lib/utils";
  *   reduzidos) e o CTA vem imediatamente a seguir ao texto, antes da imagem;
  * - CTA secundário "Conhecer as modalidades" aponta para a âncora
  *   #modalidades (spec §8);
- * - imagem principal com width/height explícitos e `priority` (LCP),
- *   alt descritivo do contrato de conteúdo (hero.imageAlt);
+ * - painel visual da marca com o logótipo oficial `public/logo-160.webp`
+ *   (mais a variante retina logo-320.webp via srcSet, gerada por
+ *   scripts/optimize-images.mjs): dimensões explícitas, `fetchPriority="high"`
+ *   para o LCP e alt descritivo do contrato de conteúdo (hero.imageAlt);
+ *   o painel neutro com brilho dourado adapta-se aos dois temas;
  * - elemento decorativo de rota discreto (RoutePath, aria-hidden);
  * - um único H1 por página: todas as restantes secções usam H2/H3;
  * - mobile-first (§24): uma coluna no telemóvel, duas colunas no desktop (lg);
  *   texto antes dos elementos decorativos.
- *
- * A imagem atual é um placeholder abstrato sem rostos (spec §6/§8 e issue #9:
- * "não usar rostos/fotos não autorizadas"). Será substituída pela fotografia
- * institucional autorizada quando for fornecida (spec §30).
  */
 export function Hero({ locale }: { locale: LocaleCode }) {
   const hero = getLandingContent(locale).hero;
@@ -78,16 +76,25 @@ export function Hero({ locale }: { locale: LocaleCode }) {
           </div>
 
           <div className="mt-12 lg:mt-0">
-            <div className="relative overflow-hidden rounded-2xl border border-border">
-              <Image
-                src="/assets/hero/hero-best-fluency.svg"
-                alt={hero.imageAlt}
-                width={1200}
-                height={900}
-                priority
-                fetchPriority="high"
-                className="h-auto w-full"
+            <div className="relative overflow-hidden rounded-2xl border border-border bg-muted/40">
+              {/* Brilho dourado discreto da marca (decorativo). */}
+              <div
+                aria-hidden="true"
+                className="absolute inset-0 bg-[radial-gradient(circle_at_70%_20%,rgba(212,175,55,0.18),transparent_55%)]"
               />
+              <div className="relative flex aspect-[4/3] items-center justify-center p-8">
+                {/* eslint-disable-next-line @next/next/no-img-element -- srcSet responsivo não é suportado por next/image com images.unoptimized (spec §25); fetchPriority alto mantém o logótipo como LCP. */}
+                <img
+                  src="/logo-160.webp"
+                  srcSet="/logo-160.webp 160w, /logo-320.webp 320w"
+                  sizes="160px"
+                  alt={hero.imageAlt}
+                  width={160}
+                  height={160}
+                  fetchPriority="high"
+                  className="h-36 w-36 rounded-full object-cover shadow-lg ring-1 ring-border sm:h-40 sm:w-40"
+                />
+              </div>
             </div>
             <RoutePath orientation="horizontal" className="mt-6 max-w-xs" />
           </div>
