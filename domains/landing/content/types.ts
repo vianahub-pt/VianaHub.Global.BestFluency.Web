@@ -79,15 +79,14 @@ export interface LandingContent {
 
   /** §8 — Hero. */
   hero: {
-    eyebrow: string;
-    title: string;
+    title1: string;
+    title2: string;
+    title3: string;
+    title4: string;
     text: string;
-    complement: string;
     ctaLabel: string;
     ctaAriaLabel: string;
     ctaWhatsappMessage: string;
-    secondaryCtaLabel: string;
-    imageAlt: string;
   };
 
   /** §9 — Faixa de informações essenciais (4 itens). */

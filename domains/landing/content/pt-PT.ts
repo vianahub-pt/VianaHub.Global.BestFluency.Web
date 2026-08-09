@@ -49,7 +49,8 @@ export const ptPT: LandingContent = {
   },
   cta: {
     whatsappLabel: "Falar connosco no WhatsApp",
-    whatsappAriaLabel: "Falar connosco no WhatsApp — abrir conversa com a Best Fluency (nova janela)",
+    whatsappAriaLabel:
+      "Falar connosco no WhatsApp — abrir conversa com a Best Fluency (nova janela)",
     whatsappMessage: INFO_MESSAGE,
   },
   notFound: {
@@ -69,17 +70,15 @@ export const ptPT: LandingContent = {
   },
 
   hero: {
-    eyebrow: "BEST FLUENCY LANGUAGE SCHOOL · AMADORA E ONLINE",
-    title: "Aulas de inglês na Amadora e online para comunicar com confiança",
+    title1: "Pare de travar.",
+    title2: "Comece a falar",
+    title3: "inglês com",
+    title4: "confiança!",
     text: "Aulas práticas e personalizadas para crianças, jovens e adultos, em formato individual ou em turmas reduzidas com um máximo de 8 alunos.",
-    complement:
-      "Desenvolva a comunicação para o trabalho, os estudos, as viagens e as situações do dia a dia.",
     ctaLabel: "Marcar aula experimental",
     ctaAriaLabel:
       "Marcar aula experimental — abrir conversa no WhatsApp (nova janela)",
     ctaWhatsappMessage: TRIAL_MESSAGE,
-    secondaryCtaLabel: "Conhecer as modalidades",
-    imageAlt: "Professora da Best Fluency durante uma aula de inglês personalizada",
   },
 
   infoBar: {
@@ -148,7 +147,8 @@ export const ptPT: LandingContent = {
       "Um espaço próximo e acolhedor para aprender inglês com acompanhamento personalizado.",
     ],
     ctaLabel: "Ver localização",
-    ctaAriaLabel: "Ver localização — abrir a localização da Best Fluency no Google Maps (nova janela)",
+    ctaAriaLabel:
+      "Ver localização — abrir a localização da Best Fluency no Google Maps (nova janela)",
   },
 
   bestKids: {
@@ -193,7 +193,8 @@ export const ptPT: LandingContent = {
   testimonials: {
     starsAriaLabel: "estrelas",
     h2: "O que dizem os alunos da Best Fluency",
-    subtitle: "Experiências reais de quem está a aprender e a evoluir connosco.",
+    subtitle:
+      "Experiências reais de quem está a aprender e a evoluir connosco.",
     items: [
       {
         name: "Pedro António",
@@ -205,7 +206,8 @@ export const ptPT: LandingContent = {
         name: "Sandro Vite",
         source: "Avaliação Google",
         stars: 5,
-        quote: "Incrível, um ensino muito bem aplicado e de maneira simples e objetiva.",
+        quote:
+          "Incrível, um ensino muito bem aplicado e de maneira simples e objetiva.",
       },
       {
         name: "Maurício Moura",
