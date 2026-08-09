@@ -13,9 +13,6 @@
  *   public/logo-160.webp                           — logótipo 160×160 (2x/retina; imagem do Hero, issue #29)
  *   public/logo-320.webp                           — logótipo 320×320 (retina do Hero)
  *   public/ceo.webp                                — fotografia da fundadora 400×400
- *   public/assets/best-kids/english-kids-480.webp  — Best Kids 480×720   (mobile, issue #29)
- *   public/assets/best-kids/english-kids-960.webp  — Best Kids 960×1440  (1x)
- *   public/assets/best-kids/english-kids-1440.webp — Best Kids 1440×2160 (retina desktop)
  */
 import { mkdirSync, statSync } from "node:fs";
 import { dirname } from "node:path";
@@ -38,11 +35,26 @@ const SOURCES = [
     ],
   },
   {
-    input: "public/assets/english-kids.jpg",
+    input: "public/assets/kids-pt-br.webp",
     outputs: [
-      { file: "public/assets/best-kids/english-kids-480.webp", width: 480, height: 720, quality: 80 },
-      { file: "public/assets/best-kids/english-kids-960.webp", width: 960, height: 1440, quality: 80 },
-      { file: "public/assets/best-kids/english-kids-1440.webp", width: 1440, height: 2160, quality: 80 },
+      {
+        file: "public/assets/pt-BR/kids-pt-br-480.webp",
+        width: 480,
+        height: 720,
+        quality: 80,
+      },
+      {
+        file: "public/assets/pt-BR/kids-pt-br-960.webp",
+        width: 960,
+        height: 1440,
+        quality: 80,
+      },
+      {
+        file: "public/assets/pt-BR/kids-pt-br-1440.webp",
+        width: 1440,
+        height: 2160,
+        quality: 80,
+      },
     ],
   },
 ];
@@ -51,12 +63,11 @@ let changed = 0;
 for (const { input, outputs } of SOURCES) {
   for (const { file, width, height, quality } of outputs) {
     mkdirSync(dirname(file), { recursive: true });
-    await sharp(input)
-      .resize(width, height)
-      .webp({ quality })
-      .toFile(file);
+    await sharp(input).resize(width, height).webp({ quality }).toFile(file);
     const { size } = statSync(file);
-    console.log(`[optimize-images] ${file} (${width}x${height}) ${formatBytes(size)}`);
+    console.log(
+      `[optimize-images] ${file} (${width}x${height}) ${formatBytes(size)}`,
+    );
     changed += 1;
   }
 }

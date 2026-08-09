@@ -46,8 +46,8 @@ export function BestKids({ locale }: { locale: LocaleCode }) {
             <Card className="overflow-hidden">
               {/* eslint-disable-next-line @next/next/no-img-element -- srcSet responsivo não é suportado por next/image com images.unoptimized (spec §25); variantes WebP geradas na pipeline de assets. */}
               <img
-                src="/assets/best-kids/english-kids-960.webp"
-                srcSet="/assets/best-kids/english-kids-480.webp 480w, /assets/best-kids/english-kids-960.webp 960w, /assets/best-kids/english-kids-1440.webp 1440w"
+                src="/assets/pt-BR/kids-pt-br-960.webp"
+                srcSet="/assets/pt-BR/kids-pt-br-480.webp 480w, /assets/pt-BR/kids-pt-br-960.webp 960w, /assets/pt-BR/kids-pt-br-1440.webp 1440w"
                 sizes="(min-width: 64rem) 560px, calc(100vw - 2rem)"
                 alt={bestKids.imageAlt}
                 width={960}
@@ -120,7 +120,10 @@ export function BestKids({ locale }: { locale: LocaleCode }) {
                     "mt-6 w-full",
                   )}
                 >
-                  <MessageCircle className="h-5 w-5 shrink-0" aria-hidden="true" />
+                  <MessageCircle
+                    className="h-5 w-5 shrink-0"
+                    aria-hidden="true"
+                  />
                   {bestKids.ctaLabel}
                 </WhatsAppLink>
               </CardContent>
