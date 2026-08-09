@@ -32,6 +32,7 @@ import { Testimonials } from "./testimonials";
 export function LandingPage({ locale }: { locale: LocaleCode }) {
   return (
     <>
+      <div id="top" aria-hidden="true" />
       <SiteHeader locale={locale} />
       <main id="main" className="flex-1">
         <Hero locale={locale} />

@@ -26,17 +26,17 @@ export function SiteHeader({ locale }: { locale: LocaleCode }) {
   const content = getLandingContent(locale);
 
   return (
-    <header
-      id="top"
-      className="sticky top-0 z-40 border-b border-border bg-[#926f34]/95 backdrop-blur"
-    >
+    <header className="sticky top-0 z-40 border-b border-border bg-[#926f34]/95 backdrop-blur">
       <div className="relative mx-auto flex w-full max-w-7xl items-center justify-between gap-x-4 px-4 py-3 md:px-8">
         <Link
-          href="#top"
+          href={`${localeMeta.path}#top`}
           className="
-          flex 
-          min-h-11
-          items-center gap-3 rounded-md focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring"
+    flex
+    min-h-11
+    items-center gap-3 rounded-md
+    focus-visible:outline-2
+    focus-visible:outline-offset-2
+    focus-visible:outline-ring"
           aria-label={site.name}
         >
           <span
