@@ -193,7 +193,7 @@
   /* Respeito por prefers-reduced-motion (spec §23). */
   @media (prefers-reduced-motion: reduce) {
     html {
-      scroll-behavior: auto;
+      scroll-behavior: smooth;
     }
 
     *,

@@ -26,10 +26,13 @@ export function SiteHeader({ locale }: { locale: LocaleCode }) {
   const content = getLandingContent(locale);
 
   return (
-    <header className="sticky top-0 z-40 border-b border-border bg-background-[#926f34] bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/80">
+    <header
+      id="top"
+      className="sticky top-0 z-40 border-b border-border bg-[#926f34]/95 backdrop-blur"
+    >
       <div className="relative mx-auto flex w-full max-w-7xl items-center justify-between gap-x-4 px-4 py-3 md:px-8">
         <Link
-          href={localeMeta.path}
+          href="#top"
           className="
           flex 
           min-h-11
@@ -39,9 +42,9 @@ export function SiteHeader({ locale }: { locale: LocaleCode }) {
           <span
             className="
           text-base
-          sm:text-1xl 
-          md:text-2xl 
-          lg:text-3xl           
+          sm:text-xl 
+          md:text-xl 
+          lg:text-2xl
           font-semibold
           tracking-tight"
           >
