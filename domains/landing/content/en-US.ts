@@ -49,12 +49,14 @@ export const enUS: LandingContent = {
   },
   cta: {
     whatsappLabel: "Chat with us on WhatsApp",
-    whatsappAriaLabel: "Chat with us on WhatsApp: open a WhatsApp conversation with Best Fluency (new window)",
+    whatsappAriaLabel:
+      "Chat with us on WhatsApp: open a WhatsApp conversation with Best Fluency (new window)",
     whatsappMessage: INFO_MESSAGE,
   },
   notFound: {
     title: "Page not found",
-    description: "The page you are looking for does not exist or has been moved.",
+    description:
+      "The page you are looking for does not exist or has been moved.",
     backHome: "Back to the homepage",
   },
   footer: {
@@ -69,17 +71,12 @@ export const enUS: LandingContent = {
   },
 
   hero: {
-    eyebrow: "BEST FLUENCY LANGUAGE SCHOOL · AMADORA AND ONLINE",
-    title: "English lessons in Amadora and online to communicate with confidence",
+    title: "Stop freezing up. Start speaking English with confidence.",
     text: "Practical, personalized lessons for children, teens and adults, one-on-one or in small groups of up to 8 students.",
-    complement:
-      "Develop your communication for work, studies, travel and everyday situations.",
     ctaLabel: "Book a trial lesson",
     ctaAriaLabel:
       "Book a trial lesson: open a WhatsApp conversation (new window)",
     ctaWhatsappMessage: TRIAL_MESSAGE,
-    secondaryCtaLabel: "Explore the lesson options",
-    imageAlt: "Best Fluency teacher during a personalized English lesson",
   },
 
   infoBar: {
@@ -148,7 +145,8 @@ export const enUS: LandingContent = {
       "A close and welcoming space to learn English with personalized support.",
     ],
     ctaLabel: "View location",
-    ctaAriaLabel: "View location: open Best Fluency's location on Google Maps (new window)",
+    ctaAriaLabel:
+      "View location: open Best Fluency's location on Google Maps (new window)",
   },
 
   bestKids: {
@@ -193,7 +191,8 @@ export const enUS: LandingContent = {
   testimonials: {
     starsAriaLabel: "stars",
     h2: "What Best Fluency students say",
-    subtitle: "Real experiences from people who are learning and growing with us.",
+    subtitle:
+      "Real experiences from people who are learning and growing with us.",
     items: [
       {
         name: "Pedro António",
@@ -205,7 +204,8 @@ export const enUS: LandingContent = {
         name: "Sandro Vite",
         source: "Google review",
         stars: 5,
-        quote: "Amazing, teaching that is very well applied and in a simple, objective way.",
+        quote:
+          "Amazing, teaching that is very well applied and in a simple, objective way.",
       },
       {
         name: "Maurício Moura",

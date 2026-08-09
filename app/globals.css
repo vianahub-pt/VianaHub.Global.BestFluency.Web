@@ -34,11 +34,11 @@
    */
   --brand-black: hsl(0 0% 4%);
   --brand-white: hsl(0 0% 100%);
-  --brand-gold: hsl(42 70% 32%);
 
-  /* Dourado oficial #D4AF37 para superfícies de destaque (CTA gold, chips). */
-  --gold: hsl(46 65% 52%);
-  --gold-foreground: hsl(0 0% 9%);
+  /* Dourado oficial Best Fluency */
+  --brand-gold: #926f34;
+  --gold: #926f34;
+  --gold-foreground: #ffffff;
 
   color-scheme: light;
 
@@ -56,12 +56,12 @@
   --muted: hsl(0 0% 96%);
   --muted-foreground: hsl(0 0% 32%);
   --accent: var(--brand-gold);
-  --accent-foreground: hsl(0 0% 100%);
+  --accent-foreground: #ffffff;
+  --ring: var(--brand-gold);
   --destructive: hsl(0 72% 45%);
   --destructive-foreground: hsl(0 0% 98%);
   --border: hsl(0 0% 90%);
   --input: hsl(0 0% 90%);
-  --ring: var(--brand-gold);
   --radius: 0.625rem;
 
   /*
@@ -73,13 +73,12 @@
 
 .dark {
   --brand-black: hsl(0 0% 98%);
-  /* Preto profundo oficial do tema escuro: #0A0A0A. */
   --brand-white: hsl(0 0% 4%);
-  --brand-gold: hsl(45 85% 55%);
 
-  /* O dourado oficial #D4AF37 mantém-se como superfície de destaque. */
-  --gold: hsl(46 65% 52%);
-  --gold-foreground: hsl(0 0% 9%);
+  /* Mesmo dourado no dark */
+  --brand-gold: #926f34;
+  --gold: #926f34;
+  --gold-foreground: #ffffff;
 
   color-scheme: dark;
 
@@ -96,12 +95,12 @@
   --muted: hsl(0 0% 14%);
   --muted-foreground: hsl(0 0% 68%);
   --accent: var(--brand-gold);
-  --accent-foreground: hsl(0 0% 9%);
+  --accent-foreground: #ffffff;
+  --ring: var(--brand-gold);
   --destructive: hsl(0 70% 55%);
   --destructive-foreground: hsl(0 0% 98%);
   --border: hsl(0 0% 20%);
   --input: hsl(0 0% 22%);
-  --ring: var(--brand-gold);
 }
 
 @theme inline {
@@ -128,6 +127,9 @@
   --radius-md: calc(var(--radius) - 2px);
   --radius-lg: var(--radius);
   --radius-xl: calc(var(--radius) + 4px);
+
+  /* Tipografia */
+  --font-display: var(--font-bitcount-ink);
 
   /* Papéis cromáticos da marca disponíveis como utilities (text-brand-gold, etc.). */
   --color-brand-black: var(--brand-black);
@@ -173,8 +175,14 @@
     background-color: var(--background);
     color: var(--foreground);
     font-family:
-      ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto,
-      "Helvetica Neue", Arial, sans-serif;
+      ui-sans-serif,
+      system-ui,
+      -apple-system,
+      "Segoe UI",
+      Roboto,
+      "Helvetica Neue",
+      Arial,
+      sans-serif;
   }
 
   :focus-visible {

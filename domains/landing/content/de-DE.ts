@@ -49,7 +49,8 @@ export const deDE: LandingContent = {
   },
   cta: {
     whatsappLabel: "Schreiben Sie uns auf WhatsApp",
-    whatsappAriaLabel: "Schreiben Sie uns auf WhatsApp — WhatsApp-Unterhaltung mit Best Fluency öffnen (neues Fenster)",
+    whatsappAriaLabel:
+      "Schreiben Sie uns auf WhatsApp — WhatsApp-Unterhaltung mit Best Fluency öffnen (neues Fenster)",
     whatsappMessage: INFO_MESSAGE,
   },
   notFound: {
@@ -69,17 +70,12 @@ export const deDE: LandingContent = {
   },
 
   hero: {
-    eyebrow: "BEST FLUENCY LANGUAGE SCHOOL · AMADORA UND ONLINE",
-    title: "Englischunterricht in Amadora und online – kommunizieren Sie mit Selbstvertrauen",
+    title: "Komm nicht mehr ins Stocken. Sprich Englisch mit Selbstvertrauen.",
     text: "Praktischer und persönlicher Englischunterricht für Kinder, Jugendliche und Erwachsene – einzeln oder in kleinen Gruppen mit maximal 8 Lernenden.",
-    complement:
-      "Entwickeln Sie Ihre Kommunikation für Arbeit, Studium, Reisen und den Alltag.",
     ctaLabel: "Probestunde buchen",
     ctaAriaLabel:
       "Probestunde buchen — WhatsApp-Unterhaltung öffnen (neues Fenster)",
     ctaWhatsappMessage: TRIAL_MESSAGE,
-    secondaryCtaLabel: "Unterrichtsformen entdecken",
-    imageAlt: "Lehrerin von Best Fluency während einer persönlichen Englischstunde",
   },
 
   infoBar: {
@@ -148,7 +144,8 @@ export const deDE: LandingContent = {
       "Ein naher und einladender Ort, um Englisch mit persönlicher Betreuung zu lernen.",
     ],
     ctaLabel: "Standort ansehen",
-    ctaAriaLabel: "Standort ansehen — Standort von Best Fluency auf Google Maps öffnen (neues Fenster)",
+    ctaAriaLabel:
+      "Standort ansehen — Standort von Best Fluency auf Google Maps öffnen (neues Fenster)",
   },
 
   bestKids: {
@@ -187,13 +184,15 @@ export const deDE: LandingContent = {
       "Best Kids kennenlernen — WhatsApp-Unterhaltung öffnen (neues Fenster)",
     whatsappMessage:
       "Hallo! Ich möchte gerne weitere Informationen über die Best Kids Kurse erhalten.",
-    imageAlt: "Faísca, das Maskottchen von Best Kids, im Englischunterricht für Kinder",
+    imageAlt:
+      "Faísca, das Maskottchen von Best Kids, im Englischunterricht für Kinder",
   },
 
   testimonials: {
     starsAriaLabel: "Sterne",
     h2: "Das sagen die Lernenden von Best Fluency",
-    subtitle: "Echte Erfahrungen von Menschen, die bei uns lernen und Fortschritte machen.",
+    subtitle:
+      "Echte Erfahrungen von Menschen, die bei uns lernen und Fortschritte machen.",
     items: [
       {
         name: "Pedro António",
@@ -205,7 +204,8 @@ export const deDE: LandingContent = {
         name: "Sandro Vite",
         source: "Google-Bewertung",
         stars: 5,
-        quote: "Unglaublich, ein sehr gut umgesetzter Unterricht, einfach und zielgerichtet.",
+        quote:
+          "Unglaublich, ein sehr gut umgesetzter Unterricht, einfach und zielgerichtet.",
       },
       {
         name: "Maurício Moura",

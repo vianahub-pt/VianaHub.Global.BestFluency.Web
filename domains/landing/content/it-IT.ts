@@ -49,7 +49,8 @@ export const itIT: LandingContent = {
   },
   cta: {
     whatsappLabel: "Scrivici su WhatsApp",
-    whatsappAriaLabel: "Scrivici su WhatsApp — apri una conversazione WhatsApp con Best Fluency (nuova finestra)",
+    whatsappAriaLabel:
+      "Scrivici su WhatsApp — apri una conversazione WhatsApp con Best Fluency (nuova finestra)",
     whatsappMessage: INFO_MESSAGE,
   },
   notFound: {
@@ -69,17 +70,12 @@ export const itIT: LandingContent = {
   },
 
   hero: {
-    eyebrow: "BEST FLUENCY LANGUAGE SCHOOL · AMADORA E ONLINE",
-    title: "Lezioni di inglese ad Amadora e online per comunicare con sicurezza",
+    title: "Smetti di bloccarti. Inizia a parlare inglese con sicurezza.",
     text: "Lezioni pratiche e personalizzate per bambini, ragazzi e adulti, in formato individuale o in piccoli gruppi con un massimo di 8 studenti.",
-    complement:
-      "Sviluppa la comunicazione per il lavoro, gli studi, i viaggi e la vita di tutti i giorni.",
     ctaLabel: "Prenota una lezione di prova",
     ctaAriaLabel:
       "Prenota una lezione di prova — apri una conversazione WhatsApp (nuova finestra)",
     ctaWhatsappMessage: TRIAL_MESSAGE,
-    secondaryCtaLabel: "Scopri le modalità",
-    imageAlt: "Insegnante di Best Fluency durante una lezione di inglese personalizzata",
   },
 
   infoBar: {
@@ -148,7 +144,8 @@ export const itIT: LandingContent = {
       "Uno spazio vicino e accogliente per imparare l'inglese con un accompagnamento personalizzato.",
     ],
     ctaLabel: "Vedi la posizione",
-    ctaAriaLabel: "Vedi la posizione — apri la posizione di Best Fluency su Google Maps (nuova finestra)",
+    ctaAriaLabel:
+      "Vedi la posizione — apri la posizione di Best Fluency su Google Maps (nuova finestra)",
   },
 
   bestKids: {
@@ -187,7 +184,8 @@ export const itIT: LandingContent = {
       "Scopri Best Kids — apri una conversazione WhatsApp (nuova finestra)",
     whatsappMessage:
       "Ciao! Vorrei ricevere maggiori informazioni sulle lezioni Best Kids.",
-    imageAlt: "Faísca, mascotte di Best Kids, nelle lezioni di inglese per bambini",
+    imageAlt:
+      "Faísca, mascotte di Best Kids, nelle lezioni di inglese per bambini",
   },
 
   testimonials: {
@@ -205,7 +203,8 @@ export const itIT: LandingContent = {
         name: "Sandro Vite",
         source: "Recensione Google",
         stars: 5,
-        quote: "Incredibile, un insegnamento molto ben applicato e in modo semplice e obiettivo.",
+        quote:
+          "Incredibile, un insegnamento molto ben applicato e in modo semplice e obiettivo.",
       },
       {
         name: "Maurício Moura",

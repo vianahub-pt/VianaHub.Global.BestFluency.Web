@@ -49,7 +49,8 @@ export const esES: LandingContent = {
   },
   cta: {
     whatsappLabel: "Hable con nosotros por WhatsApp",
-    whatsappAriaLabel: "Hable con nosotros por WhatsApp — abrir una conversación con Best Fluency (nueva ventana)",
+    whatsappAriaLabel:
+      "Hable con nosotros por WhatsApp — abrir una conversación con Best Fluency (nueva ventana)",
     whatsappMessage: INFO_MESSAGE,
   },
   notFound: {
@@ -69,17 +70,12 @@ export const esES: LandingContent = {
   },
 
   hero: {
-    eyebrow: "BEST FLUENCY LANGUAGE SCHOOL · AMADORA Y ONLINE",
-    title: "Clases de inglés en Amadora y online para comunicarte con confianza",
+    title: "Deja de bloquearte. Empieza a hablar inglés con confianza.",
     text: "Clases prácticas y personalizadas para niños, jóvenes y adultos, de forma individual o en grupos reducidos con un máximo de 8 alumnos.",
-    complement:
-      "Desarrolla la comunicación para el trabajo, los estudios, los viajes y las situaciones del día a día.",
     ctaLabel: "Reservar clase de prueba",
     ctaAriaLabel:
       "Reservar clase de prueba — abrir una conversación de WhatsApp (nueva ventana)",
     ctaWhatsappMessage: TRIAL_MESSAGE,
-    secondaryCtaLabel: "Conocer las modalidades",
-    imageAlt: "Profesora de Best Fluency durante una clase de inglés personalizada",
   },
 
   infoBar: {
@@ -148,7 +144,8 @@ export const esES: LandingContent = {
       "Un espacio cercano y acogedor para aprender inglés con acompañamiento personalizado.",
     ],
     ctaLabel: "Ver ubicación",
-    ctaAriaLabel: "Ver ubicación — abrir la ubicación de Best Fluency en Google Maps (nueva ventana)",
+    ctaAriaLabel:
+      "Ver ubicación — abrir la ubicación de Best Fluency en Google Maps (nueva ventana)",
   },
 
   bestKids: {
@@ -187,13 +184,15 @@ export const esES: LandingContent = {
       "Conocer Best Kids — abrir una conversación de WhatsApp (nueva ventana)",
     whatsappMessage:
       "¡Hola! Me gustaría recibir más información sobre las clases Best Kids.",
-    imageAlt: "Faísca, mascota de Best Kids, en las clases de inglés para niños",
+    imageAlt:
+      "Faísca, mascota de Best Kids, en las clases de inglés para niños",
   },
 
   testimonials: {
     starsAriaLabel: "estrellas",
     h2: "Lo que dicen los alumnos de Best Fluency",
-    subtitle: "Experiencias reales de quienes están aprendiendo y evolucionando con nosotros.",
+    subtitle:
+      "Experiencias reales de quienes están aprendiendo y evolucionando con nosotros.",
     items: [
       {
         name: "Pedro António",
@@ -205,7 +204,8 @@ export const esES: LandingContent = {
         name: "Sandro Vite",
         source: "Reseña de Google",
         stars: 5,
-        quote: "Increíble, una enseñanza muy bien aplicada y de manera simple y objetiva.",
+        quote:
+          "Increíble, una enseñanza muy bien aplicada y de manera simple y objetiva.",
       },
       {
         name: "Maurício Moura",

@@ -6,6 +6,7 @@ import { CloudflareWebAnalytics } from "@/shared/components/analytics/cloudflare
 import { JsonLd } from "@/shared/components/seo/json-ld";
 import { ThemeProvider } from "@/shared/components/theme/theme-provider";
 import { buildOrganizationJsonLd } from "@/shared/lib/seo";
+import { bitcountInk } from "@/shared/styles/fonts";
 
 interface DocumentShellProps {
   locale: LocaleCode;
@@ -25,7 +26,11 @@ export function DocumentShell({ locale, children }: DocumentShellProps) {
   const content = getLandingContent(locale);
 
   return (
-    <html lang={localeMeta.hreflang} suppressHydrationWarning>
+    <html
+      lang={localeMeta.hreflang}
+      className={bitcountInk.variable}
+      suppressHydrationWarning
+    >
       <body className="flex min-h-dvh flex-col bg-background font-sans text-foreground antialiased">
         <ThemeProvider>
           <a
