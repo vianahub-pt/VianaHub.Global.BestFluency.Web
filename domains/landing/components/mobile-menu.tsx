@@ -4,7 +4,7 @@ import { Menu, X } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
 
 import type { LocaleCode } from "@/core/config/locales";
-import { getLandingContent } from "@/domains/landing/content";
+import { getLandingContent } from "@/domains/landing/i18n";
 import { LocaleSwitcher } from "@/shared/components/locale/locale-switcher";
 import { buttonVariants } from "@/shared/components/ui/button";
 import { WhatsAppLink } from "@/shared/components/whatsapp-link";

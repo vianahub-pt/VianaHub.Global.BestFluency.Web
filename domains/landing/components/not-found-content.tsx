@@ -1,6 +1,6 @@
 import Link from "next/link";
 
-import { getLandingContent } from "@/domains/landing/content";
+import { getLandingContent } from "@/domains/landing/i18n";
 
 /**
  * Conteúdo 404 da fase de fundação (em pt-PT, idioma principal).

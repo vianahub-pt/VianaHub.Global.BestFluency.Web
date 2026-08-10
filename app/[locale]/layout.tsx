@@ -6,7 +6,7 @@ import {
   localeCodeForSegment,
   nonDefaultLocales,
 } from "@/core/config/locales";
-import { getLandingContent } from "@/domains/landing/content";
+import { getLandingContent } from "@/domains/landing/i18n";
 import { DocumentShell } from "@/shared/components/layout/document-shell";
 import { buildLocaleMetadata } from "@/shared/lib/seo";
 

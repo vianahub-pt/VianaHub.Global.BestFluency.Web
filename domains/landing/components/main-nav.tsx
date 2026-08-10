@@ -1,5 +1,5 @@
 import type { LocaleCode } from "@/core/config/locales";
-import { getLandingContent } from "@/domains/landing/content";
+import { getLandingContent } from "@/domains/landing/i18n";
 
 /**
  * Navegação principal por âncoras (spec §7).

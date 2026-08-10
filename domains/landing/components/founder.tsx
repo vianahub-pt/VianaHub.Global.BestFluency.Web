@@ -1,7 +1,7 @@
 import Image from "next/image";
 
 import { type LocaleCode } from "@/core/config/locales";
-import { getLandingContent } from "@/domains/landing/content";
+import { getLandingContent } from "@/domains/landing/i18n";
 import { SectionHeading } from "@/shared/components/ui/section-heading";
 
 /**

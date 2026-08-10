@@ -13,6 +13,10 @@
  * 2. Cada `locales/{code}/common.json` é JSON válido.
  * 3. Todos os locales partilham exatamente as mesmas chaves (recursivo),
  *    usando `pt-PT` (locale padrão da raiz "/") como referência.
+ * 4. (issue #32) O namespace `landing.*` existe em todos os locales e todos
+ *    os arrays têm exatamente o mesmo comprimento nos 7 idiomas — o conteúdo
+ *    da landing vive exclusivamente nestes ficheiros e é consumido pelo
+ *    accessor tipado `domains/landing/i18n`, sem fallback silencioso.
  *
  * Uso: `node scripts/check-i18n-parity.mjs` — exit 0 (ok) ou exit 1 (falha).
  * É executado automaticamente antes de `next build` via hook `prebuild`.
@@ -134,34 +138,67 @@ if (contents.has(REFERENCE_CODE)) {
   }
 }
 
-// --- 5. Paridade do contrato de conteúdo da landing (issue #8) ---
-// O contrato TS (domains/landing/content/{code}.ts) é tipado: o typecheck
-// garante que todos os locales implementam exatamente as mesmas chaves de
-// LandingContent. Esta verificação adicional protege o build contra ficheiros
-// de conteúdo em falta ou sem a tipagem do contrato (rede de segurança extra
-// sobre o gate de common.json, sem alterar o comportamento existente).
-const contentDir = join(rootDir, "domains", "landing", "content");
-const contentTypesPath = join(contentDir, "types.ts");
+// --- 5. Namespace landing.* (issue #32): presença obrigatória + paridade de arrays ---
+// O conteúdo da landing vive exclusivamente em locales/{code}/common.json sob
+// `landing` e é consumido pelo accessor tipado domains/landing/i18n. A
+// paridade de chaves landing.* já é coberta pela verificação 4 (o namespace
+// faz parte do ficheiro); aqui garantimos que o namespace existe em todos os
+// locales e que todos os arrays (infoBar.items, method.pillars, faq.items,
+// ...) têm o mesmo comprimento nos 7 idiomas — arrays são folhas opacas para
+// a comparação de chaves.
 
-if (!existsSync(contentTypesPath)) {
-  fail("domains/landing/content/types.ts em falta (contrato LandingContent).");
-} else {
-  const typesSrc = readFileSync(contentTypesPath, "utf8");
-  if (!/export interface LandingContent\b/.test(typesSrc)) {
-    fail("domains/landing/content/types.ts nao declara o contrato LandingContent.");
+/** Recolhe recursivamente os arrays de um objeto: Map<caminho, comprimento>. */
+function collectArrays(value, prefix = "", out = new Map()) {
+  if (Array.isArray(value)) {
+    out.set(prefix, value.length);
+    value.forEach((item, index) => collectArrays(item, `${prefix}[${index}]`, out));
+    return out;
   }
+  if (value !== null && typeof value === "object") {
+    for (const [key, child] of Object.entries(value)) {
+      collectArrays(child, prefix ? `${prefix}.${key}` : key, out);
+    }
+  }
+  return out;
+}
+
+const isPlainObject = (value) =>
+  value !== null && typeof value === "object" && !Array.isArray(value);
+
+for (const code of sortedExpected) {
+  const current = contents.get(code);
+  if (!current) continue;
+  if (!isPlainObject(current.landing)) {
+    fail(`[${code}] namespace landing.* ausente ou invalido em locales/${code}/common.json.`);
+  }
+}
+
+if (contents.has(REFERENCE_CODE) && isPlainObject(contents.get(REFERENCE_CODE).landing)) {
+  const referenceArrays = collectArrays(contents.get(REFERENCE_CODE).landing, "landing");
 
   for (const code of sortedExpected) {
-    const contentFile = join(contentDir, `${code}.ts`);
-    if (!existsSync(contentFile)) {
-      fail(`domains/landing/content/${code}.ts em falta (contrato de conteúdo).`);
-      continue;
+    if (code === REFERENCE_CODE) continue;
+    const current = contents.get(code);
+    if (!current || !isPlainObject(current.landing)) continue;
+
+    const currentArrays = collectArrays(current.landing, "landing");
+    const missingArrays = [...referenceArrays.keys()].filter((path) => !currentArrays.has(path));
+    const extraArrays = [...currentArrays.keys()].filter((path) => !referenceArrays.has(path));
+    const lengthMismatch = [...referenceArrays.keys()].filter(
+      (path) => currentArrays.has(path) && currentArrays.get(path) !== referenceArrays.get(path),
+    );
+
+    if (missingArrays.length > 0) {
+      fail(`[${code}] arrays em falta (vs ${REFERENCE_CODE}): ${missingArrays.join(", ")}.`);
     }
-    const contentSrc = readFileSync(contentFile, "utf8");
-    if (!contentSrc.includes(": LandingContent")) {
-      fail(
-        `domains/landing/content/${code}.ts nao implementa o contrato LandingContent.`,
+    if (extraArrays.length > 0) {
+      fail(`[${code}] arrays extra (vs ${REFERENCE_CODE}): ${extraArrays.join(", ")}.`);
+    }
+    if (lengthMismatch.length > 0) {
+      const details = lengthMismatch.map(
+        (path) => `${path} (${currentArrays.get(path)} vs ${referenceArrays.get(path)})`,
       );
+      fail(`[${code}] arrays com comprimento divergente (vs ${REFERENCE_CODE}): ${details.join(", ")}.`);
     }
   }
 }
@@ -173,12 +210,12 @@ if (errors.length > 0) {
     console.error(`  - ${error}`);
   }
   console.error(
-    "[i18n-parity] Corrija os ficheiros em locales/ ou domains/landing/content/ e volte a executar o build.",
+    "[i18n-parity] Corrija os ficheiros em locales/ e volte a executar o build.",
   );
   process.exit(1);
 }
 
 const keyCount = flattenKeys(contents.get(REFERENCE_CODE)).size;
 ok(
-  `OK — ${registeredCodes.length} locales × ${keyCount} chaves em common.json e contrato de conteúdo presentes nos ${sortedExpected.length} locales.`,
+  `OK — ${registeredCodes.length} locales × ${keyCount} chaves em common.json, com namespace landing.* e paridade de arrays nos ${sortedExpected.length} locales.`,
 );

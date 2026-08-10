@@ -1,7 +1,7 @@
 import type { ReactNode } from "react";
 
 import { getLocale, type LocaleCode } from "@/core/config/locales";
-import { getLandingContent } from "@/domains/landing/content";
+import { getLandingContent } from "@/domains/landing/i18n";
 import { CloudflareWebAnalytics } from "@/shared/components/analytics/cloudflare-web-analytics";
 import { JsonLd } from "@/shared/components/seo/json-ld";
 import { ThemeProvider } from "@/shared/components/theme/theme-provider";

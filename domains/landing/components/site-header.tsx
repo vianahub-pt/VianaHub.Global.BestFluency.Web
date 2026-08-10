@@ -1,6 +1,6 @@
 import type { LocaleCode } from "@/core/config/locales";
 import { site } from "@/core/config/site";
-import { getLandingContent } from "@/domains/landing/content";
+import { getLandingContent } from "@/domains/landing/i18n";
 import { LocaleSwitcher } from "@/shared/components/locale/locale-switcher";
 import { ThemeToggle } from "@/shared/components/theme/theme-toggle";
 import { buttonVariants } from "@/shared/components/ui/button";

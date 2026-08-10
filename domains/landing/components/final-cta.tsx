@@ -1,7 +1,7 @@
 import { MessageCircle, Plane } from "lucide-react";
 
 import { type LocaleCode } from "@/core/config/locales";
-import { getLandingContent } from "@/domains/landing/content";
+import { getLandingContent } from "@/domains/landing/i18n";
 import { buttonVariants } from "@/shared/components/ui/button";
 import { RoutePath } from "@/shared/components/ui/route-path";
 import { WhatsAppLink } from "@/shared/components/whatsapp-link";

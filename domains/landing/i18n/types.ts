@@ -1,8 +1,11 @@
 /**
  * Contrato de conteúdo da landing.
  *
- * Cada locale publicado implementa exatamente as mesmas chaves — o compilador
- * falha se faltar alguma chave em algum locale (sem fallback silencioso).
+ * Os dados vivem em `locales/{code}/common.json` sob o namespace `landing.*`
+ * (issue #32); este contrato é a tipagem consumida pelo accessor
+ * (`domains/landing/i18n/index.ts`) e pelos componentes. Cada locale
+ * publicado implementa exatamente as mesmas chaves — o typecheck falha se
+ * faltar alguma chave em algum locale (sem fallback silencioso).
  *
  * O contrato cobre as 13 secções comerciais da especificação V2
  * (docs/landing-page-spec-v2.md, §§7-19): header, hero, infoBar, modalities,

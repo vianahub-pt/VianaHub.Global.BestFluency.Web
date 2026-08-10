@@ -29,8 +29,8 @@ export function languageAlternates(): Record<string, string> {
  * Open Graph completo (com imagem social absoluta 1200×630), Twitter/X card,
  * controlo de indexação (noindex apenas antes do lançamento oficial).
  *
- * Title/description vêm do contrato de conteúdo por locale
- * (domains/landing/content/{code}.ts — spec §21), sem duplicação entre idiomas.
+ * Title/description vêm do namespace landing.* de locales/{code}/common.json
+ * via accessor tipado (domains/landing/i18n — spec §21), sem duplicação entre idiomas.
  */
 export function buildLocaleMetadata(
   code: LocaleCode,
