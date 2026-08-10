@@ -1,5 +1,4 @@
-import Link from "next/link";
-import { getLocale, type LocaleCode } from "@/core/config/locales";
+import type { LocaleCode } from "@/core/config/locales";
 import { site } from "@/core/config/site";
 import { getLandingContent } from "@/domains/landing/content";
 import { LocaleSwitcher } from "@/shared/components/locale/locale-switcher";
@@ -22,39 +21,41 @@ import { MobileMenu } from "./mobile-menu";
  *   idiomas e o CTA concentram-se no painel móvel para evitar overflow.
  */
 export function SiteHeader({ locale }: { locale: LocaleCode }) {
-  const localeMeta = getLocale(locale);
   const content = getLandingContent(locale);
 
   return (
     <header className="sticky top-0 z-40 border-b border-border bg-[#926f34]/95 backdrop-blur">
-      <div className="relative mx-auto flex w-full max-w-7xl items-center justify-between gap-x-4 px-4 py-3 md:px-8">
-        <Link
-          href={`${localeMeta.path}#top`}
+      <div className="relative mx-auto grid w-full max-w-7xl grid-cols-[auto_1fr_auto] items-center gap-x-4 px-4 py-3 md:px-8">
+        <a
+          href="#top"
           className="
-    flex
-    min-h-11
-    items-center gap-3 rounded-md
-    focus-visible:outline-2
-    focus-visible:outline-offset-2
-    focus-visible:outline-ring"
+        flex
+        min-h-11
+        items-center gap-3 rounded-md
+        focus-visible:outline-2
+        focus-visible:outline-offset-2
+        focus-visible:outline-ring"
           aria-label={site.name}
         >
           <span
             className="
-          text-base
-          sm:text-xl 
-          md:text-xl 
-          lg:text-2xl
-          font-semibold
-          tracking-tight"
+      text-base
+      sm:text-xl
+      md:text-xl
+      lg:text-2xl
+      font-semibold
+      tracking-tight"
           >
             {site.shortName}
           </span>
-        </Link>
+        </a>
 
-        <MainNav locale={locale} className="hidden lg:block" />
+        <MainNav
+          locale={locale}
+          className="hidden justify-self-center lg:block"
+        />
 
-        <div className="flex items-center gap-2">
+        <div className="flex items-center justify-self-end gap-2">
           <div className="hidden lg:block">
             <LocaleSwitcher
               currentLocale={locale}

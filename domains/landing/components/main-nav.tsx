@@ -37,13 +37,13 @@ export function MainNav({
 
   return (
     <nav aria-label={label} className={className}>
-      <ul className="flex flex-col gap-1 lg:flex-row lg:items-center">
+      <ul className="flex flex-col gap-1 lg:grid lg:grid-cols-[8.5rem_5rem_6rem_9.5rem_3.5rem] lg:items-center lg:gap-1">
         {navItems.map((item) => (
           <li key={item.key}>
             <a
               href={item.href}
               onClick={onNavigate}
-              className="inline-flex min-h-11 items-center rounded-md px-3 py-2 text-sm font-medium text-foreground transition-colors hover:bg-muted hover:text-accent focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring"
+              className="inline-flex min-h-11 items-center rounded-md px-3 py-2 text-sm font-medium text-foreground transition-colors hover:bg-muted hover:text-accent focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring lg:w-full lg:justify-center lg:px-2"
             >
               {content.nav.links[item.key]}
             </a>

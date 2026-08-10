@@ -33,7 +33,7 @@ export function LocaleSwitcher({ currentLocale, label }: LocaleSwitcherProps) {
     <Select defaultValue={currentLocale}>
       <SelectTrigger
         aria-label={`${label}: ${current.label}`}
-        className="w-auto min-w-[7rem]"
+        className="w-[12rem] shrink-0"
       >
         <Globe className="mr-1.5 h-4 w-4" aria-hidden="true" />
         <SelectValue />
@@ -42,9 +42,15 @@ export function LocaleSwitcher({ currentLocale, label }: LocaleSwitcherProps) {
         {locales.map((locale) => {
           const isCurrent = locale.code === currentLocale;
           return (
-            <SelectItem key={locale.code} value={locale.code}>
+            <SelectItem
+              key={locale.code}
+              value={locale.code}
+              className="hover:bg-[#926f34] focus:bg-[#926f34] data-[highlighted]:bg-[#926f34]"
+            >
               <Link
                 href={locale.path}
+                scroll={false}
+                replace
                 hrefLang={locale.hreflang}
                 lang={locale.hreflang}
                 aria-label={locale.label}
