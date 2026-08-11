@@ -2,7 +2,7 @@ import { MapPin, Monitor, User, Users } from "lucide-react";
 import type { ReactNode } from "react";
 
 import { type LocaleCode } from "@/core/config/locales";
-import { getLandingContent } from "@/domains/landing/content";
+import { getLandingContent } from "@/domains/landing/i18n";
 
 /**
  * Faixa de informações essenciais (spec §9).

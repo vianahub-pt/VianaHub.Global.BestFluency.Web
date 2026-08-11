@@ -10,7 +10,7 @@
 
     Quando a fotografia autorizada chegar, substituir este ficheiro por
     public/assets/people/hero-best-fluency.webp e rever o alt em
-    domains/landing/content (chave hero.imageAlt, "sujeito à imagem escolhida").
+    locales/{code}/common.json (chave landing.hero.imageAlt, "sujeito à imagem escolhida").
   -->
   <rect width="1200" height="900" fill="#141416"/>
 

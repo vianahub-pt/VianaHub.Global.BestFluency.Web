@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import type { ReactNode } from "react";
 
-import { getLandingContent } from "@/domains/landing/content";
+import { getLandingContent } from "@/domains/landing/i18n";
 import { DocumentShell } from "@/shared/components/layout/document-shell";
 import { buildLocaleMetadata } from "@/shared/lib/seo";
 

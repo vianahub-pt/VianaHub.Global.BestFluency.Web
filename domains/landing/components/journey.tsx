@@ -1,7 +1,7 @@
 import { MessageCircle } from "lucide-react";
 
 import { type LocaleCode } from "@/core/config/locales";
-import { getLandingContent } from "@/domains/landing/content";
+import { getLandingContent } from "@/domains/landing/i18n";
 import { buttonVariants } from "@/shared/components/ui/button";
 import { RoutePath } from "@/shared/components/ui/route-path";
 import { SectionHeading } from "@/shared/components/ui/section-heading";

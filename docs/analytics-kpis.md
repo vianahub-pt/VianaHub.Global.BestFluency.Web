@@ -84,8 +84,8 @@ interativa). Não são emitidos nesta versão.
 | `final_cta` | CTA final (cartão de embarque) | — | `final-cta.tsx` |
 | `footer` | WhatsApp do footer | — | `site-footer.tsx` |
 
-O rótulo real de cada CTA vem do contrato de conteúdo localizado
-(`domains/landing/content/{locale}.ts`), por isso o `cta_label` reflete o idioma
+O rótulo real de cada CTA vem do conteúdo localizado
+(`locales/{locale}/common.json`, namespace `landing.*`), por isso o `cta_label` reflete o idioma
 da rota (pt-PT, en-US, es-ES, fr-FR, de-DE, it-IT, pt-BR).
 
 ## KPIs (spec §22)
