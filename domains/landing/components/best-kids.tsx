@@ -1,7 +1,7 @@
 import { MessageCircle } from "lucide-react";
 
 import { type LocaleCode } from "@/core/config/locales";
-import { getLandingContent } from "@/domains/landing/i18n";
+import { getMessages } from "@/core/i18n";
 import { buttonVariants } from "@/shared/components/ui/button";
 import { Card, CardContent } from "@/shared/components/ui/card";
 import { SectionHeading } from "@/shared/components/ui/section-heading";
@@ -25,7 +25,7 @@ import { cn } from "@/shared/lib/utils";
  *   destacarem do fundo suave da secção (alternância de fundos da issue #29).
  */
 export function BestKids({ locale }: { locale: LocaleCode }) {
-  const content = getLandingContent(locale);
+  const content = getMessages(locale).landing;
   const { bestKids } = content;
 
   // Dynamic asset paths based on active locale

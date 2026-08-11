@@ -30,7 +30,7 @@ export function languageAlternates(): Record<string, string> {
  * controlo de indexação (noindex apenas antes do lançamento oficial).
  *
  * Title/description vêm do namespace landing.* de locales/{code}/common.json
- * via accessor tipado (domains/landing/i18n — spec §21), sem duplicação entre idiomas.
+ * via utilitário central (core/i18n — spec §21), sem duplicação entre idiomas.
  */
 export function buildLocaleMetadata(
   code: LocaleCode,

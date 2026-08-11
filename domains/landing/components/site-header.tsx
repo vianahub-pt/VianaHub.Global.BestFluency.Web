@@ -1,6 +1,6 @@
 import type { LocaleCode } from "@/core/config/locales";
 import { site } from "@/core/config/site";
-import { getLandingContent } from "@/domains/landing/i18n";
+import { getMessages } from "@/core/i18n";
 import { LocaleSwitcher } from "@/shared/components/locale/locale-switcher";
 import { ThemeToggle } from "@/shared/components/theme/theme-toggle";
 import { buttonVariants } from "@/shared/components/ui/button";
@@ -21,7 +21,7 @@ import { MobileMenu } from "./mobile-menu";
  *   idiomas e o CTA concentram-se no painel móvel para evitar overflow.
  */
 export function SiteHeader({ locale }: { locale: LocaleCode }) {
-  const content = getLandingContent(locale);
+  const content = getMessages(locale).landing;
 
   return (
     <header className="sticky top-0 z-40 border-b border-border bg-[#926f34]/95 backdrop-blur">
@@ -51,7 +51,7 @@ export function SiteHeader({ locale }: { locale: LocaleCode }) {
         </a>
 
         <MainNav
-          locale={locale}
+          nav={content.nav}
           className="hidden justify-self-center lg:block"
         />
 
@@ -77,7 +77,11 @@ export function SiteHeader({ locale }: { locale: LocaleCode }) {
               {content.nav.ctaLabel}
             </WhatsAppLink>
           </div>
-          <MobileMenu locale={locale} />
+          <MobileMenu
+            locale={locale}
+            nav={content.nav}
+            languageSwitcherLabel={content.a11y.languageSwitcherLabel}
+          />
         </div>
       </div>
     </header>

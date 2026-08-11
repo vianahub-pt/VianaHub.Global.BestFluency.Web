@@ -4,7 +4,7 @@ import { Menu, X } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
 
 import type { LocaleCode } from "@/core/config/locales";
-import { getLandingContent } from "@/domains/landing/i18n";
+import type { LandingContent } from "@/core/i18n";
 import { LocaleSwitcher } from "@/shared/components/locale/locale-switcher";
 import { buttonVariants } from "@/shared/components/ui/button";
 import { WhatsAppLink } from "@/shared/components/whatsapp-link";
@@ -14,6 +14,8 @@ import { MainNav } from "./main-nav";
 
 interface MobileMenuProps {
   locale: LocaleCode;
+  nav: LandingContent["nav"];
+  languageSwitcherLabel: string;
 }
 
 /**
@@ -29,9 +31,12 @@ interface MobileMenuProps {
  *
  * O painel também concentra o seletor de idiomas no telemóvel, mantendo o
  * header compacto (uma linha: logótipo + tema + menu) em 360 px.
+ *
+ * Client Component: recebe o namespace `nav` e o rótulo do seletor de
+ * idiomas por props (serializados pelo SiteHeader) — os dicionários de
+ * `core/i18n` não entram no bundle client.
  */
-export function MobileMenu({ locale }: MobileMenuProps) {
-  const content = getLandingContent(locale);
+export function MobileMenu({ locale, nav, languageSwitcherLabel }: MobileMenuProps) {
   const [isOpen, setIsOpen] = useState(false);
   const panelRef = useRef<HTMLDivElement>(null);
   const triggerRef = useRef<HTMLButtonElement>(null);
@@ -128,7 +133,7 @@ export function MobileMenu({ locale }: MobileMenuProps) {
         onClick={() => setIsOpen((open) => !open)}
         aria-expanded={isOpen}
         aria-controls="mobile-menu"
-        aria-label={isOpen ? content.nav.closeMenuLabel : content.nav.menuLabel}
+        aria-label={isOpen ? nav.closeMenuLabel : nav.menuLabel}
         className={buttonVariants({ variant: "outline", size: "icon" })}
       >
         {isOpen ? (
@@ -148,27 +153,27 @@ export function MobileMenu({ locale }: MobileMenuProps) {
       >
         <div className="mx-auto w-full max-w-7xl px-4 py-4 md:px-8">
           <MainNav
-            locale={locale}
-            ariaLabel={content.nav.menuAriaLabel}
+            nav={nav}
+            ariaLabel={nav.menuAriaLabel}
             onNavigate={closeMenu}
           />
           <div className="mt-4 border-t border-border pt-4">
             <LocaleSwitcher
               currentLocale={locale}
-              label={content.a11y.languageSwitcherLabel}
+              label={languageSwitcherLabel}
             />
           </div>
           <WhatsAppLink
-            message={content.nav.whatsappMessage}
+            message={nav.whatsappMessage}
             section="header"
-            ctaLabel={content.nav.ctaLabel}
-            ariaLabel={content.nav.ctaAriaLabel}
+            ctaLabel={nav.ctaLabel}
+            ariaLabel={nav.ctaAriaLabel}
             className={cn(
               buttonVariants({ variant: "primary", size: "lg" }),
               "mt-4 w-full",
             )}
           >
-            {content.nav.ctaLabel}
+            {nav.ctaLabel}
           </WhatsAppLink>
         </div>
       </div>

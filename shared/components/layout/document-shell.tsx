@@ -1,7 +1,7 @@
 import type { ReactNode } from "react";
 
 import { getLocale, type LocaleCode } from "@/core/config/locales";
-import { getLandingContent } from "@/domains/landing/i18n";
+import { getMessages } from "@/core/i18n";
 import { CloudflareWebAnalytics } from "@/shared/components/analytics/cloudflare-web-analytics";
 import { JsonLd } from "@/shared/components/seo/json-ld";
 import { ThemeProvider } from "@/shared/components/theme/theme-provider";
@@ -23,7 +23,7 @@ interface DocumentShellProps {
  */
 export function DocumentShell({ locale, children }: DocumentShellProps) {
   const localeMeta = getLocale(locale);
-  const content = getLandingContent(locale);
+  const content = getMessages(locale).landing;
 
   return (
     <html

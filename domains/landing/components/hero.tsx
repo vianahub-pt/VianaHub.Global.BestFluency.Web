@@ -1,13 +1,13 @@
 import { MessageCircle } from "lucide-react";
 
 import { type LocaleCode } from "@/core/config/locales";
-import { getLandingContent } from "@/domains/landing/i18n";
+import { getMessages } from "@/core/i18n";
 import { buttonVariants } from "@/shared/components/ui/button";
 import { WhatsAppLink } from "@/shared/components/whatsapp-link";
 import { cn } from "@/shared/lib/utils";
 
 export function Hero({ locale }: { locale: LocaleCode }) {
-  const hero = getLandingContent(locale).hero;
+  const hero = getMessages(locale).landing.hero;
 
   return (
     <section

@@ -3,8 +3,7 @@
 import { Minus, Plus } from "lucide-react";
 import { useState } from "react";
 
-import { type LocaleCode } from "@/core/config/locales";
-import { getLandingContent } from "@/domains/landing/i18n";
+import type { LandingContent } from "@/core/i18n";
 import { SectionHeading } from "@/shared/components/ui/section-heading";
 import { cn } from "@/shared/lib/utils";
 
@@ -24,10 +23,12 @@ import { cn } from "@/shared/lib/utils";
  *
  * Conteúdo em HTML renderizado (não apenas JavaScript): as respostas vivem
  * no DOM desde o primeiro render (collapsed), cumprindo a spec §17.
+ *
+ * Client Component: recebe o namespace `faq` por props (serializado pelo
+ * Server Component pai) — os dicionários de `core/i18n` não entram no
+ * bundle client.
  */
-export function Faq({ locale }: { locale: LocaleCode }) {
-  const content = getLandingContent(locale);
-  const { faq } = content;
+export function Faq({ content: faq }: { content: LandingContent["faq"] }) {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
 
   function toggle(index: number) {

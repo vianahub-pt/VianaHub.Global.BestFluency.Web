@@ -1,7 +1,7 @@
 import Image from "next/image";
 
 import { type LocaleCode } from "@/core/config/locales";
-import { getLandingContent } from "@/domains/landing/i18n";
+import { getMessages } from "@/core/i18n";
 import { SectionHeading } from "@/shared/components/ui/section-heading";
 
 /**
@@ -15,7 +15,7 @@ import { SectionHeading } from "@/shared/components/ui/section-heading";
  * - sem afirmações profissionais que não constem no contrato.
  */
 export function Founder({ locale }: { locale: LocaleCode }) {
-  const content = getLandingContent(locale);
+  const content = getMessages(locale).landing;
   const { founder } = content;
 
   return (

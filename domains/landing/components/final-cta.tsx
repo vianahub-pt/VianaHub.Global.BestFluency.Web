@@ -1,7 +1,7 @@
 import { MessageCircle, Plane } from "lucide-react";
 
 import { type LocaleCode } from "@/core/config/locales";
-import { getLandingContent } from "@/domains/landing/i18n";
+import { getMessages } from "@/core/i18n";
 import { buttonVariants } from "@/shared/components/ui/button";
 import { RoutePath } from "@/shared/components/ui/route-path";
 import { WhatsAppLink } from "@/shared/components/whatsapp-link";
@@ -19,7 +19,7 @@ import { cn } from "@/shared/lib/utils";
  * - contraste AA nos dois temas (text-background/75 para textos secundários).
  */
 export function FinalCta({ locale }: { locale: LocaleCode }) {
-  const content = getLandingContent(locale);
+  const content = getMessages(locale).landing;
   const { finalCta } = content;
 
   return (

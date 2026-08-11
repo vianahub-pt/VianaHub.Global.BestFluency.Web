@@ -2,7 +2,7 @@ import { CircleCheck, Compass, Mic, Target } from "lucide-react";
 import type { ReactNode } from "react";
 
 import { type LocaleCode } from "@/core/config/locales";
-import { getLandingContent } from "@/domains/landing/i18n";
+import { getMessages } from "@/core/i18n";
 import { Card, CardContent, CardHeader, CardTitle } from "@/shared/components/ui/card";
 import { SectionHeading } from "@/shared/components/ui/section-heading";
 
@@ -21,7 +21,7 @@ const pillarIcons: ReactNode[] = [
 ];
 
 export function Method({ locale }: { locale: LocaleCode }) {
-  const content = getLandingContent(locale);
+  const content = getMessages(locale).landing;
 
   return (
     <section
