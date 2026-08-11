@@ -28,6 +28,10 @@ export function BestKids({ locale }: { locale: LocaleCode }) {
   const content = getLandingContent(locale);
   const { bestKids } = content;
 
+  // Dynamic asset paths based on active locale
+  const localeLower = locale.toLowerCase();
+  const kidsBasePath = `/assets/${locale}/kids-${localeLower}`;
+
   return (
     <section
       id="best-kids"
@@ -46,8 +50,8 @@ export function BestKids({ locale }: { locale: LocaleCode }) {
             <Card className="overflow-hidden">
               {/* eslint-disable-next-line @next/next/no-img-element -- srcSet responsivo não é suportado por next/image com images.unoptimized (spec §25); variantes WebP geradas na pipeline de assets. */}
               <img
-                src="/assets/pt-BR/kids-pt-br-960.webp"
-                srcSet="/assets/pt-BR/kids-pt-br-480.webp 480w, /assets/pt-BR/kids-pt-br-960.webp 960w, /assets/pt-BR/kids-pt-br-1440.webp 1440w"
+                src={`${kidsBasePath}-960.webp`}
+                srcSet={`${kidsBasePath}-480.webp 480w, ${kidsBasePath}-960.webp 960w, ${kidsBasePath}-1440.webp 1440w`}
                 sizes="(min-width: 64rem) 560px, calc(100vw - 2rem)"
                 alt={bestKids.imageAlt}
                 width={960}
