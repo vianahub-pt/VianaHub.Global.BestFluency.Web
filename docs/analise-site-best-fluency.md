@@ -165,7 +165,7 @@ Os textos podem ser utilizados, mas fotografias e conteúdos provenientes do Wha
 ### Prioridade P0 — obrigatória para publicar
 
 - Hero claro com CTA para WhatsApp.
-- Individual e turmas até 8 alunos visíveis acima da dobra ou logo abaixo.
+- Individual e turmas até 4 alunos visíveis acima da dobra ou logo abaixo.
 - Presencial na Amadora e online.
 - Morada, telefone e WhatsApp corretos.
 - Fotografias e logótipo reais.

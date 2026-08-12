@@ -768,7 +768,7 @@
   "landing": {
     "meta": {
       "title": "Cours d'anglais à Amadora et en ligne | Best Fluency",
-      "description": "Cours d'anglais en présentiel à Venda Nova, Amadora, et en ligne pour enfants, adolescents et adultes. Cours individuels et groupes de 8 élèves maximum."
+      "description": "Cours d'anglais en présentiel à Venda Nova, Amadora, et en ligne pour enfants, adolescents et adultes. Cours individuels et groupes de 4 élèves maximum."
     },
     "a11y": {
       "skipToContent": "Aller au contenu principal",
@@ -820,7 +820,7 @@
       "title2": "Commencez à parler",
       "title3": "anglais avec",
       "title4": "assurance.",
-      "text": "Des cours pratiques et personnalisés pour enfants, adolescents et adultes, en format individuel ou en petits groupes de 8 élèves maximum.",
+      "text": "Des cours pratiques et personnalisés pour enfants, adolescents et adultes, en format individuel ou en petits groupes de 4 élèves maximum.",
       "ctaLabel": "Réserver un cours d'essai",
       "ctaAriaLabel": "Réserver un cours d'essai — ouvrir une conversation WhatsApp (nouvelle fenêtre)",
       "ctaWhatsappMessage": "Bonjour ! Je souhaite réserver un cours d'essai d'anglais à Best Fluency."
@@ -828,7 +828,7 @@
     "infoBar": {
       "items": [
         "Cours individuels",
-        "Groupes de 8 élèves maximum",
+        "Groupes de 4 élèves maximum",
         "En présentiel à Amadora",
         "Cours en ligne"
       ]

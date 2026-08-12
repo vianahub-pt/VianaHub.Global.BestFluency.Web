@@ -26,9 +26,9 @@ export function Journey({ locale }: { locale: LocaleCode }) {
     <section
       id="como-comecar"
       aria-labelledby="journey-title"
-      className="scroll-mt-24 border-t border-border"
+      className="flex min-h-dvh flex-col justify-center border-t border-border"
     >
-      <div className="mx-auto w-full max-w-7xl px-4 py-14 md:px-8 md:py-20">
+      <div className="mx-auto w-full max-w-7xl px-4 md:px-8">
         <SectionHeading
           title={journey.h2}
           titleId="journey-title"

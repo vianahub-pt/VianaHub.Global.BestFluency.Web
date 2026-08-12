@@ -27,9 +27,24 @@ export function Modalities({ locale }: { locale: LocaleCode }) {
     <section
       id="modalidades"
       aria-labelledby="modalities-title"
-      className="scroll-mt-24 border-t border-border"
+      className="
+    flex
+    min-h-dvh
+    flex-col
+    justify-center
+    border-t
+    border-border
+    bg-linear-to-br
+    from-white
+    via-[#f7f1e7]
+    to-[#c2410c]/30
+
+    dark:from-black
+    dark:via-[#17130d]
+    dark:to-[#c2410c]/35
+  "
     >
-      <div className="mx-auto w-full max-w-7xl px-4 py-14 md:px-8 md:py-20">
+      <div className="mx-auto w-full max-w-7xl px-4 md:px-8">
         <SectionHeading
           title={content.modalities.h2}
           titleId="modalities-title"

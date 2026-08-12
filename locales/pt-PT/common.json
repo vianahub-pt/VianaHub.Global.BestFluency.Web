@@ -768,7 +768,7 @@
   "landing": {
     "meta": {
       "title": "Aulas de Inglês na Amadora e Online | Best Fluency",
-      "description": "Aulas de inglês presenciais na Venda Nova, Amadora, e online para crianças, jovens e adultos. Opções individuais e turmas até 8 alunos."
+      "description": "Aulas de inglês presenciais na Venda Nova, Amadora, e online para crianças, jovens e adultos. Opções individuais e turmas até 4 alunos."
     },
     "a11y": {
       "skipToContent": "Saltar para o conteúdo principal",
@@ -828,7 +828,7 @@
     "infoBar": {
       "items": [
         "Aulas individuais",
-        "Turmas até 8 alunos",
+        "Turmas até 4 alunos",
         "Presencial na Amadora",
         "Aulas online"
       ]

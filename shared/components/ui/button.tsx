@@ -10,8 +10,8 @@ import { cn } from "@/shared/lib/utils";
  * Best Fluency (issue #29):
  *
  * - `primary`:     fundo preto com texto claro (CTA principal, papel preto);
- * - `gold`:        fundo dourado oficial #D4AF37 com texto quase-preto
- *                  (contraste ≈ 9:1, AA) — destaque premium;
+ * - `orange`:      fundo laranja oficial #C2410C com texto branco
+ *                  (contraste ≈ 5.2:1, AA) — destaque premium;
  * - `outline`:     contorno neutro (ação secundária);
  * - `ghost`:       sem fundo (ação terciária / contextual);
  * - `destructive`: ação destrutiva.
@@ -30,7 +30,7 @@ const buttonVariants = cva(
     variants: {
       variant: {
         primary: "bg-primary text-primary-foreground hover:bg-primary/90",
-        gold: "bg-gold text-gold-foreground hover:bg-gold/90",
+        orange: "bg-orange text-orange-foreground hover:bg-orange/90",
         outline: "border border-border bg-background text-foreground hover:bg-muted",
         ghost: "text-foreground hover:bg-muted",
         destructive:

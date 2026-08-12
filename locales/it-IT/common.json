@@ -768,7 +768,7 @@
   "landing": {
     "meta": {
       "title": "Lezioni di inglese ad Amadora e online | Best Fluency",
-      "description": "Lezioni di inglese in presenza a Venda Nova, Amadora, e online per bambini, ragazzi e adulti. Lezioni individuali e gruppi fino a 8 studenti."
+      "description": "Lezioni di inglese in presenza a Venda Nova, Amadora, e online per bambini, ragazzi e adulti. Lezioni individuali e gruppi fino a 4 studenti."
     },
     "a11y": {
       "skipToContent": "Vai al contenuto principale",
@@ -828,7 +828,7 @@
     "infoBar": {
       "items": [
         "Lezioni individuali",
-        "Gruppi fino a 8 studenti",
+        "Gruppi fino a 4 studenti",
         "In presenza ad Amadora",
         "Lezioni online"
       ]

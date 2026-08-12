@@ -6,7 +6,7 @@ import { CloudflareWebAnalytics } from "@/shared/components/analytics/cloudflare
 import { JsonLd } from "@/shared/components/seo/json-ld";
 import { ThemeProvider } from "@/shared/components/theme/theme-provider";
 import { buildOrganizationJsonLd } from "@/shared/lib/seo";
-import { bungee } from "@/shared/styles/fonts";
+import { amarante } from "@/shared/styles/fonts";
 
 interface DocumentShellProps {
   locale: LocaleCode;
@@ -28,7 +28,7 @@ export function DocumentShell({ locale, children }: DocumentShellProps) {
   return (
     <html
       lang={localeMeta.hreflang}
-      className={bungee.variable}
+      className={amarante.variable}
       suppressHydrationWarning
     >
       <body className="flex min-h-dvh flex-col bg-background font-sans text-foreground antialiased">

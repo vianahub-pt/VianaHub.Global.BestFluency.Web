@@ -37,9 +37,9 @@ export function Testimonials({ locale }: { locale: LocaleCode }) {
     <section
       id="depoimentos"
       aria-labelledby="testimonials-title"
-      className="scroll-mt-24 border-t border-border"
+      className="flex min-h-dvh flex-col justify-center border-t border-border"
     >
-      <div className="mx-auto w-full max-w-7xl px-4 py-14 md:px-8 md:py-20">
+      <div className="mx-auto w-full max-w-7xl px-4 md:px-8">
         <SectionHeading
           title={testimonials.h2}
           titleId="testimonials-title"

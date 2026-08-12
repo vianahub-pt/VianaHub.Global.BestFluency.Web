@@ -13,7 +13,7 @@ interface SectionHeadingProps extends HTMLAttributes<HTMLDivElement> {
 /**
  * Cabeçalho padronizado de secção (issue #2).
  *
- * Hierarquia visual consistente: eyebrow dourado (Badge opcional), H2 com
+ * Hierarquia visual consistente: eyebrow laranja (Badge opcional), H2 com
  * text-balance e introdução em muted-foreground. `titleId` permite ligar o
  * heading a uma <section aria-labelledby>.
  */
@@ -42,7 +42,7 @@ export function SectionHeading({
       ) : null}
       <h2
         id={titleId}
-        className="mt-3 text-2xl font-bold tracking-tight text-balance sm:text-3xl"
+        className="mt-10 font-display text-2xl font-bold tracking-tight text-balance sm:text-3xl"
       >
         {title}
       </h2>

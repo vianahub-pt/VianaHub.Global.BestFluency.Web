@@ -22,9 +22,9 @@ export function Founder({ locale }: { locale: LocaleCode }) {
     <section
       id="fundadora"
       aria-labelledby="founder-title"
-      className="scroll-mt-24 border-t border-border bg-muted/40"
+      className="flex min-h-dvh flex-col justify-center border-t border-border bg-muted/40"
     >
-      <div className="mx-auto w-full max-w-7xl px-4 py-14 md:px-8 md:py-20">
+      <div className="mx-auto w-full max-w-7xl px-4 md:px-8">
         <SectionHeading title={founder.h2} titleId="founder-title" />
 
         <div className="mt-10 grid gap-8 lg:grid-cols-2 lg:items-center lg:gap-12">

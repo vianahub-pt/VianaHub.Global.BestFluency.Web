@@ -6,7 +6,6 @@ import { Faq } from "./faq";
 import { FinalCta } from "./final-cta";
 import { Founder } from "./founder";
 import { Hero } from "./hero";
-import { InfoBar } from "./info-bar";
 import { InPerson } from "./in-person";
 import { Journey } from "./journey";
 import { Method } from "./method";
@@ -42,7 +41,6 @@ export function LandingPage({ locale }: { locale: LocaleCode }) {
       <SiteHeader locale={locale} />
       <main id="main" className="flex-1">
         <Hero locale={locale} />
-        <InfoBar locale={locale} />
         <Modalities locale={locale} />
         <Method locale={locale} />
         <InPerson locale={locale} />

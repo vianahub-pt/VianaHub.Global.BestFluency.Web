@@ -26,9 +26,9 @@ export function FinalCta({ locale }: { locale: LocaleCode }) {
     <section
       id="cta-final"
       aria-labelledby="final-cta-title"
-      className="scroll-mt-24 border-t border-border"
+      className="flex min-h-dvh flex-col justify-center border-t border-border"
     >
-      <div className="mx-auto w-full max-w-7xl px-4 py-14 md:px-8 md:py-20">
+      <div className="mx-auto w-full max-w-7xl px-4 md:px-8">
         <div className="relative overflow-hidden rounded-2xl bg-foreground px-5 py-12 text-background sm:px-10 md:px-16 md:py-16">
           {/* Detalhes decorativos do cartão de embarque (aria-hidden) */}
           <div aria-hidden="true" className="pointer-events-none absolute inset-0">
@@ -63,7 +63,7 @@ export function FinalCta({ locale }: { locale: LocaleCode }) {
                 ctaLabel={finalCta.ctaLabel}
                 ariaLabel={finalCta.ctaAriaLabel}
                 className={cn(
-                  buttonVariants({ variant: "gold", size: "lg" }),
+                  buttonVariants({ variant: "orange", size: "lg" }),
                   "w-full sm:w-auto",
                 )}
               >

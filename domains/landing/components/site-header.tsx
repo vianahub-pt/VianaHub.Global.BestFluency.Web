@@ -24,7 +24,7 @@ export function SiteHeader({ locale }: { locale: LocaleCode }) {
   const content = getMessages(locale).landing;
 
   return (
-    <header className="sticky top-0 z-40 border-b border-border bg-[#926f34]/95 backdrop-blur">
+    <header className="sticky top-0 left-0 right-0 z-40 border-b border-border bg-[#c2410c]/95 backdrop-blur">
       <div className="relative mx-auto grid w-full max-w-7xl grid-cols-[auto_1fr_auto] items-center gap-x-4 px-4 py-3 md:px-8">
         <a
           href="#top"

@@ -268,7 +268,7 @@ Alt sugerido, sujeito à imagem escolhida:
 Apresentar imediatamente abaixo do Hero, em quatro itens curtos:
 
 - `Aulas individuais`
-- `Turmas até 8 alunos`
+- `Turmas até 4 alunos`
 - `Presencial na Amadora`
 - `Aulas online`
 
@@ -810,7 +810,7 @@ Exemplos de `section`:
 
 ### Meta description
 
-`Aulas de inglês presenciais na Venda Nova, Amadora, e online para crianças, jovens e adultos. Opções individuais e turmas até 8 alunos.`
+`Aulas de inglês presenciais na Venda Nova, Amadora, e online para crianças, jovens e adultos. Opções individuais e turmas até 4 alunos.`
 
 ### Canonical
 
