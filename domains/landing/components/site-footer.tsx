@@ -1,6 +1,6 @@
 import type { LocaleCode } from "@/core/config/locales";
 import { site } from "@/core/config/site";
-import { getLandingContent } from "@/domains/landing/i18n";
+import { getMessages } from "@/core/i18n";
 import { PhoneLink } from "@/shared/components/phone-link";
 import { WhatsAppLink } from "@/shared/components/whatsapp-link";
 
@@ -17,7 +17,7 @@ import { WhatsAppLink } from "@/shared/components/whatsapp-link";
  * - sem redes sociais: URLs ainda não confirmados (spec §31).
  */
 export function SiteFooter({ locale }: { locale: LocaleCode }) {
-  const content = getLandingContent(locale);
+  const content = getMessages(locale).landing;
   const year = new Date().getFullYear();
 
   return (

@@ -45,7 +45,7 @@ export function LocaleSwitcher({ currentLocale, label }: LocaleSwitcherProps) {
             <SelectItem
               key={locale.code}
               value={locale.code}
-              className="hover:bg-[#926f34] focus:bg-[#926f34] data-[highlighted]:bg-[#926f34]"
+              className="hover:bg-[#c2410c] focus:bg-[#c2410c] data-[highlighted]:bg-[#c2410c]"
             >
               <Link
                 href={locale.path}

@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import type { ReactNode } from "react";
 
-import { getLandingContent } from "@/domains/landing/i18n";
+import { getMessages } from "@/core/i18n";
 import { DocumentShell } from "@/shared/components/layout/document-shell";
 import { buildLocaleMetadata } from "@/shared/lib/seo";
 
@@ -9,7 +9,7 @@ import "../globals.css";
 
 export const metadata: Metadata = buildLocaleMetadata(
   "pt-PT",
-  getLandingContent("pt-PT").meta,
+  getMessages("pt-PT").landing.meta,
 );
 
 /** Root layout do idioma principal (pt-PT), publicado na raiz "/". */

@@ -11,7 +11,7 @@ import { cn } from "@/shared/lib/utils";
  * maiúsculas com tracking largo). Mantém contraste AA nos dois temas.
  *
  * - `default`:     chip neutro (eyebrow de secções — visual preservado);
- * - `gold`:        chip dourado oficial #D4AF37 com texto quase-preto (AA);
+ * - `orange`:      chip laranja oficial #C2410C com texto branco (AA);
  * - `outline`:     apenas contorno, fundo transparente;
  * - `destructive`: etiqueta de estado crítico.
  */
@@ -21,7 +21,7 @@ const badgeVariants = cva(
     variants: {
       variant: {
         default: "border-border bg-muted text-muted-foreground",
-        gold: "border-transparent bg-gold text-gold-foreground",
+        orange: "border-transparent bg-orange text-orange-foreground",
         outline: "border-border text-foreground",
         destructive:
           "border-transparent bg-destructive text-destructive-foreground",

@@ -768,7 +768,7 @@
   "landing": {
     "meta": {
       "title": "Clases de inglés en Amadora y online | Best Fluency",
-      "description": "Clases de inglés presenciales en Venda Nova, Amadora, y online para niños, jóvenes y adultos. Clases individuales y grupos de hasta 8 alumnos."
+      "description": "Clases de inglés presenciales en Venda Nova, Amadora, y online para niños, jóvenes y adultos. Clases individuales y grupos de hasta 4 alumnos."
     },
     "a11y": {
       "skipToContent": "Saltar al contenido principal",
@@ -828,7 +828,7 @@
     "infoBar": {
       "items": [
         "Clases individuales",
-        "Grupos de hasta 8 alumnos",
+        "Grupos de hasta 4 alumnos",
         "Presencial en Amadora",
         "Clases online"
       ]

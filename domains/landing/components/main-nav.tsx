@@ -1,5 +1,4 @@
-import type { LocaleCode } from "@/core/config/locales";
-import { getLandingContent } from "@/domains/landing/i18n";
+import type { LandingContent } from "@/core/i18n";
 
 /**
  * Navegação principal por âncoras (spec §7).
@@ -10,6 +9,10 @@ import { getLandingContent } from "@/domains/landing/i18n";
  *
  * Cada item tem área de toque ≥ 44 px, foco visível e fecha o menu móvel
  * ao navegar (`onNavigate`).
+ *
+ * Recebe o namespace `nav` por props: é partilhado pelo SiteHeader (Server
+ * Component) e pelo MobileMenu (Client Component), logo não pode importar
+ * os dicionários de `core/i18n` (ficariam no bundle client).
  */
 const navItems = [
   { href: "#modalidades", key: "modalities" },
@@ -20,20 +23,19 @@ const navItems = [
 ] as const;
 
 interface MainNavProps {
-  locale: LocaleCode;
+  nav: LandingContent["nav"];
   ariaLabel?: string;
   onNavigate?: () => void;
   className?: string;
 }
 
 export function MainNav({
-  locale,
+  nav,
   ariaLabel,
   onNavigate,
   className,
 }: MainNavProps) {
-  const content = getLandingContent(locale);
-  const label = ariaLabel ?? content.nav.ariaLabel;
+  const label = ariaLabel ?? nav.ariaLabel;
 
   return (
     <nav aria-label={label} className={className}>
@@ -45,7 +47,7 @@ export function MainNav({
               onClick={onNavigate}
               className="inline-flex min-h-11 items-center rounded-md px-3 py-2 text-sm font-medium text-foreground transition-colors hover:bg-muted hover:text-accent focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring lg:w-full lg:justify-center lg:px-2"
             >
-              {content.nav.links[item.key]}
+              {nav.links[item.key]}
             </a>
           </li>
         ))}

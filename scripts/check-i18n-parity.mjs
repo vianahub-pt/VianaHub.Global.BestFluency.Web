@@ -16,7 +16,7 @@
  * 4. (issue #32) O namespace `landing.*` existe em todos os locales e todos
  *    os arrays têm exatamente o mesmo comprimento nos 7 idiomas — o conteúdo
  *    da landing vive exclusivamente nestes ficheiros e é consumido pelo
- *    accessor tipado `domains/landing/i18n`, sem fallback silencioso.
+ *    utilitário central `core/i18n` (issue #36), sem fallback silencioso.
  *
  * Uso: `node scripts/check-i18n-parity.mjs` — exit 0 (ok) ou exit 1 (falha).
  * É executado automaticamente antes de `next build` via hook `prebuild`.
@@ -140,7 +140,7 @@ if (contents.has(REFERENCE_CODE)) {
 
 // --- 5. Namespace landing.* (issue #32): presença obrigatória + paridade de arrays ---
 // O conteúdo da landing vive exclusivamente em locales/{code}/common.json sob
-// `landing` e é consumido pelo accessor tipado domains/landing/i18n. A
+// `landing` e é consumido pelo utilitário central core/i18n (issue #36). A
 // paridade de chaves landing.* já é coberta pela verificação 4 (o namespace
 // faz parte do ficheiro); aqui garantimos que o namespace existe em todos os
 // locales e que todos os arrays (infoBar.items, method.pillars, faq.items,

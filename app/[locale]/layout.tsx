@@ -6,7 +6,7 @@ import {
   localeCodeForSegment,
   nonDefaultLocales,
 } from "@/core/config/locales";
-import { getLandingContent } from "@/domains/landing/i18n";
+import { getMessages } from "@/core/i18n";
 import { DocumentShell } from "@/shared/components/layout/document-shell";
 import { buildLocaleMetadata } from "@/shared/lib/seo";
 
@@ -28,7 +28,7 @@ export async function generateMetadata({
   const code = localeCodeForSegment(segment);
   if (!code) return {};
 
-  return buildLocaleMetadata(code, getLandingContent(code).meta);
+  return buildLocaleMetadata(code, getMessages(code).landing.meta);
 }
 
 /** Root layout por idioma: garante <html lang> estático e correto. */

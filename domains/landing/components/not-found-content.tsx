@@ -1,13 +1,13 @@
 import Link from "next/link";
 
-import { getLandingContent } from "@/domains/landing/i18n";
+import { getMessages } from "@/core/i18n";
 
 /**
  * Conteúdo 404 da fase de fundação (em pt-PT, idioma principal).
  * As versões localizadas de 404 acompanham as secções definitivas.
  */
 export function NotFoundContent() {
-  const content = getLandingContent("pt-PT");
+  const content = getMessages("pt-PT").landing;
 
   return (
     <main

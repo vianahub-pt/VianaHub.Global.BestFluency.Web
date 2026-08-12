@@ -1,11 +1,11 @@
 import { type LocaleCode } from "@/core/config/locales";
+import { getMessages } from "@/core/i18n";
 
 import { BestKids } from "./best-kids";
 import { Faq } from "./faq";
 import { FinalCta } from "./final-cta";
 import { Founder } from "./founder";
 import { Hero } from "./hero";
-import { InfoBar } from "./info-bar";
 import { InPerson } from "./in-person";
 import { Journey } from "./journey";
 import { Method } from "./method";
@@ -28,15 +28,19 @@ import { Testimonials } from "./testimonials";
  * - âncoras do header/main-nav: #modalidades, #metodo, #best-kids,
  *   #depoimentos, #faq (as secções respetivas declaram os ids);
  * - mobile-first: começa em 360 px e expande por min-width (§24).
+ *
+ * Server Component: resolve o namespace `landing` via `core/i18n` e entrega
+ * ao Faq (Client Component) apenas o subconjunto serializado por props.
  */
 export function LandingPage({ locale }: { locale: LocaleCode }) {
+  const content = getMessages(locale).landing;
+
   return (
     <>
       <div id="top" aria-hidden="true" />
       <SiteHeader locale={locale} />
       <main id="main" className="flex-1">
         <Hero locale={locale} />
-        <InfoBar locale={locale} />
         <Modalities locale={locale} />
         <Method locale={locale} />
         <InPerson locale={locale} />
@@ -44,7 +48,7 @@ export function LandingPage({ locale }: { locale: LocaleCode }) {
         <Testimonials locale={locale} />
         <Founder locale={locale} />
         <Journey locale={locale} />
-        <Faq locale={locale} />
+        <Faq content={content.faq} />
         <FinalCta locale={locale} />
       </main>
       <SiteFooter locale={locale} />

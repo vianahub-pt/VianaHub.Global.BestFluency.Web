@@ -768,7 +768,7 @@
   "landing": {
     "meta": {
       "title": "English Classes in Amadora and Online | Best Fluency",
-      "description": "In-person English classes in Venda Nova, Amadora, and online for children, teens and adults. Individual lessons and groups of up to 8 students."
+      "description": "In-person English classes in Venda Nova, Amadora, and online for children, teens and adults. Individual lessons and groups of up to 4 students."
     },
     "a11y": {
       "skipToContent": "Skip to main content",
@@ -820,7 +820,7 @@
       "title2": "Start speaking",
       "title3": "English with",
       "title4": "confidence.",
-      "text": "Practical, personalized lessons for children, teens and adults, one-on-one or in small groups of up to 8 students.",
+      "text": "Practical, personalized lessons for children, teens and adults, one-on-one or in small groups of up to 4 students.",
       "ctaLabel": "Book a trial lesson",
       "ctaAriaLabel": "Book a trial lesson: open a WhatsApp conversation (new window)",
       "ctaWhatsappMessage": "Hello! I would like to book a trial English lesson at Best Fluency."
@@ -828,7 +828,7 @@
     "infoBar": {
       "items": [
         "One-on-one lessons",
-        "Groups of up to 8 students",
+        "Groups of up to 4 students",
         "In person in Amadora",
         "Online lessons"
       ]

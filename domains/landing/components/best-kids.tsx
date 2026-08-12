@@ -1,10 +1,9 @@
 import { MessageCircle } from "lucide-react";
 
 import { type LocaleCode } from "@/core/config/locales";
-import { getLandingContent } from "@/domains/landing/i18n";
+import { getMessages } from "@/core/i18n";
 import { buttonVariants } from "@/shared/components/ui/button";
 import { Card, CardContent } from "@/shared/components/ui/card";
-import { SectionHeading } from "@/shared/components/ui/section-heading";
 import { WhatsAppLink } from "@/shared/components/whatsapp-link";
 import { cn } from "@/shared/lib/utils";
 
@@ -25,7 +24,7 @@ import { cn } from "@/shared/lib/utils";
  *   destacarem do fundo suave da secção (alternância de fundos da issue #29).
  */
 export function BestKids({ locale }: { locale: LocaleCode }) {
-  const content = getLandingContent(locale);
+  const content = getMessages(locale).landing;
   const { bestKids } = content;
 
   // Dynamic asset paths based on active locale
@@ -36,19 +35,84 @@ export function BestKids({ locale }: { locale: LocaleCode }) {
     <section
       id="best-kids"
       aria-labelledby="best-kids-title"
-      className="scroll-mt-24 border-t border-border bg-muted/40"
+      className="flex min-h-dvh flex-col justify-center border-t border-border bg-muted/40"
     >
-      <div className="mx-auto w-full max-w-7xl px-4 py-14 md:px-8 md:py-20">
-        <SectionHeading title={bestKids.h2} titleId="best-kids-title" />
+      <div className="mx-auto w-full max-w-7xl px-4 md:px-8">
+        <div className="grid gap-6 lg:grid-cols-2 lg:items-start lg:gap-10">
+          <div className="lg:order-1">
+            <h2
+              id="best-kids-title"
+              className="font-display text-2xl font-bold tracking-tight text-balance sm:text-3xl"
+            >
+              {bestKids.h2}
+            </h2>
 
-        <div className="mt-10 grid gap-8 lg:grid-cols-2 lg:items-start lg:gap-12">
-          {/*
-           * Imagem real Best Kids: primeiro elemento no DOM (topo no mobile),
-           * coluna direita no desktop (lg:order-2).
-           */}
+            <div className="mt-5">
+              {bestKids.text.map((paragraph) => (
+                <p
+                  key={paragraph}
+                  className="text-base leading-7 text-muted-foreground [&:not(:first-child)]:mt-3"
+                >
+                  {paragraph}
+                </p>
+              ))}
+
+              <ul className="mt-5 grid gap-2 sm:grid-cols-2">
+                {bestKids.differentials.map((item) => (
+                  <li
+                    key={item.title}
+                    className="flex min-h-10 items-start gap-3 rounded-lg border border-border bg-card px-3 py-2 shadow-sm"
+                  >
+                    <span className="mt-1 h-2 w-2 shrink-0 rounded-full bg-accent" />
+                    <span className="flex flex-col gap-1">
+                      <span className="text-sm font-semibold leading-5">
+                        {item.title}
+                      </span>
+                      <span className="text-xs leading-5 text-muted-foreground">
+                        {item.text}
+                      </span>
+                    </span>
+                  </li>
+                ))}
+              </ul>
+
+              <Card className="mt-4">
+                <CardContent className="p-4">
+                  <ul className="grid gap-2">
+                    {bestKids.practicalInfo.map((info) => (
+                      <li
+                        key={info}
+                        className="flex min-h-9 items-center gap-3 text-sm font-medium leading-6"
+                      >
+                        <span className="flex h-2 w-2 shrink-0 rounded-full bg-accent" />
+                        {info}
+                      </li>
+                    ))}
+                  </ul>
+                  <WhatsAppLink
+                    message={bestKids.whatsappMessage}
+                    section="best_kids"
+                    modality="best_kids"
+                    ctaLabel={bestKids.ctaLabel}
+                    ariaLabel={bestKids.ctaAriaLabel}
+                    className={cn(
+                      buttonVariants({ variant: "primary", size: "lg" }),
+                      "mt-4 w-full",
+                    )}
+                  >
+                    <MessageCircle
+                      className="h-5 w-5 shrink-0"
+                      aria-hidden="true"
+                    />
+                    {bestKids.ctaLabel}
+                  </WhatsAppLink>
+                </CardContent>
+              </Card>
+            </div>
+          </div>
+
           <div className="lg:order-2">
             <Card className="overflow-hidden">
-              {/* eslint-disable-next-line @next/next/no-img-element -- srcSet responsivo não é suportado por next/image com images.unoptimized (spec §25); variantes WebP geradas na pipeline de assets. */}
               <img
                 src={`${kidsBasePath}-960.webp`}
                 srcSet={`${kidsBasePath}-480.webp 480w, ${kidsBasePath}-960.webp 960w, ${kidsBasePath}-1440.webp 1440w`}
@@ -58,79 +122,8 @@ export function BestKids({ locale }: { locale: LocaleCode }) {
                 height={1440}
                 loading="lazy"
                 decoding="async"
-                className="h-auto w-full object-cover"
+                className="h-auto w-full max-h-[75vh] object-cover"
               />
-            </Card>
-          </div>
-
-          <div className="lg:order-1">
-            {bestKids.text.map((paragraph) => (
-              <p
-                key={paragraph}
-                className="text-base leading-7 text-muted-foreground [&:not(:first-child)]:mt-4"
-              >
-                {paragraph}
-              </p>
-            ))}
-
-            <p className="mt-6 text-lg font-semibold leading-8 text-accent">
-              {bestKids.highlight}
-            </p>
-
-            <ul className="mt-8 grid gap-3 sm:grid-cols-2">
-              {bestKids.differentials.map((item) => (
-                <li
-                  key={item.title}
-                  className="flex min-h-12 items-start gap-3 rounded-lg border border-border bg-card px-4 py-3 shadow-sm"
-                >
-                  <span className="mt-1 h-2 w-2 shrink-0 rounded-full bg-accent" />
-                  <span className="flex flex-col gap-1">
-                    <span className="text-sm font-semibold leading-5">
-                      {item.title}
-                    </span>
-                    <span className="text-xs leading-5 text-muted-foreground">
-                      {item.text}
-                    </span>
-                  </span>
-                </li>
-              ))}
-            </ul>
-
-            {/*
-             * Card "Conhecer a Best Kids": à esquerda, imediatamente abaixo
-             * dos quatro cards de diferenciais (issue #29).
-             */}
-            <Card className="mt-6">
-              <CardContent className="p-6">
-                <ul className="grid gap-2.5">
-                  {bestKids.practicalInfo.map((info) => (
-                    <li
-                      key={info}
-                      className="flex min-h-11 items-center gap-3 text-sm font-medium leading-6"
-                    >
-                      <span className="flex h-2 w-2 shrink-0 rounded-full bg-accent" />
-                      {info}
-                    </li>
-                  ))}
-                </ul>
-                <WhatsAppLink
-                  message={bestKids.whatsappMessage}
-                  section="best_kids"
-                  modality="best_kids"
-                  ctaLabel={bestKids.ctaLabel}
-                  ariaLabel={bestKids.ctaAriaLabel}
-                  className={cn(
-                    buttonVariants({ variant: "primary", size: "lg" }),
-                    "mt-6 w-full",
-                  )}
-                >
-                  <MessageCircle
-                    className="h-5 w-5 shrink-0"
-                    aria-hidden="true"
-                  />
-                  {bestKids.ctaLabel}
-                </WhatsAppLink>
-              </CardContent>
             </Card>
           </div>
         </div>

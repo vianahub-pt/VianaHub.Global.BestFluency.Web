@@ -1,7 +1,7 @@
 import { MessageCircle, Star } from "lucide-react";
 
 import { type LocaleCode } from "@/core/config/locales";
-import { getLandingContent } from "@/domains/landing/i18n";
+import { getMessages } from "@/core/i18n";
 import { buttonVariants } from "@/shared/components/ui/button";
 import { Card, CardContent } from "@/shared/components/ui/card";
 import { SectionHeading } from "@/shared/components/ui/section-heading";
@@ -30,16 +30,16 @@ function initialsOf(name: string): string {
  * - CTA "Marcar aula experimental" após a grelha (mensagem da spec §14).
  */
 export function Testimonials({ locale }: { locale: LocaleCode }) {
-  const content = getLandingContent(locale);
+  const content = getMessages(locale).landing;
   const { testimonials } = content;
 
   return (
     <section
       id="depoimentos"
       aria-labelledby="testimonials-title"
-      className="scroll-mt-24 border-t border-border"
+      className="flex min-h-dvh flex-col justify-center border-t border-border"
     >
-      <div className="mx-auto w-full max-w-7xl px-4 py-14 md:px-8 md:py-20">
+      <div className="mx-auto w-full max-w-7xl px-4 md:px-8">
         <SectionHeading
           title={testimonials.h2}
           titleId="testimonials-title"

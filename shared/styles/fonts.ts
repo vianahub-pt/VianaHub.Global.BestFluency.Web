@@ -1,8 +1,8 @@
-import { Bungee } from "next/font/google";
+import { Amarante } from "next/font/google";
 
-export const bungee = Bungee({
+export const amarante = Amarante({
   weight: "400",
   subsets: ["latin"],
   display: "swap",
-  variable: "--font-bungee",
+  variable: "--font-amarante",
 });

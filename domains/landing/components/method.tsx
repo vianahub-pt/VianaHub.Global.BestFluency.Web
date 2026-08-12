@@ -2,7 +2,7 @@ import { CircleCheck, Compass, Mic, Target } from "lucide-react";
 import type { ReactNode } from "react";
 
 import { type LocaleCode } from "@/core/config/locales";
-import { getLandingContent } from "@/domains/landing/i18n";
+import { getMessages } from "@/core/i18n";
 import { Card, CardContent, CardHeader, CardTitle } from "@/shared/components/ui/card";
 import { SectionHeading } from "@/shared/components/ui/section-heading";
 
@@ -21,15 +21,15 @@ const pillarIcons: ReactNode[] = [
 ];
 
 export function Method({ locale }: { locale: LocaleCode }) {
-  const content = getLandingContent(locale);
+  const content = getMessages(locale).landing;
 
   return (
     <section
       id="metodo"
       aria-labelledby="method-title"
-      className="scroll-mt-24 border-t border-border bg-muted/40"
+      className="flex min-h-dvh flex-col justify-center border-t border-border bg-muted/40"
     >
-      <div className="mx-auto w-full max-w-7xl px-4 py-14 md:px-8 md:py-20">
+      <div className="mx-auto w-full max-w-7xl px-4 md:px-8">
         <SectionHeading
           title={content.method.h2}
           titleId="method-title"

@@ -8,21 +8,21 @@
  * Design system Mobile-First — Best Fluency (issue #2, refinado na issue #29)
  * ----------------------------------------------------------------------------
  * Tokens semânticos da identidade oficial Best Fluency — preto, branco e
- * dourado (spec §6) — nos temas claro e escuro. Documentação completa em
+ * laranja (spec §6) — nos temas claro e escuro. Documentação completa em
  * docs/design-system.md.
  *
  * Identidade cromática oficial:
- * - dourado de marca: #D4AF37 (token --gold) para superfícies de destaque
- *   (CTA gold, chips) com texto quase-preto (--gold-foreground) ≈ 8:1;
- * - dourado de texto (--accent): variante mais escura no tema claro para
- *   manter AA como texto/ícone sobre branco; no tema escuro usa o dourado
- *   brilhante sobre o preto profundo;
+ * - laranja de marca: #C2410C (token --orange) para superfícies de destaque
+ *   (CTA orange, chips) com texto branco (--orange-foreground) ≈ 5.2:1;
+ * - laranja de texto (--accent): variante mais escura no tema claro para
+ *   manter AA como texto/ícone sobre branco; no tema escuro usa o laranja
+ *   vibrante sobre o preto profundo;
  * - preto profundo do tema escuro: #0A0A0A (--background no .dark).
  *
  * Contraste validado para WCAG 2.2 AA (texto normal ≥ 4.5:1):
- * - accent (dourado) light ≈ 5.1:1 sobre branco e 5.1:1 para texto branco;
- * - accent (dourado) dark  ≈ 11:1  sobre o fundo escuro;
- * - gold #D4AF37 com gold-foreground ≈ 8:1 em ambos os temas;
+ * - accent (laranja) light ≈ 5.2:1 sobre branco e 5.2:1 para texto branco;
+ * - accent (laranja) dark  ≈ 3.8:1  sobre o fundo escuro;
+ * - orange #C2410C com orange-foreground ≈ 5.2:1 em ambos os temas;
  * - muted-foreground       ≈ 7.8:1 (light) e 8.6:1 (dark).
  * ============================================================================
  */
@@ -30,15 +30,15 @@
   /*
    * Papéis cromáticos da marca (spec §6). No tema escuro os papéis invertem:
    * brand-black torna-se o "preto" claro (texto/títulos) e brand-white o
-   * fundo escuro. Dourado mantém-se como destaque em ambos os temas.
+   * fundo escuro. Laranja mantém-se como destaque em ambos os temas.
    */
   --brand-black: hsl(0 0% 4%);
   --brand-white: hsl(0 0% 100%);
 
-  /* Dourado oficial Best Fluency */
-  --brand-gold: #926f34;
-  --gold: #926f34;
-  --gold-foreground: #ffffff;
+  /* Laranja oficial Best Fluency */
+  --brand-orange: #c2410c;
+  --orange: #c2410c;
+  --orange-foreground: #ffffff;
 
   color-scheme: light;
 
@@ -55,9 +55,9 @@
   --secondary-foreground: hsl(0 0% 9%);
   --muted: hsl(0 0% 96%);
   --muted-foreground: hsl(0 0% 32%);
-  --accent: var(--brand-gold);
+  --accent: var(--brand-orange);
   --accent-foreground: #ffffff;
-  --ring: var(--brand-gold);
+  --ring: var(--brand-orange);
   --destructive: hsl(0 72% 45%);
   --destructive-foreground: hsl(0 0% 98%);
   --border: hsl(0 0% 90%);
@@ -75,10 +75,10 @@
   --brand-black: hsl(0 0% 98%);
   --brand-white: hsl(0 0% 4%);
 
-  /* Mesmo dourado no dark */
-  --brand-gold: #926f34;
-  --gold: #926f34;
-  --gold-foreground: #ffffff;
+  /* Mesmo laranja no dark */
+  --brand-orange: #c2410c;
+  --orange: #c2410c;
+  --orange-foreground: #ffffff;
 
   color-scheme: dark;
 
@@ -94,9 +94,9 @@
   --secondary-foreground: hsl(0 0% 98%);
   --muted: hsl(0 0% 14%);
   --muted-foreground: hsl(0 0% 68%);
-  --accent: var(--brand-gold);
+  --accent: var(--brand-orange);
   --accent-foreground: #ffffff;
-  --ring: var(--brand-gold);
+  --ring: var(--brand-orange);
   --destructive: hsl(0 70% 55%);
   --destructive-foreground: hsl(0 0% 98%);
   --border: hsl(0 0% 20%);
@@ -129,14 +129,14 @@
   --radius-xl: calc(var(--radius) + 4px);
 
   /* Tipografia */
-  --font-display: var(--font-bungee);
+  --font-display: var(--font-amarante);
 
-  /* Papéis cromáticos da marca disponíveis como utilities (text-brand-gold, etc.). */
+  /* Papéis cromáticos da marca disponíveis como utilities (text-brand-orange, etc.). */
   --color-brand-black: var(--brand-black);
   --color-brand-white: var(--brand-white);
-  --color-brand-gold: var(--brand-gold);
-  --color-gold: var(--gold);
-  --color-gold-foreground: var(--gold-foreground);
+  --color-brand-orange: var(--brand-orange);
+  --color-orange: var(--orange);
+  --color-orange-foreground: var(--orange-foreground);
 
   /*
    * Mobile-first (AGENTS.md): expansão por min-width para 48rem, 64rem e
@@ -168,7 +168,6 @@
 
   html {
     scroll-behavior: smooth;
-    scroll-padding-top: 5.5rem;
   }
 
   body {

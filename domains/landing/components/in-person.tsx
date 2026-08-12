@@ -2,7 +2,7 @@ import { MapPin, Phone } from "lucide-react";
 
 import { type LocaleCode } from "@/core/config/locales";
 import { site } from "@/core/config/site";
-import { getLandingContent } from "@/domains/landing/i18n";
+import { getMessages } from "@/core/i18n";
 import { PhoneLink } from "@/shared/components/phone-link";
 import { Card, CardContent } from "@/shared/components/ui/card";
 import { SectionHeading } from "@/shared/components/ui/section-heading";
@@ -20,15 +20,15 @@ import { SectionHeading } from "@/shared/components/ui/section-heading";
  *   renderizar o link com este mesmo layout.
  */
 export function InPerson({ locale }: { locale: LocaleCode }) {
-  const content = getLandingContent(locale);
+  const content = getMessages(locale).landing;
 
   return (
     <section
       id="presencial"
       aria-labelledby="in-person-title"
-      className="scroll-mt-24 border-t border-border"
+      className="flex min-h-dvh flex-col justify-center border-t border-border"
     >
-      <div className="mx-auto w-full max-w-7xl px-4 py-14 md:px-8 md:py-20">
+      <div className="mx-auto w-full max-w-7xl px-4 md:px-8">
         <SectionHeading title={content.inPerson.h2} titleId="in-person-title" />
 
         <div className="mt-10 grid gap-6 lg:grid-cols-2 lg:items-start lg:gap-8">

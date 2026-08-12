@@ -2,7 +2,7 @@ import { MapPin, Monitor, User, Users } from "lucide-react";
 import type { ReactNode } from "react";
 
 import { type LocaleCode } from "@/core/config/locales";
-import { getLandingContent } from "@/domains/landing/i18n";
+import { getMessages } from "@/core/i18n";
 
 /**
  * Faixa de informações essenciais (spec §9).
@@ -20,14 +20,14 @@ const itemIcons: Record<number, ReactNode> = {
 };
 
 export function InfoBar({ locale }: { locale: LocaleCode }) {
-  const content = getLandingContent(locale);
+  const content = getMessages(locale).landing;
 
   return (
     <section
       aria-label={content.infoBar.items.join(", ")}
       className="bg-muted/40"
     >
-      <div className="mx-auto w-full max-w-7xl px-4 py-8 md:px-8">
+      <div className="mt-10 mx-auto w-full max-w-7xl px-4 py-8 md:px-8">
         <ul className="grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
           {content.infoBar.items.map((item, index) => (
             <li
