@@ -5,7 +5,6 @@ import enUS from "@/locales/en-US/common.json";
 import esES from "@/locales/es-ES/common.json";
 import frFR from "@/locales/fr-FR/common.json";
 import itIT from "@/locales/it-IT/common.json";
-import ptBR from "@/locales/pt-BR/common.json";
 import ptPT from "@/locales/pt-PT/common.json";
 
 /**
@@ -91,7 +90,6 @@ const messages = {
   "fr-FR": frFR,
   "de-DE": deDE,
   "it-IT": itIT,
-  "pt-BR": ptBR,
 } satisfies Record<LocaleCode, CommonMessages>;
 
 const REFERENCE_CODE: LocaleCode = "pt-PT";
@@ -127,13 +125,22 @@ function collectParityProblems(
       return;
     }
     reference.forEach((item, index) =>
-      collectParityProblems(item, candidate[index], `${path}[${index}]`, problems),
+      collectParityProblems(
+        item,
+        candidate[index],
+        `${path}[${index}]`,
+        problems,
+      ),
     );
     return;
   }
 
   if (reference !== null && typeof reference === "object") {
-    if (candidate === null || typeof candidate !== "object" || Array.isArray(candidate)) {
+    if (
+      candidate === null ||
+      typeof candidate !== "object" ||
+      Array.isArray(candidate)
+    ) {
       problems.push(
         `${path} — esperado objeto, recebido ${describeValue(candidate)}`,
       );
@@ -147,11 +154,18 @@ function collectParityProblems(
         problems.push(`${childPath} — chave ausente`);
         continue;
       }
-      collectParityProblems(referenceRecord[key], candidateRecord[key], childPath, problems);
+      collectParityProblems(
+        referenceRecord[key],
+        candidateRecord[key],
+        childPath,
+        problems,
+      );
     }
     for (const key of Object.keys(candidateRecord)) {
       if (!(key in referenceRecord)) {
-        problems.push(`${path}.${key} — chave extra (não existe em ${REFERENCE_CODE})`);
+        problems.push(
+          `${path}.${key} — chave extra (não existe em ${REFERENCE_CODE})`,
+        );
       }
     }
     return;
@@ -167,8 +181,15 @@ function collectParityProblems(
 // Gate de runtime: executado uma vez no carregamento do módulo. Como o site é
 // exportado estaticamente, qualquer divergência falha o `next build` com
 // mensagem explícita (locale + chave) — nunca um fallback silencioso.
-for (const [code, content] of Object.entries(messages) as [LocaleCode, unknown][]) {
-  if (content === null || typeof content !== "object" || Array.isArray(content)) {
+for (const [code, content] of Object.entries(messages) as [
+  LocaleCode,
+  unknown,
+][]) {
+  if (
+    content === null ||
+    typeof content !== "object" ||
+    Array.isArray(content)
+  ) {
     throw new Error(
       `[i18n] Locale "${code}": common.json ausente ou inválido em locales/${code}/common.json.`,
     );
@@ -196,7 +217,11 @@ function resolveKey(dictionary: CommonMessages, key: string): unknown {
   }
   let current: unknown = dictionary;
   for (const segment of key.split(".")) {
-    if (current === null || typeof current !== "object" || Array.isArray(current)) {
+    if (
+      current === null ||
+      typeof current !== "object" ||
+      Array.isArray(current)
+    ) {
       return undefined;
     }
     current = (current as Record<string, unknown>)[segment];

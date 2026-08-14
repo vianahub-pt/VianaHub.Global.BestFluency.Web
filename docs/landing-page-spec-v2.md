@@ -16,7 +16,7 @@ A oferta prioritária é:
 
 - aulas de inglês personalizadas;
 - aulas individuais;
-- turmas reduzidas com um máximo de 8 alunos;
+- turmas reduzidas com um máximo de 4 alunos;
 - aulas presenciais na Venda Nova, Amadora;
 - aulas online;
 - atendimento a crianças, jovens e adultos.
@@ -218,7 +218,7 @@ Mensagem:
 
 ### Texto principal
 
-`Aulas práticas e personalizadas para crianças, jovens e adultos, em formato individual ou em turmas reduzidas com um máximo de 8 alunos.`
+`Aulas práticas e personalizadas para crianças, jovens e adultos, em formato individual ou em turmas reduzidas com um máximo de 4 alunos.`
 
 ### Texto complementar
 
@@ -325,7 +325,7 @@ Título:
 
 Texto:
 
-`Turmas organizadas por nível, com um máximo de 8 alunos, para permitir participação, interação e acompanhamento próximo.`
+`Turmas organizadas por nível, com um máximo de 4 alunos, para permitir participação, interação e acompanhamento próximo.`
 
 Indicação visual:
 
@@ -650,7 +650,7 @@ Mensagem:
 
 ### Pergunta 4 — Quantos alunos existem em cada turma?
 
-`As turmas têm um máximo de 8 alunos, permitindo maior participação e acompanhamento durante as aulas.`
+`As turmas têm um máximo de 4 alunos, permitindo maior participação e acompanhamento durante as aulas.`
 
 ### Pergunta 5 — Para quem são as aulas?
 

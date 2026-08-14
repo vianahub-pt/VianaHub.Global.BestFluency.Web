@@ -820,7 +820,7 @@
       "title2": "Comece a falar",
       "title3": "inglês com",
       "title4": "confiança!",
-      "text": "Aulas práticas e personalizadas para crianças, jovens e adultos, em formato individual ou em turmas reduzidas com um máximo de 8 alunos.",
+      "text": "Aulas práticas e personalizadas para crianças, jovens e adultos, em formato individual ou em turmas reduzidas com um máximo de 4 alunos.",
       "ctaLabel": "Marcar aula experimental",
       "ctaAriaLabel": "Marcar aula experimental — abrir conversa no WhatsApp (nova janela)",
       "ctaWhatsappMessage": "Olá! Gostaria de marcar uma aula experimental de inglês na Best Fluency."
@@ -846,34 +846,39 @@
       },
       "group": {
         "title": "Aprender e praticar num grupo pequeno",
-        "text": "Turmas organizadas por nível, com um máximo de 8 alunos, para permitir participação, interação e acompanhamento próximo.",
+        "text": "Turmas organizadas por nível, com um máximo de 4 alunos, para permitir participação, interação e acompanhamento próximo.",
         "note": "Sujeito à formação de turma e disponibilidade",
         "ctaLabel": "Quero saber mais sobre as turmas",
         "ctaAriaLabel": "Quero saber mais sobre as turmas — abrir conversa no WhatsApp (nova janela)",
         "whatsappMessage": "Olá! Gostaria de receber informações sobre as turmas de inglês da Best Fluency."
       }
     },
-    "method": {
-      "h2": "Um percurso de aprendizagem pensado para evoluir",
-      "intro": "Cada aluno tem um ponto de partida, um ritmo e objetivos diferentes. Por isso, as aulas são organizadas para criar continuidade, prática e orientação em cada etapa.",
-      "pillars": [
-        {
-          "title": "Percurso personalizado",
-          "text": "Os conteúdos e as atividades são definidos de acordo com o nível, as necessidades e a evolução do aluno."
-        },
-        {
-          "title": "Prática com propósito",
-          "text": "O inglês é utilizado progressivamente em situações úteis para o trabalho, os estudos, as viagens e o dia a dia."
-        },
-        {
-          "title": "Continuidade e feedback",
-          "text": "Cada aula dá seguimento ao conteúdo anterior, com correções e orientações que tornam os próximos passos claros."
-        },
-        {
-          "title": "Pronúncia e confiança",
-          "text": "O aluno recebe apoio para construir frases, melhorar a pronúncia e comunicar com maior segurança."
-        }
-      ]
+    "methods": {
+      "method": {
+        "h2": "Um percurso de aprendizagem pensado para evoluir",
+        "intro": "Cada aluno tem um ponto de partida, um ritmo e objetivos diferentes. Por isso, as aulas são organizadas para criar continuidade, prática e orientação em cada etapa.",
+        "pillars": [
+          {
+            "title": "Percurso personalizado",
+            "text": "Os conteúdos e as atividades são definidos de acordo com o nível, as necessidades e a evolução do aluno."
+          },
+          {
+            "title": "Prática com propósito",
+            "text": "O inglês é utilizado progressivamente em situações úteis para o trabalho, os estudos, as viagens e o dia a dia."
+          },
+          {
+            "title": "Continuidade e feedback",
+            "text": "Cada aula dá seguimento ao conteúdo anterior, com correções e orientações que tornam os próximos passos claros."
+          },
+          {
+            "title": "Pronúncia e confiança",
+            "text": "O aluno recebe apoio para construir frases, melhorar a pronúncia e comunicar com maior segurança."
+          }
+        ],
+        "ctaLabel": "Quero saber mais sobre o método de aprendizagem",
+        "ctaAriaLabel": "Quero saber mais sobre o método de aprendizagem — abrir conversa no WhatsApp (nova janela)",
+        "whatsappMessage": "Olá! Gostaria de receber informações sobre o método de aprendizagem da Best Fluency."
+      }
     },
     "inPerson": {
       "h2": "Aulas de inglês presenciais na Venda Nova, Amadora",
@@ -923,7 +928,9 @@
     "testimonials": {
       "starsAriaLabel": "estrelas",
       "h2": "O que dizem os alunos da Best Fluency",
-      "subtitle": "Experiências reais de quem está a aprender e a evoluir connosco.",
+      "text": [
+        "Experiências reais de quem está a aprender e a evoluir connosco."
+      ],
       "items": [
         {
           "name": "Pedro António",
@@ -1006,7 +1013,7 @@
         },
         {
           "question": "Quantos alunos existem em cada turma?",
-          "answer": "As turmas têm um máximo de 8 alunos, permitindo maior participação e acompanhamento durante as aulas."
+          "answer": "As turmas têm um máximo de 4 alunos, permitindo maior participação e acompanhamento durante as aulas."
         },
         {
           "question": "Para quem são as aulas?",

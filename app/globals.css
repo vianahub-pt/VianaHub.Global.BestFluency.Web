@@ -161,6 +161,110 @@
   }
 }
 
+/* Scroll Reveal — animações acionadas por Intersection Observer */
+.scroll-reveal {
+  opacity: 0;
+  transition: opacity 0.7s ease-out, translate 0.7s ease-out, scale 0.7s ease-out;
+}
+
+.scroll-reveal-fade-up {
+  translate: 0 2rem;
+}
+
+.scroll-reveal-fade-left {
+  translate: -2rem 0;
+}
+
+.scroll-reveal-fade-right {
+  translate: 2rem 0;
+}
+
+.scroll-reveal-scale-in {
+  scale: 0.92;
+}
+
+.scroll-reveal-visible {
+  opacity: 1;
+  translate: 0 0;
+  scale: 1;
+}
+
+/* Floating animation for the method illustration */
+.method-illustration-float {
+  animation: method-float 6s ease-in-out infinite;
+  animation-play-state: paused;
+}
+
+.scroll-reveal-visible .method-illustration-float,
+.method-illustration-float.scroll-reveal-visible {
+  animation-play-state: running;
+}
+
+@keyframes method-fade-up {
+  from {
+    opacity: 0;
+    translate: 0 2rem;
+  }
+  to {
+    opacity: 1;
+    translate: 0 0;
+  }
+}
+
+@keyframes method-fade-left {
+  from {
+    opacity: 0;
+    translate: -2rem 0;
+  }
+  to {
+    opacity: 1;
+    translate: 0 0;
+  }
+}
+
+@keyframes method-fade-right {
+  from {
+    opacity: 0;
+    translate: 2rem 0;
+  }
+  to {
+    opacity: 1;
+    translate: 0 0;
+  }
+}
+
+@keyframes method-scale-in {
+  from {
+    opacity: 0;
+    scale: 0.92;
+  }
+  to {
+    opacity: 1;
+    scale: 1;
+  }
+}
+
+@keyframes method-float {
+  0%,
+  100% {
+    translate: 0 0;
+  }
+  50% {
+    translate: 0 -0.5rem;
+  }
+}
+
+@keyframes method-pulse-ring {
+  0% {
+    scale: 1;
+    opacity: 0.6;
+  }
+  100% {
+    scale: 1.8;
+    opacity: 0;
+  }
+}
+
 @layer base {
   * {
     border-color: var(--border);

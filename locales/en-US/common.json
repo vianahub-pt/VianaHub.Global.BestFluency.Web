@@ -1,6 +1,6 @@
 {
   "language.name.pt-PT": "🇵🇹 Portuguese",
-  "language.name.pt-BR": "🇧🇷 Portuguese (Brazil)",
+  "language.name.pt-BR": "🇧🇷 Portuguese",
   "language.name.en-US": "🇺🇸 English",
   "language.name.es-ES": "🇪🇸 Spanish",
   "language.short.pt-PT": "PT",
@@ -846,34 +846,39 @@
       },
       "group": {
         "title": "Learn and practice in a small group",
-        "text": "Groups organized by level, with a maximum of 8 students, to allow participation, interaction and close support.",
+        "text": "Groups organized by level, with a maximum of 4 students, to allow participation, interaction and close support.",
         "note": "Subject to group formation and availability",
         "ctaLabel": "I want to learn more about the groups",
         "ctaAriaLabel": "I want to learn more about the groups: open a WhatsApp conversation (new window)",
         "whatsappMessage": "Hello! I would like to receive information about Best Fluency's English groups."
       }
     },
-    "method": {
-      "h2": "A learning journey designed to help you progress",
-      "intro": "Every student has a different starting point, pace and goals. That is why lessons are organized to create continuity, practice and guidance at every stage.",
-      "pillars": [
-        {
-          "title": "Personalized path",
-          "text": "Content and activities are defined according to the student's level, needs and progress."
-        },
-        {
-          "title": "Purposeful practice",
-          "text": "English is used progressively in situations that are useful for work, studies, travel and everyday life."
-        },
-        {
-          "title": "Continuity and feedback",
-          "text": "Each lesson builds on the previous content, with corrections and guidance that make the next steps clear."
-        },
-        {
-          "title": "Pronunciation and confidence",
-          "text": "Students receive support to build sentences, improve pronunciation and communicate more confidently."
-        }
-      ]
+    "methods": {
+      "method": {
+        "h2": "A learning journey designed to help you progress",
+        "intro": "Every student has a different starting point, pace and goals. That is why lessons are organized to create continuity, practice and guidance at every stage.",
+        "pillars": [
+          {
+            "title": "Personalized path",
+            "text": "Content and activities are defined according to the student's level, needs and progress."
+          },
+          {
+            "title": "Purposeful practice",
+            "text": "English is used progressively in situations that are useful for work, studies, travel and everyday life."
+          },
+          {
+            "title": "Continuity and feedback",
+            "text": "Each lesson builds on the previous content, with corrections and guidance that make the next steps clear."
+          },
+          {
+            "title": "Pronunciation and confidence",
+            "text": "Students receive support to build sentences, improve pronunciation and communicate more confidently."
+          }
+        ],
+        "ctaLabel": "I want to learn more about the learning method",
+        "ctaAriaLabel": "I want to learn more about the learning method: open a WhatsApp conversation (new window)",
+        "whatsappMessage": "Hello! I would like to receive information about Best Fluency's learning method."
+      }
     },
     "inPerson": {
       "h2": "In-person English lessons in Venda Nova, Amadora",
@@ -923,7 +928,9 @@
     "testimonials": {
       "starsAriaLabel": "stars",
       "h2": "What Best Fluency students say",
-      "subtitle": "Real experiences from people who are learning and growing with us.",
+      "text": [
+        "Real experiences from people who are learning and growing with us."
+      ],
       "items": [
         {
           "name": "Pedro António",
@@ -1006,7 +1013,7 @@
         },
         {
           "question": "How many students are in each group?",
-          "answer": "Groups have a maximum of 8 students, allowing more participation and support during lessons."
+          "answer": "Groups have a maximum of 4 students, allowing more participation and support during lessons."
         },
         {
           "question": "Who are the lessons for?",

@@ -1,7 +1,7 @@
 "use client";
 
 import { Moon, Sun } from "lucide-react";
-import { useTheme } from "next-themes";
+import { useTheme } from "@teispace/next-themes";
 import { useSyncExternalStore } from "react";
 
 import { buttonVariants } from "@/shared/components/ui/button";
@@ -34,7 +34,7 @@ export function ThemeToggle({ label }: { label: string }) {
       type="button"
       onClick={() => setTheme(isDark ? "light" : "dark")}
       aria-label={label}
-      className={buttonVariants({ variant: "outline", size: "icon" })}
+      className="inline-flex h-11 w-11 items-center justify-center rounded-md text-foreground transition-colors hover:bg-white hover:text-accent focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring"
     >
       {mounted ? (
         isDark ? (

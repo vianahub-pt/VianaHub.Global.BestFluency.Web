@@ -820,7 +820,7 @@
       "title2": "Empieza a hablar",
       "title3": "inglés con",
       "title4": "confianza.",
-      "text": "Clases prácticas y personalizadas para niños, jóvenes y adultos, de forma individual o en grupos reducidos con un máximo de 8 alumnos.",
+      "text": "Clases prácticas y personalizadas para niños, jóvenes y adultos, de forma individual o en grupos reducidos con un máximo de 4 alumnos.",
       "ctaLabel": "Reservar clase de prueba",
       "ctaAriaLabel": "Reservar clase de prueba — abrir una conversación de WhatsApp (nueva ventana)",
       "ctaWhatsappMessage": "¡Hola! Me gustaría reservar una clase de prueba de inglés en Best Fluency."
@@ -846,34 +846,39 @@
       },
       "group": {
         "title": "Aprender y practicar en un grupo pequeño",
-        "text": "Grupos organizados por nivel, con un máximo de 8 alumnos, para permitir la participación, la interacción y un acompañamiento cercano.",
+        "text": "Grupos organizados por nivel, con un máximo de 4 alumnos, para permitir la participación, la interacción y un acompañamiento cercano.",
         "note": "Sujeto a la formación del grupo y a la disponibilidad",
         "ctaLabel": "Quiero saber más sobre los grupos",
         "ctaAriaLabel": "Quiero saber más sobre los grupos — abrir una conversación de WhatsApp (nueva ventana)",
         "whatsappMessage": "¡Hola! Me gustaría recibir información sobre los grupos de inglés de Best Fluency."
       }
     },
-    "method": {
-      "h2": "Un recorrido de aprendizaje pensado para evolucionar",
-      "intro": "Cada alumno tiene un punto de partida, un ritmo y unos objetivos diferentes. Por eso, las clases se organizan para crear continuidad, práctica y orientación en cada etapa.",
-      "pillars": [
-        {
-          "title": "Recorrido personalizado",
-          "text": "Los contenidos y las actividades se definen según el nivel, las necesidades y la evolución del alumno."
-        },
-        {
-          "title": "Práctica con propósito",
-          "text": "El inglés se utiliza progresivamente en situaciones útiles para el trabajo, los estudios, los viajes y el día a día."
-        },
-        {
-          "title": "Continuidad y feedback",
-          "text": "Cada clase da seguimiento al contenido anterior, con correcciones y orientaciones que dejan claros los siguientes pasos."
-        },
-        {
-          "title": "Pronunciación y confianza",
-          "text": "El alumno recibe apoyo para construir frases, mejorar la pronunciación y comunicarse con mayor seguridad."
-        }
-      ]
+    "methods": {
+      "method": {
+        "h2": "Un recorrido de aprendizaje pensado para evolucionar",
+        "intro": "Cada alumno tiene un punto de partida, un ritmo y unos objetivos diferentes. Por eso, las clases se organizan para crear continuidad, práctica y orientación en cada etapa.",
+        "pillars": [
+          {
+            "title": "Recorrido personalizado",
+            "text": "Los contenidos y las actividades se definen según el nivel, las necesidades y la evolución del alumno."
+          },
+          {
+            "title": "Práctica con propósito",
+            "text": "El inglés se utiliza progresivamente en situaciones útiles para el trabajo, los estudios, los viajes y el día a día."
+          },
+          {
+            "title": "Continuidad y feedback",
+            "text": "Cada clase da seguimiento al contenido anterior, con correcciones y orientaciones que dejan claros los siguientes pasos."
+          },
+          {
+            "title": "Pronunciación y confianza",
+            "text": "El alumno recibe apoyo para construir frases, mejorar la pronunciación y comunicarse con mayor seguridad."
+          }
+        ],
+        "ctaLabel": "Quiero saber más sobre el método de aprendizaje",
+        "ctaAriaLabel": "Quiero saber más sobre el método de aprendizaje — abrir una conversación de WhatsApp (nueva ventana)",
+        "whatsappMessage": "¡Hola! Me gustaría recibir información sobre el método de aprendizaje de Best Fluency."
+      }
     },
     "inPerson": {
       "h2": "Clases de inglés presenciales en Venda Nova, Amadora",
@@ -923,7 +928,9 @@
     "testimonials": {
       "starsAriaLabel": "estrellas",
       "h2": "Lo que dicen los alumnos de Best Fluency",
-      "subtitle": "Experiencias reales de quienes están aprendiendo y evolucionando con nosotros.",
+      "text": [
+        "Experiencias reales de quienes están aprendiendo y evolucionando con nosotros."
+      ],
       "items": [
         {
           "name": "Pedro António",
@@ -1006,7 +1013,7 @@
         },
         {
           "question": "¿Cuántos alumnos hay en cada grupo?",
-          "answer": "Los grupos tienen un máximo de 8 alumnos, lo que permite mayor participación y acompañamiento durante las clases."
+          "answer": "Los grupos tienen un máximo de 4 alumnos, lo que permite mayor participación y acompañamiento durante las clases."
         },
         {
           "question": "¿Para quién son las clases?",
