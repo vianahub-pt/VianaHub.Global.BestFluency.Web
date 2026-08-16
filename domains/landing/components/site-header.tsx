@@ -63,6 +63,20 @@ export function SiteHeader({ locale }: { locale: LocaleCode }) {
             />
           </div>
           <ThemeToggle label={content.a11y.toggleTheme} />
+          <div className="hidden lg:block">
+            <WhatsAppLink
+              message={content.nav.whatsappMessage}
+              section="header"
+              ctaLabel={content.nav.ctaLabel}
+              ariaLabel={content.nav.ctaAriaLabel}
+              className={buttonVariants({
+                variant: "orange",
+                size: "default",
+              })}
+            >
+              {content.nav.ctaLabel}
+            </WhatsAppLink>
+          </div>
           <MobileMenu
             locale={locale}
             nav={content.nav}

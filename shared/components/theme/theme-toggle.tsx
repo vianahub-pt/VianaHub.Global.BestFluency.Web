@@ -1,10 +1,8 @@
 "use client";
 
 import { Moon, Sun } from "lucide-react";
-import { useTheme } from "@teispace/next-themes";
+import { useTheme } from "next-themes";
 import { useSyncExternalStore } from "react";
-
-import { buttonVariants } from "@/shared/components/ui/button";
 
 const emptySubscribe = () => () => {};
 const getClientSnapshot = () => true;

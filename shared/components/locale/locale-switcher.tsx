@@ -40,7 +40,7 @@ export function LocaleSwitcher({ currentLocale, label }: LocaleSwitcherProps) {
     <Select defaultValue={currentLocale} onValueChange={handleLocaleChange}>
       <SelectTrigger
         aria-label={`${label}: ${current.label}`}
-        className="border-none border-0 shrink-0 bg-outline hover:bg-muted hover:text-accent"
+        className="w-auto min-h-11 shrink-0 border-0 bg-transparent px-3 text-sm font-medium text-foreground hover:bg-white hover:text-accent focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring"
       >
         <Globe className="mr-1.5 h-4 w-4" aria-hidden="true" />
         <SelectValue />
