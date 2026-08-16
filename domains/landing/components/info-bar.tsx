@@ -23,21 +23,20 @@ export function InfoBar({ locale }: { locale: LocaleCode }) {
   const content = getMessages(locale).landing;
 
   return (
-    <section
-      aria-label={content.infoBar.items.join(", ")}
-      className="bg-muted/40"
-    >
+    <section aria-label={content.infoBar.items.join(", ")}>
       <div className="mt-10 mx-auto w-full max-w-7xl px-4 py-8 md:px-8">
         <ul className="grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
           {content.infoBar.items.map((item, index) => (
             <li
               key={item}
-              className="flex min-h-12 items-center gap-3 rounded-lg border border-border bg-card px-4 py-3 shadow-sm"
+              className="flex min-h-12 items-center gap-3 rounded-lg px-4 py-3"
             >
-              <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-accent/15 text-accent">
+              <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-accent/15 dark:bg-accent/80 text-accent dark:text-white">
                 {itemIcons[index]}
               </span>
-              <span className="text-sm font-medium leading-6">{item}</span>
+              <span className="text-sm text-accent dark:text-white font-medium leading-6">
+                {item}
+              </span>
             </li>
           ))}
         </ul>

@@ -4,7 +4,6 @@ import { type LocaleCode } from "@/core/config/locales";
 import { getMessages } from "@/core/i18n";
 import { buttonVariants } from "@/shared/components/ui/button";
 import { Card, CardContent } from "@/shared/components/ui/card";
-import { SectionHeading } from "@/shared/components/ui/section-heading";
 import { WhatsAppLink } from "@/shared/components/whatsapp-link";
 import { cn } from "@/shared/lib/utils";
 
@@ -33,18 +32,35 @@ export function Testimonials({ locale }: { locale: LocaleCode }) {
   const content = getMessages(locale).landing;
   const { testimonials } = content;
 
+  // Dynamic asset paths based on active locale
+  const localeLower = locale.toLowerCase();
+  const TestimonialsBasePath = `/assets/${locale}/kids-${localeLower}`;
+
   return (
     <section
       id="depoimentos"
       aria-labelledby="testimonials-title"
-      className="flex min-h-dvh flex-col justify-center border-t border-border"
+      className="flex min-h-dvh flex-col justify-center border-t border-border bg-muted/40"
     >
       <div className="mx-auto w-full max-w-7xl px-4 md:px-8">
-        <SectionHeading
-          title={testimonials.h2}
-          titleId="testimonials-title"
-          intro={testimonials.subtitle}
-        />
+        <div className="lg:order-1">
+          <h2
+            id="best-kids-title"
+            className="text-[#c2410c] dark:text-[#c2410c] font-display text-2xl font-bold tracking-tight text-balance sm:text-3xl"
+          >
+            {testimonials.h2}
+          </h2>
+          <div className="mt-5">
+            {testimonials.text.map((paragraph) => (
+              <p
+                key={paragraph}
+                className="text-base leading-7 text-muted-foreground [&:not(:first-child)]:mt-3"
+              >
+                {paragraph}
+              </p>
+            ))}
+          </div>
+        </div>
 
         <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:gap-8">
           {testimonials.items.map((item) => (
@@ -91,7 +107,7 @@ export function Testimonials({ locale }: { locale: LocaleCode }) {
           ))}
         </div>
 
-        <div className="mt-10 flex justify-center">
+        <div className="mt-20 flex justify-center">
           <WhatsAppLink
             message={testimonials.whatsappMessage}
             section="testimonials"

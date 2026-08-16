@@ -78,7 +78,7 @@ Recomendação: fundir ambas numa única secção com quatro pilares.
 Para o atual modelo comercial, esta é a maior lacuna. A página precisa apresentar explicitamente:
 
 - aulas individuais;
-- turmas reduzidas com até 8 alunos;
+- turmas reduzidas com até 4 alunos;
 - aulas presenciais na Amadora;
 - aulas online.
 

@@ -1,7 +1,8 @@
 "use client";
 
 import { Check, Globe } from "lucide-react";
-import Link from "next/link";
+import { useRouter } from "next/navigation";
+import { useCallback } from "react";
 
 import { getLocale, locales, type LocaleCode } from "@/core/config/locales";
 import {
@@ -18,22 +19,28 @@ interface LocaleSwitcherProps {
 }
 
 /**
- * Seletor de idioma — componente shadcn/ui Select (Radix UI), issue #29.
- *
- * - trigger com área de toque ≥ 44 px e rótulo acessível;
- * - cada idioma é um link real (<Link> Next.js) com href, hrefLang, lang;
- * - troca de idioma é navegação completa para o URL próprio do idioma;
- * - teclado completo via Radix (setas, Home/End, Escape, typeahead);
- * - idioma corrente marcado com aria-current="page".
+ * Seletor de idioma — navegação via useRouter para evitar reload completo
+ * ao transitar entre route groups diferentes ((site) ↔ [locale]).
  */
 export function LocaleSwitcher({ currentLocale, label }: LocaleSwitcherProps) {
   const current = getLocale(currentLocale);
+  const router = useRouter();
+
+  const handleLocaleChange = useCallback(
+    (code: string) => {
+      const locale = locales.find((l) => l.code === code);
+      if (locale && locale.code !== currentLocale) {
+        router.push(locale.path, { scroll: false });
+      }
+    },
+    [currentLocale, router],
+  );
 
   return (
-    <Select defaultValue={currentLocale}>
+    <Select defaultValue={currentLocale} onValueChange={handleLocaleChange}>
       <SelectTrigger
         aria-label={`${label}: ${current.label}`}
-        className="w-[12rem] shrink-0"
+        className="w-auto min-h-11 shrink-0 border-0 bg-transparent px-3 text-sm font-medium text-foreground hover:bg-white hover:text-accent focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring"
       >
         <Globe className="mr-1.5 h-4 w-4" aria-hidden="true" />
         <SelectValue />
@@ -45,26 +52,16 @@ export function LocaleSwitcher({ currentLocale, label }: LocaleSwitcherProps) {
             <SelectItem
               key={locale.code}
               value={locale.code}
-              className="hover:bg-[#c2410c] focus:bg-[#c2410c] data-[highlighted]:bg-[#c2410c]"
+              className="hover:bg-accent focus:bg-accent data-[highlighted]:bg-accent"
             >
-              <Link
-                href={locale.path}
-                scroll={false}
-                replace
-                hrefLang={locale.hreflang}
-                lang={locale.hreflang}
-                aria-label={locale.label}
-                aria-current={isCurrent ? "page" : undefined}
-                className="flex min-h-9 cursor-pointer items-center gap-2"
-                tabIndex={-1}
-              >
+              <span className="flex min-h-9 items-center gap-2">
                 <span className={isCurrent ? "font-semibold" : ""}>
                   {locale.label}
                 </span>
                 {isCurrent ? (
                   <Check className="h-4 w-4 text-accent" aria-hidden="true" />
                 ) : null}
-              </Link>
+              </span>
             </SelectItem>
           );
         })}

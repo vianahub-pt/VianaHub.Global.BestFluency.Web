@@ -1,10 +1,15 @@
 import { MessageCircle, User, Users } from "lucide-react";
 
+import Image from "next/image";
 import { type LocaleCode } from "@/core/config/locales";
 import { getMessages } from "@/core/i18n";
 import { buttonVariants } from "@/shared/components/ui/button";
-import { Card, CardContent, CardHeader, CardTitle } from "@/shared/components/ui/card";
-import { SectionHeading } from "@/shared/components/ui/section-heading";
+import {
+  Card,
+  CardContent,
+  CardHeader,
+  CardTitle,
+} from "@/shared/components/ui/card";
 import { WhatsAppLink } from "@/shared/components/whatsapp-link";
 import { cn } from "@/shared/lib/utils";
 
@@ -27,96 +32,81 @@ export function Modalities({ locale }: { locale: LocaleCode }) {
     <section
       id="modalidades"
       aria-labelledby="modalities-title"
-      className="
-    flex
-    min-h-dvh
-    flex-col
-    justify-center
-    border-t
-    border-border
-    bg-linear-to-br
-    from-white
-    via-[#f7f1e7]
-    to-[#c2410c]/30
-
-    dark:from-black
-    dark:via-[#17130d]
-    dark:to-[#c2410c]/35
-  "
+      className="flex min-h-dvh flex-col justify-center border-t border-border bg-muted/40"
     >
       <div className="mx-auto w-full max-w-7xl px-4 md:px-8">
-        <SectionHeading
-          title={content.modalities.h2}
-          titleId="modalities-title"
-          intro={content.modalities.intro}
-        />
+        <div className="lg:order-1">
+          <h2
+            id="best-kids-title"
+            className="text-[#c2410c] dark:text-[#c2410c] font-display text-2xl font-bold tracking-tight text-balance sm:text-3xl"
+          >
+            {content.modalities.h2}
+          </h2>
+          <div className="mt-5">{content.modalities.intro}</div>
+        </div>
 
-        <div className="mt-10 grid gap-6 lg:grid-cols-2 lg:gap-8">
+        <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:gap-8">
           <Card className="flex flex-col">
             <CardHeader>
-              <span className="flex h-11 w-11 items-center justify-center rounded-full bg-accent/15 text-accent">
-                <User className="h-5 w-5" aria-hidden="true" />
+              <span className="flex items-center justify-center border-b border-border pb-2 text-accent">
+                <CardTitle className="mt-2">{individual.title}</CardTitle>
               </span>
-              <CardTitle className="mt-2">{individual.title}</CardTitle>
             </CardHeader>
             <CardContent className="flex flex-1 flex-col">
               <p className="text-base leading-7 text-muted-foreground">
                 {individual.text}
               </p>
-              <p className="mt-4 inline-flex w-fit items-center rounded-full border border-border bg-muted px-3 py-1 text-xs font-semibold text-muted-foreground">
-                {individual.note}
-              </p>
-              <div className="mt-6 flex flex-1 items-end">
-                <WhatsAppLink
-                  message={individual.whatsappMessage}
-                  section="individual"
-                  modality="individual"
-                  ctaLabel={individual.ctaLabel}
-                  ariaLabel={individual.ctaAriaLabel}
-                  className={cn(
-                    buttonVariants({ variant: "primary", size: "lg" }),
-                    "w-full",
-                  )}
-                >
-                  <MessageCircle className="h-5 w-5 shrink-0" aria-hidden="true" />
-                  {individual.ctaLabel}
-                </WhatsAppLink>
+              <div className="mt-10 flex justify-center">
+                <Image
+                  src="/online-classes.jpg"
+                  alt="Teste"
+                  width={400}
+                  height={400}
+                  loading="lazy"
+                  className="h-auto w-full max-w-sm rounded-2xl border border-border object-cover"
+                />
               </div>
             </CardContent>
           </Card>
 
           <Card className="flex flex-col">
             <CardHeader>
-              <span className="flex h-11 w-11 items-center justify-center rounded-full bg-accent/15 text-accent">
-                <Users className="h-5 w-5" aria-hidden="true" />
+              <span className="flex items-center justify-center border-b border-border pb-2 text-accent">
+                <CardTitle className="mt-2">{group.title}</CardTitle>
               </span>
-              <CardTitle className="mt-2">{group.title}</CardTitle>
             </CardHeader>
             <CardContent className="flex flex-1 flex-col">
               <p className="text-base leading-7 text-muted-foreground">
                 {group.text}
               </p>
-              <p className="mt-4 inline-flex w-fit items-center rounded-full border border-border bg-muted px-3 py-1 text-xs font-semibold text-muted-foreground">
-                {group.note}
-              </p>
-              <div className="mt-6 flex flex-1 items-end">
-                <WhatsAppLink
-                  message={group.whatsappMessage}
-                  section="group"
-                  modality="group"
-                  ctaLabel={group.ctaLabel}
-                  ariaLabel={group.ctaAriaLabel}
-                  className={cn(
-                    buttonVariants({ variant: "primary", size: "lg" }),
-                    "w-full",
-                  )}
-                >
-                  <MessageCircle className="h-5 w-5 shrink-0" aria-hidden="true" />
-                  {group.ctaLabel}
-                </WhatsAppLink>
+              <div className="mt-10 flex justify-center">
+                <Image
+                  src="/in-person.jpg"
+                  alt="Teste"
+                  width={400}
+                  height={400}
+                  loading="lazy"
+                  className="h-auto w-full max-w-sm rounded-2xl border border-border object-cover"
+                />
               </div>
             </CardContent>
           </Card>
+        </div>
+
+        <div className="mt-10 flex justify-center">
+          <WhatsAppLink
+            message={individual.whatsappMessage}
+            section="testimonials"
+            ctaLabel={individual.ctaLabel}
+            ariaLabel={individual.ctaAriaLabel}
+            className={cn(
+              buttonVariants({ variant: "orange", size: "lg" }),
+              "w-full sm:w-auto",
+            )}
+          >
+            <MessageCircle className="h-5 w-5 shrink-0" aria-hidden="true" />
+            {individual.ctaLabel}
+          </WhatsAppLink>
         </div>
       </div>
     </section>

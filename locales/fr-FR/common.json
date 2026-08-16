@@ -846,34 +846,39 @@
       },
       "group": {
         "title": "Apprendre et pratiquer dans un petit groupe",
-        "text": "Groupes organisés par niveau, avec un maximum de 8 élèves, pour permettre la participation, l'interaction et un accompagnement de proximité.",
+        "text": "Groupes organisés par niveau, avec un maximum de 4 élèves, pour permettre la participation, l'interaction et un accompagnement de proximité.",
         "note": "Sous réserve de constitution du groupe et de disponibilité",
         "ctaLabel": "Je veux en savoir plus sur les groupes",
         "ctaAriaLabel": "Je veux en savoir plus sur les groupes — ouvrir une conversation WhatsApp (nouvelle fenêtre)",
         "whatsappMessage": "Bonjour ! Je souhaite recevoir des informations sur les groupes d'anglais de Best Fluency."
       }
     },
-    "method": {
-      "h2": "Un parcours d'apprentissage pensé pour évoluer",
-      "intro": "Chaque élève a un point de départ, un rythme et des objectifs différents. C'est pourquoi les cours sont organisés pour créer continuité, pratique et orientation à chaque étape.",
-      "pillars": [
-        {
-          "title": "Parcours personnalisé",
-          "text": "Les contenus et les activités sont définis selon le niveau, les besoins et la progression de l'élève."
-        },
-        {
-          "title": "Pratique avec un objectif",
-          "text": "L'anglais est utilisé progressivement dans des situations utiles pour le travail, les études, les voyages et le quotidien."
-        },
-        {
-          "title": "Continuité et feedback",
-          "text": "Chaque cours fait suite au contenu précédent, avec des corrections et des orientations qui rendent les prochaines étapes claires."
-        },
-        {
-          "title": "Prononciation et confiance",
-          "text": "L'élève reçoit un accompagnement pour construire des phrases, améliorer sa prononciation et communiquer avec plus d'assurance."
-        }
-      ]
+    "methods": {
+      "method": {
+        "h2": "Un parcours d'apprentissage pensé pour évoluer",
+        "intro": "Chaque élève a un point de départ, un rythme et des objectifs différents. C'est pourquoi les cours sont organisés pour créer continuité, pratique et orientation à chaque étape.",
+        "pillars": [
+          {
+            "title": "Parcours personnalisé",
+            "text": "Les contenus et les activités sont définis selon le niveau, les besoins et la progression de l'élève."
+          },
+          {
+            "title": "Pratique avec un objectif",
+            "text": "L'anglais est utilisé progressivement dans des situations utiles pour le travail, les études, les voyages et le quotidien."
+          },
+          {
+            "title": "Continuité et feedback",
+            "text": "Chaque cours fait suite au contenu précédent, avec des corrections et des orientations qui rendent les prochaines étapes claires."
+          },
+          {
+            "title": "Prononciation et confiance",
+            "text": "L'élève reçoit un accompagnement pour construire des phrases, améliorer sa prononciation et communiquer avec plus d'assurance."
+          }
+        ],
+        "ctaLabel": "Je veux en savoir plus sur la méthode d'apprentissage",
+        "ctaAriaLabel": "Je veux en savoir plus sur la méthode d'apprentissage — ouvrir une conversation WhatsApp (nouvelle fenêtre)",
+        "whatsappMessage": "Bonjour ! Je souhaite recevoir des informations sur le méthode d'apprentissage de Best Fluency."
+      }
     },
     "inPerson": {
       "h2": "Cours d'anglais en présentiel à Venda Nova, Amadora",
@@ -923,7 +928,9 @@
     "testimonials": {
       "starsAriaLabel": "étoiles",
       "h2": "Ce que disent les élèves de Best Fluency",
-      "subtitle": "Des expériences réelles de personnes qui apprennent et évoluent avec nous.",
+      "text": [
+        "Des expériences réelles de personnes qui apprennent et évoluent avec nous."
+      ],
       "items": [
         {
           "name": "Pedro António",
@@ -1006,7 +1013,7 @@
         },
         {
           "question": "Combien d'élèves y a-t-il dans chaque groupe ?",
-          "answer": "Les groupes comptent au maximum 8 élèves, ce qui permet une plus grande participation et un meilleur accompagnement pendant les cours."
+          "answer": "Les groupes comptent au maximum 4 élèves, ce qui permet une plus grande participation et un meilleur accompagnement pendant les cours."
         },
         {
           "question": "À qui s'adressent les cours ?",

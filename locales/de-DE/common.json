@@ -1,6 +1,6 @@
 {
   "language.name.pt-PT": "🇵🇹 Portuguese",
-  "language.name.pt-BR": "🇧🇷 Portuguese (Brazil)",
+  "language.name.pt-BR": "🇧🇷 Portuguese",
   "language.name.en-US": "🇺🇸 English",
   "language.name.es-ES": "🇪🇸 Spanish",
   "language.short.pt-PT": "PT",
@@ -768,7 +768,7 @@
   "landing": {
     "meta": {
       "title": "Englischunterricht in Amadora und online | Best Fluency",
-      "description": "Englischunterricht vor Ort in Venda Nova, Amadora, und online für Kinder, Jugendliche und Erwachsene. Einzelunterricht und Gruppen mit maximal 8 Lernenden."
+      "description": "Englischunterricht vor Ort in Venda Nova, Amadora, und online für Kinder, Jugendliche und Erwachsene. Einzelunterricht und Gruppen mit maximal 4 Lernenden."
     },
     "a11y": {
       "skipToContent": "Zum Hauptinhalt springen",
@@ -820,7 +820,7 @@
       "title2": "Sprich",
       "title3": "Englisch mit",
       "title4": "Selbstvertrauen.",
-      "text": "Praktischer und persönlicher Englischunterricht für Kinder, Jugendliche und Erwachsene – einzeln oder in kleinen Gruppen mit maximal 8 Lernenden.",
+      "text": "Praktischer und persönlicher Englischunterricht für Kinder, Jugendliche und Erwachsene – einzeln oder in kleinen Gruppen mit maximal 4 Lernenden.",
       "ctaLabel": "Probestunde buchen",
       "ctaAriaLabel": "Probestunde buchen — WhatsApp-Unterhaltung öffnen (neues Fenster)",
       "ctaWhatsappMessage": "Hallo! Ich möchte gerne eine Englisch-Probestunde bei Best Fluency buchen."
@@ -846,34 +846,39 @@
       },
       "group": {
         "title": "In einer kleinen Gruppe lernen und üben",
-        "text": "Nach Niveau organisierte Gruppen mit maximal 8 Lernenden für Teilnahme, Interaktion und enge Betreuung.",
+        "text": "Nach Niveau organisierte Gruppen mit maximal 4 Lernenden für Teilnahme, Interaktion und enge Betreuung.",
         "note": "Abhängig von der Gruppenzusammenstellung und Verfügbarkeit",
         "ctaLabel": "Ich möchte mehr über die Gruppen erfahren",
         "ctaAriaLabel": "Ich möchte mehr über die Gruppen erfahren — WhatsApp-Unterhaltung öffnen (neues Fenster)",
         "whatsappMessage": "Hallo! Ich möchte gerne Informationen über die Englischgruppen von Best Fluency erhalten."
       }
     },
-    "method": {
-      "h2": "Ein Lernweg, der für Fortschritt gemacht ist",
-      "intro": "Jeder Lernende hat einen anderen Ausgangspunkt, ein anderes Tempo und andere Ziele. Deshalb wird der Unterricht so organisiert, dass er in jeder Phase Kontinuität, Praxis und Orientierung schafft.",
-      "pillars": [
-        {
-          "title": "Persönlicher Lernweg",
-          "text": "Inhalte und Aktivitäten werden nach Niveau, Bedürfnissen und Fortschritt des Lernenden festgelegt."
-        },
-        {
-          "title": "Praxis mit Ziel",
-          "text": "Englisch wird zunehmend in Situationen angewendet, die für Arbeit, Studium, Reisen und den Alltag nützlich sind."
-        },
-        {
-          "title": "Kontinuität und Feedback",
-          "text": "Jede Stunde knüpft an den vorherigen Inhalt an, mit Korrekturen und Anleitungen, die die nächsten Schritte klar machen."
-        },
-        {
-          "title": "Aussprache und Selbstvertrauen",
-          "text": "Der Lernende erhält Unterstützung beim Satzbau, bei der Verbesserung der Aussprache und beim sicheren Kommunizieren."
-        }
-      ]
+    "methods": {
+      "method": {
+        "h2": "Ein Lernweg, der für Fortschritt gemacht ist",
+        "intro": "Jeder Lernende hat einen anderen Ausgangspunkt, ein anderes Tempo und andere Ziele. Deshalb wird der Unterricht so organisiert, dass er in jeder Phase Kontinuität, Praxis und Orientierung schafft.",
+        "pillars": [
+          {
+            "title": "Persönlicher Lernweg",
+            "text": "Inhalte und Aktivitäten werden nach Niveau, Bedürfnissen und Fortschritt des Lernenden festgelegt."
+          },
+          {
+            "title": "Praxis mit Ziel",
+            "text": "Englisch wird zunehmend in Situationen angewendet, die für Arbeit, Studium, Reisen und den Alltag nützlich sind."
+          },
+          {
+            "title": "Kontinuität und Feedback",
+            "text": "Jede Stunde knüpft an den vorherigen Inhalt an, mit Korrekturen und Anleitungen, die die nächsten Schritte klar machen."
+          },
+          {
+            "title": "Aussprache und Selbstvertrauen",
+            "text": "Der Lernende erhält Unterstützung beim Satzbau, bei der Verbesserung der Aussprache und beim sicheren Kommunizieren."
+          }
+        ],
+        "ctaLabel": "Ich möchte mehr über die Methode erfahren",
+        "ctaAriaLabel": "Ich möchte mehr über die Methode erfahren — WhatsApp-Unterhaltung öffnen (neues Fenster)",
+        "whatsappMessage": "Hallo! Ich möchte gerne Informationen über die Lernmethode von Best Fluency erhalten."
+      }
     },
     "inPerson": {
       "h2": "Englischunterricht vor Ort in Venda Nova, Amadora",
@@ -923,7 +928,9 @@
     "testimonials": {
       "starsAriaLabel": "Sterne",
       "h2": "Das sagen die Lernenden von Best Fluency",
-      "subtitle": "Echte Erfahrungen von Menschen, die bei uns lernen und Fortschritte machen.",
+      "text": [
+        "Echte Erfahrungen von Menschen, die bei uns lernen und Fortschritte machen."
+      ],
       "items": [
         {
           "name": "Pedro António",
@@ -1006,7 +1013,7 @@
         },
         {
           "question": "Wie viele Lernende sind in jeder Gruppe?",
-          "answer": "Die Gruppen haben maximal 8 Lernende, was mehr Teilnahme und Betreuung während des Unterrichts ermöglicht."
+          "answer": "Die Gruppen haben maximal 4 Lernende, was mehr Teilnahme und Betreuung während des Unterrichts ermöglicht."
         },
         {
           "question": "Für wen ist der Unterricht geeignet?",

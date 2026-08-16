@@ -69,16 +69,6 @@ export const locales = [
     shortLabel: "IT",
     isDefault: false,
   },
-  {
-    code: "pt-BR",
-    segment: "pt-br",
-    path: "/pt-br/",
-    hreflang: "pt-BR",
-    ogLocale: "pt_BR",
-    label: "Português (Brasil)",
-    shortLabel: "BR",
-    isDefault: false,
-  },
 ] as const;
 
 export type LocaleCode = (typeof locales)[number]["code"];
@@ -95,6 +85,16 @@ const segmentToCode = new Map<string, LocaleCode>(
 /** Resolve o segmento de URL para o código de locale. Devolve null se inválido. */
 export function localeCodeForSegment(segment: string): LocaleCode | null {
   return segmentToCode.get(segment) ?? null;
+}
+
+/**
+ * Resolve o segmento do optional catch-all [[...locale]].
+ * segment = undefined → pt-PT (raiz "/").
+ * segment = "en" → en-US, etc.
+ */
+export function resolveLocale(segment?: string): LocaleCode {
+  if (!segment) return "pt-PT";
+  return localeCodeForSegment(segment) ?? "pt-PT";
 }
 
 export function getLocale(code: LocaleCode) {
