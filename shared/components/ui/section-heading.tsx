@@ -42,7 +42,7 @@ export function SectionHeading({
       ) : null}
       <h2
         id={titleId}
-        className="mt-10 font-display text-2xl font-bold tracking-tight text-balance sm:text-3xl"
+        className="mt-10 font-title text-2xl font-bold tracking-tight text-balance sm:text-3xl"
       >
         {title}
       </h2>

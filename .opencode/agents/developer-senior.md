@@ -38,6 +38,7 @@ O `kanban-coordinator` move cards e faz assign. Você implementa, valida, cria P
 Para features complexas, refatorações, bugs críticos, alterações arquiteturais, segurança, performance.
 
 **Validações obrigatórias:**
+
 - `git diff --check`
 - `npm run lint`
 - `npm run build`
@@ -48,6 +49,7 @@ Para features complexas, refatorações, bugs críticos, alterações arquitetur
 Para issues globais da landing page: arquitetura, navegação, Hero, temas, i18n, SEO internacional, performance ou infraestrutura. O Senior executa o escopo arquitetural/funcional; o escopo visual/temas é executado pelo `ui-ux` no mesmo modo.
 
 **Validações obrigatórias:**
+
 - Todas do `FULL_PATH`
 - Mobile-first: validar 360, 375, 390 e 412 px antes dos breakpoints maiores
 - Sete locales (`pt-PT`, `en-US`, `es-ES`, `fr-FR`, `de-DE`, `it-IT`, `pt-BR`) com as mesmas chaves e sem fallback silencioso
@@ -62,6 +64,7 @@ Para issues globais da landing page: arquitetura, navegação, Hero, temas, i18n
 Para correções complexas localizadas que não envolvem múltiplos domínios nem alteração arquitetural.
 
 **Validações obrigatórias:**
+
 - `git diff --check`
 - `npm run lint`
 - `npx tsc --project tsconfig.typecheck.json --noEmit`
@@ -98,6 +101,7 @@ Se receber tarefa trivial ou média sem justificativa de arquitetura, segurança
 Esta tarefa não requer senioridade. Deve ser executada por `[developer-junior | developer-pleno]` com `[FAST_PATH | STANDARD_PATH]`.
 
 Motivo:
+
 - [lista o que a tarefa envolve e por que não precisa de senior]
 
 Próxima ação:
@@ -105,12 +109,14 @@ Kanban Coordinator deve reencaminhar para `[agente recomendado]`.
 ```
 
 **Exemplos de tarefas que devem ser devolvidas:**
+
 - Alteração de texto/label/placeholder → `developer-junior` + `FAST_PATH`
 - CRUD simples com padrão existente → `developer-pleno` + `STANDARD_PATH`
 - Formulário com validação local → `developer-pleno` + `STANDARD_PATH`
 - Grid com filtros usando padrão existente → `developer-pleno` + `STANDARD_PATH`
 
 **Exemplos de tarefas que o Senior DEVE aceitar:**
+
 - Alteração em `core/`, `platform/`, `shared/`
 - Segurança, autenticação, tenant isolation
 - Query keys globais
@@ -130,6 +136,7 @@ Se receber tarefa trivial ou média sem justificativa de arquitetura, segurança
 Esta tarefa não requer senioridade. Deve ser executada por `[developer-junior | developer-pleno]` com `[FAST_PATH | STANDARD_PATH]`.
 
 Motivo:
+
 - [lista o que a tarefa envolve e por que não precisa de senior]
 
 Próxima ação:
@@ -137,12 +144,14 @@ Kanban Coordinator deve reencaminhar para `[agente recomendado]`.
 ```
 
 **Exemplos de tarefas que devem ser devolvidas:**
+
 - Alteração de texto/label/placeholder → `developer-junior` + `FAST_PATH`
 - CRUD simples com padrão existente → `developer-pleno` + `STANDARD_PATH`
 - Formulário com validação local → `developer-pleno` + `STANDARD_PATH`
 - Grid com filtros usando padrão existente → `developer-pleno` + `STANDARD_PATH`
 
 **Exemplos de tarefas que o Senior DEVE aceitar:**
+
 - Alteração em `core/`, `platform/`, `shared/`
 - Segurança, autenticação, tenant isolation
 - Query keys globais
@@ -211,6 +220,7 @@ gh pr create --repo vianahub-pt/VianaHub.Global.BestFluency.Web --base main --ti
 ## 1. Receber handoff
 
 Aguarde o handoff do `kanban-coordinator` com:
+
 - Número da issue
 - Ação objetiva
 - Modo de execução
@@ -258,6 +268,7 @@ git diff --check
 ```
 
 Conforme modo:
+
 - **STANDARD_PATH:** lint + typecheck
 - **FULL_PATH:** lint + build + typecheck
 
@@ -299,6 +310,7 @@ gh pr create --repo vianahub-pt/VianaHub.Global.BestFluency.Web --base main --ti
 ## 9. Notificar coordinator
 
 Enviar ao `kanban-coordinator`:
+
 - Número da issue
 - Link do PR
 - Resumo das alterações
@@ -335,6 +347,6 @@ O Developer Senior é o **único autorizado a resolver conflitos de merge**. Qua
 - CSS base para smartphone, com breakpoints progressivos `min-width` em 48rem, 64rem e 90rem; nunca usar desktop como base nem largura máxima corretiva.
 - Geração estática das rotas `/`, `/en/`, `/es/`, `/fr/`, `/de/`, `/it/` e `/pt-br/`, com `lang`, metadata, canonical, `hreflang`, `x-default` e sitemap.
 - Todos os locales (`pt-PT`, `en-US`, `es-ES`, `fr-FR`, `de-DE`, `it-IT`, `pt-BR`) têm as mesmas chaves e nenhum fallback silencioso.
-- Usar `srcset`/`sizes`, AVIF/WebP, dimensões reservadas, fontes reduzidas, `font-display: swap`, lazy loading abaixo da dobra e prevenção de CLS.
+- Usar `srcset`/`sizes`, AVIF/WebP, dimensões reservadas, fontes reduzidas, `font-title: swap`, lazy loading abaixo da dobra e prevenção de CLS.
 - Implementar navegação móvel acessível, temas sem flash, `color-scheme`, persistência, contraste AA e `prefers-reduced-motion`.
 - Manter arquitetura, Docker e cache independentes de fornecedor específico.

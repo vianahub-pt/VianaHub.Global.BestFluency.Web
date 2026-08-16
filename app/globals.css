@@ -128,8 +128,14 @@
   --radius-lg: var(--radius);
   --radius-xl: calc(var(--radius) + 4px);
 
-  /* Tipografia */
-  --font-display: var(--font-amarante);
+  /* Tipografia semântica */
+  --font-title: var(--font-coiny);
+  --font-subtitle: var(--font-akaya-kanadaka);
+  --font-body: var(--font-faculty-glyphic);
+
+  /* Compatibilidade com componentes atuais */
+  --font-display: var(--font-coiny);
+  --font-sans: var(--font-faculty-glyphic);
 
   /* Papéis cromáticos da marca disponíveis como utilities (text-brand-orange, etc.). */
   --color-brand-black: var(--brand-black);
@@ -164,7 +170,10 @@
 /* Scroll Reveal — animações acionadas por Intersection Observer */
 .scroll-reveal {
   opacity: 0;
-  transition: opacity 0.7s ease-out, translate 0.7s ease-out, scale 0.7s ease-out;
+  transition:
+    opacity 0.7s ease-out,
+    translate 0.7s ease-out,
+    scale 0.7s ease-out;
 }
 
 .scroll-reveal-fade-up {

@@ -38,7 +38,7 @@ export function Modalities({ locale }: { locale: LocaleCode }) {
         <div className="lg:order-1">
           <h2
             id="best-kids-title"
-            className="text-[#c2410c] dark:text-[#c2410c] font-display text-2xl font-bold tracking-tight text-balance sm:text-3xl"
+            className="font-title text-[#c2410c] dark:text-[#c2410c] font-title text-2xl font-bold tracking-tight text-balance sm:text-3xl"
           >
             {content.modalities.h2}
           </h2>
@@ -49,7 +49,7 @@ export function Modalities({ locale }: { locale: LocaleCode }) {
           <Card className="flex flex-col">
             <CardHeader>
               <span className="flex items-center justify-center border-b border-border pb-2 text-accent">
-                <CardTitle className="mt-2">{individual.title}</CardTitle>
+                <CardTitle className="mt-1">{individual.title}</CardTitle>
               </span>
             </CardHeader>
             <CardContent className="flex flex-1 flex-col">
@@ -72,7 +72,7 @@ export function Modalities({ locale }: { locale: LocaleCode }) {
           <Card className="flex flex-col">
             <CardHeader>
               <span className="flex items-center justify-center border-b border-border pb-2 text-accent">
-                <CardTitle className="mt-2">{group.title}</CardTitle>
+                <CardTitle className="mt-1">{group.title}</CardTitle>
               </span>
             </CardHeader>
             <CardContent className="flex flex-1 flex-col">

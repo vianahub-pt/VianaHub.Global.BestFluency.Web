@@ -117,7 +117,7 @@ index 7b1da668992550b011ca3bacfcee28d4f9ff09d0..62e38b627cadb9d91d7632ee4de18730
 +import { ScrollPreservation } from "@/shared/components/ui/scroll-preservation";
  import { ThemeProvider } from "@/shared/components/theme/theme-provider";
  import { buildOrganizationJsonLd } from "@/shared/lib/seo";
- import { amarante } from "@/shared/styles/fonts";
+ import { akayaTelivigala } from "@/shared/styles/fonts";
 @@ -14,9 +15,7 @@ interface DocumentShellProps {
  }
  

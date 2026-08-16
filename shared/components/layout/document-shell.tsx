@@ -7,7 +7,7 @@ import { JsonLd } from "@/shared/components/seo/json-ld";
 import { ScrollPreservation } from "@/shared/components/ui/scroll-preservation";
 import { ThemeProvider } from "@/shared/components/theme/theme-provider";
 import { buildOrganizationJsonLd } from "@/shared/lib/seo";
-import { amarante } from "@/shared/styles/fonts";
+import { bodyFont, subtitleFont, titleFont } from "@/shared/styles/fonts";
 
 interface DocumentShellProps {
   locale: LocaleCode;
@@ -27,7 +27,7 @@ export function DocumentShell({ locale, children }: DocumentShellProps) {
   return (
     <html
       lang={localeMeta.hreflang}
-      className={amarante.variable}
+      className={`${titleFont.variable} ${subtitleFont.variable} ${bodyFont.variable}`}
       suppressHydrationWarning
     >
       <body className="flex min-h-dvh flex-col bg-background font-sans text-foreground antialiased">

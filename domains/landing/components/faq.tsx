@@ -82,6 +82,7 @@ export function Faq({ content: faq }: { content: LandingContent["faq"] }) {
                     </span>
                   </button>
                 </h3>
+
                 <div
                   id={panelId}
                   role="region"

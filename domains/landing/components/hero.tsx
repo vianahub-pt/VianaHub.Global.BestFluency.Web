@@ -20,7 +20,7 @@ export function Hero({ locale }: { locale: LocaleCode }) {
           <h1
             id="hero-title"
             className="
-            font-display
+            font-title
             text-5xl
             font-bold
             leading-[1.2]

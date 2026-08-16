@@ -42,7 +42,7 @@ export function BestKids({ locale }: { locale: LocaleCode }) {
           <div className="lg:order-1">
             <h2
               id="best-kids-title"
-              className="text-[#c2410c] dark:text-[#c2410c] font-display text-2xl font-bold tracking-tight text-balance sm:text-3xl"
+              className="text-[#c2410c] dark:text-[#c2410c] font-title text-2xl font-bold tracking-tight text-balance sm:text-3xl"
             >
               {bestKids.h2}
             </h2>

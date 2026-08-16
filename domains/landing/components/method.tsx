@@ -17,16 +17,36 @@ function MethodIllustration() {
       aria-hidden="true"
     >
       <defs>
-        <linearGradient id="pathGrad" x1="0" y1="0" x2="600" y2="500" gradientUnits="userSpaceOnUse">
+        <linearGradient
+          id="pathGrad"
+          x1="0"
+          y1="0"
+          x2="600"
+          y2="500"
+          gradientUnits="userSpaceOnUse"
+        >
           <stop offset="0%" stopColor="#c2410c" stopOpacity="0.9" />
           <stop offset="100%" stopColor="#ea580c" stopOpacity="0.7" />
         </linearGradient>
-        <linearGradient id="glowGrad" x1="300" y1="100" x2="300" y2="400" gradientUnits="userSpaceOnUse">
+        <linearGradient
+          id="glowGrad"
+          x1="300"
+          y1="100"
+          x2="300"
+          y2="400"
+          gradientUnits="userSpaceOnUse"
+        >
           <stop offset="0%" stopColor="#c2410c" stopOpacity="0.15" />
           <stop offset="100%" stopColor="#c2410c" stopOpacity="0" />
         </linearGradient>
         <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
-          <feDropShadow dx="0" dy="4" stdDeviation="8" floodColor="#c2410c" floodOpacity="0.2" />
+          <feDropShadow
+            dx="0"
+            dy="4"
+            stdDeviation="8"
+            floodColor="#c2410c"
+            floodOpacity="0.2"
+          />
         </filter>
       </defs>
 
@@ -61,34 +81,126 @@ function MethodIllustration() {
 
       {/* Pillar 1 - Compass */}
       <g filter="url(#shadow)">
-        <circle cx="120" cy="380" r="36" fill="white" className="dark:fill-zinc-900" stroke="#c2410c" strokeWidth="2.5" />
-        <circle cx="120" cy="380" r="28" fill="#fff7ed" className="dark:fill-zinc-800" />
-        <circle cx="120" cy="380" r="14" fill="none" stroke="#c2410c" strokeWidth="1.5" />
-        <polygon points="120,367 123,378 120,380 117,378" fill="#c2410c" opacity="0.9" />
-        <polygon points="120,393 117,382 120,380 123,382" fill="#94a3b8" opacity="0.7" />
+        <circle
+          cx="120"
+          cy="380"
+          r="36"
+          fill="white"
+          className="dark:fill-zinc-900"
+          stroke="#c2410c"
+          strokeWidth="2.5"
+        />
+        <circle
+          cx="120"
+          cy="380"
+          r="28"
+          fill="#fff7ed"
+          className="dark:fill-zinc-800"
+        />
+        <circle
+          cx="120"
+          cy="380"
+          r="14"
+          fill="none"
+          stroke="#c2410c"
+          strokeWidth="1.5"
+        />
+        <polygon
+          points="120,367 123,378 120,380 117,378"
+          fill="#c2410c"
+          opacity="0.9"
+        />
+        <polygon
+          points="120,393 117,382 120,380 123,382"
+          fill="#94a3b8"
+          opacity="0.7"
+        />
         <circle cx="120" cy="380" r="2.5" fill="#c2410c" />
       </g>
-      <text x="120" y="432" textAnchor="middle" className="fill-zinc-600 dark:fill-zinc-400" fontSize="11" fontWeight="600">
+      <text
+        x="120"
+        y="432"
+        textAnchor="middle"
+        className="fill-zinc-600 dark:fill-zinc-400"
+        fontSize="11"
+        fontWeight="600"
+      >
         01
       </text>
 
       {/* Pillar 2 - Target */}
       <g filter="url(#shadow)">
-        <circle cx="260" cy="260" r="36" fill="white" className="dark:fill-zinc-900" stroke="#c2410c" strokeWidth="2.5" />
-        <circle cx="260" cy="260" r="28" fill="#fff7ed" className="dark:fill-zinc-800" />
-        <circle cx="260" cy="260" r="14" fill="none" stroke="#c2410c" strokeWidth="1.5" />
-        <circle cx="260" cy="260" r="9" fill="none" stroke="#c2410c" strokeWidth="1.2" />
+        <circle
+          cx="260"
+          cy="260"
+          r="36"
+          fill="white"
+          className="dark:fill-zinc-900"
+          stroke="#c2410c"
+          strokeWidth="2.5"
+        />
+        <circle
+          cx="260"
+          cy="260"
+          r="28"
+          fill="#fff7ed"
+          className="dark:fill-zinc-800"
+        />
+        <circle
+          cx="260"
+          cy="260"
+          r="14"
+          fill="none"
+          stroke="#c2410c"
+          strokeWidth="1.5"
+        />
+        <circle
+          cx="260"
+          cy="260"
+          r="9"
+          fill="none"
+          stroke="#c2410c"
+          strokeWidth="1.2"
+        />
         <circle cx="260" cy="260" r="4" fill="#c2410c" />
       </g>
-      <text x="260" y="312" textAnchor="middle" className="fill-zinc-600 dark:fill-zinc-400" fontSize="11" fontWeight="600">
+      <text
+        x="260"
+        y="312"
+        textAnchor="middle"
+        className="fill-zinc-600 dark:fill-zinc-400"
+        fontSize="11"
+        fontWeight="600"
+      >
         02
       </text>
 
       {/* Pillar 3 - Check */}
       <g filter="url(#shadow)">
-        <circle cx="380" cy="150" r="36" fill="white" className="dark:fill-zinc-900" stroke="#c2410c" strokeWidth="2.5" />
-        <circle cx="380" cy="150" r="28" fill="#fff7ed" className="dark:fill-zinc-800" />
-        <circle cx="380" cy="150" r="14" fill="none" stroke="#c2410c" strokeWidth="1.5" />
+        <circle
+          cx="380"
+          cy="150"
+          r="36"
+          fill="white"
+          className="dark:fill-zinc-900"
+          stroke="#c2410c"
+          strokeWidth="2.5"
+        />
+        <circle
+          cx="380"
+          cy="150"
+          r="28"
+          fill="#fff7ed"
+          className="dark:fill-zinc-800"
+        />
+        <circle
+          cx="380"
+          cy="150"
+          r="14"
+          fill="none"
+          stroke="#c2410c"
+          strokeWidth="1.5"
+        />
         <polyline
           points="370,150 377,157 391,143"
           fill="none"
@@ -98,37 +210,113 @@ function MethodIllustration() {
           strokeLinejoin="round"
         />
       </g>
-      <text x="380" y="202" textAnchor="middle" className="fill-zinc-600 dark:fill-zinc-400" fontSize="11" fontWeight="600">
+      <text
+        x="380"
+        y="202"
+        textAnchor="middle"
+        className="fill-zinc-600 dark:fill-zinc-400"
+        fontSize="11"
+        fontWeight="600"
+      >
         03
       </text>
 
       {/* Pillar 4 - Mic */}
       <g filter="url(#shadow)">
-        <circle cx="500" cy="60" r="36" fill="white" className="dark:fill-zinc-900" stroke="#c2410c" strokeWidth="2.5" />
-        <circle cx="500" cy="60" r="28" fill="#fff7ed" className="dark:fill-zinc-800" />
-        <rect x="495" y="44" width="10" height="18" rx="5" fill="none" stroke="#c2410c" strokeWidth="1.5" />
-        <path d="M489 62 C489 70, 500 76, 500 76 C500 76, 511 70, 511 62" fill="none" stroke="#c2410c" strokeWidth="1.5" strokeLinecap="round" />
-        <line x1="500" y1="76" x2="500" y2="82" stroke="#c2410c" strokeWidth="1.5" strokeLinecap="round" />
+        <circle
+          cx="500"
+          cy="60"
+          r="36"
+          fill="white"
+          className="dark:fill-zinc-900"
+          stroke="#c2410c"
+          strokeWidth="2.5"
+        />
+        <circle
+          cx="500"
+          cy="60"
+          r="28"
+          fill="#fff7ed"
+          className="dark:fill-zinc-800"
+        />
+        <rect
+          x="495"
+          y="44"
+          width="10"
+          height="18"
+          rx="5"
+          fill="none"
+          stroke="#c2410c"
+          strokeWidth="1.5"
+        />
+        <path
+          d="M489 62 C489 70, 500 76, 500 76 C500 76, 511 70, 511 62"
+          fill="none"
+          stroke="#c2410c"
+          strokeWidth="1.5"
+          strokeLinecap="round"
+        />
+        <line
+          x1="500"
+          y1="76"
+          x2="500"
+          y2="82"
+          stroke="#c2410c"
+          strokeWidth="1.5"
+          strokeLinecap="round"
+        />
       </g>
-      <text x="500" y="112" textAnchor="middle" className="fill-zinc-600 dark:fill-zinc-400" fontSize="11" fontWeight="600">
+      <text
+        x="500"
+        y="112"
+        textAnchor="middle"
+        className="fill-zinc-600 dark:fill-zinc-400"
+        fontSize="11"
+        fontWeight="600"
+      >
         04
       </text>
 
       {/* Floating particles */}
       <circle cx="180" cy="200" r="3" fill="#c2410c" opacity="0.3">
-        <animate attributeName="cy" values="200;192;200" dur="3s" repeatCount="indefinite" />
+        <animate
+          attributeName="cy"
+          values="200;192;200"
+          dur="3s"
+          repeatCount="indefinite"
+        />
       </circle>
       <circle cx="440" cy="120" r="2.5" fill="#ea580c" opacity="0.25">
-        <animate attributeName="cy" values="120;112;120" dur="4s" repeatCount="indefinite" />
+        <animate
+          attributeName="cy"
+          values="120;112;120"
+          dur="4s"
+          repeatCount="indefinite"
+        />
       </circle>
       <circle cx="320" cy="350" r="2" fill="#c2410c" opacity="0.2">
-        <animate attributeName="cy" values="350;344;350" dur="3.5s" repeatCount="indefinite" />
+        <animate
+          attributeName="cy"
+          values="350;344;350"
+          dur="3.5s"
+          repeatCount="indefinite"
+        />
       </circle>
       <circle cx="160" cy="300" r="2" fill="#fb923c" opacity="0.3">
-        <animate attributeName="cy" values="300;294;300" dur="2.8s" repeatCount="indefinite" />
+        <animate
+          attributeName="cy"
+          values="300;294;300"
+          dur="2.8s"
+          repeatCount="indefinite"
+        />
       </circle>
       <circle cx="460" cy="200" r="3" fill="#c2410c" opacity="0.15">
-        <animate attributeName="cy" values="200;193;200" dur="3.2s" repeatCount="indefinite" />
+        <animate
+          attributeName="cy"
+          values="200;193;200"
+          dur="3.2s"
+          repeatCount="indefinite"
+        />
       </circle>
     </svg>
   );
@@ -151,7 +339,7 @@ export function Method({ locale }: { locale: LocaleCode }) {
         <ScrollReveal animation="fade-up" className="text-center">
           <h2
             id="method-title"
-            className="font-display text-2xl font-bold tracking-tight text-balance text-accent dark:text-accent sm:text-3xl lg:text-4xl"
+            className="font-title text-2xl font-bold tracking-tight text-balance text-accent dark:text-accent sm:text-3xl lg:text-4xl"
           >
             {method.h2}
           </h2>
@@ -171,11 +359,8 @@ export function Method({ locale }: { locale: LocaleCode }) {
                 delay={0.1 + i * 0.15}
               >
                 <div className="flex items-start gap-4 text-left">
-                  <span className="flex h-12 shrink-0 items-center justify-center rounded-full bg-accent/15 font-display text-lg font-bold text-accent">
-                    {String(i + 1).padStart(2, "0")}
-                  </span>
                   <div className="min-w-0">
-                    <h3 className="font-display text-lg font-bold tracking-tight text-foreground sm:text-xl">
+                    <h3 className="text-lg font-bold tracking-tight text-foreground sm:text-xl">
                       {pillar.title}
                     </h3>
                     <p className="mt-1.5 text-sm leading-6 text-muted-foreground sm:text-base sm:leading-7">
@@ -188,7 +373,11 @@ export function Method({ locale }: { locale: LocaleCode }) {
           </div>
 
           {/* Center: Illustration */}
-          <ScrollReveal animation="scale-in" delay={0.05} className="flex justify-center order-first lg:order-none">
+          <ScrollReveal
+            animation="scale-in"
+            delay={0.05}
+            className="flex justify-center order-first lg:order-none"
+          >
             <div className="method-illustration-float">
               <MethodIllustration />
             </div>
@@ -204,11 +393,8 @@ export function Method({ locale }: { locale: LocaleCode }) {
                 className="lg:w-1/2"
               >
                 <div className="flex items-start gap-4 text-right flex-row-reverse">
-                  <span className="flex h-12 shrink-0 items-center justify-center rounded-full bg-accent/15 font-display text-lg font-bold text-accent">
-                    {String(i + 3).padStart(2, "0")}
-                  </span>
                   <div className="min-w-0">
-                    <h3 className="font-display text-lg font-bold tracking-tight text-foreground sm:text-xl">
+                    <h3 className="text-lg font-bold tracking-tight text-foreground sm:text-xl">
                       {pillar.title}
                     </h3>
                     <p className="mt-1.5 text-sm leading-6 text-muted-foreground sm:text-base sm:leading-7">
@@ -222,7 +408,11 @@ export function Method({ locale }: { locale: LocaleCode }) {
         </div>
 
         {/* CTA */}
-        <ScrollReveal animation="fade-up" delay={0.3} className="mt-14 flex justify-center">
+        <ScrollReveal
+          animation="fade-up"
+          delay={0.3}
+          className="mt-14 flex justify-center"
+        >
           <WhatsAppLink
             message={method.whatsappMessage}
             section="method"
