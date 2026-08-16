@@ -1,0 +1,294 @@
+diff --git a/app/[locale]/not-found.tsx b/app/[[...locale]]/not-found.tsx
+similarity index 100%
+rename from app/[locale]/not-found.tsx
+rename to app/[[...locale]]/not-found.tsx
+diff --git a/app/[[...locale]]/page.tsx b/app/[[...locale]]/page.tsx
+index b4cb8e6ad3e4427dcffc44f7ef5e8f4f940b3641..651f9a46360ebaf14ec4b057ef38b9526d86ccdd 100644
+--- a/app/[[...locale]]/page.tsx
++++ b/app/[[...locale]]/page.tsx
+@@ -1,4 +1,6 @@
+-import { resolveLocale } from "@/core/config/locales";
++import { notFound } from "next/navigation";
++
++import { localeCodeForSegment } from "@/core/config/locales";
+ import { LandingPage } from "@/domains/landing/components/landing-page";
+ 
+ type Params = Promise<{ locale?: string[] }>;
+@@ -6,7 +8,15 @@ type Params = Promise<{ locale?: string[] }>;
+ /** Optional catch-all: /, /en/, /es/, /fr/, /de/, /it/ */
+ export default async function LocalePage({ params }: { params: Params }) {
+   const { locale: segments } = await params;
+-  const segment = segments?.[0];
+-  const code = resolveLocale(segment);
++
++  if (!segments?.length) {
++    return <LandingPage locale="pt-PT" />;
++  }
++
++  if (segments.length !== 1) notFound();
++
++  const code = localeCodeForSegment(segments[0]);
++  if (!code) notFound();
++
+   return <LandingPage locale={code} />;
+ }
+diff --git a/app/[locale]/layout.tsx b/app/[locale]/layout.tsx
+deleted file mode 100644
+index 756bc25f8215508d6059a362d750aa32e49f3132..0000000000000000000000000000000000000000
+--- a/app/[locale]/layout.tsx
++++ /dev/null
+@@ -1,47 +0,0 @@
+-import type { Metadata } from "next";
+-import { notFound } from "next/navigation";
+-import type { ReactNode } from "react";
+-
+-import {
+-  localeCodeForSegment,
+-  nonDefaultLocales,
+-} from "@/core/config/locales";
+-import { getMessages } from "@/core/i18n";
+-import { DocumentShell } from "@/shared/components/layout/document-shell";
+-import { buildLocaleMetadata } from "@/shared/lib/seo";
+-
+-import "../globals.css";
+-
+-type Params = Promise<{ locale: string }>;
+-
+-/** Apenas os 6 idiomas não-default são gerados estaticamente. */
+-export function generateStaticParams() {
+-  return nonDefaultLocales.map((locale) => ({ locale: locale.segment }));
+-}
+-
+-export async function generateMetadata({
+-  params,
+-}: {
+-  params: Params;
+-}): Promise<Metadata> {
+-  const { locale: segment } = await params;
+-  const code = localeCodeForSegment(segment);
+-  if (!code) return {};
+-
+-  return buildLocaleMetadata(code, getMessages(code).landing.meta);
+-}
+-
+-/** Root layout por idioma: garante <html lang> estático e correto. */
+-export default async function LocaleLayout({
+-  children,
+-  params,
+-}: {
+-  children: ReactNode;
+-  params: Params;
+-}) {
+-  const { locale: segment } = await params;
+-  const code = localeCodeForSegment(segment);
+-  if (!code) notFound();
+-
+-  return <DocumentShell locale={code}>{children}</DocumentShell>;
+-}
+diff --git a/app/[locale]/page.tsx b/app/[locale]/page.tsx
+deleted file mode 100644
+index cd2aef45a0109d79c7893a803ca8ec83de3a1e10..0000000000000000000000000000000000000000
+--- a/app/[locale]/page.tsx
++++ /dev/null
+@@ -1,15 +0,0 @@
+-import { notFound } from "next/navigation";
+-
+-import { localeCodeForSegment } from "@/core/config/locales";
+-import { LandingPage } from "@/domains/landing/components/landing-page";
+-
+-type Params = Promise<{ locale: string }>;
+-
+-/** "/en/", "/es/", "/fr/", "/de/", "/it/", "/pt-br/" — landing localizada. */
+-export default async function LocalePage({ params }: { params: Params }) {
+-  const { locale: segment } = await params;
+-  const code = localeCodeForSegment(segment);
+-  if (!code) notFound();
+-
+-  return <LandingPage locale={code} />;
+-}
+diff --git a/shared/components/layout/document-shell.tsx b/shared/components/layout/document-shell.tsx
+index 7b1da668992550b011ca3bacfcee28d4f9ff09d0..62e38b627cadb9d91d7632ee4de187305c12a7a3 100644
+--- a/shared/components/layout/document-shell.tsx
++++ b/shared/components/layout/document-shell.tsx
+@@ -4,6 +4,7 @@ import { getLocale, type LocaleCode } from "@/core/config/locales";
+ import { getMessages } from "@/core/i18n";
+ import { CloudflareWebAnalytics } from "@/shared/components/analytics/cloudflare-web-analytics";
+ import { JsonLd } from "@/shared/components/seo/json-ld";
++import { ScrollPreservation } from "@/shared/components/ui/scroll-preservation";
+ import { ThemeProvider } from "@/shared/components/theme/theme-provider";
+ import { buildOrganizationJsonLd } from "@/shared/lib/seo";
+ import { amarante } from "@/shared/styles/fonts";
+@@ -14,9 +15,7 @@ interface DocumentShellProps {
+ }
+ 
+ /**
+- * Root layout partilhado pelos dois grupos de rotas:
+- * - "(site)": pt-PT na raiz "/";
+- * - "[locale]": en, es, fr, de, it e pt-br.
++ * Root layout partilhado por todos os idiomas através de app/[[...locale]].
+  *
+  * Garante <html lang> estático e correto por idioma no HTML exportado,
+  * skip link acessível, tema claro/escuro, analytics e JSON-LD.
+@@ -33,6 +32,7 @@ export function DocumentShell({ locale, children }: DocumentShellProps) {
+     >
+       <body className="flex min-h-dvh flex-col bg-background font-sans text-foreground antialiased">
+         <ThemeProvider>
++          <ScrollPreservation />
+           <a
+             href="#main"
+             className="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-50 focus:rounded-md focus:bg-primary focus:px-4 focus:py-3 focus:text-sm focus:font-semibold focus:text-primary-foreground"
+diff --git a/shared/components/locale/locale-switcher.tsx b/shared/components/locale/locale-switcher.tsx
+index 4071e6f929840a7f54fc0f1ed3c26d0d4e437091..c35fa894fd5a9fef903204119140fef5ccb47d5d 100644
+--- a/shared/components/locale/locale-switcher.tsx
++++ b/shared/components/locale/locale-switcher.tsx
+@@ -5,6 +5,7 @@ import { useRouter } from "next/navigation";
+ import { useCallback } from "react";
+ 
+ import { getLocale, locales, type LocaleCode } from "@/core/config/locales";
++import { saveScrollPosition } from "@/shared/components/ui/scroll-preservation";
+ import {
+   Select,
+   SelectContent,
+@@ -19,8 +20,8 @@ interface LocaleSwitcherProps {
+ }
+ 
+ /**
+- * Seletor de idioma — navegação via useRouter para evitar reload completo
+- * ao transitar entre route groups diferentes ((site) ↔ [locale]).
++ * Seletor de idioma — todos os idiomas usam o mesmo optional catch-all root.
++ * A posição visual é guardada antes da navegação e restaurada no novo locale.
+  */
+ export function LocaleSwitcher({ currentLocale, label }: LocaleSwitcherProps) {
+   const current = getLocale(currentLocale);
+@@ -30,17 +31,18 @@ export function LocaleSwitcher({ currentLocale, label }: LocaleSwitcherProps) {
+     (code: string) => {
+       const locale = locales.find((l) => l.code === code);
+       if (locale && locale.code !== currentLocale) {
+-        router.push(locale.path, { scroll: false });
++        saveScrollPosition();
++        router.replace(locale.path, { scroll: false });
+       }
+     },
+     [currentLocale, router],
+   );
+ 
+   return (
+-    <Select defaultValue={currentLocale} onValueChange={handleLocaleChange}>
++    <Select value={currentLocale} onValueChange={handleLocaleChange}>
+       <SelectTrigger
+         aria-label={`${label}: ${current.label}`}
+-        className="w-auto min-h-11 shrink-0 border-0 bg-transparent px-3 text-sm font-medium text-foreground hover:bg-white hover:text-accent focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring"
++        className="min-h-11 w-40 shrink-0 border-0 bg-transparent px-3 text-sm font-medium text-foreground hover:bg-white hover:text-accent focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring"
+       >
+         <Globe className="mr-1.5 h-4 w-4" aria-hidden="true" />
+         <SelectValue />
+diff --git a/shared/components/ui/scroll-preservation.tsx b/shared/components/ui/scroll-preservation.tsx
+index 5e98f418d48fc8dec77e08a3587860687d581cff..2dd1421558fbc7fd4882ed5cbc1b24a90b83471c 100644
+--- a/shared/components/ui/scroll-preservation.tsx
++++ b/shared/components/ui/scroll-preservation.tsx
+@@ -1,9 +1,100 @@
++"use client";
++
++import { usePathname } from "next/navigation";
++import { useLayoutEffect } from "react";
++
+ const SCROLL_KEY = "bf_scroll_pos";
+ 
+-/** Salva a posição de scroll atual no sessionStorage. */
++interface ScrollSnapshot {
++  x: number;
++  y: number;
++  anchorId: string | null;
++  anchorTop: number;
++}
++
++/**
++ * Guarda o enquadramento visual atual antes da troca de idioma.
++ *
++ * Guardar apenas scrollY não é suficiente porque traduções diferentes podem
++ * alterar a altura das secções anteriores. Por isso guardamos também a secção
++ * visível e a posição do topo dessa secção relativamente ao viewport.
++ */
+ export function saveScrollPosition() {
+-  sessionStorage.setItem(
+-    SCROLL_KEY,
+-    JSON.stringify({ x: window.scrollX, y: window.scrollY }),
+-  );
++  try {
++    const header = document.querySelector<HTMLElement>("header");
++    const headerBottom = header?.getBoundingClientRect().bottom ?? 0;
++    const probeY = Math.min(
++      window.innerHeight - 1,
++      Math.max(1, headerBottom + 8),
++    );
++
++    const sections = Array.from(
++      document.querySelectorAll<HTMLElement>("main section[id]"),
++    );
++    const anchor =
++      sections.find((section) => {
++        const rect = section.getBoundingClientRect();
++        return rect.top <= probeY && rect.bottom > probeY;
++      }) ?? null;
++
++    const snapshot: ScrollSnapshot = {
++      x: window.scrollX,
++      y: window.scrollY,
++      anchorId: anchor?.id ?? null,
++      anchorTop: anchor?.getBoundingClientRect().top ?? 0,
++    };
++
++    sessionStorage.setItem(SCROLL_KEY, JSON.stringify(snapshot));
++  } catch {
++    // sessionStorage pode estar indisponível em modos de privacidade restritos.
++  }
++}
++
++/** Restaura o mesmo enquadramento visual após a navegação de locale. */
++export function ScrollPreservation() {
++  const pathname = usePathname();
++
++  useLayoutEffect(() => {
++    let raw: string | null = null;
++
++    try {
++      raw = sessionStorage.getItem(SCROLL_KEY);
++      if (raw) sessionStorage.removeItem(SCROLL_KEY);
++    } catch {
++      return;
++    }
++
++    if (!raw) return;
++
++    let snapshot: ScrollSnapshot;
++    try {
++      snapshot = JSON.parse(raw) as ScrollSnapshot;
++    } catch {
++      return;
++    }
++
++    const restore = () => {
++      if (snapshot.anchorId) {
++        const anchor = document.getElementById(snapshot.anchorId);
++        if (anchor) {
++          const delta = anchor.getBoundingClientRect().top - snapshot.anchorTop;
++          if (Math.abs(delta) > 0.5) {
++            window.scrollBy({ top: delta, left: 0, behavior: "auto" });
++          }
++          return;
++        }
++      }
++
++      window.scrollTo({
++        top: snapshot.y,
++        left: snapshot.x,
++        behavior: "auto",
++      });
++    };
++
++    restore();
++    requestAnimationFrame(() => requestAnimationFrame(restore));
++  }, [pathname]);
++
++  return null;
+ }

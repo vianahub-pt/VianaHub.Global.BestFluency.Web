@@ -5,6 +5,7 @@ import { useRouter } from "next/navigation";
 import { useCallback } from "react";
 
 import { getLocale, locales, type LocaleCode } from "@/core/config/locales";
+import { saveScrollPosition } from "@/shared/components/ui/scroll-preservation";
 import {
   Select,
   SelectContent,
@@ -19,8 +20,8 @@ interface LocaleSwitcherProps {
 }
 
 /**
- * Seletor de idioma — navegação via useRouter para evitar reload completo
- * ao transitar entre route groups diferentes ((site) ↔ [locale]).
+ * Seletor de idioma — todos os idiomas usam o mesmo optional catch-all root.
+ * A posição visual é guardada antes da navegação e restaurada no novo locale.
  */
 export function LocaleSwitcher({ currentLocale, label }: LocaleSwitcherProps) {
   const current = getLocale(currentLocale);
@@ -30,17 +31,18 @@ export function LocaleSwitcher({ currentLocale, label }: LocaleSwitcherProps) {
     (code: string) => {
       const locale = locales.find((l) => l.code === code);
       if (locale && locale.code !== currentLocale) {
-        router.push(locale.path, { scroll: false });
+        saveScrollPosition();
+        router.replace(locale.path, { scroll: false });
       }
     },
     [currentLocale, router],
   );
 
   return (
-    <Select defaultValue={currentLocale} onValueChange={handleLocaleChange}>
+    <Select value={currentLocale} onValueChange={handleLocaleChange}>
       <SelectTrigger
         aria-label={`${label}: ${current.label}`}
-        className="w-auto min-h-11 shrink-0 border-0 bg-transparent px-3 text-sm font-medium text-foreground hover:bg-white hover:text-accent focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring"
+        className="min-h-11 w-40 shrink-0 border-0 bg-transparent px-3 text-sm font-medium text-foreground hover:bg-white hover:text-accent focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring"
       >
         <Globe className="mr-1.5 h-4 w-4" aria-hidden="true" />
         <SelectValue />
