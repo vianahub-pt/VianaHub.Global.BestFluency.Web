@@ -30,7 +30,7 @@ Ele contém bom material de base, textos aproveitáveis, decisões corretas de S
 
 - H1 focado em serviço, localização e benefício.
 - Título SEO e meta description local.
-- Secção Best Kids com a mascote Faísca.
+- Secção Best Kids.
 - Depoimentos reais em HTML.
 - Apresentação da fundadora.
 - Percurso visual em quatro etapas.

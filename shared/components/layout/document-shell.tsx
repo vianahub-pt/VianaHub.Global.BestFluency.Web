@@ -3,11 +3,12 @@ import type { ReactNode } from "react";
 import { getLocale, type LocaleCode } from "@/core/config/locales";
 import { getMessages } from "@/core/i18n";
 import { CloudflareWebAnalytics } from "@/shared/components/analytics/cloudflare-web-analytics";
+import { GoogleAnalytics } from "@/shared/components/analytics/google-analytics";
 import { JsonLd } from "@/shared/components/seo/json-ld";
 import { ScrollPreservation } from "@/shared/components/ui/scroll-preservation";
 import { ThemeProvider } from "@/shared/components/theme/theme-provider";
 import { buildOrganizationJsonLd } from "@/shared/lib/seo";
-import { bodyFont, subtitleFont, titleFont } from "@/shared/styles/fonts";
+import { bodyFont } from "@/shared/styles/fonts";
 
 interface DocumentShellProps {
   locale: LocaleCode;
@@ -27,7 +28,7 @@ export function DocumentShell({ locale, children }: DocumentShellProps) {
   return (
     <html
       lang={localeMeta.hreflang}
-      className={`${titleFont.variable} ${subtitleFont.variable} ${bodyFont.variable}`}
+      className={`${bodyFont.variable}`}
       suppressHydrationWarning
     >
       <body className="flex min-h-dvh flex-col bg-background font-sans text-foreground antialiased">
@@ -42,6 +43,7 @@ export function DocumentShell({ locale, children }: DocumentShellProps) {
           {children}
         </ThemeProvider>
         <CloudflareWebAnalytics />
+        <GoogleAnalytics />
         <JsonLd data={buildOrganizationJsonLd()} />
       </body>
     </html>

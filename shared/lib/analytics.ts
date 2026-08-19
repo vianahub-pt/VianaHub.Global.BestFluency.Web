@@ -23,7 +23,9 @@ export const analyticsSections = [
   "best_kids",
   "method",
   "testimonials",
+  "founder",
   "journey",
+  "faq",
   "final_cta",
   "footer",
 ] as const;

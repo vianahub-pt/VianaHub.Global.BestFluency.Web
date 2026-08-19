@@ -5,7 +5,10 @@ import enUS from "@/locales/en-US/common.json";
 import esES from "@/locales/es-ES/common.json";
 import frFR from "@/locales/fr-FR/common.json";
 import itIT from "@/locales/it-IT/common.json";
+import jaJP from "@/locales/ja-JP/common.json";
 import ptPT from "@/locales/pt-PT/common.json";
+import ruRU from "@/locales/ru-RU/common.json";
+import zhCN from "@/locales/zh-CN/common.json";
 
 /**
  * Utilitário central de localização (issue #36) — equivalente frontend do
@@ -15,7 +18,7 @@ import ptPT from "@/locales/pt-PT/common.json";
  * - backend: `locales/{culture}/common.json` desserializado em
  *   `Dictionary<string, string>` com cache estático thread-safe, carregado
  *   uma única vez por cultura (`LocalizationService.GetMessages`);
- * - frontend: import estático dos 7 `locales/{code}/common.json` — o módulo
+ * - frontend: import estático dos 9 `locales/{code}/common.json` — o módulo
  *   é singleton e o site é exportado estaticamente, logo cada dicionário é
  *   carregado exatamente uma vez, sem IO em runtime;
  * - backend: cultura resolvida por request via `Accept-Language`
@@ -37,7 +40,7 @@ import ptPT from "@/locales/pt-PT/common.json";
  * 1. Compile time — `satisfies Record<LocaleCode, CommonMessages>`: o
  *    typecheck falha se faltar qualquer chave em qualquer locale;
  * 2. Build time (prebuild) — `scripts/check-i18n-parity.mjs` valida
- *    paridade exata de chaves e comprimento de arrays nos 7 common.json;
+ *    paridade exata de chaves e comprimento de arrays nos 9 common.json;
  * 3. Runtime (init deste módulo, executado durante o export estático) —
  *    comparação estrutural contra a referência pt-PT com erro indicando
  *    locale e chave em falta.
@@ -90,6 +93,9 @@ const messages = {
   "fr-FR": frFR,
   "de-DE": deDE,
   "it-IT": itIT,
+  "ja-JP": jaJP,
+  "ru-RU": ruRU,
+  "zh-CN": zhCN,
 } satisfies Record<LocaleCode, CommonMessages>;
 
 const REFERENCE_CODE: LocaleCode = "pt-PT";

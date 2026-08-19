@@ -177,7 +177,7 @@ Evitar utilizar todos os elementos ao mesmo tempo.
 - não usar excesso de dourado;
 - não utilizar animações pesadas;
 - não inventar fotografias ou rostos;
-- não utilizar fotografias genéricas de crianças como principal identidade da Best Kids quando a Faísca estiver disponível.
+- não utilizar fotografias genéricas de crianças como principal identidade da Best Kids.
 
 ---
 
@@ -360,7 +360,7 @@ Esta secção substitui as antigas secções separadas de metodologia e benefíc
 
 ### Introdução
 
-`Cada aluno tem um ponto de partida, um ritmo e objetivos diferentes. Por isso, as aulas são organizadas para criar continuidade, prática e orientação em cada etapa.`
+`Cada aluno tem um ponto de partida, um ritmo e objetivos diferentes.`
 
 ### Pilar 1 — Percurso personalizado
 
@@ -435,13 +435,9 @@ Utilizar fotografia real da sala, da entrada ou do espaço, caso exista autoriza
 
 ### Texto principal
 
-`Na Best Kids, cada aula transforma o inglês numa nova descoberta. Com a ajuda da Faísca, a nossa raposa curiosa, as crianças aprendem através de jogos, histórias, imagens, músicas e desafios adaptados à sua idade.`
+`Na Best Kids, cada aula transforma o inglês numa nova descoberta.`
 
 `As atividades ajudam a desenvolver vocabulário, compreensão, pronúncia e confiança para utilizar o inglês de forma natural e progressiva.`
-
-### Frase de destaque
-
-`Com a Faísca, o inglês vai com eles para todo o lado.`
 
 ### Diferenciais
 
@@ -475,21 +471,6 @@ Utilizar fotografia real da sala, da entrada ou do espaço, caso exista autoriza
 Mensagem:
 
 `Olá! Gostaria de receber mais informações sobre as aulas Best Kids.`
-
-### Imagem
-
-Asset real da Faísca.
-
-Alt:
-
-`Faísca, mascote da Best Kids, nas aulas de inglês para crianças`
-
-### Requisitos
-
-- a Faísca deve ser o principal elemento visual;
-- manter a identidade geral em preto, branco e dourado;
-- utilizar elementos infantis apenas como detalhe;
-- não apresentar a aprendizagem apenas como entretenimento.
 
 ---
 
@@ -619,7 +600,6 @@ Mensagem:
 
 - linha ou rota dourada;
 - quatro paragens;
-- pequeno avião ou pegadas discretas da Faísca;
 - horizontal no desktop;
 - vertical no telemóvel;
 - animação apenas quando não houver preferência por movimento reduzido.
@@ -1178,7 +1158,6 @@ A página deve informar, na política de privacidade, que ao clicar no WhatsApp 
 ### Obrigatórios
 
 - logótipo vetorial ou PNG de alta qualidade;
-- Faísca;
 - fotografia da Taty;
 - fotografia principal do Hero;
 - fotografias autorizadas dos alunos ou avatares com iniciais;

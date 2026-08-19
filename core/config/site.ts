@@ -31,6 +31,12 @@ export const site = {
    */
   cfAnalyticsToken: process.env.NEXT_PUBLIC_CF_WEB_ANALYTICS_TOKEN ?? "",
 
+  /**
+   * Google Analytics 4 Measurement ID (G-XXXXXXXXXX).
+   * Activated via NEXT_PUBLIC_GA_MEASUREMENT_ID.
+   */
+  gaMeasurementId: process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID ?? "",
+
   /** Contactos confirmados (spec §12, §19 e §20). */
   phoneDisplay: "+351 21 474 4028",
   phoneHref: "+351214744028",

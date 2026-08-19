@@ -33,16 +33,19 @@ export function BestKids({ locale }: { locale: LocaleCode }) {
 
   return (
     <section
-      id="best-kids"
+      id="bestKids"
       aria-labelledby="best-kids-title"
-      className="flex min-h-dvh flex-col justify-center border-t border-border bg-muted/40"
+      className="flex min-h-dvh flex-col justify-center border-t border-border bg-gradient-to-b from-muted/40 to-accent/40"
     >
       <div className="mx-auto w-full max-w-7xl px-4 md:px-8">
         <div className="grid gap-6 lg:grid-cols-2 lg:items-start lg:gap-10">
           <div className="lg:order-1">
             <h2
               id="best-kids-title"
-              className="text-[#c2410c] dark:text-[#c2410c] font-title text-2xl font-bold tracking-tight text-balance sm:text-3xl"
+              className="font-title text-accent dark:text-white font-title font-bold tracking-tight text-balance
+              sm:text-2xl
+              md:text-3xl
+              lg:text-4xl"
             >
               {bestKids.h2}
             </h2>
@@ -82,7 +85,7 @@ export function BestKids({ locale }: { locale: LocaleCode }) {
                     {bestKids.practicalInfo.map((info) => (
                       <li
                         key={info}
-                        className="flex min-h-9 items-center gap-3 text-sm font-medium leading-6"
+                        className="flex min-h-6 items-center gap-3 text-sm font-medium leading-6"
                       >
                         <span className="flex h-2 w-2 shrink-0 rounded-full bg-accent" />
                         {info}
@@ -96,8 +99,8 @@ export function BestKids({ locale }: { locale: LocaleCode }) {
                     ctaLabel={bestKids.ctaLabel}
                     ariaLabel={bestKids.ctaAriaLabel}
                     className={cn(
-                      buttonVariants({ variant: "primary", size: "lg" }),
-                      "mt-4 w-full",
+                      buttonVariants({ variant: "destructive", size: "lg" }),
+                      "mt-2 w-full",
                     )}
                   >
                     <MessageCircle

@@ -69,6 +69,36 @@ export const locales = [
     shortLabel: "IT",
     isDefault: false,
   },
+  {
+    code: "ja-JP",
+    segment: "ja",
+    path: "/ja/",
+    hreflang: "ja-JP",
+    ogLocale: "ja_JP",
+    label: "日本語",
+    shortLabel: "JA",
+    isDefault: false,
+  },
+  {
+    code: "ru-RU",
+    segment: "ru",
+    path: "/ru/",
+    hreflang: "ru-RU",
+    ogLocale: "ru_RU",
+    label: "Русский",
+    shortLabel: "RU",
+    isDefault: false,
+  },
+  {
+    code: "zh-CN",
+    segment: "zh",
+    path: "/zh/",
+    hreflang: "zh-CN",
+    ogLocale: "zh_CN",
+    label: "中文",
+    shortLabel: "ZH",
+    isDefault: false,
+  },
 ] as const;
 
 export type LocaleCode = (typeof locales)[number]["code"];

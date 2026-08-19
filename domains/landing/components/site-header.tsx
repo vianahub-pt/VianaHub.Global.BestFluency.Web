@@ -3,8 +3,6 @@ import { site } from "@/core/config/site";
 import { getMessages } from "@/core/i18n";
 import { LocaleSwitcher } from "@/shared/components/locale/locale-switcher";
 import { ThemeToggle } from "@/shared/components/theme/theme-toggle";
-import { buttonVariants } from "@/shared/components/ui/button";
-import { WhatsAppLink } from "@/shared/components/whatsapp-link";
 
 import { MainNav } from "./main-nav";
 import { MobileMenu } from "./mobile-menu";
@@ -24,14 +22,15 @@ export function SiteHeader({ locale }: { locale: LocaleCode }) {
   const content = getMessages(locale).landing;
 
   return (
-    <header className="sticky top-0 left-0 right-0 z-40 bg-gradient-to-b from-[#c2410c]/70 to-[#ffffff] dark:from-[#c2410c]/50 dark:to-[#000000] backdrop-blur">
+    <header className="sticky top-0 left-0 right-0 z-40 bg-accent dark:bg-black">
       <div className="relative mx-auto grid w-full max-w-7xl grid-cols-[auto_1fr_auto] items-center gap-x-4 px-4 py-3 md:px-8">
         <a
-          href="#top"
+          href="#home"
           className="
         flex
-        min-h-11
-        items-center gap-3 rounded-md
+        min-h-9
+        text-black dark:text-white
+        items-center gap-2 rounded-md
         focus-visible:outline-2
         focus-visible:outline-offset-2
         focus-visible:outline-ring"
@@ -63,20 +62,7 @@ export function SiteHeader({ locale }: { locale: LocaleCode }) {
             />
           </div>
           <ThemeToggle label={content.a11y.toggleTheme} />
-          <div className="hidden lg:block">
-            <WhatsAppLink
-              message={content.nav.whatsappMessage}
-              section="header"
-              ctaLabel={content.nav.ctaLabel}
-              ariaLabel={content.nav.ctaAriaLabel}
-              className={buttonVariants({
-                variant: "orange",
-                size: "default",
-              })}
-            >
-              {content.nav.ctaLabel}
-            </WhatsAppLink>
-          </div>
+
           <MobileMenu
             locale={locale}
             nav={content.nav}

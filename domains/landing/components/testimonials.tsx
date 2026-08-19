@@ -38,15 +38,18 @@ export function Testimonials({ locale }: { locale: LocaleCode }) {
 
   return (
     <section
-      id="depoimentos"
+      id="testimonials"
       aria-labelledby="testimonials-title"
-      className="flex min-h-dvh flex-col justify-center border-t border-border bg-muted/40"
+      className="flex min-h-dvh flex-col justify-center border-t border-border bg-gradient-to-b from-muted/40 to-accent/40"
     >
       <div className="mx-auto w-full max-w-7xl px-4 md:px-8">
         <div className="lg:order-1">
           <h2
-            id="best-kids-title"
-            className="text-[#c2410c] dark:text-[#c2410c] font-title text-2xl font-bold tracking-tight text-balance sm:text-3xl"
+            id="testimonials-title"
+            className="font-title text-accent dark:text-white font-title font-bold tracking-tight text-balance
+              sm:text-2xl
+              md:text-3xl
+              lg:text-4xl"
           >
             {testimonials.h2}
           </h2>
@@ -114,7 +117,7 @@ export function Testimonials({ locale }: { locale: LocaleCode }) {
             ctaLabel={testimonials.ctaLabel}
             ariaLabel={testimonials.ctaAriaLabel}
             className={cn(
-              buttonVariants({ variant: "primary", size: "lg" }),
+              buttonVariants({ variant: "orange", size: "lg" }),
               "w-full sm:w-auto",
             )}
           >

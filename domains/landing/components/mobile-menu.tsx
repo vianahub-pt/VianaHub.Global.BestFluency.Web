@@ -169,7 +169,7 @@ export function MobileMenu({ locale, nav, languageSwitcherLabel }: MobileMenuPro
             ctaLabel={nav.ctaLabel}
             ariaLabel={nav.ctaAriaLabel}
             className={cn(
-              buttonVariants({ variant: "primary", size: "lg" }),
+              buttonVariants({ variant: "orange", size: "lg" }),
               "mt-4 w-full",
             )}
           >

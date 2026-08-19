@@ -3,7 +3,6 @@ import { getMessages } from "@/core/i18n";
 
 import { BestKids } from "./best-kids";
 import { Faq } from "./faq";
-import { FinalCta } from "./final-cta";
 import { Founder } from "./founder";
 import { Hero } from "./hero";
 import { InPerson } from "./in-person";
@@ -43,13 +42,11 @@ export function LandingPage({ locale }: { locale: LocaleCode }) {
         <Hero locale={locale} />
         <Modalities locale={locale} />
         <Method locale={locale} />
-        <InPerson locale={locale} />
         <BestKids locale={locale} />
         <Testimonials locale={locale} />
-        <Founder locale={locale} />
         <Journey locale={locale} />
+        <Founder locale={locale} />
         <Faq content={content.faq} />
-        <FinalCta locale={locale} />
       </main>
       <SiteFooter locale={locale} />
     </>

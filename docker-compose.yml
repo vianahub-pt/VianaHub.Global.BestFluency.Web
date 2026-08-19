@@ -30,6 +30,8 @@ services:
         # Token Cloudflare Web Analytics (issue #12): vazio = beacon desativado.
         # Preencher apenas com o token real do domínio publicado.
         NEXT_PUBLIC_CF_WEB_ANALYTICS_TOKEN: ${NEXT_PUBLIC_CF_WEB_ANALYTICS_TOKEN:-}
+        # Google Analytics 4 (ID tipo G-XXXXXXXXXX): vazio = snippet desativado.
+        NEXT_PUBLIC_GA_MEASUREMENT_ID: ${NEXT_PUBLIC_GA_MEASUREMENT_ID:-}
     image: best-fluency-web:${IMAGE_TAG:-latest}
     restart: unless-stopped
     ports:

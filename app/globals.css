@@ -58,7 +58,8 @@
   --accent: var(--brand-orange);
   --accent-foreground: #ffffff;
   --ring: var(--brand-orange);
-  --destructive: hsl(0 72% 45%);
+  --solarized: #ffff00;
+  --solarized-foreground: hsl(0 0% 98%) --destructive: hsl(0 72% 45%);
   --destructive-foreground: hsl(0 0% 98%);
   --border: hsl(0 0% 90%);
   --input: hsl(0 0% 90%);
@@ -97,6 +98,8 @@
   --accent: var(--brand-orange);
   --accent-foreground: #ffffff;
   --ring: var(--brand-orange);
+  --solarized: #ffff00;
+  --solarized-foreground: hsl(0 0% 98%);
   --destructive: hsl(0 70% 55%);
   --destructive-foreground: hsl(0 0% 98%);
   --border: hsl(0 0% 20%);
@@ -123,19 +126,22 @@
   --color-border: var(--border);
   --color-input: var(--input);
   --color-ring: var(--ring);
+  --color-solarized: var(--solarized);
+  --color-solarized-foreground: var(--solarized-foreground);
   --radius-sm: calc(var(--radius) - 4px);
   --radius-md: calc(var(--radius) - 2px);
   --radius-lg: var(--radius);
   --radius-xl: calc(var(--radius) + 4px);
 
   /* Tipografia semântica */
-  --font-title: var(--font-coiny);
-  --font-subtitle: var(--font-akaya-kanadaka);
-  --font-body: var(--font-faculty-glyphic);
+  --font-display: var(--font-faculty-glyphic);
 
   /* Compatibilidade com componentes atuais */
-  --font-display: var(--font-coiny);
   --font-sans: var(--font-faculty-glyphic);
+
+  /* Tamanhos personalizados */
+  --text-10xl: 10rem;
+  --text-10xl--line-height: 1;
 
   /* Papéis cromáticos da marca disponíveis como utilities (text-brand-orange, etc.). */
   --color-brand-black: var(--brand-black);

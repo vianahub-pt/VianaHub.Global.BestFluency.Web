@@ -120,6 +120,7 @@ build_local() {
     --build-arg "NEXT_PUBLIC_SITE_URL=${NEXT_PUBLIC_SITE_URL:-http://localhost:3000}" \
     --build-arg "NEXT_PUBLIC_SITE_INDEXABLE=${NEXT_PUBLIC_SITE_INDEXABLE:-false}" \
     --build-arg "NEXT_PUBLIC_CF_WEB_ANALYTICS_TOKEN=${NEXT_PUBLIC_CF_WEB_ANALYTICS_TOKEN:-}" \
+    --build-arg "NEXT_PUBLIC_GA_MEASUREMENT_ID=${NEXT_PUBLIC_GA_MEASUREMENT_ID:-}" \
     -t "${IMAGE_REF}" \
     -f "${BASE_DIR}/Dockerfile" \
     "${BASE_DIR}"

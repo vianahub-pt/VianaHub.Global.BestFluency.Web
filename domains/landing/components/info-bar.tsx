@@ -31,10 +31,10 @@ export function InfoBar({ locale }: { locale: LocaleCode }) {
               key={item}
               className="flex min-h-12 items-center gap-3 rounded-lg px-4 py-3"
             >
-              <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-accent/15 dark:bg-accent/80 text-accent dark:text-white">
+              <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-accent/80 text-black dark:text-white">
                 {itemIcons[index]}
               </span>
-              <span className="text-sm text-accent dark:text-white font-medium leading-6">
+              <span className="text-sm text-black dark:text-black font-medium leading-6">
                 {item}
               </span>
             </li>

@@ -4,7 +4,6 @@ import { type LocaleCode } from "@/core/config/locales";
 import { getMessages } from "@/core/i18n";
 import { buttonVariants } from "@/shared/components/ui/button";
 import { RoutePath } from "@/shared/components/ui/route-path";
-import { SectionHeading } from "@/shared/components/ui/section-heading";
 import { WhatsAppLink } from "@/shared/components/whatsapp-link";
 import { cn } from "@/shared/lib/utils";
 
@@ -24,16 +23,23 @@ export function Journey({ locale }: { locale: LocaleCode }) {
 
   return (
     <section
-      id="como-comecar"
+      id="journey"
       aria-labelledby="journey-title"
-      className="flex min-h-dvh flex-col justify-center border-t border-border"
+      className="flex min-h-dvh flex-col justify-center border-t border-border bg-gradient-to-b from-muted/40 to-accent/40"
     >
       <div className="mx-auto w-full max-w-7xl px-4 md:px-8">
-        <SectionHeading
-          title={journey.h2}
-          titleId="journey-title"
-          intro={journey.subtitle}
-        />
+        <h2
+          id="journey-title"
+          className="font-title text-accent dark:text-white font-title font-bold tracking-tight text-balance
+              sm:text-2xl
+              md:text-3xl
+              lg:text-4xl"
+        >
+          {journey.h2}
+        </h2>
+        <p className="mt-5 max-w-2xl text-base leading-7 text-muted-foreground">
+          {journey.subtitle}
+        </p>
 
         <div className="relative mt-12 lg:mt-16">
           {/* Rota vertical — telemóvel (decorativa) */}
@@ -74,7 +80,7 @@ export function Journey({ locale }: { locale: LocaleCode }) {
             ctaLabel={journey.ctaLabel}
             ariaLabel={journey.ctaAriaLabel}
             className={cn(
-              buttonVariants({ variant: "primary", size: "lg" }),
+              buttonVariants({ variant: "orange", size: "lg" }),
               "w-full sm:w-auto",
             )}
           >

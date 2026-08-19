@@ -31,10 +31,11 @@ const buttonVariants = cva(
       variant: {
         primary: "bg-primary text-primary-foreground hover:bg-primary/90",
         orange: "bg-orange text-orange-foreground hover:bg-orange/90",
-        outline: "border border-border bg-background text-foreground hover:bg-muted",
+        outline:
+          "border border-border bg-background text-foreground hover:bg-muted",
         ghost: "text-foreground hover:bg-muted",
         destructive:
-          "bg-destructive text-destructive-foreground hover:bg-destructive/90",
+          "bg-accent dark:bg-red-500 text-destructive-foreground hover:bg-red-900",
       },
       size: {
         default: "min-h-11 px-5 py-2.5 text-sm",
@@ -51,7 +52,8 @@ const buttonVariants = cva(
 );
 
 export interface ButtonProps
-  extends ButtonHTMLAttributes<HTMLButtonElement>,
+  extends
+    ButtonHTMLAttributes<HTMLButtonElement>,
     VariantProps<typeof buttonVariants> {
   /** Renderiza como o filho imediato (Radix Slot) em vez de <button>. */
   asChild?: boolean;

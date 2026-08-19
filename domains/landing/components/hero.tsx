@@ -12,38 +12,39 @@ export function Hero({ locale }: { locale: LocaleCode }) {
 
   return (
     <section
+      id="home"
       aria-labelledby="hero-title"
-      className="flex min-h-dvh flex-col justify-center border-b border-border bg-cover bg-center bg-no-repeat"
+      className="flex min-h-dvh flex-col justify-center border-t border-border bg-cover bg-center bg-no-repeat bg-[url('/bg-hero-1.jpg')] dark:bg-[url('/bg-hero-2.jpg')]"
     >
       <div className="mx-auto w-full max-w-7xl px-4 pt-24 pb-10 md:px-8 md:pt-28 md:pb-20 lg:pb-24">
         <div className="mx-auto flex max-w-4xl flex-col items-center text-center">
           <h1
             id="hero-title"
             className="
-            font-title
-            text-5xl
             font-bold
-            leading-[1.2]
+            leading-[1]
             tracking-normal
             text-balance
-            sm:text-5xl
-            md:text-6xl
-            lg:text-7xl"
+            sm:text-6xl
+            md:text-7xl
+            lg:text-8xl"
           >
-            <span className="text-accent dark:text-white">{hero.title1}</span>{" "}
+            <span className="text-accent dark:text-white dark:[text-shadow:_0_0_8px_theme(colors.black)]">
+              {hero.title1}
+            </span>{" "}
             <br />
             <span className="text-black dark:text-accent">
               {hero.title2}
             </span>{" "}
             <br />
-            <span className="text-accent dark:text-white">
+            <span className="text-accent dark:text-white dark:[text-shadow:_0_0_8px_theme(colors.black)]">
               {hero.title3}
             </span>{" "}
             <br />
             <span className="text-black dark:text-accent">{hero.title4}</span>
           </h1>
 
-          <p className="mt-10 max-w-3xl text-base text-black dark:text-white font-bold leading-7 sm:text-lg sm:leading-8">
+          <p className="mt-10 max-w-3xl text-base text-black dark:text-black font-bold leading-7 sm:text-lg sm:leading-8">
             {hero.text}
           </p>
 
@@ -53,11 +54,8 @@ export function Hero({ locale }: { locale: LocaleCode }) {
             ctaLabel={hero.ctaLabel}
             ariaLabel={hero.ctaAriaLabel}
             className={cn(
-              buttonVariants({
-                variant: "orange",
-                size: "lg",
-              }),
-              "mt-10 w-full sm:w-auto dark:text-white",
+              buttonVariants({ variant: "orange", size: "lg" }),
+              "mt-10 w-full sm:w-auto",
             )}
           >
             <MessageCircle className="h-5 w-5 shrink-0" aria-hidden="true" />
