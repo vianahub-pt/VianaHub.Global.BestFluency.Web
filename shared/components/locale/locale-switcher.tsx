@@ -82,7 +82,7 @@ export function LocaleSwitcher({ currentLocale, label }: LocaleSwitcherProps) {
             <SelectItem
               key={locale.code}
               value={locale.code}
-              className="min-h-11 py-2 hover:bg-accent focus:bg-accent data-[highlighted]:bg-accent"
+              className="py-2.5 hover:bg-accent focus:bg-accent data-[highlighted]:bg-accent"
             >
               <span className="flex items-center gap-2">
                 <span className={isCurrent ? "font-semibold" : ""}>
