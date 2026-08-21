@@ -30,35 +30,36 @@ export function Method({ locale }: { locale: LocaleCode }) {
       aria-labelledby="method-title"
       className="flex min-h-dvh flex-col justify-center border-t border-border bg-accent/20"
     >
-      <div className="mx-auto w-full max-w-7xl px-4 md:px-8">
+      <div className="mx-auto w-full max-w-7xl px-4 py-12 md:px-8 md:py-16">
         <div className="lg:order-1">
           <h2
             id="method-title"
             className="font-title text-accent dark:text-white font-title font-bold tracking-tight text-balance
-            sm:text-2xl
+            text-2xl
+            sm:text-3xl
             md:text-3xl
             lg:text-4xl"
           >
             {method.h2}
           </h2>
-          <p className="mt-5 max-w-2xl text-base leading-7 text-muted-foreground">
+          <p className="mt-4 max-w-2xl text-sm leading-6 text-muted-foreground sm:text-base sm:leading-7">
             {method.intro}
           </p>
         </div>
 
         {/* Illustration + Pillars layout */}
-        <div className="mt-12 grid items-center gap-8 lg:grid-cols-2 lg:gap-16">
+        <div className="mt-10 grid items-center gap-8 lg:grid-cols-2 lg:gap-16">
           {/* Left column: pillars 1 & 2 */}
-          <div className="flex flex-col gap-10">
+          <div className="flex flex-col gap-8">
             {pillars.slice(0, 2).map((pillar, i) => (
               <ScrollReveal
                 key={pillar.title}
                 animation="fade-left"
                 delay={0.1 + i * 0.15}
               >
-                <div className="flex items-start gap-4 text-left">
+                <div className="flex items-start gap-3 text-left sm:gap-4">
                   <div className="min-w-0">
-                    <h3 className="text-lg font-bold tracking-tight text-foreground sm:text-xl">
+                    <h3 className="text-base font-bold tracking-tight text-foreground sm:text-lg md:text-xl">
                       {pillar.title}
                     </h3>
                     <p className="mt-1.5 text-sm leading-6 text-muted-foreground sm:text-base sm:leading-7">
@@ -82,13 +83,13 @@ export function Method({ locale }: { locale: LocaleCode }) {
               height={500}
               loading="lazy"
               decoding="async"
-              className="h-auto w-full max-w-lg object-contain"
+              className="h-48 w-full max-w-sm object-contain sm:h-56 md:h-64 lg:max-w-lg"
               aria-hidden="true"
             />
           </ScrollReveal>
 
           {/* Right column: pillars 3 & 4 */}
-          <div className="flex flex-col gap-10 lg:col-span-2 lg:flex-row lg:justify-center lg:gap-20">
+          <div className="flex flex-col gap-8 lg:col-span-2 lg:flex-row lg:justify-center lg:gap-20">
             {pillars.slice(2, 4).map((pillar, i) => (
               <ScrollReveal
                 key={pillar.title}
@@ -96,9 +97,9 @@ export function Method({ locale }: { locale: LocaleCode }) {
                 delay={0.1 + i * 0.15}
                 className="lg:w-1/2"
               >
-                <div className="flex items-start gap-4 text-right flex-row-reverse">
+                <div className="flex items-start gap-3 text-right flex-row-reverse sm:gap-4">
                   <div className="min-w-0">
-                    <h3 className="text-lg font-bold tracking-tight text-foreground sm:text-xl">
+                    <h3 className="text-base font-bold tracking-tight text-foreground sm:text-lg md:text-xl">
                       {pillar.title}
                     </h3>
                     <p className="mt-1.5 text-sm leading-6 text-muted-foreground sm:text-base sm:leading-7">
@@ -115,7 +116,7 @@ export function Method({ locale }: { locale: LocaleCode }) {
         <ScrollReveal
           animation="fade-up"
           delay={0.3}
-          className="mt-14 flex justify-center"
+          className="mt-10 flex justify-center sm:mt-14"
         >
           <WhatsAppLink
             message={method.whatsappMessage}

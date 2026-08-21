@@ -37,38 +37,39 @@ export function BestKids({ locale }: { locale: LocaleCode }) {
       aria-labelledby="best-kids-title"
       className="flex min-h-dvh flex-col justify-center border-t border-border bg-gradient-to-b from-muted/40 to-accent/40"
     >
-      <div className="mx-auto w-full max-w-7xl px-4 md:px-8">
+      <div className="mx-auto w-full max-w-7xl px-4 py-12 md:px-8 md:py-16">
         <div className="grid gap-6 lg:grid-cols-2 lg:items-start lg:gap-10">
           <div className="lg:order-1">
             <h2
               id="best-kids-title"
               className="font-title text-accent dark:text-white font-title font-bold tracking-tight text-balance
-              sm:text-2xl
+              text-2xl
+              sm:text-3xl
               md:text-3xl
               lg:text-4xl"
             >
               {bestKids.h2}
             </h2>
 
-            <div className="mt-5">
+            <div className="mt-4">
               {bestKids.text.map((paragraph) => (
                 <p
                   key={paragraph}
-                  className="text-base leading-7 text-muted-foreground [&:not(:first-child)]:mt-3"
+                  className="text-sm leading-6 text-muted-foreground sm:text-base sm:leading-7 [&:not(:first-child)]:mt-3"
                 >
                   {paragraph}
                 </p>
               ))}
 
-              <ul className="mt-5 grid gap-2 sm:grid-cols-2">
+              <ul className="mt-4 grid gap-2 sm:grid-cols-2">
                 {bestKids.differentials.map((item) => (
                   <li
                     key={item.title}
-                    className="flex min-h-10 items-start gap-3 rounded-lg border border-border bg-card px-3 py-2 shadow-sm"
+                    className="flex min-h-10 items-start gap-2.5 rounded-lg border border-border bg-card px-3 py-2.5 shadow-sm sm:gap-3"
                   >
-                    <span className="mt-1 h-2 w-2 shrink-0 rounded-full bg-accent" />
-                    <span className="flex flex-col gap-1">
-                      <span className="text-sm font-semibold leading-5">
+                    <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-accent" />
+                    <span className="flex flex-col gap-0.5">
+                      <span className="text-xs font-semibold leading-5 sm:text-sm">
                         {item.title}
                       </span>
                       <span className="text-xs leading-5 text-muted-foreground">
@@ -80,14 +81,14 @@ export function BestKids({ locale }: { locale: LocaleCode }) {
               </ul>
 
               <Card className="mt-4">
-                <CardContent className="p-4">
+                <CardContent className="p-3 sm:p-4">
                   <ul className="grid gap-2">
                     {bestKids.practicalInfo.map((info) => (
                       <li
                         key={info}
-                        className="flex min-h-6 items-center gap-3 text-sm font-medium leading-6"
+                        className="flex min-h-6 items-center gap-2.5 text-xs font-medium leading-5 sm:text-sm sm:leading-6"
                       >
-                        <span className="flex h-2 w-2 shrink-0 rounded-full bg-accent" />
+                        <span className="flex h-1.5 w-1.5 shrink-0 rounded-full bg-accent" />
                         {info}
                       </li>
                     ))}
@@ -100,7 +101,7 @@ export function BestKids({ locale }: { locale: LocaleCode }) {
                     ariaLabel={bestKids.ctaAriaLabel}
                     className={cn(
                       buttonVariants({ variant: "destructive", size: "lg" }),
-                      "mt-2 w-full",
+                      "mt-3 w-full",
                     )}
                   >
                     <MessageCircle

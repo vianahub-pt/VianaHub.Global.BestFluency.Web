@@ -26,9 +26,11 @@ export function Hero({ locale }: { locale: LocaleCode }) {
             leading-[1]
             tracking-normal
             text-balance
-            sm:text-6xl
-            md:text-7xl
-            lg:text-8xl"
+            text-4xl
+            sm:text-5xl
+            md:text-6xl
+            lg:text-7xl
+            xl:text-8xl"
           >
             <TextShine>
               <span className="text-accent dark:text-black">{hero.title1}</span>{" "}
@@ -45,7 +47,7 @@ export function Hero({ locale }: { locale: LocaleCode }) {
             </TextShine>
           </h1>
 
-          <p className="mt-10 max-w-3xl text-base text-black dark:text-black font-bold leading-7 sm:text-lg sm:leading-8">
+          <p className="mt-6 max-w-3xl text-sm text-black dark:text-black font-bold leading-6 sm:text-base sm:leading-7 md:text-lg md:leading-8">
             {hero.text}
           </p>
 
@@ -56,7 +58,7 @@ export function Hero({ locale }: { locale: LocaleCode }) {
             ariaLabel={hero.ctaAriaLabel}
             className={cn(
               buttonVariants({ variant: "orange", size: "lg" }),
-              "mt-10 w-full sm:w-auto",
+              "mt-8 w-full sm:w-auto",
             )}
           >
             <MessageCircle className="h-5 w-5 shrink-0" aria-hidden="true" />

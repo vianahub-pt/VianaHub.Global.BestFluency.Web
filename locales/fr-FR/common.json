@@ -226,13 +226,14 @@
       "whatsappMessage": "Bonjour ! Je souhaite réserver un cours d'essai d'anglais à Best Fluency."
     },
     "founder": {
-      "h2": "Découvrez la fondatrice de Best Fluency",
+      "h2": "Faites connaissance avec la fondatrice de Best Fluency",
       "text": [
-        "Bonjour, je suis Taty Viana. Je suis ingénieure de formation et fondatrice de Best Fluency Language School.",
-        "Mon expérience professionnelle dans des entreprises multinationales et des contextes internationaux m'a montré, concrètement, comment les langues peuvent ouvrir des portes au travail, dans les études, les voyages et la vie personnelle.",
-        "C'est avec cet objectif que j'ai créé Best Fluency : aider chaque élève à apprendre de manière proche, pratique et orientée vers ses objectifs."
+        "Bonjour, je suis Tatiana Viana",
+        "Je suis ingénieure, professionnelle avec une expérience internationale en technologie et gestion de projets, et fondatrice de Best Fluency. Au long de ma carrière, j'ai eu l'opportunité de travailler dans différentes entreprises, projets et contextes internationaux — des expériences qui ont façonné la façon dont je pense, je travaille et je résous les problèmes. C'est tout ce parcours que j'ai emporté avec moi lorsque j'ai décidé de me lancer dans l'éducation.",
+        "Je n'ai pas cessé d'être ingénieure. J'ai apporté l'ingénierie avec moi. L'expérience que j'ai construite au fil des années a été appliquée à la création de Best Fluency, de la structuration de l'entreprise au développement d'une méthode d'enseignement des langues propre. Mon expérience en tant qu'élève m'a également appris qu'il ne suffit pas de connaître une langue pour avoir confiance pour parler — et c'est à partir de cette réalité que notre approche est née : plus pratique, personnalisée et axée sur la communication.",
+        "Aujourd'hui, je vois Best Fluency comme l'union de tout ce que j'ai construit au long de mon parcours : expérience, connaissance, innovation et envie de transformer la façon dont les personnes apprennent de nouvelles langues."
       ],
-      "imageAlt": "Taty Viana, fondatrice de Best Fluency Language School",
+      "imageAlt": "Tatiana Viana, fondatrice de Best Fluency Language School",
       "ctaLabel": "Réserver un cours d'essai",
       "ctaAriaLabel": "Réserver un cours d'essai — ouvrir une conversation WhatsApp (nouvelle fenêtre)",
       "whatsappMessage": "Bonjour ! Je souhaite réserver un cours d'essai d'anglais à Best Fluency."

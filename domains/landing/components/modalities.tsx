@@ -29,40 +29,41 @@ export function Modalities({ locale }: { locale: LocaleCode }) {
       aria-labelledby="modalities-title"
       className="flex min-h-dvh flex-col justify-center border-t border-border bg-muted/40"
     >
-      <div className="mx-auto w-full max-w-7xl px-4 md:px-8">
+      <div className="mx-auto w-full max-w-7xl px-4 py-12 md:px-8 md:py-16">
         <div className="lg:order-1">
           <h2
             id="modalities-title"
             className="font-title text-accent dark:text-white font-title font-bold tracking-tight text-balance
-              sm:text-2xl
+              text-2xl
+              sm:text-3xl
               md:text-3xl
               lg:text-4xl"
           >
             {content.modalities.h2}
           </h2>
-          <p className="mt-5 max-w-2xl text-base leading-7 text-muted-foreground">
+          <p className="mt-4 max-w-2xl text-sm leading-6 text-muted-foreground sm:text-base sm:leading-7">
             {content.modalities.intro}
           </p>
         </div>
 
-        <div className="mt-10 grid gap-10 sm:grid-cols-2 lg:gap-12">
+        <div className="mt-8 grid gap-8 sm:grid-cols-2 sm:gap-10 lg:gap-12">
           {/* Coluna: aula individual */}
-          <div className="flex flex-col gap-6">
-            <div className="flex items-center gap-3">
+          <div className="flex flex-col gap-5">
+            <div className="flex items-center gap-2.5">
               <User
-                className="h-6 w-6 shrink-0 text-accent"
+                className="h-5 w-5 shrink-0 text-accent sm:h-6 sm:w-6"
                 aria-hidden="true"
               />
-              <h3 className="font-title text-xl font-bold tracking-tight text-foreground sm:text-2xl">
+              <h3 className="font-title text-lg font-bold tracking-tight text-foreground sm:text-xl md:text-2xl">
                 {individual.title}
               </h3>
             </div>
 
-            <p className="text-base leading-7 text-muted-foreground">
+            <p className="text-sm leading-6 text-muted-foreground sm:text-base sm:leading-7">
               {individual.text}
             </p>
 
-            <p className="text-sm italic leading-6 text-muted-foreground">
+            <p className="text-xs italic leading-5 text-muted-foreground sm:text-sm sm:leading-6">
               {individual.note}
             </p>
 
@@ -71,13 +72,13 @@ export function Modalities({ locale }: { locale: LocaleCode }) {
                 src="/online-classes.jpg"
                 alt={individual.imageAlt}
                 width={400}
-                height={400}
+                height={300}
                 loading="lazy"
-                className="h-auto w-full rounded-2xl border border-border object-cover"
+                className="h-48 w-full rounded-2xl border border-border object-cover sm:h-56 md:h-64"
               />
             </div>
 
-            <div className="mt-6 flex justify-center">
+            <div className="mt-2 flex justify-center">
               <WhatsAppLink
                 message={individual.whatsappMessage}
                 section="individual"
@@ -96,22 +97,22 @@ export function Modalities({ locale }: { locale: LocaleCode }) {
           </div>
 
           {/* Coluna: aula em grupo */}
-          <div className="flex flex-col gap-6">
-            <div className="flex items-center gap-3">
+          <div className="flex flex-col gap-5">
+            <div className="flex items-center gap-2.5">
               <Users
-                className="h-6 w-6 shrink-0 text-accent"
+                className="h-5 w-5 shrink-0 text-accent sm:h-6 sm:w-6"
                 aria-hidden="true"
               />
-              <h3 className="font-title text-xl font-bold tracking-tight text-foreground sm:text-2xl">
+              <h3 className="font-title text-lg font-bold tracking-tight text-foreground sm:text-xl md:text-2xl">
                 {group.title}
               </h3>
             </div>
 
-            <p className="text-base leading-7 text-muted-foreground">
+            <p className="text-sm leading-6 text-muted-foreground sm:text-base sm:leading-7">
               {group.text}
             </p>
 
-            <p className="text-sm italic leading-6 text-muted-foreground">
+            <p className="text-xs italic leading-5 text-muted-foreground sm:text-sm sm:leading-6">
               {group.note}
             </p>
 
@@ -120,13 +121,13 @@ export function Modalities({ locale }: { locale: LocaleCode }) {
                 src="/in-person.jpg"
                 alt={group.imageAlt}
                 width={400}
-                height={400}
+                height={300}
                 loading="lazy"
-                className="h-auto w-full rounded-2xl border border-border object-cover"
+                className="h-48 w-full rounded-2xl border border-border object-cover sm:h-56 md:h-64"
               />
             </div>
 
-            <div className="mt-6 flex justify-center">
+            <div className="mt-2 flex justify-center">
               <WhatsAppLink
                 message={group.whatsappMessage}
                 section="group"

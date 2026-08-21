@@ -29,30 +29,31 @@ export function Founder({ locale }: { locale: LocaleCode }) {
       aria-labelledby="founder-title"
       className="flex min-h-dvh flex-col justify-center border-t border-border bg-gradient-to-b from-muted/40 to-accent/40"
     >
-      <div className="mx-auto w-full max-w-7xl px-4 md:px-8">
+      <div className="mx-auto w-full max-w-7xl px-4 py-12 md:px-8 md:py-16">
         <h2
           id="founder-title"
           className="font-title text-accent dark:text-white font-title font-bold tracking-tight text-balance
-              sm:text-2xl
+              text-2xl
+              sm:text-3xl
               md:text-3xl
               lg:text-4xl"
         >
           {founder.h2}
         </h2>
 
-        <div className="mt-10 grid gap-8 lg:grid-cols-2 lg:items-center lg:gap-12">
+        <div className="mt-8 grid gap-6 sm:mt-10 lg:grid-cols-2 lg:items-center lg:gap-12">
           <div>
             {founder.text.map((paragraph) => (
               <p
                 key={paragraph}
-                className="text-base leading-7 text-muted-foreground [&:not(:first-child)]:mt-4"
+                className="text-sm leading-6 text-muted-foreground sm:text-base sm:leading-7 [&:not(:first-child)]:mt-3 sm:[&:not(:first-child)]:mt-4"
               >
                 {paragraph}
               </p>
             ))}
           </div>
 
-          <ShineSweep className="bg-black aspect-square w-full max-w-sm overflow-hidden rounded-full shadow-lg lg:order-first lg:justify-self-center">
+          <ShineSweep className="bg-black mx-auto aspect-square w-48 overflow-hidden rounded-full shadow-lg sm:w-56 md:w-64 lg:order-first lg:justify-self-center lg:w-full lg:max-w-sm">
             <Image
               src="/ceo.png"
               alt={founder.imageAlt}
@@ -64,7 +65,7 @@ export function Founder({ locale }: { locale: LocaleCode }) {
           </ShineSweep>
         </div>
 
-        <div className="mt-12 flex justify-center">
+        <div className="mt-10 flex justify-center sm:mt-12">
           <WhatsAppLink
             message={founder.whatsappMessage}
             section="founder"

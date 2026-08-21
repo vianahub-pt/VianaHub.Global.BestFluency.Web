@@ -57,17 +57,17 @@ export function Faq({ content: faq }: { content: LandingContent["faq"] }) {
             onClick={() => toggle(index)}
             aria-expanded={isOpen}
             aria-controls={panelId}
-            className="flex min-h-12 w-full items-center justify-between gap-4 rounded-lg px-4 py-3 text-left text-sm font-semibold leading-6 text-foreground transition-colors hover:bg-muted focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring sm:px-5"
+            className="flex min-h-11 w-full items-center justify-between gap-3 rounded-lg px-3.5 py-2.5 text-left text-xs font-semibold leading-5 text-foreground transition-colors hover:bg-muted focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring sm:min-h-12 sm:gap-4 sm:px-4 sm:py-3 sm:text-sm sm:leading-6"
           >
             {item.question}
             <span
               aria-hidden="true"
-              className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-accent/15 text-accent"
+              className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-accent/15 text-accent sm:h-8 sm:w-8"
             >
               {isOpen ? (
-                <Minus className="h-4 w-4" />
+                <Minus className="h-3.5 w-3.5 sm:h-4 sm:w-4" />
               ) : (
-                <Plus className="h-4 w-4" />
+                <Plus className="h-3.5 w-3.5 sm:h-4 sm:w-4" />
               )}
             </span>
           </button>
@@ -84,7 +84,7 @@ export function Faq({ content: faq }: { content: LandingContent["faq"] }) {
           aria-hidden={!isOpen}
         >
           <div className="overflow-hidden">
-            <p className="px-4 pb-5 text-sm leading-6 text-muted-foreground sm:px-5">
+            <p className="px-3.5 pb-4 text-xs leading-5 text-muted-foreground sm:px-4 sm:pb-5 sm:text-sm sm:leading-6">
               {item.answer}
             </p>
           </div>
@@ -99,39 +99,40 @@ export function Faq({ content: faq }: { content: LandingContent["faq"] }) {
       aria-labelledby="faq-title"
       className="flex min-h-dvh flex-col justify-center border-t border-border bg-gradient-to-b from-muted/40 to-accent/40"
     >
-      <div className="mx-auto w-full max-w-7xl px-4 md:px-8">
+      <div className="mx-auto w-full max-w-7xl px-4 py-12 md:px-8 md:py-16">
         <h2
           id="faq-title"
           className="font-title text-accent dark:text-white font-title font-bold tracking-tight text-balance
-              sm:text-2xl
+              text-2xl
+              sm:text-3xl
               md:text-3xl
               lg:text-4xl"
         >
           {faq.h2}
         </h2>
-        <p className="mx-auto mt-5 max-w-2xl text-center text-base leading-7 text-muted-foreground">
+        <p className="mx-auto mt-4 max-w-2xl text-center text-sm leading-6 text-muted-foreground sm:text-base sm:leading-7">
           {faq.subtitle}
         </p>
 
-        <div className="mt-10 grid gap-3 sm:grid-cols-2">
-          <div className="flex flex-col gap-3">
+        <div className="mt-8 grid gap-2.5 sm:mt-10 sm:grid-cols-2 sm:gap-3">
+          <div className="flex flex-col gap-2.5 sm:gap-3">
             {faq.items
               .slice(0, 2)
               .map((item, index) => renderItem(item, index))}
           </div>
-          <div className="flex flex-col gap-3">
+          <div className="flex flex-col gap-2.5 sm:gap-3">
             {faq.items
               .slice(2, 4)
               .map((item, index) => renderItem(item, index + 2))}
           </div>
-          <div className="grid w-full gap-3 sm:col-span-2 sm:grid-cols-2">
+          <div className="grid w-full gap-2.5 sm:col-span-2 sm:grid-cols-2 sm:gap-3">
             {faq.items
               .slice(4)
               .map((item, index) => renderItem(item, index + 4))}
           </div>
         </div>
 
-        <div className="mt-12 flex justify-center">
+        <div className="mt-10 flex justify-center sm:mt-12">
           <WhatsAppLink
             message={faq.whatsappMessage}
             section="faq"
