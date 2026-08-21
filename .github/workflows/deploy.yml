@@ -124,8 +124,17 @@ jobs:
 
             cd ${{ secrets.VPS_REMOTE_PATH }}
 
-            echo "Removendo container manual anterior, caso exista..."
-            docker rm -f bestfluency-web 2>/dev/null || true
+            echo "Migração defensiva: remover container legado não-Compose..."
+            LEGACY_ID=$(docker inspect --format='{{.Id}}' bestfluency-web 2>/dev/null || true)
+            if [ -n "$LEGACY_ID" ]; then
+              HAS_COMPOSE_LABELS=$(docker inspect --format='{{index .Config.Labels "com.docker.compose.project"}}' bestfluency-web 2>/dev/null || true)
+              if [ -z "$HAS_COMPOSE_LABELS" ]; then
+                echo "Container legado detectado (sem labels Compose). Removendo..."
+                docker rm -f bestfluency-web 2>/dev/null || true
+              else
+                echo "Container gerenciado pelo Compose. Ignorando..."
+              fi
+            fi
 
             echo "Subindo nova versão..."
             IMAGE_TAG=${IMAGE_TAG} docker compose up -d --no-build
@@ -163,7 +172,6 @@ jobs:
           echo "Purge Cloudflare concluído."
 
       - name: Validar implantação pública
-        continue-on-error: true
         run: |
           code=$(curl -fsS -o /dev/null -w '%{http_code}' "${SITE_URL}/healthz" || true)
           echo "healthz -> ${code}"

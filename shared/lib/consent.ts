@@ -61,3 +61,33 @@ export function writeAnalyticsConsent(consent: AnalyticsConsent): void {
 export function hasAnalyticsConsent(): boolean {
   return readAnalyticsConsent() !== null;
 }
+
+/**
+ * Remove cookies first-party do GA4 no domínio atual (best-effort).
+ *
+ * Não tenta apagar cookies de domínios de terceiros (google.com,
+ * google-analytics.com, etc.) porque não pertencem ao domínio da aplicação.
+ */
+export function removeGaCookies(): void {
+  if (typeof document === "undefined") return;
+
+  const cookieNames = ["_ga", "_ga_"];
+  const paths = ["/"];
+
+  for (const name of cookieNames) {
+    for (const path of paths) {
+      // Remove cookie com expiração no passado
+      document.cookie = `${name}=; expires=Thu, 01 Jan 1970 00:00:00 GMT; path=${path}`;
+    }
+  }
+
+  // Remove cookies _ga_* com sufixo (ex.: _ga_G-XXXXXXXXXX)
+  const allCookies = document.cookie.split(";");
+  for (const cookie of allCookies) {
+    const trimmed = cookie.trim();
+    if (trimmed.startsWith("_ga_")) {
+      const name = trimmed.split("=")[0];
+      document.cookie = `${name}=; expires=Thu, 01 Jan 1970 00:00:00 GMT; path=/`;
+    }
+  }
+}

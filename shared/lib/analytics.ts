@@ -184,34 +184,25 @@ export function captureUtmParams(): UtmParams {
 }
 
 /**
- * Verifica se o GA4 está autorizado e disponível.
- */
-function isGaAvailable(): boolean {
-  if (typeof window === "undefined") return false;
-  if (readAnalyticsConsent() !== "accepted") return false;
-  return typeof window.gtag === "function";
-}
-
-/**
  * Regista um evento de conversão.
  *
- * - Sempre: escreve no dataLayer e faz console.debug em dev.
- * - Só com consentimento: envia para GA4 via window.gtag.
- * - Sem consentimento: eventos ficam apenas no dataLayer local (não são
- *   enviados retroativamente ao GA4 quando o utilizador aceitar).
+ * - Sem consentimento: apenas console.debug em dev. NENHUM push ao dataLayer.
+ * - Com consentimento: envia para GA4 via window.gtag (que usa dataLayer internamente).
+ * - Sem duplicação: gtag já utiliza dataLayer, não fazemos push separado.
  */
 export function trackEvent(event: AnalyticsEvent): void {
   if (typeof window === "undefined") return;
-
-  window.dataLayer = window.dataLayer ?? [];
-  window.dataLayer.push({ event: event.name, ...event.params });
 
   if (process.env.NODE_ENV !== "production") {
     console.debug("[analytics]", event.name, event.params);
   }
 
-  if (isGaAvailable()) {
-    window.gtag!("event", event.name, event.params);
+  // Só enviar ao GA quando consentido E gtag disponível.
+  if (
+    readAnalyticsConsent() === "accepted" &&
+    typeof window.gtag === "function"
+  ) {
+    window.gtag("event", event.name, event.params);
   }
 }
 

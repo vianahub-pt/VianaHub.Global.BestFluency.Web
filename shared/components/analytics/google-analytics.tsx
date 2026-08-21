@@ -1,6 +1,5 @@
 "use client";
 
-import Script from "next/script";
 import { useEffect, useRef, useState } from "react";
 
 import { site } from "@/core/config/site";
@@ -10,22 +9,28 @@ import {
   type AnalyticsConsent,
 } from "@/shared/lib/consent";
 
+const GA_SCRIPT_ID = "bestfluency-ga4";
+
 /**
  * Google Analytics 4 com Basic Consent Mode v2.
  *
- * Só carrega o script externo do GA4 quando o utilizador aceitou
- * analytics. Inicializa dataLayer + gtag com consent defaults (tudo
- * denied), depois atualiza para analytics_storage = granted antes de
- * configurar o GA4.
+ * Só inicializa GA4 quando o utilizador aceitou analytics.
+ * Usa carregamento imperativo de script (não Next.js Script) para
+ * evitar beforeInteractive dentro de client component.
  *
- * Reage a alterações de consentimento (ex.: revogação via footer).
+ * Ordem de inicialização:
+ * 1. Criar window.dataLayer
+ * 2. Criar window.gtag
+ * 3. consent default (tudo denied)
+ * 4. consent update (analytics_storage = granted, ads denied)
+ * 5. gtag('js', new Date())
+ * 6. gtag('config', measurementId)
+ * 7. Carregar gtag.js externamente
  */
 export function GoogleAnalytics() {
   const [consent, setConsent] = useState<AnalyticsConsent | null>(null);
   const mountedRef = useRef(false);
 
-  // Lê consentimento após montagem. Usa microtask para evitar
-  // setState síncrono dentro do efeito.
   useEffect(() => {
     if (mountedRef.current) return;
     mountedRef.current = true;
@@ -45,50 +50,55 @@ export function GoogleAnalytics() {
     };
   }, []);
 
-  if (!site.gaMeasurementId) return null;
-  if (consent !== "accepted") return null;
+  useEffect(() => {
+    if (consent !== "accepted") return;
+    if (!site.gaMeasurementId) return;
 
-  const mid = site.gaMeasurementId;
+    const mid = site.gaMeasurementId;
 
-  return (
-    <>
-      <Script id="gtag-consent-default" strategy="beforeInteractive">
-        {`
-          window.dataLayer = window.dataLayer || [];
-          function gtag(){dataLayer.push(arguments);}
-          gtag('consent', 'default', {
-            analytics_storage: 'denied',
-            ad_storage: 'denied',
-            ad_user_data: 'denied',
-            ad_personalization: 'denied'
-          });
-        `}
-      </Script>
-      <Script id="gtag-consent-update" strategy="beforeInteractive">
-        {`
-          window.dataLayer = window.dataLayer || [];
-          function gtag(){dataLayer.push(arguments);}
-          gtag('consent', 'update', {
-            analytics_storage: 'granted',
-            ad_storage: 'denied',
-            ad_user_data: 'denied',
-            ad_personalization: 'denied'
-          });
-        `}
-      </Script>
-      <Script
-        async
-        src={`https://www.googletagmanager.com/gtag/js?id=${mid}`}
-        strategy="afterInteractive"
-      />
-      <Script id="gtag-init" strategy="afterInteractive">
-        {`
-          window.dataLayer = window.dataLayer || [];
-          function gtag(){dataLayer.push(arguments);}
-          gtag('js', new Date());
-          gtag('config', '${mid}', { send_page_view: true });
-        `}
-      </Script>
-    </>
-  );
+    // Evitar inicialização múltipla.
+    if (document.getElementById(GA_SCRIPT_ID)) return;
+
+    // 1. Criar dataLayer
+    window.dataLayer = window.dataLayer || [];
+
+    // 2. Criar gtag
+    if (typeof window.gtag !== "function") {
+      window.gtag = function gtag(...args: unknown[]) {
+        window.dataLayer!.push(args);
+      };
+    }
+
+    // 3. Consent default (tudo denied)
+    window.gtag("consent", "default", {
+      analytics_storage: "denied",
+      ad_storage: "denied",
+      ad_user_data: "denied",
+      ad_personalization: "denied",
+    });
+
+    // 4. Consent update (analytics granted, ads denied)
+    window.gtag("consent", "update", {
+      analytics_storage: "granted",
+      ad_storage: "denied",
+      ad_user_data: "denied",
+      ad_personalization: "denied",
+    });
+
+    // 5. gtag('js', new Date())
+    window.gtag("js", new Date());
+
+    // 6. gtag('config', measurementId)
+    window.gtag("config", mid, { send_page_view: true });
+
+    // 7. Carregar gtag.js externamente
+    const script = document.createElement("script");
+    script.id = GA_SCRIPT_ID;
+    script.async = true;
+    script.src = `https://www.googletagmanager.com/gtag/js?id=${mid}`;
+    document.head.appendChild(script);
+  }, [consent]);
+
+  // Este componente não renderiza nada — toda a inicialização é imperativa.
+  return null;
 }

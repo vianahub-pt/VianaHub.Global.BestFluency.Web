@@ -7,6 +7,7 @@ import { getMessages } from "@/core/i18n";
 import {
   OPEN_COOKIE_PREFERENCES_EVENT,
   readAnalyticsConsent,
+  removeGaCookies,
   writeAnalyticsConsent,
   type AnalyticsConsent,
 } from "@/shared/lib/consent";
@@ -22,17 +23,16 @@ interface ConsentManagerProps {
  * - "accepted" → GA pode carregar.
  * - "rejected" → GA nunca carrega.
  * - Reage ao evento "Gerir cookies" (footer) para reabrir o banner.
+ * - Na revogação (accepted → rejected): atualiza consent, remove cookies GA, recarrega.
  * - Não usa aria-modal (evita necessidade de focus trap complexo).
  */
 export function ConsentManager({ locale }: ConsentManagerProps) {
   const content = getMessages(locale).landing.cookieConsent;
   const [consent, setConsent] = useState<AnalyticsConsent | null>(null);
   const [showBanner, setShowBanner] = useState(false);
-  const bannerRef = useRef<HTMLDivElement>(null);
   const rejectButtonRef = useRef<HTMLButtonElement>(null);
 
   // Lê consentimento após montagem (evita hydration mismatch).
-  // Usa microtask para evitar setState síncrono dentro do efeito.
   const mountedRef = useRef(false);
   useEffect(() => {
     if (mountedRef.current) return;
@@ -47,7 +47,7 @@ export function ConsentManager({ locale }: ConsentManagerProps) {
     });
   }, []);
 
-  // Reage ao evento "Gerir cookies" do footer.
+  // Reage ao evento "Gerir cookies" do footer — sempre reabre o banner.
   useEffect(() => {
     function handleOpenPreferences() {
       setShowBanner(true);
@@ -73,16 +73,39 @@ export function ConsentManager({ locale }: ConsentManagerProps) {
   }, []);
 
   const handleReject = useCallback(() => {
+    // Se estava accepted e agora está a recusar → revogação efetiva.
+    if (consent === "accepted") {
+      // 1. Atualizar consent Google para denied (se gtag existir).
+      if (typeof window.gtag === "function") {
+        window.gtag("consent", "update", {
+          analytics_storage: "denied",
+          ad_storage: "denied",
+          ad_user_data: "denied",
+          ad_personalization: "denied",
+        });
+      }
+
+      // 2. Persistir rejected.
+      writeAnalyticsConsent("rejected");
+
+      // 3. Remover cookies GA first-party.
+      removeGaCookies();
+
+      // 4. Reload controlado para garantir que GA não volta a carregar.
+      window.location.reload();
+      return;
+    }
+
+    // Caso contrário (null ou rejected → rejected), apenas persistir e fechar.
     writeAnalyticsConsent("rejected");
     setConsent("rejected");
     setShowBanner(false);
-  }, []);
+  }, [consent]);
 
-  if (!showBanner || consent !== null) return null;
+  if (!showBanner) return null;
 
   return (
     <div
-      ref={bannerRef}
       role="dialog"
       aria-labelledby="cookie-consent-title"
       aria-describedby="cookie-consent-desc"

@@ -36,11 +36,21 @@ O utilizador pode alterar a sua escolha a qualquer momento via
 ### Eventos
 
 Os eventos de conversão (`whatsapp_click`, `phone_click`, `location_click`,
-`faq_open`) são sempre registados no `dataLayer` local e em `console.debug`
-em desenvolvimento. Só são enviados ao GA4 quando:
+`faq_open`) são enviados ao GA4 apenas quando:
 
 1. `consent === "accepted"` (localStorage)
-2. `window.gtag` está disponível (script GA4 carregado)
+2. `window.gtag` está disponível (inicializado pelo GoogleAnalytics)
+
+**ANTES do consentimento:**
+- Nenhum `window.dataLayer` Google é criado pela aplicação
+- Nenhum evento é enfileirado no dataLayer
+- Nenhum evento é enviado ao Google
+- `console.debug` pode existir em development
+
+**DEPOIS do consentimento:**
+- `window.gtag` fica disponível
+- Eventos são enviados diretamente via `gtag("event", ...)`
+- `gtag` utiliza `dataLayer` internamente — não existe push separado
 
 Eventos disparados **antes** do consentimento **não são enviados
 retroativamente** ao GA4 quando o utilizador aceita posteriormente.
@@ -129,9 +139,23 @@ da rota (pt-PT, en-US, es-ES, fr-FR, de-DE, it-IT, ja-JP, ru-RU, zh-CN).
 - **Visitas, origens, dispositivos, países e CWV:** dashboard do Cloudflare Web
   Analytics (Web Analytics → site do domínio definitivo).
 - **Conversões (`whatsapp_click`):** com consentimento GA4 ativo, os eventos são
-  exportados para GA4 e correlacionados com CRM/WhatsApp Business. Sem
-  consentimento, o dado fica no `dataLayer` local e pode ser auditado em
-  desenvolvimento via `console.debug`.
+  enviados via `gtag("event", ...)` para GA4 e correlacionados com
+  CRM/WhatsApp Business. Sem consentimento, nenhum evento é enviado — apenas
+  `console.debug` em development.
+
+## Revogação de consentimento
+
+Quando um utilizador que aceitou anteriormente escolhe "Recusar" via
+"Gerir cookies":
+
+1. `gtag('consent', 'update', {analytics_storage: 'denied', ...})` é executado
+2. `bestfluency:consent:v1` passa para `rejected` no localStorage
+3. Cookies first-party GA (`_ga`, `_ga_*`) são removidos best-effort
+4. Página faz reload controlado
+5. Após reload:
+   - `gtag.js` não é carregado
+   - Nenhum request GA é enviado
+   - `window.gtag` não é recriado pela aplicação
 
 ## Privacidade (spec §29)
 
@@ -192,7 +216,23 @@ Com o token preenchido (ou não — o evento de clique independe do beacon):
 1. Clicar "Gerir cookies" no footer.
 2. Banner reaparece.
 3. Alterar para "Recusar".
-4. GA deixa de carregar/enviar.
+4. Se estava com GA aceite: consent update denied + cookies removidos + reload.
+5. Após reload: GA não carrega.
+
+### Cenário E2 — revogação (accepted → rejected)
+
+1. Com GA carregado (consent = accepted).
+2. Footer → "Gerir cookies" → banner reaparece.
+3. Clicar "Recusar".
+4. Verificar:
+   - `gtag('consent', 'update', ...)` é chamado (se gtag existir)
+   - `localStorage` passa para `rejected`
+   - Cookies `_ga` / `_ga_*` são removidos
+   - Página recarrega
+5. Após reload:
+   - `gtag.js` não carrega
+   - Nenhum request GA
+   - `window.gtag` não é recriado
 
 ### Cenário F — evento WhatsApp
 
@@ -215,11 +255,11 @@ Para validar com Google Tag Assistant:
 
 ## Arquivos relacionados
 
-- `shared/lib/consent.ts` — utilitário de consentimento (leitura/escrita/eventos)
+- `shared/lib/consent.ts` — utilitário de consentimento (leitura/escrita/eventos/limpeza cookies)
 - `shared/lib/analytics.ts` — modelo de eventos, UTM de sessão, `trackWhatsAppClick` (consent-aware)
-- `shared/components/analytics/consent-manager.tsx` — banner de consentimento
+- `shared/components/analytics/consent-manager.tsx` — banner de consentimento + revogação
 - `shared/components/analytics/cookie-settings-button.tsx` — botão "Gerir cookies" (footer)
-- `shared/components/analytics/google-analytics.tsx` — GA4 com consent mode
+- `shared/components/analytics/google-analytics.tsx` — GA4 com consent mode (carregamento imperativo)
 - `shared/components/analytics/cloudflare-web-analytics.tsx` — beacon CF (sem cookies)
 - `shared/components/layout/document-shell.tsx` — injeção do analytics nas 9 rotas
 - `domains/landing/components/site-footer.tsx` — botão "Gerir cookies"
