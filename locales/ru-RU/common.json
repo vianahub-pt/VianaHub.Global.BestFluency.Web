@@ -58,9 +58,18 @@
       "rightsReserved": "Все права защищены.",
       "privacyPolicy": "Политика конфиденциальности",
       "cookiesPolicy": "Политика использования файлов cookie",
+      "manageCookies": "Управление cookie",
       "whatsappLabel": "WhatsApp",
       "siteMap": "Карта сайта",
       "contact": "Контакты"
+    },
+    "cookieConsent": {
+      "title": "Ваша конфиденциальность важна для нас",
+      "description": "Мы используем аналитические cookie, чтобы понять, как используется наш сайт, и улучшить ваш опыт. Вы можете принять или отклонить эти cookie.",
+      "accept": "Принять статистику",
+      "reject": "Отклонить",
+      "manage": "Управление cookie",
+      "ariaLabel": "Политика использования cookie"
     },
     "header": {
       "logoAlt": "Best Fluency Language School"

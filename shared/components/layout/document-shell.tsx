@@ -3,6 +3,7 @@ import type { ReactNode } from "react";
 import { getLocale, type LocaleCode } from "@/core/config/locales";
 import { getMessages } from "@/core/i18n";
 import { CloudflareWebAnalytics } from "@/shared/components/analytics/cloudflare-web-analytics";
+import { ConsentManager } from "@/shared/components/analytics/consent-manager";
 import { GoogleAnalytics } from "@/shared/components/analytics/google-analytics";
 import { JsonLd } from "@/shared/components/seo/json-ld";
 import { ScrollPreservation } from "@/shared/components/ui/scroll-preservation";
@@ -20,6 +21,11 @@ interface DocumentShellProps {
  *
  * Garante <html lang> estático e correto por idioma no HTML exportado,
  * skip link acessível, tema claro/escuro, analytics e JSON-LD.
+ *
+ * Arquitetura de consentimento:
+ * - Cloudflare Web Analytics: sempre carregado (sem cookies).
+ * - ConsentManager: decide se GA4 pode ou não carregar.
+ * - GoogleAnalytics: só renderiza scripts quando consent === "accepted".
  */
 export function DocumentShell({ locale, children }: DocumentShellProps) {
   const localeMeta = getLocale(locale);
@@ -43,6 +49,7 @@ export function DocumentShell({ locale, children }: DocumentShellProps) {
           {children}
         </ThemeProvider>
         <CloudflareWebAnalytics />
+        <ConsentManager locale={locale} />
         <GoogleAnalytics />
         <JsonLd data={buildOrganizationJsonLd()} />
       </body>

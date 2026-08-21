@@ -58,9 +58,18 @@
       "rightsReserved": "Alle Rechte vorbehalten.",
       "privacyPolicy": "Datenschutzerklärung",
       "cookiesPolicy": "Cookie-Richtlinie",
+      "manageCookies": "Cookies verwalten",
       "whatsappLabel": "WhatsApp",
       "siteMap": "Seitenübersicht",
       "contact": "Kontakt"
+    },
+    "cookieConsent": {
+      "title": "Ihre Privatsphäre ist uns wichtig",
+      "description": "Wir verwenden Analyse-Cookies, um zu verstehen, wie unsere Website genutzt wird und um Ihr Erlebnis zu verbessern. Sie können diese Cookies akzeptieren oder ablehnen.",
+      "accept": "Statistiken akzeptieren",
+      "reject": "Ablehnen",
+      "manage": "Cookies verwalten",
+      "ariaLabel": "Cookie-Richtlinie"
     },
     "header": {
       "logoAlt": "Best Fluency Language School"

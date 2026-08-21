@@ -1,6 +1,7 @@
 import type { LocaleCode } from "@/core/config/locales";
 import { site } from "@/core/config/site";
 import { getMessages } from "@/core/i18n";
+import { CookieSettingsButton } from "@/shared/components/analytics/cookie-settings-button";
 import { PhoneLink } from "@/shared/components/phone-link";
 import { WhatsAppLink } from "@/shared/components/whatsapp-link";
 
@@ -120,6 +121,10 @@ export function SiteFooter({ locale }: { locale: LocaleCode }) {
             >
               {content.footer.privacyPolicy}
             </span>
+            <CookieSettingsButton
+              label={content.footer.manageCookies}
+              className="link-micro cursor-pointer text-xs text-accent opacity-80 transition-colors hover:opacity-100 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring"
+            />
             <span aria-disabled="true" className="cursor-default opacity-80">
               {content.footer.cookiesPolicy}
             </span>

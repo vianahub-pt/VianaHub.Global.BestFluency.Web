@@ -1,17 +1,19 @@
 /**
  * Fundação de medição e conversões (spec §20 e §22).
  *
- * Fase 1 (issue #12): Cloudflare Web Analytics para visitas/páginas/origens/
- * dispositivos/países/CWV reais — sem cookies e sem consentimento. Os eventos
- * de conversão ficam instrumentados num dataLayer tipado, prontos para GA4 /
- * Google Ads / Meta Pixel APENAS quando existir plano de medição aprovado,
- * consentimento para tecnologias não essenciais, política de privacidade e
- * cookies atualizada e mecanismo para aceitar/recusar/alterar preferências
- * (spec §22 e §29; ADR-0001).
+ * Fase 2 (consentimento): GA4 disponível após aceite do utilizador.
+ * Cloudflare Web Analytics continua sem cookies e sem consentimento.
  *
- * Nesta fase NENHUM script de GA4/Google Ads/Meta Pixel é carregado e nenhum
- * cookie não essencial é gravado.
+ * Eventos de conversão são instrumentados num dataLayer tipado. Só são
+ * enviados ao GA4 (via window.gtag) quando:
+ *   - consent === "accepted"
+ *   - window.gtag está disponível (script GA4 carregado)
+ *
+ * Eventos disparados ANTES do consentimento NÃO são enviados
+ * retroativamente ao GA4.
  */
+
+import { readAnalyticsConsent } from "@/shared/lib/consent";
 
 /** Secções da landing reconhecidas para atribuição de conversões (spec §20). */
 export const analyticsSections = [
@@ -59,7 +61,8 @@ export type AnalyticsEvent =
 
 declare global {
   interface Window {
-    dataLayer?: Record<string, unknown>[];
+    dataLayer?: unknown[];
+    gtag?: (...args: unknown[]) => void;
   }
 }
 
@@ -181,9 +184,21 @@ export function captureUtmParams(): UtmParams {
 }
 
 /**
- * Regista um evento de conversão. Sem fornecedor acoplado:
- * escreve no dataLayer (futuro GA4/GTM, com consentimento) e faz log em
- * desenvolvimento para validação manual em devtools (aceite #12).
+ * Verifica se o GA4 está autorizado e disponível.
+ */
+function isGaAvailable(): boolean {
+  if (typeof window === "undefined") return false;
+  if (readAnalyticsConsent() !== "accepted") return false;
+  return typeof window.gtag === "function";
+}
+
+/**
+ * Regista um evento de conversão.
+ *
+ * - Sempre: escreve no dataLayer e faz console.debug em dev.
+ * - Só com consentimento: envia para GA4 via window.gtag.
+ * - Sem consentimento: eventos ficam apenas no dataLayer local (não são
+ *   enviados retroativamente ao GA4 quando o utilizador aceitar).
  */
 export function trackEvent(event: AnalyticsEvent): void {
   if (typeof window === "undefined") return;
@@ -193,6 +208,10 @@ export function trackEvent(event: AnalyticsEvent): void {
 
   if (process.env.NODE_ENV !== "production") {
     console.debug("[analytics]", event.name, event.params);
+  }
+
+  if (isGaAvailable()) {
+    window.gtag!("event", event.name, event.params);
   }
 }
 

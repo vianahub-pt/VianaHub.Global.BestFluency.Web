@@ -58,9 +58,18 @@
       "rightsReserved": "版权所有。",
       "privacyPolicy": "隐私政策",
       "cookiesPolicy": "Cookie 政策",
+      "manageCookies": "管理 Cookie",
       "whatsappLabel": "WhatsApp",
       "siteMap": "网站地图",
       "contact": "联系方式"
+    },
+    "cookieConsent": {
+      "title": "您的隐私很重要",
+      "description": "我们使用分析 Cookie 来了解网站的使用情况并改善您的体验。您可以接受或拒绝这些 Cookie。",
+      "accept": "接受统计",
+      "reject": "拒绝",
+      "manage": "管理 Cookie",
+      "ariaLabel": "Cookie 政策"
     },
     "header": {
       "logoAlt": "Best Fluency Language School"

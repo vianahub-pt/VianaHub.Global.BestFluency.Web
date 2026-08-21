@@ -58,9 +58,18 @@
       "rightsReserved": "© 2026 ベストフルエンシティ. All rights reserved.",
       "privacyPolicy": "プライバシーポリシー",
       "cookiesPolicy": "クッキーポリシー",
+      "manageCookies": "クッキーの設定",
       "whatsappLabel": "WhatsApp",
       "siteMap": "サイトマップ",
       "contact": "お問い合わせ"
+    },
+    "cookieConsent": {
+      "title": "お客様のプライバシーは大切にしています",
+      "description": "ウェブサイトの利用状況を理解し、体験を改善するために分析Cookieを使用しています。これらのCookieを受け入れるか拒否することができます。",
+      "accept": "統計を受け入れる",
+      "reject": "拒否",
+      "manage": "クッキーの設定",
+      "ariaLabel": "クッキーポリシー"
     },
     "header": {
       "logoAlt": "ベストフルエンシティ・ランゲージスクール"
