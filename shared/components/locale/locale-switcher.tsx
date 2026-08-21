@@ -12,10 +12,11 @@ import US from "country-flag-icons/react/3x2/US";
 import type { FlagComponent } from "country-flag-icons/react/3x2";
 import { Check, ChevronDown } from "lucide-react";
 import { useRouter } from "next/navigation";
-import { useCallback, useEffect, useRef, useState } from "react";
+import { useCallback, useEffect, useRef, useState, useLayoutEffect } from "react";
 
 import { getLocale, locales, type LocaleCode } from "@/core/config/locales";
 import { saveScrollPosition } from "@/shared/components/ui/scroll-preservation";
+import { cn } from "@/shared/lib/utils";
 
 interface LocaleSwitcherProps {
   currentLocale: LocaleCode;
@@ -44,7 +45,9 @@ export function LocaleSwitcher({ currentLocale, label }: LocaleSwitcherProps) {
   const CurrentFlag = flagByLocale[currentLocale];
   const router = useRouter();
   const [isOpen, setIsOpen] = useState(false);
+  const [openUp, setOpenUp] = useState(false);
   const wrapperRef = useRef<HTMLDivElement>(null);
+  const listRef = useRef<HTMLUListElement>(null);
 
   const handleLocaleChange = useCallback(
     (code: string) => {
@@ -57,6 +60,15 @@ export function LocaleSwitcher({ currentLocale, label }: LocaleSwitcherProps) {
     },
     [currentLocale, router],
   );
+
+  // Calcula se deve abrir para cima ou para baixo
+  useLayoutEffect(() => {
+    if (!isOpen || !wrapperRef.current) return;
+    const rect = wrapperRef.current.getBoundingClientRect();
+    const spaceBelow = window.innerHeight - rect.bottom;
+    const spaceAbove = rect.top;
+    setOpenUp(spaceBelow < 300 && spaceAbove > spaceBelow);
+  }, [isOpen]);
 
   // Fecha ao clicar fora
   useEffect(() => {
@@ -92,9 +104,13 @@ export function LocaleSwitcher({ currentLocale, label }: LocaleSwitcherProps) {
 
       {isOpen && (
         <ul
+          ref={listRef}
           role="listbox"
           aria-label={label}
-          className="absolute left-0 top-full z-50 mt-1 max-h-72 w-full min-w-[10rem] overflow-auto rounded-md border border-border bg-popover py-1 shadow-md"
+          className={cn(
+            "absolute left-0 z-[60] max-h-72 w-full min-w-[10rem] overflow-auto rounded-md border border-border bg-popover py-1 shadow-md",
+            openUp ? "bottom-full mb-1" : "top-full mt-1",
+          )}
         >
           {locales.map((locale) => {
             const isCurrent = locale.code === currentLocale;
