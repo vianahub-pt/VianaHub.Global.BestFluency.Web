@@ -10,7 +10,7 @@
   "landing": {
     "meta": {
       "title": "Aulas de Inglês na Amadora e Online | Best Fluency",
-      "description": "Aulas de inglês presenciais na Venda Nova, Amadora, e online para crianças, jovens e adultos. Opções individuais e turmas até 4 alunos."
+      "description": "Aulas de inglês presenciais na Venda Nova, Amadora, e online para crianças, jovens e adultos. Opções individuais e turmas reduzidas."
     },
     "a11y": {
       "skipToContent": "Saltar para o conteúdo principal",
@@ -70,7 +70,7 @@
       "title2": "Comece a falar",
       "title3": "inglês com",
       "title4": "confiança!",
-      "text": "Aulas práticas e personalizadas para crianças, jovens e adultos, em formato individual ou em turmas reduzidas com um máximo de 4 alunos.",
+      "text": "Aulas práticas e personalizadas para crianças, jovens e adultos, em formato individual ou em turmas reduzidas.",
       "ctaLabel": "Marcar aula experimental",
       "ctaAriaLabel": "Marcar aula experimental — abrir conversa no WhatsApp (nova janela)",
       "ctaWhatsappMessage": "Olá! Gostaria de marcar uma aula experimental de inglês na Best Fluency."
@@ -78,7 +78,7 @@
     "infoBar": {
       "items": [
         "Aulas individuais",
-        "Turmas até 4 alunos",
+        "Turmas reduzidas",
         "Presencial na Amadora",
         "Aulas online"
       ]
@@ -97,7 +97,7 @@
       },
       "group": {
         "title": "Aprender e praticar num grupo pequeno",
-        "text": "Turmas organizadas por nível, com um máximo de 4 alunos, para permitir participação, interação e acompanhamento próximo.",
+        "text": "Turmas organizadas por nível, em turmas reduzidas, para permitir participação, interação e acompanhamento próximo.",
         "note": "Sujeito à formação de turma e disponibilidade",
         "ctaLabel": "Quero saber mais sobre as turmas",
         "ctaAriaLabel": "Quero saber mais sobre as turmas — abrir conversa no WhatsApp (nova janela)",
@@ -281,7 +281,7 @@
         },
         {
           "question": "Quantos alunos existem em cada turma?",
-          "answer": "As turmas têm um máximo de 4 alunos, permitindo maior participação e acompanhamento durante as aulas."
+          "answer": "As turmas são reduzidas, permitindo maior participação e acompanhamento durante as aulas."
         },
         {
           "question": "Para quem são as aulas?",
