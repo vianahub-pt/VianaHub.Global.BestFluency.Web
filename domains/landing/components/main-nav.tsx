@@ -66,7 +66,7 @@ export function MainNav({
 
   return (
     <nav aria-label={label} className={className}>
-      <ul className="flex flex-col gap-1 lg:flex-row lg:flex-nowrap lg:items-center lg:justify-center lg:gap-1">
+      <ul className="flex flex-col gap-0.5 lg:flex-row lg:flex-nowrap lg:items-center lg:justify-center lg:gap-1">
         {navItems.map((item) => {
           const active = isActive(item.href);
           return (

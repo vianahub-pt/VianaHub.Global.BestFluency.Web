@@ -151,13 +151,13 @@ export function MobileMenu({ locale, nav, languageSwitcherLabel }: MobileMenuPro
           !isOpen && "hidden",
         )}
       >
-        <div className="mx-auto w-full max-w-7xl px-4 py-4 md:px-8">
+        <div className="mx-auto w-full max-w-7xl px-4 py-3 md:px-8 md:py-4">
           <MainNav
             nav={nav}
             ariaLabel={nav.menuAriaLabel}
             onNavigate={closeMenu}
           />
-          <div className="mt-4 border-t border-border pt-4">
+          <div className="mt-3 border-t border-border pt-3 md:mt-4 md:pt-4">
             <LocaleSwitcher
               currentLocale={locale}
               label={languageSwitcherLabel}
