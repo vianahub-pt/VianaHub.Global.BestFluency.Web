@@ -3,6 +3,7 @@ name: bestfluency
 services:
   web:
     image: best-fluency-web:${IMAGE_TAG:-latest}
+    container_name: bestfluency-web
     restart: unless-stopped
 
     environment:
@@ -12,9 +13,7 @@ services:
       HSTS_PRELOAD: ${HSTS_PRELOAD:-0}
 
     networks:
-      bestfluency-network:
-        aliases:
-          - bestfluency-web
+      - bestfluency-network
 
     logging:
       driver: json-file

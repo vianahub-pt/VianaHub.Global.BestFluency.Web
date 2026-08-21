@@ -112,11 +112,42 @@ jobs:
           key: ${{ secrets.VPS_SSH_KEY }}
           envs: IMAGE_TAG
           script: |
+            set -e
+
+            echo "Pull da nova imagem..."
             docker pull ${{ secrets.DOCKERHUB_USERNAME }}/best-fluency-web:${IMAGE_TAG}
-            docker tag ${{ secrets.DOCKERHUB_USERNAME }}/best-fluency-web:${IMAGE_TAG} best-fluency-web:${IMAGE_TAG}
+
+            echo "Tag local utilizada pelo Compose..."
+            docker tag \
+              ${{ secrets.DOCKERHUB_USERNAME }}/best-fluency-web:${IMAGE_TAG} \
+              best-fluency-web:${IMAGE_TAG}
+
             cd ${{ secrets.VPS_REMOTE_PATH }}
-            docker compose up -d --no-build
-            docker image prune -f >/dev/null 2>&1 || true
+
+            echo "Removendo container manual anterior, caso exista..."
+            docker rm -f bestfluency-web 2>/dev/null || true
+
+            echo "Subindo nova versão..."
+            IMAGE_TAG=${IMAGE_TAG} docker compose up -d --no-build
+
+            echo "Aguardando healthcheck..."
+            for i in $(seq 1 30); do
+              STATUS=$(docker inspect \
+                --format='{{if .State.Health}}{{.State.Health.Status}}{{else}}{{.State.Status}}{{end}}' \
+                bestfluency-web 2>/dev/null || true)
+
+              echo "Health: ${STATUS}"
+
+              if [ "${STATUS}" = "healthy" ]; then
+                exit 0
+              fi
+
+              sleep 2
+            done
+
+            echo "Container não ficou healthy."
+            docker logs --tail 100 bestfluency-web
+            exit 1
 
       - name: Purge do cache Cloudflare
         if: env.CF_API_TOKEN != '' && env.CF_ZONE_ID != ''
