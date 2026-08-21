@@ -1,0 +1,55 @@
+import { type LocaleCode } from "@/core/config/locales";
+import { getMessages } from "@/core/i18n";
+
+import { BestKids } from "./best-kids";
+import { Faq } from "./faq";
+import { Founder } from "./founder";
+import { Hero } from "./hero";
+import { Journey } from "./journey";
+import { Method } from "./method";
+import { Modalities } from "./modalities";
+import { ParallaxBand } from "./parallax-band";
+import { SiteFooter } from "./site-footer";
+import { SiteHeader } from "./site-header";
+import { Testimonials } from "./testimonials";
+
+/**
+ * Página da landing (EPIC #1).
+ *
+ * Estrutura completa (spec §5): Header (§7) + Hero (§8) + Faixa de
+ * informações (§9) + Modalidades (§10) + Método (§11) + Aulas presenciais
+ * (§12) + Best Kids (§13) + Depoimentos (§14) + Fundadora (§15) + Como
+ * começar (§16) + FAQ (§17) + CTA final (§18) + Footer (§19).
+ *
+ * - `<main id="main">` é o alvo do skip link do DocumentShell e o único
+ *   landmark de conteúdo;
+ * - exatamente um H1 (no Hero); todas as secções seguintes usam H2/H3;
+ * - âncoras do header/main-nav: #modalidades, #metodo, #best-kids,
+ *   #depoimentos, #faq (as secções respetivas declaram os ids);
+ * - mobile-first: começa em 360 px e expande por min-width (§24).
+ *
+ * Server Component: resolve o namespace `landing` via `core/i18n` e entrega
+ * ao Faq (Client Component) apenas o subconjunto serializado por props.
+ */
+export function LandingPage({ locale }: { locale: LocaleCode }) {
+  const content = getMessages(locale).landing;
+
+  return (
+    <>
+      <div id="top" aria-hidden="true" />
+      <SiteHeader locale={locale} />
+      <main id="main" className="flex-1">
+        <Hero locale={locale} />
+        <Modalities locale={locale} />
+        <ParallaxBand />
+        <Method locale={locale} />
+        <BestKids locale={locale} />
+        <Testimonials locale={locale} />
+        <Journey locale={locale} />
+        <Founder locale={locale} />
+        <Faq content={content.faq} />
+      </main>
+      <SiteFooter locale={locale} />
+    </>
+  );
+}

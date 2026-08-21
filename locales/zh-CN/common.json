@@ -1,0 +1,332 @@
+{
+  "language.name.pt-PT": "🇵🇹 葡萄牙语",
+  "language.name.pt-BR": "🇧🇷 葡萄牙语 (巴西)",
+  "language.name.en-US": "🇺🇸 英语",
+  "language.name.es-ES": "🇪🇸 西班牙语",
+  "language.short.pt-PT": "PT",
+  "language.short.pt-BR": "BR",
+  "language.short.en-US": "EN",
+  "language.short.es-ES": "ES",
+  "landing": {
+    "meta": {
+      "title": "Best Fluency | 葡萄牙安达多拉的英语课程和在线课程",
+      "description": "在葡萄牙安达多拉温达诺瓦的面对面英语课程，适合儿童、青少年和成人。提供在线课程。单独课程和最多4人的团体课程。"
+    },
+    "a11y": {
+      "skipToContent": "跳转到主要内容",
+      "toggleTheme": "切换浅色和深色主题",
+      "languageSwitcherLabel": "选择语言"
+    },
+    "nav": {
+      "ariaLabel": "主导航",
+      "menuAriaLabel": "导航菜单",
+      "menuLabel": "打开菜单",
+      "closeMenuLabel": "关闭菜单",
+      "ctaLabel": "预订试听课程",
+      "ctaAriaLabel": "预订试听课程：打开 WhatsApp 会话（新窗口）",
+      "whatsappMessage": "你好！我想在 Best Fluency 预订一节英语试听课程。",
+      "links": {
+        "home": "首页",
+        "modalities": "课程方式",
+        "method": "教学方法",
+        "bestKids": "Best Kids",
+        "testimonials": "学员评价",
+        "journey": "学习之旅",
+        "founder": "创始人",
+        "faq": "常见问题"
+      }
+    },
+    "foundation": {
+      "text": [
+        "Best Fluency 帮助每位学生在亲密、实用和以目标为导向的环境中学习。",
+        "面向儿童、青少年和成人的安达多拉面对面英语课程和在线课程。"
+      ],
+      "notice": "我们正在准备新的网站。在此期间，请通过 WhatsApp 联系我们，了解安达多拉的面对面英语课程和在线课程。",
+      "contactsTitle": "联系方式"
+    },
+    "cta": {
+      "whatsappLabel": "在 WhatsApp 与我们聊天",
+      "whatsappAriaLabel": "在 WhatsApp 与我们聊天：打开与 Best Fluency 的 WhatsApp 会话（新窗口）",
+      "whatsappMessage": "你好！我想了解有关 Best Fluency 英语课程的信息。"
+    },
+    "notFound": {
+      "title": "页面未找到",
+      "description": "您要查找的页面不存在或已移动。",
+      "backHome": "返回首页"
+    },
+    "footer": {
+      "rightsReserved": "版权所有。",
+      "privacyPolicy": "隐私政策",
+      "cookiesPolicy": "Cookie 政策",
+      "whatsappLabel": "WhatsApp",
+      "siteMap": "网站地图",
+      "contact": "联系方式"
+    },
+    "header": {
+      "logoAlt": "Best Fluency Language School"
+    },
+    "hero": {
+      "title1": "停止卡住。",
+      "title2": "开始讲英语",
+      "title3": "with",
+      "title4": "自信！",
+      "text": "面向儿童、青少年和成人的实践性个性化课程，单独教授或小组最多4人。",
+      "ctaLabel": "预订试听课程",
+      "ctaAriaLabel": "预订试听课程：打开 WhatsApp 会话（新窗口）",
+      "ctaWhatsappMessage": "你好！我想在 Best Fluency 预订一节英语试听课程。"
+    },
+    "infoBar": {
+      "items": ["单对一课程", "最多4人的团体", "面对面在安多拉", "在线课程"]
+    },
+    "modalities": {
+      "h2": "选择最适合您学习之旅的课程方式",
+      "intro": "课程根据每个学生的水平、目标和可用性进行组织。",
+      "individual": {
+        "title": "全方位的个性化支持",
+        "text": "为单个学生的需求量身定制的内容、节奏和练习，有空间解决具体的难题和个人或职业目标。",
+        "note": "面对面或在线",
+        "ctaLabel": "我想了解更多关于单对单课程的信息",
+        "ctaAriaLabel": "我想了解更多关于单对一课程的信息：打开 WhatsApp 会话（新窗口）",
+        "whatsappMessage": "你好！我想了解有关 Best Fluency 单对一英语课程的信息。",
+        "imageAlt": "在计算机上进行的在线一对一英语课程"
+      },
+      "group": {
+        "title": "在小组中学习和练习",
+        "text": "按水平组织的小组，最多4人，可促进参与、互动和紧密的支持。",
+        "note": "视组别形成和可用性而定",
+        "ctaLabel": "我想了解更多关于团体的信息",
+        "ctaAriaLabel": "我想了解更多关于团体的信息：打开 WhatsApp 会话（新窗口）",
+        "whatsappMessage": "你好！我想了解有关 Best Fluency 英语团体课程的信息。",
+        "imageAlt": "在 Best Fluency 进行的小组面对面英语课程"
+      }
+    },
+    "methods": {
+      "method": {
+        "h2": "为进步而设计的学习之旅",
+        "intro": "每个学生都有不同的起点、节奏和目标。",
+        "pillars": [
+          {
+            "title": "个性化路径",
+            "text": "内容和活动根据学生的水平、需求和进度确定。"
+          },
+          {
+            "title": "有目的的练习",
+            "text": "英语在工作、学习、旅行和日常生活中有用的情境中逐步使用。"
+          },
+          {
+            "title": "连续性和反馈",
+            "text": "每节课都建立在之前的内容基础上，有纠正和指导，使下一步清晰。"
+          },
+          {
+            "title": "发音和自信",
+            "text": "学生获得支持来构建句子，改善发音和更自信地交流。"
+          }
+        ],
+        "ctaLabel": "我想了解更多关于学习方法的信息",
+        "ctaAriaLabel": "我想了解更多关于学习方法的信息：打开 WhatsApp 会话（新窗口）",
+        "whatsappMessage": "你好！我想了解有关 Best Fluency 学习方法的信息。"
+      }
+    },
+    "inPerson": {
+      "h2": "葡萄牙安达多拉温达诺瓦的面对面英语课程",
+      "text": [
+        "面对面课程在 Espaço CASA 进行，地址：Avenida Chaby Pinheiro, 5, Venda Nova — Amadora。",
+        "一个温馨舒适的学习英语的空间，提供个性化支持。"
+      ],
+      "ctaLabel": "查看位置",
+      "ctaAriaLabel": "查看位置：在 Google Maps 上打开 Best Fluency 的位置（新窗口）"
+    },
+    "bestKids": {
+      "h2": "Best Kids 的儿童英语课程",
+      "text": [
+        "在 Best Kids，每次课程都把英语变成一次新发现。有了卡西卡，我们聪明的狐狸，孩子们通过游戏、故事、图片、歌曲和年龄适配的挑战来学习。",
+        "这些活动帮助发展词汇量、理解能力、发音和自然渐进地使用英语的信心。"
+      ],
+      "highlight": "有了卡西卡，英语无处不在。",
+      "differentials": [
+        {
+          "title": "吸引人的学习",
+          "text": "游戏、故事、歌曲和活动，唤起好奇心。"
+        },
+        {
+          "title": "按年龄和级别的内容",
+          "text": "课程适应每个孩子的发展和节奏。"
+        },
+        {
+          "title": "从一开始就接触英语",
+          "text": "日常词语、表达和情境逐步呈现。"
+        },
+        {
+          "title": "敢于交流的信心",
+          "text": "一个积极的环境，鼓励参与和口头表达。"
+        }
+      ],
+      "practicalInfo": [
+        "6-13岁儿童",
+        "面对面在安达多拉温达诺瓦",
+        "在线课程可用",
+        "按年龄和级别分组"
+      ],
+      "ctaLabel": "了解 Best Kids",
+      "ctaAriaLabel": "了解 Best Kids：打开 WhatsApp 会话（新窗口）",
+      "whatsappMessage": "你好！我想了解更多关于 Best Kids 课程的信息。",
+      "imageAlt": "Faísca，Best Kids 的吉祥物，在儿童英语课程中"
+    },
+    "testimonials": {
+      "starsAriaLabel": "星",
+      "h2": "Best Fluency 学员的评价",
+      "text": ["来自与我们一起学习和成长的人们的真实经历。"],
+      "items": [
+        {
+          "name": "安德烈亚·巴罗斯",
+          "role": "辦公室經理",
+          "photo": "/testimonials/andreia-foto.png",
+          "quote": "我非常喜欢这些课程！老师非常细心、耐心，用简单易懂的方式解释一切。我的英语进步很大，越来越敢于开口说话了。强烈推荐！"
+        },
+        {
+          "name": "毛里西奥·莫拉",
+          "role": "銀行經理",
+          "photo": "/testimonials/mauricio-foto.png",
+          "quote": "我想分享对课程的评价。老师英语知识渊博，能够以轻松的方式将知识传达给学生。我最喜欢英语课的是她的讲解方式，即使我不懂的东西。这对我打破对话障碍帮助很大。所以我推荐 Best Fluency。"
+        },
+        {
+          "name": "佩德罗·安东尼奥",
+          "role": "中场",
+          "photo": "/testimonials/pedro-foto.png",
+          "quote": "非常好！我从塔蒂老师那里学到了很多。"
+        },
+        {
+          "name": "罗梅尔森·内维斯",
+          "role": "卡车司机",
+          "photo": "/testimonials/romerson-foto.png",
+          "quote": "我在葡萄牙已经7个月了，意识到学习英语对我的生活很重要。我开始上面授课，但教我的人不得不离开国家无法继续。后来我尝试了另一个老师的在线课程，但不适应。就在这时我认识了塔蒂亚娜老师。我们上了一节试听课，我很喜欢。从那以后，我一直在继续上课，感觉自己每天都在进步。塔蒂亚娜老师非常有耐心，讲解清晰，课程安排得非常出色。我向所有想要高质量学习英语的人推荐她。"
+        },
+        {
+          "name": "桑德罗·维特",
+          "role": "Google 评论",
+          "photo": "/testimonials/sandro-foto.png",
+          "quote": "太棒了，教学非常实用，简单明了。"
+        },
+        {
+          "name": "万达·拉莫斯",
+          "role": "後勤助理",
+          "photo": "/testimonials/wanda-foto.png",
+          "quote": "我想分享对课程的评价。一切都非常清晰，内容易于理解。塔蒂老师非常棒，非常关心人，让我感到非常舒适，激励了我，让我不再害怕犯错地提出问题。我打算尽快回来参加下一个级别的培训。非常感谢你的关注、奉献和关爱，塔蒂·维亚纳。"
+        }
+      ],
+      "ctaLabel": "预订试听课程",
+      "ctaAriaLabel": "预订试听课程：打开 WhatsApp 会话（新窗口）",
+      "whatsappMessage": "你好！我想在 Best Fluency 预订一节英语试听课程。"
+    },
+    "founder": {
+      "h2": "了解 Best Fluency 的创始人",
+      "text": [
+        "你好，我是塔蒂亚娜·维安娜",
+        "我是一名工程师，拥有国际技术和项目管理经验的专业人士，也是 Best Fluency 的创始人。在我的职业生涯中，我有机会在不同的公司、项目和国际环境中工作——这些经历塑造了我思考、工作和解决问题的方式。正是这段旅程，当我决定投身教育行业时，我将它带在了身边。",
+        "我没有放弃成为工程师。我把工程学带在了身边。多年来积累的经验被应用到了 Best Fluency 的创建中，从企业架构到开发自己的语言教学方法。我自己作为学生的经历也教会了我，掌握一门语言并不一定意味着有信心开口说——正是从这个现实出发，我们的教学方法诞生了：更实用、更个性化、更注重沟通。",
+        "今天，我认为 Best Fluency 是我在职业生涯中所构建的一切的结合：经验、知识、创新以及改变人们学习新语言方式的愿望。"
+      ],
+      "imageAlt": "塔蒂亚娜·维安娜，Best Fluency Language School 的创始人",
+      "ctaLabel": "预订试听课程",
+      "ctaAriaLabel": "预订试听课程：打开 WhatsApp 会话（新窗口）",
+      "whatsappMessage": "你好！我想在 Best Fluency 预订一节英语试听课程。"
+    },
+    "journey": {
+      "h2": "如何在 Best Fluency 开始英语课程",
+      "subtitle": "从第一条消息到第一节课程，我们陪伴您整个学习之旅。",
+      "steps": [
+        {
+          "title": "开始对话",
+          "text": "通过 WhatsApp 给我们留言，告诉我们您需要什么、您的目标和您的可用时间。"
+        },
+        {
+          "title": "了解您的起始点",
+          "text": "通过一次简短的对话，我们确定您的当前水平和主要学习需求。"
+        },
+        {
+          "title": "规划您的路线",
+          "text": "我们确定课程方式、内容和适应学生目标的学习路径。"
+        },
+        {
+          "title": "开始前进",
+          "text": "开始课程并通过练习、指导和持续反馈跟踪您的进度。"
+        }
+      ],
+      "ctaLabel": "迈出第一步",
+      "ctaAriaLabel": "迈出第一步：打开 WhatsApp 会话（新窗口）",
+      "whatsappMessage": "你好！我想了解有关 Best Fluency 英语课程的信息。"
+    },
+    "faq": {
+      "h2": "关于 Best Fluency 课程的常见问题",
+      "subtitle": "快速了解有关安达多拉面对面英语课程和在线课程的常见问题。",
+      "items": [
+        {
+          "question": "面对面课程在哪里进行？",
+          "answer": "面对面课程在 Espaço CASA 进行，地址：Avenida Chaby Pinheiro, 5, Venda Nova — Amadora。"
+        },
+        {
+          "question": "还有在线课程吗？",
+          "answer": "是的。Best Fluency 提供在线课程，适合需要更大灵活性的学生或无法来到面对面教室的学生。"
+        },
+        {
+          "question": "有单对一课程和团体课程吗？",
+          "answer": "是的。有单对一课程和小组课程，根据学生的水平和可用性组织。"
+        },
+        {
+          "question": "每个团体有多少学生？",
+          "answer": "团体最多4人，可在课程中获得更多参与和支持。"
+        },
+        {
+          "question": "课程面向哪些人？",
+          "answer": "有适合儿童、青少年和成人的课程，内容根据每个学生的年龄、水平和目标确定。"
+        },
+        {
+          "question": "我需要会英语才能开始吗？",
+          "answer": "不用。课程适合初学者和已经掌握一些英语的学生。"
+        },
+        {
+          "question": "如何确定我的水平？",
+          "answer": "课程开始前，我们举行一次简短的对话，以了解学生的当前知识、主要难点和目标。"
+        },
+        {
+          "question": "课程是个性化的吗？",
+          "answer": "是的。课程的内容、活动和节奏根据每个学生的水平、需求和进度调整。"
+        },
+        {
+          "question": "每节课程多长时间？",
+          "answer": "每节课持续50分钟，专注于练习、参与和持续进步。"
+        },
+        {
+          "question": "试听课如何运作？",
+          "answer": "试听课让您了解 Best Fluency 的教学方法，提出问题并了解如何适应学生的目标。"
+        },
+        {
+          "question": "如何预订课程？",
+          "answer": "点击 WhatsApp 按钮，告诉我们您想要的课程类型和您的可用时间。"
+        },
+        {
+          "question": "如何获取更多信息？",
+          "answer": "您可以通过 WhatsApp 与我们联系，解决任何疑问。"
+        }
+      ],
+      "ctaLabel": "预订试听课程",
+      "ctaAriaLabel": "预订试听课程：打开 WhatsApp 会话（新窗口）",
+      "whatsappMessage": "你好！我想在 Best Fluency 预订一节英语试听课程。"
+    },
+    "finalCta": {
+      "eyebrow": "准备起飞了吗？",
+      "title": "您的下一步英语之旅从这里开始",
+      "text": "通过 WhatsApp 与我们联系，提出您的问题并了解最适合您水平、目标和日程的课程方式。",
+      "ctaLabel": "预订试听课程",
+      "ctaAriaLabel": "预订试听课程：打开 WhatsApp 会话（新窗口）",
+      "whatsappMessage": "你好！我想了解信息并在 Best Fluency 预订一节英语试听课程。",
+      "complement": "面对面课程在安达多拉和在线课程。"
+    }
+  },
+  "language.name.ja-JP": "🇯🇵 日语",
+  "language.name.ru-RU": "🇷🇺 俄语",
+  "language.name.zh-CN": "🇨🇳 中文 (普通话)",
+  "language.short.ja-JP": "JA",
+  "language.short.ru-RU": "RU",
+  "language.short.zh-CN": "ZH"
+}

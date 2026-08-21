@@ -1,0 +1,387 @@
+# Shared Kanban Flow — Best Fluency Web
+
+Este documento define o fluxo Kanban compartilhado para os agentes de IA do projeto **VianaHub.Global.BestFluency.Web**.
+
+Toda e qualquer comunicação com o usuário e também as issues, comentários e relatórios do GitHub Projects sempre serão em **português do Brasil**.
+
+---
+
+# Regra de Automação Contínua
+
+O fluxo deve ser **contínuo e fluido**, sem intervenção humana entre as etapas operacionais dos agentes.
+
+A intervenção humana deve acontecer apenas nos seguintes momentos:
+
+1. Validar o resultado final quando o QA aprovar.
+2. Revisar o PR.
+3. Aprovar o PR.
+4. Fazer o merge do PR para a branch de destino definida no fluxo do projeto.
+
+Os agentes não devem pedir confirmação para:
+
+- criar ou refinar issue;
+- criar branch;
+- implementar;
+- executar validações conforme modo;
+- commitar alterações;
+- fazer push da branch;
+- criar PR;
+- comentar na issue;
+- notificar o kanban-coordinator ao finalizar cada etapa.
+
+O fluxo só deve parar antes do PR quando existir bloqueio real.
+
+---
+
+## Board Padrão
+
+Board padrão para todos os repositórios e aplicações:
+
+`https://github.com/users/vianahub-pt/projects/5`
+
+O repositório deve ser resolvido dinamicamente pelo workspace atual.
+
+Os IDs do Project 5 (projeto, campos e opções de status) usados pelos agentes são **referência dinâmica**: devem ser resolvidos a partir do board acima (ex.: `gh project field-list 5 --owner vianahub-pt --format json`) e nunca copiados de outros projects.
+
+---
+
+# Convenções de Branch e PR
+
+Toda e qualquer alteração no repositório deve seguir estas convenções:
+
+| Tipo de demanda | Branch base | PR base | Prefixo branch | Exemplo |
+|-----------------|-------------|---------|----------------|---------|
+| Feature, Melhoria, Correção (padrão) | `develop` | `develop` | `feature/` ou `fix/` | `feature/issue-184-expand-addresses` |
+| Hotfix de produção (bug crítico) | `main` | `main` | `hotfix/` | `hotfix/issue-200-fix-login-error` |
+
+**Regra padrão:** toda demanda cria branch a partir de `develop` e PR para `develop`.
+**Exceção:** apenas fix de bug em produção usa `main` como base.
+
+---
+
+# Regras Fundamentais
+
+## ⛔ VIOLAÇÃO DE DIRETIVAS É PROIBIDA
+
+**TODAS as diretivas deste arquivo são OBRIGATÓRIAS e INEGOCIÁVEIS.**
+
+### Regra de Comunicação entre Agentes
+
+O `kanban-coordinator` deve passar aos agentes especializados **APENAS**:
+
+- **O que fazer** (ação objetiva e específica)
+- **Onde está** (link da issue/PR)
+- **Modo de execução** (FAST_PATH, STANDARD_PATH, FULL_PATH, LANDING_PAGE_FULL ou variantes QA/UI)
+- **O que entregar de volta** (resultado esperado)
+
+**NUNCA incluir nos handoffs:**
+- Contexto completo da issue
+- O que outros agentes já fizeram
+- Comandos que já foram executados
+- Validações técnicas já realizadas
+- Histórico de movimentação
+
+### O Kanban Coordinator NUNCA desenvolve
+
+O `kanban-coordinator` é **exclusivamente um orquestrador de fluxo**. Ele **NUNCA** deve criar branch, implementar código, executar validações técnicas, commitar, fazer push ou criar PR.
+
+### O Kanban Coordinator é o Único Gestor de Cards
+
+Toda movimentação de cards no board é feita **exclusivamente pelo `kanban-coordinator`**. Nenhum outro agente move cards.
+
+---
+
+## Automação Total — Nenhuma Intervenção Humana
+
+O fluxo deve ser **contínuo e fluido**, sem parar para pedir/solicitar informações ao usuário enquanto o processo de desenvolvimento estiver acontecendo. O processo deve obrigatoriamente ser contínuo.
+
+A **única** intervenção humana possível e inegociável:
+
+1. **Revisar** o PR final.
+2. **Aprovar** o PR final.
+3. **Fazer o merge** do PR final para a branch de destino.
+
+---
+
+## Proteção da Estrutura de Agentes — NUNCA Alterar
+
+Nenhuma alteração no repositório pode modificar, remover, renomear ou desativar a estrutura atual de agentes, instruções compartilhadas ou configurações do OpenCode.
+
+A **única** exceção é quando o usuário solicitar **expressamente e explicitamente** a alteração desses arquivos.
+
+---
+
+# Agentes do Fluxo
+
+- `kanban-coordinator`
+- `po`
+- `developer-junior`
+- `developer-pleno`
+- `developer-senior`
+- `ui-ux`
+- `qa`
+
+---
+
+# Fluxo Oficial
+
+```text
+PO -> Kanban Coordinator -> Developer Junior | Developer Pleno | Developer Senior | UI/UX -> QA
+```
+
+Fluxo de status:
+
+```text
+Backlog -> To do -> In Progress -> For Tests -> In Test -> For Deploy -> Done
+```
+
+---
+
+# Modos de Execução
+
+O `kanban-coordinator` classifica cada tarefa em um dos três modos antes de fazer handoff:
+
+## Para Developers (FAST_PATH / STANDARD_PATH / FULL_PATH)
+
+| Modo | Critérios | Validações |
+|------|-----------|------------|
+| `FAST_PATH` | Tarefa trivial, alteração mínima, baixo risco. **Sempre** `developer-junior`. | `git diff --check` + lint (se aplicável). **NÃO** build/typecheck por padrão. |
+| `STANDARD_PATH` | Tarefa funcional intermediária, padrão existente | `git diff --check` + lint + typecheck |
+| `FULL_PATH` | Tarefa complexa, crítica, arquitetural | `git diff --check` + lint + build + typecheck |
+| `LANDING_PAGE_FULL` | Issue global da landing: arquitetura, navegação, Hero, temas, i18n, SEO internacional, performance ou infraestrutura. Executado por `developer-senior` (arquitetura/funcional) e/ou `ui-ux` (visual/temas) | Todas do `FULL_PATH` + mobile-first (360/375/390/412 px primeiro), sete locales sem fallback, SEO internacional e temas light/dark |
+
+## Para QA (QA_FAST / QA_STANDARD / QA_FULL)
+
+| Modo | Critérios | Validações |
+|------|-----------|------------|
+| `QA_FAST` | Tarefa trivial, Developer já reportou validação suficiente | Revisão de código + critérios de aceite. Sem reexecução de build/lint. |
+| `QA_STANDARD` | Tarefa de média complexidade | Lint + build/typecheck + validação funcional |
+| `QA_FULL` | Tarefa crítica, arquitetural, segurança | Todas do STANDARD + UI manual + contratos + acessibilidade + segurança |
+| `QA_LANDING_FULL` | Validação integral de entregas `LANDING_PAGE_FULL` | Todas do `QA_FULL` + matriz mobile, i18n (sete locales), temas light/dark, SEO internacional, Lighthouse Mobile (três execuções, mediana) e Docker |
+
+## Para UI/UX (UI_FAST / UI_STANDARD / UI_FULL)
+
+| Modo | Critérios | Validações |
+|------|-----------|------------|
+| `UI_FAST` | Ajuste visual simples, localizado | `git diff --check` + lint (se aplicável). Sem build. |
+| `UI_STANDARD` | Melhoria de layout, responsividade, componente visual | `git diff --check` + lint + typecheck |
+| `UI_FULL` | Template, tema, design system, alteração global | `git diff --check` + lint + build + typecheck |
+
+## Modos Landing (LANDING_PAGE_FULL / QA_LANDING_FULL)
+
+Modos dedicados a issues globais da landing page: arquitetura, navegação, Hero, temas, i18n, SEO internacional, performance e infraestrutura.
+
+Separação de responsabilidades:
+
+- `kanban-coordinator`: classifica a issue como `LANDING_PAGE_FULL`, define o executor (`developer-senior` e/ou `ui-ux`) e indica `QA_LANDING_FULL` como QA esperado.
+- `developer-senior`: executa `LANDING_PAGE_FULL` no escopo arquitetural/funcional.
+- `ui-ux`: executa `LANDING_PAGE_FULL` no escopo visual/temas.
+- `qa`: valida no modo `QA_LANDING_FULL`, que inclui matriz mobile, i18n, temas, SEO, Lighthouse Mobile (três execuções, mediana) e Docker.
+
+`QA_LANDING_FULL` é o único modo de QA aceito para entregas `LANDING_PAGE_FULL`.
+
+---
+
+# Responsabilidades por Etapa
+
+| Etapa | Status | Responsável | Ação |
+|------|--------|-------------|------|
+| Refinamento | Backlog | `po` + `kanban-coordinator` | PO cria/refina issue; coordinator move para Backlog |
+| Pronto para dev | To do | `kanban-coordinator` | Classifica modo, escolhe Developer/UI/UX, move para To do |
+| Desenvolvimento | In Progress | `kanban-coordinator` + Developer/UI/UX | Coordinator move; implementa conforme modo, cria PR e comenta |
+| Pronto para QA | For Tests | `kanban-coordinator` | Move para For Tests e aciona QA |
+| Validação | In Test | `kanban-coordinator` + `qa` | Coordinator move; QA valida conforme modo QA |
+| Aprovado | For Deploy | `kanban-coordinator` | Move para For Deploy; usuário revisa PR |
+| Concluído | Done | Usuário | Merge do PR |
+
+---
+
+# Papel do PO
+
+O PO cria/refina issues e notifica o `kanban-coordinator`. O PO não move cards e não aciona Developers diretamente.
+
+---
+
+# Papel do Kanban Coordinator
+
+O coordinator orquestra todo o fluxo: recebe demanda, aciona PO, classifica modo, escolhe Developer/UI/UX, move cards, aciona QA, recebe resultado e encaminha correções.
+
+---
+
+# Papel dos Developers
+
+Três agentes Developer com escopo diferente:
+
+- `developer-junior`: tarefas simples, `FAST_PATH` padrão
+- `developer-pleno`: tarefas intermediárias, `STANDARD_PATH` padrão
+- `developer-senior`: tarefas complexas, `FULL_PATH` padrão
+
+Cada Developer executa validações conforme o modo indicado no handoff.
+
+---
+
+# Papel do UI/UX
+
+Especialista em interface visual, layout, temas, responsividade e design system. Trabalha com modos `UI_FAST`, `UI_STANDARD`, `UI_FULL`. Atua como subagent no fluxo coordenado.
+
+---
+
+# Papel do QA
+
+Valida implementações conforme modo `QA_FAST`, `QA_STANDARD` ou `QA_FULL`. Não altera código. Não move cards. Notifica resultado ao coordinator.
+
+---
+
+# Roteamento por Complexidade
+
+## Regra Determinística
+
+Tarefas triviais (remover input, botão, label, texto, alterar placeholder, ícone, valor default, ajuste Tailwind localizado, i18n simples) **sempre** vão para `developer-junior` + `FAST_PATH` + `QA_FAST`. Exceto se exigir alteração de API, schema, payload, validação, hook, regra de negócio ou tipo compartilhado.
+
+| Critério | Developer | Modo padrão |
+|----------|-----------|-------------|
+| Simples, localizado, baixo risco | `developer-junior` | `FAST_PATH` |
+| Funcional, intermediário, padrão existente | `developer-pleno` | `STANDARD_PATH` |
+| Complexo, crítico, arquitetural | `developer-senior` | `FULL_PATH` |
+| UI/UX visual, layout, tema | `ui-ux` | Conforme impacto |
+
+Em caso de dúvida:
+
+```text
+Tarefa parece trivial? → developer-junior + FAST_PATH
+Junior vs Pleno? → Verificar checklist de justificativa. Se nenhuma opção marcar, manter junior.
+Pleno vs Senior? → Senior
+```
+
+## Justificativa Obrigatória para Escalonamento
+
+Se o coordinator escolher `developer-pleno`, `developer-senior` ou `ui-ux` para tarefa aparentemente trivial, deve registrar na issue:
+
+```md
+## Justificativa de escalonamento
+
+A tarefa parecia trivial, mas foi roteada para `[agente]` porque envolve:
+
+- [ ] alteração de API
+- [ ] alteração de payload
+- [ ] alteração de schema/validação
+- [ ] alteração de hook
+- [ ] alteração de tipo compartilhado
+- [ ] alteração em `core/`
+- [ ] alteração em `platform/`
+- [ ] alteração em `shared` crítico
+- [ ] regra de negócio
+- [ ] risco funcional médio/alto
+- [ ] outro motivo: ...
+```
+
+Se nenhuma opção justificar → rotear para `developer-junior`.
+
+---
+
+# Roteamento de Correção após QA
+
+| Tipo de problema | Developer | Modo |
+|------------------|-----------|------|
+| Texto, i18n simples, visual simples | `developer-junior` | `FAST_PATH` |
+| Formulário, grid, filtro, API existente | `developer-pleno` | `STANDARD_PATH` |
+| Arquitetura, segurança, performance | `developer-senior` | `FULL_PATH` |
+
+---
+
+# Reprovação pelo QA
+
+Se o QA reprovar:
+
+1. QA comenta a issue com detalhes
+2. QA recomenda Developer adequado
+3. QA notifica `kanban-coordinator`
+4. Coordinator move card para `In Progress` e encaminha correção
+
+---
+
+# Deteção de Merge (pós For Deploy)
+
+Após mover o card para **For Deploy**, o Coordinator deve verificar periodicamente se o PR foi mergeado:
+
+```powershell
+# Verificar estado do PR
+gh pr view PR_NUMERO --repo vianahub-pt/VianaHub.Global.BestFluency.Web --json state,mergedAt
+```
+
+- Se `state == "MERGED"`, mover card para **Done** e notificar o usuário.
+- Se `state == "OPEN"`, aguardar e repetir a verificação a cada 5 minutos.
+- Se `state == "CLOSED"` (sem merge), notificar o usuário para decisão.
+
+---
+
+# Adenda obrigatória — idiomas e Mobile-First
+
+## Idiomas
+
+- `pt-PT` é a versão principal em `/`.
+- Publicar `en-US` em `/en/`, `es-ES` em `/es/`, `fr-FR` em `/fr/`, `de-DE` em `/de/`, `it-IT` em `/it/` e `pt-BR` em `/pt-br/`.
+- Não utilizar a variante britânica, não depender apenas de `Accept-Language` e não trocar idioma apenas por JavaScript sem URL própria.
+- Exigir preferência persistida, `lang`, canonical autorreferencial, `hreflang` recíproco, `x-default` para `/`, sitemap completo, metadata traduzida e exatamente as mesmas chaves em todos os locales.
+- Proibir fallback silencioso que misture idiomas; marca, nomes próprios e morada não devem ser traduzidos incorretamente.
+
+## Mobile-First
+
+- O desenvolvimento começa em smartphone e expande com `min-width` para 48rem, 64rem e 90rem; não aceitar abordagem desktop como base nem correções por largura máxima.
+- Validar primeiro 360, 375, 390 e 412 px, depois 768, 1024, 1280 e 1440 px.
+- Toda issue de interface deve conter critérios de mobile, responsividade, light/dark, i18n, acessibilidade e performance.
+- A landing deve manter CTA do Hero visível no primeiro viewport, toque mínimo de 44 × 44 px, menu/tema/idioma acessíveis, sem overflow ou dependência de hover.
+- Issues globais de arquitetura, navegação, Hero, temas ou i18n passam por Senior e UI/UX no modo `LANDING_PAGE_FULL`; QA usa `QA_LANDING_FULL` e Lighthouse Mobile (três execuções, mediana).
+
+---
+
+# Procedimento de Conflito de Merge
+
+Se durante o desenvolvimento ocorrer um **conflito de merge** ao fazer `git pull origin develop` ou ao criar o PR:
+
+1. O Developer atual **não tenta resolver o conflito sozinho**.
+2. O Developer informa o Kanban Coordinator sobre o conflito.
+3. O Kanban Coordinator **invoca o Developer Senior** para analisar e resolver o conflito.
+4. Após resolução, o fluxo normal retoma com o Developer original.
+
+**Nota:** Todo Developer é obrigado a executar `npm run build` antes de fazer `git push`. Se o build falhar, o Developer deve corrigir antes de prosseguir.
+
+---
+
+# Regra Anti-loop
+
+Se o mesmo bug for reportado 2 vezes na mesma issue → escalar para `kanban-coordinator`.
+
+---
+
+# Execução Paralela
+
+**Permitido:** Issues diferentes, branches diferentes, domínios isolados
+**Proibido:** Mesma issue, mesma branch, mesmos arquivos, áreas globais críticas
+
+---
+
+# Critério de Saída
+
+Ao responder ao usuário:
+
+```md
+## Status do Fluxo
+
+### Card
+- Issue:
+- Status atual:
+- Modo:
+- PR:
+
+### Orquestração
+- Responsável atual:
+- Próximo responsável:
+
+### Progresso
+- Feito:
+- Falta:
+
+### Bloqueios
+- [Se houver]
+```

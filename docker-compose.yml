@@ -1,0 +1,27 @@
+name: bestfluency
+
+services:
+  web:
+    image: best-fluency-web:${IMAGE_TAG:-latest}
+    container_name: bestfluency-web
+    restart: unless-stopped
+
+    environment:
+      CSP_DEFAULT_SRC: ${CSP_DEFAULT_SRC:-'self'}
+      HSTS_ENABLED: ${HSTS_ENABLED:-0}
+      HSTS_MAX_AGE: ${HSTS_MAX_AGE:-31536000}
+      HSTS_PRELOAD: ${HSTS_PRELOAD:-0}
+
+    networks:
+      - bestfluency-network
+
+    logging:
+      driver: json-file
+      options:
+        max-size: "10m"
+        max-file: "3"
+
+networks:
+  bestfluency-network:
+    external: true
+    name: bestfluency-network

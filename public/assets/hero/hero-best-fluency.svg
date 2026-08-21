@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 900" fill="none">
+  <!--
+    Placeholder oficial do Hero (issue #9).
+
+    Substitui temporariamente a fotografia institucional autorizada que ainda
+    não foi fornecida (spec §8 e §30). Por isso NÃO contém rostos nem
+    fotografias — apenas uma ilustração abstrata em preto, branco e laranja
+    com o motivo subtil de viagem da marca (spec §6): livro aberto (ensino),
+    balão de fala (comunicação) e rota pontilhada com avião (percurso).
+
+    Quando a fotografia autorizada chegar, substituir este ficheiro por
+    public/assets/people/hero-best-fluency.webp e rever o alt em
+    locales/{code}/common.json (chave landing.hero.imageAlt, "sujeito à imagem escolhida").
+  -->
+  <rect width="1200" height="900" fill="#141416"/>
+
+  <!-- Anéis de "globo" (subtle, premium) -->
+  <circle cx="600" cy="450" r="300" stroke="#c2410c" stroke-opacity="0.28" stroke-width="2"/>
+  <circle cx="600" cy="450" r="214" stroke="#c2410c" stroke-opacity="0.18" stroke-width="1.5"/>
+  <circle cx="600" cy="450" r="120" stroke="#c2410c" stroke-opacity="0.1" stroke-width="1"/>
+
+  <!-- Livro aberto (ensino personalizado) -->
+  <path d="M600 686 C 558 654 496 652 454 676 L454 762 C 496 738 558 740 600 774 C 642 740 704 738 746 762 L746 676 C 704 652 642 654 600 686 Z" stroke="#e8e8ea" stroke-width="3" stroke-linejoin="round"/>
+  <path d="M600 686 L600 774" stroke="#c2410c" stroke-width="3"/>
+
+  <!-- Balão de fala (comunicação) -->
+  <path d="M838 244 C 838 212 866 192 896 192 L988 192 C 1018 192 1042 212 1042 244 L1042 296 C 1042 328 1018 348 988 348 L900 348 L866 380 L874 348 C 852 342 838 322 838 296 Z" stroke="#e8e8ea" stroke-width="3" stroke-linejoin="round"/>
+  <circle cx="910" cy="270" r="7" fill="#c2410c"/>
+  <circle cx="936" cy="270" r="7" fill="#e8e8ea"/>
+  <circle cx="962" cy="270" r="7" fill="#e8e8ea"/>
+
+  <!-- Rota pontilhada com pontos de percurso e avião -->
+  <path d="M200 640 C 380 570 560 500 740 384 S 960 236 1006 186" stroke="#c2410c" stroke-width="3" stroke-linecap="round" stroke-dasharray="1 16"/>
+  <circle cx="200" cy="640" r="8" fill="#c2410c"/>
+  <circle cx="470" cy="520" r="8" fill="#c2410c"/>
+  <circle cx="740" cy="384" r="8" fill="#c2410c"/>
+
+  <!-- Avião em traço fino (final da rota) -->
+  <path d="M1004 172 L1038 160 L1026 198 L1008 180 Z" fill="#f2f2f4"/>
+  <path d="M1004 172 L1026 198 L1012 202 Z" fill="#c2410c"/>
+
+  <!-- Destaques laranja discretos -->
+  <circle cx="300" cy="210" r="5" fill="#c2410c" fill-opacity="0.7"/>
+  <circle cx="900" cy="560" r="5" fill="#c2410c" fill-opacity="0.7"/>
+  <circle cx="1010" cy="640" r="4" fill="#c2410c" fill-opacity="0.5"/>
+</svg>

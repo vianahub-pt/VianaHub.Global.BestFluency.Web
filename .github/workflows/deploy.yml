@@ -1,0 +1,174 @@
+name: Build and Deploy
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+concurrency:
+  group: deploy-${{ github.ref }}
+  cancel-in-progress: true
+
+env:
+  IMAGE_NAME: best-fluency-web
+  IMAGE_TAG: ${{ github.sha }}
+  SITE_URL: ${{ vars.NEXT_PUBLIC_SITE_URL || 'https://bestfluency.pt' }}
+
+jobs:
+  # ---------------------------------------------------------------------------
+  # 1) Verificação de qualidade + build estático + push da imagem Docker.
+  #    O export estático é gerado aqui (npm run build -> out/) e encapsulado
+  #    na imagem Nginx (multi-stage, Brotli). A registo é o Docker Hub
+  #    (padrão da VianaHub — o VPS faz pull da origem, sem expor portas).
+  # ---------------------------------------------------------------------------
+  build-and-push:
+    name: Lint, typecheck, build e push da imagem
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Lint
+        run: npm run lint
+
+      - name: Typecheck
+        run: npm run typecheck
+
+      - name: Build estático (gate i18n via prebuild)
+        run: npm run build
+
+      - name: Login to Docker Hub
+        uses: docker/login-action@v3
+        with:
+          username: ${{ secrets.DOCKERHUB_USERNAME }}
+          password: ${{ secrets.DOCKERHUB_TOKEN }}
+
+      - name: Build and push image
+        uses: docker/build-push-action@v5
+        with:
+          context: .
+          push: true
+          tags: |
+            ${{ secrets.DOCKERHUB_USERNAME }}/best-fluency-web:latest
+            ${{ secrets.DOCKERHUB_USERNAME }}/best-fluency-web:${{ github.sha }}
+          build-args: |
+            NEXT_PUBLIC_SITE_URL=${{ vars.NEXT_PUBLIC_SITE_URL || 'https://bestfluency.pt' }}
+            NEXT_PUBLIC_SITE_INDEXABLE=${{ vars.NEXT_PUBLIC_SITE_INDEXABLE || 'true' }}
+            NEXT_PUBLIC_CF_WEB_ANALYTICS_TOKEN=${{ secrets.NEXT_PUBLIC_CF_WEB_ANALYTICS_TOKEN }}
+            NEXT_PUBLIC_GA_MEASUREMENT_ID=${{ secrets.NEXT_PUBLIC_GA_MEASUREMENT_ID }}
+
+  # ---------------------------------------------------------------------------
+  # 2) Deploy na VPS Hostinger (atrás do Cloudflare).
+  #    - upload do docker-compose.yml (fonte única da configuração);
+  #    - pull da imagem + compose up --no-build (backup/rollback ficam para o
+  #      scripts/deploy.sh em intervenções manuais);
+  #    - purge do cache Cloudflare para o novo artefacto ficar imediatamente
+  #      disponível ao público em https://bestfluency.pt;
+  #    - validação pós-deploy (healthz + conteúdo da raiz).
+  # ---------------------------------------------------------------------------
+  deploy:
+    name: Deploy na VPS + purge Cloudflare + validação
+    needs: build-and-push
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Garantir diretório remoto
+        uses: appleboy/ssh-action@v1.0.3
+        with:
+          host: ${{ secrets.VPS_HOST }}
+          username: ${{ secrets.VPS_USER }}
+          key: ${{ secrets.VPS_SSH_KEY }}
+          script: |
+            mkdir -p ${{ secrets.VPS_REMOTE_PATH }}
+
+      - name: Upload docker-compose.yml para a VPS
+        uses: appleboy/scp-action@v0.1.4
+        with:
+          host: ${{ secrets.VPS_HOST }}
+          username: ${{ secrets.VPS_USER }}
+          key: ${{ secrets.VPS_SSH_KEY }}
+          source: "docker-compose.yml"
+          target: "${{ secrets.VPS_REMOTE_PATH }}"
+
+      - name: Pull imagem + docker compose up
+        uses: appleboy/ssh-action@v1.0.3
+        with:
+          host: ${{ secrets.VPS_HOST }}
+          username: ${{ secrets.VPS_USER }}
+          key: ${{ secrets.VPS_SSH_KEY }}
+          envs: IMAGE_TAG
+          script: |
+            set -e
+
+            echo "Pull da nova imagem..."
+            docker pull ${{ secrets.DOCKERHUB_USERNAME }}/best-fluency-web:${IMAGE_TAG}
+
+            echo "Tag local utilizada pelo Compose..."
+            docker tag \
+              ${{ secrets.DOCKERHUB_USERNAME }}/best-fluency-web:${IMAGE_TAG} \
+              best-fluency-web:${IMAGE_TAG}
+
+            cd ${{ secrets.VPS_REMOTE_PATH }}
+
+            echo "Removendo container manual anterior, caso exista..."
+            docker rm -f bestfluency-web 2>/dev/null || true
+
+            echo "Subindo nova versão..."
+            IMAGE_TAG=${IMAGE_TAG} docker compose up -d --no-build
+
+            echo "Aguardando healthcheck..."
+            for i in $(seq 1 30); do
+              STATUS=$(docker inspect \
+                --format='{{if .State.Health}}{{.State.Health.Status}}{{else}}{{.State.Status}}{{end}}' \
+                bestfluency-web 2>/dev/null || true)
+
+              echo "Health: ${STATUS}"
+
+              if [ "${STATUS}" = "healthy" ]; then
+                exit 0
+              fi
+
+              sleep 2
+            done
+
+            echo "Container não ficou healthy."
+            docker logs --tail 100 bestfluency-web
+            exit 1
+
+      - name: Purge do cache Cloudflare
+        if: env.CF_API_TOKEN != '' && env.CF_ZONE_ID != ''
+        env:
+          CF_API_TOKEN: ${{ secrets.CF_API_TOKEN }}
+          CF_ZONE_ID: ${{ secrets.CF_ZONE_ID }}
+        run: |
+          curl -fsS -X POST \
+            "https://api.cloudflare.com/client/v4/zones/${CF_ZONE_ID}/purge_cache" \
+            -H "Authorization: Bearer ${CF_API_TOKEN}" \
+            -H "Content-Type: application/json" \
+            --data '{"purge_everything":true}'
+          echo "Purge Cloudflare concluído."
+
+      - name: Validar implantação pública
+        continue-on-error: true
+        run: |
+          code=$(curl -fsS -o /dev/null -w '%{http_code}' "${SITE_URL}/healthz" || true)
+          echo "healthz -> ${code}"
+          test "${code}" = "200"
+          code=$(curl -fsS -o /dev/null -w '%{http_code}' "${SITE_URL}/" || true)
+          echo "raiz -> ${code}"
+          test "${code}" = "200"
+          curl -fsS "${SITE_URL}/" | grep -qi 'Best Fluency'

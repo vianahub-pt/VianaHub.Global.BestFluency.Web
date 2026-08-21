@@ -1,0 +1,339 @@
+{
+  "language.name.pt-PT": "🇵🇹 Portugués",
+  "language.name.pt-BR": "🇧🇷 Portugués (Brasil)",
+  "language.name.en-US": "🇺🇸 Inglés",
+  "language.name.es-ES": "🇪🇸 Español",
+  "language.short.pt-PT": "PT",
+  "language.short.pt-BR": "BR",
+  "language.short.en-US": "EN",
+  "language.short.es-ES": "ES",
+  "landing": {
+    "meta": {
+      "title": "Clases de inglés en Amadora y online | Best Fluency",
+      "description": "Clases de inglés presenciales en Venda Nova, Amadora, y online para niños, jóvenes y adultos. Clases individuales y grupos de hasta 4 alumnos."
+    },
+    "a11y": {
+      "skipToContent": "Saltar al contenido principal",
+      "toggleTheme": "Cambiar entre tema claro y oscuro",
+      "languageSwitcherLabel": "Seleccionar idioma"
+    },
+    "nav": {
+      "ariaLabel": "Navegación principal",
+      "menuAriaLabel": "Menú de navegación",
+      "menuLabel": "Abrir menú",
+      "closeMenuLabel": "Cerrar menú",
+      "ctaLabel": "Reservar clase de prueba",
+      "ctaAriaLabel": "Reservar clase de prueba — abrir una conversación de WhatsApp (nueva ventana)",
+      "whatsappMessage": "¡Hola! Me gustaría reservar una clase de prueba de inglés en Best Fluency.",
+      "links": {
+        "home": "Inicio",
+        "modalities": "Modalidades",
+        "method": "Método",
+        "bestKids": "Best Kids",
+        "testimonials": "Testimonios",
+        "journey": "Viaje",
+        "founder": "Fundadora",
+        "faq": "FAQ"
+      }
+    },
+    "foundation": {
+      "text": [
+        "Best Fluency ayuda a cada alumno a aprender de forma cercana, práctica y orientada a sus objetivos.",
+        "Clases de inglés presenciales en Amadora y online para niños, jóvenes y adultos."
+      ],
+      "notice": "Estamos preparando nuestro nuevo sitio web. Mientras tanto, contáctenos por WhatsApp para información sobre clases de inglés presenciales en Amadora y online.",
+      "contactsTitle": "Contactos"
+    },
+    "cta": {
+      "whatsappLabel": "Hable con nosotros por WhatsApp",
+      "whatsappAriaLabel": "Hable con nosotros por WhatsApp — abrir una conversación con Best Fluency (nueva ventana)",
+      "whatsappMessage": "¡Hola! Me gustaría recibir información sobre las clases de inglés de Best Fluency."
+    },
+    "notFound": {
+      "title": "Página no encontrada",
+      "description": "La página que busca no existe o ha sido movida.",
+      "backHome": "Volver a la página principal"
+    },
+    "footer": {
+      "rightsReserved": "Todos los derechos reservados.",
+      "privacyPolicy": "Política de Privacidad",
+      "cookiesPolicy": "Política de Cookies",
+      "whatsappLabel": "WhatsApp",
+      "siteMap": "Mapa del Sitio",
+      "contact": "Contactos"
+    },
+    "header": {
+      "logoAlt": "Best Fluency Language School"
+    },
+    "hero": {
+      "title1": "Deja de bloquearte.",
+      "title2": "Empieza a hablar",
+      "title3": "inglés con",
+      "title4": "confianza.",
+      "text": "Clases prácticas y personalizadas para niños, jóvenes y adultos, de forma individual o en grupos reducidos con un máximo de 4 alumnos.",
+      "ctaLabel": "Reservar clase de prueba",
+      "ctaAriaLabel": "Reservar clase de prueba — abrir una conversación de WhatsApp (nueva ventana)",
+      "ctaWhatsappMessage": "¡Hola! Me gustaría reservar una clase de prueba de inglés en Best Fluency."
+    },
+    "infoBar": {
+      "items": [
+        "Clases individuales",
+        "Grupos de hasta 4 alumnos",
+        "Presencial en Amadora",
+        "Clases online"
+      ]
+    },
+    "modalities": {
+      "h2": "Elige la modalidad más adecuada a tu trayectoria",
+      "intro": "Las clases se organizan según el nivel, los objetivos y la disponibilidad de los alumnos.",
+      "individual": {
+        "title": "Acompañamiento totalmente personalizado",
+        "text": "Contenidos, ritmo y práctica ajustados a las necesidades de un único alumno, con espacio para trabajar dificultades específicas y objetivos personales o profesionales.",
+        "note": "Presencial u online",
+        "ctaLabel": "Quiero saber más sobre las clases individuales",
+        "ctaAriaLabel": "Quiero saber más sobre las clases individuales — abrir una conversación de WhatsApp (nueva ventana)",
+        "whatsappMessage": "¡Hola! Me gustaría recibir información sobre las clases individuales de inglés de Best Fluency.",
+        "imageAlt": "Clase de inglés individual en línea en el ordenador"
+      },
+      "group": {
+        "title": "Aprender y practicar en un grupo pequeño",
+        "text": "Grupos organizados por nivel, con un máximo de 4 alumnos, para permitir la participación, la interacción y un acompañamiento cercano.",
+        "note": "Sujeto a la formación del grupo y a la disponibilidad",
+        "ctaLabel": "Quiero saber más sobre los grupos",
+        "ctaAriaLabel": "Quiero saber más sobre los grupos — abrir una conversación de WhatsApp (nueva ventana)",
+        "whatsappMessage": "¡Hola! Me gustaría recibir información sobre los grupos de inglés de Best Fluency.",
+        "imageAlt": "Clase de inglés presencial en grupo reducido en Best Fluency"
+      }
+    },
+    "methods": {
+      "method": {
+        "h2": "Un recorrido de aprendizaje pensado para evolucionar",
+        "intro": "Cada alumno tiene un punto de partida, un ritmo y unos objetivos diferentes.",
+        "pillars": [
+          {
+            "title": "Recorrido personalizado",
+            "text": "Los contenidos y las actividades se definen según el nivel, las necesidades y la evolución del alumno."
+          },
+          {
+            "title": "Práctica con propósito",
+            "text": "El inglés se utiliza progresivamente en situaciones útiles para el trabajo, los estudios, los viajes y el día a día."
+          },
+          {
+            "title": "Continuidad y feedback",
+            "text": "Cada clase da seguimiento al contenido anterior, con correcciones y orientaciones que dejan claros los siguientes pasos."
+          },
+          {
+            "title": "Pronunciación y confianza",
+            "text": "El alumno recibe apoyo para construir frases, mejorar la pronunciación y comunicarse con mayor seguridad."
+          }
+        ],
+        "ctaLabel": "Quiero saber más sobre el método de aprendizaje",
+        "ctaAriaLabel": "Quiero saber más sobre el método de aprendizaje — abrir una conversación de WhatsApp (nueva ventana)",
+        "whatsappMessage": "¡Hola! Me gustaría recibir información sobre el método de aprendizaje de Best Fluency."
+      }
+    },
+    "inPerson": {
+      "h2": "Clases de inglés presenciales en Venda Nova, Amadora",
+      "text": [
+        "Las clases presenciales se imparten en el Espaço CASA, en la Avenida Chaby Pinheiro, 5, Venda Nova — Amadora.",
+        "Un espacio cercano y acogedor para aprender inglés con acompañamiento personalizado."
+      ],
+      "ctaLabel": "Ver ubicación",
+      "ctaAriaLabel": "Ver ubicación — abrir la ubicación de Best Fluency en Google Maps (nueva ventana)"
+    },
+    "bestKids": {
+      "h2": "Clases de inglés para niños con Best Kids",
+      "text": [
+        "En Best Kids, cada clase convierte el inglés en un nuevo descubrimiento.",
+        "Las actividades ayudan a desarrollar vocabulario, comprensión, pronunciación y confianza para utilizar el inglés de forma natural y progresiva."
+      ],
+      "highlight": "El inglés va con ellos a todas partes.",
+      "differentials": [
+        {
+          "title": "Aprendizaje envolvente",
+          "text": "Juegos, historias, canciones y actividades que despiertan la curiosidad."
+        },
+        {
+          "title": "Contenidos por edad y nivel",
+          "text": "Clases adaptadas al desarrollo y al ritmo de cada niño."
+        },
+        {
+          "title": "Contacto con el inglés desde el principio",
+          "text": "Palabras, expresiones y situaciones del día a día presentadas de forma progresiva."
+        },
+        {
+          "title": "Confianza para comunicarse",
+          "text": "Un ambiente positivo que fomenta la participación y la expresión oral."
+        }
+      ],
+      "practicalInfo": [
+        "Niños de 6 a 13 años",
+        "Clases presenciales en Venda Nova, Amadora",
+        "Clases online disponibles",
+        "Grupos organizados por edad y nivel"
+      ],
+      "ctaLabel": "Conocer Best Kids",
+      "ctaAriaLabel": "Conocer Best Kids — abrir una conversación de WhatsApp (nueva ventana)",
+      "whatsappMessage": "¡Hola! Me gustaría recibir más información sobre las clases Best Kids.",
+      "imageAlt": "Best Kids, en las clases de inglés para niños"
+    },
+    "testimonials": {
+      "starsAriaLabel": "estrellas",
+      "h2": "Lo que dicen los alumnos de Best Fluency",
+      "text": [
+        "Experiencias reales de quienes están aprendiendo y evolucionando con nosotros."
+      ],
+      "items": [
+        {
+          "name": "Andreia Barros",
+          "role": "Gerente administrativo",
+          "photo": "/testimonials/andreia-foto.png",
+          "quote": "¡Me encantan las clases! La profesora es muy atenta, paciente y explica todo de una forma simple y fácil de entender. He estado mejorando mucho en inglés y me siento cada vez más cómoda para hablar. ¡Muy recomendable!"
+        },
+        {
+          "name": "Mauricio Moura",
+          "role": "Gerente de banco",
+          "photo": "/testimonials/mauricio-foto.png",
+          "quote": "Vengo a dar mi evaluación del curso. La teacher posee un vasto conocimiento de la lengua inglesa y facilidad para transmitir ese conocimiento a los alumnos, de una forma distendida. Lo que más me gusta de mi clase de inglés es la forma de exponer, aunque sea algo que no sé. Eso me ayudó mucho a desbloquear mi conversación. Por eso indico Best Fluency."
+        },
+        {
+          "name": "Pedro António",
+          "role": "Centrocampista",
+          "photo": "/testimonials/pedro-foto.png",
+          "quote": "¡Muy bueno! Aprendo mucho con la teacher Taty."
+        },
+        {
+          "name": "Romerson Neves",
+          "role": "Conductor de camión",
+          "photo": "/testimonials/romerson-foto.png",
+          "quote": "Llevo 7 meses en Portugal y me di cuenta de la importancia de aprender inglés para mi vida. Empecé con clases presenciales, pero la persona que me enseñaba tuvo que salir del país y no pudo continuar. Luego probé clases online con otra profesora, pero no me adapté. Fue entonces cuando conocí a la profesora Tatiana. Hicimos una clase experimental y me gustó mucho. Desde entonces, he continuado las clases y siento que estoy mejorando cada día más. La profesora Tatiana tiene mucha paciencia, explica con claridad y lleva las clases de forma excelente. La recomiendo a todos los que buscan aprender inglés con calidad."
+        },
+        {
+          "name": "Sandro Vite",
+          "role": "Reseña de Google",
+          "photo": "/testimonials/sandro-foto.png",
+          "quote": "Increíble, una enseñanza muy bien aplicada y de manera simple y objetiva."
+        },
+        {
+          "name": "Wanda Ramos",
+          "role": "Asistente de operaciones internas",
+          "photo": "/testimonials/wanda-foto.png",
+          "quote": "Vengo a dar mi evaluación del curso. Fue todo muy explícito, con contenido de fácil comprensión. La profesora Taty fue genial, muy cariñosa, me hizo sentir muy cómoda, me motivó y eso hizo que pudiera hacer mis preguntas sin vergüenza ni miedo a equivocarme. Pretendo volver a la formación para hacer otro nivel en cuanto sea posible. Muchísimas gracias por la atención, dedicación y cariño, Taty Viana."
+        }
+      ],
+      "ctaLabel": "Reservar clase de prueba",
+      "ctaAriaLabel": "Reservar clase de prueba — abrir una conversación de WhatsApp (nueva ventana)",
+      "whatsappMessage": "¡Hola! Me gustaría reservar una clase de prueba de inglés en Best Fluency."
+    },
+    "founder": {
+      "h2": "Conoce a la fundadora de Best Fluency",
+      "text": [
+        "Hola, soy Tatiana Viana",
+        "Soy ingeniera, profesional con experiencia internacional en tecnología y gestión de proyectos, y fundadora de Best Fluency. A lo largo de mi carrera, tuve la oportunidad de trabajar en diferentes empresas, proyectos y contextos internacionales, experiencias que moldearon la forma en que pienso, trabajo y resuelvo problemas. Fue todo ese recorrido el que traje conmigo cuando decidí emprender en el área de la educación.",
+        "No dejé de ser ingeniera. Traje la ingeniera conmigo. La experiencia que construí a lo largo de los años fue aplicada en la creación de Best Fluency, desde la estructuración del negocio hasta el desarrollo de un método propio de enseñanza de idiomas. Mi propia experiencia como alumna también me enseñó que conocer un idioma no significa necesariamente tener confianza para hablar — y fue a partir de esa realidad que nació nuestro enfoque: más práctico, personalizado y enfocado en la comunicación.",
+        "Hoy, veo Best Fluency como la unión de todo aquello que construí a lo largo de mi trayectoria: experiencia, conocimiento, innovación y ganas de transformar la forma en que las personas aprenden nuevos idiomas."
+      ],
+      "imageAlt": "Tatiana Viana, fundadora de Best Fluency Language School",
+      "ctaLabel": "Reservar clase de prueba",
+      "ctaAriaLabel": "Reservar clase de prueba — abrir una conversación de WhatsApp (nueva ventana)",
+      "whatsappMessage": "¡Hola! Me gustaría reservar una clase de prueba de inglés en Best Fluency."
+    },
+    "journey": {
+      "h2": "Cómo empezar las clases de inglés en Best Fluency",
+      "subtitle": "Del primer mensaje a la primera clase, acompañamos cada paso de tu recorrido.",
+      "steps": [
+        {
+          "title": "Abre la conversación",
+          "text": "Envíanos un mensaje por WhatsApp y cuéntanos qué buscas, tus objetivos y tu disponibilidad."
+        },
+        {
+          "title": "Descubre tu punto de partida",
+          "text": "En una breve conversación, identificamos el nivel actual y las principales necesidades de aprendizaje."
+        },
+        {
+          "title": "Traza tu ruta",
+          "text": "Definimos la modalidad, los contenidos y un recorrido de aprendizaje adaptado a los objetivos del alumno."
+        },
+        {
+          "title": "Empieza a avanzar",
+          "text": "Inicia las clases y acompaña la evolución con práctica, orientación y feedback continuo."
+        }
+      ],
+      "ctaLabel": "Dar el primer paso",
+      "ctaAriaLabel": "Dar el primer paso — abrir una conversación de WhatsApp (nueva ventana)",
+      "whatsappMessage": "¡Hola! Me gustaría recibir información sobre las clases de inglés de Best Fluency."
+    },
+    "faq": {
+      "h2": "Preguntas frecuentes sobre las clases de Best Fluency",
+      "subtitle": "Encuentra respuestas rápidas sobre las clases de inglés presenciales en Amadora y online.",
+      "items": [
+        {
+          "question": "¿Dónde se imparten las clases presenciales?",
+          "answer": "Las clases presenciales se imparten en el Espaço CASA, en la Avenida Chaby Pinheiro, 5, Venda Nova — Amadora."
+        },
+        {
+          "question": "¿También hay clases online?",
+          "answer": "Sí. Best Fluency ofrece clases online para alumnos que buscan mayor flexibilidad o que no pueden desplazarse al espacio presencial."
+        },
+        {
+          "question": "¿Existen clases individuales y en grupo?",
+          "answer": "Sí. Existen clases individuales y grupos reducidos, organizados según el nivel y la disponibilidad de los alumnos."
+        },
+        {
+          "question": "¿Cuántos alumnos hay en cada grupo?",
+          "answer": "Los grupos tienen un máximo de 4 alumnos, lo que permite mayor participación y acompañamiento durante las clases."
+        },
+        {
+          "question": "¿Para quién son las clases?",
+          "answer": "Hay clases para niños, jóvenes y adultos, con contenidos definidos según la edad, el nivel y los objetivos de cada alumno."
+        },
+        {
+          "question": "¿Necesito saber inglés para empezar?",
+          "answer": "No. Las clases son adecuadas tanto para principiantes como para alumnos que ya tienen conocimientos de inglés y quieren seguir evolucionando."
+        },
+        {
+          "question": "¿Cómo se identifica mi nivel?",
+          "answer": "Antes del inicio de las clases, realizamos una breve conversación para comprender los conocimientos actuales, las principales dificultades y los objetivos del alumno."
+        },
+        {
+          "question": "¿Las clases son personalizadas?",
+          "answer": "Sí. Los contenidos, las actividades y el ritmo de las clases se ajustan al nivel, las necesidades y la evolución de cada alumno."
+        },
+        {
+          "question": "¿Cuánto dura cada clase?",
+          "answer": "Cada clase tiene una duración de 50 minutos, centrada en la práctica, la participación y la evolución continua."
+        },
+        {
+          "question": "¿Cómo funciona la clase de prueba?",
+          "answer": "La clase de prueba permite conocer el enfoque de Best Fluency, aclarar dudas y ver cómo la enseñanza puede adaptarse a los objetivos del alumno."
+        },
+        {
+          "question": "¿Cómo puedo reservar una clase?",
+          "answer": "Basta con hacer clic en un botón de WhatsApp e indicar el tipo de clase deseado y la disponibilidad."
+        },
+        {
+          "question": "¿Cómo puedo obtener más información?",
+          "answer": "Puede ponerse en contacto con nosotros a través de WhatsApp para aclarar todas sus dudas."
+        }
+      ],
+      "ctaLabel": "Reservar clase de prueba",
+      "ctaAriaLabel": "Reservar clase de prueba — abrir una conversación de WhatsApp (nueva ventana)",
+      "whatsappMessage": "¡Hola! Me gustaría reservar una clase de prueba de inglés en Best Fluency."
+    },
+    "finalCta": {
+      "eyebrow": "¿LISTO PARA EMBARCAR?",
+      "title": "Tu próximo paso en el inglés empieza aquí",
+      "text": "Habla con nosotros por WhatsApp, aclara tus dudas y descubre la modalidad más adecuada a tu nivel, tus objetivos y tu rutina.",
+      "ctaLabel": "Reservar clase de prueba",
+      "ctaAriaLabel": "Reservar clase de prueba — abrir una conversación de WhatsApp (nueva ventana)",
+      "whatsappMessage": "¡Hola! Me gustaría recibir información y reservar una clase de prueba de inglés en Best Fluency.",
+      "complement": "Clases presenciales en Amadora y online."
+    }
+  },
+  "language.name.ja-JP": "🇯🇵 Japonés",
+  "language.name.ru-RU": "🇷🇺 Ruso",
+  "language.name.zh-CN": "🇨🇳 Chino (Mandarín)",
+  "language.short.ja-JP": "JA",
+  "language.short.ru-RU": "RU",
+  "language.short.zh-CN": "ZH"
+}

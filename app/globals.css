@@ -1,0 +1,507 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+/*
+ * ============================================================================
+ * Design system Mobile-First — Best Fluency (issue #2, refinado na issue #29)
+ * ----------------------------------------------------------------------------
+ * Tokens semânticos da identidade oficial Best Fluency — preto, branco e
+ * laranja (spec §6) — nos temas claro e escuro. Documentação completa em
+ * docs/design-system.md.
+ *
+ * Identidade cromática oficial:
+ * - laranja de marca: #C2410C (token --orange) para superfícies de destaque
+ *   (CTA orange, chips) com texto branco (--orange-foreground) ≈ 5.2:1;
+ * - laranja de texto (--accent): variante mais escura no tema claro para
+ *   manter AA como texto/ícone sobre branco; no tema escuro usa o laranja
+ *   vibrante sobre o preto profundo;
+ * - preto profundo do tema escuro: #0A0A0A (--background no .dark).
+ *
+ * Contraste validado para WCAG 2.2 AA (texto normal ≥ 4.5:1):
+ * - accent (laranja) light ≈ 5.2:1 sobre branco e 5.2:1 para texto branco;
+ * - accent (laranja) dark  ≈ 3.8:1  sobre o fundo escuro;
+ * - orange #C2410C com orange-foreground ≈ 5.2:1 em ambos os temas;
+ * - muted-foreground       ≈ 7.8:1 (light) e 8.6:1 (dark).
+ * ============================================================================
+ */
+:root {
+  /*
+   * Papéis cromáticos da marca (spec §6). No tema escuro os papéis invertem:
+   * brand-black torna-se o "preto" claro (texto/títulos) e brand-white o
+   * fundo escuro. Laranja mantém-se como destaque em ambos os temas.
+   */
+  --brand-black: hsl(0 0% 4%);
+  --brand-white: hsl(0 0% 100%);
+
+  /* Laranja oficial Best Fluency */
+  --brand-orange: #c2410c;
+  --orange: #c2410c;
+  --orange-foreground: #ffffff;
+
+  color-scheme: light;
+
+  /* Superfícies e texto (shadcn/ui). */
+  --background: var(--brand-white);
+  --foreground: var(--brand-black);
+  --card: hsl(0 0% 100%);
+  --card-foreground: hsl(0 0% 4%);
+  --popover: hsl(0 0% 100%);
+  --popover-foreground: hsl(0 0% 4%);
+  --primary: hsl(0 0% 9%);
+  --primary-foreground: hsl(0 0% 98%);
+  --secondary: hsl(0 0% 96%);
+  --secondary-foreground: hsl(0 0% 9%);
+  --muted: hsl(0 0% 96%);
+  --muted-foreground: hsl(0 0% 32%);
+  --accent: var(--brand-orange);
+  --accent-foreground: #ffffff;
+  --ring: var(--brand-orange);
+  --solarized: #ffff00;
+  --solarized-foreground: hsl(0 0% 98%) --destructive: hsl(0 72% 45%);
+  --destructive-foreground: hsl(0 0% 98%);
+  --border: hsl(0 0% 90%);
+  --input: hsl(0 0% 90%);
+  --radius: 0.625rem;
+
+  /*
+   * Área de toque mínima de 44 × 44 px (spec §23). Nos componentes usar
+   * h-11 / min-h-11 (equivalente a 2.75rem) — nunca menos.
+   */
+  --touch-target: 2.75rem;
+}
+
+.dark {
+  --brand-black: hsl(0 0% 98%);
+  --brand-white: hsl(0 0% 4%);
+
+  /* Mesmo laranja no dark */
+  --brand-orange: #c2410c;
+  --orange: #c2410c;
+  --orange-foreground: #ffffff;
+
+  color-scheme: dark;
+
+  --background: var(--brand-white);
+  --foreground: hsl(0 0% 98%);
+  --card: hsl(0 0% 8%);
+  --card-foreground: hsl(0 0% 98%);
+  --popover: hsl(0 0% 8%);
+  --popover-foreground: hsl(0 0% 98%);
+  --primary: hsl(0 0% 98%);
+  --primary-foreground: hsl(0 0% 9%);
+  --secondary: hsl(0 0% 14%);
+  --secondary-foreground: hsl(0 0% 98%);
+  --muted: hsl(0 0% 14%);
+  --muted-foreground: hsl(0 0% 68%);
+  --accent: var(--brand-orange);
+  --accent-foreground: #ffffff;
+  --ring: var(--brand-orange);
+  --solarized: #ffff00;
+  --solarized-foreground: hsl(0 0% 98%);
+  --destructive: hsl(0 70% 55%);
+  --destructive-foreground: hsl(0 0% 98%);
+  --border: hsl(0 0% 20%);
+  --input: hsl(0 0% 22%);
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-solarized: var(--solarized);
+  --color-solarized-foreground: var(--solarized-foreground);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+
+  /* Tipografia semântica */
+  --font-display: var(--font-faculty-glyphic);
+
+  /* Compatibilidade com componentes atuais */
+  --font-sans: var(--font-faculty-glyphic);
+
+  /* Tamanhos personalizados */
+  --text-10xl: 10rem;
+  --text-10xl--line-height: 1;
+
+  /* Papéis cromáticos da marca disponíveis como utilities (text-brand-orange, etc.). */
+  --color-brand-black: var(--brand-black);
+  --color-brand-white: var(--brand-white);
+  --color-brand-orange: var(--brand-orange);
+  --color-orange: var(--orange);
+  --color-orange-foreground: var(--orange-foreground);
+
+  /*
+   * Mobile-first (AGENTS.md): expansão por min-width para 48rem, 64rem e
+   * 90rem. sm/md/lg mantêm os defaults Tailwind (40/48/64rem); xl = 90rem.
+   */
+  --breakpoint-xl: 90rem;
+}
+
+/*
+ * Animação subtil do avião da rota (RoutePath). Usa a propriedade `translate`
+ * (independente de `transform`) para não conflitar com rotações do ícone.
+ * O utilitário motion-safe apenas a aplica quando não há preferência por
+ * movimento reduzido (spec §16 / §23).
+ */
+@keyframes route-plane {
+  0%,
+  100% {
+    translate: 0 0;
+  }
+  50% {
+    translate: 0 0.25rem;
+  }
+}
+
+/* Testimonial Carousel — cilindro 3D (coverflow) */
+.tcarousel {
+  perspective: 1100px;
+  overflow: hidden;
+  padding-block: 1rem;
+}
+.tcarousel-stage {
+  position: relative;
+  height: clamp(380px, 62vh, 460px);
+  transform-style: preserve-3d;
+}
+.tcarousel-item {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: clamp(220px, 74vw, 280px);
+  height: 100%;
+  transform-style: preserve-3d;
+  transition:
+    transform 0.65s cubic-bezier(0.4, 0, 0.2, 1),
+    opacity 0.65s ease;
+  cursor: pointer;
+  will-change: transform, opacity;
+  background: transparent;
+  border: 0;
+  padding: 0;
+}
+.tcard {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  overflow: hidden;
+  border-radius: 1rem;
+  border: 1px solid var(--border);
+  background: hsl(var(--card));
+  box-shadow: 0 18px 40px -20px rgba(0, 0, 0, 0.45);
+}
+.tcard-photo {
+  flex: none;
+  height: 42%;
+  width: 100%;
+  object-fit: cover;
+}
+.tcard-body {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  min-height: 0;
+  padding: 1rem;
+}
+.tcard-quote {
+  font-size: 0.875rem;
+  line-height: 1.35;
+  color: hsl(var(--foreground));
+  overflow-y: auto;
+}
+
+/* Scroll Reveal — animações acionadas por Intersection Observer */
+.scroll-reveal {
+  opacity: 0;
+  transition:
+    opacity 0.7s ease-out,
+    translate 0.7s ease-out,
+    scale 0.7s ease-out;
+}
+
+.scroll-reveal-fade-up {
+  translate: 0 2rem;
+}
+
+.scroll-reveal-fade-left {
+  translate: -2rem 0;
+}
+
+.scroll-reveal-fade-right {
+  translate: 2rem 0;
+}
+
+.scroll-reveal-scale-in {
+  scale: 0.92;
+}
+
+.scroll-reveal-visible {
+  opacity: 1;
+  translate: 0 0;
+  scale: 1;
+}
+
+/* Floating animation for the method illustration */
+.method-illustration-float {
+  animation: method-float 6s ease-in-out infinite;
+  animation-play-state: paused;
+}
+
+.scroll-reveal-visible .method-illustration-float,
+.method-illustration-float.scroll-reveal-visible {
+  animation-play-state: running;
+}
+
+@keyframes method-fade-up {
+  from {
+    opacity: 0;
+    translate: 0 2rem;
+  }
+  to {
+    opacity: 1;
+    translate: 0 0;
+  }
+}
+
+@keyframes method-fade-left {
+  from {
+    opacity: 0;
+    translate: -2rem 0;
+  }
+  to {
+    opacity: 1;
+    translate: 0 0;
+  }
+}
+
+@keyframes method-fade-right {
+  from {
+    opacity: 0;
+    translate: 2rem 0;
+  }
+  to {
+    opacity: 1;
+    translate: 0 0;
+  }
+}
+
+@keyframes method-scale-in {
+  from {
+    opacity: 0;
+    scale: 0.92;
+  }
+  to {
+    opacity: 1;
+    scale: 1;
+  }
+}
+
+@keyframes method-float {
+  0%,
+  100% {
+    translate: 0 0;
+  }
+  50% {
+    translate: 0 -0.5rem;
+  }
+}
+
+@keyframes method-pulse-ring {
+  0% {
+    scale: 1;
+    opacity: 0.6;
+  }
+  100% {
+    scale: 1.8;
+    opacity: 0;
+  }
+}
+
+/*
+ * ---- Micro-interações ----
+ * Pequenas reações a hover/atividade que tornam a experiência mais viva
+ * (spec §23): utilitários reutilizáveis, ativados apenas em dispositivos com
+ * hover (pointer: fine) e limitados a transições (respeitam prefers-reduced-
+ * motion definido no @layer base abaixo; o aparelho reduz as durações).
+ */
+
+/* Sublinhado animado (desliza da direita para a esquerda no hover/foco). */
+.link-micro {
+  position: relative;
+  display: inline-block;
+}
+.link-micro::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -1px;
+  height: 2px;
+  width: 100%;
+  border-radius: 2px;
+  background: var(--brand-orange);
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+@media (hover: hover) and (pointer: fine) {
+  .link-micro:hover::after,
+  .link-micro:focus-visible::after {
+    transform: scaleX(1);
+    transform-origin: left;
+  }
+}
+
+/* Marca (logótipo): escala e inclinação suaves no hover (toque humano). */
+.brand-micro {
+  transition: transform 0.25s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+@media (hover: hover) and (pointer: fine) {
+  .brand-micro:hover {
+    transform: scale(1.06) rotate(2deg);
+  }
+}
+
+/*
+ * Brilho do sol a passar pelas letras (títulos do Hero).
+ *
+ * Uma faixa luminosa varre o texto (sentido esquerda) quando ele entra no
+ * viewport. A camada de brilho é um clone aria-hidden do H1 com
+ * `background-clip: text` e `color: transparent`: a base (nas cores normais)
+ * fica por baixo e a faixa branca/laranja-clara só aparece dentro dos glifos
+ * enquanto passa — depois volta a transparente, revelando as letras originais.
+ *
+ * A animação é disparada apenas pela classe `.shine-run` (Intersection
+ * Observer) e corre só com `prefers-reduced-motion: no-preference`.
+ */
+.shine-overlay {
+  /* Clipa o gradiente apenas dentro dos glifos (letras), não na caixa. */
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
+  background-clip: text;
+  background-image: linear-gradient(
+    115deg,
+    rgba(255, 255, 255, 0) 30%,
+    rgba(255, 255, 255, 0) 40%,
+    rgba(255, 255, 255, 0.95) 50%,
+    rgba(255, 207, 150, 0.9) 56%,
+    rgba(255, 255, 255, 0) 68%
+  );
+  background-size: 220% 100%;
+  background-repeat: no-repeat;
+  background-position: 200% 50%;
+}
+/* Os spans internos (com text-accent/text-black) também transparentes. */
+.shine-overlay * {
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+}
+/* Bandas para superfícies (imagem) — sem background-clip: text. */
+.shine-sweep {
+  background-image: linear-gradient(
+    115deg,
+    rgba(255, 255, 255, 0) 30%,
+    rgba(255, 255, 255, 0) 40%,
+    rgba(255, 255, 255, 0.7) 50%,
+    rgba(255, 235, 200, 0.55) 56%,
+    rgba(255, 255, 255, 0) 68%
+  );
+  background-size: 220% 100%;
+  background-repeat: no-repeat;
+  background-position: 200% 50%;
+  mix-blend-mode: soft-light;
+}
+@media (prefers-reduced-motion: no-preference) {
+  .shine-overlay.shine-run,
+  .shine-sweep.shine-run {
+    animation: shine-sweep 1.6s cubic-bezier(0.4, 0, 0.2, 1) 0.4s forwards;
+  }
+}
+@keyframes shine-sweep {
+  to {
+    background-position: -120% 50%;
+  }
+}
+
+/* ── Carrossel vertical de depoimentos (loop infinito) ─────────────────── */
+@keyframes carousel-up {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-50%);
+  }
+}
+
+@keyframes carousel-down {
+  0% {
+    transform: translateY(-50%);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+@layer base {
+  * {
+    border-color: var(--border);
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background-color: var(--background);
+    color: var(--foreground);
+    font-family:
+      ui-sans-serif,
+      system-ui,
+      -apple-system,
+      "Segoe UI",
+      Roboto,
+      "Helvetica Neue",
+      Arial,
+      sans-serif;
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--ring);
+    outline-offset: 2px;
+  }
+
+  /* Respeito por prefers-reduced-motion (spec §23). */
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: smooth;
+    }
+
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+}

@@ -1,0 +1,339 @@
+{
+  "language.name.pt-PT": "🇵🇹 Português",
+  "language.name.pt-BR": "🇧🇷 Português (Brasil)",
+  "language.name.en-US": "🇺🇸 Inglês",
+  "language.name.es-ES": "🇪🇸 Espanhol",
+  "language.short.pt-PT": "PT",
+  "language.short.pt-BR": "BR",
+  "language.short.en-US": "EN",
+  "language.short.es-ES": "ES",
+  "landing": {
+    "meta": {
+      "title": "Aulas de Inglês na Amadora e Online | Best Fluency",
+      "description": "Aulas de inglês presenciais na Venda Nova, Amadora, e online para crianças, jovens e adultos. Opções individuais e turmas até 4 alunos."
+    },
+    "a11y": {
+      "skipToContent": "Saltar para o conteúdo principal",
+      "toggleTheme": "Alternar tema claro e escuro",
+      "languageSwitcherLabel": "Selecionar idioma"
+    },
+    "nav": {
+      "ariaLabel": "Navegação principal",
+      "menuAriaLabel": "Menu de navegação",
+      "menuLabel": "Abrir menu",
+      "closeMenuLabel": "Fechar menu",
+      "ctaLabel": "Marcar aula experimental",
+      "ctaAriaLabel": "Marcar aula experimental — abrir conversa no WhatsApp (nova janela)",
+      "whatsappMessage": "Olá! Gostaria de marcar uma aula experimental de inglês na Best Fluency.",
+      "links": {
+        "home": "Início",
+        "modalities": "Modalidades",
+        "method": "Método",
+        "bestKids": "Best Kids",
+        "testimonials": "Depoimentos",
+        "journey": "Jornada",
+        "founder": "Fundadora",
+        "faq": "FAQ"
+      }
+    },
+    "foundation": {
+      "text": [
+        "A Best Fluency, ajuda cada aluno a aprender de forma próxima, prática e orientada para os seus objetivos.",
+        "Aulas de inglês presenciais na Amadora e online para crianças, jovens e adultos."
+      ],
+      "notice": "Estamos a preparar o nosso novo website. Entretanto, fale connosco pelo WhatsApp para informações sobre aulas de inglês presenciais na Amadora e online.",
+      "contactsTitle": "Contactos"
+    },
+    "cta": {
+      "whatsappLabel": "Falar connosco no WhatsApp",
+      "whatsappAriaLabel": "Falar connosco no WhatsApp — abrir conversa com a Best Fluency (nova janela)",
+      "whatsappMessage": "Olá! Gostaria de receber informações sobre as aulas da Best Fluency."
+    },
+    "notFound": {
+      "title": "Página não encontrada",
+      "description": "A página que procura não existe ou foi movida.",
+      "backHome": "Voltar à página inicial"
+    },
+    "footer": {
+      "rightsReserved": "Todos os direitos reservados.",
+      "privacyPolicy": "Política de Privacidade",
+      "cookiesPolicy": "Política de Cookies",
+      "whatsappLabel": "WhatsApp",
+      "siteMap": "Mapa do Site",
+      "contact": "Contactos"
+    },
+    "header": {
+      "logoAlt": "Best Fluency Language School"
+    },
+    "hero": {
+      "title1": "Pare de travar.",
+      "title2": "Comece a falar",
+      "title3": "inglês com",
+      "title4": "confiança!",
+      "text": "Aulas práticas e personalizadas para crianças, jovens e adultos, em formato individual ou em turmas reduzidas com um máximo de 4 alunos.",
+      "ctaLabel": "Marcar aula experimental",
+      "ctaAriaLabel": "Marcar aula experimental — abrir conversa no WhatsApp (nova janela)",
+      "ctaWhatsappMessage": "Olá! Gostaria de marcar uma aula experimental de inglês na Best Fluency."
+    },
+    "infoBar": {
+      "items": [
+        "Aulas individuais",
+        "Turmas até 4 alunos",
+        "Presencial na Amadora",
+        "Aulas online"
+      ]
+    },
+    "modalities": {
+      "h2": "Escolha a modalidade mais adequada ao seu percurso",
+      "intro": "As aulas são organizadas de acordo com o nível, os objetivos e a disponibilidade dos alunos.",
+      "individual": {
+        "title": "Acompanhamento totalmente personalizado",
+        "text": "Conteúdos, ritmo e prática ajustados às necessidades de um único aluno, com espaço para trabalhar dificuldades específicas e objetivos pessoais ou profissionais.",
+        "note": "Presencial ou online",
+        "ctaLabel": "Quero saber mais sobre aulas individuais",
+        "ctaAriaLabel": "Quero saber mais sobre aulas individuais — abrir conversa no WhatsApp (nova janela)",
+        "whatsappMessage": "Olá! Gostaria de receber informações sobre as aulas individuais de inglês da Best Fluency.",
+        "imageAlt": "Aula de inglês individual online no computador"
+      },
+      "group": {
+        "title": "Aprender e praticar num grupo pequeno",
+        "text": "Turmas organizadas por nível, com um máximo de 4 alunos, para permitir participação, interação e acompanhamento próximo.",
+        "note": "Sujeito à formação de turma e disponibilidade",
+        "ctaLabel": "Quero saber mais sobre as turmas",
+        "ctaAriaLabel": "Quero saber mais sobre as turmas — abrir conversa no WhatsApp (nova janela)",
+        "whatsappMessage": "Olá! Gostaria de receber informações sobre as turmas de inglês da Best Fluency.",
+        "imageAlt": "Aula de inglês presencial em pequena turma na Best Fluency"
+      }
+    },
+    "methods": {
+      "method": {
+        "h2": "Um percurso de aprendizagem pensado para evoluir",
+        "intro": "Cada aluno tem um ponto de partida, um ritmo e objetivos diferentes.",
+        "pillars": [
+          {
+            "title": "Percurso personalizado",
+            "text": "Os conteúdos e as atividades são definidos de acordo com o nível, as necessidades e a evolução do aluno."
+          },
+          {
+            "title": "Prática com propósito",
+            "text": "O inglês é utilizado progressivamente em situações úteis para o trabalho, os estudos, as viagens e o dia a dia."
+          },
+          {
+            "title": "Continuidade e feedback",
+            "text": "Cada aula dá seguimento ao conteúdo anterior, com correções e orientações que tornam os próximos passos claros."
+          },
+          {
+            "title": "Pronúncia e confiança",
+            "text": "O aluno recebe apoio para construir frases, melhorar a pronúncia e comunicar com maior segurança."
+          }
+        ],
+        "ctaLabel": "Quero saber mais sobre o método de aprendizagem",
+        "ctaAriaLabel": "Quero saber mais sobre o método de aprendizagem — abrir conversa no WhatsApp (nova janela)",
+        "whatsappMessage": "Olá! Gostaria de receber informações sobre o método de aprendizagem da Best Fluency."
+      }
+    },
+    "inPerson": {
+      "h2": "Aulas de inglês presenciais na Venda Nova, Amadora",
+      "text": [
+        "As aulas presenciais decorrem no Espaço CASA, na Avenida Chaby Pinheiro, 5, Venda Nova — Amadora.",
+        "Um espaço próximo e acolhedor para aprender inglês com acompanhamento personalizado."
+      ],
+      "ctaLabel": "Ver localização",
+      "ctaAriaLabel": "Ver localização — abrir a localização da Best Fluency no Google Maps (nova janela)"
+    },
+    "bestKids": {
+      "h2": "Aulas de inglês para crianças com a Best Kids",
+      "text": [
+        "Na Best Kids, cada aula transforma o inglês numa nova descoberta.",
+        "As atividades ajudam a desenvolver vocabulário, compreensão, pronúncia e confiança para utilizar o inglês de forma natural e progressiva."
+      ],
+      "highlight": "O inglês vai com eles para todo o lado.",
+      "differentials": [
+        {
+          "title": "Aprendizagem envolvente",
+          "text": "Jogos, histórias, músicas e atividades que despertam a curiosidade."
+        },
+        {
+          "title": "Conteúdos por idade e nível",
+          "text": "Aulas adaptadas ao desenvolvimento e ao ritmo de cada criança."
+        },
+        {
+          "title": "Contacto com o inglês desde o início",
+          "text": "Palavras, expressões e situações do dia a dia apresentadas de forma progressiva."
+        },
+        {
+          "title": "Confiança para comunicar",
+          "text": "Um ambiente positivo que incentiva a participação e a expressão oral."
+        }
+      ],
+      "practicalInfo": [
+        "Crianças dos 6 aos 13 anos",
+        "Aulas presenciais na Venda Nova, Amadora",
+        "Aulas online disponíveis",
+        "Turmas organizadas por idade e nível"
+      ],
+      "ctaLabel": "Conhecer a Best Kids",
+      "ctaAriaLabel": "Conhecer a Best Kids — abrir conversa no WhatsApp (nova janela)",
+      "whatsappMessage": "Olá! Gostaria de receber mais informações sobre as aulas Best Kids.",
+      "imageAlt": "Best Kids, nas aulas de inglês para crianças"
+    },
+    "testimonials": {
+      "starsAriaLabel": "estrelas",
+      "h2": "O que dizem os alunos da Best Fluency",
+      "text": [
+        "Experiências reais de quem está a aprender e a evoluir connosco."
+      ],
+      "items": [
+        {
+          "name": "Andreia Barros",
+          "role": "Administrative Manager",
+          "photo": "/testimonials/andreia-foto.png",
+          "quote": "Adoro as aulas! A professora é muito atenciosa, paciente e explica tudo de uma forma simples e fácil de entender. Tenho evoluído bastante no inglês e sinto-me cada vez mais à vontade para falar. Recomendo muito!"
+        },
+        {
+          "name": "Mauricio Moura",
+          "role": "Bank Manager",
+          "photo": "/testimonials/mauricio-foto.png",
+          "quote": "Venho dar a minha avaliação sobre o curso. A teacher possui vasto conhecimento da língua inglesa e facilidade para transferir esse conhecimento para os alunos, de uma forma descontraída. O que mais gosto na minha aula de inglês é a forma de expor ainda que, sei lá. Isso me ajudou muito a destravar minha conversação. Por isso eu indico a Best Fluency."
+        },
+        {
+          "name": "Pedro António",
+          "role": "Midfielder",
+          "photo": "/testimonials/pedro-foto.png",
+          "quote": "Muito bom! Aprendo muito com a teacher Taty."
+        },
+        {
+          "name": "Romerson Neves",
+          "role": "Truck Driver",
+          "photo": "/testimonials/romerson-foto.png",
+          "quote": "Estou em Portugal há 7 meses e percebi a importância de aprender inglês para a minha vida. Comecei com aulas presenciais, mas a pessoa que me ensinava teve de sair do país e não pôde continuar. Depois experimentei aulas online com outra professora, mas não me adaptei. Foi então que conheci a professora Tatiana. Fizemos uma aula experimental e gostei muito. Desde então, tenho continuado as aulas e sinto que estou a evoluir cada dia mais. A professora Tatiana tem muita paciência, explica com clareza e conduz as aulas de forma excelente. Recomendo a todos que procuram aprender inglês com qualidade."
+        },
+        {
+          "name": "Sandro Vite",
+          "role": "Avaliação Google",
+          "photo": "/testimonials/sandro-foto.png",
+          "quote": "Incrível, um ensino muito bem aplicado e de maneira simples e objetiva."
+        },
+        {
+          "name": "Wanda Ramos",
+          "role": "Back Office Assistant",
+          "photo": "/testimonials/wanda-foto.png",
+          "quote": "Venho dar a minha avaliação sobre o curso. Foi tudo muito explícito, com conteúdo de fácil percepção. A professora Taty foi top, muito carinhosa, deixou-me muitíssimo à vontade, motivou este que fez com que tirasse as minhas dúvidas sem vergonha e receio nenhum de errar. Pretendo voltar à formação para fazer outro nível assim que possível. Muitíssimo obrigada pela atenção, dedicação e carinho Taty Viana."
+        }
+      ],
+      "ctaLabel": "Marcar aula experimental",
+      "ctaAriaLabel": "Marcar aula experimental — abrir conversa no WhatsApp (nova janela)",
+      "whatsappMessage": "Olá! Gostaria de marcar uma aula experimental de inglês na Best Fluency."
+    },
+    "founder": {
+      "h2": "Conheça a fundadora da Best Fluency",
+      "text": [
+        "Olá, eu sou a Tatiana Viana",
+        "Sou engenheira, profissional com experiência internacional em tecnologia e gestão de projetos, e fundadora da Best Fluency. Ao longo da minha carreira, tive a oportunidade de trabalhar em diferentes empresas, projetos e contextos internacionais, experiências que moldaram a forma como penso, trabalho e resolvo problemas. Foi todo esse percurso que trouxe comigo quando decidi empreender na área da educação.",
+        "Eu não deixei de ser engenheira. Eu trouxe a engenharia comigo. A experiência que construí ao longo dos anos foi aplicada na criação da Best Fluency, desde a estruturação do negócio até ao desenvolvimento de um método próprio de ensino de línguas. A minha própria experiência como aluna também me ensinou que conhecer uma língua não significa necessariamente ter confiança para falar — e foi a partir dessa realidade que nasceu a nossa abordagem: mais prática, personalizada e focada na comunicação.",
+        "Hoje, vejo a Best Fluency como a união de tudo aquilo que construí ao longo da minha trajetória: experiência, conhecimento, inovação e vontade de transformar a forma como as pessoas aprendem novos idiomas."
+      ],
+      "imageAlt": "Tatiana Viana, fundadora da Best Fluency Language School",
+      "ctaLabel": "Marcar aula experimental",
+      "ctaAriaLabel": "Marcar aula experimental — abrir conversa no WhatsApp (nova janela)",
+      "whatsappMessage": "Olá! Gostaria de marcar uma aula experimental de inglês na Best Fluency."
+    },
+    "journey": {
+      "h2": "Como começar as aulas de inglês na Best Fluency",
+      "subtitle": "Da primeira mensagem à primeira aula, acompanhamos cada passo do seu percurso.",
+      "steps": [
+        {
+          "title": "Abra a conversa",
+          "text": "Envie-nos uma mensagem pelo WhatsApp e conte-nos o que procura, os seus objetivos e a sua disponibilidade."
+        },
+        {
+          "title": "Descubra o seu ponto de partida",
+          "text": "Numa breve conversa, identificamos o nível atual e as principais necessidades de aprendizagem."
+        },
+        {
+          "title": "Trace a sua rota",
+          "text": "Definimos a modalidade, os conteúdos e um percurso de aprendizagem adaptado aos objetivos do aluno."
+        },
+        {
+          "title": "Comece a avançar",
+          "text": "Inicie as aulas e acompanhe a evolução com prática, orientação e feedback contínuo."
+        }
+      ],
+      "ctaLabel": "Dar o primeiro passo",
+      "ctaAriaLabel": "Dar o primeiro passo — abrir conversa no WhatsApp (nova janela)",
+      "whatsappMessage": "Olá! Gostaria de receber informações sobre as aulas da Best Fluency."
+    },
+    "faq": {
+      "h2": "Perguntas frequentes sobre as aulas da Best Fluency",
+      "subtitle": "Encontre respostas rápidas sobre as aulas de inglês presenciais na Amadora e online.",
+      "items": [
+        {
+          "question": "Onde decorrem as aulas presenciais?",
+          "answer": "As aulas presenciais decorrem no Espaço CASA, na Avenida Chaby Pinheiro, 5, Venda Nova — Amadora."
+        },
+        {
+          "question": "Também existem aulas online?",
+          "answer": "Sim. A Best Fluency disponibiliza aulas online para alunos que procuram maior flexibilidade ou que não conseguem deslocar-se ao espaço presencial."
+        },
+        {
+          "question": "Existem aulas individuais e em grupo?",
+          "answer": "Sim. Existem aulas individuais e turmas reduzidas, organizadas de acordo com o nível e a disponibilidade dos alunos."
+        },
+        {
+          "question": "Quantos alunos existem em cada turma?",
+          "answer": "As turmas têm um máximo de 4 alunos, permitindo maior participação e acompanhamento durante as aulas."
+        },
+        {
+          "question": "Para quem são as aulas?",
+          "answer": "Existem aulas para crianças, jovens e adultos, com conteúdos definidos de acordo com a idade, o nível e os objetivos de cada aluno."
+        },
+        {
+          "question": "Preciso de saber inglês para começar?",
+          "answer": "Não. As aulas são adequadas tanto para iniciantes como para alunos que já possuem conhecimentos de inglês e pretendem continuar a evoluir."
+        },
+        {
+          "question": "Como é identificado o meu nível?",
+          "answer": "Antes do início das aulas, realizamos uma breve conversa para compreender os conhecimentos atuais, as principais dificuldades e os objetivos do aluno."
+        },
+        {
+          "question": "As aulas são personalizadas?",
+          "answer": "Sim. Os conteúdos, as atividades e o ritmo das aulas são ajustados ao nível, às necessidades e à evolução de cada aluno."
+        },
+        {
+          "question": "Quanto tempo dura cada aula?",
+          "answer": "Cada aula tem a duração de 50 minutos, com foco na prática, na participação e na evolução contínua."
+        },
+        {
+          "question": "Como funciona a aula experimental?",
+          "answer": "A aula experimental permite conhecer a abordagem da Best Fluency, esclarecer dúvidas e perceber como o ensino pode ser adaptado aos objetivos do aluno."
+        },
+        {
+          "question": "Como posso marcar uma aula?",
+          "answer": "Basta clicar num botão do WhatsApp e indicar o tipo de aula pretendido e a disponibilidade."
+        },
+        {
+          "question": "Como posso obter mais informações?",
+          "answer": "Pode entrar em contacto connosco através do WhatsApp para esclarecer todas as suas dúvidas."
+        }
+      ],
+      "ctaLabel": "Marcar aula experimental",
+      "ctaAriaLabel": "Marcar aula experimental — abrir conversa no WhatsApp (nova janela)",
+      "whatsappMessage": "Olá! Gostaria de marcar uma aula experimental de inglês na Best Fluency."
+    },
+    "finalCta": {
+      "eyebrow": "PRONTO PARA EMBARCAR?",
+      "title": "O seu próximo passo no inglês começa aqui",
+      "text": "Fale connosco pelo WhatsApp, esclareça as suas dúvidas e descubra a modalidade mais adequada ao seu nível, aos seus objetivos e à sua rotina.",
+      "ctaLabel": "Marcar aula experimental",
+      "ctaAriaLabel": "Marcar aula experimental — abrir conversa no WhatsApp (nova janela)",
+      "whatsappMessage": "Olá! Gostaria de receber informações e marcar uma aula experimental de inglês na Best Fluency.",
+      "complement": "Aulas presenciais na Amadora e online."
+    }
+  },
+  "language.name.ja-JP": "🇯🇵 Japonês",
+  "language.name.ru-RU": "🇷🇺 Russo",
+  "language.name.zh-CN": "🇨🇳 Mandarim",
+  "language.short.ja-JP": "JA",
+  "language.short.ru-RU": "RU",
+  "language.short.zh-CN": "ZH"
+}
