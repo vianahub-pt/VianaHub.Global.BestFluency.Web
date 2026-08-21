@@ -10,7 +10,7 @@
   "landing": {
     "meta": {
       "title": "Englischunterricht in Amadora und online | Best Fluency",
-      "description": "Englischunterricht vor Ort in Venda Nova, Amadora, und online für Kinder, Jugendliche und Erwachsene. Einzelunterricht und Gruppen mit maximal 4 Lernenden."
+      "description": "Englischunterricht vor Ort in Venda Nova, Amadora, und online für Kinder, Jugendliche und Erwachsene. Einzelunterricht und kleine Gruppen."
     },
     "a11y": {
       "skipToContent": "Zum Hauptinhalt springen",
@@ -70,7 +70,7 @@
       "title2": "Sprich",
       "title3": "Englisch mit",
       "title4": "Selbstvertrauen.",
-      "text": "Praktischer und persönlicher Englischunterricht für Kinder, Jugendliche und Erwachsene – einzeln oder in kleinen Gruppen mit maximal 4 Lernenden.",
+      "text": "Praktischer und persönlicher Englischunterricht für Kinder, Jugendliche und Erwachsene – einzeln oder in kleinen Gruppen.",
       "ctaLabel": "Probestunde buchen",
       "ctaAriaLabel": "Probestunde buchen — WhatsApp-Unterhaltung öffnen (neues Fenster)",
       "ctaWhatsappMessage": "Hallo! Ich möchte gerne eine Englisch-Probestunde bei Best Fluency buchen."
@@ -78,7 +78,7 @@
     "infoBar": {
       "items": [
         "Einzelunterricht",
-        "Gruppen mit bis zu 4 Lernenden",
+        "Kleine Gruppen",
         "Vor Ort in Amadora",
         "Online-Unterricht"
       ]
@@ -97,7 +97,7 @@
       },
       "group": {
         "title": "In einer kleinen Gruppe lernen und üben",
-        "text": "Nach Niveau organisierte Gruppen mit maximal 4 Lernenden für Teilnahme, Interaktion und enge Betreuung.",
+        "text": "Nach Niveau organisierte kleine Gruppen für Teilnahme, Interaktion und enge Betreuung.",
         "note": "Abhängig von der Gruppenzusammenstellung und Verfügbarkeit",
         "ctaLabel": "Ich möchte mehr über die Gruppen erfahren",
         "ctaAriaLabel": "Ich möchte mehr über die Gruppen erfahren — WhatsApp-Unterhaltung öffnen (neues Fenster)",
@@ -281,7 +281,7 @@
         },
         {
           "question": "Wie viele Lernende sind in jeder Gruppe?",
-          "answer": "Die Gruppen haben maximal 4 Lernende, was mehr Teilnahme und Betreuung während des Unterrichts ermöglicht."
+          "answer": "Die Gruppen sind klein, was mehr Teilnahme und Betreuung während des Unterrichts ermöglicht."
         },
         {
           "question": "Für wen ist der Unterricht geeignet?",

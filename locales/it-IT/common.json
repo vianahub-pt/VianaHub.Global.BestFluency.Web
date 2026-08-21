@@ -10,7 +10,7 @@
   "landing": {
     "meta": {
       "title": "Lezioni di inglese ad Amadora e online | Best Fluency",
-      "description": "Lezioni di inglese in presenza a Venda Nova, Amadora, e online per bambini, ragazzi e adulti. Lezioni individuali e gruppi fino a 4 studenti."
+      "description": "Lezioni di inglese in presenza a Venda Nova, Amadora, e online per bambini, ragazzi e adulti. Lezioni individuali e piccoli gruppi."
     },
     "a11y": {
       "skipToContent": "Vai al contenuto principale",
@@ -70,7 +70,7 @@
       "title2": "Inizia a parlare",
       "title3": "inglese con",
       "title4": "sicurezza.",
-      "text": "Lezioni pratiche e personalizzate per bambini, ragazzi e adulti, in formato individuale o in piccoli gruppi con un massimo di 4 studenti.",
+      "text": "Lezioni pratiche e personalizzate per bambini, ragazzi e adulti, in formato individuale o in piccoli gruppi.",
       "ctaLabel": "Prenota una lezione di prova",
       "ctaAriaLabel": "Prenota una lezione di prova — apri una conversazione WhatsApp (nuova finestra)",
       "ctaWhatsappMessage": "Ciao! Vorrei prenotare una lezione di prova di inglese alla Best Fluency."
@@ -78,7 +78,7 @@
     "infoBar": {
       "items": [
         "Lezioni individuali",
-        "Gruppi fino a 4 studenti",
+        "Piccoli gruppi",
         "In presenza ad Amadora",
         "Lezioni online"
       ]
@@ -97,7 +97,7 @@
       },
       "group": {
         "title": "Imparare e fare pratica in un piccolo gruppo",
-        "text": "Gruppi organizzati per livello, con un massimo di 4 studenti, per favorire partecipazione, interazione e un accompagnamento ravvicinato.",
+        "text": "Gruppi organizzati per livello, in piccoli gruppi, per favorire partecipazione, interazione e un accompagnamento ravvicinato.",
         "note": "Soggetto alla formazione del gruppo e alla disponibilità",
         "ctaLabel": "Voglio saperne di più sui gruppi",
         "ctaAriaLabel": "Voglio saperne di più sui gruppi — apri una conversazione WhatsApp (nuova finestra)",
@@ -279,7 +279,7 @@
         },
         {
           "question": "Quanti studenti ci sono in ogni gruppo?",
-          "answer": "I gruppi hanno un massimo di 4 studenti, per garantire maggiore partecipazione e accompagnamento durante le lezioni."
+          "answer": "I gruppi sono ridotti, per garantire maggiore partecipazione e accompagnamento durante le lezioni."
         },
         {
           "question": "A chi sono rivolte le lezioni?",

@@ -10,7 +10,7 @@
   "landing": {
     "meta": {
       "title": "Clases de inglés en Amadora y online | Best Fluency",
-      "description": "Clases de inglés presenciales en Venda Nova, Amadora, y online para niños, jóvenes y adultos. Clases individuales y grupos de hasta 4 alumnos."
+      "description": "Clases de inglés presenciales en Venda Nova, Amadora, y online para niños, jóvenes y adultos. Clases individuales y grupos reducidos."
     },
     "a11y": {
       "skipToContent": "Saltar al contenido principal",
@@ -70,7 +70,7 @@
       "title2": "Empieza a hablar",
       "title3": "inglés con",
       "title4": "confianza.",
-      "text": "Clases prácticas y personalizadas para niños, jóvenes y adultos, de forma individual o en grupos reducidos con un máximo de 4 alumnos.",
+      "text": "Clases prácticas y personalizadas para niños, jóvenes y adultos, de forma individual o en grupos reducidos.",
       "ctaLabel": "Reservar clase de prueba",
       "ctaAriaLabel": "Reservar clase de prueba — abrir una conversación de WhatsApp (nueva ventana)",
       "ctaWhatsappMessage": "¡Hola! Me gustaría reservar una clase de prueba de inglés en Best Fluency."
@@ -78,7 +78,7 @@
     "infoBar": {
       "items": [
         "Clases individuales",
-        "Grupos de hasta 4 alumnos",
+        "Grupos reducidos",
         "Presencial en Amadora",
         "Clases online"
       ]
@@ -97,7 +97,7 @@
       },
       "group": {
         "title": "Aprender y practicar en un grupo pequeño",
-        "text": "Grupos organizados por nivel, con un máximo de 4 alumnos, para permitir la participación, la interacción y un acompañamiento cercano.",
+        "text": "Grupos organizados por nivel, en grupos reducidos, para permitir la participación, la interacción y un acompañamiento cercano.",
         "note": "Sujeto a la formación del grupo y a la disponibilidad",
         "ctaLabel": "Quiero saber más sobre los grupos",
         "ctaAriaLabel": "Quiero saber más sobre los grupos — abrir una conversación de WhatsApp (nueva ventana)",
@@ -281,7 +281,7 @@
         },
         {
           "question": "¿Cuántos alumnos hay en cada grupo?",
-          "answer": "Los grupos tienen un máximo de 4 alumnos, lo que permite mayor participación y acompañamiento durante las clases."
+          "answer": "Los grupos son reducidos, lo que permite mayor participación y acompañamiento durante las clases."
         },
         {
           "question": "¿Para quién son las clases?",

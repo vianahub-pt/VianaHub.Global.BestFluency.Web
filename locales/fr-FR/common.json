@@ -10,7 +10,7 @@
   "landing": {
     "meta": {
       "title": "Cours d'anglais à Amadora et en ligne | Best Fluency",
-      "description": "Cours d'anglais en présentiel à Venda Nova, Amadora, et en ligne pour enfants, adolescents et adultes. Cours individuels et groupes de 4 élèves maximum."
+      "description": "Cours d'anglais en présentiel à Venda Nova, Amadora, et en ligne pour enfants, adolescents et adultes. Cours individuels et petits groupes."
     },
     "a11y": {
       "skipToContent": "Aller au contenu principal",
@@ -70,7 +70,7 @@
       "title2": "Commencez à parler",
       "title3": "anglais avec",
       "title4": "assurance.",
-      "text": "Des cours pratiques et personnalisés pour enfants, adolescents et adultes, en format individuel ou en petits groupes de 4 élèves maximum.",
+      "text": "Des cours pratiques et personnalisés pour enfants, adolescents et adultes, en format individuel ou en petits groupes.",
       "ctaLabel": "Réserver un cours d'essai",
       "ctaAriaLabel": "Réserver un cours d'essai — ouvrir une conversation WhatsApp (nouvelle fenêtre)",
       "ctaWhatsappMessage": "Bonjour ! Je souhaite réserver un cours d'essai d'anglais à Best Fluency."
@@ -78,7 +78,7 @@
     "infoBar": {
       "items": [
         "Cours individuels",
-        "Groupes de 4 élèves maximum",
+        "Petits groupes",
         "En présentiel à Amadora",
         "Cours en ligne"
       ]
@@ -97,7 +97,7 @@
       },
       "group": {
         "title": "Apprendre et pratiquer dans un petit groupe",
-        "text": "Groupes organisés par niveau, avec un maximum de 4 élèves, pour permettre la participation, l'interaction et un accompagnement de proximité.",
+        "text": "Groupes organisés par niveau, en petits groupes, pour permettre la participation, l'interaction et un accompagnement de proximité.",
         "note": "Sous réserve de constitution du groupe et de disponibilité",
         "ctaLabel": "Je veux en savoir plus sur les groupes",
         "ctaAriaLabel": "Je veux en savoir plus sur les groupes — ouvrir une conversation WhatsApp (nouvelle fenêtre)",
@@ -281,7 +281,7 @@
         },
         {
           "question": "Combien d'élèves y a-t-il dans chaque groupe ?",
-          "answer": "Les groupes comptent au maximum 4 élèves, ce qui permet une plus grande participation et un meilleur accompagnement pendant les cours."
+          "answer": "Les groupes sont réduits, ce qui permet une plus grande participation et un meilleur accompagnement pendant les cours."
         },
         {
           "question": "À qui s'adressent les cours ?",
