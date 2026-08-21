@@ -37,7 +37,10 @@
       }
     },
     "foundation": {
-      "eyebrow": "BEST FLUENCY LANGUAGE SCHOOL · AMADORA AND ONLINE",
+      "text": [
+        "Best Fluency helps each student learn in a close, practical, and goal-oriented way.",
+        "In-person English classes in Amadora and online for children, teens, and adults."
+      ],
       "notice": "We are preparing our new website. In the meantime, contact us on WhatsApp for information about in-person English classes in Amadora and online.",
       "contactsTitle": "Contacts"
     },
@@ -182,28 +185,40 @@
       ],
       "items": [
         {
+          "name": "Andreia Barros",
+          "role": "Administrative Manager",
+          "photo": "/testimonials/andreia-foto.png",
+          "quote": "I love the classes! The teacher is very attentive, patient and explains everything in a simple and easy-to-understand way. I have been improving a lot in English and I feel more and more comfortable speaking. Highly recommend!"
+        },
+        {
+          "name": "Mauricio Moura",
+          "role": "Bank Manager",
+          "photo": "/testimonials/mauricio-foto.png",
+          "quote": "I want to share my evaluation of the course. The teacher has vast knowledge of the English language and the ability to transfer that knowledge to students in a relaxed way. What I like most about my English class is the way she presents it, even when I don't know something. That helped me a lot to unlock my conversation. That's why I recommend Best Fluency."
+        },
+        {
           "name": "Pedro António",
-          "source": "Google review",
-          "stars": 5,
-          "quote": "I learn a lot with teacher Taty."
+          "role": "Midfielder",
+          "photo": "/testimonials/pedro-foto.png",
+          "quote": "Great! I learn a lot with teacher Taty."
+        },
+        {
+          "name": "Romerson Neves",
+          "role": "Truck Driver",
+          "photo": "/testimonials/romerson-foto.png",
+          "quote": "I have been in Portugal for 7 months and I realized the importance of learning English for my life. I started with in-person classes, but the person who was teaching me had to leave the country and couldn't continue. Then I tried online classes with another teacher, but I didn't adapt. That's when I met teacher Tatiana. We had a trial class and I really liked it. Since then, I have continued the classes and I feel that I am improving every day. Teacher Tatiana has a lot of patience, explains clearly and conducts the classes excellently. I recommend her to everyone who wants to learn English with quality."
         },
         {
           "name": "Sandro Vite",
-          "source": "Google review",
-          "stars": 5,
+          "role": "Google Review",
+          "photo": "/testimonials/sandro-foto.png",
           "quote": "Amazing, teaching that is very well applied and in a simple, objective way."
         },
         {
-          "name": "Maurício Moura",
-          "source": "Testimonial via WhatsApp",
-          "stars": null,
-          "quote": "The teacher has vast knowledge of the English language and the ability to pass that knowledge on to students in a relaxed way."
-        },
-        {
           "name": "Wanda Ramos",
-          "source": "Testimonial via WhatsApp",
-          "stars": null,
-          "quote": "Everything was very clear, with easy-to-understand content. Teacher Taty made me feel very comfortable asking my questions without embarrassment or fear of making mistakes."
+          "role": "Back Office Assistant",
+          "photo": "/testimonials/wanda-foto.png",
+          "quote": "I want to share my evaluation of the course. Everything was very clear, with easy-to-understand content. Teacher Taty was great, very caring, made me feel very comfortable, motivated me which made me ask my questions without any embarrassment or fear of being wrong. I intend to go back to training to do another level as soon as possible. Thank you so much for the attention, dedication and care, Taty Viana."
         }
       ],
       "ctaLabel": "Book a trial lesson",

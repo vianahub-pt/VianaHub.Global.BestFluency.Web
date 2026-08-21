@@ -37,7 +37,10 @@
       }
     },
     "foundation": {
-      "eyebrow": "BEST FLUENCY LANGUAGE SCHOOL · AMADORA Y ONLINE",
+      "text": [
+        "Best Fluency ayuda a cada alumno a aprender de forma cercana, práctica y orientada a sus objetivos.",
+        "Clases de inglés presenciales en Amadora y online para niños, jóvenes y adultos."
+      ],
       "notice": "Estamos preparando nuestro nuevo sitio web. Mientras tanto, contáctenos por WhatsApp para información sobre clases de inglés presenciales en Amadora y online.",
       "contactsTitle": "Contactos"
     },
@@ -182,28 +185,40 @@
       ],
       "items": [
         {
+          "name": "Andreia Barros",
+          "role": "Gerente administrativo",
+          "photo": "/testimonials/andreia-foto.png",
+          "quote": "¡Me encantan las clases! La profesora es muy atenta, paciente y explica todo de una forma simple y fácil de entender. He estado mejorando mucho en inglés y me siento cada vez más cómoda para hablar. ¡Muy recomendable!"
+        },
+        {
+          "name": "Mauricio Moura",
+          "role": "Gerente de banco",
+          "photo": "/testimonials/mauricio-foto.png",
+          "quote": "Vengo a dar mi evaluación del curso. La teacher posee un vasto conocimiento de la lengua inglesa y facilidad para transmitir ese conocimiento a los alumnos, de una forma distendida. Lo que más me gusta de mi clase de inglés es la forma de exponer, aunque sea algo que no sé. Eso me ayudó mucho a desbloquear mi conversación. Por eso indico Best Fluency."
+        },
+        {
           "name": "Pedro António",
-          "source": "Reseña de Google",
-          "stars": 5,
-          "quote": "Aprendo mucho con la teacher Taty."
+          "role": "Centrocampista",
+          "photo": "/testimonials/pedro-foto.png",
+          "quote": "¡Muy bueno! Aprendo mucho con la teacher Taty."
+        },
+        {
+          "name": "Romerson Neves",
+          "role": "Conductor de camión",
+          "photo": "/testimonials/romerson-foto.png",
+          "quote": "Llevo 7 meses en Portugal y me di cuenta de la importancia de aprender inglés para mi vida. Empecé con clases presenciales, pero la persona que me enseñaba tuvo que salir del país y no pudo continuar. Luego probé clases online con otra profesora, pero no me adapté. Fue entonces cuando conocí a la profesora Tatiana. Hicimos una clase experimental y me gustó mucho. Desde entonces, he continuado las clases y siento que estoy mejorando cada día más. La profesora Tatiana tiene mucha paciencia, explica con claridad y lleva las clases de forma excelente. La recomiendo a todos los que buscan aprender inglés con calidad."
         },
         {
           "name": "Sandro Vite",
-          "source": "Reseña de Google",
-          "stars": 5,
+          "role": "Reseña de Google",
+          "photo": "/testimonials/sandro-foto.png",
           "quote": "Increíble, una enseñanza muy bien aplicada y de manera simple y objetiva."
         },
         {
-          "name": "Maurício Moura",
-          "source": "Testimonio por WhatsApp",
-          "stars": null,
-          "quote": "La teacher posee un vasto conocimiento de la lengua inglesa y facilidad para transmitir ese conocimiento a los alumnos, de una forma distendida."
-        },
-        {
           "name": "Wanda Ramos",
-          "source": "Testimonio por WhatsApp",
-          "stars": null,
-          "quote": "Todo fue muy explícito, con contenido de fácil comprensión. La profesora Taty me hizo sentir muy cómoda para resolver mis dudas sin vergüenza ni miedo a equivocarme."
+          "role": "Asistente de operaciones internas",
+          "photo": "/testimonials/wanda-foto.png",
+          "quote": "Vengo a dar mi evaluación del curso. Fue todo muy explícito, con contenido de fácil comprensión. La profesora Taty fue genial, muy cariñosa, me hizo sentir muy cómoda, me motivó y eso hizo que pudiera hacer mis preguntas sin vergüenza ni miedo a equivocarme. Pretendo volver a la formación para hacer otro nivel en cuanto sea posible. Muchísimas gracias por la atención, dedicación y cariño, Taty Viana."
         }
       ],
       "ctaLabel": "Reservar clase de prueba",

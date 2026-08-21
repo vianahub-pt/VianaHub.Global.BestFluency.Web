@@ -37,7 +37,10 @@
       }
     },
     "foundation": {
-      "eyebrow": "BEST FLUENCY LANGUAGE SCHOOL · AMADORA ET EN LIGNE",
+      "text": [
+        "Best Fluency aide chaque étudiant à apprendre dans un environnement intime, pratique et axé sur les objectifs.",
+        "Cours d'anglais en présentiel à Amadora et en ligne pour enfants, adolescents et adultes."
+      ],
       "notice": "Nous préparons notre nouveau site web. En attendant, contactez-nous sur WhatsApp pour des informations sur les cours d'anglais en présentiel à Amadora et en ligne.",
       "contactsTitle": "Contacts"
     },
@@ -182,28 +185,40 @@
       ],
       "items": [
         {
+          "name": "Andreia Barros",
+          "role": "Responsable administratif",
+          "photo": "/testimonials/andreia-foto.png",
+          "quote": "J'adore les cours ! La professeure est très attentionnée, patiente et explique tout de manière simple et facile à comprendre. J'ai beaucoup progressé en anglais et je me sens de plus en plus à l'aise pour parler. Je recommande vivement !"
+        },
+        {
+          "name": "Mauricio Moura",
+          "role": "Responsable bancaire",
+          "photo": "/testimonials/mauricio-foto.png",
+          "quote": "Je souhaite donner mon évaluation du cours. La teacher possède une vaste connaissance de la langue anglaise et une facilité à transmettre ce savoir aux élèves, de façon décontractée. Ce que j'aime le plus dans mon cours d'anglais, c'est la façon d'exposer, même quand je ne sais pas. Cela m'a beaucoup aidé à débloquer ma conversation. C'est pourquoi je recommande Best Fluency."
+        },
+        {
           "name": "Pedro António",
-          "source": "Avis Google",
-          "stars": 5,
-          "quote": "J'apprends beaucoup avec la teacher Taty."
+          "role": "Milieu de terrain",
+          "photo": "/testimonials/pedro-foto.png",
+          "quote": "Très bien ! J'apprends beaucoup avec la teacher Taty."
+        },
+        {
+          "name": "Romerson Neves",
+          "role": "Truck Driver",
+          "photo": "/testimonials/romerson-foto.png",
+          "quote": "Je suis au Portugal depuis 7 mois et j'ai réalisé l'importance d'apprendre l'anglais pour ma vie. J'ai commencé avec des cours en personne, mais la personne qui m'enseignait a dû quitter le pays et n'a pas pu continuer. J'ai ensuite essayé des cours en ligne avec un autre professeur, mais je ne me suis pas adapté. C'est alors que j'ai rencontré la professeure Tatiana. Nous avons fait un cours d'essai et j'ai beaucoup aimé. Depuis, j'ai continué les cours et je sens que je progresse chaque jour davantage. La professeure Tatiana a beaucoup de patience, explique clairement et mène les cours de manière excellente. Je la recommande à tous ceux qui veulent apprendre l'anglais avec qualité."
         },
         {
           "name": "Sandro Vite",
-          "source": "Avis Google",
-          "stars": 5,
+          "role": "Avis Google",
+          "photo": "/testimonials/sandro-foto.png",
           "quote": "Incroyable, un enseignement très bien appliqué et de manière simple et objective."
         },
         {
-          "name": "Maurício Moura",
-          "source": "Témoignage via WhatsApp",
-          "stars": null,
-          "quote": "La teacher possède une vaste connaissance de la langue anglaise et une facilité à transmettre ce savoir aux élèves, de façon décontractée."
-        },
-        {
           "name": "Wanda Ramos",
-          "source": "Témoignage via WhatsApp",
-          "stars": null,
-          "quote": "Tout était très explicite, avec un contenu facile à comprendre. La professeure Taty m'a mise très à l'aise pour poser mes questions sans gêne ni peur de me tromper."
+          "role": "Assistant Back Office",
+          "photo": "/testimonials/wanda-foto.png",
+          "quote": "Je souhaite donner mon évaluation du cours. Tout était très explicite, avec un contenu facile à comprendre. La professeure Taty était top, très attentionnée, m'a mise très à l'aise, m'a motivée ce qui m'a permis de poser mes questions sans aucune gêne ni peur de me tromper. J'ai l'intention de reprendre la formation pour passer au niveau supérieur dès que possible. Merci beaucoup pour l'attention, la dédicace et l'affection, Taty Viana."
         }
       ],
       "ctaLabel": "Réserver un cours d'essai",

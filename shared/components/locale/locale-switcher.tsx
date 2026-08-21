@@ -1,6 +1,16 @@
 "use client";
 
-import { Check, Globe } from "lucide-react";
+import CN from "country-flag-icons/react/3x2/CN";
+import DE from "country-flag-icons/react/3x2/DE";
+import ES from "country-flag-icons/react/3x2/ES";
+import FR from "country-flag-icons/react/3x2/FR";
+import IT from "country-flag-icons/react/3x2/IT";
+import JP from "country-flag-icons/react/3x2/JP";
+import PT from "country-flag-icons/react/3x2/PT";
+import RU from "country-flag-icons/react/3x2/RU";
+import US from "country-flag-icons/react/3x2/US";
+import type { FlagComponent } from "country-flag-icons/react/3x2";
+import { Check } from "lucide-react";
 import { useRouter } from "next/navigation";
 import { useCallback } from "react";
 
@@ -19,12 +29,26 @@ interface LocaleSwitcherProps {
   label: string;
 }
 
+/** Bandeira (SVG 3:2) do país que representa cada idioma do registo. */
+const flagByLocale: Record<LocaleCode, FlagComponent> = {
+  "pt-PT": PT,
+  "en-US": US,
+  "es-ES": ES,
+  "fr-FR": FR,
+  "de-DE": DE,
+  "it-IT": IT,
+  "ja-JP": JP,
+  "ru-RU": RU,
+  "zh-CN": CN,
+};
+
 /**
  * Seletor de idioma — todos os idiomas usam o mesmo optional catch-all root.
  * A posição visual é guardada antes da navegação e restaurada no novo locale.
  */
 export function LocaleSwitcher({ currentLocale, label }: LocaleSwitcherProps) {
   const current = getLocale(currentLocale);
+  const CurrentFlag = flagByLocale[currentLocale];
   const router = useRouter();
 
   const handleLocaleChange = useCallback(
@@ -42,14 +66,18 @@ export function LocaleSwitcher({ currentLocale, label }: LocaleSwitcherProps) {
     <Select value={currentLocale} onValueChange={handleLocaleChange}>
       <SelectTrigger
         aria-label={`${label}: ${current.label}`}
-        className="min-h-11 w-40 shrink-0 border-0 bg-transparent px-3 text-sm font-medium text-foreground hover:bg-white hover:text-accent focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring"
+        className="min-h-11 w-40 shrink-0 border-0 bg-white/20 px-3 text-sm font-medium text-foreground hover:bg-white hover:text-accent focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring"
       >
-        <Globe className="mr-1.5 h-4 w-4" aria-hidden="true" />
+        <CurrentFlag
+          className="mr-1.5 h-4 w-6 rounded-[2px] object-cover"
+          aria-hidden="true"
+        />
         <SelectValue />
       </SelectTrigger>
       <SelectContent align="end">
         {locales.map((locale) => {
           const isCurrent = locale.code === currentLocale;
+          const Flag = flagByLocale[locale.code];
           return (
             <SelectItem
               key={locale.code}
@@ -60,9 +88,6 @@ export function LocaleSwitcher({ currentLocale, label }: LocaleSwitcherProps) {
                 <span className={isCurrent ? "font-semibold" : ""}>
                   {locale.label}
                 </span>
-                {isCurrent ? (
-                  <Check className="h-4 w-4 text-accent" aria-hidden="true" />
-                ) : null}
               </span>
             </SelectItem>
           );

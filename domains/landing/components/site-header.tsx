@@ -27,6 +27,7 @@ export function SiteHeader({ locale }: { locale: LocaleCode }) {
         <a
           href="#home"
           className="
+        brand-micro
         flex
         min-h-9
         text-black dark:text-white

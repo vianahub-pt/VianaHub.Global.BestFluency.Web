@@ -5,10 +5,10 @@ import { BestKids } from "./best-kids";
 import { Faq } from "./faq";
 import { Founder } from "./founder";
 import { Hero } from "./hero";
-import { InPerson } from "./in-person";
 import { Journey } from "./journey";
 import { Method } from "./method";
 import { Modalities } from "./modalities";
+import { ParallaxBand } from "./parallax-band";
 import { SiteFooter } from "./site-footer";
 import { SiteHeader } from "./site-header";
 import { Testimonials } from "./testimonials";
@@ -41,6 +41,7 @@ export function LandingPage({ locale }: { locale: LocaleCode }) {
       <main id="main" className="flex-1">
         <Hero locale={locale} />
         <Modalities locale={locale} />
+        <ParallaxBand />
         <Method locale={locale} />
         <BestKids locale={locale} />
         <Testimonials locale={locale} />

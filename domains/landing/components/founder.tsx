@@ -7,6 +7,7 @@ import { buttonVariants } from "@/shared/components/ui/button";
 import { SectionHeading } from "@/shared/components/ui/section-heading";
 import { WhatsAppLink } from "@/shared/components/whatsapp-link";
 import { cn } from "@/shared/lib/utils";
+import { ShineSweep } from "./shine-sweep";
 
 /**
  * Fundadora (spec §15).
@@ -51,16 +52,16 @@ export function Founder({ locale }: { locale: LocaleCode }) {
             ))}
           </div>
 
-          <div className="lg:order-first lg:justify-self-center">
+          <ShineSweep className="bg-black aspect-square w-full max-w-sm overflow-hidden rounded-full shadow-lg lg:order-first lg:justify-self-center">
             <Image
               src="/ceo.png"
               alt={founder.imageAlt}
               width={400}
               height={400}
               loading="lazy"
-              className="h-auto w-full max-w-sm object-cover shadow-lg"
+              className="absolute inset-0 h-full w-full object-cover object-center"
             />
-          </div>
+          </ShineSweep>
         </div>
 
         <div className="mt-12 flex justify-center">

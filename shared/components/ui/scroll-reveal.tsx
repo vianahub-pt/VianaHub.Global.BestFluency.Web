@@ -13,8 +13,9 @@ interface ScrollRevealProps {
 }
 
 /**
- * Wrapper que dispara animação CSS quando o elemento entra no viewport.
- * Usa Intersection Observer — sem dependências externas.
+ * Wrapper que dispara animação CSS quando o elemento entra no viewport
+ * e repete a cada reentrada (liga/desliga `.scroll-reveal-visible` conforme
+ * `isIntersecting`). Usa Intersection Observer — sem dependências externas.
  * Respeita prefers-reduced-motion (animações desativadas via CSS global).
  */
 export function ScrollReveal({
@@ -38,10 +39,10 @@ export function ScrollReveal({
 
     const observer = new IntersectionObserver(
       ([entry]) => {
-        if (entry.isIntersecting) {
-          el.classList.add("scroll-reveal-visible");
-          observer.unobserve(el);
-        }
+        // Religar a cada entrada na área de visão: ao sair remove a classe
+        // (elemento volta a ficar oculto) e ao entrar adiciona de novo — a
+        // transição CSS reinicia.
+        el.classList.toggle("scroll-reveal-visible", entry.isIntersecting);
       },
       { threshold },
     );

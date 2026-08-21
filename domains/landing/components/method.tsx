@@ -35,9 +35,9 @@ export function Method({ locale }: { locale: LocaleCode }) {
           <h2
             id="method-title"
             className="font-title text-accent dark:text-white font-title font-bold tracking-tight text-balance
-              sm:text-2xl
-              md:text-3xl
-              lg:text-4xl"
+            sm:text-2xl
+            md:text-3xl
+            lg:text-4xl"
           >
             {method.h2}
           </h2>

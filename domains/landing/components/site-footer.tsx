@@ -40,24 +40,19 @@ export function SiteFooter({ locale }: { locale: LocaleCode }) {
         <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-3">
           {/* Coluna: Marca */}
           <div className="flex flex-col gap-4">
-            <div className="flex items-center gap-3">
-              {/* eslint-disable-next-line @next/next/no-img-element -- srcSet responsivo não é suportado por next/image com images.unoptimized (spec §25). */}
-              <img
-                src="/logo-160.webp"
-                srcSet="/logo-80.webp 80w, /logo-160.webp 160w"
-                sizes="40px"
-                alt=""
-                width={160}
-                height={160}
-                loading="lazy"
-                className="h-10 w-10 rounded-full object-cover"
-              />
-              <span className="text-xl font-bold text-accent">
-                {site.shortName}
-              </span>
-            </div>
-            <p className="max-w-xs text-sm text-white">
-              {content.foundation.eyebrow}
+            <img
+              src="/logo-320.webp"
+              srcSet="/logo-80.webp 80w, /logo-160.webp 160w, /logo-320.webp 320w"
+              sizes="120px"
+              alt="Best Fluency"
+              width={320}
+              height={320}
+              loading="lazy"
+              decoding="async"
+              className="brand-micro h-30 w-30 rounded-full object-cover"
+            />
+            <p className="max-w-xs whitespace-pre-line text-sm text-white">
+              {content.foundation.text.join("\n")}
             </p>
           </div>
 
@@ -71,7 +66,7 @@ export function SiteFooter({ locale }: { locale: LocaleCode }) {
                 <li key={item.key}>
                   <a
                     href={item.href}
-                    className="text-sm text-white transition-colors hover:text-accent focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring"
+                    className="link-micro text-sm text-white transition-colors hover:text-accent focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring"
                   >
                     {content.nav.links[item.key]}
                   </a>
@@ -85,18 +80,11 @@ export function SiteFooter({ locale }: { locale: LocaleCode }) {
             <h3 className="text-sm font-semibold text-accent">
               {content.footer.contact}
             </h3>
-            <address className="flex flex-col gap-2 text-sm not-italic text-white">
-              <span className="font-medium text-white">
-                {site.address.venue}
-              </span>
-              <span>{site.address.street}</span>
-              <span>{site.address.locality}</span>
-            </address>
 
             <PhoneLink
               href={`tel:${site.phoneHref}`}
               section="footer"
-              className="text-sm text-white underline underline-offset-4 transition-colors hover:text-accent focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring"
+              className="link-micro text-sm text-white transition-colors hover:text-accent focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring"
             >
               {site.phoneDisplay}
             </PhoneLink>
@@ -106,10 +94,17 @@ export function SiteFooter({ locale }: { locale: LocaleCode }) {
               section="footer"
               ctaLabel={content.footer.whatsappLabel}
               ariaLabel={content.cta.whatsappAriaLabel}
-              className="text-sm text-white underline underline-offset-4 transition-colors hover:text-accent focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring"
+              className="link-micro text-sm text-white transition-colors hover:text-accent focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring"
             >
               {content.footer.whatsappLabel}
             </WhatsAppLink>
+            <address className="flex flex-col gap-2 text-sm not-italic text-white">
+              <span className="font-medium text-accent">
+                {site.address.venue}
+              </span>
+              <span>{site.address.street}</span>
+              <span>{site.address.locality}</span>
+            </address>
           </div>
         </div>
 
@@ -118,11 +113,6 @@ export function SiteFooter({ locale }: { locale: LocaleCode }) {
           <p>
             © {year} {site.name}. {content.footer.rightsReserved}
           </p>
-          {/*
-           * Política de Privacidade / Cookies: rótulos exibidos sem link até
-           * o conteúdo legal ser publicado (spec §31). NÃO são links — evita
-           * rotas 404 para páginas inexistentes.
-           */}
           <div className="flex flex-wrap gap-x-4 gap-y-2">
             <span
               aria-disabled="true"

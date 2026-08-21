@@ -25,7 +25,7 @@ import { cn } from "@/shared/lib/utils";
  * `asChild` (Radix Slot) disponível para composição polimórfica.
  */
 const buttonVariants = cva(
-  "inline-flex items-center justify-center gap-2 rounded-md font-semibold transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring disabled:pointer-events-none disabled:opacity-50",
+  "group inline-flex items-center justify-center gap-2 rounded-md font-semibold transition duration-200 ease-out will-change-transform focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring disabled:pointer-events-none disabled:opacity-50 motion-safe:hover:-translate-y-0.5 motion-safe:active:translate-y-0 motion-safe:active:scale-[0.98] hover:shadow-md hover:shadow-black/10 [&_svg]:transition-transform [&_svg]:duration-200 [&_svg]:motion-safe:group-hover:rotate-[-8deg] [&_svg]:motion-safe:group-hover:scale-110",
   {
     variants: {
       variant: {

@@ -1,40 +1,91 @@
-import { MessageCircle, Star } from "lucide-react";
+import Image from "next/image";
+import { MessageCircle } from "lucide-react";
 
 import { type LocaleCode } from "@/core/config/locales";
 import { getMessages } from "@/core/i18n";
 import { buttonVariants } from "@/shared/components/ui/button";
-import { Card, CardContent } from "@/shared/components/ui/card";
+import { ScrollReveal } from "@/shared/components/ui/scroll-reveal";
 import { WhatsAppLink } from "@/shared/components/whatsapp-link";
 import { cn } from "@/shared/lib/utils";
 
-/** Iniciais para o avatar quando não existe fotografia autorizada (spec §14). */
-function initialsOf(name: string): string {
-  return name
-    .split(" ")
-    .filter(Boolean)
-    .slice(0, 2)
-    .map((part) => part[0]?.toUpperCase() ?? "")
-    .join("");
+function TestimonialCard({
+  name,
+  role,
+  photo,
+  quote,
+}: {
+  name: string;
+  role: string;
+  photo: string;
+  quote: string;
+}) {
+  return (
+    <div className="relative mb-4 overflow-hidden rounded-2xl border border-border bg-card p-5 shadow-sm transition-shadow hover:shadow-md">
+      <div className="flex items-center gap-3">
+        <div className="relative h-14 w-14 shrink-0 overflow-hidden rounded-full">
+          <Image
+            src={photo}
+            alt={name}
+            fill
+            sizes="56px"
+            className="object-cover"
+          />
+        </div>
+        <div className="min-w-0">
+          <cite className="block text-sm font-semibold not-italic text-foreground truncate">
+            {name}
+          </cite>
+          <span className="text-xs text-muted-foreground">{role}</span>
+        </div>
+      </div>
+      <blockquote className="mt-3 text-sm leading-6 text-foreground">
+        &ldquo;{quote}&rdquo;
+      </blockquote>
+    </div>
+  );
 }
 
-/**
- * Depoimentos (spec §14).
- *
- * - `<blockquote>` e `<cite>` para conteúdo e fonte;
- * - estrelas apenas nas avaliações Google (stars !== null); depoimentos via
- *   WhatsApp não exibem estrelas;
- * - avatar com iniciais (sem fotografias não autorizadas);
- * - grelha 1 por linha mobile → 2 tablet (sm) → 2×2 desktop (lg);
- * - sem carrossel;
- * - CTA "Marcar aula experimental" após a grelha (mensagem da spec §14).
- */
+function CarouselColumn({
+  items,
+  reverse,
+  speed,
+  duration,
+}: {
+  items: { name: string; role: string; photo: string; quote: string }[];
+  reverse?: boolean;
+  speed: string;
+  duration: string;
+}) {
+  return (
+    <div className="relative overflow-hidden" style={{ maxHeight: "580px" }}>
+      <div
+        className="flex flex-col"
+        style={{
+          animation: `${reverse ? "carousel-up" : "carousel-down"} ${duration} linear infinite`,
+        }}
+      >
+        {[...items, ...items].map((item, i) => (
+          <TestimonialCard key={`${item.name}-${i}`} {...item} />
+        ))}
+      </div>
+    </div>
+  );
+}
+
 export function Testimonials({ locale }: { locale: LocaleCode }) {
   const content = getMessages(locale).landing;
   const { testimonials } = content;
 
-  // Dynamic asset paths based on active locale
-  const localeLower = locale.toLowerCase();
-  const TestimonialsBasePath = `/assets/${locale}/kids-${localeLower}`;
+  const items = testimonials.items.map((item) => ({
+    name: item.name,
+    role: item.role,
+    photo: item.photo,
+    quote: item.quote,
+  }));
+
+  const col1 = items.filter((_, i) => i % 3 === 0);
+  const col2 = items.filter((_, i) => i % 3 === 1);
+  const col3 = items.filter((_, i) => i % 3 === 2);
 
   return (
     <section
@@ -43,7 +94,7 @@ export function Testimonials({ locale }: { locale: LocaleCode }) {
       className="flex min-h-dvh flex-col justify-center border-t border-border bg-gradient-to-b from-muted/40 to-accent/40"
     >
       <div className="mx-auto w-full max-w-7xl px-4 md:px-8">
-        <div className="lg:order-1">
+        <ScrollReveal animation="fade-up" delay={0}>
           <h2
             id="testimonials-title"
             className="font-title text-accent dark:text-white font-title font-bold tracking-tight text-balance
@@ -53,6 +104,8 @@ export function Testimonials({ locale }: { locale: LocaleCode }) {
           >
             {testimonials.h2}
           </h2>
+        </ScrollReveal>
+        <ScrollReveal animation="fade-up" delay={0.1}>
           <div className="mt-5">
             {testimonials.text.map((paragraph) => (
               <p
@@ -63,68 +116,32 @@ export function Testimonials({ locale }: { locale: LocaleCode }) {
               </p>
             ))}
           </div>
-        </div>
+        </ScrollReveal>
 
-        <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:gap-8">
-          {testimonials.items.map((item) => (
-            <Card key={item.name} className="h-full">
-              <CardContent className="flex h-full flex-col p-6">
-                <div className="flex items-center gap-3">
-                  <span
-                    aria-hidden="true"
-                    className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-accent/15 text-sm font-bold text-accent"
-                  >
-                    {initialsOf(item.name)}
-                  </span>
-                  <div className="flex flex-col">
-                    <cite className="text-sm font-semibold not-italic text-foreground">
-                      {item.name}
-                    </cite>
-                    <span className="text-xs text-muted-foreground">
-                      {item.source}
-                    </span>
-                  </div>
-                </div>
-
-                {item.stars !== null ? (
-                  <p
-                    role="img"
-                    className="mt-3 flex items-center gap-1 text-accent"
-                    aria-label={`${item.stars} ${testimonials.starsAriaLabel}`}
-                  >
-                    {Array.from({ length: item.stars }, (_, index) => (
-                      <Star
-                        key={index}
-                        className="h-4 w-4 fill-current"
-                        aria-hidden="true"
-                      />
-                    ))}
-                  </p>
-                ) : null}
-
-                <blockquote className="mt-3 flex-1 text-base leading-7 text-foreground">
-                  “{item.quote}”
-                </blockquote>
-              </CardContent>
-            </Card>
-          ))}
-        </div>
-
-        <div className="mt-20 flex justify-center">
-          <WhatsAppLink
-            message={testimonials.whatsappMessage}
-            section="testimonials"
-            ctaLabel={testimonials.ctaLabel}
-            ariaLabel={testimonials.ctaAriaLabel}
-            className={cn(
-              buttonVariants({ variant: "orange", size: "lg" }),
-              "w-full sm:w-auto",
-            )}
-          >
-            <MessageCircle className="h-5 w-5 shrink-0" aria-hidden="true" />
-            {testimonials.ctaLabel}
-          </WhatsAppLink>
-        </div>
+        <ScrollReveal animation="fade-up" delay={0.15}>
+          <div className="mt-10 grid grid-cols-2 gap-4 lg:grid-cols-3 lg:gap-6">
+            <CarouselColumn
+              items={col1}
+              reverse={false}
+              speed="up"
+              duration="30s"
+            />
+            <CarouselColumn
+              items={col2}
+              reverse={true}
+              speed="down"
+              duration="35s"
+            />
+            <div className="hidden lg:block">
+              <CarouselColumn
+                items={col3}
+                reverse={false}
+                speed="up"
+                duration="28s"
+              />
+            </div>
+          </div>
+        </ScrollReveal>
       </div>
     </section>
   );

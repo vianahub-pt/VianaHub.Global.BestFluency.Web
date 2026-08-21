@@ -37,7 +37,10 @@
       }
     },
     "foundation": {
-      "eyebrow": "BEST FLUENCY LANGUAGE SCHOOL · AMADORA UND ONLINE",
+      "text": [
+        "Best Fluency hilft jedem Studenten, in einer engen, praktischen und zielorientierten Weise zu lernen.",
+        "Präsenzunterricht in Amadora und Online-Unterricht für Kinder, Jugendliche und Erwachsene."
+      ],
       "notice": "Wir bereiten unsere neue Website vor. Kontaktieren Sie uns in der Zwischenzeit per WhatsApp für Informationen zum Englischunterricht in Amadora und online.",
       "contactsTitle": "Kontakt"
     },
@@ -182,28 +185,40 @@
       ],
       "items": [
         {
+          "name": "Andreia Barros",
+          "role": "Verwaltungsleiter",
+          "photo": "/testimonials/andreia-foto.png",
+          "quote": "Ich liebe die Kurse! Die Lehrerin ist sehr aufmerksam, geduldig und erklärt alles einfach und verständlich. Ich habe mich im Englischen sehr verbessert und fühle mich zunehmend sicher beim Sprechen. Sehr empfehlenswert!"
+        },
+        {
+          "name": "Mauricio Moura",
+          "role": "Bankmanager",
+          "photo": "/testimonials/mauricio-foto.png",
+          "quote": "Ich möchte meine Bewertung des Kurses abgeben. Die teacher verfügt über umfassende Kenntnisse der englischen Sprache und schafft es, dieses Wissen locker und verständlich an die Lernenden weiterzugeben. Was mir an meinem Englischkurs am besten gefällt, ist die Art zu erklären, auch wenn ich etwas nicht weiß. Das hat mir sehr geholfen, meine Konversation zu befreben. Deshalb empfehle ich Best Fluency."
+        },
+        {
           "name": "Pedro António",
-          "source": "Google-Bewertung",
-          "stars": 5,
-          "quote": "Ich lerne viel mit teacher Taty."
+          "role": "Mittelfeldspieler",
+          "photo": "/testimonials/pedro-foto.png",
+          "quote": "Sehr gut! Ich lerne viel mit teacher Taty."
+        },
+        {
+          "name": "Romerson Neves",
+          "role": "Lkw-Fahrer",
+          "photo": "/testimonials/romerson-foto.png",
+          "quote": "Ich bin seit 7 Monaten in Portugal und habe erkannt, wie wichtig es ist, Englisch zu lernen. Ich habe mit Präsenzunterricht angefangen, aber die Person, die mich unterrichtet hat, musste das Land verlassen und konnte nicht weitermachen. Dann habe ich Online-Unterricht mit einer anderen Lehrerin ausprobiert, aber ich konnte mich nicht anpassen. Da lernte ich Lehrerin Tatiana kennen. Wir hatten eine Probestunde und sie hat mir sehr gut gefallen. Seitdem mache ich die Stunden weiter und spüre, dass ich jeden Tag mehr vorankomme. Lehrerin Tatiana hat viel Geduld, erklärt klar und führt die Stunden exzellent durch. Ich empfehle sie allen, die Englisch von Qualität lernen möchten."
         },
         {
           "name": "Sandro Vite",
-          "source": "Google-Bewertung",
-          "stars": 5,
+          "role": "Google-Bewertung",
+          "photo": "/testimonials/sandro-foto.png",
           "quote": "Unglaublich, ein sehr gut umgesetzter Unterricht, einfach und zielgerichtet."
         },
         {
-          "name": "Maurício Moura",
-          "source": "Erfahrungsbericht via WhatsApp",
-          "stars": null,
-          "quote": "Die teacher verfügt über umfassende Kenntnisse der englischen Sprache und schafft es, dieses Wissen locker und verständlich an die Lernenden weiterzugeben."
-        },
-        {
           "name": "Wanda Ramos",
-          "source": "Erfahrungsbericht via WhatsApp",
-          "stars": null,
-          "quote": "Alles war sehr klar, mit leicht verständlichen Inhalten. Lehrerin Taty hat mir das Gefühl gegeben, meine Fragen ohne Scham oder Angst vor Fehlern stellen zu können."
+          "role": "Back-Office-Assistent",
+          "photo": "/testimonials/wanda-foto.png",
+          "quote": "Ich möchte meine Bewertung des Kurses abgeben. Alles war sehr klar, mit leicht verständlichen Inhalten. Lehrerin Taty war toll, sehr fürsorglich, hat sich sehr für mich eingesetzt, mich motiviert und dadurch konnte ich meine Fragen ohne Scham oder Angst vor Fehlern stellen. Ich plane, die Weiterbildung so bald wie möglich auf dem nächsten Niveau fortzusetzen. Vielen Dank für die Aufmerksamkeit, Hingabe und Fürsorge, Taty Viana."
         }
       ],
       "ctaLabel": "Probestunde buchen",

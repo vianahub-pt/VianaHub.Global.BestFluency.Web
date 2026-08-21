@@ -6,6 +6,7 @@ import { buttonVariants } from "@/shared/components/ui/button";
 import { WhatsAppLink } from "@/shared/components/whatsapp-link";
 import { cn } from "@/shared/lib/utils";
 import { InfoBar } from "./info-bar";
+import { TextShine } from "./text-shine";
 
 export function Hero({ locale }: { locale: LocaleCode }) {
   const hero = getMessages(locale).landing.hero;
@@ -29,19 +30,19 @@ export function Hero({ locale }: { locale: LocaleCode }) {
             md:text-7xl
             lg:text-8xl"
           >
-            <span className="text-accent dark:text-white dark:[text-shadow:_0_0_8px_theme(colors.black)]">
-              {hero.title1}
-            </span>{" "}
-            <br />
-            <span className="text-black dark:text-accent">
-              {hero.title2}
-            </span>{" "}
-            <br />
-            <span className="text-accent dark:text-white dark:[text-shadow:_0_0_8px_theme(colors.black)]">
-              {hero.title3}
-            </span>{" "}
-            <br />
-            <span className="text-black dark:text-accent">{hero.title4}</span>
+            <TextShine>
+              <span className="text-accent dark:text-black">{hero.title1}</span>{" "}
+              <br />
+              <span className="text-black dark:text-accent">
+                {hero.title2}
+              </span>{" "}
+              <br />
+              <span className="text-accent dark:text-black">
+                {hero.title3}
+              </span>{" "}
+              <br />
+              <span className="text-black dark:text-accent">{hero.title4}</span>
+            </TextShine>
           </h1>
 
           <p className="mt-10 max-w-3xl text-base text-black dark:text-black font-bold leading-7 sm:text-lg sm:leading-8">

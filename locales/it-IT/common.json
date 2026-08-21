@@ -37,7 +37,10 @@
       }
     },
     "foundation": {
-      "eyebrow": "BEST FLUENCY LANGUAGE SCHOOL · AMADORA E ONLINE",
+      "text": [
+        "Best Fluency aiuta ogni studente a imparare in un ambiente intimo, pratico e orientato agli obiettivi.",
+        "Lezioni di inglese in presenza ad Amadora e online per bambini, ragazzi e adulti."
+      ],
       "notice": "Stiamo preparando il nostro nuovo sito web. Nel frattempo, contattaci su WhatsApp per informazioni sulle lezioni di inglese in presenza ad Amadora e online.",
       "contactsTitle": "Contatti"
     },
@@ -177,33 +180,43 @@
     "testimonials": {
       "starsAriaLabel": "stelle",
       "h2": "Cosa dicono gli studenti di Best Fluency",
-      "text": [
-        "Esperienze reali di chi sta imparando e crescendo con noi."
-      ],
+      "text": ["Esperienze reali di chi sta imparando e crescendo con noi."],
       "items": [
         {
+          "name": "Andreia Barros",
+          "role": "Responsabile Amministrativo",
+          "photo": "/testimonials/andreia-foto.png",
+          "quote": "Adoro le lezioni! La professoressa è molto attenta, paziente e spiega tutto in modo semplice e facile da capire. Sto migliorando molto in inglese e mi sento sempre più a mio agio nel parlare. Consiglio vivamente!"
+        },
+        {
+          "name": "Mauricio Moura",
+          "role": "Direttore di banca",
+          "photo": "/testimonials/mauricio-foto.png",
+          "quote": "Voglio dare la mia valutazione del corso. La teacher possiede una vasta conoscenza della lingua inglese e una grande capacità di trasmettere questa conoscenza agli studenti, in modo rilassato. Ciò che mi piace di più della mia lezione di inglese è il modo di esporre, anche quando non so qualcosa. Questo mi ha aiutato molto a sbloccare la mia conversazione. Per questo consiglio Best Fluency."
+        },
+        {
           "name": "Pedro António",
-          "source": "Recensione Google",
-          "stars": 5,
-          "quote": "Imparo molto con la teacher Taty."
+          "role": "Centrocampista",
+          "photo": "/testimonials/pedro-foto.png",
+          "quote": "Molto buono! Imparo molto con la teacher Taty."
+        },
+        {
+          "name": "Romerson Neves",
+          "role": "Autista di camion",
+          "photo": "/testimonials/romerson-foto.png",
+          "quote": "Sono in Portogallo da 7 mesi e ho capito l'importanza di imparare l'inglese per la mia vita. Ho iniziato con lezioni in presenza, ma la persona che mi insegnava ha dovuto lasciare il paese e non ha potuto continuare. Poi ho provato lezioni online con un'altra insegnante, ma non mi sono adattato. È allora che ho conosciuto la professoressa Tatiana. Abbiamo fatto una lezione di prova e mi è piaciuta molto. Da allora, ho continuato le lezioni e sento di stare migliorando ogni giorno di più. La professoressa Tatiana ha molta pazienza, spiega chiaramente e conduce le lezioni in modo eccellente. La consiglio a tutti coloro che vogliono imparare l'inglese con qualità."
         },
         {
           "name": "Sandro Vite",
-          "source": "Recensione Google",
-          "stars": 5,
+          "role": "Recensione Google",
+          "photo": "/testimonials/sandro-foto.png",
           "quote": "Incredibile, un insegnamento molto ben applicato e in modo semplice e obiettivo."
         },
         {
-          "name": "Maurício Moura",
-          "source": "Testimonianza via WhatsApp",
-          "stars": null,
-          "quote": "La teacher possiede una vasta conoscenza della lingua inglese e una grande capacità di trasmettere questa conoscenza agli studenti, in modo rilassato."
-        },
-        {
           "name": "Wanda Ramos",
-          "source": "Testimonianza via WhatsApp",
-          "stars": null,
-          "quote": "Tutto è stato molto chiaro, con contenuti facili da capire. La professoressa Taty mi ha messo molto a mio agio nel fare domande, senza vergogna o timore di sbagliare."
+          "role": "Assistente di Back Office",
+          "photo": "/testimonials/wanda-foto.png",
+          "quote": "Voglio dare la mia valutazione del corso. Tutto è stato molto chiaro, con contenuti facili da capire. La professoressa Taty è stata fantastica, molto premurosa, mi ha messo molto a mio agio, mi ha motivata e questo mi ha permesso di fare le mie domande senza vergogna o timore di sbagliare. Ho intenzione di tornare alla formazione per fare un altro livello appena possibile. Grazie mille per l'attenzione, la dedizione e l'affetto, Taty Viana."
         }
       ],
       "ctaLabel": "Prenota una lezione di prova",
