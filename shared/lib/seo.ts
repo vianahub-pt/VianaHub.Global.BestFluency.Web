@@ -40,7 +40,7 @@ export function buildLegalAlternates(
   });
   return {
     ...Object.fromEntries(entries),
-    "x-default": absoluteUrl(`/privacy/`),
+    "x-default": absoluteUrl(`/${page}/`),
   };
 }
 
