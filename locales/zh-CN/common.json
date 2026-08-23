@@ -69,7 +69,8 @@
       "accept": "接受统计",
       "reject": "拒绝",
       "manage": "管理 Cookie",
-      "ariaLabel": "Cookie 政策"
+      "ariaLabel": "Cookie 政策",
+      "learnMore": "了解更多"
     },
     "header": {
       "logoAlt": "Best Fluency Language School"
@@ -337,5 +338,306 @@
   "language.name.zh-CN": "🇨🇳 中文 (普通话)",
   "language.short.ja-JP": "JA",
   "language.short.ru-RU": "RU",
-  "language.short.zh-CN": "ZH"
+  "language.short.zh-CN": "ZH",
+  "legal": {
+    "common": {
+      "backHome": "返回首页",
+      "lastUpdated": "最后更新"
+    },
+    "privacy": {
+      "title": "隐私政策",
+      "metaTitle": "隐私政策 | Best Fluency",
+      "metaDescription": "了解 Best Fluency 如何在本网站处理您的个人数据。关于 Cookie、分析、服务提供商和您权利的信息。",
+      "sections": [
+        {
+          "title": "1. 引言",
+          "paragraphs": [
+            "本隐私政策描述了 Best Fluency Language School 网站（以下简称「Best Fluency」或「本网站」）如何处理数据。",
+            "访问本网站即表示您同意本政策中描述的做法。如果您不同意，请避免使用本网站。"
+          ]
+        },
+        {
+          "title": "2. 数据控制者",
+          "paragraphs": [
+            "Best Fluency Language School 是由 VianaHub, Lda. 运营的品牌，负责本网站背景下的个人数据处理。",
+            "有关个人数据处理的问题，您可以通过电子邮件联系我们：vianahub.pt@gmail.com"
+          ]
+        },
+        {
+          "title": "3. 可能处理的数据",
+          "paragraphs": [
+            "本网站的设计旨在收集尽可能少的个人数据。我们的重点是提供信息并方便用户主动联系。",
+            "可能处理以下类型的数据："
+          ],
+          "items": [
+            "技术访问信息：IP 地址、浏览器类型、操作系统、访问页面、停留时间和访问来源，由分析服务以汇总形式收集。",
+            "UTM 营销参数：当您通过营销链接（utm_source、utm_medium、utm_campaign、utm_term、utm_content）访问网站时，这些参数会在会话中被捕获，用于访问来源归因。",
+            "同意偏好：您选择接受或拒绝分析 Cookie 的决定会存储在 localStorage 中，以记住您的偏好。",
+            "主动发起的联系：当用户决定通过 WhatsApp、电话或其他渠道联系 Best Fluency 时，该交互中传输的数据由相应的第三方服务处理。"
+          ]
+        },
+        {
+          "title": "4. Google Analytics 4",
+          "paragraphs": [
+            "本网站使用 Google Analytics 4 进行汇总使用量测量。GA4 仅在用户明确同意后加载。",
+            "当用户接受时，GA4 配置以下同意状态："
+          ],
+          "items": [
+            "analytics_storage = granted",
+            "ad_storage = denied",
+            "ad_user_data = denied",
+            "ad_personalization = denied"
+          ],
+          "subsections": [
+            {
+              "title": "这意味着什么",
+              "paragraphs": [
+                "Google Analytics 可能会创建第一方 Cookie（_ga、_ga_*）来汇总测量网站使用情况。",
+                "不会启用广告 Cookie 或功能（Google Ads）。",
+                "用户可以随时通过网站页脚的「管理 Cookie」撤回同意。"
+              ]
+            }
+          ]
+        },
+        {
+          "title": "5. Cloudflare Web Analytics",
+          "paragraphs": [
+            "本网站使用 Cloudflare Web Analytics 作为基础测量。此实现旨在无需 Cookie 且无需同意即可工作。",
+            "Cloudflare Web Analytics 以汇总形式测量访问量、页面浏览量、流量来源、设备、国家和 Core Web Vitals。",
+            "Cloudflare 信标独立于用户的同意决定加载，因为它不使用 Cookie 也不收集个人可识别数据。"
+          ]
+        },
+        {
+          "title": "6. 同意偏好",
+          "paragraphs": [
+            "用户的同意偏好存储在浏览器的 localStorage 中，键为 bestfluency:consent:v1。",
+            "此存储仅记录用户的选择：「accepted」（已接受分析）或「rejected」（已拒绝分析）。",
+            "偏好会保留直到用户更改或删除。",
+            "此目的不创建 Cookie — 选择仅存储在 localStorage 中。"
+          ]
+        },
+        {
+          "title": "7. 营销参数",
+          "paragraphs": [
+            "当用户通过包含 UTM 参数（utm_source、utm_medium、utm_campaign、utm_term、utm_content）的链接访问网站时，这些参数会在会话的首次访问时被捕获。",
+            "UTM 参数存储在浏览器的 sessionStorage 中（键：best-fluency:utm:session），用于会话期间的访问来源归因。",
+            "UTM 在整个浏览会话期间保持，即使用户在网站的不同语言之间导航，也能进行流量来源归因。"
+          ]
+        },
+        {
+          "title": "8. 通过 WhatsApp 联系",
+          "paragraphs": [
+            "当用户决定通过 WhatsApp 联系 Best Fluency 时，会被重定向到第三方服务（WhatsApp，由 Meta Platforms, Inc. 所有）。",
+            "Best Fluency 不控制也不对 WhatsApp/Meta 进行的数据处理负责。用户应查阅 WhatsApp 的隐私政策，了解该平台上其数据处理的信息。"
+          ]
+        },
+        {
+          "title": "9. 服务提供商",
+          "paragraphs": [
+            "本网站使用以下可能访问使用数据的技术服务提供商："
+          ],
+          "items": [
+            "Google Analytics (Google LLC) — 同意后的网站使用量测量",
+            "Cloudflare (Cloudflare, Inc.) — 无需 Cookie 的网站分析和保护",
+            "WhatsApp (Meta Platforms, Inc.) — 用户主动联系渠道"
+          ]
+        },
+        {
+          "title": "10. 国际传输",
+          "paragraphs": [
+            "提及的部分服务提供商（Google、Cloudflare）总部位于美利坚合众国和欧洲经济区以外的国家。",
+            "这些提供商的数据处理可能在欧洲经济区以外进行，符合各提供商的法律机制和数据保护政策。",
+            "不存在用于广告或直接营销目的的数据传输。"
+          ]
+        },
+        {
+          "title": "11. 数据保留",
+          "paragraphs": [
+            "同意偏好保留在用户的浏览器中，直到被更改或删除。",
+            "分析服务收集的浏览数据根据各提供商的设置和保留策略保留。",
+            "本网站不维护超出其运行和测量严格必需范围的个人数据库。"
+          ]
+        },
+        {
+          "title": "12. 数据主体权利",
+          "paragraphs": [
+            "根据适用的个人数据保护立法，用户有权："
+          ],
+          "items": [
+            "访问其个人数据",
+            "更正不准确或不完整的数据",
+            "请求删除其数据",
+            "限制对其数据的处理",
+            "在适用时反对处理",
+            "随时撤回同意，而不损害撤回日前所进行处理的合法性"
+          ],
+          "subsections": [
+            {
+              "title": "如何行使这些权利",
+              "paragraphs": [
+                "要行使您的任何权利，您可以通过电子邮件 vianahub.pt@gmail.com 或网站上可用的渠道联系 Best Fluency，特别是通过 WhatsApp。",
+                "要撤回分析同意，请使用网站页脚中可用的「管理 Cookie」功能。"
+              ]
+            }
+          ]
+        },
+        {
+          "title": "13. 儿童和未成年人",
+          "paragraphs": [
+            "Best Fluency 网站提供有关儿童英语课程的信息。但是，本网站不直接收集儿童的个人数据。",
+            "如适用，与未成年人相关的联系、注册和决定应由法定监护人进行。"
+          ]
+        },
+        {
+          "title": "14. 安全",
+          "paragraphs": [
+            "Best Fluency 采取适当的技术和组织措施，保护个人数据免受未授权访问、丢失、更改或披露。",
+            "但是，没有任何互联网传输或电子存储方法是完全安全的，因此无法保证绝对安全。"
+          ]
+        },
+        {
+          "title": "15. 本政策的变更",
+          "paragraphs": [
+            "本隐私政策可能会在没有事先通知的情况下更新。建议定期查看此页面。",
+            "最后更新日期在本文档开头注明。"
+          ]
+        },
+        {
+          "title": "16. 联系方式",
+          "paragraphs": [
+            "有关本隐私政策或您个人数据处理的问题，您可以通过电子邮件 vianahub.pt@gmail.com 或网站上可用的渠道联系 Best Fluency，特别是通过 WhatsApp。"
+          ]
+        }
+      ]
+    },
+    "cookies": {
+      "title": "Cookie 政策",
+      "metaTitle": "Cookie 政策 | Best Fluency",
+      "metaDescription": "了解 Best Fluency 在本网站使用的存储技术，包括 Cookie、localStorage 和 sessionStorage。",
+      "sections": [
+        {
+          "title": "1. 什么是 Cookie",
+          "paragraphs": [
+            "Cookie 是用户访问网站时存储在浏览器中的小型文本文件。它们使网站能够随时间记住用户的操作和偏好。",
+            "除了 Cookie 之外，网站还使用其他存储技术，如 localStorage 和 sessionStorage，它们的工作方式类似但具有不同的特性。"
+          ]
+        },
+        {
+          "title": "2. Best Fluency 使用的技术",
+          "paragraphs": [
+            "Best Fluency 网站使用以下存储技术："
+          ],
+          "items": [
+            "隐私偏好 Cookie",
+            "本地存储 (localStorage) — 用于存储同意偏好",
+            "会话存储 (sessionStorage) — 用于在会话期间存储营销参数"
+          ]
+        },
+        {
+          "title": "3. 必需的存储",
+          "paragraphs": [
+            "本网站使用本地存储来存储您的 Cookie 同意偏好。"
+          ],
+          "items": [
+            "键：bestfluency:consent:v1",
+            "类型：localStorage",
+            "目的：存储用户的选择（「accepted」或「rejected」）",
+            "类别：必需 — 允许记住用户的隐私偏好",
+            "不依赖于分析的接受"
+          ]
+        },
+        {
+          "title": "4. 会话数据和 UTM 参数",
+          "paragraphs": [
+            "当用户通过营销链接访问网站时，UTM 参数被捕获并存储在 sessionStorage 中。"
+          ],
+          "items": [
+            "键：best-fluency:utm:session",
+            "类型：sessionStorage",
+            "目的：会话期间的访问来源归因（utm_source、utm_medium、utm_campaign、utm_term、utm_content）",
+            "持续时间：在浏览器关闭或会话结束时终止"
+          ]
+        },
+        {
+          "title": "5. Cloudflare Web Analytics",
+          "paragraphs": [
+            "Cloudflare Web Analytics 是一个无需 Cookie 即可工作的测量工具。",
+            "Cloudflare 信标独立于 Cookie 同意加载，因为它不使用 Cookie 也不在用户的浏览器中存储数据。",
+            "它以汇总形式测量访问量、页面浏览量、流量来源、设备、国家和 Core Web Vitals。"
+          ]
+        },
+        {
+          "title": "6. Google Analytics 4",
+          "paragraphs": [
+            "Google Analytics 4 仅在用户通过 Cookie 横幅明确同意后加载。",
+            "当用户接受分析时，Google Analytics 可能会创建第一方 Cookie 来汇总测量网站使用情况。"
+          ],
+          "items": [
+            "_ga — 用于用户标识的第一方 Cookie",
+            "_ga_* — 用于会话和分析的第一方 Cookie",
+            "类别：统计 / 分析",
+            "提供商：Google",
+            "目的：使用量和事件的汇总测量"
+          ],
+          "subsections": [
+            {
+              "title": "Cookie 持续时间",
+              "paragraphs": [
+                "Google Analytics Cookie 的持续时间可能取决于服务配置和用户的浏览器设置。"
+              ]
+            }
+          ]
+        },
+        {
+          "title": "7. 广告",
+          "paragraphs": [
+            "目前，本网站不授予广告 Cookie 存储或使用的同意。",
+            "广告同意状态永久配置为 denied："
+          ],
+          "items": [
+            "ad_storage = denied",
+            "ad_user_data = denied",
+            "ad_personalization = denied"
+          ],
+          "subsections": [
+            {
+              "paragraphs": [
+                "此实现不启用 Google Ads 或其他广告平台的 Cookie。"
+              ]
+            }
+          ]
+        },
+        {
+          "title": "8. 管理 Cookie",
+          "paragraphs": [
+            "用户可以随时通过网站页脚中可用的「管理 Cookie」链接管理其 Cookie 偏好。",
+            "访问此功能时，用户可以："
+          ],
+          "items": [
+            "接受统计 — 启用 Google Analytics",
+            "拒绝 — 保持 GA 禁用"
+          ],
+          "subsections": [
+            {
+              "title": "撤回",
+              "paragraphs": [
+                "如果用户之前已接受并选择拒绝，将执行以下过程：",
+                "同意偏好在 localStorage 中更新为「rejected」。",
+                "Google Analytics 收到同意更新为 denied。",
+                "第一方 GA Cookie（_ga、_ga_*）被删除。",
+                "页面重新加载以确保 GA 停止工作。"
+              ]
+            }
+          ]
+        },
+        {
+          "title": "9. 浏览器设置",
+          "paragraphs": [
+            "用户还可以通过浏览器设置删除 Cookie 和存储数据。",
+            "通过浏览器删除 Cookie 或存储数据不会影响存储在网站上的同意偏好 — Cookie 横幅可能会在下次访问时重新出现。"
+          ]
+        }
+      ]
+    }
+  }
 }

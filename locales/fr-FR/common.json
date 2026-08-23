@@ -69,7 +69,8 @@
       "accept": "Accepter les statistiques",
       "reject": "Refuser",
       "manage": "Gérer les cookies",
-      "ariaLabel": "Politique de cookies"
+      "ariaLabel": "Politique de cookies",
+      "learnMore": "En savoir plus"
     },
     "header": {
       "logoAlt": "Best Fluency Language School"
@@ -344,5 +345,306 @@
   "language.name.zh-CN": "🇨🇳 Chinois (mandarin)",
   "language.short.ja-JP": "JA",
   "language.short.ru-RU": "RU",
-  "language.short.zh-CN": "ZH"
+  "language.short.zh-CN": "ZH",
+  "legal": {
+    "common": {
+      "backHome": "Retour à l'accueil",
+      "lastUpdated": "Dernière mise à jour"
+    },
+    "privacy": {
+      "title": "Politique de confidentialité",
+      "metaTitle": "Politique de confidentialité | Best Fluency",
+      "metaDescription": "Découvrez comment Best Fluency traite vos données personnelles sur ce site web. Informations sur les cookies, l'analyse, les prestataires de services et vos droits.",
+      "sections": [
+        {
+          "title": "1. Introduction",
+          "paragraphs": [
+            "Cette Politique de confidentialité décrit comment les données sont traitées sur le site web de Best Fluency Language School (ci-après \"Best Fluency\" ou \"le site web\").",
+            "En accédant au site web, l'utilisateur accepte les pratiques décrites dans cette politique. S'il n'est pas d'accord, il doit s'abstenir d'utiliser le site web."
+          ]
+        },
+        {
+          "title": "2. Responsable du traitement",
+          "paragraphs": [
+            "Best Fluency Language School est une marque exploitée par VianaHub, Lda., responsable du traitement des données personnelles dans le cadre de ce site web.",
+            "Pour des questions relatives au traitement des données personnelles, vous pouvez nous contacter par e-mail : vianahub.pt@gmail.com."
+          ]
+        },
+        {
+          "title": "3. Données pouvant être traitées",
+          "paragraphs": [
+            "Ce site web a été conçu pour collecter le minimum de données personnelles possibles. Notre objectif est de fournir des informations et de faciliter le contact volontaire de l'utilisateur.",
+            "Les types de données suivants peuvent être traités :"
+          ],
+          "items": [
+            "Informations techniques d'accès : adresse IP, type de navigateur, système d'exploitation, pages visitées, temps passé et origine de la visite, collectées de manière agrégée par les services d'analyse.",
+            "Paramètres de campagne UTM : lorsque vous accédez au site via un lien de campagne (utm_source, utm_medium, utm_campaign, utm_term, utm_content), ces paramètres sont capturés dans la session pour l'attribution de l'origine de la visite.",
+            "Préférence de consentement : votre choix d'accepter ou de refuser les cookies d'analyse est stocké dans localStorage pour mémoriser votre préférence.",
+            "Contact initié volontairement : lorsque l'utilisateur décide de contacter Best Fluency via WhatsApp, téléphone ou autres canaux, les données transmises dans cette interaction sont traitées par le service tiers respectif."
+          ]
+        },
+        {
+          "title": "4. Google Analytics 4",
+          "paragraphs": [
+            "Ce site web utilise Google Analytics 4 pour la mesure agrégée de l'utilisation. GA4 n'est chargé qu'après le consentement explicite de l'utilisateur.",
+            "Lorsque l'utilisateur accepte, GA4 est configuré avec les états de consentement suivants :"
+          ],
+          "items": [
+            "analytics_storage = granted",
+            "ad_storage = denied",
+            "ad_user_data = denied",
+            "ad_personalization = denied"
+          ],
+          "subsections": [
+            {
+              "title": "Ce que cela signifie",
+              "paragraphs": [
+                "Google Analytics peut créer des cookies de première partie (_ga, _ga_*) pour mesurer l'utilisation du site de manière agrégée.",
+                "Aucun cookie ou fonctionnalité de publicité (Google Ads) n'est activé.",
+                "L'utilisateur peut révoquer son consentement à tout moment via \"Gérer les cookies\" dans le pied de page du site web."
+              ]
+            }
+          ]
+        },
+        {
+          "title": "5. Cloudflare Web Analytics",
+          "paragraphs": [
+            "Ce site web utilise Cloudflare Web Analytics comme mesure de base. Cette implémentation est conçue pour fonctionner sans cookies et sans nécessiter de consentement.",
+            "Cloudflare Web Analytics mesure les visites, les pages vues, les sources de trafic, les appareils, les pays et les Core Web Vitals de manière agrégée.",
+            "Le balise Cloudflare est chargée indépendamment de la décision de consentement de l'utilisateur, car elle n'utilise pas de cookies et ne collecte pas de données personnelles identifiables."
+          ]
+        },
+        {
+          "title": "6. Préférence de consentement",
+          "paragraphs": [
+            "La préférence de consentement de l'utilisateur est stockée dans le localStorage du navigateur avec la clé bestfluency:consent:v1.",
+            "Ce stockage enregistre uniquement le choix de l'utilisateur : \"accepted\" (a accepté l'analyse) ou \"rejected\" (a refusé l'analyse).",
+            "La préférence est maintenue jusqu'à ce qu'elle soit modifiée ou supprimée par l'utilisateur.",
+            "Aucun cookie n'est créé à cette fin — le choix est stocké exclusivement dans localStorage."
+          ]
+        },
+        {
+          "title": "7. Paramètres de campagne",
+          "paragraphs": [
+            "Lorsque l'utilisateur accède au site web via un lien avec des paramètres UTM (utm_source, utm_medium, utm_campaign, utm_term, utm_content), ceux-ci sont capturés lors de la première visite de la session.",
+            "Les paramètres UTM sont stockés dans le sessionStorage du navigateur (clé best-fluency:utm:session) et utilisés pour l'attribution de l'origine de la visite pendant la session.",
+            "Les UTM sont maintenus pendant toute la session de navigation et permettent l'attribution de l'origine du trafic même lorsque l'utilisateur navigue entre les différentes langues du site web."
+          ]
+        },
+        {
+          "title": "8. Contact via WhatsApp",
+          "paragraphs": [
+            "Lorsque l'utilisateur décide de contacter Best Fluency via WhatsApp, il est redirigé vers un service tiers (WhatsApp, appartenant à Meta Platforms, Inc.).",
+            "Best Fluency ne contrôle pas et n'est pas responsable du traitement des données effectué par WhatsApp/Meta. L'utilisateur doit consulter la politique de confidentialité de WhatsApp pour des informations sur le traitement de ses données sur cette plateforme."
+          ]
+        },
+        {
+          "title": "9. Prestataires de services",
+          "paragraphs": [
+            "Ce site web utilise les prestataires de services technologiques suivants qui peuvent avoir accès aux données d'utilisation :"
+          ],
+          "items": [
+            "Google Analytics (Google LLC) — mesure de l'utilisation du site web, après consentement",
+            "Cloudflare (Cloudflare, Inc.) — analyse et protection du site web, sans cookies",
+            "WhatsApp (Meta Platforms, Inc.) — canal de contact volontaire de l'utilisateur"
+          ]
+        },
+        {
+          "title": "10. Transferts internationaux",
+          "paragraphs": [
+            "Certains des prestataires de services mentionnés (Google, Cloudflare) sont basés aux États-Unis d'Amérique et dans d'autres pays hors de l'Espace Économique Européen.",
+            "Le traitement des données par ces prestataires peut se produire hors de l'EEE, conformément aux mécanismes légaux et politiques de protection des données de chaque fournisseur.",
+            "Il n'existe pas de transferts de données à des fins de publicité ou de marketing direct."
+          ]
+        },
+        {
+          "title": "11. Conservation des données",
+          "paragraphs": [
+            "La préférence de consentement est conservée dans le navigateur de l'utilisateur jusqu'à ce qu'elle soit modifiée ou supprimée.",
+            "Les données de navigation collectées par les services d'analyse sont conservées conformément aux paramètres et politiques de rétention de chaque fournisseur.",
+            "Le site web ne maintient pas de bases de données personnelles au-delà de ce qui est strictement nécessaire à son fonctionnement et à sa mesure."
+          ]
+        },
+        {
+          "title": "12. Droits des personnes concernées",
+          "paragraphs": [
+            "Conformément à la législation applicable en matière de protection des données personnelles, l'utilisateur a le droit de :"
+          ],
+          "items": [
+            "Accéder à ses données personnelles",
+            "Rectifier des données inexactes ou incomplètes",
+            "Demander la suppression de ses données",
+            "Limiter le traitement de ses données",
+            "S'opposer au traitement lorsque applicable",
+            "Retirer son consentement à tout moment sans compromettre la légalité du traitement effectué jusqu'à la date de la révocation"
+          ],
+          "subsections": [
+            {
+              "title": "Comment exercer ces droits",
+              "paragraphs": [
+                "Pour exercer l'un de vos droits, vous pouvez nous contacter par e-mail à vianahub.pt@gmail.com ou via les canaux disponibles sur le site web, notamment via WhatsApp.",
+                "Pour retirer le consentement d'analyse, utilisez la fonctionnalité \"Gérer les cookies\" disponible dans le pied de page du site web."
+              ]
+            }
+          ]
+        },
+        {
+          "title": "13. Enfants et mineurs",
+          "paragraphs": [
+            "Le site web de Best Fluency fournit des informations sur les cours d'anglais pour enfants. Cependant, le site web ne collecte pas directement de données personnelles d'enfants.",
+            "Le cas échéant, les contacts, inscriptions et décisions relatives aux mineurs doivent être effectués par le responsable légal."
+          ]
+        },
+        {
+          "title": "14. Sécurité",
+          "paragraphs": [
+            "Best Fluency adopte des mesures techniques et organisationnelles appropriées pour protéger les données personnelles contre l'accès non autorisé, la perte, l'altération ou la divulgation.",
+            "Cependant, aucune méthode de transmission par internet ou de stockage électronique n'est totalement sécurisée, il est donc impossible de garantir une sécurité absolue."
+          ]
+        },
+        {
+          "title": "15. Modifications de cette politique",
+          "paragraphs": [
+            "Cette Politique de confidentialité peut être mise à jour sans préavis. Nous recommandons une révision périodique de cette page.",
+            "La date de la dernière mise à jour est indiquée au début de ce document."
+          ]
+        },
+        {
+          "title": "16. Contact",
+          "paragraphs": [
+            "Pour des questions relatives à cette Politique de confidentialité ou au traitement de vos données personnelles, vous pouvez nous contacter par e-mail à vianahub.pt@gmail.com ou via les canaux disponibles sur le site web, notamment via WhatsApp."
+          ]
+        }
+      ]
+    },
+    "cookies": {
+      "title": "Politique de cookies",
+      "metaTitle": "Politique de cookies | Best Fluency",
+      "metaDescription": "Découvrez les technologies de stockage utilisées par Best Fluency sur le site web, y compris les cookies, localStorage et sessionStorage.",
+      "sections": [
+        {
+          "title": "1. Qu'est-ce que les cookies",
+          "paragraphs": [
+            "Les cookies sont de petits fichiers texte stockés dans le navigateur de l'utilisateur lorsqu'il accède à un site web. Ils permettent au site web de mémoriser les actions et préférences de l'utilisateur au fil du temps.",
+            "En plus des cookies, il existe d'autres technologies de stockage utilisées par les sites web, comme localStorage et sessionStorage, qui fonctionnent de manière similaire mais avec des caractéristiques différentes."
+          ]
+        },
+        {
+          "title": "2. Technologies utilisées par Best Fluency",
+          "paragraphs": [
+            "Le site web de Best Fluency utilise les technologies de stockage suivantes :"
+          ],
+          "items": [
+            "Cookies de préférences de confidentialité",
+            "Stockage local (localStorage) — pour enregistrer la préférence de consentement",
+            "Stockage de session (sessionStorage) — pour enregistrer les paramètres de campagne pendant la session"
+          ]
+        },
+        {
+          "title": "3. Stockage nécessaire",
+          "paragraphs": [
+            "Le site web utilise le stockage local pour enregistrer votre préférence de consentement aux cookies."
+          ],
+          "items": [
+            "Clé : bestfluency:consent:v1",
+            "Type : localStorage",
+            "Objectif : enregistrer le choix de consentement de l'utilisateur (\"accepted\" ou \"rejected\")",
+            "Catégorie : nécessaire — permet de mémoriser la préférence de confidentialité de l'utilisateur",
+            "Ne dépend pas de l'acceptation de l'analyse"
+          ]
+        },
+        {
+          "title": "4. Données de session et paramètres UTM",
+          "paragraphs": [
+            "Lorsque l'utilisateur accède au site web via un lien de campagne, les paramètres UTM sont capturés et stockés dans sessionStorage."
+          ],
+          "items": [
+            "Clé : best-fluency:utm:session",
+            "Type : sessionStorage",
+            "Objectif : attribution de l'origine de la visite pendant la session (utm_source, utm_medium, utm_campaign, utm_term, utm_content)",
+            "Durée : se termine lorsque le navigateur est fermé ou la session est terminée"
+          ]
+        },
+        {
+          "title": "5. Cloudflare Web Analytics",
+          "paragraphs": [
+            "Cloudflare Web Analytics est un outil de mesure qui fonctionne sans cookies.",
+            "La balise Cloudflare est chargée indépendamment du consentement aux cookies, car elle n'utilise pas de cookies et ne stocke pas de données dans le navigateur de l'utilisateur.",
+            "Elle mesure les visites, les pages vues, les sources de trafic, les appareils, les pays et les Core Web Vitals de manière agrégée."
+          ]
+        },
+        {
+          "title": "6. Google Analytics 4",
+          "paragraphs": [
+            "Google Analytics 4 n'est chargé qu'après le consentement explicite de l'utilisateur via le bandeau de cookies.",
+            "Lorsque l'utilisateur accepte l'analyse, Google Analytics peut créer des cookies de première partie pour mesurer l'utilisation du site web de manière agrégée."
+          ],
+          "items": [
+            "_ga — cookie de première partie pour l'identification des utilisateurs",
+            "_ga_* — cookies de première partie pour les sessions et l'analyse",
+            "Catégorie : statistiques / analyse",
+            "Fournisseur : Google",
+            "Objectif : mesure agrégée de l'utilisation et des événements"
+          ],
+          "subsections": [
+            {
+              "title": "Durée des cookies",
+              "paragraphs": [
+                "La durée des cookies de Google Analytics peut dépendre de la configuration du service et des paramètres du navigateur de l'utilisateur."
+              ]
+            }
+          ]
+        },
+        {
+          "title": "7. Publicité",
+          "paragraphs": [
+            "Actuellement, le site web n'accorde pas de consentement pour le stockage ou l'utilisation de cookies publicitaires.",
+            "Les états de consentement publicitaire sont configurés de manière permanente comme denied :"
+          ],
+          "items": [
+            "ad_storage = denied",
+            "ad_user_data = denied",
+            "ad_personalization = denied"
+          ],
+          "subsections": [
+            {
+              "paragraphs": [
+                "Aucun cookie Google Ads ou autre plateforme publicitaire n'est activé par cette implémentation."
+              ]
+            }
+          ]
+        },
+        {
+          "title": "8. Gérer les cookies",
+          "paragraphs": [
+            "L'utilisateur peut gérer ses préférences de cookies à tout moment via le lien \"Gérer les cookies\" disponible dans le pied de page du site web.",
+            "Lors de l'accès à cette fonctionnalité, l'utilisateur peut :"
+          ],
+          "items": [
+            "Accepter les statistiques — active Google Analytics",
+            "Refuser — maintient GA désactivé"
+          ],
+          "subsections": [
+            {
+              "title": "Révocation",
+              "paragraphs": [
+                "Si l'utilisateur avait précédemment accepté et choisit de refuser, le processus suivant est exécuté :",
+                "La préférence de consentement est mise à jour à \"rejected\" dans localStorage.",
+                "Google Analytics reçoit la mise à jour du consentement à denied.",
+                "Les cookies de première partie GA (_ga, _ga_*) sont supprimés.",
+                "La page est rechargée pour garantir que GA cesse de fonctionner."
+              ]
+            }
+          ]
+        },
+        {
+          "title": "9. Paramètres du navigateur",
+          "paragraphs": [
+            "L'utilisateur peut également supprimer les cookies et les données de stockage via les paramètres de son navigateur.",
+            "La suppression des cookies ou des données de stockage via le navigateur n'affecte pas la préférence de consentement stockée sur le site web — le bandeau de cookies peut réapparaître lors de votre prochaine visite."
+          ]
+        }
+      ]
+    }
+  }
 }

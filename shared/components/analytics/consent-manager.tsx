@@ -1,9 +1,11 @@
 "use client";
 
+import Link from "next/link";
 import { useCallback, useEffect, useRef, useState } from "react";
 
 import type { LocaleCode } from "@/core/config/locales";
 import { getMessages } from "@/core/i18n";
+import { buildLegalPath } from "@/shared/lib/routes";
 import {
   OPEN_COOKIE_PREFERENCES_EVENT,
   readAnalyticsConsent,
@@ -124,7 +126,13 @@ export function ConsentManager({ locale }: ConsentManagerProps) {
             id="cookie-consent-desc"
             className="mt-1 text-sm leading-relaxed text-muted-foreground"
           >
-            {content.description}
+            {content.description}{" "}
+            <Link
+              href={buildLegalPath(locale, "cookies")}
+              className="underline underline-offset-2 transition-colors hover:text-foreground focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring"
+            >
+              {content.learnMore}
+            </Link>
           </p>
         </div>
         <div className="flex shrink-0 gap-3">

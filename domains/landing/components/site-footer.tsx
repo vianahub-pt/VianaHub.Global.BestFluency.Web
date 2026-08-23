@@ -1,9 +1,12 @@
+import Link from "next/link";
+
 import type { LocaleCode } from "@/core/config/locales";
 import { site } from "@/core/config/site";
 import { getMessages } from "@/core/i18n";
 import { CookieSettingsButton } from "@/shared/components/analytics/cookie-settings-button";
 import { PhoneLink } from "@/shared/components/phone-link";
 import { WhatsAppLink } from "@/shared/components/whatsapp-link";
+import { buildLegalPath } from "@/shared/lib/routes";
 
 /**
  * Mapa de navegação do site para o footer — usa as âncoras de
@@ -115,19 +118,22 @@ export function SiteFooter({ locale }: { locale: LocaleCode }) {
             © {year} {site.name}. {content.footer.rightsReserved}
           </p>
           <div className="flex flex-wrap gap-x-4 gap-y-2">
-            <span
-              aria-disabled="true"
-              className="cursor-default opacity-80 text-accent"
+            <Link
+              href={buildLegalPath(locale, "privacy")}
+              className="link-micro text-xs text-accent opacity-80 transition-colors hover:opacity-100 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring"
             >
               {content.footer.privacyPolicy}
-            </span>
+            </Link>
             <CookieSettingsButton
               label={content.footer.manageCookies}
               className="link-micro cursor-pointer text-xs text-accent opacity-80 transition-colors hover:opacity-100 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring"
             />
-            <span aria-disabled="true" className="cursor-default opacity-80">
+            <Link
+              href={buildLegalPath(locale, "cookies")}
+              className="link-micro text-xs text-accent opacity-80 transition-colors hover:opacity-100 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring"
+            >
               {content.footer.cookiesPolicy}
-            </span>
+            </Link>
           </div>
         </div>
       </div>

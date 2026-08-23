@@ -25,6 +25,26 @@ export function languageAlternates(): Record<string, string> {
 }
 
 /**
+ * Build hreflang alternates for a specific page kind across all locales.
+ * Each alternate points to the same page type in the corresponding locale.
+ */
+export function buildLegalAlternates(
+  page: "privacy" | "cookies",
+): Record<string, string> {
+  const entries = locales.map((l) => {
+    const path =
+      l.code === "pt-PT"
+        ? `/${page}/`
+        : `/${l.segment}/${page}/`;
+    return [l.hreflang, absoluteUrl(path)];
+  });
+  return {
+    ...Object.fromEntries(entries),
+    "x-default": absoluteUrl(`/privacy/`),
+  };
+}
+
+/**
  * Metadata por locale: canonical autorreferencial, hreflang recíproco,
  * Open Graph completo (com imagem social absoluta 1200×630), Twitter/X card,
  * controlo de indexação (noindex apenas antes do lançamento oficial).
@@ -35,9 +55,34 @@ export function languageAlternates(): Record<string, string> {
 export function buildLocaleMetadata(
   code: LocaleCode,
   meta: { title: string; description: string },
+  options?: { page?: "privacy" | "cookies" },
 ): Metadata {
   const locale = getLocale(code);
   const socialImageUrl = absoluteUrl(SOCIAL_IMAGE_PATH);
+
+  const page = options?.page;
+  const canonicalPath =
+    page === "privacy"
+      ? code === "pt-PT"
+        ? "/privacy/"
+        : `/${locale.segment}/privacy/`
+      : page === "cookies"
+        ? code === "pt-PT"
+          ? "/cookies/"
+          : `/${locale.segment}/cookies/`
+        : locale.path;
+
+  const alternates = page
+    ? buildLegalAlternates(page)
+    : languageAlternates();
+
+  // Páginas legais: sempre noindex/follow (nunca indexadas).
+  // Landing: respeita NEXT_PUBLIC_SITE_INDEXABLE.
+  const robots = page
+    ? { index: false, follow: true }
+    : site.indexable
+      ? { index: true, follow: true }
+      : { index: false, follow: false };
 
   return {
     metadataBase: new URL(site.url),
@@ -45,14 +90,14 @@ export function buildLocaleMetadata(
     description: meta.description,
     applicationName: site.name,
     alternates: {
-      canonical: locale.path,
-      languages: languageAlternates(),
+      canonical: canonicalPath,
+      languages: alternates,
     },
     openGraph: {
       type: "website",
       siteName: site.name,
       locale: locale.ogLocale,
-      url: absoluteUrl(locale.path),
+      url: absoluteUrl(canonicalPath),
       title: meta.title,
       description: meta.description,
       images: [
@@ -71,9 +116,7 @@ export function buildLocaleMetadata(
       description: meta.description,
       images: [socialImageUrl],
     },
-    robots: site.indexable
-      ? { index: true, follow: true }
-      : { index: false, follow: false },
+    robots,
   };
 }
 

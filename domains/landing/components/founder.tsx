@@ -4,7 +4,6 @@ import Image from "next/image";
 import { type LocaleCode } from "@/core/config/locales";
 import { getMessages } from "@/core/i18n";
 import { buttonVariants } from "@/shared/components/ui/button";
-import { SectionHeading } from "@/shared/components/ui/section-heading";
 import { WhatsAppLink } from "@/shared/components/whatsapp-link";
 import { cn } from "@/shared/lib/utils";
 import { ShineSweep } from "./shine-sweep";
