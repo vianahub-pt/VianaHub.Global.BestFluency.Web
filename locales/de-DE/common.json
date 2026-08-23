@@ -58,9 +58,19 @@
       "rightsReserved": "Alle Rechte vorbehalten.",
       "privacyPolicy": "Datenschutzerklärung",
       "cookiesPolicy": "Cookie-Richtlinie",
+      "manageCookies": "Cookies verwalten",
       "whatsappLabel": "WhatsApp",
       "siteMap": "Seitenübersicht",
       "contact": "Kontakt"
+    },
+    "cookieConsent": {
+      "title": "Ihre Privatsphäre ist uns wichtig",
+      "description": "Wir verwenden Analyse-Cookies, um zu verstehen, wie unsere Website genutzt wird und um Ihr Erlebnis zu verbessern. Sie können diese Cookies akzeptieren oder ablehnen.",
+      "accept": "Statistiken akzeptieren",
+      "reject": "Ablehnen",
+      "manage": "Cookies verwalten",
+      "ariaLabel": "Cookie-Richtlinie",
+      "learnMore": "Mehr erfahren"
     },
     "header": {
       "logoAlt": "Best Fluency Language School"
@@ -335,5 +345,306 @@
   "language.name.zh-CN": "🇨🇳 Chinesisch (Mandarin)",
   "language.short.ja-JP": "JA",
   "language.short.ru-RU": "RU",
-  "language.short.zh-CN": "ZH"
+  "language.short.zh-CN": "ZH",
+  "legal": {
+    "common": {
+      "backHome": "Zurück zur Startseite",
+      "lastUpdated": "Zuletzt aktualisiert"
+    },
+    "privacy": {
+      "title": "Datenschutzerklärung",
+      "metaTitle": "Datenschutzerklärung | Best Fluency",
+      "metaDescription": "Erfahren Sie, wie Best Fluency Ihre persönlichen Daten auf dieser Website verarbeitet. Informationen über Cookies, Analytics, Dienstanbieter und Ihre Rechte.",
+      "sections": [
+        {
+          "title": "1. Einleitung",
+          "paragraphs": [
+            "Diese Datenschutzerklärung beschreibt, wie Daten auf der Website der Best Fluency Language School (nachfolgend \"Best Fluency\" oder \"die Website\") verarbeitet werden.",
+            "Durch den Zugriff auf die Website stimmt der Nutzer den in dieser Erklärung beschriebenen Praktiken zu. Wenn Sie nicht zustimmen, sollten Sie die Nutzung der Website unterlassen."
+          ]
+        },
+        {
+          "title": "2. Verantwortlicher",
+          "paragraphs": [
+            "Best Fluency Language School ist eine Marke, die von VianaHub, Lda. betrieben wird und für die Verarbeitung personenbezogener Daten im Rahmen dieser Website verantwortlich ist.",
+            "Bei Fragen zur Verarbeitung personenbezogener Daten können Sie uns per E-Mail kontaktieren: vianahub.pt@gmail.com."
+          ]
+        },
+        {
+          "title": "3. Daten, die verarbeitet werden können",
+          "paragraphs": [
+            "Diese Website wurde so gestaltet, dass möglichst wenig personenbezogene Daten erhoben werden. Unser Schwerpunkt liegt auf der Bereitstellung von Informationen und der Erleichterung des freiwilligen Kontakts des Nutzers.",
+            "Folgende Datenarten können verarbeitet werden:"
+          ],
+          "items": [
+            "Technische Zugriffsinformationen: IP-Adresse, Browsertyp, Betriebssystem, besuchte Seiten, Verweildauer und Herkunft des Besuchs, die von Analytics-Diensten aggregiert erhoben werden.",
+            "UTM-Kampagnenparameter: Wenn Sie über einen Kampagnenlink auf die Website zugreifen (utm_source, utm_medium, utm_campaign, utm_term, utm_content), werden diese Parameter in der Sitzung für die Zuordnung der Besuchsherkunft erfasst.",
+            "Einwilligungspräferenz: Ihre Wahl, Analytics-Cookies anzunehmen oder abzulehnen, wird im localStorage gespeichert, um Ihre Präferenz zu merken.",
+            "Freiwillig eingeleiteter Kontakt: Wenn der Nutzer beschließt, Best Fluency über WhatsApp, Telefon oder andere Kanäle zu kontaktieren, werden die in dieser Interaktion übermittelten Daten vom jeweiligen Drittanbieter-Dienst verarbeitet."
+          ]
+        },
+        {
+          "title": "4. Google Analytics 4",
+          "paragraphs": [
+            "Diese Website verwendet Google Analytics 4 zur aggregierten Nutzungsmessung. GA4 wird erst nach ausdrücklicher Einwilligung des Nutzers geladen.",
+            "Wenn der Nutzer zustimmt, wird GA4 mit folgenden Einwilligungsstatus konfiguriert:"
+          ],
+          "items": [
+            "analytics_storage = granted",
+            "ad_storage = denied",
+            "ad_user_data = denied",
+            "ad_personalization = denied"
+          ],
+          "subsections": [
+            {
+              "title": "Was das bedeutet",
+              "paragraphs": [
+                "Google Analytics kann First-Party-Cookies (_ga, _ga_*) erstellen, um die Website-Nutzung aggregiert zu messen.",
+                "Es werden keine Werbe-Cookies oder Funktionen (Google Ads) aktiviert.",
+                "Der Nutzer kann seine Einwilligung jederzeit über \"Cookies verwalten\" im Footer der Website widerrufen."
+              ]
+            }
+          ]
+        },
+        {
+          "title": "5. Cloudflare Web Analytics",
+          "paragraphs": [
+            "Diese Website verwendet Cloudflare Web Analytics als Basismessung. Diese Implementierung funktioniert ohne Cookies und ohne Einwilligung.",
+            "Cloudflare Web Analytics misst Besuche, Seitenaufrufe, Traffic-Quellen, Geräte, Länder und Core Web Vitals aggregiert.",
+            "Das Cloudflare-Beacon wird unabhängig von der Einwilligungsentscheidung des Nutzers geladen, da es keine Cookies verwendet und keine personenidentifizierbaren Daten erhebt."
+          ]
+        },
+        {
+          "title": "6. Einwilligungspräferenz",
+          "paragraphs": [
+            "Die Einwilligungspräferenz des Nutzers wird im localStorage des Browsers mit dem Schlüssel bestfluency:consent:v1 gespeichert.",
+            "Dieser Speicher protokolliert nur die Wahl des Nutzers: \"accepted\" (Analytics akzeptiert) oder \"rejected\" (Analytics abgelehnt).",
+            "Die Präferenz wird beibehalten, bis sie vom Nutzer geändert oder gelöscht wird.",
+            "Es werden keine Cookies für diesen Zweck erstellt — die Wahl wird ausschließlich im localStorage gespeichert."
+          ]
+        },
+        {
+          "title": "7. Kampagnenparameter",
+          "paragraphs": [
+            "Wenn der Nutzer über einen Link mit UTM-Parametern (utm_source, utm_medium, utm_campaign, utm_term, utm_content) auf die Website zugreift, werden diese beim ersten Besuch der Sitzung erfasst.",
+            "Die UTM-Parameter werden im sessionStorage des Browsers (Schlüssel best-fluency:utm:session) gespeichert und für die Besuchsherkunftszuordnung während der Sitzung verwendet.",
+            "Die UTMs bleiben während der gesamten Browsing-Sitzung erhalten und ermöglichen die Traffic-Herkunftszuordnung auch bei Navigation zwischen verschiedenen Sprachen der Website."
+          ]
+        },
+        {
+          "title": "8. Kontakt über WhatsApp",
+          "paragraphs": [
+            "Wenn der Nutzer beschließt, Best Fluency über WhatsApp zu kontaktieren, wird er zu einem Drittanbieter-Dienst (WhatsApp, Unternehmen Meta Platforms, Inc.) weitergeleitet.",
+            "Best Fluency kontrolliert nicht und ist nicht verantwortlich für die Datenverarbeitung durch WhatsApp/Meta. Der Nutzer sollte die Datenschutzerklärung von WhatsApp konsultieren, um Informationen über die Verarbeitung seiner Daten auf dieser Plattform zu erhalten."
+          ]
+        },
+        {
+          "title": "9. Dienstanbieter",
+          "paragraphs": [
+            "Diese Website verwendet folgende technologische Dienstanbieter, die Zugriff auf Nutzungsdaten haben können:"
+          ],
+          "items": [
+            "Google Analytics (Google LLC) — Website-Nutzungsmessung nach Einwilligung",
+            "Cloudflare (Cloudflare, Inc.) — Website-Analyse und Schutz, ohne Cookies",
+            "WhatsApp (Meta Platforms, Inc.) — freiwilliger Nutzer-Kontaktkanal"
+          ]
+        },
+        {
+          "title": "10. Internationale Übermittlungen",
+          "paragraphs": [
+            "Einige der genannten Dienstanbieter (Google, Cloudflare) haben ihren Sitz in den Vereinigten Staaten von Amerika und anderen Ländern außerhalb des Europäischen Wirtschaftsraums.",
+            "Die Datenverarbeitung durch diese Anbieter kann außerhalb des EWR erfolgen, gemäß den rechtlichen Mechanismen und Datenschutzrichtlinien jedes Anbieters.",
+            "Es gibt keine Datenübermittlungen zu Werbe- oder Direktmarketingzwecken."
+          ]
+        },
+        {
+          "title": "11. Aufbewahrung der Daten",
+          "paragraphs": [
+            "Die Einwilligungspräferenz wird im Browser des Nutzers aufbewahrt, bis sie geändert oder gelöscht wird.",
+            "Von Analytics-Diensten erhobene Browsing-Daten werden gemäß den Einstellungen und Aufbewahrungsrichtlinien jedes Anbieters aufbewahrt.",
+            "Die Website führt keine personenbezogenen Datenbanken über das hinaus, was für ihren Betrieb und ihre Messung unbedingt erforderlich ist."
+          ]
+        },
+        {
+          "title": "12. Rechte der Betroffenen",
+          "paragraphs": [
+            "Gemäß der geltenden Datenschutzgesetzgebung hat der Nutzer das Recht auf:"
+          ],
+          "items": [
+            "Zugang zu seinen personenbezogenen Daten",
+            "Berichtigung unrichtiger oder unvollständiger Daten",
+            "Löschung seiner Daten",
+            "Einschränkung der Verarbeitung seiner Daten",
+            "Widerspruch gegen die Verarbeitung, wenn anwendbar",
+            "Widerruf der Einwilligung jederzeit, ohne die Rechtmäßigkeit der bis zum Widerruf erfolgten Verarbeitung zu beeinträchtigen"
+          ],
+          "subsections": [
+            {
+              "title": "So üben Sie diese Rechte aus",
+              "paragraphs": [
+                "Um eines Ihrer Rechte auszuüben, können Sie uns per E-Mail an vianahub.pt@gmail.com oder über die auf der Website verfügbaren Kanäle kontaktieren, insbesondere über WhatsApp.",
+                "Um die Analytics-Einwilligung zu widerrufen, verwenden Sie die Funktion \"Cookies verwalten\" im Footer der Website."
+              ]
+            }
+          ]
+        },
+        {
+          "title": "13. Kinder und Minderjährige",
+          "paragraphs": [
+            "Die Website von Best Fluency bietet Informationen über Englischkurse für Kinder. Die Website erhebt jedoch keine personenbezogenen Daten von Kindern direkt.",
+            "Falls zutreffend, müssen Kontakte, Anmeldungen und Entscheidungen bezüglich Minderjähriger durch den gesetzlichen Vertreter erfolgen."
+          ]
+        },
+        {
+          "title": "14. Sicherheit",
+          "paragraphs": [
+            "Best Fluency ergreift angemessene technische und organisatorische Maßnahmen zum Schutz personenbezogener Daten vor unbefugtem Zugriff, Verlust, Veränderung oder Offenlegung.",
+            "Allerdings ist keine Methode der Internetübertragung oder elektronischen Speicherung vollständig sicher, daher kann keine absolute Sicherheit garantiert werden."
+          ]
+        },
+        {
+          "title": "15. Änderungen an dieser Erklärung",
+          "paragraphs": [
+            "Diese Datenschutzerklärung kann ohne Vorankündigung aktualisiert werden. Wir empfehlen eine regelmäßige Überprüfung dieser Seite.",
+            "Das Datum der letzten Aktualisierung wird zu Beginn dieses Dokuments angegeben."
+          ]
+        },
+        {
+          "title": "16. Kontakt",
+          "paragraphs": [
+            "Bei Fragen zu dieser Datenschutzerklärung oder zur Verarbeitung Ihrer personenbezogenen Daten können Sie uns per E-Mail an vianahub.pt@gmail.com oder über die auf der Website verfügbaren Kanäle kontaktieren, insbesondere über WhatsApp."
+          ]
+        }
+      ]
+    },
+    "cookies": {
+      "title": "Cookie-Richtlinie",
+      "metaTitle": "Cookie-Richtlinie | Best Fluency",
+      "metaDescription": "Erfahren Sie über die Speichertechnologien, die Best Fluency auf dieser Website verwendet, einschließlich Cookies, localStorage und sessionStorage.",
+      "sections": [
+        {
+          "title": "1. Was sind Cookies",
+          "paragraphs": [
+            "Cookies sind kleine Textdateien, die im Browser des Nutzers gespeichert werden, wenn er eine Website besucht. Sie ermöglichen es der Website, die Aktionen und Präferenzen des Nutzers im Laufe der Zeit zu merken.",
+            "Neben Cookies gibt es andere Speichertechnologien, die von Websites verwendet werden, wie localStorage und sessionStorage, die ähnlich funktionieren, aber unterschiedliche Eigenschaften haben."
+          ]
+        },
+        {
+          "title": "2. Von Best Fluency verwendete Technologien",
+          "paragraphs": [
+            "Die Website von Best Fluency verwendet folgende Speichertechnologien:"
+          ],
+          "items": [
+            "Datenschutzpräferenz-Cookies",
+            "Lokaler Speicher (localStorage) — zum Speichern der Einwilligungspräferenz",
+            "Sitzungsspeicher (sessionStorage) — zum Speichern von Kampagnenparametern während der Sitzung"
+          ]
+        },
+        {
+          "title": "3. Erforderlicher Speicher",
+          "paragraphs": [
+            "Die Website verwendet den lokalen Speicher, um Ihre Cookie-Einwilligungspräferenz zu speichern."
+          ],
+          "items": [
+            "Schlüssel: bestfluency:consent:v1",
+            "Typ: localStorage",
+            "Zweck: Speichert die Einwilligungswahl des Nutzers (\"accepted\" oder \"rejected\")",
+            "Kategorie: erforderlich — ermöglicht das Merken der Datenschutzpräferenz des Nutzers",
+            "Hängt nicht von der Analytics-Akzeptanz ab"
+          ]
+        },
+        {
+          "title": "4. Sitzungsdaten und UTM-Parameter",
+          "paragraphs": [
+            "Wenn der Nutzer über einen Kampagnenlink auf die Website zugreift, werden UTM-Parameter erfasst und im sessionStorage gespeichert."
+          ],
+          "items": [
+            "Schlüssel: best-fluency:utm:session",
+            "Typ: sessionStorage",
+            "Zweck: Besuchsherkunftszuordnung während der Sitzung (utm_source, utm_medium, utm_campaign, utm_term, utm_content)",
+            "Dauer: endet, wenn der Browser geschlossen oder die Sitzung beendet wird"
+          ]
+        },
+        {
+          "title": "5. Cloudflare Web Analytics",
+          "paragraphs": [
+            "Cloudflare Web Analytics ist ein Messwerkzeug, das ohne Cookies funktioniert.",
+            "Das Cloudflare-Beacon wird unabhängig von der Cookie-Einwilligung geladen, da es keine Cookies verwendet und keine Daten im Browser des Nutzers speichert.",
+            "Es misst Besuche, Seitenaufrufe, Traffic-Quellen, Geräte, Länder und Core Web Vitals aggregiert."
+          ]
+        },
+        {
+          "title": "6. Google Analytics 4",
+          "paragraphs": [
+            "Google Analytics 4 wird erst nach ausdrücklicher Einwilligung des Nutzers über das Cookie-Banner geladen.",
+            "Wenn der Nutzer Analytics akzeptiert, kann Google Analytics First-Party-Cookies erstellen, um die Website-Nutzung aggregiert zu messen."
+          ],
+          "items": [
+            "_ga — First-Party-Cookie zur Identifizierung von Nutzern",
+            "_ga_* — First-Party-Cookies für Sitzungen und Analytics",
+            "Kategorie: Statistiken / Analytics",
+            "Anbieter: Google",
+            "Zweck: aggregierte Messung von Nutzung und Ereignissen"
+          ],
+          "subsections": [
+            {
+              "title": "Cookie-Dauer",
+              "paragraphs": [
+                "Die Dauer der Google Analytics-Cookies kann von der Dienstkonfiguration und den Browsereinstellungen des Nutzers abhängen."
+              ]
+            }
+          ]
+        },
+        {
+          "title": "7. Werbung",
+          "paragraphs": [
+            "Der Website gewährt derzeit keine Einwilligung zur Speicherung oder Nutzung von Werbe-Cookies.",
+            "Die Werbe-Einwilligungsstatus sind dauerhaft als denied konfiguriert:"
+          ],
+          "items": [
+            "ad_storage = denied",
+            "ad_user_data = denied",
+            "ad_personalization = denied"
+          ],
+          "subsections": [
+            {
+              "paragraphs": [
+                "Es werden keine Google Ads- oder andere Werbeplattform-Cookies durch diese Implementierung aktiviert."
+              ]
+            }
+          ]
+        },
+        {
+          "title": "8. Cookies verwalten",
+          "paragraphs": [
+            "Der Nutzer kann seine Cookie-Präferenzen jederzeit über den Link \"Cookies verwalten\" im Footer der Website verwalten.",
+            "Beim Zugriff auf diese Funktion kann der Nutzer:"
+          ],
+          "items": [
+            "Analytics akzeptieren — aktiviert Google Analytics",
+            "Ablehnen — hält GA deaktiviert"
+          ],
+          "subsections": [
+            {
+              "title": "Widerruf",
+              "paragraphs": [
+                "Wenn der Nutzer zuvor akzeptiert hat und sich für Ablehnen entscheidet, wird folgender Prozess ausgeführt:",
+                "Die Einwilligungspräferenz wird auf \"rejected\" im localStorage aktualisiert.",
+                "Google Analytics erhält die Einwilligungsaktualisierung zu denied.",
+                "First-Party-GA-Cookies (_ga, _ga_*) werden gelöscht.",
+                "Die Seite wird neu geladen, um sicherzustellen, dass GA aufhört zu funktionieren."
+              ]
+            }
+          ]
+        },
+        {
+          "title": "9. Browsereinstellungen",
+          "paragraphs": [
+            "Der Nutzer kann Cookies und Speicherdaten auch über die Einstellungen seines Browsers löschen.",
+            "Das Löschen von Cookies oder Speicherdaten über den Browser beeinflusst nicht die auf der Website gespeicherte Einwilligungspräferenz — das Cookie-Banner kann beim nächsten Besuch wieder erscheinen."
+          ]
+        }
+      ]
+    }
+  }
 }

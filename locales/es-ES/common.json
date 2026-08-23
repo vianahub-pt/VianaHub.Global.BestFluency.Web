@@ -58,9 +58,19 @@
       "rightsReserved": "Todos los derechos reservados.",
       "privacyPolicy": "Política de Privacidad",
       "cookiesPolicy": "Política de Cookies",
+      "manageCookies": "Gestionar cookies",
       "whatsappLabel": "WhatsApp",
       "siteMap": "Mapa del Sitio",
       "contact": "Contactos"
+    },
+    "cookieConsent": {
+      "title": "Su privacidad es importante",
+      "description": "Utilizamos cookies de estadísticas para comprender cómo se utiliza nuestro sitio web y mejorar su experiencia. Puede aceptar o rechazar estas cookies.",
+      "accept": "Aceptar estadísticas",
+      "reject": "Rechazar",
+      "manage": "Gestionar cookies",
+      "ariaLabel": "Política de cookies",
+      "learnMore": "Más información"
     },
     "header": {
       "logoAlt": "Best Fluency Language School"
@@ -335,5 +345,306 @@
   "language.name.zh-CN": "🇨🇳 Chino (Mandarín)",
   "language.short.ja-JP": "JA",
   "language.short.ru-RU": "RU",
-  "language.short.zh-CN": "ZH"
+  "language.short.zh-CN": "ZH",
+  "legal": {
+    "common": {
+      "backHome": "Volver al inicio",
+      "lastUpdated": "Última actualización"
+    },
+    "privacy": {
+      "title": "Política de Privacidad",
+      "metaTitle": "Política de Privacidad | Best Fluency",
+      "metaDescription": "Conozca cómo Best Fluency trata sus datos personales en este sitio web. Información sobre cookies, analytics, proveedores de servicios y sus derechos.",
+      "sections": [
+        {
+          "title": "1. Introducción",
+          "paragraphs": [
+            "Esta Política de Privacidad describe cómo se tratan los datos en el sitio web de Best Fluency Language School (en adelante \"Best Fluency\" o \"el sitio web\").",
+            "Al acceder al sitio web, el usuario acepta las prácticas descritas en esta política. Si no está de acuerdo, debe abstenerse de utilizar el sitio web."
+          ]
+        },
+        {
+          "title": "2. Responsable del tratamiento",
+          "paragraphs": [
+            "Best Fluency Language School es una marca operada por VianaHub, Lda., responsable del tratamiento de datos personales en el contexto de este sitio web.",
+            "Para preguntas sobre el tratamiento de datos personales, puede contactarnos por correo electrónico: vianahub.pt@gmail.com."
+          ]
+        },
+        {
+          "title": "3. Datos que pueden ser tratados",
+          "paragraphs": [
+            "Este sitio web está diseñado para recopilar la mínima cantidad posible de datos personales. Nuestro enfoque es proporcionar información y facilitar el contacto voluntario del usuario.",
+            "Los siguientes tipos de datos pueden ser procesados:"
+          ],
+          "items": [
+            "Información técnica de acceso: dirección IP, tipo de navegador, sistema operativo, páginas visitadas, tiempo de permanencia y origen de la visita, recopilados de forma agregada por los servicios de análisis.",
+            "Parámetros de campaña UTM: cuando accede al sitio a través de un enlace de campaña (utm_source, utm_medium, utm_campaign, utm_term, utm_content), estos parámetros se capturan en la sesión para la atribución del origen de la visita.",
+            "Preferencia de consentimiento: su elección de aceptar o rechazar cookies de análisis se almacena en localStorage para recordar su preferencia.",
+            "Contacto iniciado voluntariamente: cuando el usuario decide contactar a Best Fluency a través de WhatsApp, teléfono u otros canales, los datos transmitidos en esa interacción son tratados por el respectivo servicio de terceros."
+          ]
+        },
+        {
+          "title": "4. Google Analytics 4",
+          "paragraphs": [
+            "Este sitio web utiliza Google Analytics 4 para la medición agregada de uso. GA4 solo se carga después del consentimiento explícito del usuario.",
+            "Cuando el usuario acepta, GA4 se configura con los siguientes estados de consentimiento:"
+          ],
+          "items": [
+            "analytics_storage = granted",
+            "ad_storage = denied",
+            "ad_user_data = denied",
+            "ad_personalization = denied"
+          ],
+          "subsections": [
+            {
+              "title": "Qué significa esto",
+              "paragraphs": [
+                "Google Analytics puede crear cookies de primer nombre (_ga, _ga_*) para medir el uso del sitio de forma agregada.",
+                "No hay cookies o funcionalidades de publicidad (Google Ads) activadas.",
+                "El usuario puede revocar el consentimiento en cualquier momento a través de \"Gestionar cookies\" en el pie de página del sitio web."
+              ]
+            }
+          ]
+        },
+        {
+          "title": "5. Cloudflare Web Analytics",
+          "paragraphs": [
+            "Este sitio web utiliza Cloudflare Web Analytics como medición base. Esta implementación está diseñada para funcionar sin cookies y sin necesidad de consentimiento.",
+            "Cloudflare Web Analytics mide visitas, páginas vistas, fuentes de tráfico, dispositivos, países y Core Web Vitals de forma agregada.",
+            "El beacon de Cloudflare se carga independientemente de la decisión de consentimiento del usuario, ya que no utiliza cookies ni recopila datos personales identificables."
+          ]
+        },
+        {
+          "title": "6. Preferencia de consentimiento",
+          "paragraphs": [
+            "La preferencia de consentimiento del usuario se almacena en el localStorage del navegador con la clave bestfluency:consent:v1.",
+            "Este almacenamiento solo registra la elección del usuario: \"accepted\" (aceptó análisis) o \"rejected\" (rechazó análisis).",
+            "La preferencia se mantiene hasta que sea cambiada o eliminada por el usuario.",
+            "No se crean cookies para este propósito — la elección se almacena exclusivamente en localStorage."
+          ]
+        },
+        {
+          "title": "7. Parámetros de campaña",
+          "paragraphs": [
+            "Cuando el usuario accede al sitio web a través de un enlace con parámetros UTM (utm_source, utm_medium, utm_campaign, utm_term, utm_content), estos se capturan en la primera visita de la sesión.",
+            "Los parámetros UTM se almacenan en el sessionStorage del navegador (clave best-fluency:utm:session) y se utilizan para la atribución del origen de la visita durante la sesión.",
+            "Los UTM se mantienen durante toda la sesión de navegación y permiten atribuir el origen del tráfico incluso cuando el usuario navega entre diferentes idiomas del sitio web."
+          ]
+        },
+        {
+          "title": "8. Contacto por WhatsApp",
+          "paragraphs": [
+            "Cuando el usuario decide contactar a Best Fluency a través de WhatsApp, es redirigido a un servicio de terceros (WhatsApp, empresa Meta Platforms, Inc.).",
+            "Best Fluency no controla ni es responsable del tratamiento de datos realizado por WhatsApp/Meta. El usuario debe consultar la política de privacidad de WhatsApp para obtener información sobre el tratamiento de sus datos en esa plataforma."
+          ]
+        },
+        {
+          "title": "9. Proveedores de servicios",
+          "paragraphs": [
+            "Este sitio web utiliza los siguientes proveedores de servicios tecnológicos que pueden tener acceso a datos de uso:"
+          ],
+          "items": [
+            "Google Analytics (Google LLC) — medición de uso del sitio web, después del consentimiento",
+            "Cloudflare (Cloudflare, Inc.) — análisis y protección del sitio web, sin cookies",
+            "WhatsApp (Meta Platforms, Inc.) — canal de contacto voluntario del usuario"
+          ]
+        },
+        {
+          "title": "10. Transferencias internacionales",
+          "paragraphs": [
+            "Algunos de los proveedores de servicios mencionados (Google, Cloudflare) tienen su sede en los Estados Unidos de América y otros países fuera del Espacio Económico Europeo.",
+            "El procesamiento de datos por estos proveedores puede ocurrir fuera del EEE, de acuerdo con los mecanismos legales y políticas de protección de datos de cada proveedor.",
+            "No existen transferencias de datos para fines de publicidad o marketing directo."
+          ]
+        },
+        {
+          "title": "11. Conservación de los datos",
+          "paragraphs": [
+            "La preferencia de consentimiento se conserva en el navegador del usuario hasta que sea cambiada o eliminada.",
+            "Los datos de navegación recopilados por los servicios de análisis se conservan de acuerdo con la configuración y políticas de retención de cada proveedor.",
+            "El sitio web no mantiene bases de datos personales más allá de lo estrictamente necesario para su funcionamiento y medición."
+          ]
+        },
+        {
+          "title": "12. Derechos de los titulares",
+          "paragraphs": [
+            "Conforme a la legislación aplicable en materia de protección de datos personales, el usuario tiene derecho a:"
+          ],
+          "items": [
+            "Acceder a sus datos personales",
+            "Rectificar datos inexactos o incompletos",
+            "Solicitar la eliminación de sus datos",
+            "Limitar el tratamiento de sus datos",
+            "Oponerse al tratamiento cuando sea aplicable",
+            "Retirar el consentimiento en cualquier momento sin comprometer la legalidad del tratamiento realizado hasta la fecha de la revocación"
+          ],
+          "subsections": [
+            {
+              "title": "Cómo ejercer estos derechos",
+              "paragraphs": [
+                "Para ejercer cualquiera de sus derechos, puede contactarnos por correo electrónico a vianahub.pt@gmail.com o a través de los canales disponibles en el sitio web, designadamente por WhatsApp.",
+                "Para retirar el consentimiento de análisis, utilice la funcionalidad \"Gestionar cookies\" disponible en el pie de página del sitio web."
+              ]
+            }
+          ]
+        },
+        {
+          "title": "13. Niños y menores",
+          "paragraphs": [
+            "El sitio web de Best Fluency proporciona información sobre clases de inglés para niños. Sin embargo, el sitio web no recopila datos personales de niños de forma directa.",
+            "Cuando sea aplicable, los contactos, inscripciones y decisiones relativas a menores deben ser realizados por el responsable legal."
+          ]
+        },
+        {
+          "title": "14. Seguridad",
+          "paragraphs": [
+            "Best Fluency adopta medidas técnicas y organizativas adecuadas para proteger los datos personales contra acceso no autorizado, pérdida, alteración o divulgación.",
+            "Sin embargo, ningún método de transmisión por internet o de almacenamiento electrónico es totalmente seguro, por lo que no es posible garantizar seguridad absoluta."
+          ]
+        },
+        {
+          "title": "15. Cambios en esta política",
+          "paragraphs": [
+            "Esta Política de Privacidad puede ser actualizada sin previo aviso. Recomendamos la revisión periódica de esta página.",
+            "La fecha de la última actualización se indica al inicio de este documento."
+          ]
+        },
+        {
+          "title": "16. Contacto",
+          "paragraphs": [
+            "Para preguntas relacionadas con esta Política de Privacidad o con el tratamiento de sus datos personales, puede contactarnos por correo electrónico a vianahub.pt@gmail.com o a través de los canales disponibles en el sitio web, designadamente por WhatsApp."
+          ]
+        }
+      ]
+    },
+    "cookies": {
+      "title": "Política de Cookies",
+      "metaTitle": "Política de Cookies | Best Fluency",
+      "metaDescription": "Conozca las tecnologías de almacenamiento utilizadas por Best Fluency en el sitio web, incluyendo cookies, localStorage y sessionStorage.",
+      "sections": [
+        {
+          "title": "1. Qué son las cookies",
+          "paragraphs": [
+            "Las cookies son pequeños archivos de texto que se almacenan en el navegador del usuario cuando accede a un sitio web. Permiten que el sitio web recuerde las acciones y preferencias del usuario a lo largo del tiempo.",
+            "Además de las cookies, existen otras tecnologías de almacenamiento utilizadas por los sitios web, como localStorage y sessionStorage, que funcionan de manera similar pero con características diferentes."
+          ]
+        },
+        {
+          "title": "2. Tecnologías utilizadas por Best Fluency",
+          "paragraphs": [
+            "El sitio web de Best Fluency utiliza las siguientes tecnologías de almacenamiento:"
+          ],
+          "items": [
+            "Cookies de preferencias de privacidad",
+            "Almacenamiento local (localStorage) — para guardar la preferencia de consentimiento",
+            "Almacenamiento de sesión (sessionStorage) — para guardar parámetros de campaña durante la sesión"
+          ]
+        },
+        {
+          "title": "3. Almacenamiento necesario",
+          "paragraphs": [
+            "El sitio web utiliza el almacenamiento local para guardar su preferencia de consentimiento de cookies."
+          ],
+          "items": [
+            "Clave: bestfluency:consent:v1",
+            "Tipo: localStorage",
+            "Finalidad: guardar la elección de consentimiento del usuario (\"accepted\" o \"rejected\")",
+            "Categoría: necesario — permite recordar la preferencia de privacidad del usuario",
+            "No depende de la aceptación de análisis"
+          ]
+        },
+        {
+          "title": "4. Datos de sesión y parámetros UTM",
+          "paragraphs": [
+            "Cuando el usuario accede al sitio web a través de un enlace de campaña, los parámetros UTM se capturan y almacenan en sessionStorage."
+          ],
+          "items": [
+            "Clave: best-fluency:utm:session",
+            "Tipo: sessionStorage",
+            "Finalidad: atribución del origen de la visita durante la sesión (utm_source, utm_medium, utm_campaign, utm_term, utm_content)",
+            "Duración: termina cuando se cierra el navegador o se finaliza la sesión"
+          ]
+        },
+        {
+          "title": "5. Cloudflare Web Analytics",
+          "paragraphs": [
+            "Cloudflare Web Analytics es una herramienta de medición que funciona sin cookies.",
+            "El beacon de Cloudflare se carga independientemente del consentimiento de cookies, ya que no utiliza cookies ni almacena datos en el navegador del usuario.",
+            "Mide visitas, páginas vistas, fuentes de tráfico, dispositivos, países y Core Web Vitals de forma agregada."
+          ]
+        },
+        {
+          "title": "6. Google Analytics 4",
+          "paragraphs": [
+            "Google Analytics 4 solo se carga después del consentimiento explícito del usuario a través del banner de cookies.",
+            "Cuando el usuario acepta análisis, Google Analytics puede crear cookies de primer nombre para medir el uso del sitio web de forma agregada."
+          ],
+          "items": [
+            "_ga — cookie de primer nombre para identificación de usuarios",
+            "_ga_* — cookies de primer nombre para sesiones y análisis",
+            "Categoría: estadísticas / análisis",
+            "Proveedor: Google",
+            "Finalidad: medición agregada de uso y eventos"
+          ],
+          "subsections": [
+            {
+              "title": "Duración de las cookies",
+              "paragraphs": [
+                "La duración de las cookies de Google Analytics puede depender de la configuración del servicio y de la configuración del navegador del usuario."
+              ]
+            }
+          ]
+        },
+        {
+          "title": "7. Publicidad",
+          "paragraphs": [
+            "En este momento, el sitio web no concede consentimiento para el almacenamiento o uso de cookies de publicidad.",
+            "Los estados de consentimiento para publicidad están permanentemente configurados como denied:"
+          ],
+          "items": [
+            "ad_storage = denied",
+            "ad_user_data = denied",
+            "ad_personalization = denied"
+          ],
+          "subsections": [
+            {
+              "paragraphs": [
+                "No hay cookies de Google Ads u otras plataformas de publicidad activadas por esta implementación."
+              ]
+            }
+          ]
+        },
+        {
+          "title": "8. Gestionar cookies",
+          "paragraphs": [
+            "El usuario puede gestionar sus preferencias de cookies en cualquier momento a través del enlace \"Gestionar cookies\" disponible en el pie de página del sitio web.",
+            "Al acceder a esta funcionalidad, el usuario puede:"
+          ],
+          "items": [
+            "Aceptar estadísticas — activa Google Analytics",
+            "Rechazar — mantiene GA desactivado"
+          ],
+          "subsections": [
+            {
+              "title": "Revocación",
+              "paragraphs": [
+                "Si el usuario había aceptado anteriormente y elige rechazar, se ejecuta el siguiente proceso:",
+                "La preferencia de consentimiento se actualiza a \"rejected\" en localStorage.",
+                "Google Analytics recibe la actualización de consentimiento a denied.",
+                "Las cookies de primer nombre de GA (_ga, _ga_*) se eliminan.",
+                "La página se recarga para garantizar que GA deja de funcionar."
+              ]
+            }
+          ]
+        },
+        {
+          "title": "9. Configuración del navegador",
+          "paragraphs": [
+            "El usuario también puede eliminar cookies y datos de almacenamiento a través de la configuración de su navegador.",
+            "La eliminación de cookies o datos de almacenamiento a través del navegador no afecta a la preferencia de consentimiento almacenada en el sitio web — el banner de cookies puede reaparecer en su próxima visita."
+          ]
+        }
+      ]
+    }
+  }
 }

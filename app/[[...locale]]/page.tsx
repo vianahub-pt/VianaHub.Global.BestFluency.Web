@@ -1,22 +1,21 @@
 import { notFound } from "next/navigation";
 
-import { localeCodeForSegment } from "@/core/config/locales";
+import { resolvePageRoute } from "@/shared/lib/routes";
+import { LegalPage } from "@/domains/legal/components/legal-page";
 import { LandingPage } from "@/domains/landing/components/landing-page";
 
 type Params = Promise<{ locale?: string[] }>;
 
-/** Optional catch-all: /, /en/, /es/, /fr/, /de/, /it/ */
+/** Optional catch-all: /, /en/, /privacy/, /en/privacy/, etc. */
 export default async function LocalePage({ params }: { params: Params }) {
   const { locale: segments } = await params;
 
-  if (!segments?.length) {
-    return <LandingPage locale="pt-PT" />;
+  const resolved = resolvePageRoute(segments);
+  if (!resolved) notFound();
+
+  if (resolved.page === "landing") {
+    return <LandingPage locale={resolved.locale} />;
   }
 
-  if (segments.length !== 1) notFound();
-
-  const code = localeCodeForSegment(segments[0]);
-  if (!code) notFound();
-
-  return <LandingPage locale={code} />;
+  return <LegalPage locale={resolved.locale} type={resolved.page} />;
 }

@@ -1,12 +1,8 @@
 import Image from "next/image";
-import { MessageCircle } from "lucide-react";
 
 import { type LocaleCode } from "@/core/config/locales";
 import { getMessages } from "@/core/i18n";
-import { buttonVariants } from "@/shared/components/ui/button";
 import { ScrollReveal } from "@/shared/components/ui/scroll-reveal";
-import { WhatsAppLink } from "@/shared/components/whatsapp-link";
-import { cn } from "@/shared/lib/utils";
 
 function TestimonialCard({
   name,
@@ -48,12 +44,10 @@ function TestimonialCard({
 function CarouselColumn({
   items,
   reverse,
-  speed,
   duration,
 }: {
   items: { name: string; role: string; photo: string; quote: string }[];
   reverse?: boolean;
-  speed: string;
   duration: string;
 }) {
   return (
@@ -124,20 +118,17 @@ export function Testimonials({ locale }: { locale: LocaleCode }) {
             <CarouselColumn
               items={col1}
               reverse={false}
-              speed="up"
               duration="30s"
             />
             <CarouselColumn
               items={col2}
               reverse={true}
-              speed="down"
               duration="35s"
             />
             <div className="hidden lg:block">
               <CarouselColumn
                 items={col3}
                 reverse={false}
-                speed="up"
                 duration="28s"
               />
             </div>

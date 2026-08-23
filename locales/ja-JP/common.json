@@ -58,9 +58,19 @@
       "rightsReserved": "© 2026 ベストフルエンシティ. All rights reserved.",
       "privacyPolicy": "プライバシーポリシー",
       "cookiesPolicy": "クッキーポリシー",
+      "manageCookies": "クッキーの設定",
       "whatsappLabel": "WhatsApp",
       "siteMap": "サイトマップ",
       "contact": "お問い合わせ"
+    },
+    "cookieConsent": {
+      "title": "お客様のプライバシーは大切にしています",
+      "description": "ウェブサイトの利用状況を理解し、体験を改善するために分析Cookieを使用しています。これらのCookieを受け入れるか拒否することができます。",
+      "accept": "統計を受け入れる",
+      "reject": "拒否",
+      "manage": "クッキーの設定",
+      "ariaLabel": "クッキーポリシー",
+      "learnMore": "詳しく見る"
     },
     "header": {
       "logoAlt": "ベストフルエンシティ・ランゲージスクール"
@@ -333,5 +343,306 @@
   "language.name.zh-CN": "🇨🇳 中国語 (普通話)",
   "language.short.ja-JP": "JA",
   "language.short.ru-RU": "RU",
-  "language.short.zh-CN": "ZH"
+  "language.short.zh-CN": "ZH",
+  "legal": {
+    "common": {
+      "backHome": "ホームページに戻る",
+      "lastUpdated": "最終更新日"
+    },
+    "privacy": {
+      "title": "プライバシーポリシー",
+      "metaTitle": "プライバシーポリシー | Best Fluency",
+      "metaDescription": "Best Fluencyがこのウェブサイトでお客様の個人データをどのように扱うかをご覧ください。Cookie、分析、サービスプロバイダー、お客様の権利に関する情報。",
+      "sections": [
+        {
+          "title": "1. はじめに",
+          "paragraphs": [
+            "このプライバシーポリシーは、Best Fluency Language Schoolのウェブサイト（以下「Best Fluency」または「ウェブサイト」）においてデータがどのように扱われるかを説明するものです。",
+            "ウェブサイトにアクセスすることで、利用者は本ポリシーに記載された実践に同意したものとみなされます。同意しない場合は、ウェブサイトの利用を控えてください。"
+          ]
+        },
+        {
+          "title": "2. データ管理者",
+          "paragraphs": [
+            "Best Fluency Language Schoolは、VianaHub, Lda.が運営するブランドであり、このウェブサイトの文脈における個人データの処理に責任を負います。",
+            "個人データの処理に関するご質問は、メールでお問い合わせください：vianahub.pt@gmail.com"
+          ]
+        },
+        {
+          "title": "3. 処理される可能性のあるデータ",
+          "paragraphs": [
+            "このウェブサイトは、可能な限り最小限の個人データを収集するように設計されています。私たちの焦点は情報の提供と利用者の自発的な連絡の容易化にあります。",
+            "以下の種類のデータが処理される場合があります："
+          ],
+          "items": [
+            "技術的なアクセス情報：IPアドレス、ブラウザタイプ、オペレーティングシステム、訪問したページ、滞留時間、アクセス元。分析サービスによって集計形式で収集されます。",
+            "UTMキャンペーンパラメータ：キャンペーンリンク（utm_source、utm_medium、utm_campaign、utm_term、utm_content）経由でサイトにアクセスした場合、セッション中にアクセス元の帰属のためにthese parametersがキャプチャされます。",
+            "同意設定：分析Cookieを受け入れるか拒否するかどうかの選択は、設定を記憶するためにlocalStorageに保存されます。",
+            "自発的に開始された連絡：利用者がWhatsApp、電話、その他のチャネルを介してBest Fluencyに連絡することを決定した場合、そのやり取りで送信されたデータは respective third-party serviceによって処理されます。"
+          ]
+        },
+        {
+          "title": "4. Google Analytics 4",
+          "paragraphs": [
+            "このウェブサイトは、集計された使用状況の測定にGoogle Analytics 4を使用しています。GA4は利用者の明示的な同意後にのみロードされます。",
+            "利用者が同意した場合、GA4は以下の同意状態で設定されます："
+          ],
+          "items": [
+            "analytics_storage = granted",
+            "ad_storage = denied",
+            "ad_user_data = denied",
+            "ad_personalization = denied"
+          ],
+          "subsections": [
+            {
+              "title": "これが意味すること",
+              "paragraphs": [
+                "Google Analyticsは、サイトの使用状況を集計的に測定するために、ファーストパーティCookie（_ga、_ga_*）を作成する場合があります。",
+                "広告Cookieや機能（Google Ads）は有効にはなりません。",
+                "利用者はウェブサイトのフッターの「クッキーの設定」を通じて、いつでも同意を撤回できます。"
+              ]
+            }
+          ]
+        },
+        {
+          "title": "5. Cloudflare Web Analytics",
+          "paragraphs": [
+            "このウェブサイトは、ベース測定としてCloudflare Web Analyticsを使用しています。この実装は、Cookieを使用せず、同意を必要としないように設計されています。",
+            "Cloudflare Web Analyticsは、訪問数、ページビュー、トラフィック源、デバイス、国、Core Web Vitalsを集計形式で測定します。",
+            "Cloudflareビーコンは、Cookieを使用せず、個人を特定できるデータを収集しないため、利用者の同意決定に関係なくロードされます。"
+          ]
+        },
+        {
+          "title": "6. 同意設定",
+          "paragraphs": [
+            "利用者の同意設定は、bestfluency:consent:v1というキーでブラウザのlocalStorageに保存されます。",
+            "この保存は利用者の選択のみを記録します：「accepted」（分析を受け入れた）または「rejected」（分析を拒否した）。",
+            "設定は利用者が変更または削除するまで保持されます。",
+            "この目的のためにCookieは作成されません — 選択はlocalStorageにのみ保存されます。"
+          ]
+        },
+        {
+          "title": "7. キャンパーンパラメータ",
+          "paragraphs": [
+            "利用者がUTMパラメータ（utm_source、utm_medium、utm_campaign、utm_term、utm_content）を含むリンク経由でウェブサイトにアクセスした場合、セッションの最初の訪問時にthese parametersがキャプチャされます。",
+            "UTMパラメータはブラウザのsessionStorage（キー：best-fluency:utm:session）に保存され、セッション中の訪問元帰属に使用されます。",
+            "UTMはブラウジングセッション全体で保持され、利用者がウェブサイトの異なる言語間をナビゲートしてもトラフィックの帰属が可能になります。"
+          ]
+        },
+        {
+          "title": "8. WhatsApp経由の連絡",
+          "paragraphs": [
+            "利用者がWhatsAppを介してBest Fluencyに連絡することを決定した場合、サードパーティサービス（Meta Platforms, Inc.が所有するWhatsApp）にリダイレクトされます。",
+            "Best FluencyはWhatsApp/Metaによって行われるデータ処理を制御しておらず、それについての責任も負いません。利用者は、そのプラットフォームでのデータ処理に関する情報について、WhatsAppのプライバシーポリシーを参照する必要があります。"
+          ]
+        },
+        {
+          "title": "9. サービスプロバイダー",
+          "paragraphs": [
+            "このウェブサイトは、使用データにアクセスできる可能性のある以下のテクノロジーサービスプロバイダーを使用しています："
+          ],
+          "items": [
+            "Google Analytics（Google LLC）— 同意後のウェブサイト使用状況の測定",
+            "Cloudflare（Cloudflare, Inc.）— Cookieを使用しないウェブサイトの分析と保護",
+            "WhatsApp（Meta Platforms, Inc.）— 利用者の自発的な連絡チャネル"
+          ]
+        },
+        {
+          "title": "10. 国際転送",
+          "paragraphs": [
+            "言及されたサービスプロバイダーの一部（Google、Cloudflare）は、アメリカ合衆国および欧州経済領域以外の国々に拠点を置いています。",
+            "これらのプロバイダーによるデータ処理は、各プロバイダーの法的メカニズムとデータ保護ポリシーに従って、EEA外で行われる場合があります。",
+            "広告またはダイレクトマーケティングを目的としたデータ転送はありません。"
+          ]
+        },
+        {
+          "title": "11. データの保存",
+          "paragraphs": [
+            "同意設定は、利用者が変更または削除するまでブラウザに保存されます。",
+            "分析サービスによって収集されたブラウジングデータは、各プロバイダーの設定と保持ポリシーに従って保存されます。",
+            "ウェブサイトは、その運営と測定にstrictly necessaryな範囲を超えて個人データベースを維持しません。"
+          ]
+        },
+        {
+          "title": "12. データ主体の権利",
+          "paragraphs": [
+            "適用される個人データ保護法に基づき、利用者は以下の権利を有します："
+          ],
+          "items": [
+            "個人データにアクセスする",
+            "不正確または不完全なデータを訂正する",
+            "データの削除を要求する",
+            "データの処理を制限する",
+            "適用可能な場合、処理に反対する",
+            "撤回の日までに行われた処理の合法性を損なうことなく、いつでも同意を撤回する"
+          ],
+          "subsections": [
+            {
+              "title": "これらの権利を行使する方法",
+              "paragraphs": [
+                "いずれかの権利を行使するには、メール（vianahub.pt@gmail.com）またはウェブサイトで利用可能なチャネル、特にWhatsAppを通じてお問い合わせください。",
+                "分析の同意を撤回するには、ウェブサイトのフッターで利用可能な「クッキーの設定」機能を使用してください。"
+              ]
+            }
+          ]
+        },
+        {
+          "title": "13. 子供と未成年者",
+          "paragraphs": [
+            "Best Fluencyのウェブサイトは、子供向けの英語レッスンに関する情報を提供しています。ただし、ウェブサイトは子供の個人データを直接収集しません。",
+            "該当する場合は、未成年者に関する連絡、登録、決定は法的保護者によって行われる必要があります。"
+          ]
+        },
+        {
+          "title": "14. セキュリティ",
+          "paragraphs": [
+            "Best Fluencyは、個人データを不正アクセス、紛失、変更、開示から保護するための適切な技術的および組織的措置を講じています。",
+            "ただし、インターネット送信や電子保存の方法は完全に安全ではないため、絶対的なセキュリティを保証することはできません。"
+          ]
+        },
+        {
+          "title": "15. このポリシーの変更",
+          "paragraphs": [
+            "このプライバシーポリシーは、事前の通知なしに更新される場合があります。このページの定期的な確認をお勧めします。",
+            "最終更新日はこのドキュメントの冒頭に記載されています。"
+          ]
+        },
+        {
+          "title": "16. お問い合わせ",
+          "paragraphs": [
+            "このプライバシーポリシーまたは個人データの処理に関するご質問については、メール（vianahub.pt@gmail.com）またはウェブサイトで利用可能なチャネル、特にWhatsAppを通じてお問い合わせください。"
+          ]
+        }
+      ]
+    },
+    "cookies": {
+      "title": "クッキーポリシー",
+      "metaTitle": "クッキーポリシー | Best Fluency",
+      "metaDescription": "Best Fluencyがこのウェブサイトで使用しているストレージ技術（Cookie、localStorage、sessionStorage）についてご紹介します。",
+      "sections": [
+        {
+          "title": "1. Cookieとは",
+          "paragraphs": [
+            "Cookieは、利用者がウェブサイトにアクセスした際にブラウザに保存される小さなテキストファイルです。ウェブサイトが利用者のアクションや設定を時間経過とともに記憶することを可能にします。",
+            "Cookie以外にも、localStorageやsessionStorageなど、ウェブサイトが使用する他のストレージ技術があり、同様に機能しますが、異なる特性を持っています。"
+          ]
+        },
+        {
+          "title": "2. Best Fluencyが使用する技術",
+          "paragraphs": [
+            "Best Fluencyのウェブサイトは、以下のストレージ技術を使用しています："
+          ],
+          "items": [
+            "プライバシー設定Cookie",
+            "ローカルストレージ（localStorage）— 同意設定を保存するため",
+            "セッションストレージ（sessionStorage）— セッション中のキャンペーンパラメータを保存するため"
+          ]
+        },
+        {
+          "title": "3. 必要なストレージ",
+          "paragraphs": [
+            "ウェブサイトは、クッキー同意設定を保存するためにローカルストレージを使用しています。"
+          ],
+          "items": [
+            "キー：bestfluency:consent:v1",
+            "タイプ：localStorage",
+            "目的：利用者の同意選択（「accepted」または「rejected」）を保存",
+            "カテゴリ：必要 — 利用者のプライバシー設定を記憶することを可能にする",
+            "分析の受け入れに依存しない"
+          ]
+        },
+        {
+          "title": "4. セッションデータとUTMパラメータ",
+          "paragraphs": [
+            "利用者がキャンペーンリンク経由でウェブサイトにアクセスした場合、UTMパラメータがキャプチャされ、sessionStorageに保存されます。"
+          ],
+          "items": [
+            "キー：best-fluency:utm:session",
+            "タイプ：sessionStorage",
+            "目的：セッション中の訪問元帰属（utm_source、utm_medium、utm_campaign、utm_term、utm_content）",
+            "期間：ブラウザが閉じられるかセッションが終了すると終了"
+          ]
+        },
+        {
+          "title": "5. Cloudflare Web Analytics",
+          "paragraphs": [
+            "Cloudflare Web Analyticsは、Cookieを使用しない測定ツールです。",
+            "Cloudflareビーコンは、Cookieを使用せず、利用者のブラウザにデータを保存しないため、Cookie同意とは関係なくロードされます。",
+            "訪問数、ページビュー、トラフィック源、デバイス、国、Core Web Vitalsを集計形式で測定します。"
+          ]
+        },
+        {
+          "title": "6. Google Analytics 4",
+          "paragraphs": [
+            "Google Analytics 4は、クッキーバナーを通じて利用者の明示的な同意後にのみロードされます。",
+            "利用者が分析を受け入れると、Google Analyticsはウェブサイトの使用状況を集計的に測定するためにファーストパーティCookieを作成する場合があります。"
+          ],
+          "items": [
+            "_ga — 利用者識別のためのファーストパーティCookie",
+            "_ga_* — セッションと分析のためのファーストパーティCookie",
+            "カテゴリ：統計 / 分析",
+            "プロバイダー：Google",
+            "目的：使用状況とイベントの集計測定"
+          ],
+          "subsections": [
+            {
+              "title": "Cookieの有効期間",
+              "paragraphs": [
+                "Google AnalyticsのCookieの有効期間は、サービスの設定と利用者のブラウザ設定に依存する場合があります。"
+              ]
+            }
+          ]
+        },
+        {
+          "title": "7. 広告",
+          "paragraphs": [
+            "現時点では、ウェブサイトは広告Cookieの保存または使用について同意を Grantsしません。",
+            "広告同意の状態は、denied に永久に設定されています："
+          ],
+          "items": [
+            "ad_storage = denied",
+            "ad_user_data = denied",
+            "ad_personalization = denied"
+          ],
+          "subsections": [
+            {
+              "paragraphs": [
+                "この実装により、Google Adsまたは他の広告プラットフォームのCookieは有効になりません。"
+              ]
+            }
+          ]
+        },
+        {
+          "title": "8. クッキーの管理",
+          "paragraphs": [
+            "利用者は、ウェブサイトのフッターで利用可能な「クッキーの設定」リンクを通じて、いつでもクッキー設定を管理できます。",
+            "この機能にアクセスすると、利用者は以下のことができます："
+          ],
+          "items": [
+            "統計を受け入れる — Google Analyticsを有効にする",
+            "拒否する — GAを無効にしたままにする"
+          ],
+          "subsections": [
+            {
+              "title": "撤回",
+              "paragraphs": [
+                "以前に受け入れていた利用者が拒否を選択した場合、以下のプロセスが実行されます：",
+                "同意設定がlocalStorageの「rejected」に更新されます。",
+                "Google Analyticsはdeniedへの同意更新を受け取ります。",
+                "ファーストパーティGA Cookie（_ga、_ga_*）が削除されます。",
+                "GAが機能を停止するようにページがリロードされます。"
+              ]
+            }
+          ]
+        },
+        {
+          "title": "9. ブラウザ設定",
+          "paragraphs": [
+            "利用者は、ブラウザの設定を通じてCookieとストレージデータを削除することもできます。",
+            "ブラウザを通じてCookieやストレージデータを削除しても、ウェブサイトに保存された同意設定には影響しません — 次回の访问時にクッキーバナーが再表示される場合があります。"
+          ]
+        }
+      ]
+    }
+  }
 }

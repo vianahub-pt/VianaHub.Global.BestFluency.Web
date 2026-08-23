@@ -4,23 +4,56 @@
 - **Spec:** secções 20 (WhatsApp), 22 (Medição e analytics), 28 (Cloudflare) e 29 (Privacidade)
 - **ADR:** [ADR-0001 — Arquitetura inicial static-first](docs/adr/ADR-0001.md)
 
-## Fase atual (Fase 1 — sem cookies)
+## Fase atual (Fase 2 — consentimento ativo)
 
-Só está ativo o **Cloudflare Web Analytics**, que mede visitas, páginas vistas,
-origens de tráfego, dispositivos, países e Core Web Vitals reais **sem usar
-cookies e sem exigir consentimento**.
+### Cloudflare Web Analytics (sem cookies)
 
-**Não são carregados** GA4, Google Ads, Meta Pixel ou qualquer outro script de
-terceiros nesta fase. Eles só serão adicionados quando existirem:
+Continua ativo como medição base **sem cookies e sem consentimento**.
+Mede visitas, páginas vistas, origens de tráfego, dispositivos, países e
+Core Web Vitals reais.
 
-1. plano de medição aprovado;
-2. consentimento para tecnologias não essenciais;
-3. política de privacidade e cookies atualizada;
-4. mecanismo para aceitar, recusar e alterar preferências.
+### Google Analytics 4 (com consentimento)
 
-Os eventos de conversão já ficam instrumentados num `dataLayer` tipado
-(`shared/lib/analytics.ts`), sem acoplar fornecedor — prontos para serem
-consumidos por GTM/GA4 depois do mecanismo de consentimento.
+GA4 está disponível **apenas após aceite do utilizador** through Basic
+Consent Mode v2. Quando o utilizador aceita:
+
+- `analytics_storage = granted`
+- `ad_storage = denied`
+- `ad_user_data = denied`
+- `ad_personalization = denied`
+
+Quando recusa ou não decide:
+
+- GA4 não é carregado
+- Nenhum request é enviado para Google
+- Nenhum cookie GA4 (_ga, _ga_*) é criado
+
+O utilizador pode alterar a sua escolha a qualquer momento via
+"Gerir cookies" no footer.
+
+**Measurement ID:** `NEXT_PUBLIC_GA_MEASUREMENT_ID` (não hardcode).
+
+### Eventos
+
+Os eventos de conversão (`whatsapp_click`, `phone_click`, `location_click`,
+`faq_open`) são enviados ao GA4 apenas quando:
+
+1. `consent === "accepted"` (localStorage)
+2. `window.gtag` está disponível (inicializado pelo GoogleAnalytics)
+
+**ANTES do consentimento:**
+- Nenhum `window.dataLayer` Google é criado pela aplicação
+- Nenhum evento é enfileirado no dataLayer
+- Nenhum evento é enviado ao Google
+- `console.debug` pode existir em development
+
+**DEPOIS do consentimento:**
+- `window.gtag` fica disponível
+- Eventos são enviados diretamente via `gtag("event", ...)`
+- `gtag` utiliza `dataLayer` internamente — não existe push separado
+
+Eventos disparados **antes** do consentimento **não são enviados
+retroativamente** ao GA4 quando o utilizador aceita posteriormente.
 
 ## Configuração
 
@@ -29,6 +62,7 @@ consumidos por GTM/GA4 depois do mecanismo de consentimento.
 | `NEXT_PUBLIC_SITE_URL` | Sim (produção) | URL pública definitiva (canonical, hreflang, sitemap, JSON-LD) |
 | `NEXT_PUBLIC_SITE_INDEXABLE` | Não | `true` apenas no lançamento oficial (remove `noindex`) |
 | `NEXT_PUBLIC_CF_WEB_ANALYTICS_TOKEN` | Não | Token real do Cloudflare Web Analytics. **Vazio = beacon desativado** |
+| `NEXT_PUBLIC_GA_MEASUREMENT_ID` | Não | GA4 Measurement ID. **Só carregado após consentimento** |
 
 > O token real ainda **não existe** (domínio definitivo pendente). Não inventar
 > token: o beacon só é injetado quando a variável estiver preenchida
@@ -54,7 +88,7 @@ Emissor: `WhatsAppLink` → helper central `trackWhatsAppClick(section, ctaLabel
 Os UTM são lidos de `location.search` **uma única vez por sessão** (client-side)
 e persistidos no `sessionStorage` (`best-fluency:utm:session`), sendo
 reutilizados em todos os eventos — preservando a atribuição da campanha mesmo
-com navegação SPA entre os 7 idiomas. A persistência em `sessionStorage` é
+com navegação SPA entre os 9 idiomas. A persistência em `sessionStorage` é
 necessária porque a navegação SPA do Next.js App Router cria novas instâncias
 do módulo por chunk/segmento de rota (uma cache apenas em memória seria
 reiniciada ao trocar de idioma). Navegações seguintes **sem** UTM na URL não
@@ -86,7 +120,7 @@ interativa). Não são emitidos nesta versão.
 
 O rótulo real de cada CTA vem do conteúdo localizado
 (`locales/{locale}/common.json`, namespace `landing.*`), por isso o `cta_label` reflete o idioma
-da rota (pt-PT, en-US, es-ES, fr-FR, de-DE, it-IT, pt-BR).
+da rota (pt-PT, en-US, es-ES, fr-FR, de-DE, it-IT, ja-JP, ru-RU, zh-CN).
 
 ## KPIs (spec §22)
 
@@ -104,49 +138,129 @@ da rota (pt-PT, en-US, es-ES, fr-FR, de-DE, it-IT, pt-BR).
 
 - **Visitas, origens, dispositivos, países e CWV:** dashboard do Cloudflare Web
   Analytics (Web Analytics → site do domínio definitivo).
-- **Conversões (`whatsapp_click`):** até existir GA4/GTM com consentimento, o
-  dado fica no `dataLayer` (pronto para integração futura) e pode ser auditado
-  em desenvolvimento via `console.debug`. Após a Fase 2 (com consentimento),
-  exportar os eventos para o GA4 e correlacionar com CRM/WhatsApp Business.
+- **Conversões (`whatsapp_click`):** com consentimento GA4 ativo, os eventos são
+  enviados via `gtag("event", ...)` para GA4 e correlacionados com
+  CRM/WhatsApp Business. Sem consentimento, nenhum evento é enviado — apenas
+  `console.debug` em development.
+
+## Revogação de consentimento
+
+Quando um utilizador que aceitou anteriormente escolhe "Recusar" via
+"Gerir cookies":
+
+1. `gtag('consent', 'update', {analytics_storage: 'denied', ...})` é executado
+2. `bestfluency:consent:v1` passa para `rejected` no localStorage
+3. Cookies first-party GA (`_ga`, `_ga_*`) são removidos best-effort
+4. Página faz reload controlado
+5. Após reload:
+   - `gtag.js` não é carregado
+   - Nenhum request GA é enviado
+   - `window.gtag` não é recriado pela aplicação
 
 ## Privacidade (spec §29)
 
 - Nenhum pixel ou cookie **não essencial** é carregado antes da decisão do
-  utilizador. O único script externo é o beacon do Cloudflare Web Analytics,
-  que **não usa cookies**.
+  utilizador. O único script externo sem consentimento é o beacon do Cloudflare
+  Web Analytics, que **não usa cookies**.
+- GA4 só é carregado após aceite explícito do utilizador (Basic Consent Mode v2).
+- Publicidade (Google Ads) permanece **permanentemente denied** — não estamos a
+  ativar Google Ads.
+- O utilizador pode alterar a sua escolha a qualquer momento via "Gerir cookies"
+  no footer.
 - Quando as páginas legais forem publicadas (pendente, spec §31), a **Política
   de Privacidade** deve informar que o clique no WhatsApp **encaminha o
   utilizador para um serviço externo** (WhatsApp/Meta), sujeito às políticas
   desse fornecedor.
-- Fase 2 (GA4/Ads/Pixel) depende de plano de medição, consentimento, política
-  atualizada e mecanismo de aceitar/recusar/alterar preferências.
 
 ## Validação manual (aceite #12, item 10)
 
 Com o token preenchido (ou não — o evento de clique independe do beacon):
 
+### Cenário A — primeira visita (sem consentimento)
+
 1. `npm install` e `npm run dev`.
-2. Abrir uma rota com UTM de teste, ex.:
-   `http://localhost:3000/?utm_source=test&utm_medium=manual&utm_campaign=qa12`.
-3. DevTools → Console → filtrar `[analytics]`.
-4. Clicar em **cada** CTA de WhatsApp das 10 ocorrências (header desktop,
-   header móvel, hero, individual, group, best kids, depoimentos, como começar,
-   CTA final, footer) e confirmar:
-   `[analytics] whatsapp_click {section: "...", cta_label: "...", utm_source: "test", ...}`.
-5. Confirmar que `section`/`cta_label`/`modality` batem com a tabela acima e que
-   os UTM de teste aparecem **em todos** os eventos (lidos uma vez na sessão).
-6. Navegar para outra rota de idioma (`/en/`) e clicar num CTA: os UTM devem
-   persistir (sessionStorage, não sobrescritos por URLs sem UTM).
-7. Verificar que NENHUM request para `googletagmanager.com`, `googleadservices`
-   ou `facebook.net` aparece na aba Network.
-8. Confirmar que o beacon `static.cloudflareinsights.com/beacon.min.js` só é
-   carregado quando `NEXT_PUBLIC_CF_WEB_ANALYTICS_TOKEN` está preenchido.
+2. Abrir aba anónima.
+3. Antes de clicar no banner:
+   - Network NÃO deve conter requests para `googletagmanager.com` ou `google-analytics.com`.
+   - Application/Cookies NÃO deve conter `_ga` ou `_ga_*`.
+   - Banner de cookies deve estar visível.
+4. DevTools → Console → filtrar `[analytics]`.
+
+### Cenário B — recusar
+
+1. Clicar "Recusar" no banner.
+2. Banner desaparece.
+3. Google NÃO deve carregar — não devem existir requests GA.
+4. Recarregar página — banner não reaparece.
+
+### Cenário C — aceitar
+
+1. Limpar storage ou abrir nova aba anónima.
+2. Clicar "Aceitar estatísticas".
+3. Deve aparecer request para `googletagmanager.com/gtag/js`.
+4. GA4 pode então enviar requests de medição.
+5. Consent Mode esperado:
+   - `analytics_storage = granted`
+   - `ad_storage = denied`
+   - `ad_user_data = denied`
+   - `ad_personalization = denied`
+
+### Cenário D — persistência
+
+1. Com consentimento aceito, recarregar a página.
+2. Banner não aparece.
+3. GA carrega porque `accepted` já está persistido.
+
+### Cenário E — alterar preferência
+
+1. Clicar "Gerir cookies" no footer.
+2. Banner reaparece.
+3. Alterar para "Recusar".
+4. Se estava com GA aceite: consent update denied + cookies removidos + reload.
+5. Após reload: GA não carrega.
+
+### Cenário E2 — revogação (accepted → rejected)
+
+1. Com GA carregado (consent = accepted).
+2. Footer → "Gerir cookies" → banner reaparece.
+3. Clicar "Recusar".
+4. Verificar:
+   - `gtag('consent', 'update', ...)` é chamado (se gtag existir)
+   - `localStorage` passa para `rejected`
+   - Cookies `_ga` / `_ga_*` são removidos
+   - Página recarrega
+5. Após reload:
+   - `gtag.js` não carrega
+   - Nenhum request GA
+   - `window.gtag` não é recriado
+
+### Cenário F — evento WhatsApp
+
+1. Com consentimento aceito:
+   - Clicar num CTA de WhatsApp.
+   - Deve existir `whatsapp_click` com `section`, `cta_label`, `modality` (quando aplicável) e UTM.
+2. Sem consentimento:
+   - O mesmo clique NÃO deve ser enviado ao GA4.
+
+### Google Tag Assistant
+
+Para validar com Google Tag Assistant:
+
+1. Aceitar cookies no banner.
+2. Abrir Tag Assistant (https://tagassistant.google.com/) e conectar ao site.
+3. Verificar que o consent state mostra `analytics_storage: granted`.
+4. Verificar que `page_view` é disparado.
+5. Clicar num CTA de WhatsApp e verificar `whatsapp_click`.
+6. Confirmar que não existem erros de consent para Ads (`ad_storage: denied` é esperado).
 
 ## Arquivos relacionados
 
-- `shared/lib/analytics.ts` — modelo de eventos, UTM de sessão (sessionStorage), `trackWhatsAppClick`
-- `shared/components/whatsapp-link.tsx` — CTA WhatsApp com evento
-- `shared/components/phone-link.tsx` — CTA telefone com evento
-- `shared/components/analytics/cloudflare-web-analytics.tsx` — beacon CF
-- `shared/components/layout/document-shell.tsx` — injeção do beacon nas 7 rotas
-- `core/config/site.ts` — leitura de `NEXT_PUBLIC_CF_WEB_ANALYTICS_TOKEN`
+- `shared/lib/consent.ts` — utilitário de consentimento (leitura/escrita/eventos/limpeza cookies)
+- `shared/lib/analytics.ts` — modelo de eventos, UTM de sessão, `trackWhatsAppClick` (consent-aware)
+- `shared/components/analytics/consent-manager.tsx` — banner de consentimento + revogação
+- `shared/components/analytics/cookie-settings-button.tsx` — botão "Gerir cookies" (footer)
+- `shared/components/analytics/google-analytics.tsx` — GA4 com consent mode (carregamento imperativo)
+- `shared/components/analytics/cloudflare-web-analytics.tsx` — beacon CF (sem cookies)
+- `shared/components/layout/document-shell.tsx` — injeção do analytics nas 9 rotas
+- `domains/landing/components/site-footer.tsx` — botão "Gerir cookies"
+- `core/config/site.ts` — leitura de `NEXT_PUBLIC_GA_MEASUREMENT_ID`
