@@ -47,7 +47,7 @@ export function Hero({ locale }: { locale: LocaleCode }) {
             </TextShine>
           </h1>
 
-          <p className="mt-6 max-w-3xl text-sm text-black dark:text-black font-bold leading-6 sm:text-base sm:leading-7 md:text-lg md:leading-8">
+          <p className="mt-6 max-w-3xl text-sm text-black dark:text-white font-bold leading-6 sm:text-base sm:leading-7 md:text-lg md:leading-8">
             {hero.text}
           </p>
 
