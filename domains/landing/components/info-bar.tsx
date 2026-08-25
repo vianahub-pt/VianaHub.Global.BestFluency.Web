@@ -34,7 +34,7 @@ export function InfoBar({ locale }: { locale: LocaleCode }) {
               <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-accent/80 text-black dark:text-white">
                 {itemIcons[index]}
               </span>
-              <span className="text-xs text-black dark:text-black font-medium leading-5 sm:text-sm sm:leading-6">
+              <span className="text-xs text-black dark:text-white font-medium leading-5 sm:text-sm sm:leading-6">
                 {item}
               </span>
             </li>
