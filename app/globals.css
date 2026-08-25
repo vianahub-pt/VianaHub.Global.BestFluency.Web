@@ -390,8 +390,9 @@
  * fica por baixo e a faixa branca/laranja-clara só aparece dentro dos glifos
  * enquanto passa — depois volta a transparente, revelando as letras originais.
  *
- * A animação é disparada apenas pela classe `.shine-run` (Intersection
- * Observer) e corre só com `prefers-reduced-motion: no-preference`.
+ * A animação é disparada periodicamente pela classe `.shine-run`
+ * (Intersection Observer + setInterval) e corre só com
+ * `prefers-reduced-motion: no-preference`.
  */
 .shine-overlay {
   /* Clipa o gradiente apenas dentro dos glifos (letras), não na caixa. */
