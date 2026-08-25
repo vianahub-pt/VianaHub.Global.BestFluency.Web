@@ -27,8 +27,8 @@ export function TextShine({ children }: { children: React.ReactNode }) {
   const ref = useRef<HTMLDivElement>(null);
   const [visible, setVisible] = useState(false);
   const overlayRef = useRef<HTMLSpanElement>(null);
-  const glowTimerRef = useRef<ReturnType<typeof setTimeout>>();
-  const glowIntervalRef = useRef<ReturnType<typeof setInterval>>();
+  const glowTimerRef = useRef<ReturnType<typeof setTimeout>>(undefined);
+  const glowIntervalRef = useRef<ReturnType<typeof setInterval>>(undefined);
 
   useEffect(() => {
     const el = ref.current;

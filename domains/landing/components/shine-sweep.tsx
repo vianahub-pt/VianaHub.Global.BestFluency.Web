@@ -29,8 +29,8 @@ export function ShineSweep({
   const ref = useRef<HTMLDivElement>(null);
   const sweepRef = useRef<HTMLSpanElement>(null);
   const [visible, setVisible] = useState(false);
-  const glowTimerRef = useRef<ReturnType<typeof setTimeout>>();
-  const glowIntervalRef = useRef<ReturnType<typeof setInterval>>();
+  const glowTimerRef = useRef<ReturnType<typeof setTimeout>>(undefined);
+  const glowIntervalRef = useRef<ReturnType<typeof setInterval>>(undefined);
 
   useEffect(() => {
     const el = ref.current;
