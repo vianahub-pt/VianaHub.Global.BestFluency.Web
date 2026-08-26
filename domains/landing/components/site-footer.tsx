@@ -44,6 +44,7 @@ export function SiteFooter({ locale }: { locale: LocaleCode }) {
         <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-3">
           {/* Coluna: Marca */}
           <div className="flex flex-col gap-4">
+            {/* eslint-disable-next-line @next/next/no-img-element -- Static export (output: "export"), logo pré-gerado em WebP (80/160/320), srcSet responsivo manual, Next Image optimizer não existe em runtime (images.unoptimized: true) */}
             <img
               src="/logo-320.webp"
               srcSet="/logo-80.webp 80w, /logo-160.webp 160w, /logo-320.webp 320w"

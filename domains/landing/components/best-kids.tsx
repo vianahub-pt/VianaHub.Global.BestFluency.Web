@@ -124,6 +124,7 @@ export function BestKids({ locale }: { locale: LocaleCode }) {
 
           <ScrollReveal animation="scale-in" delay={0.1} className="lg:order-2">
             <Card className="overflow-hidden">
+              {/* eslint-disable-next-line @next/next/no-img-element -- Static export (output: "export"), assets pré-gerados em WebP, srcSet responsivo produzido pela pipeline de imagens, Next Image optimizer não existe em runtime (images.unoptimized: true) */}
               <img
                 src={`${kidsBasePath}-960.webp`}
                 srcSet={`${kidsBasePath}-480.webp 480w, ${kidsBasePath}-960.webp 960w, ${kidsBasePath}-1440.webp 1440w`}
