@@ -64,8 +64,9 @@ export function GoogleAnalytics() {
 
     // 2. Criar gtag
     if (typeof window.gtag !== "function") {
-      window.gtag = function gtag(...args: unknown[]) {
-        window.dataLayer!.push(args);
+      window.gtag = function gtag() {
+        // eslint-disable-next-line prefer-rest-params -- gtag.js oficial usa arguments; rest params (...) cria Array puro que quebra /g/collect
+        window.dataLayer!.push(arguments);
       };
     }
 
