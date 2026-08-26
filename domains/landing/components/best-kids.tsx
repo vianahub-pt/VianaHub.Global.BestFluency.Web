@@ -4,6 +4,7 @@ import { type LocaleCode } from "@/core/config/locales";
 import { getMessages } from "@/core/i18n";
 import { buttonVariants } from "@/shared/components/ui/button";
 import { Card, CardContent } from "@/shared/components/ui/card";
+import { ScrollReveal } from "@/shared/components/ui/scroll-reveal";
 import { WhatsAppLink } from "@/shared/components/whatsapp-link";
 import { cn } from "@/shared/lib/utils";
 
@@ -40,27 +41,31 @@ export function BestKids({ locale }: { locale: LocaleCode }) {
       <div className="mx-auto w-full max-w-7xl px-4 py-12 md:px-8 md:py-16">
         <div className="grid gap-6 lg:grid-cols-2 lg:items-start lg:gap-10">
           <div className="lg:order-1">
-            <h2
-              id="best-kids-title"
-              className="font-title text-accent dark:text-white font-title font-bold tracking-tight text-balance
-              text-2xl
-              sm:text-3xl
-              md:text-3xl
-              lg:text-4xl"
-            >
-              {bestKids.h2}
-            </h2>
+            <ScrollReveal animation="fade-left" delay={0.05}>
+              <h2
+                id="best-kids-title"
+                className="font-title text-accent dark:text-white font-title font-bold tracking-tight text-balance
+                text-2xl
+                sm:text-3xl
+                md:text-3xl
+                lg:text-4xl"
+              >
+                {bestKids.h2}
+              </h2>
 
-            <div className="mt-4">
-              {bestKids.text.map((paragraph) => (
-                <p
-                  key={paragraph}
-                  className="text-sm leading-6 text-muted-foreground sm:text-base sm:leading-7 [&:not(:first-child)]:mt-3"
-                >
-                  {paragraph}
-                </p>
-              ))}
+              <div className="mt-4">
+                {bestKids.text.map((paragraph) => (
+                  <p
+                    key={paragraph}
+                    className="text-sm leading-6 text-muted-foreground sm:text-base sm:leading-7 [&:not(:first-child)]:mt-3"
+                  >
+                    {paragraph}
+                  </p>
+                ))}
+              </div>
+            </ScrollReveal>
 
+            <ScrollReveal animation="fade-up" delay={0.15}>
               <ul className="mt-4 grid gap-2 sm:grid-cols-2">
                 {bestKids.differentials.map((item) => (
                   <li
@@ -79,7 +84,9 @@ export function BestKids({ locale }: { locale: LocaleCode }) {
                   </li>
                 ))}
               </ul>
+            </ScrollReveal>
 
+            <ScrollReveal animation="fade-up" delay={0.25}>
               <Card className="mt-4">
                 <CardContent className="p-3 sm:p-4">
                   <ul className="grid gap-2">
@@ -112,10 +119,10 @@ export function BestKids({ locale }: { locale: LocaleCode }) {
                   </WhatsAppLink>
                 </CardContent>
               </Card>
-            </div>
+            </ScrollReveal>
           </div>
 
-          <div className="lg:order-2">
+          <ScrollReveal animation="scale-in" delay={0.1} className="lg:order-2">
             <Card className="overflow-hidden">
               <img
                 src={`${kidsBasePath}-960.webp`}
@@ -129,7 +136,7 @@ export function BestKids({ locale }: { locale: LocaleCode }) {
                 className="h-auto w-full max-h-[75vh] object-cover"
               />
             </Card>
-          </div>
+          </ScrollReveal>
         </div>
       </div>
     </section>

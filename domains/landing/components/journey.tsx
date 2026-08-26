@@ -4,6 +4,7 @@ import { type LocaleCode } from "@/core/config/locales";
 import { getMessages } from "@/core/i18n";
 import { buttonVariants } from "@/shared/components/ui/button";
 import { RoutePath } from "@/shared/components/ui/route-path";
+import { ScrollReveal } from "@/shared/components/ui/scroll-reveal";
 import { WhatsAppLink } from "@/shared/components/whatsapp-link";
 import { cn } from "@/shared/lib/utils";
 
@@ -28,19 +29,21 @@ export function Journey({ locale }: { locale: LocaleCode }) {
       className="flex min-h-dvh flex-col justify-center border-t border-border bg-gradient-to-b from-muted/40 to-accent/40"
     >
       <div className="mx-auto w-full max-w-7xl px-4 py-12 md:px-8 md:py-16">
-        <h2
-          id="journey-title"
-          className="font-title text-accent dark:text-white font-title font-bold tracking-tight text-balance
-              text-2xl
-              sm:text-3xl
-              md:text-3xl
-              lg:text-4xl"
-        >
-          {journey.h2}
-        </h2>
-        <p className="mt-4 max-w-2xl text-sm leading-6 text-muted-foreground sm:text-base sm:leading-7">
-          {journey.subtitle}
-        </p>
+        <ScrollReveal animation="fade-up" delay={0.05}>
+          <h2
+            id="journey-title"
+            className="font-title text-accent dark:text-white font-title font-bold tracking-tight text-balance
+                text-2xl
+                sm:text-3xl
+                md:text-3xl
+                lg:text-4xl"
+          >
+            {journey.h2}
+          </h2>
+          <p className="mt-4 max-w-2xl text-sm leading-6 text-muted-foreground sm:text-base sm:leading-7">
+            {journey.subtitle}
+          </p>
+        </ScrollReveal>
 
         <div className="relative mt-10 lg:mt-14">
           {/* Rota vertical — telemóvel (decorativa) */}
@@ -56,25 +59,31 @@ export function Journey({ locale }: { locale: LocaleCode }) {
 
           <ol className="flex flex-col gap-8 pl-10 sm:pl-12 lg:grid lg:grid-cols-4 lg:gap-8 lg:pl-0 lg:pt-16">
             {journey.steps.map((step, index) => (
-              <li key={step.title}>
-                <p
-                  aria-hidden="true"
-                  className="text-[11px] font-semibold uppercase tracking-[0.2em] text-accent sm:text-xs"
-                >
-                  {String(index + 1).padStart(2, "0")}
-                </p>
-                <h3 className="mt-1.5 text-sm font-semibold leading-5 text-foreground sm:mt-2 sm:text-base sm:leading-6">
-                  {step.title}
-                </h3>
-                <p className="mt-1.5 text-xs leading-5 text-muted-foreground sm:mt-2 sm:text-sm sm:leading-6">
-                  {step.text}
-                </p>
-              </li>
+              <ScrollReveal
+                key={step.title}
+                animation="fade-up"
+                delay={0.1 + index * 0.1}
+              >
+                <li>
+                  <p
+                    aria-hidden="true"
+                    className="text-[11px] font-semibold uppercase tracking-[0.2em] text-accent sm:text-xs"
+                  >
+                    {String(index + 1).padStart(2, "0")}
+                  </p>
+                  <h3 className="mt-1.5 text-sm font-semibold leading-5 text-foreground sm:mt-2 sm:text-base sm:leading-6">
+                    {step.title}
+                  </h3>
+                  <p className="mt-1.5 text-xs leading-5 text-muted-foreground sm:mt-2 sm:text-sm sm:leading-6">
+                    {step.text}
+                  </p>
+                </li>
+              </ScrollReveal>
             ))}
           </ol>
         </div>
 
-        <div className="mt-10 flex justify-center sm:mt-12">
+        <ScrollReveal animation="fade-up" delay={0.3} className="mt-10 flex justify-center sm:mt-12">
           <WhatsAppLink
             message={journey.whatsappMessage}
             section="journey"
@@ -88,7 +97,7 @@ export function Journey({ locale }: { locale: LocaleCode }) {
             <MessageCircle className="h-5 w-5 shrink-0" aria-hidden="true" />
             {journey.ctaLabel}
           </WhatsAppLink>
-        </div>
+        </ScrollReveal>
       </div>
     </section>
   );

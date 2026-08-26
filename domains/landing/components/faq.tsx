@@ -5,6 +5,7 @@ import { useState } from "react";
 
 import type { LandingContent } from "@/core/i18n";
 import { buttonVariants } from "@/shared/components/ui/button";
+import { ScrollReveal } from "@/shared/components/ui/scroll-reveal";
 import { WhatsAppLink } from "@/shared/components/whatsapp-link";
 import { cn } from "@/shared/lib/utils";
 
@@ -100,39 +101,43 @@ export function Faq({ content: faq }: { content: LandingContent["faq"] }) {
       className="flex min-h-dvh flex-col justify-center border-t border-border bg-gradient-to-b from-muted/40 to-accent/40"
     >
       <div className="mx-auto w-full max-w-7xl px-4 py-12 md:px-8 md:py-16">
-        <h2
-          id="faq-title"
-          className="font-title text-accent dark:text-white font-title font-bold tracking-tight text-balance
-              text-2xl
-              sm:text-3xl
-              md:text-3xl
-              lg:text-4xl"
-        >
-          {faq.h2}
-        </h2>
-        <p className="mx-auto mt-4 max-w-2xl text-center text-sm leading-6 text-muted-foreground sm:text-base sm:leading-7">
-          {faq.subtitle}
-        </p>
+        <ScrollReveal animation="fade-up" delay={0.05}>
+          <h2
+            id="faq-title"
+            className="font-title text-accent dark:text-white font-title font-bold tracking-tight text-balance
+                text-2xl
+                sm:text-3xl
+                md:text-3xl
+                lg:text-4xl"
+          >
+            {faq.h2}
+          </h2>
+          <p className="mx-auto mt-4 max-w-2xl text-center text-sm leading-6 text-muted-foreground sm:text-base sm:leading-7">
+            {faq.subtitle}
+          </p>
+        </ScrollReveal>
 
-        <div className="mt-8 grid gap-2.5 sm:mt-10 sm:grid-cols-2 sm:gap-3">
-          <div className="flex flex-col gap-2.5 sm:gap-3">
-            {faq.items
-              .slice(0, 2)
-              .map((item, index) => renderItem(item, index))}
+        <ScrollReveal animation="fade-up" delay={0.15}>
+          <div className="mt-8 grid gap-2.5 sm:mt-10 sm:grid-cols-2 sm:gap-3">
+            <div className="flex flex-col gap-2.5 sm:gap-3">
+              {faq.items
+                .slice(0, 2)
+                .map((item, index) => renderItem(item, index))}
+            </div>
+            <div className="flex flex-col gap-2.5 sm:gap-3">
+              {faq.items
+                .slice(2, 4)
+                .map((item, index) => renderItem(item, index + 2))}
+            </div>
+            <div className="grid w-full gap-2.5 sm:col-span-2 sm:grid-cols-2 sm:gap-3">
+              {faq.items
+                .slice(4)
+                .map((item, index) => renderItem(item, index + 4))}
+            </div>
           </div>
-          <div className="flex flex-col gap-2.5 sm:gap-3">
-            {faq.items
-              .slice(2, 4)
-              .map((item, index) => renderItem(item, index + 2))}
-          </div>
-          <div className="grid w-full gap-2.5 sm:col-span-2 sm:grid-cols-2 sm:gap-3">
-            {faq.items
-              .slice(4)
-              .map((item, index) => renderItem(item, index + 4))}
-          </div>
-        </div>
+        </ScrollReveal>
 
-        <div className="mt-10 flex justify-center sm:mt-12">
+        <ScrollReveal animation="fade-up" delay={0.25} className="mt-10 flex justify-center sm:mt-12">
           <WhatsAppLink
             message={faq.whatsappMessage}
             section="faq"
@@ -146,7 +151,7 @@ export function Faq({ content: faq }: { content: LandingContent["faq"] }) {
             <MessageCircle className="h-5 w-5 shrink-0" aria-hidden="true" />
             {faq.ctaLabel}
           </WhatsAppLink>
-        </div>
+        </ScrollReveal>
       </div>
     </section>
   );
