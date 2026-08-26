@@ -6,10 +6,13 @@
 #
 # Nota CSP: o export estático do Next.js usa scripts inline de bootstrap
 # (RSC/theme), por isso script-src precisa de 'unsafe-inline' — sem nonces num
-# artefacto 100% estático. O token de analytics é injetado APENAS quando
-# NEXT_PUBLIC_CF_WEB_ANALYTICS_TOKEN está preenchido (issue #12); os hosts do
-# beacon já ficam permitidos para não exigir rebuild quando o token for ativado.
-add_header Content-Security-Policy "default-src ${CSP_DEFAULT_SRC}; script-src 'self' 'unsafe-inline' https://static.cloudflareinsights.com https://www.googletagmanager.com; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob:; font-src 'self' data:; connect-src 'self' https://cloudflareinsights.com https://www.google-analytics.com https://analytics.google.com; object-src 'none'; base-uri 'self'; frame-ancestors 'none'; form-action 'self';" always;
+# artefacto 100% estático.
+#
+# Cloudflare Web Analytics e Google Analytics 4 têm apenas os hosts
+# necessários explicitamente permitidos. Endpoints de Google Ads,
+# DoubleClick e remarketing não são permitidos.
+add_header Content-Security-Policy "default-src ${CSP_DEFAULT_SRC}; script-src 'self' 'unsafe-inline' https://static.cloudflareinsights.com https://www.googletagmanager.com; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob: https://*.google-analytics.com https://www.googletagmanager.com; font-src 'self' data:; connect-src 'self' https://cloudflareinsights.com https://*.google-analytics.com https://*.analytics.google.com https://www.googletagmanager.com; object-src 'none'; base-uri 'self'; frame-ancestors 'none'; form-action 'self';" always;
+
 add_header X-Content-Type-Options "nosniff" always;
 add_header Referrer-Policy "strict-origin-when-cross-origin" always;
 add_header X-Frame-Options "DENY" always;
