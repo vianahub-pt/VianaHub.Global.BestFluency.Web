@@ -63,7 +63,7 @@ export function SiteFooter({ locale }: { locale: LocaleCode }) {
 
           {/* Coluna: Mapa do Site */}
           <div className="flex flex-col gap-3">
-            <h3 className="text-sm font-semibold text-accent">
+            <h3 className="text-sm font-semibold text-white">
               {content.footer.siteMap}
             </h3>
             <ul className="flex flex-col gap-2">
@@ -82,7 +82,7 @@ export function SiteFooter({ locale }: { locale: LocaleCode }) {
 
           {/* Coluna: Contactos */}
           <div className="flex flex-col gap-4">
-            <h3 className="text-sm font-semibold text-accent">
+            <h3 className="text-sm font-semibold text-white">
               {content.footer.contact}
             </h3>
 
@@ -104,7 +104,7 @@ export function SiteFooter({ locale }: { locale: LocaleCode }) {
               {content.footer.whatsappLabel}
             </WhatsAppLink>
             <address className="flex flex-col gap-2 text-sm not-italic text-white">
-              <span className="font-medium text-accent">
+              <span className="font-medium text-white">
                 {site.address.venue}
               </span>
               <span>{site.address.street}</span>
@@ -114,24 +114,24 @@ export function SiteFooter({ locale }: { locale: LocaleCode }) {
         </div>
 
         {/* Barra inferior: copyright + legais */}
-        <div className="mt-12 border-t border-border pt-6 flex flex-col gap-4 text-xs text-accent sm:flex-row sm:items-center sm:justify-between">
+        <div className="mt-12 border-t border-border pt-6 flex flex-col gap-4 text-xs text-white sm:flex-row sm:items-center sm:justify-between">
           <p>
             © {year} {site.name}. {content.footer.rightsReserved}
           </p>
           <div className="flex flex-wrap gap-x-4 gap-y-2">
             <Link
               href={buildLegalPath(locale, "privacy")}
-              className="link-micro text-xs text-accent opacity-80 transition-colors hover:opacity-100 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring"
+              className="link-micro text-xs text-white opacity-80 transition-colors hover:opacity-100 hover:text-accent focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring"
             >
               {content.footer.privacyPolicy}
             </Link>
             <CookieSettingsButton
               label={content.footer.manageCookies}
-              className="link-micro cursor-pointer text-xs text-accent opacity-80 transition-colors hover:opacity-100 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring"
+              className="link-micro cursor-pointer text-xs text-white opacity-80 transition-colors hover:opacity-100 hover:text-accent focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring"
             />
             <Link
               href={buildLegalPath(locale, "cookies")}
-              className="link-micro text-xs text-accent opacity-80 transition-colors hover:opacity-100 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring"
+              className="link-micro text-xs text-white opacity-80 transition-colors hover:opacity-100 hover:text-accent focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring"
             >
               {content.footer.cookiesPolicy}
             </Link>

@@ -81,7 +81,7 @@ export function Method({ locale }: { locale: LocaleCode }) {
               src="/teacher-board-1000.webp"
               srcSet="/teacher-board-1000.webp 1000w, /teacher-board-1600.webp 1600w"
               sizes="(max-width: 768px) 100vw, 50vw"
-              alt={method.imageAlt}
+              alt=""
               width={1000}
               height={667}
               loading="lazy"

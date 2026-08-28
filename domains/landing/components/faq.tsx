@@ -82,7 +82,7 @@ export function Faq({ content: faq }: { content: LandingContent["faq"] }) {
             "grid motion-safe:transition-[grid-template-rows] motion-safe:duration-200 motion-safe:ease-out",
             isOpen ? "grid-rows-[1fr]" : "grid-rows-[0fr]",
           )}
-          aria-hidden={!isOpen}
+          {...(!isOpen && { "aria-hidden": true })}
         >
           <div className="overflow-hidden">
             <p className="px-3.5 pb-4 text-xs leading-5 text-muted-foreground sm:px-4 sm:pb-5 sm:text-sm sm:leading-6">

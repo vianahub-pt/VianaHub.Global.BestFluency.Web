@@ -120,8 +120,15 @@ export function LocaleSwitcher({ currentLocale, label }: LocaleSwitcherProps) {
                 key={locale.code}
                 role="option"
                 aria-selected={isCurrent}
+                tabIndex={isOpen ? 0 : -1}
                 onClick={() => handleLocaleChange(locale.code)}
-                className="flex min-h-11 cursor-pointer items-center gap-2 px-3 py-2 text-sm hover:bg-accent focus:bg-accent"
+                onKeyDown={(e) => {
+                  if (e.key === "Enter" || e.key === " ") {
+                    e.preventDefault();
+                    handleLocaleChange(locale.code);
+                  }
+                }}
+                className="flex min-h-11 cursor-pointer items-center gap-2 px-3 py-2 text-sm hover:bg-accent focus:bg-accent focus-visible:outline-2 focus-visible:outline-offset-[-2px] focus-visible:outline-ring"
               >
                 <Flag
                   className="h-4 w-6 shrink-0 rounded-[2px] object-cover"

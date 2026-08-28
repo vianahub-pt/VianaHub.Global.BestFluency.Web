@@ -61,10 +61,10 @@ export function Journey({ locale }: { locale: LocaleCode }) {
             {journey.steps.map((step, index) => (
               <ScrollReveal
                 key={step.title}
+                as="li"
                 animation="fade-up"
                 delay={0.1 + index * 0.1}
               >
-                <li>
                   <p
                     aria-hidden="true"
                     className="text-[11px] font-semibold uppercase tracking-[0.2em] text-accent sm:text-xs"
@@ -77,7 +77,6 @@ export function Journey({ locale }: { locale: LocaleCode }) {
                   <p className="mt-1.5 text-xs leading-5 text-muted-foreground sm:mt-2 sm:text-sm sm:leading-6">
                     {step.text}
                   </p>
-                </li>
               </ScrollReveal>
             ))}
           </ol>
