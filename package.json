@@ -7,6 +7,13 @@
     "node": ">=24.0.0",
     "npm": ">=11.0.0"
   },
+  "browserslist": [
+    "Chrome >= 90",
+    "Firefox >= 90",
+    "Safari >= 15",
+    "Edge >= 90",
+    "not dead"
+  ],
   "scripts": {
     "dev": "next dev",
     "check:i18n": "node scripts/check-i18n-parity.mjs",

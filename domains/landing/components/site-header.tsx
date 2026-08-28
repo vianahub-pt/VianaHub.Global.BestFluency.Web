@@ -30,7 +30,7 @@ export function SiteHeader({ locale }: { locale: LocaleCode }) {
         brand-micro
         flex
         min-h-9
-        text-black dark:text-white
+        text-white dark:text-white
         items-center gap-2 rounded-md
         focus-visible:outline-2
         focus-visible:outline-offset-2
