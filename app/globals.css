@@ -70,6 +70,9 @@
    * h-11 / min-h-11 (equivalente a 2.75rem) — nunca menos.
    */
   --touch-target: 2.75rem;
+
+  /* Hero background — default light; overridden by inline script before paint */
+  --hero-bg: url('/bg-hero-color-mobile.webp');
 }
 
 .dark {
@@ -104,6 +107,9 @@
   --destructive-foreground: hsl(0 0% 98%);
   --border: hsl(0 0% 20%);
   --input: hsl(0 0% 22%);
+
+  /* Hero background — dark/gray variant */
+  --hero-bg: url('/bg-hero-gray-mobile.webp');
 }
 
 @theme inline {

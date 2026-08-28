@@ -15,7 +15,7 @@ export function Hero({ locale }: { locale: LocaleCode }) {
     <section
       id="home"
       aria-labelledby="hero-title"
-      className="flex min-h-dvh flex-col justify-center border-t border-border bg-cover bg-center bg-no-repeat bg-[url('/bg-hero-1.jpg')] dark:bg-[url('/bg-hero-2.jpg')]"
+      className="flex min-h-dvh flex-col justify-center border-t border-border bg-cover bg-center bg-no-repeat bg-[var(--hero-bg)]"
     >
       <div className="mx-auto w-full max-w-7xl px-4 pt-24 pb-10 md:px-8 md:pt-28 md:pb-20 lg:pb-24">
         <div className="mx-auto flex max-w-4xl flex-col items-center text-center">
