@@ -31,6 +31,7 @@ const themeScript = `
   var dk=document.documentElement.classList.contains('dark');
   var w=innerWidth;
   var img='/bg-hero-'+(dk?'gray':'color')+'-'+(w>=1024?'desktop':'mobile')+'.webp';
+
   var l=document.createElement('link');
   l.rel='preload';l.as='image';l.href=img;l.fetchPriority='high';
   document.head.appendChild(l);
