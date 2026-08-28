@@ -1,5 +1,4 @@
 import { MessageCircle, User, Users } from "lucide-react";
-
 import Image from "next/image";
 
 import { type LocaleCode } from "@/core/config/locales";
@@ -72,12 +71,16 @@ export function Modalities({ locale }: { locale: LocaleCode }) {
               </p>
 
               <div className="mt-auto">
-                <Image
-                  src="/online-classes.jpg"
+                {/* eslint-disable-next-line @next/next/no-img-element -- static export, assets pré-gerados em WebP com srcSet responsivo, next/image não suporta srcSet com unoptimized */}
+                <img
+                  src="/online-classes-1000.webp"
+                  srcSet="/online-classes-1000.webp 1000w, /online-classes-1600.webp 1600w"
+                  sizes="(max-width: 768px) 100vw, 50vw"
                   alt={individual.imageAlt}
-                  width={400}
-                  height={300}
+                  width={1000}
+                  height={562}
                   loading="lazy"
+                  decoding="async"
                   className="h-48 w-full rounded-2xl border border-border object-cover sm:h-56 md:h-64"
                 />
               </div>
