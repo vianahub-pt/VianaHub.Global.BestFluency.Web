@@ -12,6 +12,10 @@ const GLOW_RESET_MS = 2_200;
  * ilustração), análogo ao efeito de texto do Hero (`.shine-overlay`), mas sem
  * `background-clip: text` — a banda ilumina a superfície do conteúdo.
  *
+ * LCP-friendly: a camada de sweep fica `opacity: 0` (CSS) até o JS hidratar
+ * e adicionar `.shine-run`, que ativa `opacity: 1` + animação. O conteúdo
+ * base (children) é sempre visível no primeiro paint.
+ *
  * - o IntersectionObserver monitora a visibilidade e o intervalo dispara o
  *   efeito periodicamente (a cada {@link GLOW_INTERVAL_MS}) enquanto o
  *   elemento estiver no viewport;

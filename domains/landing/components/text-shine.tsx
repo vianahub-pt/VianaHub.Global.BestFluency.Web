@@ -8,6 +8,11 @@ const GLOW_RESET_MS = 2_200;
 /**
  * Camada de brilho ("sol a passar nas letras") sobre os títulos do Hero.
  *
+ * LCP-friendly: o texto base (children) é renderizado imediatamente no
+ * primeiro paint. A camada de overlay fica `opacity: 0` (CSS) até o JS
+ * hidratar e adicionar `.shine-run`, que ativa `opacity: 1` + animação.
+ * Assim o browser reconhece o texto como LCP sem bloqueio por JavaScript.
+ *
  * Dispara o efeito periodicamente (a cada {@link GLOW_INTERVAL_MS}) enquanto
  * o conteúdo permanecer na área visível. Ao sair do viewport o intervalo é
  * limpo e a classe `.shine-run` removida; ao reentrar, o ciclo recomeça.
