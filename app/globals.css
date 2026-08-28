@@ -112,6 +112,16 @@
   --hero-bg: url('/bg-hero-gray-mobile.webp');
 }
 
+/* Desktop hero backgrounds (>= 1024px) */
+@media (min-width: 1024px) {
+  :root {
+    --hero-bg: url('/bg-hero-color-desktop.webp');
+  }
+  .dark {
+    --hero-bg: url('/bg-hero-gray-desktop.webp');
+  }
+}
+
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
