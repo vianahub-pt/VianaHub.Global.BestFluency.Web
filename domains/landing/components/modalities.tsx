@@ -127,7 +127,7 @@ export function Modalities({ locale }: { locale: LocaleCode }) {
 
               <div className="mt-auto">
                 <Image
-                  src="/in-person.jpg"
+                  src="/in-person.webp"
                   alt={group.imageAlt}
                   width={400}
                   height={300}
