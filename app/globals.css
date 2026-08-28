@@ -406,11 +406,14 @@
  * fica por baixo e a faixa branca/laranja-clara só aparece dentro dos glifos
  * enquanto passa — depois volta a transparente, revelando as letras originais.
  *
- * A animação é disparada periodicamente pela classe `.shine-run`
- * (Intersection Observer + setInterval) e corre só com
- * `prefers-reduced-motion: no-preference`.
+ * LCP-friendly: a camada overlay fica `opacity: 0` até JS adicionar
+ * `.shine-run` (IntersectionObserver + setInterval), que ativa `opacity: 1`
+ * e dispara a animação. O texto base é sempre visível no primeiro paint.
+ * A animação corre só com `prefers-reduced-motion: no-preference`.
  */
 .shine-overlay {
+  /* Invisível até JS adicionar .shine-run — texto base sempre visível (LCP). */
+  opacity: 0;
   /* Clipa o gradiente apenas dentro dos glifos (letras), não na caixa. */
   color: transparent;
   -webkit-text-fill-color: transparent;
@@ -435,6 +438,8 @@
 }
 /* Bandas para superfícies (imagem) — sem background-clip: text. */
 .shine-sweep {
+  /* Invisível até JS adicionar .shine-run — sweep como progressive enhancement. */
+  opacity: 0;
   background-image: linear-gradient(
     115deg,
     rgba(255, 255, 255, 0) 30%,
@@ -451,6 +456,7 @@
 @media (prefers-reduced-motion: no-preference) {
   .shine-overlay.shine-run,
   .shine-sweep.shine-run {
+    opacity: 1;
     animation: shine-sweep 1.6s cubic-bezier(0.4, 0, 0.2, 1) 0.4s forwards;
   }
 }
