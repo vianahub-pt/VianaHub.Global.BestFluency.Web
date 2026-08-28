@@ -78,7 +78,7 @@ export function Method({ locale }: { locale: LocaleCode }) {
           >
             <Image
               src="/method.jpg"
-              alt=""
+              alt={method.imageAlt}
               width={600}
               height={500}
               loading="lazy"

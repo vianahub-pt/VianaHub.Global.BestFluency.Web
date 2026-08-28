@@ -114,6 +114,7 @@
       "method": {
         "h2": "为进步而设计的学习之旅",
         "intro": "每个学生都有不同的起点、节奏和目标。",
+        "imageAlt": "英语老师在黑板前，黑板上写着不同语言的问候语",
         "pillars": [
           {
             "title": "个性化路径",
@@ -433,9 +434,7 @@
         },
         {
           "title": "9. 服务提供商",
-          "paragraphs": [
-            "本网站使用以下可能访问使用数据的技术服务提供商："
-          ],
+          "paragraphs": ["本网站使用以下可能访问使用数据的技术服务提供商："],
           "items": [
             "Google Analytics (Google LLC) — 同意后的网站使用量测量",
             "Cloudflare (Cloudflare, Inc.) — 无需 Cookie 的网站分析和保护",
@@ -460,9 +459,7 @@
         },
         {
           "title": "12. 数据主体权利",
-          "paragraphs": [
-            "根据适用的个人数据保护立法，用户有权："
-          ],
+          "paragraphs": ["根据适用的个人数据保护立法，用户有权："],
           "items": [
             "访问其个人数据",
             "更正不准确或不完整的数据",
@@ -524,9 +521,7 @@
         },
         {
           "title": "2. Best Fluency 使用的技术",
-          "paragraphs": [
-            "Best Fluency 网站使用以下存储技术："
-          ],
+          "paragraphs": ["Best Fluency 网站使用以下存储技术："],
           "items": [
             "隐私偏好 Cookie",
             "本地存储 (localStorage) — 用于存储同意偏好",
@@ -535,9 +530,7 @@
         },
         {
           "title": "3. 必需的存储",
-          "paragraphs": [
-            "本网站使用本地存储来存储您的 Cookie 同意偏好。"
-          ],
+          "paragraphs": ["本网站使用本地存储来存储您的 Cookie 同意偏好。"],
           "items": [
             "键：bestfluency:consent:v1",
             "类型：localStorage",
@@ -613,10 +606,7 @@
             "用户可以随时通过网站页脚中可用的「管理 Cookie」链接管理其 Cookie 偏好。",
             "访问此功能时，用户可以："
           ],
-          "items": [
-            "接受统计 — 启用 Google Analytics",
-            "拒绝 — 保持 GA 禁用"
-          ],
+          "items": ["接受统计 — 启用 Google Analytics", "拒绝 — 保持 GA 禁用"],
           "subsections": [
             {
               "title": "撤回",
