@@ -9,10 +9,14 @@
  * Requer `sharp` (já presente como dependência transitiva do Next.js).
  *
  * Gera:
- *   public/logo-80.webp                            — logótipo 80×80  (1x do render a 40px)
- *   public/logo-160.webp                           — logótipo 160×160 (2x/retina; imagem do Hero, issue #29)
- *   public/logo-320.webp                           — logótipo 320×320 (retina do Hero)
- *   public/ceo.webp                                — fotografia da fundadora 400×400
+ *   public/logo-80.webp                  — logótipo 80×80  (1x do render a 40px)
+ *   public/logo-160.webp                 — logótipo 160×160 (2x/retina)
+ *   public/logo-320.webp                 — logótipo 320×320 (retina do Hero)
+ *   public/ceo.webp                      — fotografia da fundadora 400×400
+ *   public/assets/pt-BR/kids-*.webp      — Best Kids responsivo por locale
+ *
+ * NOTA: hero backgrounds, teacher-board e online-classes são assets WebP
+ * pré-gerados fornecidos diretamente em /public (não gerados por este script).
  */
 import { mkdirSync, statSync } from "node:fs";
 import { dirname } from "node:path";

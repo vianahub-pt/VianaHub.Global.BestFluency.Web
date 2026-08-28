@@ -1,5 +1,4 @@
 import { MessageCircle } from "lucide-react";
-import Image from "next/image";
 
 import { type LocaleCode } from "@/core/config/locales";
 import { getMessages } from "@/core/i18n";
@@ -15,7 +14,8 @@ import { cn } from "@/shared/lib/utils";
  *   text-accent dark:text-white, sizing responsivo sm/md/lg);
  * - Introdução + ilustração central + 4 pilares numerados em grelha 2-colunas
  *   (desktop) / empilhado (mobile);
- * - Ilustração `method-1.jpg` central, sem animação de float (simplificada);
+ * - Ilustração `teacher-board` central com srcSet responsivo, sem animação
+ *   de float (simplificada);
  * - CTA "Dar o primeiro passo" com variante orange, motion-safe.
  */
 export function Method({ locale }: { locale: LocaleCode }) {
@@ -76,11 +76,14 @@ export function Method({ locale }: { locale: LocaleCode }) {
             delay={0.05}
             className="flex justify-center order-first lg:order-none"
           >
-            <Image
-              src="/method.jpg"
+            {/* eslint-disable-next-line @next/next/no-img-element -- static export, assets pré-gerados em WebP com srcSet responsivo, next/image não suporta srcSet com unoptimized */}
+            <img
+              src="/teacher-board-1000.webp"
+              srcSet="/teacher-board-1000.webp 1000w, /teacher-board-1600.webp 1600w"
+              sizes="(max-width: 768px) 100vw, 50vw"
               alt={method.imageAlt}
-              width={600}
-              height={500}
+              width={1000}
+              height={667}
               loading="lazy"
               decoding="async"
               className="h-48 w-full max-w-sm object-contain sm:h-56 md:h-64 lg:max-w-lg"

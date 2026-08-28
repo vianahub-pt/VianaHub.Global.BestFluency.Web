@@ -11,6 +11,32 @@ import { ThemeProvider } from "@/shared/components/theme/theme-provider";
 import { buildOrganizationJsonLd } from "@/shared/lib/seo";
 import { bodyFont } from "@/shared/styles/fonts";
 
+/**
+ * Inline script that runs before first paint to:
+ * 1. Apply saved theme (avoids FOUC)
+ * 2. Set --hero-bg CSS variable to the correct WebP variant
+ * 3. Preload the hero LCP image
+ *
+ * This prevents both light+dark hero images from being downloaded —
+ * only the variant matching the user's saved theme is loaded.
+ */
+const themeScript = `
+(function(){
+  try{
+    var t=localStorage.getItem('theme');
+    if(t==='dark'){document.documentElement.classList.add('dark')}
+    else if(t==='light'){document.documentElement.classList.remove('dark')}
+    else if(matchMedia('(prefers-color-scheme:dark)').matches){document.documentElement.classList.add('dark')}
+  }catch(e){}
+  var dk=document.documentElement.classList.contains('dark');
+  var w=innerWidth;
+  var img='/bg-hero-'+(dk?'gray':'color')+'-'+(w>=1024?'desktop':'mobile')+'.webp';
+  document.documentElement.style.setProperty('--hero-bg','url("'+img+'")');
+  var l=document.createElement('link');
+  l.rel='preload';l.as='image';l.href=img;l.fetchPriority='high';
+  document.head.appendChild(l);
+})();`;
+
 interface DocumentShellProps {
   locale: LocaleCode;
   children: ReactNode;
@@ -38,6 +64,7 @@ export function DocumentShell({ locale, children }: DocumentShellProps) {
       suppressHydrationWarning
     >
       <body className="flex min-h-dvh flex-col bg-background font-sans text-foreground antialiased">
+        <script dangerouslySetInnerHTML={{ __html: themeScript }} />
         <ThemeProvider>
           <ScrollPreservation />
           <a

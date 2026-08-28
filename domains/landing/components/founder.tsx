@@ -1,5 +1,4 @@
 import { MessageCircle } from "lucide-react";
-import Image from "next/image";
 
 import { type LocaleCode } from "@/core/config/locales";
 import { getMessages } from "@/core/i18n";
@@ -13,8 +12,8 @@ import { ShineSweep } from "./shine-sweep";
  * Fundadora (spec §15).
  *
  * - H2 + três parágrafos no contrato de conteúdo;
- * - fotografia autorizada public/ceo.jpeg (400×400, otimizada para
- *   public/ceo.webp) com dimensões explícitas e lazy loading (abaixo da dobra);
+ * - fotografia autorizada com srcSet responsivo (ceo.webp 400×400 para
+ *   mobile, ceo-640.webp 640×640 para desktop) e lazy loading (abaixo da dobra);
  * - desktop: texto e fotografia lado a lado; mobile: texto antes da imagem
  *   (teste de leitura da spec);
  * - sem afirmações profissionais que não constem no contrato.
@@ -59,12 +58,16 @@ export function Founder({ locale }: { locale: LocaleCode }) {
 
           <ScrollReveal animation="scale-in" delay={0.1}>
             <ShineSweep className="bg-black mx-auto aspect-square w-48 overflow-hidden rounded-full shadow-lg sm:w-56 md:w-64 lg:order-first lg:justify-self-center lg:w-full lg:max-w-sm">
-              <Image
-                src="/ceo.png"
+              {/* eslint-disable-next-line @next/next/no-img-element -- static export, assets pré-gerados em WebP com srcSet responsivo, next/image não suporta srcSet com unoptimized */}
+              <img
+                src="/ceo.webp"
+                srcSet="/ceo.webp 400w, /ceo-640.webp 640w"
+                sizes="(max-width: 768px) 50vw, 320px"
                 alt={founder.imageAlt}
                 width={400}
                 height={400}
                 loading="lazy"
+                decoding="async"
                 className="absolute inset-0 h-full w-full object-cover object-center"
               />
             </ShineSweep>
