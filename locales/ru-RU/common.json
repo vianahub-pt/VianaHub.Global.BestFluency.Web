@@ -63,6 +63,11 @@
       "siteMap": "Карта сайта",
       "contact": "Контакты"
     },
+    "social": {
+      "followUs": "Подписывайтесь на Best Fluency",
+      "instagramLabel": "Instagram",
+      "linkedinLabel": "LinkedIn"
+    },
     "cookieConsent": {
       "title": "Ваша конфиденциальность важна для нас",
       "description": "Мы используем аналитические cookie, чтобы понять, как используется наш сайт, и улучшить ваш опыт. Вы можете принять или отклонить эти cookie.",

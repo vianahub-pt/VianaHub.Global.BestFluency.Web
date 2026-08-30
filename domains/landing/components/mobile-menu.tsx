@@ -8,6 +8,7 @@ import type { LandingContent } from "@/core/i18n";
 import { LocaleSwitcher } from "@/shared/components/locale/locale-switcher";
 import { buttonVariants } from "@/shared/components/ui/button";
 import { WhatsAppLink } from "@/shared/components/whatsapp-link";
+import { SocialLinks } from "@/shared/components/ui/social-links";
 import { cn } from "@/shared/lib/utils";
 
 import { MainNav } from "./main-nav";
@@ -175,6 +176,9 @@ export function MobileMenu({ locale, nav, languageSwitcherLabel }: MobileMenuPro
           >
             {nav.ctaLabel}
           </WhatsAppLink>
+          <div className="mt-4 border-t border-border pt-4">
+            <SocialLinks locale={locale} orientation="horizontal" />
+          </div>
         </div>
       </div>
     </div>

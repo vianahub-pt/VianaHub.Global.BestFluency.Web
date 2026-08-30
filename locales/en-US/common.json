@@ -63,6 +63,11 @@
       "siteMap": "Site Map",
       "contact": "Contact"
     },
+    "social": {
+      "followUs": "Follow Best Fluency",
+      "instagramLabel": "Instagram",
+      "linkedinLabel": "LinkedIn"
+    },
     "cookieConsent": {
       "title": "Your privacy matters",
       "description": "We use analytics cookies to understand how our website is used and to improve your experience. You can accept or reject these cookies.",

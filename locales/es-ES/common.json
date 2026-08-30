@@ -63,6 +63,11 @@
       "siteMap": "Mapa del Sitio",
       "contact": "Contactos"
     },
+    "social": {
+      "followUs": "Sigue a Best Fluency",
+      "instagramLabel": "Instagram",
+      "linkedinLabel": "LinkedIn"
+    },
     "cookieConsent": {
       "title": "Su privacidad es importante",
       "description": "Utilizamos cookies de estadísticas para comprender cómo se utiliza nuestro sitio web y mejorar su experiencia. Puede aceptar o rechazar estas cookies.",

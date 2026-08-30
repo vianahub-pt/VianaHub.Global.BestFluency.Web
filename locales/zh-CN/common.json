@@ -63,6 +63,11 @@
       "siteMap": "网站地图",
       "contact": "联系方式"
     },
+    "social": {
+      "followUs": "关注Best Fluency",
+      "instagramLabel": "Instagram",
+      "linkedinLabel": "LinkedIn"
+    },
     "cookieConsent": {
       "title": "您的隐私很重要",
       "description": "我们使用分析 Cookie 来了解网站的使用情况并改善您的体验。您可以接受或拒绝这些 Cookie。",
