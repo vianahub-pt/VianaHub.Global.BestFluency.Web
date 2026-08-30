@@ -11,14 +11,14 @@ não fazem parte desta checklist.
 
 Dados confirmados (NAP — não inventar nada além disto):
 
-| Campo | Valor |
-|-------|-------|
-| Nome | Best Fluency Language School |
-| Telefone | +351 21 474 4028 |
-| Morada | Avenida Chaby Pinheiro, 5, Venda Nova — Amadora, Lisboa, PT |
-| Localidade | Amadora (addressLocality) |
-| Região | Lisboa (addressRegion) |
-| País | PT (addressCountry) |
+| Campo      | Valor                                                       |
+| ---------- | ----------------------------------------------------------- |
+| Nome       | Best Fluency Language School                                |
+| Telefone   | +351 214 744 028                                            |
+| Morada     | Avenida Chaby Pinheiro, 5, Venda Nova — Amadora, Lisboa, PT |
+| Localidade | Amadora (addressLocality)                                   |
+| Região     | Lisboa (addressRegion)                                      |
+| País       | PT (addressCountry)                                         |
 
 Pendentes de confirmação (NÃO adicionar ao JSON-LD/GBP até confirmar):
 código postal, coordenadas, horários, e-mail, perfis sociais e domínio definitivo.
@@ -69,10 +69,7 @@ Sem `NEXT_PUBLIC_SITE_INDEXABLE=true` as 7 rotas saem com `noindex`
 - [ ] **Criar/reivindicar o perfil** com nome EXATO: `Best Fluency Language School`.
 - [ ] **Categoria principal:** `Language school` (escola de idiomas); categorias
       secundárias apenas se aplicáveis e reais.
-- [ ] **NAP consistente** (nome, morada, telefone) idêntico ao do site:
-      - Telefone: `+351 21 474 4028`;
-      - Morada: `Avenida Chaby Pinheiro, 5, Venda Nova — Amadora`;
-      - Cidade: `Amadora`; Região: `Lisboa`; País: `Portugal`.
+- [ ] **NAP consistente** (nome, morada, telefone) idêntico ao do site: - Telefone: `+351 214 744 028`; - Morada: `Avenida Chaby Pinheiro, 5, Venda Nova — Amadora`; - Cidade: `Amadora`; Região: `Lisboa`; País: `Portugal`.
 - [ ] **Adicionar o URL do site** no perfil (domínio definitivo) e o botão de
       WhatsApp quando a Google permitir link direto.
 - [ ] **Fotos institucionais autorizadas** (interior/exterior/fachada) — apenas

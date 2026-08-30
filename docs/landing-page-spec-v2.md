@@ -405,7 +405,7 @@ Esta secção substitui as antigas secções separadas de metodologia e benefíc
 - `Espaço CASA`
 - `Avenida Chaby Pinheiro, 5`
 - `Venda Nova — Amadora`
-- telefone: `+351 21 474 4028`
+- telefone: `+351 214 744 028`
 
 ### CTA
 
@@ -722,7 +722,7 @@ Mensagem:
 - logótipo;
 - `Best Fluency Language School`;
 - `Avenida Chaby Pinheiro, 5, Venda Nova — Amadora`;
-- `+351 21 474 4028`;
+- `+351 214 744 028`;
 - link para WhatsApp;
 - links sociais oficiais confirmados;
 - Política de Privacidade;
@@ -837,7 +837,7 @@ Implementar JSON-LD com dados reais, preferencialmente com tipos compatíveis co
 Dados confirmados:
 
 - name: `Best Fluency Language School`;
-- telephone: `+351 21 474 4028`;
+- telephone: `+351 214 744 028`;
 - streetAddress: `Avenida Chaby Pinheiro, 5`;
 - addressLocality: `Amadora`;
 - addressRegion: `Lisboa`;

@@ -38,7 +38,7 @@ export const site = {
   gaMeasurementId: process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID ?? "",
 
   /** Contactos confirmados (spec §12, §19 e §20). */
-  phoneDisplay: "+351 21 474 4028",
+  phoneDisplay: "+351 214 744 028",
   phoneHref: "+351214744028",
   whatsappNumber: "351214744028",
 
@@ -49,5 +49,11 @@ export const site = {
     locality: "Venda Nova — Amadora",
     region: "Lisboa",
     country: "PT",
+  },
+
+  /** Redes sociais — canais secundários (não compete com WhatsApp CTA). */
+  social: {
+    instagram: "https://www.instagram.com/bestfluencyoficial",
+    linkedin: "https://www.linkedin.com/company/bestfluency",
   },
 } as const;

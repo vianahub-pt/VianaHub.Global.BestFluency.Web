@@ -6,6 +6,7 @@ import { getMessages } from "@/core/i18n";
 import { CookieSettingsButton } from "@/shared/components/analytics/cookie-settings-button";
 import { PhoneLink } from "@/shared/components/phone-link";
 import { WhatsAppLink } from "@/shared/components/whatsapp-link";
+import { SocialLinks } from "@/shared/components/ui/social-links";
 import { buildLegalPath } from "@/shared/lib/routes";
 
 /**
@@ -41,7 +42,7 @@ export function SiteFooter({ locale }: { locale: LocaleCode }) {
     <footer className="mt-auto border-t border-border bg-black">
       <div className="mx-auto w-full max-w-7xl px-4 py-12 md:py-16 md:px-8">
         {/* Grid: 3 colunas desktop, empilhado mobile */}
-        <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-4">
           {/* Coluna: Marca */}
           <div className="flex flex-col gap-4">
             {/* eslint-disable-next-line @next/next/no-img-element -- Static export (output: "export"), logo pré-gerado em WebP (80/160/320), srcSet responsivo manual, Next Image optimizer não existe em runtime (images.unoptimized: true) */}
@@ -62,7 +63,7 @@ export function SiteFooter({ locale }: { locale: LocaleCode }) {
           </div>
 
           {/* Coluna: Mapa do Site */}
-          <div className="flex flex-col gap-3">
+          <div className="flex flex-col gap-4">
             <h3 className="text-sm font-semibold text-white">
               {content.footer.siteMap}
             </h3>
@@ -110,6 +111,11 @@ export function SiteFooter({ locale }: { locale: LocaleCode }) {
               <span>{site.address.street}</span>
               <span>{site.address.locality}</span>
             </address>
+          </div>
+
+          {/* Coluna: Contactos */}
+          <div className="flex flex-col gap-4">
+            <SocialLinks locale={locale} />
           </div>
         </div>
 
