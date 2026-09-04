@@ -56,4 +56,10 @@ export const site = {
     instagram: "https://www.instagram.com/bestfluencyoficial",
     linkedin: "https://www.linkedin.com/company/bestfluency",
   },
+
+  /** URLs externas de destaque. */
+  externalLinks: {
+    newInAmadora:
+      "https://newinamadora.nit.pt/fora-de-casa/aos-47-trocou-a-engenharia-pelo-ensino-e-abriu-uma-escola-de-linguas-na-amadora",
+  },
 } as const;

@@ -92,11 +92,18 @@
     },
     "infoBar": {
       "items": [
-        "Aulas individuais",
-        "Turmas reduzidas",
-        "Presencial na Amadora",
-        "Aulas online"
+        "Aulas Individuais",
+        "Turmas Reduzidas",
+        "Aulas online",
+        "Professores Certificados"
       ]
+    },
+    "videos": {
+      "ariaLabel": "Vídeos de reportagens",
+      "tvi01": "TVI — Aulas de inglês",
+      "tvi03": "TVI — Escola de línguas",
+      "tvi04": "TVI — inglês na Amadora",
+      "tvi06": "TVI — Best Fluency"
     },
     "modalities": {
       "h2": "Escolha a modalidade mais adequada ao seu percurso",

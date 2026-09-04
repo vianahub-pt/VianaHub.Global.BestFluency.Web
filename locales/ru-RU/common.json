@@ -92,11 +92,18 @@
     },
     "infoBar": {
       "items": [
-        "Индивидуальные уроки",
-        "Малые группы",
-        "Очно в Амадоре",
-        "Онлайн-уроки"
+        "Aulas Individuais",
+        "Turmas Reduzidas",
+        "Aulas online",
+        "Professores Certificados"
       ]
+    },
+    "videos": {
+      "ariaLabel": "Видео новостных репортажей",
+      "tvi01": "TVI — Уроки английского",
+      "tvi03": "TVI — Языковая школа",
+      "tvi04": "TVI — Английский в Амадоре",
+      "tvi06": "TVI — Best Fluency"
     },
     "modalities": {
       "h2": "Выберите формат занятий, который лучше всего подходит вашему пути обучения",

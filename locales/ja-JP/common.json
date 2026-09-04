@@ -92,11 +92,18 @@
     },
     "infoBar": {
       "items": [
-        "1対1レッスン",
-        "少人数グループ",
-        "アマドーラで対面",
-        "オンラインレッスン"
+        "Aulas Individuais",
+        "Turmas Reduzidas",
+        "Aulas online",
+        "Professores Certificados"
       ]
+    },
+    "videos": {
+      "ariaLabel": "ニュースレポート動画",
+      "tvi01": "TVI — 英語レッスン",
+      "tvi03": "TVI — 言語学校",
+      "tvi04": "TVI — アマドーラの英語",
+      "tvi06": "TVI — Best Fluency"
     },
     "modalities": {
       "h2": "あなたの学習旅路に最適したレッスン形式を選択",
