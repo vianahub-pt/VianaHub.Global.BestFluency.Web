@@ -91,7 +91,19 @@
       "ctaWhatsappMessage": "你好！我想在 Best Fluency 预订一节英语试听课程。"
     },
     "infoBar": {
-      "items": ["单对一课程", "小班教学", "面对面在安多拉", "在线课程"]
+      "items": [
+        "Aulas Individuais",
+        "Turmas Reduzidas",
+        "Aulas online",
+        "Professores Certificados"
+      ]
+    },
+    "videos": {
+      "ariaLabel": "新闻报道视频",
+      "tvi01": "TVI — 英语课程",
+      "tvi03": "TVI — 语言学校",
+      "tvi04": "TVI — 阿马多拉的英语",
+      "tvi06": "TVI — Best Fluency"
     },
     "modalities": {
       "h2": "选择最适合您学习之旅的课程方式",

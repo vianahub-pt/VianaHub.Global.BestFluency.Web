@@ -1,7 +1,7 @@
 import { type LocaleCode } from "@/core/config/locales";
 import { getMessages } from "@/core/i18n";
 import { ScrollReveal } from "@/shared/components/ui/scroll-reveal";
-
+import { VideoInfoBar } from "./video-info-bar";
 import { CarouselColumn } from "./carousel-column";
 
 export function Testimonials({ locale }: { locale: LocaleCode }) {
@@ -53,16 +53,8 @@ export function Testimonials({ locale }: { locale: LocaleCode }) {
 
         <ScrollReveal animation="fade-up" delay={0.15}>
           <div className="mt-8 grid grid-cols-2 gap-3 sm:gap-4 lg:mt-10 lg:grid-cols-3 lg:gap-6">
-            <CarouselColumn
-              items={col1}
-              reverse={false}
-              duration="30s"
-            />
-            <CarouselColumn
-              items={col2}
-              reverse={true}
-              duration="35s"
-            />
+            <CarouselColumn items={col1} reverse={false} duration="30s" />
+            <CarouselColumn items={col2} reverse={true} duration="35s" />
             <CarouselColumn
               items={col3}
               reverse={false}
@@ -71,6 +63,8 @@ export function Testimonials({ locale }: { locale: LocaleCode }) {
             />
           </div>
         </ScrollReveal>
+
+        <VideoInfoBar locale={locale} />
       </div>
     </section>
   );

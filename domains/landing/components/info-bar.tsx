@@ -1,22 +1,22 @@
-import { MapPin, Monitor, User, Users } from "lucide-react";
+import { BookOpen, GraduationCap, Monitor, Users } from "lucide-react";
 import type { ReactNode } from "react";
 
 import { type LocaleCode } from "@/core/config/locales";
 import { getMessages } from "@/core/i18n";
 
 /**
- * Faixa de informações essenciais (spec §9).
+ * Faixa de informações essenciais (spec §9) — Hero section.
  *
- * - quatro itens curtos (individual / turmas / presencial / online);
+ * - quatro itens curtos em texto puro (sem links);
  * - ícones simples que acompanham cada item;
  * - legível sem depender de hover, uma ou duas linhas no telemóvel;
  * - sem carrossel: é uma grelha estática (1 coluna mobile, 4 desktop).
  */
 const itemIcons: Record<number, ReactNode> = {
-  0: <User className="h-5 w-5" aria-hidden="true" />,
+  0: <BookOpen className="h-5 w-5" aria-hidden="true" />,
   1: <Users className="h-5 w-5" aria-hidden="true" />,
-  2: <MapPin className="h-5 w-5" aria-hidden="true" />,
-  3: <Monitor className="h-5 w-5" aria-hidden="true" />,
+  2: <Monitor className="h-5 w-5" aria-hidden="true" />,
+  3: <GraduationCap className="h-5 w-5" aria-hidden="true" />,
 };
 
 export function InfoBar({ locale }: { locale: LocaleCode }) {

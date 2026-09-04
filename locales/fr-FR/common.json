@@ -92,11 +92,18 @@
     },
     "infoBar": {
       "items": [
-        "Cours individuels",
-        "Petits groupes",
-        "En présentiel à Amadora",
-        "Cours en ligne"
+        "Aulas Individuais",
+        "Turmas Reduzidas",
+        "Aulas online",
+        "Professores Certificados"
       ]
+    },
+    "videos": {
+      "ariaLabel": "Vidéos de reportages",
+      "tvi01": "TVI — Cours d'anglais",
+      "tvi03": "TVI — École de langues",
+      "tvi04": "TVI — Anglais à Amadora",
+      "tvi06": "TVI — Best Fluency"
     },
     "modalities": {
       "h2": "Choisissez la modalité la plus adaptée à votre parcours",

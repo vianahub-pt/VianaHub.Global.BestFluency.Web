@@ -92,11 +92,18 @@
     },
     "infoBar": {
       "items": [
-        "Einzelunterricht",
-        "Kleine Gruppen",
-        "Vor Ort in Amadora",
-        "Online-Unterricht"
+        "Aulas Individuais",
+        "Turmas Reduzidas",
+        "Aulas online",
+        "Professores Certificados"
       ]
+    },
+    "videos": {
+      "ariaLabel": "Nachrichtenberichte-Videos",
+      "tvi01": "TVI — Englischunterricht",
+      "tvi03": "TVI — Sprachschule",
+      "tvi04": "TVI — Englisch in Amadora",
+      "tvi06": "TVI — Best Fluency"
     },
     "modalities": {
       "h2": "Wählen Sie die Unterrichtsform, die am besten zu Ihrem Weg passt",
