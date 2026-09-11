@@ -26,7 +26,7 @@ export const analyticsSections = [
   "method",
   "testimonials",
   "founder",
-  "journey",
+  "languages",
   "faq",
   "final_cta",
   "footer",

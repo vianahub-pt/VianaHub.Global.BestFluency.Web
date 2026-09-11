@@ -19,7 +19,7 @@ const siteMapItems = [
   { href: "#bestKids", key: "bestKids" },
   { href: "#testimonials", key: "testimonials" },
   { href: "#founder", key: "founder" },
-  { href: "#journey", key: "journey" },
+  { href: "#languages", key: "languages" },
   { href: "#faq", key: "faq" },
 ] as const;
 

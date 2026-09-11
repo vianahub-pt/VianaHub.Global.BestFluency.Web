@@ -31,7 +31,7 @@
         "method": "Method",
         "bestKids": "Best Kids",
         "testimonials": "Testimonials",
-        "journey": "Journey",
+        "languages": "Languages",
         "founder": "Founder",
         "faq": "FAQ"
       }
@@ -261,30 +261,22 @@
       "ctaAriaLabel": "Book a trial lesson: open a WhatsApp conversation (new window)",
       "whatsappMessage": "Hello! I would like to book a trial English lesson at Best Fluency."
     },
-    "journey": {
-      "h2": "How to start English lessons at Best Fluency",
-      "subtitle": "From the first message to the first lesson, we support you at every step of your journey.",
-      "steps": [
-        {
-          "title": "Start the conversation",
-          "text": "Send us a message on WhatsApp and tell us what you are looking for, your goals and your availability."
-        },
-        {
-          "title": "Discover your starting point",
-          "text": "In a brief conversation, we identify your current level and main learning needs."
-        },
-        {
-          "title": "Plan your route",
-          "text": "We define the lesson option, content and a learning path adapted to the student's goals."
-        },
-        {
-          "title": "Start moving forward",
-          "text": "Start the lessons and track your progress with practice, guidance and ongoing feedback."
-        }
+    "languages": {
+      "eyebrow": "Languages",
+      "h2": "Learn the language that brings you closer to your goals",
+      "subtitle": "At Best Fluency, you will find English, French, Spanish and German lessons with a practical, personal and communication-focused approach.",
+      "items": [
+        { "name": "English", "code": "EN", "text": "Build confidence to communicate at work, while travelling and in everyday life." },
+        { "name": "French", "code": "FR", "text": "Build a strong foundation and develop natural communication, step by step." },
+        { "name": "Spanish", "code": "ES", "text": "Learn a familiar language in a practical, clear way adapted to your pace." },
+        { "name": "German", "code": "DE", "text": "Structure your learning and move forward with close support and clear goals." }
       ],
-      "ctaLabel": "Take the first step",
-      "ctaAriaLabel": "Take the first step: open a WhatsApp conversation (new window)",
-      "whatsappMessage": "Hello! I would like to receive information about Best Fluency's English classes."
+      "locationTitle": "Small classes in Venda Nova",
+      "locationText": "In-person lessons at Espaço CASA, in Venda Nova — Amadora, with close attention to every student.",
+      "groupLabel": "Small groups, more participation",
+      "ctaLabel": "Choose my language",
+      "ctaAriaLabel": "Choose my language: open a WhatsApp conversation (new window)",
+      "whatsappMessage": "Hello! I would like to learn more about English, French, Spanish and German lessons at Best Fluency."
     },
     "faq": {
       "h2": "Frequently asked questions about Best Fluency lessons",

@@ -31,7 +31,7 @@
         "method": "Método",
         "bestKids": "Best Kids",
         "testimonials": "Depoimentos",
-        "journey": "Jornada",
+        "languages": "Idiomas",
         "founder": "Fundadora",
         "faq": "FAQ"
       }
@@ -261,30 +261,22 @@
       "ctaAriaLabel": "Marcar aula experimental — abrir conversa no WhatsApp (nova janela)",
       "whatsappMessage": "Olá! Gostaria de marcar uma aula experimental de inglês na Best Fluency."
     },
-    "journey": {
-      "h2": "Como começar as aulas de inglês na Best Fluency",
-      "subtitle": "Da primeira mensagem à primeira aula, acompanhamos cada passo do seu percurso.",
-      "steps": [
-        {
-          "title": "Abra a conversa",
-          "text": "Envie-nos uma mensagem pelo WhatsApp e conte-nos o que procura, os seus objetivos e a sua disponibilidade."
-        },
-        {
-          "title": "Descubra o seu ponto de partida",
-          "text": "Numa breve conversa, identificamos o nível atual e as principais necessidades de aprendizagem."
-        },
-        {
-          "title": "Trace a sua rota",
-          "text": "Definimos a modalidade, os conteúdos e um percurso de aprendizagem adaptado aos objetivos do aluno."
-        },
-        {
-          "title": "Comece a avançar",
-          "text": "Inicie as aulas e acompanhe a evolução com prática, orientação e feedback contínuo."
-        }
+    "languages": {
+      "eyebrow": "Idiomas",
+      "h2": "Aprenda o idioma que o aproxima dos seus objetivos",
+      "subtitle": "Na Best Fluency encontra aulas de inglês, francês, espanhol e alemão com uma abordagem prática, próxima e orientada para a comunicação.",
+      "items": [
+        { "name": "Inglês", "code": "EN", "text": "Ganhe confiança para comunicar no trabalho, em viagens e no dia a dia." },
+        { "name": "Francês", "code": "FR", "text": "Construa uma base sólida e desenvolva uma comunicação natural, passo a passo." },
+        { "name": "Espanhol", "code": "ES", "text": "Aprenda uma língua próxima de forma prática, clara e adaptada ao seu ritmo." },
+        { "name": "Alemão", "code": "DE", "text": "Organize a aprendizagem e avance com acompanhamento próximo e objetivos concretos." }
       ],
-      "ctaLabel": "Dar o primeiro passo",
-      "ctaAriaLabel": "Dar o primeiro passo — abrir conversa no WhatsApp (nova janela)",
-      "whatsappMessage": "Olá! Gostaria de receber informações sobre as aulas da Best Fluency."
+      "locationTitle": "Turmas reduzidas em Venda Nova",
+      "locationText": "Aulas presenciais no Espaço CASA, em Venda Nova — Amadora, com atenção próxima a cada aluno.",
+      "groupLabel": "Grupos pequenos, mais participação",
+      "ctaLabel": "Escolher o meu idioma",
+      "ctaAriaLabel": "Escolher o meu idioma — abrir conversa no WhatsApp (nova janela)",
+      "whatsappMessage": "Olá! Gostaria de saber mais sobre as aulas de inglês, francês, espanhol e alemão na Best Fluency."
     },
     "faq": {
       "h2": "Perguntas frequentes sobre as aulas da Best Fluency",

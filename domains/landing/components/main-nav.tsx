@@ -6,11 +6,11 @@ import { useEffect, useRef, useState } from "react";
 
 const navItems = [
   { href: "#home", key: "home" },
+  { href: "#languages", key: "languages" },
   { href: "#modalities", key: "modalities" },
   { href: "#method", key: "method" },
   { href: "#bestKids", key: "bestKids" },
   { href: "#testimonials", key: "testimonials" },
-  { href: "#journey", key: "journey" },
   { href: "#founder", key: "founder" },
   { href: "#faq", key: "faq" },
 ] as const;
