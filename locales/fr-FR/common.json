@@ -31,7 +31,7 @@
         "method": "Méthode",
         "bestKids": "Best Kids",
         "testimonials": "Témoignages",
-        "journey": "Voyage",
+        "languages": "Langues",
         "founder": "Fondatrice",
         "faq": "FAQ"
       }
@@ -261,30 +261,22 @@
       "ctaAriaLabel": "Réserver un cours d'essai — ouvrir une conversation WhatsApp (nouvelle fenêtre)",
       "whatsappMessage": "Bonjour ! Je souhaite réserver un cours d'essai d'anglais à Best Fluency."
     },
-    "journey": {
-      "h2": "Comment commencer les cours d'anglais à Best Fluency",
-      "subtitle": "Du premier message au premier cours, nous vous accompagnons à chaque étape de votre parcours.",
-      "steps": [
-        {
-          "title": "Ouvrez la conversation",
-          "text": "Envoyez-nous un message sur WhatsApp et dites-nous ce que vous recherchez, vos objectifs et votre disponibilité."
-        },
-        {
-          "title": "Découvrez votre point de départ",
-          "text": "Lors d'une brève conversation, nous identifions le niveau actuel et les principaux besoins d'apprentissage."
-        },
-        {
-          "title": "Tracez votre route",
-          "text": "Nous définissons la modalité, les contenus et un parcours d'apprentissage adapté aux objectifs de l'élève."
-        },
-        {
-          "title": "Commencez à avancer",
-          "text": "Démarrez les cours et suivez votre progression avec de la pratique, des orientations et un feedback continu."
-        }
+    "languages": {
+      "eyebrow": "Langues",
+      "h2": "Apprenez la langue qui vous rapproche de vos objectifs",
+      "subtitle": "Chez Best Fluency, vous trouverez des cours d'anglais, de français, d'espagnol et d'allemand avec une approche pratique et axée sur la communication.",
+      "items": [
+        { "name": "Anglais", "code": "EN", "text": "Gagnez en confiance pour communiquer au travail, en voyage et au quotidien." },
+        { "name": "Français", "code": "FR", "text": "Construisez des bases solides et développez une communication naturelle, étape par étape." },
+        { "name": "Espagnol", "code": "ES", "text": "Apprenez une langue proche de manière pratique, claire et adaptée à votre rythme." },
+        { "name": "Allemand", "code": "DE", "text": "Structurez votre apprentissage et progressez avec un accompagnement attentif." }
       ],
-      "ctaLabel": "Faire le premier pas",
-      "ctaAriaLabel": "Faire le premier pas — ouvrir une conversation WhatsApp (nouvelle fenêtre)",
-      "whatsappMessage": "Bonjour ! Je souhaite recevoir des informations sur les cours d'anglais de Best Fluency."
+      "locationTitle": "Petits groupes à Venda Nova",
+      "locationText": "Cours en présentiel à l'Espaço CASA, à Venda Nova — Amadora, avec une attention personnalisée.",
+      "groupLabel": "Petits groupes, plus de participation",
+      "ctaLabel": "Choisir ma langue",
+      "ctaAriaLabel": "Choisir ma langue — ouvrir une conversation WhatsApp (nouvelle fenêtre)",
+      "whatsappMessage": "Bonjour ! Je souhaite en savoir plus sur les cours d'anglais, de français, d'espagnol et d'allemand chez Best Fluency."
     },
     "faq": {
       "h2": "Questions fréquentes sur les cours de Best Fluency",

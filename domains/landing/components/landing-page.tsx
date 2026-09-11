@@ -5,7 +5,7 @@ import { BestKids } from "./best-kids";
 import { Faq } from "./faq";
 import { Founder } from "./founder";
 import { Hero } from "./hero";
-import { Journey } from "./journey";
+import { Languages } from "./languages";
 import { Method } from "./method";
 import { Modalities } from "./modalities";
 import { ParallaxBand } from "./parallax-band";
@@ -19,7 +19,7 @@ import { Testimonials } from "./testimonials";
  * Estrutura completa (spec §5): Header (§7) + Hero (§8) + Faixa de
  * informações (§9) + Modalidades (§10) + Método (§11) + Aulas presenciais
  * (§12) + Best Kids (§13) + Depoimentos (§14) + Fundadora (§15) + Como
- * começar (§16) + FAQ (§17) + CTA final (§18) + Footer (§19).
+ * idiomas (§16) + FAQ (§17) + CTA final (§18) + Footer (§19).
  *
  * - `<main id="main">` é o alvo do skip link do DocumentShell e o único
  *   landmark de conteúdo;
@@ -40,12 +40,12 @@ export function LandingPage({ locale }: { locale: LocaleCode }) {
       <SiteHeader locale={locale} />
       <main id="main" className="flex-1">
         <Hero locale={locale} />
-        <Modalities locale={locale} />
+        <Languages locale={locale} />
         <ParallaxBand />
+        <Modalities locale={locale} />
         <Method locale={locale} />
         <BestKids locale={locale} />
         <Testimonials locale={locale} />
-        <Journey locale={locale} />
         <Founder locale={locale} />
         <Faq content={content.faq} />
       </main>

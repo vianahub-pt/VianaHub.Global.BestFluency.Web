@@ -31,7 +31,7 @@
         "method": "教学方法",
         "bestKids": "Best Kids",
         "testimonials": "学员评价",
-        "journey": "学习之旅",
+        "languages": "语言",
         "founder": "创始人",
         "faq": "常见问题"
       }
@@ -259,30 +259,22 @@
       "ctaAriaLabel": "预订试听课程：打开 WhatsApp 会话（新窗口）",
       "whatsappMessage": "你好！我想在 Best Fluency 预订一节英语试听课程。"
     },
-    "journey": {
-      "h2": "如何在 Best Fluency 开始英语课程",
-      "subtitle": "从第一条消息到第一节课程，我们陪伴您整个学习之旅。",
-      "steps": [
-        {
-          "title": "开始对话",
-          "text": "通过 WhatsApp 给我们留言，告诉我们您需要什么、您的目标和您的可用时间。"
-        },
-        {
-          "title": "了解您的起始点",
-          "text": "通过一次简短的对话，我们确定您的当前水平和主要学习需求。"
-        },
-        {
-          "title": "规划您的路线",
-          "text": "我们确定课程方式、内容和适应学生目标的学习路径。"
-        },
-        {
-          "title": "开始前进",
-          "text": "开始课程并通过练习、指导和持续反馈跟踪您的进度。"
-        }
+    "languages": {
+      "eyebrow": "语言",
+      "h2": "学习帮助您实现目标的语言",
+      "subtitle": "Best Fluency提供英语、法语、西班牙语和德语课程，注重实践、陪伴与沟通能力。",
+      "items": [
+        { "name": "英语", "code": "EN", "text": "提升在工作、旅行和日常生活中的沟通信心。" },
+        { "name": "法语", "code": "FR", "text": "打下扎实基础，循序渐进地培养自然交流能力。" },
+        { "name": "西班牙语", "code": "ES", "text": "以清晰、实用并适合个人节奏的方式学习一门亲近的语言。" },
+        { "name": "德语", "code": "DE", "text": "规划学习路径，在贴近的指导和明确目标中不断进步。" }
       ],
-      "ctaLabel": "迈出第一步",
-      "ctaAriaLabel": "迈出第一步：打开 WhatsApp 会话（新窗口）",
-      "whatsappMessage": "你好！我想了解有关 Best Fluency 英语课程的信息。"
+      "locationTitle": "Venda Nova小班课程",
+      "locationText": "课程在Venda Nova — Amadora的Espaço CASA进行，为每位学生提供贴心关注。",
+      "groupLabel": "小班教学，更多参与",
+      "ctaLabel": "选择我的语言",
+      "ctaAriaLabel": "选择我的语言：打开 WhatsApp 会话（新窗口）",
+      "whatsappMessage": "你好！我想了解 Best Fluency 的英语、法语、西班牙语和德语课程。"
     },
     "faq": {
       "h2": "关于 Best Fluency 课程的常见问题",
