@@ -31,7 +31,7 @@
         "method": "Methode",
         "bestKids": "Best Kids",
         "testimonials": "Erfahrungsberichte",
-        "journey": "Reise",
+        "languages": "Sprachen",
         "founder": "Gründer",
         "faq": "FAQ"
       }
@@ -261,30 +261,22 @@
       "ctaAriaLabel": "Probestunde buchen — WhatsApp-Unterhaltung öffnen (neues Fenster)",
       "whatsappMessage": "Hallo! Ich möchte gerne eine Englisch-Probestunde bei Best Fluency buchen."
     },
-    "journey": {
-      "h2": "So starten Sie den Englischunterricht bei Best Fluency",
-      "subtitle": "Von der ersten Nachricht bis zur ersten Stunde begleiten wir jeden Schritt Ihres Weges.",
-      "steps": [
-        {
-          "title": "Eröffnen Sie das Gespräch",
-          "text": "Schreiben Sie uns auf WhatsApp und erzählen Sie uns, was Sie suchen, welche Ziele Sie haben und wann Sie Zeit haben."
-        },
-        {
-          "title": "Entdecken Sie Ihren Ausgangspunkt",
-          "text": "In einem kurzen Gespräch ermitteln wir Ihr aktuelles Niveau und Ihre wichtigsten Lernbedürfnisse."
-        },
-        {
-          "title": "Planen Sie Ihre Route",
-          "text": "Wir legen Unterrichtsform, Inhalte und einen Lernweg fest, der auf die Ziele des Lernenden abgestimmt ist."
-        },
-        {
-          "title": "Beginnen Sie Fortschritte zu machen",
-          "text": "Starten Sie den Unterricht und verfolgen Sie Ihre Entwicklung mit Praxis, Anleitung und kontinuierlichem Feedback."
-        }
+    "languages": {
+      "eyebrow": "Sprachen",
+      "h2": "Lernen Sie die Sprache, die Sie Ihren Zielen näherbringt",
+      "subtitle": "Bei Best Fluency finden Sie Englisch-, Französisch-, Spanisch- und Deutschunterricht mit einem praktischen, persönlichen Fokus auf Kommunikation.",
+      "items": [
+        { "name": "Englisch", "code": "EN", "text": "Gewinnen Sie Sicherheit für die Kommunikation im Beruf, auf Reisen und im Alltag." },
+        { "name": "Französisch", "code": "FR", "text": "Bauen Sie eine solide Grundlage auf und entwickeln Sie natürliche Kommunikation." },
+        { "name": "Spanisch", "code": "ES", "text": "Lernen Sie eine verwandte Sprache praktisch, klar und in Ihrem eigenen Tempo." },
+        { "name": "Deutsch", "code": "DE", "text": "Strukturieren Sie Ihr Lernen und machen Sie mit persönlicher Begleitung Fortschritte." }
       ],
-      "ctaLabel": "Den ersten Schritt machen",
-      "ctaAriaLabel": "Den ersten Schritt machen — WhatsApp-Unterhaltung öffnen (neues Fenster)",
-      "whatsappMessage": "Hallo! Ich möchte gerne Informationen über die Englischkurse von Best Fluency erhalten."
+      "locationTitle": "Kleine Gruppen in Venda Nova",
+      "locationText": "Präsenzunterricht im Espaço CASA in Venda Nova — Amadora, mit persönlicher Betreuung.",
+      "groupLabel": "Kleine Gruppen, mehr Beteiligung",
+      "ctaLabel": "Meine Sprache wählen",
+      "ctaAriaLabel": "Meine Sprache wählen — WhatsApp-Unterhaltung öffnen (neues Fenster)",
+      "whatsappMessage": "Hallo! Ich möchte mehr über Englisch-, Französisch-, Spanisch- und Deutschkurse bei Best Fluency erfahren."
     },
     "faq": {
       "h2": "Häufige Fragen zum Unterricht bei Best Fluency",

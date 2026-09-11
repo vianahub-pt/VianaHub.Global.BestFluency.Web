@@ -31,7 +31,7 @@
         "method": "方法",
         "bestKids": "ベストキッズ",
         "testimonials": "生徒の声",
-        "journey": "スタート方法",
+        "languages": "言語",
         "founder": "創立者",
         "faq": "よくある質問"
       }
@@ -259,30 +259,22 @@
       "ctaAriaLabel": "体験レッスンを予約：WhatsApp会話を開く（新しいウィンドウ）",
       "whatsappMessage": "こんにちは！Best Fluencyで英語の体験レッスンを予約したいです。"
     },
-    "journey": {
-      "h2": "Best Fluencyで英語レッスンを始める方法",
-      "subtitle": "最初のメッセージから最初のレッスンまで、あなたの旅のすべてのステップでサポートします。",
-      "steps": [
-        {
-          "title": "会話を始める",
-          "text": "WhatsAppにメッセージを送り、必要なもの、目標、可用性を教えてください。"
-        },
-        {
-          "title": "出発点を発見する",
-          "text": "短い会話で、現在のレベルと主要な学習ニーズを特定します。"
-        },
-        {
-          "title": "ルートを計画する",
-          "text": "レッスン形式、コンテンツ、および学生の目標に適応した学習パスを定義します。"
-        },
-        {
-          "title": "前進し始める",
-          "text": "レッスンを開始し、練習、指導、および継続的なフィードバックで進捗を追跡します。"
-        }
+    "languages": {
+      "eyebrow": "言語",
+      "h2": "目標に近づく言語を学びましょう",
+      "subtitle": "Best Fluencyでは、実践的で身近なコミュニケーション重視の英語、フランス語、スペイン語、ドイツ語のレッスンを提供しています。",
+      "items": [
+        { "name": "英語", "code": "EN", "text": "仕事、旅行、日常生活で自信を持って話せる力を身につけます。" },
+        { "name": "フランス語", "code": "FR", "text": "確かな基礎を築き、自然なコミュニケーションを段階的に伸ばします。" },
+        { "name": "スペイン語", "code": "ES", "text": "身近な言語を、あなたのペースに合わせて実践的に学びます。" },
+        { "name": "ドイツ語", "code": "DE", "text": "学習を整理し、丁寧なサポートと具体的な目標で前進します。" }
       ],
-      "ctaLabel": "第一歩を踏み出す",
-      "ctaAriaLabel": "第一歩を踏み出す：WhatsApp会話を開く（新しいウィンドウ）",
-      "whatsappMessage": "こんにちは！Best Fluencyの英語レッスンについて情報を受信したいです。"
+      "locationTitle": "Venda Novaの少人数クラス",
+      "locationText": "Venda Nova — AmadoraのEspaço CASAで、一人ひとりに寄り添う対面レッスンを行います。",
+      "groupLabel": "少人数で、より多く参加",
+      "ctaLabel": "学ぶ言語を選ぶ",
+      "ctaAriaLabel": "学ぶ言語を選ぶ：WhatsApp会話を開く（新しいウィンドウ）",
+      "whatsappMessage": "こんにちは！Best Fluencyの英語、フランス語、スペイン語、ドイツ語のレッスンについて詳しく知りたいです。"
     },
     "faq": {
       "h2": "Best Fluencyレッスンに関するよくある質問",
