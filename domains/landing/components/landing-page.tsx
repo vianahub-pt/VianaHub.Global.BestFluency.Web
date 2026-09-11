@@ -40,12 +40,12 @@ export function LandingPage({ locale }: { locale: LocaleCode }) {
       <SiteHeader locale={locale} />
       <main id="main" className="flex-1">
         <Hero locale={locale} />
-        <Modalities locale={locale} />
+        <Languages locale={locale} />
         <ParallaxBand />
+        <Modalities locale={locale} />
         <Method locale={locale} />
         <BestKids locale={locale} />
         <Testimonials locale={locale} />
-        <Languages locale={locale} />
         <Founder locale={locale} />
         <Faq content={content.faq} />
       </main>

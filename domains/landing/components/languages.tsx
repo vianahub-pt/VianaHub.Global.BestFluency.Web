@@ -45,7 +45,11 @@ export function Languages({ locale }: { locale: LocaleCode }) {
         <ScrollReveal animation="fade-up" delay={0.05}>
           <h2
             id="languages-title"
-            className="max-w-3xl font-title text-3xl font-bold tracking-tight text-foreground text-balance sm:text-4xl lg:text-5xl"
+            className="font-title text-accent dark:text-white font-title font-bold tracking-tight text-balance
+                text-2xl
+                sm:text-3xl
+                md:text-3xl
+                lg:text-4xl"
           >
             {languages.h2}
           </h2>
