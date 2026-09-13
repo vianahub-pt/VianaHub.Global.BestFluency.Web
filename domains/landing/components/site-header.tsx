@@ -3,6 +3,7 @@ import { site } from "@/core/config/site";
 import { getMessages } from "@/core/i18n";
 import { LocaleSwitcher } from "@/shared/components/locale/locale-switcher";
 import { ThemeToggle } from "@/shared/components/theme/theme-toggle";
+import { buildHomePath } from "@/shared/lib/routes";
 
 import { MainNav } from "./main-nav";
 import { MobileMenu } from "./mobile-menu";
@@ -21,12 +22,13 @@ import { ReportagesSwitcher } from "./reportages-switcher";
  */
 export function SiteHeader({ locale }: { locale: LocaleCode }) {
   const content = getMessages(locale).landing;
+  const homePath = buildHomePath(locale);
 
   return (
     <header className="sticky top-0 left-0 right-0 z-40 bg-accent dark:bg-black">
       <div className="relative mx-auto grid w-full max-w-7xl grid-cols-[auto_1fr_auto] items-center gap-x-4 px-4 py-3 md:px-8">
         <a
-          href="#home"
+          href={`${homePath}#home`}
           className="
         brand-micro
         flex
@@ -53,6 +55,7 @@ export function SiteHeader({ locale }: { locale: LocaleCode }) {
 
         <MainNav
           nav={content.nav}
+          homePath={homePath}
           className="hidden justify-self-center lg:block"
         />
 
@@ -74,6 +77,7 @@ export function SiteHeader({ locale }: { locale: LocaleCode }) {
           <MobileMenu
             locale={locale}
             nav={content.nav}
+            homePath={homePath}
             languageSwitcherLabel={content.a11y.languageSwitcherLabel}
           />
         </div>
