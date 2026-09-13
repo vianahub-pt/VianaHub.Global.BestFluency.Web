@@ -17,6 +17,7 @@ const navItems = [
 
 interface MainNavProps {
   nav: LandingContent["nav"];
+  homePath: string;
   ariaLabel?: string;
   onNavigate?: () => void;
   className?: string;
@@ -24,6 +25,7 @@ interface MainNavProps {
 
 export function MainNav({
   nav,
+  homePath,
   ariaLabel,
   onNavigate,
   className,
@@ -65,7 +67,7 @@ export function MainNav({
           return (
             <li key={item.key}>
               <a
-                href={item.href}
+                href={`${homePath}${item.href}`}
                 onClick={onNavigate}
                 className={cn(
                   "inline-flex min-h-11 items-center whitespace-nowrap rounded-md px-3 py-2 text-sm font-medium transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring lg:justify-center lg:px-2",
