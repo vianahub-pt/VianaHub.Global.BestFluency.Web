@@ -33,6 +33,7 @@
         "testimonials": "Testimonianze",
         "languages": "Lingue",
         "founder": "Fondatrice",
+        "reportages": "Articoli",
         "faq": "FAQ"
       }
     },
@@ -349,6 +350,36 @@
   "language.short.ja-JP": "JA",
   "language.short.ru-RU": "RU",
   "language.short.zh-CN": "ZH",
+  "reportage": {
+    "eyebrow": "Sulla stampa · New in Amadora",
+    "title": "A 47 anni ha lasciato l'ingegneria per l'insegnamento e ha aperto una scuola di lingue ad Amadora",
+    "intro": "La storia di Tatiana Viana, dall'esperienza internazionale nell'ingegneria e nella tecnologia alla fondazione di Best Fluency.",
+    "byline": "Di Isabel Mello · New in Amadora",
+    "published": "12 agosto 2026",
+    "imageAlt": "Lezioni in presenza di Best Fluency ad Amadora",
+    "imageCaption": "Un nuovo capitolo per Best Fluency, ora anche a Venda Nova.",
+    "summary": "L'articolo racconta come Tatiana Viana abbia trasformato una difficoltà personale con l'inglese in una nuova missione professionale. Le lezioni private le hanno dato la fiducia necessaria per comunicare e aiutare altre persone.",
+    "highlight": "Oggi Best Fluency segue più di 30 studenti con strategie personalizzate, lezioni pratiche e obiettivi reali.",
+    "ctaIntro": "Leggi la storia completa della fondatrice e scopri il percorso di Best Fluency.",
+    "ctaLabel": "Leggi l'articolo completo",
+    "sidebarLabel": "Dall'esperienza all'azione",
+    "sidebarText": "La scuola è nata online e oggi offre a Venda Nova lezioni in presenza di inglese e francese per bambini, ragazzi e adulti, in piccoli gruppi fino a quattro studenti."
+  },
+  "tviReportage": {
+    "eyebrow": "In televisione · Bom Dia Alegria · TVI",
+    "title": "Best Fluency a Bom Dia Alegria di TVI",
+    "intro": "Tatiana Viana è stata ospite di Bom Dia Alegria per parlare del suo cambio professionale e della missione di Best Fluency.",
+    "byline": "Con Zé Lopes e Merche Romero · TVI",
+    "published": "2 settembre 2026",
+    "imageAlt": "Best Fluency presentata a Bom Dia Alegria di TVI",
+    "imageCaption": "Una conversazione su coraggio, apprendimento e nuovi inizi.",
+    "summary": "Condotta da Zé Lopes e Merche Romero, l'intervista mostra Tatiana Viana raccontare il percorso dall'ingegneria e dalla tecnologia all'insegnamento delle lingue. La conversazione presenta Best Fluency come una scuola che rende l'apprendimento più pratico, personale e legato alla sicurezza nel comunicare.",
+    "highlight": "L'intervista ribadisce un'idea centrale di Best Fluency: imparare una lingua non significa memorizzare regole, ma acquisire strumenti e fiducia per comunicare ogni giorno.",
+    "ctaIntro": "Guarda l'intervista completa su TVI Player e scopri la storia di Best Fluency.",
+    "ctaLabel": "Guarda il servizio completo",
+    "sidebarLabel": "Un nuovo modo di imparare",
+    "sidebarText": "Best Fluency segue bambini, ragazzi e adulti con lezioni individuali e piccoli gruppi, online e in presenza a Venda Nova — Amadora."
+  },
   "legal": {
     "common": {
       "backHome": "Torna alla pagina iniziale",

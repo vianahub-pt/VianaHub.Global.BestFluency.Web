@@ -44,6 +44,30 @@ export function buildLegalAlternates(
   };
 }
 
+/** Hreflang alternates for the New Amadora reportage page. */
+export function buildReportageAlternates(): Record<string, string> {
+  const entries = locales.map((l) => {
+    const localeSegment = l.code === "pt-PT" ? "" : `${l.segment}/`;
+    return [l.hreflang, absoluteUrl(`/${localeSegment}reportagens/new-amadora/`)];
+  });
+  return {
+    ...Object.fromEntries(entries),
+    "x-default": absoluteUrl("/reportagens/new-amadora/"),
+  };
+}
+
+/** Hreflang alternates for the TVI reportage page. */
+export function buildTviReportageAlternates(): Record<string, string> {
+  const entries = locales.map((l) => {
+    const localeSegment = l.code === "pt-PT" ? "" : `${l.segment}/`;
+    return [l.hreflang, absoluteUrl(`/${localeSegment}reportagens/tvi/`)];
+  });
+  return {
+    ...Object.fromEntries(entries),
+    "x-default": absoluteUrl("/reportagens/tvi/"),
+  };
+}
+
 /**
  * Metadata por locale: canonical autorreferencial, hreflang recíproco,
  * Open Graph completo (com imagem social absoluta 1200×630), Twitter/X card,
@@ -55,7 +79,10 @@ export function buildLegalAlternates(
 export function buildLocaleMetadata(
   code: LocaleCode,
   meta: { title: string; description: string },
-  options?: { page?: "privacy" | "cookies" },
+  options?: {
+    page?: "privacy" | "cookies" | "new-amadora" | "tvi";
+    keywords?: string[];
+  },
 ): Metadata {
   const locale = getLocale(code);
   const socialImageUrl = absoluteUrl(SOCIAL_IMAGE_PATH);
@@ -70,15 +97,28 @@ export function buildLocaleMetadata(
         ? code === "pt-PT"
           ? "/cookies/"
           : `/${locale.segment}/cookies/`
+        : page === "new-amadora"
+          ? code === "pt-PT"
+            ? "/reportagens/new-amadora/"
+            : `/${locale.segment}/reportagens/new-amadora/`
+          : page === "tvi"
+            ? code === "pt-PT"
+              ? "/reportagens/tvi/"
+              : `/${locale.segment}/reportagens/tvi/`
         : locale.path;
 
-  const alternates = page
-    ? buildLegalAlternates(page)
-    : languageAlternates();
+  const alternates =
+    page === "privacy" || page === "cookies"
+      ? buildLegalAlternates(page)
+      : page === "new-amadora"
+        ? buildReportageAlternates()
+        : page === "tvi"
+          ? buildTviReportageAlternates()
+        : languageAlternates();
 
   // Páginas legais: sempre noindex/follow (nunca indexadas).
   // Landing: respeita NEXT_PUBLIC_SITE_INDEXABLE.
-  const robots = page
+  const robots = page === "privacy" || page === "cookies"
     ? { index: false, follow: true }
     : site.indexable
       ? { index: true, follow: true }
@@ -88,6 +128,7 @@ export function buildLocaleMetadata(
     metadataBase: new URL(site.url),
     title: meta.title,
     description: meta.description,
+    ...(options?.keywords ? { keywords: options.keywords } : {}),
     applicationName: site.name,
     alternates: {
       canonical: canonicalPath,
