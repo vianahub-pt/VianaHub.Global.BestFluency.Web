@@ -17,6 +17,7 @@ import { ReportagesSwitcher } from "./reportages-switcher";
 interface MobileMenuProps {
   locale: LocaleCode;
   nav: LandingContent["nav"];
+  homePath: string;
   languageSwitcherLabel: string;
 }
 
@@ -38,7 +39,7 @@ interface MobileMenuProps {
  * idiomas por props (serializados pelo SiteHeader) — os dicionários de
  * `core/i18n` não entram no bundle client.
  */
-export function MobileMenu({ locale, nav, languageSwitcherLabel }: MobileMenuProps) {
+export function MobileMenu({ locale, nav, homePath, languageSwitcherLabel }: MobileMenuProps) {
   const [isOpen, setIsOpen] = useState(false);
   const panelRef = useRef<HTMLDivElement>(null);
   const triggerRef = useRef<HTMLButtonElement>(null);
@@ -156,6 +157,7 @@ export function MobileMenu({ locale, nav, languageSwitcherLabel }: MobileMenuPro
         <div className="mx-auto w-full max-w-7xl px-4 py-3 md:px-8 md:py-4">
           <MainNav
             nav={nav}
+            homePath={homePath}
             ariaLabel={nav.menuAriaLabel}
             onNavigate={closeMenu}
           />
