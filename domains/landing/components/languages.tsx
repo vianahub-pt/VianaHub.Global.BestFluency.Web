@@ -1,4 +1,4 @@
-import { MapPin, MessageCircle } from "lucide-react";
+import { MessageCircle } from "lucide-react";
 import Image from "next/image";
 
 import { type LocaleCode } from "@/core/config/locales";
