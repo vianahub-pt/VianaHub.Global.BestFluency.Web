@@ -61,5 +61,7 @@ export const site = {
   externalLinks: {
     newInAmadora:
       "https://newinamadora.nit.pt/fora-de-casa/aos-47-trocou-a-engenharia-pelo-ensino-e-abriu-uma-escola-de-linguas-na-amadora",
+    tviBomDiaAlegria:
+      "https://tviplayer.iol.pt/programa/bom-dia-alegria/66aa40ced34e94b82903b0dd/video/6a98510d0cf2f6a1a1e76282?t=0:25:47",
   },
 } as const;

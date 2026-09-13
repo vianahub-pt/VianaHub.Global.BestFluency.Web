@@ -33,6 +33,7 @@
         "testimonials": "生徒の声",
         "languages": "言語",
         "founder": "創立者",
+        "reportages": "掲載記事",
         "faq": "よくある質問"
       }
     },
@@ -349,6 +350,36 @@
   "language.short.ja-JP": "JA",
   "language.short.ru-RU": "RU",
   "language.short.zh-CN": "ZH",
+  "reportage": {
+    "eyebrow": "掲載記事 · New in Amadora",
+    "title": "47歳でエンジニアから教育の道へ。アマドーラに語学学校を開校",
+    "intro": "エンジニアリングとテクノロジーの国際経験からBest Fluencyの創設に至った、Tatiana Vianaの物語です。",
+    "byline": "Isabel Mello · New in Amadora",
+    "published": "2026年8月12日",
+    "imageAlt": "アマドーラのBest Fluency対面レッスン",
+    "imageCaption": "Venda Novaにも広がったBest Fluencyの新しい章。",
+    "summary": "この記事では、Tatiana Vianaが英語への個人的な苦手意識を新たな使命へと変えた経緯を紹介しています。個人レッスンで話す自信を得た経験が、他の人を支える学校づくりにつながりました。",
+    "highlight": "現在、Best Fluencyは30人以上の学習者に、一人ひとりの目標に合わせた実践的な学習を提供しています。",
+    "ctaIntro": "創設者の物語とBest Fluencyの歩みを詳しくご覧ください。",
+    "ctaLabel": "記事全文を見る",
+    "sidebarLabel": "経験を行動へ",
+    "sidebarText": "オンラインから始まった学校は、Venda Novaで英語とフランス語の対面レッスンを開始。子どもから大人まで、最大4人の少人数クラスで学べます。"
+  },
+  "tviReportage": {
+    "eyebrow": "テレビ出演 · Bom Dia Alegria · TVI",
+    "title": "TVIのBom Dia AlegriaにBest Fluencyが登場",
+    "intro": "Tatiana VianaがBom Dia Alegriaに出演し、転職の経験とBest Fluencyの使命について語りました。",
+    "byline": "出演：Zé Lopes、Merche Romero · TVI",
+    "published": "2026年9月2日",
+    "imageAlt": "TVIのBom Dia Alegriaで紹介されたBest Fluency",
+    "imageCaption": "勇気、学び、新しい始まりについての会話。",
+    "summary": "Zé LopesとMerche Romeroが進行するインタビューで、Tatiana Vianaはエンジニアリングとテクノロジーから語学教育へ進んだ道のりを紹介しています。Best Fluencyは、実践的で身近な学習と、話す自信を育てる学校として紹介されました。",
+    "highlight": "Best Fluencyが大切にするのは、ルールを暗記することではなく、日常で使える力とコミュニケーションへの自信を身につけることです。",
+    "ctaIntro": "TVI Playerでインタビュー全編を見て、Best Fluencyの物語をご覧ください。",
+    "ctaLabel": "記事全編を見る",
+    "sidebarLabel": "新しい学び方",
+    "sidebarText": "Best Fluencyは、Venda Nova — Amadoraで、子どもから大人まで個人レッスンと少人数クラスをオンラインと対面で提供しています。"
+  },
   "legal": {
     "common": {
       "backHome": "ホームページに戻る",
