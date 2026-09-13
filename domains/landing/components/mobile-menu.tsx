@@ -12,6 +12,7 @@ import { SocialLinks } from "@/shared/components/ui/social-links";
 import { cn } from "@/shared/lib/utils";
 
 import { MainNav } from "./main-nav";
+import { ReportagesSwitcher } from "./reportages-switcher";
 
 interface MobileMenuProps {
   locale: LocaleCode;
@@ -30,8 +31,8 @@ interface MobileMenuProps {
  * - área de toque ≥ 44 px em todos os elementos interativos;
  * - `prefers-reduced-motion` respeitado globalmente (globals.css).
  *
- * O painel também concentra o seletor de idiomas no telemóvel, mantendo o
- * header compacto (uma linha: logótipo + tema + menu) em 360 px.
+   * O painel também concentra os seletores de reportagens e idioma no
+   * telemóvel, mantendo o header compacto (uma linha: logótipo + tema + menu).
  *
  * Client Component: recebe o namespace `nav` e o rótulo do seletor de
  * idiomas por props (serializados pelo SiteHeader) — os dicionários de
@@ -159,10 +160,13 @@ export function MobileMenu({ locale, nav, languageSwitcherLabel }: MobileMenuPro
             onNavigate={closeMenu}
           />
           <div className="mt-3 border-t border-border pt-3 md:mt-4 md:pt-4">
-            <LocaleSwitcher
-              currentLocale={locale}
-              label={languageSwitcherLabel}
-            />
+            <div className="flex flex-wrap gap-2">
+              <ReportagesSwitcher label={nav.links.reportages} locale={locale} />
+              <LocaleSwitcher
+                currentLocale={locale}
+                label={languageSwitcherLabel}
+              />
+            </div>
           </div>
           <WhatsAppLink
             message={nav.whatsappMessage}
