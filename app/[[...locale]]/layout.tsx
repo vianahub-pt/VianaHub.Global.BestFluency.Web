@@ -37,6 +37,14 @@ export function generateStaticParams() {
     }
   }
 
+  // Reportage pages: /reportagens/new-amadora/ , /en/reportagens/new-amadora/ , ...
+  params.push({ locale: ["reportagens", "new-amadora"] });
+  params.push({ locale: ["reportagens", "tvi"] });
+  for (const seg of localeSegments) {
+    params.push({ locale: [seg, "reportagens", "new-amadora"] });
+    params.push({ locale: [seg, "reportagens", "tvi"] });
+  }
+
   return params;
 }
 
@@ -46,6 +54,16 @@ function getLegalMeta(
 ): { title: string; description: string } {
   const msgs = getMessages(locale).legal[page];
   return { title: msgs.metaTitle, description: msgs.metaDescription };
+}
+
+function getReportageMeta(locale: LocaleCode): { title: string; description: string } {
+  const reportage = getMessages(locale).reportage;
+  return { title: reportage.title, description: reportage.intro };
+}
+
+function getTviReportageMeta(locale: LocaleCode): { title: string; description: string } {
+  const reportage = getMessages(locale).tviReportage;
+  return { title: reportage.title, description: reportage.intro };
 }
 
 export async function generateMetadata({
@@ -67,6 +85,52 @@ export async function generateMetadata({
     return buildLocaleMetadata(
       resolved.locale,
       getMessages(resolved.locale).landing.meta,
+    );
+  }
+
+  if (resolved.page === "new-amadora") {
+    const meta = getReportageMeta(resolved.locale);
+    return buildLocaleMetadata(
+      resolved.locale,
+      {
+        title: `${meta.title} | New in Amadora | Best Fluency`,
+        description: `${meta.description} Leia o resumo da reportagem sobre a escola de línguas Best Fluency em Venda Nova, Amadora.`,
+      },
+      {
+        page: "new-amadora",
+        keywords: [
+          "Best Fluency",
+          "New in Amadora",
+          "escola de línguas na Amadora",
+          "Tatiana Viana",
+          "aulas de inglês na Amadora",
+          "Venda Nova Amadora",
+        ],
+      },
+    );
+  }
+
+  if (resolved.page === "tvi") {
+    const meta = getTviReportageMeta(resolved.locale);
+    return buildLocaleMetadata(
+      resolved.locale,
+      {
+        title: `${meta.title} | TVI | Best Fluency`,
+        description: `${meta.description} Veja o resumo da entrevista de Tatiana Viana no Bom Dia Alegria.`,
+      },
+      {
+        page: "tvi",
+        keywords: [
+          "Best Fluency",
+          "TVI",
+          "Bom Dia Alegria",
+          "Tatiana Viana",
+          "Zé Lopes",
+          "Merche Romero",
+          "aulas de línguas",
+          "Venda Nova Amadora",
+        ],
+      },
     );
   }
 

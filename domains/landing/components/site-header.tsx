@@ -6,6 +6,7 @@ import { ThemeToggle } from "@/shared/components/theme/theme-toggle";
 
 import { MainNav } from "./main-nav";
 import { MobileMenu } from "./mobile-menu";
+import { ReportagesSwitcher } from "./reportages-switcher";
 
 /**
  * Header definitivo da landing (spec §7).
@@ -56,6 +57,12 @@ export function SiteHeader({ locale }: { locale: LocaleCode }) {
         />
 
         <div className="flex items-center justify-self-end gap-2">
+          <div className="hidden lg:block">
+            <ReportagesSwitcher
+              label={content.nav.links.reportages}
+              locale={locale}
+            />
+          </div>
           <div className="hidden lg:block">
             <LocaleSwitcher
               currentLocale={locale}

@@ -46,19 +46,12 @@ export function MainNav({
           .filter((entry) => entry.isIntersecting)
           .sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
 
-        if (visible) {
-          setActiveId(visible.target.id);
-        }
+        if (visible) setActiveId(visible.target.id);
       },
-      {
-        root: null,
-        rootMargin: "-50% 0px -50% 0px",
-        threshold: 0,
-      },
+      { root: null, rootMargin: "-50% 0px -50% 0px", threshold: 0 },
     );
 
     elements.forEach((el) => observerRef.current?.observe(el));
-
     return () => observerRef.current?.disconnect();
   }, []);
 

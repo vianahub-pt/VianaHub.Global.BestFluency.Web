@@ -33,6 +33,7 @@
         "testimonials": "学员评价",
         "languages": "语言",
         "founder": "创始人",
+        "reportages": "报道",
         "faq": "常见问题"
       }
     },
@@ -349,6 +350,36 @@
   "language.short.ja-JP": "JA",
   "language.short.ru-RU": "RU",
   "language.short.zh-CN": "ZH",
+  "reportage": {
+    "eyebrow": "媒体报道 · New in Amadora",
+    "title": "47岁时，她从工程师转向教育，并在阿马多拉开设语言学校",
+    "intro": "Tatiana Viana从工程与科技领域的国际经验，到创办Best Fluency的故事。",
+    "byline": "Isabel Mello · New in Amadora",
+    "published": "2026年8月12日",
+    "imageAlt": "Best Fluency在阿马多拉的线下课程",
+    "imageCaption": "Best Fluency在Venda Nova开启的新篇章。",
+    "summary": "报道讲述了Tatiana Viana如何将自己学习英语时遇到的困难转化为新的职业使命。私人课程让她获得了沟通信心，也让她决定帮助更多人实现同样的改变。",
+    "highlight": "如今，Best Fluency通过个性化策略、实用课程和贴近目标的学习方式服务30多名学生。",
+    "ctaIntro": "阅读创始人的完整故事，了解Best Fluency的发展历程。",
+    "ctaLabel": "查看完整报道",
+    "sidebarLabel": "从经验到行动",
+    "sidebarText": "学校从线上课程起步，如今在Venda Nova提供英语和法语线下课程，面向儿童、青少年和成人，每班最多四名学生。"
+  },
+  "tviReportage": {
+    "eyebrow": "电视节目 · Bom Dia Alegria · TVI",
+    "title": "Best Fluency登上TVI的Bom Dia Alegria节目",
+    "intro": "Tatiana Viana做客Bom Dia Alegria，分享职业转变以及Best Fluency的使命。",
+    "byline": "主持人：Zé Lopes 与 Merche Romero · TVI",
+    "published": "2026年9月2日",
+    "imageAlt": "Best Fluency在TVI的Bom Dia Alegria节目中亮相",
+    "imageCaption": "一场关于勇气、学习和新开始的对话。",
+    "summary": "在Zé Lopes和Merche Romero主持的采访中，Tatiana Viana分享了自己从工程和科技领域走向语言教学的经历。节目介绍了Best Fluency如何通过更实用、更贴近学生的方式，帮助学习者建立沟通自信。",
+    "highlight": "Best Fluency坚持的核心理念是：学习语言不是背诵规则，而是获得在日常生活中沟通所需的能力与信心。",
+    "ctaIntro": "在TVI Player观看完整采访，了解Best Fluency的故事。",
+    "ctaLabel": "查看完整报道",
+    "sidebarLabel": "全新的学习方式",
+    "sidebarText": "Best Fluency在线上及Venda Nova — Amadora提供一对一课程和小班课程，服务儿童、青少年和成人。"
+  },
   "legal": {
     "common": {
       "backHome": "返回首页",
