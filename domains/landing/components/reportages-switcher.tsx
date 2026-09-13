@@ -5,15 +5,12 @@ import { useRouter } from "next/navigation";
 import { useEffect, useLayoutEffect, useRef, useState } from "react";
 
 import type { LocaleCode } from "@/core/config/locales";
-import {
-  buildReportagePath,
-  buildTviReportagePath,
-} from "@/shared/lib/routes";
+import { buildReportagePath, buildTviReportagePath } from "@/shared/lib/routes";
 import { cn } from "@/shared/lib/utils";
 
 const reportageItems = [
+  { value: "tvi", label: "Bom Dia Alegria" },
   { value: "new-amadora", label: "New in Amadora" },
-  { value: "tvi", label: "TVI" },
 ] as const;
 
 export function ReportagesSwitcher({
