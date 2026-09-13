@@ -30,6 +30,7 @@ import { Testimonials } from "./testimonials";
  *
  * Server Component: resolve o namespace `landing` via `core/i18n` e entrega
  * ao Faq (Client Component) apenas o subconjunto serializado por props.
+ *
  */
 export function LandingPage({ locale }: { locale: LocaleCode }) {
   const content = getMessages(locale).landing;
