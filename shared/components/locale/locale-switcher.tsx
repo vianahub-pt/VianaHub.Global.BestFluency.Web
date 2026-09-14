@@ -16,11 +16,14 @@ import { useCallback, useEffect, useRef, useState, useLayoutEffect } from "react
 
 import { getLocale, locales, type LocaleCode } from "@/core/config/locales";
 import { saveScrollPosition } from "@/shared/components/ui/scroll-preservation";
+import { buildPagePath, type PageKind } from "@/shared/lib/routes";
 import { cn } from "@/shared/lib/utils";
 
 interface LocaleSwitcherProps {
   currentLocale: LocaleCode;
   label: string;
+  /** Current page kind — preserves the page when switching locale. */
+  page?: PageKind;
 }
 
 /** Bandeira (SVG 3:2) do país que representa cada idioma do registo. */
@@ -40,7 +43,7 @@ const flagByLocale: Record<LocaleCode, FlagComponent> = {
  * Seletor de idioma com dropdown customizado.
  * Substitui o Radix UI Select que tinha bugs de touch no mobile.
  */
-export function LocaleSwitcher({ currentLocale, label }: LocaleSwitcherProps) {
+export function LocaleSwitcher({ currentLocale, label, page = "landing" }: LocaleSwitcherProps) {
   const current = getLocale(currentLocale);
   const CurrentFlag = flagByLocale[currentLocale];
   const router = useRouter();
@@ -54,11 +57,11 @@ export function LocaleSwitcher({ currentLocale, label }: LocaleSwitcherProps) {
       const locale = locales.find((l) => l.code === code);
       if (locale && locale.code !== currentLocale) {
         saveScrollPosition();
-        router.replace(locale.path, { scroll: false });
+        router.replace(buildPagePath(locale.code, page), { scroll: false });
       }
       setIsOpen(false);
     },
-    [currentLocale, router],
+    [currentLocale, router, page],
   );
 
   // Calcula se deve abrir para cima ou para baixo

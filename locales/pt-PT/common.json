@@ -211,37 +211,37 @@
         {
           "name": "Andreia Barros",
           "role": "Administrative Manager",
-          "photo": "/testimonials/andreia-foto.png",
+          "photo": "/testimonials/andreia-foto.webp",
           "quote": "Adoro as aulas! A professora é muito atenciosa, paciente e explica tudo de uma forma simples e fácil de entender. Tenho evoluído bastante no inglês e sinto-me cada vez mais à vontade para falar. Recomendo muito!"
         },
         {
           "name": "Mauricio Moura",
           "role": "Bank Manager",
-          "photo": "/testimonials/mauricio-foto.png",
+          "photo": "/testimonials/mauricio-foto.webp",
           "quote": "Venho dar a minha avaliação sobre o curso. A teacher possui vasto conhecimento da língua inglesa e facilidade para transferir esse conhecimento para os alunos, de uma forma descontraída. O que mais gosto na minha aula de inglês é a forma de expor ainda que, sei lá. Isso me ajudou muito a destravar minha conversação. Por isso eu indico a Best Fluency."
         },
         {
           "name": "Pedro António",
           "role": "Midfielder",
-          "photo": "/testimonials/pedro-foto.png",
+          "photo": "/testimonials/pedro-foto.webp",
           "quote": "Muito bom! Aprendo muito com a teacher Taty."
         },
         {
           "name": "Romerson Neves",
           "role": "Truck Driver",
-          "photo": "/testimonials/romerson-foto.png",
+          "photo": "/testimonials/romerson-foto.webp",
           "quote": "Estou em Portugal há 7 meses e percebi a importância de aprender inglês para a minha vida. Comecei com aulas presenciais, mas a pessoa que me ensinava teve de sair do país e não pôde continuar. Depois experimentei aulas online com outra professora, mas não me adaptei. Foi então que conheci a professora Tatiana. Fizemos uma aula experimental e gostei muito. Desde então, tenho continuado as aulas e sinto que estou a evoluir cada dia mais. A professora Tatiana tem muita paciência, explica com clareza e conduz as aulas de forma excelente. Recomendo a todos que procuram aprender inglês com qualidade."
         },
         {
           "name": "Sandro Vite",
           "role": "Avaliação Google",
-          "photo": "/testimonials/sandro-foto.png",
+          "photo": "/testimonials/sandro-foto.webp",
           "quote": "Incrível, um ensino muito bem aplicado e de maneira simples e objetiva."
         },
         {
           "name": "Wanda Ramos",
           "role": "Back Office Assistant",
-          "photo": "/testimonials/wanda-foto.png",
+          "photo": "/testimonials/wanda-foto.webp",
           "quote": "Venho dar a minha avaliação sobre o curso. Foi tudo muito explícito, com conteúdo de fácil percepção. A professora Taty foi top, muito carinhosa, deixou-me muitíssimo à vontade, motivou este que fez com que tirasse as minhas dúvidas sem vergonha e receio nenhum de errar. Pretendo voltar à formação para fazer outro nível assim que possível. Muitíssimo obrigada pela atenção, dedicação e carinho Taty Viana."
         }
       ],
@@ -267,10 +267,26 @@
       "h2": "Aprenda o idioma que o aproxima dos seus objetivos",
       "subtitle": "Na Best Fluency encontra aulas de inglês, francês, espanhol e alemão com uma abordagem prática, próxima e orientada para a comunicação.",
       "items": [
-        { "name": "Inglês", "code": "EN", "text": "Ganhe confiança para comunicar no trabalho, em viagens e no dia a dia." },
-        { "name": "Francês", "code": "FR", "text": "Construa uma base sólida e desenvolva uma comunicação natural, passo a passo." },
-        { "name": "Espanhol", "code": "ES", "text": "Aprenda uma língua próxima de forma prática, clara e adaptada ao seu ritmo." },
-        { "name": "Alemão", "code": "DE", "text": "Organize a aprendizagem e avance com acompanhamento próximo e objetivos concretos." }
+        {
+          "name": "Inglês",
+          "code": "EN",
+          "text": "Ganhe confiança para comunicar no trabalho, em viagens e no dia a dia."
+        },
+        {
+          "name": "Francês",
+          "code": "FR",
+          "text": "Construa uma base sólida e desenvolva uma comunicação natural, passo a passo."
+        },
+        {
+          "name": "Espanhol",
+          "code": "ES",
+          "text": "Aprenda uma língua próxima de forma prática, clara e adaptada ao seu ritmo."
+        },
+        {
+          "name": "Alemão",
+          "code": "DE",
+          "text": "Organize a aprendizagem e avance com acompanhamento próximo e objetivos concretos."
+        }
       ],
       "locationTitle": "Turmas reduzidas em Venda Nova",
       "locationText": "Aulas presenciais no Espaço CASA, em Venda Nova — Amadora, com atenção próxima a cada aluno.",
@@ -282,59 +298,11 @@
     "faq": {
       "h2": "Perguntas frequentes sobre as aulas da Best Fluency",
       "subtitle": "Encontre respostas rápidas sobre as aulas de inglês presenciais na Amadora e online.",
-      "items": [
-        {
-          "question": "Onde decorrem as aulas presenciais?",
-          "answer": "As aulas presenciais decorrem no Espaço CASA, na Avenida Chaby Pinheiro, 5, Venda Nova — Amadora."
-        },
-        {
-          "question": "Também existem aulas online?",
-          "answer": "Sim. A Best Fluency disponibiliza aulas online para alunos que procuram maior flexibilidade ou que não conseguem deslocar-se ao espaço presencial."
-        },
-        {
-          "question": "Existem aulas individuais e em grupo?",
-          "answer": "Sim. Existem aulas individuais e turmas reduzidas, organizadas de acordo com o nível e a disponibilidade dos alunos."
-        },
-        {
-          "question": "Quantos alunos existem em cada turma?",
-          "answer": "As turmas são reduzidas, permitindo maior participação e acompanhamento durante as aulas."
-        },
-        {
-          "question": "Para quem são as aulas?",
-          "answer": "Existem aulas para crianças, jovens e adultos, com conteúdos definidos de acordo com a idade, o nível e os objetivos de cada aluno."
-        },
-        {
-          "question": "Preciso de saber inglês para começar?",
-          "answer": "Não. As aulas são adequadas tanto para iniciantes como para alunos que já possuem conhecimentos de inglês e pretendem continuar a evoluir."
-        },
-        {
-          "question": "Como é identificado o meu nível?",
-          "answer": "Antes do início das aulas, realizamos uma breve conversa para compreender os conhecimentos atuais, as principais dificuldades e os objetivos do aluno."
-        },
-        {
-          "question": "As aulas são personalizadas?",
-          "answer": "Sim. Os conteúdos, as atividades e o ritmo das aulas são ajustados ao nível, às necessidades e à evolução de cada aluno."
-        },
-        {
-          "question": "Quanto tempo dura cada aula?",
-          "answer": "Cada aula tem a duração de 50 minutos, com foco na prática, na participação e na evolução contínua."
-        },
-        {
-          "question": "Como funciona a aula experimental?",
-          "answer": "A aula experimental permite conhecer a abordagem da Best Fluency, esclarecer dúvidas e perceber como o ensino pode ser adaptado aos objetivos do aluno."
-        },
-        {
-          "question": "Como posso marcar uma aula?",
-          "answer": "Basta clicar num botão do WhatsApp e indicar o tipo de aula pretendido e a disponibilidade."
-        },
-        {
-          "question": "Como posso obter mais informações?",
-          "answer": "Pode entrar em contacto connosco através do WhatsApp para esclarecer todas as suas dúvidas."
-        }
-      ],
       "ctaLabel": "Marcar aula experimental",
       "ctaAriaLabel": "Marcar aula experimental — abrir conversa no WhatsApp (nova janela)",
-      "whatsappMessage": "Olá! Gostaria de marcar uma aula experimental de inglês na Best Fluency."
+      "whatsappMessage": "Olá! Gostaria de marcar uma aula experimental de inglês na Best Fluency.",
+      "viewAllLabel": "Ver todas as perguntas",
+      "viewAllAriaLabel": "Ver todas as perguntas frequentes — navegar para a página completa de FAQ"
     },
     "finalCta": {
       "eyebrow": "PRONTO PARA EMBARCAR?",
@@ -682,5 +650,33 @@
         }
       ]
     }
+  },
+  "faqPage": {
+    "h1": "Perguntas frequentes",
+    "subtitle": "Encontre respostas às perguntas mais comuns sobre as aulas e serviços da Best Fluency.",
+    "searchLabel": "Pesquisar perguntas frequentes",
+    "searchPlaceholder": "Pesquisar pergunta...",
+    "allCategoriesLabel": "Todas as categorias",
+    "categoryFilterLabel": "Categoria",
+    "allCourseLanguagesLabel": "Todos os idiomas",
+    "courseLanguageFilterLabel": "Idioma que pretende aprender",
+    "resultsCount": "{count} perguntas encontradas",
+    "noResultsTitle": "Nenhuma pergunta encontrada",
+    "noResultsDescription": "Não encontrámos nenhuma pergunta correspondente à sua pesquisa. Tente outros termos ou limpe os filtros.",
+    "clearFiltersLabel": "Limpar filtros",
+    "metaTitle": "Perguntas Frequentes | Best Fluency",
+    "metaDescription": "Encontre respostas às perguntas mais frequentes sobre aprender idiomas e sobre as aulas de inglês, francês, espanhol e alemão da Best Fluency, presenciais e online.",
+    "courseLanguageFilterHint": "Este filtro seleciona o idioma que pretende aprender. Para mudar o idioma do site, utilize o seletor no cabeçalho.",
+    "resultsCountWithLanguage": "{count} perguntas relevantes para {language}",
+    "noResultsContactTitle": "Não encontrou a sua pergunta?",
+    "noResultsContactDescription": "Fale connosco pelo WhatsApp e esclareça as suas dúvidas.",
+    "ctaLabel": "Marcar aula experimental",
+    "ctaAriaLabel": "Marcar aula experimental — abrir conversa no WhatsApp (nova janela)",
+    "whatsappMessage": "Olá! Gostaria de marcar uma aula experimental de inglês na Best Fluency.",
+    "categoryFilterAriaLabel": "Filtrar por categoria",
+    "courseLanguageFilterAriaLabel": "Filtrar por idioma que pretende aprender",
+    "activeFiltersLabel": "Filtros ativos",
+    "ctaTitle": "Ainda tem dúvidas?",
+    "ctaDescription": "Fale connosco pelo WhatsApp e marque uma aula experimental gratuita para conhecer a nossa abordagem."
   }
 }

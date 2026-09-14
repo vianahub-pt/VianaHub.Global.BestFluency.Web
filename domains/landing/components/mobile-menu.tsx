@@ -9,6 +9,7 @@ import { LocaleSwitcher } from "@/shared/components/locale/locale-switcher";
 import { buttonVariants } from "@/shared/components/ui/button";
 import { WhatsAppLink } from "@/shared/components/whatsapp-link";
 import { SocialLinks } from "@/shared/components/ui/social-links";
+import { type PageKind } from "@/shared/lib/routes";
 import { cn } from "@/shared/lib/utils";
 
 import { MainNav } from "./main-nav";
@@ -19,6 +20,8 @@ interface MobileMenuProps {
   nav: LandingContent["nav"];
   homePath: string;
   languageSwitcherLabel: string;
+  /** Current page kind — preserves the page when switching locale. */
+  page?: PageKind;
 }
 
 /**
@@ -39,7 +42,7 @@ interface MobileMenuProps {
  * idiomas por props (serializados pelo SiteHeader) — os dicionários de
  * `core/i18n` não entram no bundle client.
  */
-export function MobileMenu({ locale, nav, homePath, languageSwitcherLabel }: MobileMenuProps) {
+export function MobileMenu({ locale, nav, homePath, languageSwitcherLabel, page = "landing" }: MobileMenuProps) {
   const [isOpen, setIsOpen] = useState(false);
   const panelRef = useRef<HTMLDivElement>(null);
   const triggerRef = useRef<HTMLButtonElement>(null);
@@ -167,6 +170,7 @@ export function MobileMenu({ locale, nav, homePath, languageSwitcherLabel }: Mob
               <LocaleSwitcher
                 currentLocale={locale}
                 label={languageSwitcherLabel}
+                page={page}
               />
             </div>
           </div>

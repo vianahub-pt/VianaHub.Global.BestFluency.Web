@@ -21,7 +21,7 @@ export function ParallaxBand() {
     <div
       aria-hidden="true"
       className="relative h-[25vh] min-h-[280px] w-full bg-fixed bg-left bg-no-repeat md:h-[45vh]"
-      style={{ backgroundImage: "url('/paralax-1.jpg')" }}
+      style={{ backgroundImage: "url('/paralax-1.webp')" }}
     />
   );
 }
