@@ -4,11 +4,11 @@ import { site } from "@/core/config/site";
 import { getLocale, locales, type LocaleCode } from "@/core/config/locales";
 
 /**
- * Imagem social Open Graph / Twitter (1200×630, PNG) gerada a partir da marca
+ * Imagem social Open Graph / Twitter (1200×630, WebP) gerada a partir da marca
  * (monograma "BF" + nome da escola). Sem rostos ou fotografias não autorizadas.
  * Fica em public/ para ser servida como asset estático em todas as rotas.
  */
-export const SOCIAL_IMAGE_PATH = "/og-image.png";
+export const SOCIAL_IMAGE_PATH = "/og-image.webp";
 
 /** URL absoluta a partir de um caminho do site. */
 export function absoluteUrl(path: string): string {
@@ -195,8 +195,8 @@ export function buildOrganizationJsonLd(): Record<string, unknown> {
     name: site.name,
     telephone: site.phoneDisplay,
     url: absoluteUrl("/"),
-    logo: absoluteUrl("/logo.png"),
-    image: absoluteUrl("/logo.png"),
+    logo: absoluteUrl("/logo.webp"),
+    image: absoluteUrl("/logo.webp"),
     address: {
       "@type": "PostalAddress",
       streetAddress: site.address.street,
