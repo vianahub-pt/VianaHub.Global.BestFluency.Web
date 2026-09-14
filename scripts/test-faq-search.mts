@@ -1,4 +1,4 @@
-#!/usr/bin/env npx tsx
+#!/usr/bin/env tsx
 
 /**
  * Testes de regressão: searchFaqs() real com aliasCourseLanguages.
@@ -7,12 +7,12 @@
  * para validar que a inferência de idioma de curso funciona corretamente
  * em pesquisa exata de aliases parametrizados.
  *
- * Uso: `npx tsx scripts/test-faq-search.mts`
+ * Uso: `npm run test:faq:search`
  * Exit 0: tudo OK
  * Exit 1: problemas encontrados
  */
 
-import { getResolvedFaqs } from "../domains/faq/lib/faq-resolver.ts";
+import { getFaqDatabase, getResolvedFaqs } from "../domains/faq/lib/faq-resolver.ts";
 import { searchFaqs } from "../domains/faq/lib/faq-search.ts";
 
 const LOCALE = "pt-PT" as const;
@@ -182,37 +182,66 @@ function fail(msg: string) {
 // ============================================================
 // Test 15: aliases/aliasCourseLanguages alignment
 // For every ResolvedFaq, aliases.length === aliasCourseLanguages.length
-// For parametrized FAQs, each alias must have a defined course language
+// For parametrized FAQs (parameters.length > 0), each expanded alias
+// must have a defined course language belonging to applicableCourseLanguages.
+// For non-parametrized FAQs, aliasCourseLanguages values must be undefined.
 // ============================================================
 {
+  const database = getFaqDatabase();
+  const parametrizedIds = new Set(
+    database.faqs
+      .filter((faq) => faq.parameters.length > 0)
+      .map((faq) => faq.id),
+  );
+
   let misaligned = 0;
   let paramMissingCl = 0;
+  let nonParamUndefined = 0;
 
   for (const faq of resolvedFaqs) {
-    // Check length alignment
+    // Check length alignment (must hold for ALL FAQs)
     if (faq.aliases.length !== faq.aliasCourseLanguages.length) {
       fail(
         `Test 15: ${faq.id} aliases.length (${faq.aliases.length}) !== aliasCourseLanguages.length (${faq.aliasCourseLanguages.length})`,
       );
       misaligned++;
+      continue;
     }
 
-    // For parametrized FAQs, every expanded alias should have a defined course language
-    if (faq.applicableCourseLanguages.length > 0) {
+    const isParametrized = parametrizedIds.has(faq.id);
+
+    if (isParametrized) {
+      // Parametrized FAQ: every expanded alias must have a defined course language
       for (let i = 0; i < faq.aliasCourseLanguages.length; i++) {
-        if (faq.aliasCourseLanguages[i] === undefined) {
+        const cl = faq.aliasCourseLanguages[i];
+        if (cl === undefined) {
           fail(
             `Test 15: ${faq.id} aliasCourseLanguages[${i}] is undefined for parametrized FAQ`,
           );
           paramMissingCl++;
+        } else if (!faq.applicableCourseLanguages.includes(cl)) {
+          fail(
+            `Test 15: ${faq.id} aliasCourseLanguages[${i}]="${cl}" not in applicableCourseLanguages`,
+          );
+          paramMissingCl++;
+        }
+      }
+    } else {
+      // Non-parametrized FAQ: all aliasCourseLanguages values must be undefined
+      for (let i = 0; i < faq.aliasCourseLanguages.length; i++) {
+        if (faq.aliasCourseLanguages[i] !== undefined) {
+          fail(
+            `Test 15: ${faq.id} aliasCourseLanguages[${i}]="${faq.aliasCourseLanguages[i]}" should be undefined for non-parametrized FAQ`,
+          );
+          nonParamUndefined++;
         }
       }
     }
   }
 
-  if (misaligned === 0 && paramMissingCl === 0) {
+  if (misaligned === 0 && paramMissingCl === 0 && nonParamUndefined === 0) {
     ok(
-      `Test 15: all ${resolvedFaqs.length} ResolvedFaqs have aligned aliases/aliasCourseLanguages (${resolvedFaqs.filter((f) => f.applicableCourseLanguages.length > 0).length} parametrized FAQs validated)`,
+      `Test 15: ${resolvedFaqs.length} ResolvedFaqs aligned; ${parametrizedIds.size} parametrized FAQ validated`,
     );
   }
 }

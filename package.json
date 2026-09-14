@@ -17,9 +17,12 @@
   "scripts": {
     "dev": "next dev",
     "check:i18n": "node scripts/check-i18n-parity.mjs",
-    "check:faq": "node scripts/check-faq-data.mjs && node scripts/test-faq-behavior.mjs && npx tsx scripts/test-faq-search.mts",
+    "check:faq": "npm run check:faq:data && npm run check:faq:behavior && npm run test:faq:search",
+    "check:faq:data": "node scripts/check-faq-data.mjs",
+    "check:faq:behavior": "node scripts/test-faq-behavior.mjs",
     "check:images": "node scripts/check-image-assets.mjs",
-    "prebuild": "node scripts/check-i18n-parity.mjs && node scripts/check-faq-data.mjs && node scripts/test-faq-behavior.mjs && npx tsx scripts/test-faq-search.mts && node scripts/check-image-assets.mjs",
+    "test:faq:search": "tsx scripts/test-faq-search.mts",
+    "prebuild": "npm run check:i18n && npm run check:faq && npm run check:images",
     "build": "next build",
     "preview": "serve out",
     "lint": "eslint .",
@@ -50,6 +53,7 @@
     "eslint-config-next": "^16.3.0",
     "serve": "^14.2.6",
     "tailwindcss": "^4.3.3",
+    "tsx": "4.23.13",
     "typescript": "^5.9.3"
   }
 }
