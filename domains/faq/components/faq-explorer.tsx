@@ -1,6 +1,6 @@
 "use client";
 
-import { MessageCircle, Search, X } from "lucide-react";
+import { Info, MessageCircle, Search, X } from "lucide-react";
 import { useMemo, useState } from "react";
 
 import type { CommonMessages } from "@/core/i18n";
@@ -17,6 +17,7 @@ import type {
   ResolvedFaq,
 } from "@/domains/faq/types";
 import { buttonVariants } from "@/shared/components/ui/button";
+import { Tooltip } from "@/shared/components/ui/tooltip";
 import { WhatsAppLink } from "@/shared/components/whatsapp-link";
 import { cn } from "@/shared/lib/utils";
 
@@ -32,8 +33,13 @@ interface FaqExplorerProps {
  * Explorador da base de conhecimento de FAQ: pesquisa local determinística
  * + filtros de categoria e idioma de curso.
  *
+ * Mobile-first:
+ * - 360px: pesquisa 100%, categoria 100%, idioma 100% (empilhados);
+ * - sm (640px): pesquisa 100%, filtros lado a lado;
+ * - lg (1024px): 3 colunas na mesma linha.
+ *
  * - Estado inicial: exatamente as 52 FAQs, accordions fechados;
- * - labels visíveis acima dos selects;
+ * - labels visíveis acima dos campos;
  * - filtros ativos visíveis como chips removíveis;
  * - contador contextual com nome do idioma quando filtrado;
  * - CTA WhatsApp no estado sem resultados;
@@ -110,31 +116,38 @@ export function FaqExplorer({
 
   return (
     <div>
-      {/* Controlos: pesquisa + filtros */}
-      <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-[1fr_auto_auto]">
-        <div className="relative">
-          <label htmlFor="faq-search" className="sr-only">
+      {/* Controlos: pesquisa + filtros — mobile-first grid */}
+      <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-[1fr_auto_auto] lg:items-end">
+        {/* Campo de pesquisa — sempre 100% no mobile */}
+        <div className="relative sm:col-span-2 lg:col-span-1">
+          <label
+            htmlFor="faq-search"
+            className="mb-1.5 text-xs font-medium text-foreground"
+          >
             {ui.searchLabel}
           </label>
-          <Search
-            className="pointer-events-none absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-muted-foreground"
-            aria-hidden="true"
-          />
-          <input
-            id="faq-search"
-            type="search"
-            value={query}
-            onChange={(event) => setQuery(event.target.value)}
-            placeholder={ui.searchPlaceholder}
-            autoComplete="off"
-            className="h-11 w-full rounded-md border border-border bg-background pl-9 pr-3 text-sm text-foreground placeholder:text-muted-foreground focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring"
-          />
+          <div className="relative">
+            <Search
+              className="pointer-events-none absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-muted-foreground"
+              aria-hidden="true"
+            />
+            <input
+              id="faq-search"
+              type="search"
+              value={query}
+              onChange={(event) => setQuery(event.target.value)}
+              placeholder={ui.searchPlaceholder}
+              autoComplete="off"
+              className="h-11 w-full rounded-md border border-border bg-background pl-9 pr-3 text-sm text-foreground placeholder:text-muted-foreground focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring"
+            />
+          </div>
         </div>
 
-        <div>
+        {/* Filtro de categoria — 100% no mobile, auto no desktop */}
+        <div className="flex flex-col">
           <label
             htmlFor="faq-category"
-            className="mb-1.5 block text-xs font-medium text-foreground"
+            className="mb-1.5 text-xs font-medium text-foreground"
           >
             {ui.categoryFilterLabel}
           </label>
@@ -154,13 +167,22 @@ export function FaqExplorer({
           </select>
         </div>
 
-        <div>
-          <label
-            htmlFor="faq-course-language"
-            className="mb-1.5 block text-xs font-medium text-foreground"
-          >
-            {ui.courseLanguageFilterLabel}
-          </label>
+        {/* Filtro de idioma — 100% no mobile, auto no desktop */}
+        <div className="flex flex-col">
+          <div className="mb-1.5 flex items-center gap-1.5">
+            <label
+              htmlFor="faq-course-language"
+              className="text-xs font-medium text-foreground"
+            >
+              {ui.courseLanguageFilterLabel}
+            </label>
+            <Tooltip content={ui.courseLanguageFilterHint} side="top">
+              <Info
+                className="h-3.5 w-3.5 text-muted-foreground"
+                aria-hidden="true"
+              />
+            </Tooltip>
+          </div>
           <select
             id="faq-course-language"
             value={courseLanguage}
@@ -175,9 +197,6 @@ export function FaqExplorer({
               </option>
             ))}
           </select>
-          <p className="mt-1 text-xs text-muted-foreground">
-            {ui.courseLanguageFilterHint}
-          </p>
         </div>
       </div>
 
