@@ -1,6 +1,6 @@
 "use client";
 
-import { MessageCircle, Search, X } from "lucide-react";
+import { Info, MessageCircle, Search, X } from "lucide-react";
 import { useMemo, useState } from "react";
 
 import type { CommonMessages } from "@/core/i18n";
@@ -17,6 +17,7 @@ import type {
   ResolvedFaq,
 } from "@/domains/faq/types";
 import { buttonVariants } from "@/shared/components/ui/button";
+import { Tooltip } from "@/shared/components/ui/tooltip";
 import { WhatsAppLink } from "@/shared/components/whatsapp-link";
 import { cn } from "@/shared/lib/utils";
 
@@ -111,7 +112,7 @@ export function FaqExplorer({
   return (
     <div>
       {/* Controlos: pesquisa + filtros */}
-      <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-[1fr_auto_auto]">
+      <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-[1fr_auto_auto] lg:items-end">
         <div className="relative">
           <label htmlFor="faq-search" className="sr-only">
             {ui.searchLabel}
@@ -131,10 +132,10 @@ export function FaqExplorer({
           />
         </div>
 
-        <div>
+        <div className="flex flex-col">
           <label
             htmlFor="faq-category"
-            className="mb-1.5 block text-xs font-medium text-foreground"
+            className="mb-1.5 text-xs font-medium text-foreground"
           >
             {ui.categoryFilterLabel}
           </label>
@@ -154,13 +155,18 @@ export function FaqExplorer({
           </select>
         </div>
 
-        <div>
-          <label
-            htmlFor="faq-course-language"
-            className="mb-1.5 block text-xs font-medium text-foreground"
-          >
-            {ui.courseLanguageFilterLabel}
-          </label>
+        <div className="flex flex-col">
+          <div className="mb-1.5 flex items-center gap-1.5">
+            <label
+              htmlFor="faq-course-language"
+              className="text-xs font-medium text-foreground"
+            >
+              {ui.courseLanguageFilterLabel}
+            </label>
+            <Tooltip content={ui.courseLanguageFilterHint} side="top">
+              <Info className="h-3.5 w-3.5 text-muted-foreground" aria-hidden="true" />
+            </Tooltip>
+          </div>
           <select
             id="faq-course-language"
             value={courseLanguage}
@@ -175,9 +181,6 @@ export function FaqExplorer({
               </option>
             ))}
           </select>
-          <p className="mt-1 text-xs text-muted-foreground">
-            {ui.courseLanguageFilterHint}
-          </p>
         </div>
       </div>
 
