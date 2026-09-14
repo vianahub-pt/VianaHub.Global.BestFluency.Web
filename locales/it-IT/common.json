@@ -204,42 +204,44 @@
     "testimonials": {
       "starsAriaLabel": "stelle",
       "h2": "Cosa dicono gli studenti di Best Fluency",
-      "text": ["Esperienze reali di chi sta imparando e crescendo con noi."],
+      "text": [
+        "Esperienze reali di chi sta imparando e crescendo con noi."
+      ],
       "items": [
         {
           "name": "Andreia Barros",
           "role": "Responsabile Amministrativo",
-          "photo": "/testimonials/andreia-foto.png",
+          "photo": "/testimonials/andreia-foto.webp",
           "quote": "Adoro le lezioni! La professoressa è molto attenta, paziente e spiega tutto in modo semplice e facile da capire. Sto migliorando molto in inglese e mi sento sempre più a mio agio nel parlare. Consiglio vivamente!"
         },
         {
           "name": "Mauricio Moura",
           "role": "Direttore di banca",
-          "photo": "/testimonials/mauricio-foto.png",
+          "photo": "/testimonials/mauricio-foto.webp",
           "quote": "Voglio dare la mia valutazione del corso. La teacher possiede una vasta conoscenza della lingua inglese e una grande capacità di trasmettere questa conoscenza agli studenti, in modo rilassato. Ciò che mi piace di più della mia lezione di inglese è il modo di esporre, anche quando non so qualcosa. Questo mi ha aiutato molto a sbloccare la mia conversazione. Per questo consiglio Best Fluency."
         },
         {
           "name": "Pedro António",
           "role": "Centrocampista",
-          "photo": "/testimonials/pedro-foto.png",
+          "photo": "/testimonials/pedro-foto.webp",
           "quote": "Molto buono! Imparo molto con la teacher Taty."
         },
         {
           "name": "Romerson Neves",
           "role": "Autista di camion",
-          "photo": "/testimonials/romerson-foto.png",
+          "photo": "/testimonials/romerson-foto.webp",
           "quote": "Sono in Portogallo da 7 mesi e ho capito l'importanza di imparare l'inglese per la mia vita. Ho iniziato con lezioni in presenza, ma la persona che mi insegnava ha dovuto lasciare il paese e non ha potuto continuare. Poi ho provato lezioni online con un'altra insegnante, ma non mi sono adattato. È allora che ho conosciuto la professoressa Tatiana. Abbiamo fatto una lezione di prova e mi è piaciuta molto. Da allora, ho continuato le lezioni e sento di stare migliorando ogni giorno di più. La professoressa Tatiana ha molta pazienza, spiega chiaramente e conduce le lezioni in modo eccellente. La consiglio a tutti coloro che vogliono imparare l'inglese con qualità."
         },
         {
           "name": "Sandro Vite",
           "role": "Recensione Google",
-          "photo": "/testimonials/sandro-foto.png",
+          "photo": "/testimonials/sandro-foto.webp",
           "quote": "Incredibile, un insegnamento molto ben applicato e in modo semplice e obiettivo."
         },
         {
           "name": "Wanda Ramos",
           "role": "Assistente di Back Office",
-          "photo": "/testimonials/wanda-foto.png",
+          "photo": "/testimonials/wanda-foto.webp",
           "quote": "Voglio dare la mia valutazione del corso. Tutto è stato molto chiaro, con contenuti facili da capire. La professoressa Taty è stata fantastica, molto premurosa, mi ha messo molto a mio agio, mi ha motivata e questo mi ha permesso di fare le mie domande senza vergogna o timore di sbagliare. Ho intenzione di tornare alla formazione per fare un altro livello appena possibile. Grazie mille per l'attenzione, la dedizione e l'affetto, Taty Viana."
         }
       ],
@@ -265,10 +267,26 @@
       "h2": "Impara la lingua che ti avvicina ai tuoi obiettivi",
       "subtitle": "Alla Best Fluency trovi lezioni di inglese, francese, spagnolo e tedesco con un approccio pratico e orientato alla comunicazione.",
       "items": [
-        { "name": "Inglese", "code": "EN", "text": "Acquisisci sicurezza per comunicare al lavoro, in viaggio e nella vita quotidiana." },
-        { "name": "Francese", "code": "FR", "text": "Costruisci basi solide e sviluppa una comunicazione naturale, passo dopo passo." },
-        { "name": "Spagnolo", "code": "ES", "text": "Impara una lingua vicina in modo pratico, chiaro e adatto al tuo ritmo." },
-        { "name": "Tedesco", "code": "DE", "text": "Organizza l'apprendimento e progredisci con un accompagnamento attento." }
+        {
+          "name": "Inglese",
+          "code": "EN",
+          "text": "Acquisisci sicurezza per comunicare al lavoro, in viaggio e nella vita quotidiana."
+        },
+        {
+          "name": "Francese",
+          "code": "FR",
+          "text": "Costruisci basi solide e sviluppa una comunicazione naturale, passo dopo passo."
+        },
+        {
+          "name": "Spagnolo",
+          "code": "ES",
+          "text": "Impara una lingua vicina in modo pratico, chiaro e adatto al tuo ritmo."
+        },
+        {
+          "name": "Tedesco",
+          "code": "DE",
+          "text": "Organizza l'apprendimento e progredisci con un accompagnamento attento."
+        }
       ],
       "locationTitle": "Classi ridotte a Venda Nova",
       "locationText": "Lezioni in presenza presso Espaço CASA, a Venda Nova — Amadora, con attenzione a ogni studente.",
@@ -280,59 +298,11 @@
     "faq": {
       "h2": "Domande frequenti sulle lezioni di Best Fluency",
       "subtitle": "Trova risposte rapide sulle lezioni di inglese in presenza ad Amadora e online.",
-      "items": [
-        {
-          "question": "Dove si svolgono le lezioni in presenza?",
-          "answer": "Le lezioni in presenza si svolgono presso Espaço CASA, Avenida Chaby Pinheiro, 5, Venda Nova – Amadora."
-        },
-        {
-          "question": "Esistono anche lezioni online?",
-          "answer": "Sì. Best Fluency offre lezioni online per gli studenti che cercano maggiore flessibilità o che non possono recarsi nello spazio in presenza."
-        },
-        {
-          "question": "Ci sono lezioni individuali e di gruppo?",
-          "answer": "Sì. Esistono lezioni individuali e piccoli gruppi, organizzati in base al livello e alla disponibilità degli studenti."
-        },
-        {
-          "question": "Quanti studenti ci sono in ogni gruppo?",
-          "answer": "I gruppi sono ridotti, per garantire maggiore partecipazione e accompagnamento durante le lezioni."
-        },
-        {
-          "question": "A chi sono rivolte le lezioni?",
-          "answer": "Ci sono lezioni per bambini, ragazzi e adulti, con contenuti definiti in base all'età, al livello e agli obiettivi di ogni studente."
-        },
-        {
-          "question": "Devo sapere l'inglese per iniziare?",
-          "answer": "No. Le lezioni sono adatte sia ai principianti sia agli studenti che hanno già conoscenze di inglese e vogliono continuare a migliorare."
-        },
-        {
-          "question": "Come viene identificato il mio livello?",
-          "answer": "Prima dell'inizio delle lezioni, facciamo una breve conversazione per comprendere le conoscenze attuali, le principali difficoltà e gli obiettivi dello studente."
-        },
-        {
-          "question": "Le lezioni sono personalizzate?",
-          "answer": "Sì. Contenuti, attività e ritmo delle lezioni sono adattati al livello, alle esigenze e ai progressi di ogni studente."
-        },
-        {
-          "question": "Quanto dura ogni lezione?",
-          "answer": "Ogni lezione dura 50 minuti, con attenzione alla pratica, alla partecipazione e al miglioramento continuo."
-        },
-        {
-          "question": "Come funziona la lezione di prova?",
-          "answer": "La lezione di prova permette di conoscere l'approccio di Best Fluency, chiarire i dubbi e capire come l'insegnamento può essere adattato agli obiettivi dello studente."
-        },
-        {
-          "question": "Come posso prenotare una lezione?",
-          "answer": "Basta cliccare su un pulsante di WhatsApp e indicare il tipo di lezione desiderato e la disponibilità."
-        },
-        {
-          "question": "Come posso ottenere ulteriori informazioni?",
-          "answer": "Puoi contattarci tramite WhatsApp per chiarire qualsiasi domanda tu possa avere."
-        }
-      ],
       "ctaLabel": "Prenota una lezione di prova",
       "ctaAriaLabel": "Prenota una lezione di prova — apri una conversazione WhatsApp (nuova finestra)",
-      "whatsappMessage": "Ciao! Vorrei prenotare una lezione di prova di inglese alla Best Fluency."
+      "whatsappMessage": "Ciao! Vorrei prenotare una lezione di prova di inglese alla Best Fluency.",
+      "viewAllLabel": "Vedi tutte le domande",
+      "viewAllAriaLabel": "Vedi tutte le domande frequenti — naviga alla pagina completa delle FAQ"
     },
     "finalCta": {
       "eyebrow": "PRONTO A IMBARCARSI?",
@@ -680,5 +650,21 @@
         }
       ]
     }
+  },
+  "faqPage": {
+    "h1": "Domande frequenti",
+    "subtitle": "Trova risposte alle domande più comuni sulle lezioni e i servizi di Best Fluency.",
+    "searchLabel": "Cerca domande frequenti",
+    "searchPlaceholder": "Cerca domanda...",
+    "allCategoriesLabel": "Tutte le categorie",
+    "categoryFilterLabel": "Filtra per categoria",
+    "allCourseLanguagesLabel": "Tutte le lingue",
+    "courseLanguageFilterLabel": "Filtra per lingua",
+    "resultsCount": "{count} domande trovate",
+    "noResultsTitle": "Nessuna domanda trovata",
+    "noResultsDescription": "Non abbiamo trovato domande corrispondenti alla tua ricerca. Prova con altri termini o cancella i filtri.",
+    "clearFiltersLabel": "Cancella filtri",
+    "metaTitle": "Domande Frequenti | Best Fluency",
+    "metaDescription": "Trova risposte alle domande più comuni sulle lezioni di inglese in presenza e online di Best Fluency ad Amadora."
   }
 }

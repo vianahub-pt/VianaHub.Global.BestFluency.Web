@@ -1,0 +1,3506 @@
+{
+  "schemaVersion": "2.0",
+  "metadata": {
+    "project": "Best Fluency FAQ",
+    "contentType": "static-multilingual-faq-database",
+    "defaultLocale": "pt-PT",
+    "totalFaqIntents": 52,
+    "supportedLocaleCount": 9,
+    "offeredCourseLanguageCount": 4,
+    "notes": "Website locale and course language are intentionally separate. FAQ content is localized for every published locale. No runtime fallback to another language should be used."
+  },
+  "supportedLocales": [
+    "pt-PT",
+    "en-US",
+    "es-ES",
+    "fr-FR",
+    "de-DE",
+    "it-IT",
+    "ja-JP",
+    "ru-RU",
+    "zh-CN"
+  ],
+  "offeredCourseLanguages": [
+    "en",
+    "fr",
+    "es",
+    "de"
+  ],
+  "categories": {
+    "getting-started": {
+      "labels": {
+        "pt-PT": "Começar",
+        "en-US": "Getting started",
+        "es-ES": "Primeros pasos",
+        "fr-FR": "Bien débuter",
+        "de-DE": "Einstieg",
+        "it-IT": "Come iniziare",
+        "ja-JP": "学習を始める",
+        "ru-RU": "Начало обучения",
+        "zh-CN": "开始学习"
+      }
+    },
+    "level": {
+      "labels": {
+        "pt-PT": "Nível",
+        "en-US": "Level",
+        "es-ES": "Nivel",
+        "fr-FR": "Niveau",
+        "de-DE": "Niveau",
+        "it-IT": "Livello",
+        "ja-JP": "レベル",
+        "ru-RU": "Уровень",
+        "zh-CN": "语言水平"
+      }
+    },
+    "progress": {
+      "labels": {
+        "pt-PT": "Progresso",
+        "en-US": "Progress",
+        "es-ES": "Progreso",
+        "fr-FR": "Progression",
+        "de-DE": "Fortschritt",
+        "it-IT": "Progressi",
+        "ja-JP": "上達",
+        "ru-RU": "Прогресс",
+        "zh-CN": "学习进度"
+      }
+    },
+    "method": {
+      "labels": {
+        "pt-PT": "Método",
+        "en-US": "Method",
+        "es-ES": "Método",
+        "fr-FR": "Méthode",
+        "de-DE": "Methode",
+        "it-IT": "Metodo",
+        "ja-JP": "学習方法",
+        "ru-RU": "Методика",
+        "zh-CN": "学习方法"
+      }
+    },
+    "modality": {
+      "labels": {
+        "pt-PT": "Modalidade",
+        "en-US": "Learning format",
+        "es-ES": "Modalidad",
+        "fr-FR": "Modalité",
+        "de-DE": "Lernformat",
+        "it-IT": "Modalità",
+        "ja-JP": "受講形式",
+        "ru-RU": "Формат занятий",
+        "zh-CN": "上课形式"
+      }
+    },
+    "pricing-enrolment": {
+      "labels": {
+        "pt-PT": "Preços e matrícula",
+        "en-US": "Pricing and enrolment",
+        "es-ES": "Precios y matrícula",
+        "fr-FR": "Tarifs et inscription",
+        "de-DE": "Preise und Anmeldung",
+        "it-IT": "Prezzi e iscrizione",
+        "ja-JP": "料金と申込み",
+        "ru-RU": "Цены и запись",
+        "zh-CN": "价格与报名"
+      }
+    },
+    "goals": {
+      "labels": {
+        "pt-PT": "Objetivos",
+        "en-US": "Goals",
+        "es-ES": "Objetivos",
+        "fr-FR": "Objectifs",
+        "de-DE": "Ziele",
+        "it-IT": "Obiettivi",
+        "ja-JP": "目的別学習",
+        "ru-RU": "Цели",
+        "zh-CN": "学习目标"
+      }
+    },
+    "kids-teens": {
+      "labels": {
+        "pt-PT": "Crianças e jovens",
+        "en-US": "Children and teens",
+        "es-ES": "Niños y jóvenes",
+        "fr-FR": "Enfants et adolescents",
+        "de-DE": "Kinder und Jugendliche",
+        "it-IT": "Bambini e ragazzi",
+        "ja-JP": "子ども・青少年",
+        "ru-RU": "Дети и подростки",
+        "zh-CN": "儿童与青少年"
+      }
+    },
+    "certification": {
+      "labels": {
+        "pt-PT": "Certificação",
+        "en-US": "Certification",
+        "es-ES": "Certificación",
+        "fr-FR": "Certification",
+        "de-DE": "Zertifizierung",
+        "it-IT": "Certificazione",
+        "ja-JP": "資格・認定",
+        "ru-RU": "Сертификация",
+        "zh-CN": "证书与考试"
+      }
+    }
+  },
+  "targetLanguages": {
+    "en": {
+      "locales": {
+        "pt-PT": {
+          "label": "Inglês",
+          "learningObject": "inglês",
+          "aliases": [
+            "inglês",
+            "ingles"
+          ]
+        },
+        "en-US": {
+          "label": "English",
+          "learningObject": "English",
+          "aliases": [
+            "English"
+          ]
+        },
+        "es-ES": {
+          "label": "Inglés",
+          "learningObject": "inglés",
+          "aliases": [
+            "inglés",
+            "ingles"
+          ]
+        },
+        "fr-FR": {
+          "label": "Anglais",
+          "learningObject": "l'anglais",
+          "aliases": [
+            "anglais",
+            "l'anglais"
+          ]
+        },
+        "de-DE": {
+          "label": "Englisch",
+          "learningObject": "Englisch",
+          "aliases": [
+            "Englisch"
+          ]
+        },
+        "it-IT": {
+          "label": "Inglese",
+          "learningObject": "inglese",
+          "aliases": [
+            "inglese"
+          ]
+        },
+        "ja-JP": {
+          "label": "英語",
+          "learningObject": "英語",
+          "aliases": [
+            "英語"
+          ]
+        },
+        "ru-RU": {
+          "label": "Английский",
+          "learningObject": "английский язык",
+          "aliases": [
+            "английский",
+            "английский язык"
+          ]
+        },
+        "zh-CN": {
+          "label": "英语",
+          "learningObject": "英语",
+          "aliases": [
+            "英语"
+          ]
+        }
+      }
+    },
+    "fr": {
+      "locales": {
+        "pt-PT": {
+          "label": "Francês",
+          "learningObject": "francês",
+          "aliases": [
+            "francês",
+            "frances"
+          ]
+        },
+        "en-US": {
+          "label": "French",
+          "learningObject": "French",
+          "aliases": [
+            "French"
+          ]
+        },
+        "es-ES": {
+          "label": "Francés",
+          "learningObject": "francés",
+          "aliases": [
+            "francés",
+            "frances"
+          ]
+        },
+        "fr-FR": {
+          "label": "Français",
+          "learningObject": "le français",
+          "aliases": [
+            "français",
+            "le français"
+          ]
+        },
+        "de-DE": {
+          "label": "Französisch",
+          "learningObject": "Französisch",
+          "aliases": [
+            "Französisch"
+          ]
+        },
+        "it-IT": {
+          "label": "Francese",
+          "learningObject": "francese",
+          "aliases": [
+            "francese"
+          ]
+        },
+        "ja-JP": {
+          "label": "フランス語",
+          "learningObject": "フランス語",
+          "aliases": [
+            "フランス語"
+          ]
+        },
+        "ru-RU": {
+          "label": "Французский",
+          "learningObject": "французский язык",
+          "aliases": [
+            "французский",
+            "французский язык"
+          ]
+        },
+        "zh-CN": {
+          "label": "法语",
+          "learningObject": "法语",
+          "aliases": [
+            "法语"
+          ]
+        }
+      }
+    },
+    "es": {
+      "locales": {
+        "pt-PT": {
+          "label": "Espanhol",
+          "learningObject": "espanhol",
+          "aliases": [
+            "espanhol"
+          ]
+        },
+        "en-US": {
+          "label": "Spanish",
+          "learningObject": "Spanish",
+          "aliases": [
+            "Spanish"
+          ]
+        },
+        "es-ES": {
+          "label": "Español",
+          "learningObject": "español",
+          "aliases": [
+            "español",
+            "espanol"
+          ]
+        },
+        "fr-FR": {
+          "label": "Espagnol",
+          "learningObject": "l'espagnol",
+          "aliases": [
+            "espagnol",
+            "l'espagnol"
+          ]
+        },
+        "de-DE": {
+          "label": "Spanisch",
+          "learningObject": "Spanisch",
+          "aliases": [
+            "Spanisch"
+          ]
+        },
+        "it-IT": {
+          "label": "Spagnolo",
+          "learningObject": "spagnolo",
+          "aliases": [
+            "spagnolo"
+          ]
+        },
+        "ja-JP": {
+          "label": "スペイン語",
+          "learningObject": "スペイン語",
+          "aliases": [
+            "スペイン語"
+          ]
+        },
+        "ru-RU": {
+          "label": "Испанский",
+          "learningObject": "испанский язык",
+          "aliases": [
+            "испанский",
+            "испанский язык"
+          ]
+        },
+        "zh-CN": {
+          "label": "西班牙语",
+          "learningObject": "西班牙语",
+          "aliases": [
+            "西班牙语"
+          ]
+        }
+      }
+    },
+    "de": {
+      "locales": {
+        "pt-PT": {
+          "label": "Alemão",
+          "learningObject": "alemão",
+          "aliases": [
+            "alemão",
+            "alemao"
+          ]
+        },
+        "en-US": {
+          "label": "German",
+          "learningObject": "German",
+          "aliases": [
+            "German"
+          ]
+        },
+        "es-ES": {
+          "label": "Alemán",
+          "learningObject": "alemán",
+          "aliases": [
+            "alemán",
+            "aleman"
+          ]
+        },
+        "fr-FR": {
+          "label": "Allemand",
+          "learningObject": "l'allemand",
+          "aliases": [
+            "allemand",
+            "l'allemand"
+          ]
+        },
+        "de-DE": {
+          "label": "Deutsch",
+          "learningObject": "Deutsch",
+          "aliases": [
+            "Deutsch"
+          ]
+        },
+        "it-IT": {
+          "label": "Tedesco",
+          "learningObject": "tedesco",
+          "aliases": [
+            "tedesco"
+          ]
+        },
+        "ja-JP": {
+          "label": "ドイツ語",
+          "learningObject": "ドイツ語",
+          "aliases": [
+            "ドイツ語"
+          ]
+        },
+        "ru-RU": {
+          "label": "Немецкий",
+          "learningObject": "немецкий язык",
+          "aliases": [
+            "немецкий",
+            "немецкий язык"
+          ]
+        },
+        "zh-CN": {
+          "label": "德语",
+          "learningObject": "德语",
+          "aliases": [
+            "德语"
+          ]
+        }
+      }
+    }
+  },
+  "faqs": [
+    {
+      "id": "faq-001",
+      "intent": "start-from-zero",
+      "category": "getting-started",
+      "priority": "high",
+      "searchIntent": "commercial",
+      "featured": false,
+      "applicableCourseLanguages": [
+        "en",
+        "fr",
+        "es",
+        "de"
+      ],
+      "parameters": [],
+      "sourceKeywordsPtPT": [
+        "curso para iniciantes",
+        "aprender do zero",
+        "nível A1"
+      ],
+      "localizations": {
+        "pt-PT": {
+          "question": "Nunca estudei o idioma. Posso começar do zero?",
+          "answer": "Sim. É possível começar do nível inicial, mesmo sem conhecimentos prévios. O percurso deve ser adaptado ao seu ponto de partida, com vocabulário essencial, estruturas simples, compreensão e prática oral progressiva."
+        },
+        "en-US": {
+          "question": "I've never studied the language. Can I start from scratch?",
+          "answer": "Yes. Complete beginners can start with no previous knowledge. The learning path should begin with essential vocabulary, simple structures, comprehension and progressive speaking practice."
+        },
+        "es-ES": {
+          "question": "Nunca he estudiado el idioma. ¿Puedo empezar desde cero?",
+          "answer": "Sí. Es posible empezar como principiante absoluto, incluso sin conocimientos previos. El aprendizaje debe comenzar con vocabulario esencial, estructuras sencillas, comprensión y práctica oral progresiva."
+        },
+        "fr-FR": {
+          "question": "Je n'ai jamais étudié cette langue. Puis-je commencer de zéro ?",
+          "answer": "Oui. Il est possible de commencer comme grand débutant, sans connaissances préalables. Le parcours doit débuter par le vocabulaire essentiel, des structures simples, la compréhension et une pratique orale progressive."
+        },
+        "de-DE": {
+          "question": "Ich habe die Sprache noch nie gelernt. Kann ich bei null anfangen?",
+          "answer": "Ja. Auch ohne Vorkenntnisse können Sie als Anfänger starten. Der Lernweg sollte mit grundlegendem Wortschatz, einfachen Strukturen, Hör- und Leseverstehen sowie schrittweiser Sprechpraxis beginnen."
+        },
+        "it-IT": {
+          "question": "Non ho mai studiato la lingua. Posso iniziare da zero?",
+          "answer": "Sì. È possibile iniziare come principiante assoluto, anche senza conoscenze precedenti. Il percorso dovrebbe partire da vocabolario essenziale, strutture semplici, comprensione e pratica orale progressiva."
+        },
+        "ja-JP": {
+          "question": "この言語を学んだことがありません。ゼロから始められますか？",
+          "answer": "はい。これまで学習経験がなくても、初級レベルから始められます。基礎語彙、簡単な文型、理解練習、段階的な会話練習を、現在のレベルに合わせて進めます。"
+        },
+        "ru-RU": {
+          "question": "Я никогда не изучал(а) этот язык. Можно ли начать с нуля?",
+          "answer": "Да. Можно начать с начального уровня даже без предварительных знаний. Обучение следует адаптировать к вашей отправной точке: базовая лексика, простые конструкции, понимание и постепенная разговорная практика."
+        },
+        "zh-CN": {
+          "question": "我从未学过这门语言，可以从零开始吗？",
+          "answer": "可以。即使完全没有基础，也可以从初级开始。学习内容应根据你的起点安排，包括核心词汇、简单句型、理解训练和循序渐进的口语练习。"
+        }
+      }
+    },
+    {
+      "id": "faq-002",
+      "intent": "adult-learning",
+      "category": "getting-started",
+      "priority": "high",
+      "searchIntent": "informational",
+      "featured": true,
+      "applicableCourseLanguages": [
+        "en",
+        "fr",
+        "es",
+        "de"
+      ],
+      "parameters": [],
+      "sourceKeywordsPtPT": [
+        "aprender idiomas adulto",
+        "idade para aprender língua",
+        "curso adultos"
+      ],
+      "localizations": {
+        "pt-PT": {
+          "question": "Sou adulto. Ainda consigo aprender uma nova língua?",
+          "answer": "Sim. Adultos podem aprender uma nova língua em qualquer idade. A progressão depende sobretudo da regularidade, da qualidade da prática, da exposição ao idioma e de objetivos realistas."
+        },
+        "en-US": {
+          "question": "I'm an adult. Can I still learn a new language?",
+          "answer": "Yes. Adults can learn a new language at any age. Progress depends mainly on consistency, quality of practice, exposure to the language and realistic goals."
+        },
+        "es-ES": {
+          "question": "Soy adulto. ¿Todavía puedo aprender un nuevo idioma?",
+          "answer": "Sí. Los adultos pueden aprender un nuevo idioma a cualquier edad. El progreso depende sobre todo de la constancia, la calidad de la práctica, la exposición al idioma y unos objetivos realistas."
+        },
+        "fr-FR": {
+          "question": "Je suis adulte. Puis-je encore apprendre une nouvelle langue ?",
+          "answer": "Oui. On peut apprendre une nouvelle langue à tout âge. Les progrès dépendent surtout de la régularité, de la qualité de la pratique, de l'exposition à la langue et d'objectifs réalistes."
+        },
+        "de-DE": {
+          "question": "Ich bin erwachsen. Kann ich trotzdem noch eine neue Sprache lernen?",
+          "answer": "Ja. Erwachsene können in jedem Alter eine neue Sprache lernen. Der Fortschritt hängt vor allem von Regelmäßigkeit, Qualität der Übung, Kontakt mit der Sprache und realistischen Zielen ab."
+        },
+        "it-IT": {
+          "question": "Sono adulto. Posso ancora imparare una nuova lingua?",
+          "answer": "Sì. Gli adulti possono imparare una nuova lingua a qualsiasi età. I progressi dipendono soprattutto dalla costanza, dalla qualità della pratica, dall'esposizione alla lingua e da obiettivi realistici."
+        },
+        "ja-JP": {
+          "question": "大人になってからでも新しい言語を学べますか？",
+          "answer": "はい。大人でも年齢に関係なく新しい言語を学べます。上達の速さは、継続性、練習の質、言語に触れる頻度、現実的な目標設定に大きく左右されます。"
+        },
+        "ru-RU": {
+          "question": "Я взрослый человек. Могу ли я всё ещё выучить новый язык?",
+          "answer": "Да. Новый язык можно учить в любом возрасте. Прогресс в основном зависит от регулярности, качества практики, контакта с языком и реалистичных целей."
+        },
+        "zh-CN": {
+          "question": "我是成年人，现在还能学好一门新语言吗？",
+          "answer": "可以。成年人在任何年龄都能学习新语言。进步速度主要取决于学习规律、练习质量、接触语言的频率以及是否有现实而明确的目标。"
+        }
+      }
+    },
+    {
+      "id": "faq-003",
+      "intent": "best-age-to-start",
+      "category": "getting-started",
+      "priority": "medium",
+      "searchIntent": "informational",
+      "featured": false,
+      "applicableCourseLanguages": [
+        "en",
+        "fr",
+        "es",
+        "de"
+      ],
+      "parameters": [],
+      "sourceKeywordsPtPT": [
+        "melhor idade aprender inglês",
+        "idiomas para crianças",
+        "quando começar"
+      ],
+      "localizations": {
+        "pt-PT": {
+          "question": "Qual é a melhor idade para começar a aprender uma nova língua?",
+          "answer": "Não existe uma única idade certa. As crianças beneficiam de exposição precoce e natural aos sons, enquanto jovens e adultos podem avançar rapidamente quando estudam com objetivos claros e prática consistente."
+        },
+        "en-US": {
+          "question": "What is the best age to start learning a new language?",
+          "answer": "There is no single ideal age. Children benefit from early exposure to sounds, while teenagers and adults can progress quickly with clear goals and consistent practice."
+        },
+        "es-ES": {
+          "question": "¿Cuál es la mejor edad para empezar a aprender un nuevo idioma?",
+          "answer": "No existe una única edad ideal. Los niños se benefician de una exposición temprana a los sonidos, mientras que jóvenes y adultos pueden avanzar rápidamente con objetivos claros y práctica constante."
+        },
+        "fr-FR": {
+          "question": "Quel est le meilleur âge pour commencer à apprendre une nouvelle langue ?",
+          "answer": "Il n'existe pas un âge idéal unique. Les enfants bénéficient d'une exposition précoce aux sons, tandis que les adolescents et les adultes peuvent progresser rapidement avec des objectifs clairs et une pratique régulière."
+        },
+        "de-DE": {
+          "question": "Welches ist das beste Alter, um mit einer neuen Sprache zu beginnen?",
+          "answer": "Es gibt nicht das eine ideale Alter. Kinder profitieren von frühem Kontakt mit Lauten, während Jugendliche und Erwachsene mit klaren Zielen und regelmäßiger Übung schnell Fortschritte machen können."
+        },
+        "it-IT": {
+          "question": "Qual è l'età migliore per iniziare a imparare una nuova lingua?",
+          "answer": "Non esiste un'unica età ideale. I bambini beneficiano di un'esposizione precoce ai suoni, mentre ragazzi e adulti possono progredire rapidamente con obiettivi chiari e pratica costante."
+        },
+        "ja-JP": {
+          "question": "新しい言語を学び始めるのに最適な年齢はありますか？",
+          "answer": "唯一の『最適な年齢』はありません。子どもは早い時期から音に触れる利点があり、大人は明確な目的と計画的な練習によって効率よく学ぶことができます。"
+        },
+        "ru-RU": {
+          "question": "В каком возрасте лучше всего начинать изучать новый язык?",
+          "answer": "Единственного идеального возраста нет. Дети выигрывают от раннего знакомства со звуками языка, а взрослые могут быстро продвигаться благодаря чётким целям и системной практике."
+        },
+        "zh-CN": {
+          "question": "学习一门新语言的最佳年龄是多少？",
+          "answer": "没有唯一的最佳年龄。儿童较早接触语言声音有优势；成年人则可以通过明确目标和有计划的练习高效进步。"
+        }
+      }
+    },
+    {
+      "id": "faq-004",
+      "intent": "easiest-language-for-portuguese-speakers",
+      "category": "getting-started",
+      "priority": "medium",
+      "searchIntent": "informational",
+      "featured": false,
+      "applicableCourseLanguages": [
+        "en",
+        "fr",
+        "es",
+        "de"
+      ],
+      "parameters": [],
+      "sourceKeywordsPtPT": [
+        "idioma mais fácil",
+        "inglês francês espanhol",
+        "qual língua aprender"
+      ],
+      "localizations": {
+        "pt-PT": {
+          "question": "Qual dos idiomas da Best Fluency costuma ser mais fácil para falantes de português?",
+          "answer": "Espanhol e francês partilham mais vocabulário e estruturas com o português. O inglês oferece enorme exposição no trabalho, tecnologia e internet, enquanto o alemão apresenta diferenças gramaticais mais marcadas. A melhor escolha depende do seu objetivo."
+        },
+        "en-US": {
+          "question": "Which Best Fluency language is usually easiest for Portuguese speakers?",
+          "answer": "Spanish and French share more vocabulary and structures with Portuguese, while English and German are more distant in some areas. The best choice still depends on your goals, motivation and exposure."
+        },
+        "es-ES": {
+          "question": "¿Qué idioma de Best Fluency suele ser más fácil para un hablante de portugués?",
+          "answer": "El español y el francés comparten más vocabulario y estructuras con el portugués, mientras que el inglés y el alemán son más diferentes en algunos aspectos. La mejor elección depende de tus objetivos, motivación y exposición."
+        },
+        "fr-FR": {
+          "question": "Quelle langue proposée par Best Fluency est généralement la plus facile pour un lusophone ?",
+          "answer": "L'espagnol et le français partagent davantage de vocabulaire et de structures avec le portugais, tandis que l'anglais et l'allemand en sont plus éloignés sur certains points. Le meilleur choix dépend néanmoins de vos objectifs, de votre motivation et de votre exposition."
+        },
+        "de-DE": {
+          "question": "Welche Best-Fluency-Sprache ist für Portugiesischsprachige meist am einfachsten?",
+          "answer": "Spanisch und Französisch teilen mehr Wortschatz und Strukturen mit dem Portugiesischen, während Englisch und Deutsch in einigen Bereichen weiter entfernt sind. Die beste Wahl hängt dennoch von Zielen, Motivation und Sprachkontakt ab."
+        },
+        "it-IT": {
+          "question": "Quale lingua di Best Fluency tende a essere più facile per chi parla portoghese?",
+          "answer": "Spagnolo e francese condividono più vocabolario e strutture con il portoghese, mentre inglese e tedesco sono più distanti in alcuni aspetti. La scelta migliore dipende comunque da obiettivi, motivazione ed esposizione."
+        },
+        "ja-JP": {
+          "question": "ポルトガル語話者にとって、Best Fluencyのどの言語が一般的に学びやすいですか？",
+          "answer": "スペイン語とフランス語はポルトガル語と語彙や構造の共通点が多く、英語は仕事やテクノロジー、インターネットで触れる機会が非常に多い言語です。ドイツ語は文法面で距離があります。最も適した言語は目的によって異なります。"
+        },
+        "ru-RU": {
+          "question": "Какой язык Best Fluency обычно легче всего даётся носителям португальского?",
+          "answer": "Испанский и французский имеют больше общей лексики и структур с португальским. Английский даёт очень много естественного контакта через работу, технологии и интернет, а немецкий заметно отличается по грамматике. Лучший выбор зависит от вашей цели."
+        },
+        "zh-CN": {
+          "question": "对于葡萄牙语母语者来说，Best Fluency提供的哪种语言通常最容易学？",
+          "answer": "西班牙语和法语与葡萄牙语在词汇和结构上有更多相似之处；英语在工作、科技和互联网中的接触机会非常多；德语在语法结构上差异更明显。最合适的选择取决于你的目标。"
+        }
+      }
+    },
+    {
+      "id": "faq-005",
+      "intent": "choose-right-language",
+      "category": "getting-started",
+      "priority": "medium",
+      "searchIntent": "informational",
+      "featured": false,
+      "applicableCourseLanguages": [
+        "en",
+        "fr",
+        "es",
+        "de"
+      ],
+      "parameters": [],
+      "sourceKeywordsPtPT": [
+        "qual idioma aprender",
+        "escolher língua",
+        "curso de idiomas"
+      ],
+      "localizations": {
+        "pt-PT": {
+          "question": "Como escolher o idioma certo para aprender?",
+          "answer": "Considere onde pretende usar a língua: trabalho, estudos, viagens, mudança de país, família ou interesse pessoal. Um objetivo concreto aumenta a motivação e ajuda a definir o curso, a frequência e o vocabulário prioritário."
+        },
+        "en-US": {
+          "question": "How do I choose the right language to learn?",
+          "answer": "Start with where you plan to use it: work, study, travel, relocation, family or personal interest. A clear goal makes it easier to choose the course, frequency and vocabulary priorities."
+        },
+        "es-ES": {
+          "question": "¿Cómo elegir el idioma adecuado para aprender?",
+          "answer": "Piensa primero dónde quieres utilizarlo: trabajo, estudios, viajes, mudanza, familia o interés personal. Un objetivo claro ayuda a elegir el curso, la frecuencia y el vocabulario prioritario."
+        },
+        "fr-FR": {
+          "question": "Comment choisir la bonne langue à apprendre ?",
+          "answer": "Commencez par définir où vous souhaitez l'utiliser : travail, études, voyages, expatriation, famille ou intérêt personnel. Un objectif clair aide à choisir le cours, la fréquence et le vocabulaire prioritaires."
+        },
+        "de-DE": {
+          "question": "Wie wähle ich die richtige Sprache zum Lernen aus?",
+          "answer": "Überlegen Sie zuerst, wofür Sie die Sprache brauchen: Arbeit, Studium, Reisen, Umzug, Familie oder persönliches Interesse. Ein klares Ziel erleichtert die Wahl von Kurs, Häufigkeit und wichtigem Wortschatz."
+        },
+        "it-IT": {
+          "question": "Come scelgo la lingua giusta da imparare?",
+          "answer": "Parti dall'uso che vuoi farne: lavoro, studio, viaggi, trasferimento, famiglia o interesse personale. Un obiettivo chiaro aiuta a scegliere il corso, la frequenza e il vocabolario prioritario."
+        },
+        "ja-JP": {
+          "question": "自分に合った学習言語はどう選べばよいですか？",
+          "answer": "仕事、留学、旅行、移住、家族、個人的な関心など、どこでその言語を使いたいかから考えましょう。具体的な目的があると、コース、学習頻度、優先語彙を決めやすくなります。"
+        },
+        "ru-RU": {
+          "question": "Как выбрать подходящий язык для изучения?",
+          "answer": "Подумайте, где вы будете его использовать: на работе, в учёбе, поездках, при переезде, в семье или для личного интереса. Конкретная цель помогает выбрать курс, частоту занятий и приоритетную лексику."
+        },
+        "zh-CN": {
+          "question": "我应该怎样选择最适合自己学习的语言？",
+          "answer": "先想清楚你会在哪里使用这门语言：工作、学习、旅行、移居、家庭交流或个人兴趣。具体目标有助于选择课程、上课频率以及优先学习的词汇。"
+        }
+      }
+    },
+    {
+      "id": "faq-006",
+      "intent": "know-language-level",
+      "category": "level",
+      "priority": "high",
+      "searchIntent": "commercial",
+      "featured": true,
+      "applicableCourseLanguages": [
+        "en",
+        "fr",
+        "es",
+        "de"
+      ],
+      "parameters": [],
+      "sourceKeywordsPtPT": [
+        "teste de nível",
+        "nível inglês",
+        "A1 A2 B1 B2 C1 C2"
+      ],
+      "localizations": {
+        "pt-PT": {
+          "question": "Como saber qual é o meu nível no idioma?",
+          "answer": "O nível pode ser identificado por uma avaliação que considere compreensão, vocabulário, gramática e capacidade de comunicação. A referência mais utilizada na Europa é o Quadro Europeu Comum de Referência, com níveis de A1 a C2."
+        },
+        "en-US": {
+          "question": "How can I find out my current language level?",
+          "answer": "A level assessment can check comprehension, vocabulary, grammar and communication. In Europe, the most common reference is the CEFR, from A1 to C2."
+        },
+        "es-ES": {
+          "question": "¿Cómo puedo saber cuál es mi nivel en el idioma?",
+          "answer": "Una prueba de nivel puede evaluar comprensión, vocabulario, gramática y capacidad de comunicación. En Europa, la referencia más utilizada es el MCER, de A1 a C2."
+        },
+        "fr-FR": {
+          "question": "Comment connaître mon niveau actuel dans la langue ?",
+          "answer": "Une évaluation de niveau peut mesurer la compréhension, le vocabulaire, la grammaire et la capacité à communiquer. En Europe, la référence la plus utilisée est le CECRL, de A1 à C2."
+        },
+        "de-DE": {
+          "question": "Wie finde ich heraus, welches Sprachniveau ich habe?",
+          "answer": "Ein Einstufungstest kann Verständnis, Wortschatz, Grammatik und Kommunikationsfähigkeit prüfen. In Europa wird meist der GER mit den Stufen A1 bis C2 verwendet."
+        },
+        "it-IT": {
+          "question": "Come faccio a sapere qual è il mio livello nella lingua?",
+          "answer": "Un test di livello può valutare comprensione, vocabolario, grammatica e capacità comunicativa. In Europa il riferimento più usato è il QCER, da A1 a C2."
+        },
+        "ja-JP": {
+          "question": "現在の語学レベルはどうすれば分かりますか？",
+          "answer": "理解力、語彙、文法、コミュニケーション力を確認するレベルチェックで判断できます。ヨーロッパでは、A1からC2までのCEFR（ヨーロッパ言語共通参照枠）が広く使われています。"
+        },
+        "ru-RU": {
+          "question": "Как узнать свой текущий уровень языка?",
+          "answer": "Уровень можно определить с помощью оценки понимания, словарного запаса, грамматики и способности общаться. В Европе широко используется CEFR — уровни от A1 до C2."
+        },
+        "zh-CN": {
+          "question": "怎样知道自己目前的语言水平？",
+          "answer": "可以通过评估理解能力、词汇、语法和沟通能力来判断。在欧洲，最常用的参考标准是CEFR（欧洲语言共同参考框架），分为A1到C2六个级别。"
+        }
+      }
+    },
+    {
+      "id": "faq-007",
+      "intent": "cefr-levels",
+      "category": "level",
+      "priority": "high",
+      "searchIntent": "informational",
+      "featured": false,
+      "applicableCourseLanguages": [
+        "en",
+        "fr",
+        "es",
+        "de"
+      ],
+      "parameters": [],
+      "sourceKeywordsPtPT": [
+        "CEFR",
+        "QECR",
+        "níveis de idioma"
+      ],
+      "localizations": {
+        "pt-PT": {
+          "question": "O que significam os níveis A1, A2, B1, B2, C1 e C2?",
+          "answer": "São níveis do Quadro Europeu Comum de Referência. A1 e A2 correspondem ao utilizador básico, B1 e B2 ao utilizador independente e C1 e C2 ao utilizador proficiente. Cada nível descreve o que a pessoa consegue compreender e comunicar."
+        },
+        "en-US": {
+          "question": "What do A1, A2, B1, B2, C1 and C2 mean?",
+          "answer": "They are CEFR proficiency levels. A1-A2 are basic user levels, B1-B2 independent user levels, and C1-C2 proficient user levels."
+        },
+        "es-ES": {
+          "question": "¿Qué significan los niveles A1, A2, B1, B2, C1 y C2?",
+          "answer": "Son los niveles de competencia del MCER. A1-A2 corresponden al usuario básico, B1-B2 al usuario independiente y C1-C2 al usuario competente."
+        },
+        "fr-FR": {
+          "question": "Que signifient les niveaux A1, A2, B1, B2, C1 et C2 ?",
+          "answer": "Ce sont les niveaux de compétence du CECRL. A1-A2 correspondent à l'utilisateur élémentaire, B1-B2 à l'utilisateur indépendant et C1-C2 à l'utilisateur expérimenté."
+        },
+        "de-DE": {
+          "question": "Was bedeuten die Niveaus A1, A2, B1, B2, C1 und C2?",
+          "answer": "Das sind die Kompetenzstufen des Gemeinsamen Europäischen Referenzrahmens. A1-A2 stehen für elementare, B1-B2 für selbstständige und C1-C2 für kompetente Sprachverwendung."
+        },
+        "it-IT": {
+          "question": "Che cosa significano i livelli A1, A2, B1, B2, C1 e C2?",
+          "answer": "Sono i livelli di competenza del QCER. A1-A2 indicano un utente base, B1-B2 un utente indipendente e C1-C2 un utente competente."
+        },
+        "ja-JP": {
+          "question": "A1、A2、B1、B2、C1、C2とは何ですか？",
+          "answer": "CEFRの言語能力レベルです。A1・A2は基礎段階、B1・B2は自立して使える段階、C1・C2は熟達段階を示します。各レベルは、理解やコミュニケーションで何ができるかを表します。"
+        },
+        "ru-RU": {
+          "question": "Что означают уровни A1, A2, B1, B2, C1 и C2?",
+          "answer": "Это уровни CEFR. A1 и A2 соответствуют базовому владению, B1 и B2 — самостоятельному, C1 и C2 — продвинутому. Каждый уровень описывает, что человек способен понимать и делать на языке."
+        },
+        "zh-CN": {
+          "question": "A1、A2、B1、B2、C1和C2分别代表什么？",
+          "answer": "这些是CEFR语言水平。A1和A2属于基础使用者，B1和B2属于独立使用者，C1和C2属于熟练使用者。每一级都描述学习者能够理解和表达什么。"
+        }
+      }
+    },
+    {
+      "id": "faq-008",
+      "intent": "placement-test",
+      "category": "level",
+      "priority": "high",
+      "searchIntent": "commercial",
+      "featured": false,
+      "applicableCourseLanguages": [
+        "en",
+        "fr",
+        "es",
+        "de"
+      ],
+      "parameters": [],
+      "sourceKeywordsPtPT": [
+        "teste de nível antes curso",
+        "avaliação de nível",
+        "começar A1"
+      ],
+      "localizations": {
+        "pt-PT": {
+          "question": "Preciso de fazer um teste de nível antes de começar?",
+          "answer": "Se já estudou o idioma, uma avaliação é recomendada para evitar começar num nível demasiado fácil ou demasiado difícil. Quem começa do zero normalmente pode iniciar diretamente no nível A1."
+        },
+        "en-US": {
+          "question": "Do I need a placement test before I start?",
+          "answer": "If you have studied the language before, a placement test is recommended so you do not start at a level that is too easy or too difficult. Complete beginners can normally start at A1."
+        },
+        "es-ES": {
+          "question": "¿Necesito hacer una prueba de nivel antes de empezar?",
+          "answer": "Si ya has estudiado el idioma, es recomendable hacer una prueba para no empezar en un nivel demasiado fácil o difícil. Los principiantes absolutos normalmente pueden comenzar en A1."
+        },
+        "fr-FR": {
+          "question": "Dois-je passer un test de niveau avant de commencer ?",
+          "answer": "Si vous avez déjà étudié la langue, un test de niveau est recommandé afin d'éviter un cours trop facile ou trop difficile. Les grands débutants peuvent généralement commencer directement en A1."
+        },
+        "de-DE": {
+          "question": "Muss ich vor Kursbeginn einen Einstufungstest machen?",
+          "answer": "Wenn Sie die Sprache schon gelernt haben, ist ein Einstufungstest empfehlenswert, damit der Kurs weder zu leicht noch zu schwer ist. Absolute Anfänger können in der Regel direkt mit A1 beginnen."
+        },
+        "it-IT": {
+          "question": "Devo fare un test di livello prima di iniziare?",
+          "answer": "Se hai già studiato la lingua, un test è consigliato per evitare un livello troppo facile o troppo difficile. I principianti assoluti possono normalmente iniziare da A1."
+        },
+        "ja-JP": {
+          "question": "始める前にレベルチェックを受ける必要がありますか？",
+          "answer": "以前にその言語を学んだことがある場合は、簡単すぎる・難しすぎるレベルを避けるためにレベルチェックをおすすめします。完全な初心者なら、通常はA1から始められます。"
+        },
+        "ru-RU": {
+          "question": "Нужно ли проходить тест на уровень перед началом обучения?",
+          "answer": "Если вы уже изучали язык, тест рекомендуется, чтобы не попасть на слишком лёгкий или слишком сложный уровень. Полные новички обычно могут начинать непосредственно с A1."
+        },
+        "zh-CN": {
+          "question": "开始学习前需要做水平测试吗？",
+          "answer": "如果你以前学过这门语言，建议先做水平评估，避免课程过于简单或过难。如果完全从零开始，通常可以直接从A1开始。"
+        }
+      }
+    },
+    {
+      "id": "faq-009",
+      "intent": "join-started-course",
+      "category": "level",
+      "priority": "medium",
+      "searchIntent": "commercial",
+      "featured": false,
+      "applicableCourseLanguages": [
+        "en",
+        "fr",
+        "es",
+        "de"
+      ],
+      "parameters": [],
+      "sourceKeywordsPtPT": [
+        "entrar curso iniciado",
+        "turma já começou",
+        "matrícula idiomas"
+      ],
+      "localizations": {
+        "pt-PT": {
+          "question": "Posso entrar num curso que já começou?",
+          "answer": "Depende do nível, da modalidade e do progresso da turma. Antes da entrada, é importante verificar se os conhecimentos do aluno são compatíveis com o conteúdo já trabalhado para não prejudicar a aprendizagem."
+        },
+        "en-US": {
+          "question": "Can I join a course that has already started?",
+          "answer": "It depends on your level, the course format and how far the class has progressed. Your knowledge should be checked first to make sure you can join without compromising your learning."
+        },
+        "es-ES": {
+          "question": "¿Puedo incorporarme a un curso que ya ha empezado?",
+          "answer": "Depende de tu nivel, del formato del curso y del avance del grupo. Conviene comprobar antes que tus conocimientos sean compatibles con el contenido ya trabajado."
+        },
+        "fr-FR": {
+          "question": "Puis-je rejoindre un cours qui a déjà commencé ?",
+          "answer": "Cela dépend de votre niveau, du format et de l'avancement du groupe. Il est préférable de vérifier au préalable que vos acquis correspondent au contenu déjà travaillé."
+        },
+        "de-DE": {
+          "question": "Kann ich in einen Kurs einsteigen, der bereits begonnen hat?",
+          "answer": "Das hängt von Ihrem Niveau, dem Kursformat und dem Fortschritt der Gruppe ab. Vorher sollte geprüft werden, ob Ihre Kenntnisse zum bereits behandelten Stoff passen."
+        },
+        "it-IT": {
+          "question": "Posso entrare in un corso che è già iniziato?",
+          "answer": "Dipende dal tuo livello, dal formato del corso e da quanto è avanzato il gruppo. Prima conviene verificare che le tue conoscenze siano compatibili con i contenuti già trattati."
+        },
+        "ja-JP": {
+          "question": "すでに始まっているコースに途中参加できますか？",
+          "answer": "レベル、受講形式、クラスの進み具合によります。参加前に、これまで扱った内容と受講者の知識が合っているか確認することが大切です。"
+        },
+        "ru-RU": {
+          "question": "Можно ли присоединиться к курсу, который уже начался?",
+          "answer": "Это зависит от уровня, формата и того, насколько далеко продвинулась группа. Перед присоединением важно проверить, соответствует ли ваш уровень уже пройденному материалу."
+        },
+        "zh-CN": {
+          "question": "课程已经开始了，我还能中途加入吗？",
+          "answer": "这取决于你的水平、课程形式以及班级已经学到哪里。加入前应确认你的知识与班级已学内容相匹配，以免影响学习效果。"
+        }
+      }
+    },
+    {
+      "id": "faq-010",
+      "intent": "learning-duration",
+      "category": "progress",
+      "priority": "high",
+      "searchIntent": "informational",
+      "featured": true,
+      "applicableCourseLanguages": [
+        "en",
+        "fr",
+        "es",
+        "de"
+      ],
+      "parameters": [
+        "targetLanguage"
+      ],
+      "sourceKeywordsPtPT": [
+        "quanto tempo aprender inglês",
+        "quanto tempo aprender francês",
+        "quanto tempo aprender espanhol"
+      ],
+      "localizations": {
+        "pt-PT": {
+          "question": "Quanto tempo demora a aprender {targetLanguage}?",
+          "answer": "Não existe um prazo único. O tempo depende do nível inicial, objetivo, frequência das aulas, estudo fora da aula e contacto com o idioma. Como referência, a Cambridge English estima aproximadamente 200 horas de aprendizagem guiada para avançar um nível do QECR, embora haja grande variação individual.",
+          "searchAliases": [
+            "Quanto tempo me levaria para aprender {targetLanguage}?",
+            "Em quanto tempo posso aprender {targetLanguage}?",
+            "Quanto tempo para aprender {targetLanguage}?"
+          ],
+          "defaultQuestion": "Quanto tempo demora a aprender uma nova língua?"
+        },
+        "en-US": {
+          "question": "How long does it take to learn {targetLanguage}?",
+          "answer": "There is no single timeframe. It depends on your starting level, goal, lesson frequency, self-study and regular exposure. As a reference, Cambridge English estimates around 200 guided learning hours to move up one CEFR level, although individual progress varies.",
+          "searchAliases": [
+            "How long would it take me to learn {targetLanguage}?",
+            "How much time does it take to learn {targetLanguage}?",
+            "How quickly can I learn {targetLanguage}?"
+          ],
+          "defaultQuestion": "How long does it take to learn a new language?"
+        },
+        "es-ES": {
+          "question": "¿Cuánto tiempo se tarda en aprender {targetLanguage}?",
+          "answer": "No existe un plazo único. Depende de tu nivel inicial, objetivo, frecuencia de clases, estudio autónomo y contacto regular con el idioma. Como referencia, Cambridge English estima unas 200 horas de aprendizaje guiado para avanzar un nivel del MCER, aunque el progreso individual varía.",
+          "searchAliases": [
+            "¿Cuánto tiempo me llevaría aprender {targetLanguage}?",
+            "¿En cuánto tiempo puedo aprender {targetLanguage}?",
+            "¿Cuánto tiempo necesito para aprender {targetLanguage}?"
+          ],
+          "defaultQuestion": "¿Cuánto tiempo se tarda en aprender un nuevo idioma?"
+        },
+        "fr-FR": {
+          "question": "Combien de temps faut-il pour apprendre {targetLanguage} ?",
+          "answer": "Il n'existe pas de durée unique. Cela dépend de votre niveau de départ, de votre objectif, de la fréquence des cours, du travail personnel et de votre exposition régulière à la langue. À titre indicatif, Cambridge English estime environ 200 heures d'apprentissage guidé pour progresser d'un niveau du CECRL, avec de fortes variations individuelles.",
+          "searchAliases": [
+            "Combien de temps me faudrait-il pour apprendre {targetLanguage} ?",
+            "Combien de temps pour apprendre {targetLanguage} ?",
+            "En combien de temps peut-on apprendre {targetLanguage} ?"
+          ],
+          "defaultQuestion": "Combien de temps faut-il pour apprendre une nouvelle langue ?"
+        },
+        "de-DE": {
+          "question": "Wie lange dauert es, {targetLanguage} zu lernen?",
+          "answer": "Es gibt keine feste Dauer. Sie hängt vom Ausgangsniveau, Ziel, der Unterrichtshäufigkeit, dem Selbststudium und dem regelmäßigen Kontakt mit der Sprache ab. Cambridge English nennt als groben Richtwert etwa 200 angeleitete Lernstunden pro GER-Stufe, wobei der individuelle Fortschritt stark variiert.",
+          "searchAliases": [
+            "Wie viel Zeit brauche ich, um {targetLanguage} zu lernen?",
+            "Wie schnell kann ich {targetLanguage} lernen?",
+            "Wie lange brauche ich für {targetLanguage}?"
+          ],
+          "defaultQuestion": "Wie lange dauert es, eine neue Sprache zu lernen?"
+        },
+        "it-IT": {
+          "question": "Quanto tempo ci vuole per imparare {targetLanguage}?",
+          "answer": "Non esiste una durata unica. Dipende dal livello iniziale, dall'obiettivo, dalla frequenza delle lezioni, dallo studio autonomo e dal contatto regolare con la lingua. Come riferimento, Cambridge English stima circa 200 ore di apprendimento guidato per avanzare di un livello QCER, con variazioni individuali.",
+          "searchAliases": [
+            "Quanto tempo mi servirebbe per imparare {targetLanguage}?",
+            "In quanto tempo posso imparare {targetLanguage}?",
+            "Quanto ci vuole per imparare {targetLanguage}?"
+          ],
+          "defaultQuestion": "Quanto tempo ci vuole per imparare una nuova lingua?"
+        },
+        "ja-JP": {
+          "question": "{targetLanguage}を習得するにはどのくらい時間がかかりますか？",
+          "answer": "必要な時間は、開始レベル、目標、授業頻度、自習量、日常的にその言語に触れる量によって異なります。参考として、Cambridge EnglishはCEFRの1レベル上がるために約200時間の指導付き学習を一つの目安としていますが、個人差があります。",
+          "searchAliases": [
+            "{targetLanguage}を学ぶのにどれくらいかかりますか？",
+            "{targetLanguage}はどのくらいで話せるようになりますか？"
+          ],
+          "defaultQuestion": "新しい言語を習得するにはどのくらいかかりますか？"
+        },
+        "ru-RU": {
+          "question": "Сколько времени нужно, чтобы выучить {targetLanguage}?",
+          "answer": "Срок зависит от стартового уровня, цели, частоты занятий, самостоятельной работы и регулярного контакта с языком. В качестве ориентира Cambridge English указывает примерно 200 часов управляемого обучения для перехода на один уровень CEFR, однако индивидуальные различия могут быть значительными.",
+          "searchAliases": [
+            "Сколько времени мне понадобится, чтобы выучить {targetLanguage}?",
+            "За сколько можно выучить {targetLanguage}?",
+            "Как быстро можно выучить {targetLanguage}?"
+          ],
+          "defaultQuestion": "Сколько времени нужно, чтобы выучить новый язык?"
+        },
+        "zh-CN": {
+          "question": "学会{targetLanguage}需要多长时间？",
+          "answer": "所需时间取决于起始水平、目标、每周上课频率、课外学习以及日常接触语言的程度。作为参考，Cambridge English曾以约200小时的指导学习作为提升一个CEFR级别的粗略参考，但个人差异可能很大。",
+          "searchAliases": [
+            "学习{targetLanguage}要多久？",
+            "我需要多长时间才能学会{targetLanguage}？",
+            "多久能学会{targetLanguage}？"
+          ],
+          "defaultQuestion": "学习一门新语言需要多长时间？"
+        }
+      }
+    },
+    {
+      "id": "faq-011",
+      "intent": "time-to-start-speaking",
+      "category": "progress",
+      "priority": "high",
+      "searchIntent": "informational",
+      "featured": true,
+      "applicableCourseLanguages": [
+        "en",
+        "fr",
+        "es",
+        "de"
+      ],
+      "parameters": [],
+      "sourceKeywordsPtPT": [
+        "quanto tempo para falar inglês",
+        "começar a conversar",
+        "fluência"
+      ],
+      "localizations": {
+        "pt-PT": {
+          "question": "Em quanto tempo consigo começar a falar?",
+          "answer": "Um iniciante pode começar a produzir frases simples desde as primeiras aulas. Manter uma conversa com maior autonomia exige mais vocabulário, compreensão auditiva e prática regular. O objetivo inicial deve ser comunicar de forma simples, não falar perfeitamente."
+        },
+        "en-US": {
+          "question": "How long does it take before I can start speaking?",
+          "answer": "Beginners can start producing simple sentences from the first lessons. Holding a conversation more independently requires more vocabulary, listening ability and regular speaking practice."
+        },
+        "es-ES": {
+          "question": "¿Cuánto tiempo necesito para empezar a hablar?",
+          "answer": "Un principiante puede empezar a producir frases sencillas desde las primeras clases. Mantener una conversación con mayor autonomía requiere más vocabulario, comprensión auditiva y práctica oral regular."
+        },
+        "fr-FR": {
+          "question": "Combien de temps faut-il avant de commencer à parler ?",
+          "answer": "Un débutant peut produire des phrases simples dès les premières leçons. Tenir une conversation avec davantage d'autonomie demande plus de vocabulaire, de compréhension orale et de pratique régulière."
+        },
+        "de-DE": {
+          "question": "Wie lange dauert es, bis ich anfangen kann zu sprechen?",
+          "answer": "Anfänger können schon in den ersten Stunden einfache Sätze bilden. Für selbstständigere Gespräche braucht es mehr Wortschatz, Hörverstehen und regelmäßige Sprechpraxis."
+        },
+        "it-IT": {
+          "question": "Quanto tempo serve prima di iniziare a parlare?",
+          "answer": "Un principiante può iniziare a produrre frasi semplici fin dalle prime lezioni. Per sostenere una conversazione con maggiore autonomia servono più vocabolario, comprensione orale e pratica regolare."
+        },
+        "ja-JP": {
+          "question": "話し始められるようになるまで、どのくらいかかりますか？",
+          "answer": "初心者でも最初の授業から短い文を作り始められます。より自立して会話するには、語彙、リスニング、定期的な練習が必要です。最初から完璧さより、簡単でも伝えることを目標にしましょう。"
+        },
+        "ru-RU": {
+          "question": "Через сколько времени я смогу начать говорить?",
+          "answer": "Новичок может начать строить простые фразы уже на первых занятиях. Для более самостоятельного разговора нужны словарный запас, понимание речи и регулярная практика. На первом этапе важнее уметь донести мысль, чем говорить идеально."
+        },
+        "zh-CN": {
+          "question": "学多久可以开始开口说？",
+          "answer": "初学者从前几节课就可以开始说简单句。要更独立地进行对话，还需要积累词汇、提高听力并保持规律练习。初期重点应是能够表达，而不是追求完美。"
+        }
+      }
+    },
+    {
+      "id": "faq-012",
+      "intent": "time-to-fluency",
+      "category": "progress",
+      "priority": "high",
+      "searchIntent": "informational",
+      "featured": false,
+      "applicableCourseLanguages": [
+        "en",
+        "fr",
+        "es",
+        "de"
+      ],
+      "parameters": [],
+      "sourceKeywordsPtPT": [
+        "quanto tempo fluente",
+        "fluência inglês",
+        "nível B2"
+      ],
+      "localizations": {
+        "pt-PT": {
+          "question": "Quanto tempo demora para ficar fluente?",
+          "answer": "Fluência não é um ponto único e depende do que precisa de fazer no idioma. Para muitas situações profissionais e sociais, B2 já permite comunicação independente. Níveis C1 e C2 exigem maior precisão, vocabulário e compreensão de contextos complexos."
+        },
+        "en-US": {
+          "question": "How long does it take to become fluent?",
+          "answer": "Fluency is not a single fixed point. For many professional and social situations, B2 already allows independent communication, while C1-C2 require greater precision, range and understanding of complex contexts."
+        },
+        "es-ES": {
+          "question": "¿Cuánto tiempo se tarda en alcanzar fluidez?",
+          "answer": "La fluidez no es un punto único. Para muchas situaciones profesionales y sociales, un nivel B2 ya permite comunicarse con independencia; C1-C2 exigen mayor precisión, amplitud y comprensión de contextos complejos."
+        },
+        "fr-FR": {
+          "question": "Combien de temps faut-il pour devenir à l'aise ou courant ?",
+          "answer": "La fluidité n'est pas un seuil unique. Dans de nombreuses situations professionnelles et sociales, le niveau B2 permet déjà de communiquer de façon autonome, tandis que C1-C2 exigent davantage de précision, de richesse et de compréhension."
+        },
+        "de-DE": {
+          "question": "Wie lange dauert es, bis man fließend spricht?",
+          "answer": "Fließendes Sprechen ist kein einzelner fester Punkt. Für viele berufliche und soziale Situationen ermöglicht B2 bereits selbstständige Kommunikation; C1-C2 verlangen mehr Genauigkeit, Sprachbreite und Verständnis komplexer Zusammenhänge."
+        },
+        "it-IT": {
+          "question": "Quanto tempo ci vuole per diventare fluenti?",
+          "answer": "La fluidità non è un punto unico e fisso. In molte situazioni professionali e sociali un livello B2 permette già di comunicare in autonomia, mentre C1-C2 richiedono maggiore precisione, ricchezza e comprensione di contesti complessi."
+        },
+        "ja-JP": {
+          "question": "流暢に話せるようになるまで、どのくらいかかりますか？",
+          "answer": "『流暢さ』は一つの固定点ではなく、何をしたいかによって変わります。多くの仕事や社会生活ではB2でかなり自立したコミュニケーションが可能です。C1・C2では、より高い精度と複雑な内容の理解が求められます。"
+        },
+        "ru-RU": {
+          "question": "Сколько времени нужно, чтобы свободно говорить?",
+          "answer": "Свободное владение — не одна фиксированная точка и зависит от ваших задач. Для многих рабочих и бытовых ситуаций уровень B2 уже позволяет общаться самостоятельно. C1 и C2 требуют большей точности и понимания сложного содержания."
+        },
+        "zh-CN": {
+          "question": "达到流利需要多长时间？",
+          "answer": "“流利”并不是一个固定终点，而取决于你需要用语言完成什么。许多工作和日常场景中，B2已经可以较独立地沟通；C1和C2则要求更高的准确度和复杂内容理解能力。"
+        }
+      }
+    },
+    {
+      "id": "faq-013",
+      "intent": "classes-per-week",
+      "category": "progress",
+      "priority": "high",
+      "searchIntent": "commercial",
+      "featured": true,
+      "applicableCourseLanguages": [
+        "en",
+        "fr",
+        "es",
+        "de"
+      ],
+      "parameters": [],
+      "sourceKeywordsPtPT": [
+        "quantas aulas por semana",
+        "2 aulas inglês semana",
+        "frequência curso idiomas"
+      ],
+      "localizations": {
+        "pt-PT": {
+          "question": "Quantas aulas por semana são recomendadas?",
+          "answer": "Uma aula semanal pode gerar progresso quando existe prática entre as aulas, mas duas ou mais sessões por semana normalmente aumentam a frequência de contacto e aceleram a consolidação. A frequência ideal depende do objetivo e do tempo disponível."
+        },
+        "en-US": {
+          "question": "How many lessons per week are recommended?",
+          "answer": "One lesson a week can produce progress when you also practise between lessons, but two or more weekly sessions usually increase contact with the language and speed up consolidation."
+        },
+        "es-ES": {
+          "question": "¿Cuántas clases por semana se recomiendan?",
+          "answer": "Una clase semanal puede generar progreso si también practicas entre clases, pero dos o más sesiones por semana suelen aumentar el contacto con el idioma y acelerar la consolidación."
+        },
+        "fr-FR": {
+          "question": "Combien de cours par semaine sont recommandés ?",
+          "answer": "Un cours par semaine peut permettre de progresser si vous pratiquez aussi entre les séances, mais deux cours ou plus augmentent généralement l'exposition à la langue et accélèrent la consolidation."
+        },
+        "de-DE": {
+          "question": "Wie viele Unterrichtsstunden pro Woche sind empfehlenswert?",
+          "answer": "Eine Stunde pro Woche kann Fortschritte bringen, wenn Sie zwischen den Stunden üben. Zwei oder mehr Termine pro Woche erhöhen jedoch meist den Sprachkontakt und beschleunigen die Festigung."
+        },
+        "it-IT": {
+          "question": "Quante lezioni a settimana sono consigliate?",
+          "answer": "Una lezione a settimana può portare progressi se pratichi anche tra una lezione e l'altra, ma due o più incontri settimanali di solito aumentano il contatto con la lingua e accelerano il consolidamento."
+        },
+        "ja-JP": {
+          "question": "週に何回くらい授業を受けるのがおすすめですか？",
+          "answer": "週1回でも授業外で練習すれば上達できますが、週2回以上にすると接触頻度が増え、定着を早めやすくなります。最適な回数は、目標と使える時間によって異なります。"
+        },
+        "ru-RU": {
+          "question": "Сколько занятий в неделю рекомендуется?",
+          "answer": "Одно занятие в неделю может давать прогресс при регулярной практике между уроками, но два и более занятия обычно увеличивают частоту контакта с языком и ускоряют закрепление. Оптимальная частота зависит от цели и времени."
+        },
+        "zh-CN": {
+          "question": "每周上几节课比较合适？",
+          "answer": "如果课外有练习，每周一节也能进步；但每周两节或更多通常能增加接触频率并加快巩固。最合适的频率取决于你的目标和可支配时间。"
+        }
+      }
+    },
+    {
+      "id": "faq-014",
+      "intent": "one-class-per-week",
+      "category": "progress",
+      "priority": "high",
+      "searchIntent": "commercial",
+      "featured": false,
+      "applicableCourseLanguages": [
+        "en",
+        "fr",
+        "es",
+        "de"
+      ],
+      "parameters": [],
+      "sourceKeywordsPtPT": [
+        "uma aula por semana",
+        "curso 1x semana",
+        "aprender inglês uma vez por semana"
+      ],
+      "localizations": {
+        "pt-PT": {
+          "question": "Uma aula por semana é suficiente para aprender?",
+          "answer": "Pode ser suficiente para evoluir de forma gradual, especialmente se houver estudo e exposição ao idioma durante a semana. Para quem tem prazo curto ou pretende acelerar a progressão, uma frequência maior costuma ser mais adequada."
+        },
+        "en-US": {
+          "question": "Is one lesson per week enough to learn?",
+          "answer": "It can be enough for gradual progress, especially if you study and use the language between lessons. If you have a short deadline or want faster progress, a higher frequency is usually more suitable."
+        },
+        "es-ES": {
+          "question": "¿Una clase por semana es suficiente para aprender?",
+          "answer": "Puede ser suficiente para progresar de forma gradual, especialmente si estudias y usas el idioma durante la semana. Si tienes poco tiempo o quieres avanzar más rápido, suele convenir una frecuencia mayor."
+        },
+        "fr-FR": {
+          "question": "Un cours par semaine suffit-il pour apprendre ?",
+          "answer": "Cela peut suffire pour progresser progressivement, surtout si vous étudiez et utilisez la langue pendant la semaine. Si vous avez un délai court ou souhaitez avancer plus vite, une fréquence supérieure est généralement préférable."
+        },
+        "de-DE": {
+          "question": "Reicht eine Unterrichtsstunde pro Woche zum Lernen aus?",
+          "answer": "Für schrittweise Fortschritte kann das ausreichen, besonders wenn Sie während der Woche weiterlernen und die Sprache nutzen. Bei knappen Fristen oder schnelleren Zielen ist eine höhere Frequenz meist sinnvoller."
+        },
+        "it-IT": {
+          "question": "Una lezione a settimana è sufficiente per imparare?",
+          "answer": "Può essere sufficiente per progredire gradualmente, soprattutto se studi e usi la lingua durante la settimana. Se hai poco tempo o vuoi avanzare più rapidamente, una frequenza maggiore è normalmente più adatta."
+        },
+        "ja-JP": {
+          "question": "週1回の授業だけでも学べますか？",
+          "answer": "はい。授業の間にも復習や言語に触れる時間があれば、段階的に上達できます。短期間で成果を出したい場合は、授業頻度を増やす方が適していることがあります。"
+        },
+        "ru-RU": {
+          "question": "Достаточно ли одного занятия в неделю?",
+          "answer": "Да, для постепенного прогресса — особенно если вы практикуетесь между уроками. Если результат нужен быстрее, более высокая частота занятий обычно подходит лучше."
+        },
+        "zh-CN": {
+          "question": "每周只上一节课够吗？",
+          "answer": "可以，尤其是在两节课之间持续复习和接触语言时，仍能逐步进步。如果有明确的短期目标，增加频率通常更合适。"
+        }
+      }
+    },
+    {
+      "id": "faq-015",
+      "intent": "study-every-day",
+      "category": "progress",
+      "priority": "high",
+      "searchIntent": "informational",
+      "featured": true,
+      "applicableCourseLanguages": [
+        "en",
+        "fr",
+        "es",
+        "de"
+      ],
+      "parameters": [],
+      "sourceKeywordsPtPT": [
+        "estudar idioma todos os dias",
+        "quanto estudar por dia",
+        "rotina inglês"
+      ],
+      "localizations": {
+        "pt-PT": {
+          "question": "Preciso de estudar todos os dias?",
+          "answer": "Não é obrigatório estudar longos períodos diariamente, mas contactos curtos e frequentes ajudam muito. Rever vocabulário, ouvir o idioma e praticar algumas frases durante 10 a 20 minutos em vários dias da semana pode ser mais eficaz do que concentrar tudo num único dia."
+        },
+        "en-US": {
+          "question": "Do I need to study every day?",
+          "answer": "Long daily study sessions are not essential, but short and frequent contact helps. Reviewing vocabulary, listening and practising a few sentences for 10-20 minutes on several days can be very effective."
+        },
+        "es-ES": {
+          "question": "¿Necesito estudiar todos los días?",
+          "answer": "No es necesario estudiar durante mucho tiempo cada día, pero el contacto breve y frecuente ayuda mucho. Repasar vocabulario, escuchar y practicar algunas frases durante 10-20 minutos varios días puede ser muy eficaz."
+        },
+        "fr-FR": {
+          "question": "Dois-je étudier tous les jours ?",
+          "answer": "De longues séances quotidiennes ne sont pas indispensables, mais des contacts courts et fréquents sont très utiles. Réviser du vocabulaire, écouter la langue et pratiquer quelques phrases 10 à 20 minutes plusieurs jours par semaine peut être très efficace."
+        },
+        "de-DE": {
+          "question": "Muss ich jeden Tag lernen?",
+          "answer": "Lange tägliche Lerneinheiten sind nicht nötig, aber kurze und häufige Kontakte helfen sehr. Mehrmals pro Woche 10-20 Minuten Wortschatz wiederholen, zuhören und Sätze üben kann sehr wirksam sein."
+        },
+        "it-IT": {
+          "question": "Devo studiare tutti i giorni?",
+          "answer": "Non servono lunghe sessioni ogni giorno, ma contatti brevi e frequenti aiutano molto. Ripassare vocabolario, ascoltare e praticare alcune frasi per 10-20 minuti in più giorni della settimana può essere molto efficace."
+        },
+        "ja-JP": {
+          "question": "毎日勉強する必要がありますか？",
+          "answer": "毎日長時間勉強する必要はありませんが、短くても頻繁に触れることは効果的です。週に数回、10〜20分程度の語彙復習、リスニング、短い発話練習を行うだけでも役立ちます。"
+        },
+        "ru-RU": {
+          "question": "Нужно ли заниматься каждый день?",
+          "answer": "Необязательно заниматься долго каждый день, но короткий и частый контакт с языком очень полезен. Повторение слов, аудирование и несколько фраз по 10–20 минут несколько раз в неделю могут быть эффективнее одного длинного занятия."
+        },
+        "zh-CN": {
+          "question": "需要每天学习吗？",
+          "answer": "不需要每天长时间学习，但短时间、高频率的接触非常有帮助。每周多天进行10到20分钟的词汇复习、听力或简单口语练习，往往比集中在一天学习更有效。"
+        }
+      }
+    },
+    {
+      "id": "faq-016",
+      "intent": "study-outside-class",
+      "category": "progress",
+      "priority": "medium",
+      "searchIntent": "informational",
+      "featured": false,
+      "applicableCourseLanguages": [
+        "en",
+        "fr",
+        "es",
+        "de"
+      ],
+      "parameters": [],
+      "sourceKeywordsPtPT": [
+        "tempo estudo fora aula",
+        "praticar inglês em casa",
+        "rotina estudo idiomas"
+      ],
+      "localizations": {
+        "pt-PT": {
+          "question": "Quanto tempo devo estudar fora das aulas?",
+          "answer": "Mesmo 15 a 30 minutos de prática em vários dias da semana podem fazer diferença. O mais importante é rever o que foi aprendido, recuperar vocabulário sem olhar para as respostas e usar a língua em pequenas tarefas reais."
+        },
+        "en-US": {
+          "question": "How much should I study outside my lessons?",
+          "answer": "Even 15-30 minutes of practice on several days each week can make a difference. Focus on reviewing, recalling vocabulary without looking at the answer and using the language in small real-life tasks."
+        },
+        "es-ES": {
+          "question": "¿Cuánto tiempo debo estudiar fuera de las clases?",
+          "answer": "Incluso 15-30 minutos de práctica varios días por semana pueden marcar la diferencia. Conviene repasar, recuperar vocabulario sin mirar la respuesta y usar el idioma en pequeñas tareas reales."
+        },
+        "fr-FR": {
+          "question": "Combien de temps dois-je étudier en dehors des cours ?",
+          "answer": "Même 15 à 30 minutes de pratique plusieurs jours par semaine peuvent faire la différence. Privilégiez la révision, le rappel actif du vocabulaire et de petites tâches réelles dans la langue."
+        },
+        "de-DE": {
+          "question": "Wie viel sollte ich außerhalb des Unterrichts lernen?",
+          "answer": "Schon 15-30 Minuten Übung an mehreren Tagen pro Woche können einen Unterschied machen. Wiederholen Sie Inhalte, rufen Sie Wortschatz aktiv aus dem Gedächtnis ab und nutzen Sie die Sprache in kleinen realen Aufgaben."
+        },
+        "it-IT": {
+          "question": "Quanto dovrei studiare fuori dalle lezioni?",
+          "answer": "Anche 15-30 minuti di pratica in più giorni della settimana possono fare la differenza. Concentrati sul ripasso, sul richiamo attivo del vocabolario e sull'uso della lingua in piccole attività reali."
+        },
+        "ja-JP": {
+          "question": "授業以外ではどのくらい勉強すればよいですか？",
+          "answer": "週の複数日に15〜30分程度練習するだけでも効果があります。授業内容を復習し、答えを見ずに語彙を思い出し、実際の場面を想定して使うことが重要です。"
+        },
+        "ru-RU": {
+          "question": "Сколько нужно заниматься вне уроков?",
+          "answer": "Даже 15–30 минут практики несколько дней в неделю могут заметно помочь. Важно повторять материал, вспоминать слова без подсказки и использовать язык в небольших реальных задачах."
+        },
+        "zh-CN": {
+          "question": "课外每天或每周应该学习多久？",
+          "answer": "每周多天进行15到30分钟练习就能产生明显帮助。重点是复习已学内容、不看答案主动回忆词汇，并把语言用在简单的真实任务中。"
+        }
+      }
+    },
+    {
+      "id": "faq-017",
+      "intent": "learn-faster",
+      "category": "progress",
+      "priority": "high",
+      "searchIntent": "informational",
+      "featured": false,
+      "applicableCourseLanguages": [
+        "en",
+        "fr",
+        "es",
+        "de"
+      ],
+      "parameters": [],
+      "sourceKeywordsPtPT": [
+        "aprender inglês rápido",
+        "aprender idioma rápido",
+        "método eficaz"
+      ],
+      "localizations": {
+        "pt-PT": {
+          "question": "Como posso aprender mais rápido?",
+          "answer": "Aumente a frequência de contacto com o idioma, pratique a fala desde cedo, faça revisões espaçadas, use o vocabulário em frases e receba feedback. Acelerar não significa estudar conteúdos cada vez mais difíceis, mas consolidar melhor o que realmente precisa de usar."
+        },
+        "en-US": {
+          "question": "How can I learn a language faster?",
+          "answer": "Increase your regular exposure, speak from the beginning, use spaced review, put vocabulary into sentences and get feedback. Faster learning comes from better consolidation, not simply from harder content."
+        },
+        "es-ES": {
+          "question": "¿Cómo puedo aprender un idioma más rápido?",
+          "answer": "Aumenta el contacto regular con el idioma, habla desde el principio, utiliza repaso espaciado, convierte el vocabulario en frases y recibe feedback. Aprender más rápido significa consolidar mejor, no solo estudiar contenido más difícil."
+        },
+        "fr-FR": {
+          "question": "Comment apprendre une langue plus rapidement ?",
+          "answer": "Augmentez votre exposition régulière, parlez dès le début, utilisez la répétition espacée, placez le vocabulaire dans des phrases et demandez du feedback. Progresser plus vite signifie surtout mieux consolider, pas simplement étudier des contenus plus difficiles."
+        },
+        "de-DE": {
+          "question": "Wie kann ich eine Sprache schneller lernen?",
+          "answer": "Erhöhen Sie den regelmäßigen Sprachkontakt, sprechen Sie früh, nutzen Sie verteilte Wiederholung, verwenden Sie neuen Wortschatz in Sätzen und holen Sie Feedback ein. Schneller lernen bedeutet vor allem besser festigen, nicht nur schwierigere Inhalte bearbeiten."
+        },
+        "it-IT": {
+          "question": "Come posso imparare una lingua più velocemente?",
+          "answer": "Aumenta l'esposizione regolare, parla fin dall'inizio, usa la ripetizione dilazionata, inserisci il vocabolario in frasi e chiedi feedback. Imparare più velocemente significa consolidare meglio, non soltanto studiare contenuti più difficili."
+        },
+        "ja-JP": {
+          "question": "もっと早く言語を身につけるにはどうすればよいですか？",
+          "answer": "言語に触れる頻度を増やし、早い段階から話し、間隔を空けて復習し、語彙を文の中で使い、フィードバックを受けましょう。難しい内容を急いで増やすより、必要な内容を確実に使えるようにすることが大切です。"
+        },
+        "ru-RU": {
+          "question": "Как выучить язык быстрее?",
+          "answer": "Увеличьте частоту контакта с языком, начинайте говорить как можно раньше, используйте интервальное повторение, применяйте лексику в предложениях и получайте обратную связь. Быстрый прогресс — это прежде всего качественное закрепление нужного материала."
+        },
+        "zh-CN": {
+          "question": "怎样才能更快学会一门语言？",
+          "answer": "增加接触频率，尽早开始开口，使用间隔复习，把词汇放进句子中反复使用，并及时获得反馈。学得快不等于不断增加难度，而是更牢固地掌握真正需要使用的内容。"
+        }
+      }
+    },
+    {
+      "id": "faq-018",
+      "intent": "understand-but-cannot-speak",
+      "category": "progress",
+      "priority": "high",
+      "searchIntent": "informational",
+      "featured": false,
+      "applicableCourseLanguages": [
+        "en",
+        "fr",
+        "es",
+        "de"
+      ],
+      "parameters": [],
+      "sourceKeywordsPtPT": [
+        "entendo inglês mas não falo",
+        "travar para falar",
+        "desbloquear speaking"
+      ],
+      "localizations": {
+        "pt-PT": {
+          "question": "Porque entendo o idioma, mas não consigo falar?",
+          "answer": "Compreender e produzir são competências diferentes. Muitas pessoas reconhecem palavras quando ouvem ou leem, mas ainda não conseguem recuperá-las rapidamente para formar frases. A solução passa por prática oral guiada, repetição e recuperação ativa."
+        },
+        "en-US": {
+          "question": "Why can I understand the language but not speak it?",
+          "answer": "Understanding and producing language are different skills. You may recognise words when reading or listening but still need guided speaking, repetition and active recall to retrieve them quickly in conversation."
+        },
+        "es-ES": {
+          "question": "¿Por qué entiendo el idioma pero no consigo hablarlo?",
+          "answer": "Comprender y producir son habilidades diferentes. Puedes reconocer palabras al leer o escuchar, pero necesitas práctica oral guiada, repetición y recuperación activa para utilizarlas con rapidez al hablar."
+        },
+        "fr-FR": {
+          "question": "Pourquoi est-ce que je comprends la langue mais n'arrive pas à la parler ?",
+          "answer": "Comprendre et produire sont deux compétences différentes. Vous pouvez reconnaître des mots à l'écoute ou à la lecture sans encore les retrouver assez vite pour parler ; la pratique orale guidée, la répétition et le rappel actif permettent de réduire cet écart."
+        },
+        "de-DE": {
+          "question": "Warum verstehe ich die Sprache, kann sie aber nicht sprechen?",
+          "answer": "Verstehen und aktives Produzieren sind unterschiedliche Fähigkeiten. Oft erkennt man Wörter beim Lesen oder Hören, kann sie aber noch nicht schnell genug abrufen. Geführte Sprechpraxis, Wiederholung und aktiver Abruf schließen diese Lücke."
+        },
+        "it-IT": {
+          "question": "Perché capisco la lingua ma non riesco a parlarla?",
+          "answer": "Comprendere e produrre sono abilità diverse. Puoi riconoscere le parole quando ascolti o leggi ma non recuperarle ancora abbastanza velocemente: pratica orale guidata, ripetizione e richiamo attivo aiutano a colmare questa distanza."
+        },
+        "ja-JP": {
+          "question": "理解はできるのに、なぜ話せないのでしょうか？",
+          "answer": "理解する力と、自分で言葉を取り出して話す力は別の技能です。聞いたり読んだりすると分かる単語でも、会話ではすぐ出てこないことがあります。ガイド付き会話練習、反復、想起練習が有効です。"
+        },
+        "ru-RU": {
+          "question": "Почему я понимаю язык, но не могу на нём говорить?",
+          "answer": "Понимание и активная речь — разные навыки. Вы можете узнавать слова при чтении или на слух, но не успевать быстро извлекать их для собственной фразы. Помогают управляемая разговорная практика, повторение и активное вспоминание."
+        },
+        "zh-CN": {
+          "question": "为什么我能听懂或看懂，却说不出来？",
+          "answer": "理解和主动表达是不同的技能。很多人阅读或听到时能认出单词，但在说话时无法快速提取并组成句子。引导式口语练习、重复和主动回忆能帮助改善。"
+        }
+      }
+    },
+    {
+      "id": "faq-019",
+      "intent": "speaking-anxiety",
+      "category": "progress",
+      "priority": "high",
+      "searchIntent": "informational",
+      "featured": false,
+      "applicableCourseLanguages": [
+        "en",
+        "fr",
+        "es",
+        "de"
+      ],
+      "parameters": [],
+      "sourceKeywordsPtPT": [
+        "medo falar inglês",
+        "vergonha falar inglês",
+        "confiança speaking"
+      ],
+      "localizations": {
+        "pt-PT": {
+          "question": "Como perder o medo ou a vergonha de falar?",
+          "answer": "O medo diminui com prática em situações de baixa pressão. Começar com frases curtas, repetir estruturas conhecidas e receber correções sem interromper constantemente a comunicação ajuda a construir confiança progressivamente."
+        },
+        "en-US": {
+          "question": "How can I overcome fear or embarrassment when speaking?",
+          "answer": "Confidence grows through low-pressure practice. Start with short familiar sentences, repeat useful structures and receive corrections without constantly interrupting communication."
+        },
+        "es-ES": {
+          "question": "¿Cómo puedo perder el miedo o la vergüenza de hablar?",
+          "answer": "La confianza aumenta con práctica en situaciones de baja presión. Empieza con frases cortas y conocidas, repite estructuras útiles y recibe correcciones sin interrumpir constantemente la comunicación."
+        },
+        "fr-FR": {
+          "question": "Comment surmonter la peur ou la gêne de parler ?",
+          "answer": "La confiance se développe avec une pratique à faible pression. Commencez par des phrases courtes et familières, répétez des structures utiles et recevez des corrections sans interrompre constamment la communication."
+        },
+        "de-DE": {
+          "question": "Wie kann ich die Angst oder Scham beim Sprechen überwinden?",
+          "answer": "Sicherheit entsteht durch Übungen mit wenig Druck. Beginnen Sie mit kurzen vertrauten Sätzen, wiederholen Sie nützliche Strukturen und erhalten Sie Korrekturen, ohne dass die Kommunikation ständig unterbrochen wird."
+        },
+        "it-IT": {
+          "question": "Come posso superare la paura o l'imbarazzo di parlare?",
+          "answer": "La sicurezza cresce con esercizi a bassa pressione. Inizia con frasi brevi e familiari, ripeti strutture utili e ricevi correzioni senza interrompere continuamente la comunicazione."
+        },
+        "ja-JP": {
+          "question": "話すときの不安や恥ずかしさを克服するにはどうすればよいですか？",
+          "answer": "プレッシャーの少ない環境で練習を重ねると不安は減っていきます。短い文から始め、慣れた表現を繰り返し、会話を止めすぎない形で修正を受けると、自信を段階的に築けます。"
+        },
+        "ru-RU": {
+          "question": "Как преодолеть страх или стеснение при разговоре?",
+          "answer": "Страх уменьшается с практикой в спокойной обстановке. Начинайте с коротких фраз, повторяйте знакомые конструкции и получайте коррекцию так, чтобы она не прерывала общение постоянно. Уверенность формируется постепенно."
+        },
+        "zh-CN": {
+          "question": "怎样克服说外语时的害怕或尴尬？",
+          "answer": "在压力较低的环境中反复练习，恐惧会逐渐减少。可以从短句开始，重复熟悉的表达，并接受不会不断打断沟通的纠正，逐步建立信心。"
+        }
+      }
+    },
+    {
+      "id": "faq-020",
+      "intent": "forgetting-vocabulary",
+      "category": "progress",
+      "priority": "medium",
+      "searchIntent": "informational",
+      "featured": false,
+      "applicableCourseLanguages": [
+        "en",
+        "fr",
+        "es",
+        "de"
+      ],
+      "parameters": [],
+      "sourceKeywordsPtPT": [
+        "esquecer vocabulário",
+        "memorização idiomas",
+        "repetição espaçada"
+      ],
+      "localizations": {
+        "pt-PT": {
+          "question": "É normal esquecer palavras que já estudei?",
+          "answer": "Sim. Esquecer faz parte da aprendizagem. Para transformar vocabulário passivo em vocabulário disponível para falar, é importante recuperar as palavras várias vezes, em intervalos diferentes e dentro de frases e situações reais."
+        },
+        "en-US": {
+          "question": "Is it normal to forget words I've already studied?",
+          "answer": "Yes. Forgetting is part of learning. Recalling words several times, at spaced intervals and in meaningful sentences helps turn passive vocabulary into vocabulary you can use when speaking."
+        },
+        "es-ES": {
+          "question": "¿Es normal olvidar palabras que ya he estudiado?",
+          "answer": "Sí. Olvidar forma parte del aprendizaje. Recuperar las palabras varias veces, en intervalos diferentes y dentro de frases significativas ayuda a convertir el vocabulario pasivo en vocabulario disponible para hablar."
+        },
+        "fr-FR": {
+          "question": "Est-il normal d'oublier des mots déjà étudiés ?",
+          "answer": "Oui. L'oubli fait partie de l'apprentissage. Retrouver les mots plusieurs fois, à des intervalles espacés et dans des phrases significatives aide à transformer le vocabulaire passif en vocabulaire disponible à l'oral."
+        },
+        "de-DE": {
+          "question": "Ist es normal, bereits gelernte Wörter wieder zu vergessen?",
+          "answer": "Ja. Vergessen gehört zum Lernen. Wenn Wörter in zeitlichen Abständen und in sinnvollen Sätzen mehrfach aktiv abgerufen werden, wird passiver Wortschatz leichter beim Sprechen verfügbar."
+        },
+        "it-IT": {
+          "question": "È normale dimenticare parole che ho già studiato?",
+          "answer": "Sì. Dimenticare fa parte dell'apprendimento. Recuperare le parole più volte, a intervalli diversi e dentro frasi significative aiuta a trasformare il vocabolario passivo in vocabolario disponibile quando parli."
+        },
+        "ja-JP": {
+          "question": "一度覚えた単語を忘れるのは普通ですか？",
+          "answer": "はい。忘れることは学習の自然な一部です。受け身の語彙を会話で使える語彙にするには、時間を空けて何度も思い出し、文や実際の状況の中で使うことが大切です。"
+        },
+        "ru-RU": {
+          "question": "Нормально ли забывать слова, которые я уже учил(а)?",
+          "answer": "Да. Забывание — естественная часть обучения. Чтобы пассивная лексика стала доступной в речи, слова нужно неоднократно вспоминать через интервалы и использовать в предложениях и реальных ситуациях."
+        },
+        "zh-CN": {
+          "question": "忘记已经学过的单词正常吗？",
+          "answer": "正常。遗忘是学习过程的一部分。要把被动词汇变成说话时能迅速使用的词汇，需要隔一段时间反复主动回忆，并在句子和真实情境中使用。"
+        }
+      }
+    },
+    {
+      "id": "faq-021",
+      "intent": "best-way-to-learn",
+      "category": "method",
+      "priority": "high",
+      "searchIntent": "informational",
+      "featured": true,
+      "applicableCourseLanguages": [
+        "en",
+        "fr",
+        "es",
+        "de"
+      ],
+      "parameters": [],
+      "sourceKeywordsPtPT": [
+        "melhor forma aprender inglês",
+        "melhor método idiomas",
+        "como aprender língua"
+      ],
+      "localizations": {
+        "pt-PT": {
+          "question": "Qual é a melhor forma de aprender uma nova língua?",
+          "answer": "Um percurso eficaz combina compreensão, vocabulário, construção de frases, pronúncia e muita utilização da língua. O método deve ser adequado ao nível e aos objetivos do aluno e incluir prática frequente e feedback."
+        },
+        "en-US": {
+          "question": "What is the best way to learn a new language?",
+          "answer": "An effective learning path combines comprehension, vocabulary, sentence building, pronunciation and frequent use of the language. The method should match your level, goals and pace and include regular feedback."
+        },
+        "es-ES": {
+          "question": "¿Cuál es la mejor forma de aprender un nuevo idioma?",
+          "answer": "Un aprendizaje eficaz combina comprensión, vocabulario, construcción de frases, pronunciación y uso frecuente del idioma. El método debe adaptarse a tu nivel, objetivos y ritmo e incluir feedback regular."
+        },
+        "fr-FR": {
+          "question": "Quelle est la meilleure façon d'apprendre une nouvelle langue ?",
+          "answer": "Un parcours efficace combine compréhension, vocabulaire, construction de phrases, prononciation et utilisation fréquente de la langue. La méthode doit être adaptée à votre niveau, vos objectifs et votre rythme, avec un feedback régulier."
+        },
+        "de-DE": {
+          "question": "Was ist die beste Methode, um eine neue Sprache zu lernen?",
+          "answer": "Ein wirksamer Lernweg verbindet Verständnis, Wortschatz, Satzbildung, Aussprache und häufige Anwendung. Die Methode sollte zu Ihrem Niveau, Ihren Zielen und Ihrem Tempo passen und regelmäßiges Feedback enthalten."
+        },
+        "it-IT": {
+          "question": "Qual è il modo migliore per imparare una nuova lingua?",
+          "answer": "Un percorso efficace combina comprensione, vocabolario, costruzione di frasi, pronuncia e uso frequente della lingua. Il metodo dovrebbe adattarsi al tuo livello, ai tuoi obiettivi e al tuo ritmo e includere feedback regolare."
+        },
+        "ja-JP": {
+          "question": "新しい言語を学ぶ最も効果的な方法は何ですか？",
+          "answer": "理解、語彙、文作り、発音、実際の使用を組み合わせる方法が効果的です。学習者のレベルや目的に合わせ、頻繁な練習とフィードバックを取り入れることが重要です。"
+        },
+        "ru-RU": {
+          "question": "Как лучше всего учить новый язык?",
+          "answer": "Эффективное обучение сочетает понимание, лексику, построение предложений, произношение и активное использование языка. Метод должен соответствовать уровню и целям и включать частую практику и обратную связь."
+        },
+        "zh-CN": {
+          "question": "学习一门新语言最有效的方法是什么？",
+          "answer": "有效的学习通常结合理解、词汇、造句、发音和大量实际使用。方法应适合学习者的水平与目标，并包含高频练习和反馈。"
+        }
+      }
+    },
+    {
+      "id": "faq-022",
+      "intent": "apps-only",
+      "category": "method",
+      "priority": "high",
+      "searchIntent": "informational",
+      "featured": false,
+      "applicableCourseLanguages": [
+        "en",
+        "fr",
+        "es",
+        "de"
+      ],
+      "parameters": [],
+      "sourceKeywordsPtPT": [
+        "aprender inglês com app",
+        "Duolingo suficiente",
+        "aplicações idiomas"
+      ],
+      "localizations": {
+        "pt-PT": {
+          "question": "É possível aprender apenas com aplicações?",
+          "answer": "As aplicações podem ser excelentes para criar rotina, rever vocabulário e praticar conteúdos básicos. Para desenvolver comunicação espontânea, pronúncia e capacidade de reagir numa conversa real, a interação com outras pessoas e o feedback de um professor acrescentam valor importante."
+        },
+        "en-US": {
+          "question": "Can I learn a language using only apps?",
+          "answer": "Apps can be useful for building a routine and reviewing vocabulary and basic content. Real interaction and teacher feedback add important practice for spontaneous communication and pronunciation."
+        },
+        "es-ES": {
+          "question": "¿Es posible aprender un idioma solo con aplicaciones?",
+          "answer": "Las aplicaciones pueden ayudar a crear hábito y repasar vocabulario y contenidos básicos. La interacción real y el feedback de un profesor aportan práctica importante para la comunicación espontánea y la pronunciación."
+        },
+        "fr-FR": {
+          "question": "Peut-on apprendre une langue uniquement avec des applications ?",
+          "answer": "Les applications sont utiles pour créer une routine et réviser le vocabulaire ou les bases. L'interaction réelle et le feedback d'un professeur apportent toutefois une pratique importante pour la communication spontanée et la prononciation."
+        },
+        "de-DE": {
+          "question": "Kann man eine Sprache nur mit Apps lernen?",
+          "answer": "Apps sind nützlich, um eine Routine aufzubauen und Wortschatz oder Grundlagen zu wiederholen. Echte Interaktion und Feedback durch eine Lehrkraft sind für spontane Kommunikation und Aussprache jedoch besonders wertvoll."
+        },
+        "it-IT": {
+          "question": "È possibile imparare una lingua solo con le app?",
+          "answer": "Le app possono essere utili per creare una routine e ripassare vocabolario e contenuti di base. L'interazione reale e il feedback di un insegnante aggiungono una pratica importante per comunicazione spontanea e pronuncia."
+        },
+        "ja-JP": {
+          "question": "アプリだけで言語を学ぶことはできますか？",
+          "answer": "アプリは習慣づくり、語彙復習、基礎練習に役立ちます。一方、自然な会話、発音、相手に応じて反応する力を伸ばすには、人とのやり取りや教師からのフィードバックが大きな助けになります。"
+        },
+        "ru-RU": {
+          "question": "Можно ли выучить язык только с помощью приложений?",
+          "answer": "Приложения хорошо помогают выработать привычку, повторять лексику и отрабатывать основы. Для спонтанной речи, произношения и умения реагировать в живом разговоре особенно полезны взаимодействие с людьми и обратная связь преподавателя."
+        },
+        "zh-CN": {
+          "question": "只用语言学习App可以学会吗？",
+          "answer": "App非常适合建立习惯、复习词汇和练习基础内容。但要发展自然对话、发音以及在真实交流中即时回应的能力，与他人互动和教师反馈非常有价值。"
+        }
+      }
+    },
+    {
+      "id": "faq-023",
+      "intent": "grammar-for-speaking",
+      "category": "method",
+      "priority": "high",
+      "searchIntent": "informational",
+      "featured": false,
+      "applicableCourseLanguages": [
+        "en",
+        "fr",
+        "es",
+        "de"
+      ],
+      "parameters": [],
+      "sourceKeywordsPtPT": [
+        "gramática para falar inglês",
+        "aprender inglês sem gramática",
+        "speaking"
+      ],
+      "localizations": {
+        "pt-PT": {
+          "question": "Preciso de estudar muita gramática para aprender a falar?",
+          "answer": "A gramática é útil porque organiza a comunicação, mas não precisa de ser estudada isoladamente. Para falar melhor, é mais eficaz aprender estruturas dentro de frases e situações e utilizá-las repetidamente na comunicação."
+        },
+        "en-US": {
+          "question": "Do I need to study a lot of grammar to learn to speak?",
+          "answer": "Grammar helps organise communication, but it does not need to be studied in isolation. It is often more useful to learn structures inside sentences and situations and use them repeatedly."
+        },
+        "es-ES": {
+          "question": "¿Necesito estudiar mucha gramática para aprender a hablar?",
+          "answer": "La gramática ayuda a organizar la comunicación, pero no necesita estudiarse de forma aislada. Suele ser más útil aprender estructuras dentro de frases y situaciones y utilizarlas repetidamente."
+        },
+        "fr-FR": {
+          "question": "Dois-je étudier beaucoup de grammaire pour apprendre à parler ?",
+          "answer": "La grammaire aide à structurer la communication, mais elle n'a pas besoin d'être étudiée isolément. Il est souvent plus efficace d'apprendre des structures dans des phrases et des situations, puis de les réutiliser."
+        },
+        "de-DE": {
+          "question": "Muss ich viel Grammatik lernen, um sprechen zu können?",
+          "answer": "Grammatik hilft dabei, Kommunikation zu strukturieren, muss aber nicht isoliert gelernt werden. Oft ist es wirksamer, Strukturen in Sätzen und Situationen zu lernen und wiederholt anzuwenden."
+        },
+        "it-IT": {
+          "question": "Devo studiare molta grammatica per imparare a parlare?",
+          "answer": "La grammatica aiuta a organizzare la comunicazione, ma non deve essere studiata in isolamento. Spesso è più utile imparare strutture all'interno di frasi e situazioni e riutilizzarle più volte."
+        },
+        "ja-JP": {
+          "question": "話せるようになるには文法をたくさん勉強する必要がありますか？",
+          "answer": "文法はコミュニケーションを整理するために役立ちますが、単独で大量に学ぶ必要はありません。文や場面の中で文型を学び、繰り返し使う方が会話力につながりやすいです。"
+        },
+        "ru-RU": {
+          "question": "Нужно ли много учить грамматику, чтобы говорить?",
+          "answer": "Грамматика помогает организовать речь, но её необязательно изучать отдельно в больших объёмах. Для разговора полезнее осваивать конструкции внутри фраз и ситуаций и многократно применять их."
+        },
+        "zh-CN": {
+          "question": "想学会说话，需要大量学习语法吗？",
+          "answer": "语法有助于组织表达，但不一定要脱离语境大量死记。对口语来说，在句子和场景中学习结构并反复使用通常更有效。"
+        }
+      }
+    },
+    {
+      "id": "faq-024",
+      "intent": "conversation-only",
+      "category": "method",
+      "priority": "high",
+      "searchIntent": "informational",
+      "featured": false,
+      "applicableCourseLanguages": [
+        "en",
+        "fr",
+        "es",
+        "de"
+      ],
+      "parameters": [],
+      "sourceKeywordsPtPT": [
+        "aulas conversação",
+        "aprender só conversando",
+        "curso conversação"
+      ],
+      "localizations": {
+        "pt-PT": {
+          "question": "Conversação é suficiente para aprender um idioma?",
+          "answer": "Conversação é essencial, mas funciona melhor quando é apoiada por vocabulário, compreensão auditiva, pronúncia e estruturas adequadas ao nível. Para iniciantes, alguma preparação e orientação tornam a conversa muito mais produtiva."
+        },
+        "en-US": {
+          "question": "Is conversation alone enough to learn a language?",
+          "answer": "Conversation is essential, but it works best when supported by vocabulary, listening, pronunciation and structures appropriate to your level. Beginners usually benefit from more guidance and preparation."
+        },
+        "es-ES": {
+          "question": "¿La conversación por sí sola es suficiente para aprender un idioma?",
+          "answer": "La conversación es esencial, pero funciona mejor cuando se apoya en vocabulario, comprensión auditiva, pronunciación y estructuras adecuadas al nivel. Los principiantes suelen necesitar más orientación."
+        },
+        "fr-FR": {
+          "question": "La conversation seule suffit-elle pour apprendre une langue ?",
+          "answer": "La conversation est essentielle, mais elle fonctionne mieux avec du vocabulaire, de la compréhension orale, de la prononciation et des structures adaptées au niveau. Les débutants ont généralement besoin de davantage de guidage."
+        },
+        "de-DE": {
+          "question": "Reicht Konversation allein aus, um eine Sprache zu lernen?",
+          "answer": "Sprechen ist zentral, funktioniert aber am besten zusammen mit Wortschatz, Hörverstehen, Aussprache und Strukturen auf dem passenden Niveau. Anfänger profitieren meist von zusätzlicher Anleitung und Vorbereitung."
+        },
+        "it-IT": {
+          "question": "La conversazione da sola basta per imparare una lingua?",
+          "answer": "La conversazione è essenziale, ma funziona meglio se sostenuta da vocabolario, comprensione orale, pronuncia e strutture adeguate al livello. I principianti di solito hanno bisogno di più guida."
+        },
+        "ja-JP": {
+          "question": "会話練習だけで言語を学べますか？",
+          "answer": "会話は非常に重要ですが、語彙、リスニング、発音、レベルに合った文型と組み合わせるとより効果的です。初心者ほど、会話の前に少し準備やガイドがある方が学習しやすくなります。"
+        },
+        "ru-RU": {
+          "question": "Достаточно ли одной разговорной практики, чтобы выучить язык?",
+          "answer": "Разговорная практика крайне важна, но лучше работает вместе с лексикой, аудированием, произношением и подходящими уровню конструкциями. Новичкам особенно полезны подготовка и поддержка перед свободным разговором."
+        },
+        "zh-CN": {
+          "question": "只练口语就足够学会一门语言吗？",
+          "answer": "口语非常重要，但与词汇、听力、发音以及符合当前水平的句型结合时效果更好。对于初学者，适当准备和引导会让对话练习更有效。"
+        }
+      }
+    },
+    {
+      "id": "faq-025",
+      "intent": "target-language-only-classes",
+      "category": "method",
+      "priority": "medium",
+      "searchIntent": "informational",
+      "featured": false,
+      "applicableCourseLanguages": [
+        "en",
+        "fr",
+        "es",
+        "de"
+      ],
+      "parameters": [],
+      "sourceKeywordsPtPT": [
+        "aula 100% inglês",
+        "professor fala português",
+        "imersão"
+      ],
+      "localizations": {
+        "pt-PT": {
+          "question": "As aulas devem ser dadas totalmente no idioma que estou a aprender?",
+          "answer": "Depende do nível. A exposição ao idioma-alvo é importante e deve aumentar progressivamente. Para iniciantes, explicações pontuais em português podem evitar confusão e acelerar a compreensão, desde que não substituam a prática real da nova língua."
+        },
+        "en-US": {
+          "question": "Should lessons be taught entirely in the language I'm learning?",
+          "answer": "It depends on your level. Exposure to the target language should increase progressively, but brief explanations in your first language can help beginners avoid confusion without replacing real practice."
+        },
+        "es-ES": {
+          "question": "¿Las clases deben impartirse totalmente en el idioma que estoy aprendiendo?",
+          "answer": "Depende de tu nivel. La exposición al idioma objetivo debe aumentar progresivamente, pero unas explicaciones puntuales en tu lengua pueden ayudar a los principiantes sin sustituir la práctica real."
+        },
+        "fr-FR": {
+          "question": "Les cours doivent-ils être entièrement donnés dans la langue que j'apprends ?",
+          "answer": "Cela dépend du niveau. L'exposition à la langue cible doit augmenter progressivement, mais quelques explications ponctuelles dans votre langue peuvent aider les débutants sans remplacer la pratique réelle."
+        },
+        "de-DE": {
+          "question": "Sollte der Unterricht vollständig in der Zielsprache stattfinden?",
+          "answer": "Das hängt vom Niveau ab. Der Anteil der Zielsprache sollte schrittweise steigen, aber kurze Erklärungen in der eigenen Sprache können Anfängern helfen, ohne die eigentliche Sprachpraxis zu ersetzen."
+        },
+        "it-IT": {
+          "question": "Le lezioni devono essere svolte interamente nella lingua che sto imparando?",
+          "answer": "Dipende dal livello. L'esposizione alla lingua obiettivo dovrebbe aumentare gradualmente, ma brevi spiegazioni nella tua lingua possono aiutare i principianti senza sostituire la pratica reale."
+        },
+        "ja-JP": {
+          "question": "授業はすべて学習中の言語だけで行うべきですか？",
+          "answer": "レベルによります。目標言語への接触は大切で、段階的に増やすのが理想です。初心者には必要に応じて母語で短く説明する方が混乱を減らせますが、実際の目標言語の練習を置き換えるものではありません。"
+        },
+        "ru-RU": {
+          "question": "Должны ли уроки проходить полностью на изучаемом языке?",
+          "answer": "Это зависит от уровня. Контакт с изучаемым языком важен и должен постепенно увеличиваться. Новичкам иногда полезны короткие объяснения на родном языке, если они не заменяют реальную практику."
+        },
+        "zh-CN": {
+          "question": "课堂应该完全使用正在学习的语言吗？",
+          "answer": "取决于水平。增加目标语言的输入很重要，并应逐步提高比例。对于初学者，必要时用母语做简短解释可以减少困惑，但不能代替真正的目标语言练习。"
+        }
+      }
+    },
+    {
+      "id": "faq-026",
+      "intent": "native-teacher",
+      "category": "method",
+      "priority": "high",
+      "searchIntent": "commercial",
+      "featured": true,
+      "applicableCourseLanguages": [
+        "en",
+        "fr",
+        "es",
+        "de"
+      ],
+      "parameters": [],
+      "sourceKeywordsPtPT": [
+        "professor nativo",
+        "nativo ou brasileiro",
+        "melhor professor inglês"
+      ],
+      "localizations": {
+        "pt-PT": {
+          "question": "É melhor aprender com professor nativo?",
+          "answer": "Ser falante nativo, por si só, não garante melhor ensino. Formação pedagógica, experiência, capacidade de explicar, corrigir e adaptar as aulas ao aluno são fatores essenciais. Professores nativos e não nativos podem oferecer excelente aprendizagem quando possuem essas competências."
+        },
+        "en-US": {
+          "question": "Is it better to learn with a native-speaking teacher?",
+          "answer": "Being a native speaker does not automatically make someone a better teacher. Teaching skills, experience, clear explanations, useful correction and the ability to adapt to the learner are equally important."
+        },
+        "es-ES": {
+          "question": "¿Es mejor aprender con un profesor nativo?",
+          "answer": "Ser hablante nativo no garantiza por sí solo una mejor enseñanza. La capacidad pedagógica, la experiencia, las explicaciones claras, las correcciones útiles y la adaptación al alumno son igualmente importantes."
+        },
+        "fr-FR": {
+          "question": "Vaut-il mieux apprendre avec un professeur natif ?",
+          "answer": "Être locuteur natif ne garantit pas à lui seul un meilleur enseignement. Les compétences pédagogiques, l'expérience, la clarté des explications, la qualité des corrections et l'adaptation à l'apprenant sont tout aussi importantes."
+        },
+        "de-DE": {
+          "question": "Ist es besser, mit einer muttersprachlichen Lehrkraft zu lernen?",
+          "answer": "Muttersprachlichkeit allein garantiert keinen besseren Unterricht. Pädagogische Fähigkeiten, Erfahrung, klare Erklärungen, hilfreiche Korrekturen und die Anpassung an den Lernenden sind ebenso wichtig."
+        },
+        "it-IT": {
+          "question": "È meglio imparare con un insegnante madrelingua?",
+          "answer": "Essere madrelingua non garantisce da solo un insegnamento migliore. Competenze didattiche, esperienza, chiarezza, correzioni utili e capacità di adattarsi allo studente sono altrettanto importanti."
+        },
+        "ja-JP": {
+          "question": "ネイティブスピーカーの先生から学ぶ方がよいですか？",
+          "answer": "ネイティブであることだけで、教える力が高いとは限りません。教授法の知識、経験、説明・修正能力、学習者への適応力が重要です。ネイティブでも非ネイティブでも、これらの力があれば質の高い授業ができます。"
+        },
+        "ru-RU": {
+          "question": "Лучше ли учиться у преподавателя — носителя языка?",
+          "answer": "Сам факт того, что преподаватель является носителем, не гарантирует качества обучения. Важны педагогическая подготовка, опыт, умение объяснять, корректировать и адаптироваться к ученику. Отлично преподавать могут и носители, и неносители языка."
+        },
+        "zh-CN": {
+          "question": "跟母语教师学习一定更好吗？",
+          "answer": "教师是母语者并不自动意味着教学效果更好。教学训练、经验、解释和纠错能力以及根据学生调整课程的能力都很重要。具备这些能力的母语或非母语教师都可以提供高质量教学。"
+        }
+      }
+    },
+    {
+      "id": "faq-027",
+      "intent": "personalized-classes",
+      "category": "method",
+      "priority": "high",
+      "searchIntent": "commercial",
+      "featured": false,
+      "applicableCourseLanguages": [
+        "en",
+        "fr",
+        "es",
+        "de"
+      ],
+      "parameters": [],
+      "sourceKeywordsPtPT": [
+        "aula personalizada",
+        "curso inglês personalizado",
+        "objetivos aluno"
+      ],
+      "localizations": {
+        "pt-PT": {
+          "question": "As aulas são personalizadas de acordo com os meus objetivos?",
+          "answer": "Nas aulas individuais, o percurso pode ser ajustado com maior precisão ao nível, ritmo e objetivos do aluno. Em turmas, a personalização é mais limitada, mas o professor pode adaptar atividades e feedback às necessidades do grupo."
+        },
+        "en-US": {
+          "question": "Are lessons personalised to my goals?",
+          "answer": "Individual lessons can be adapted closely to your level, pace and objectives. In groups, personalisation is more limited, but activities and feedback can still be adjusted to the group's needs."
+        },
+        "es-ES": {
+          "question": "¿Las clases se personalizan según mis objetivos?",
+          "answer": "Las clases individuales pueden adaptarse con mucha precisión a tu nivel, ritmo y objetivos. En grupo la personalización es menor, aunque las actividades y el feedback pueden ajustarse a las necesidades del grupo."
+        },
+        "fr-FR": {
+          "question": "Les cours sont-ils personnalisés selon mes objectifs ?",
+          "answer": "Les cours individuels peuvent être adaptés très précisément à votre niveau, votre rythme et vos objectifs. En groupe, la personnalisation est plus limitée, mais les activités et le feedback peuvent être ajustés aux besoins du groupe."
+        },
+        "de-DE": {
+          "question": "Werden die Unterrichtsstunden an meine Ziele angepasst?",
+          "answer": "Einzelunterricht lässt sich sehr genau an Niveau, Tempo und Ziele anpassen. In Gruppen ist die Personalisierung begrenzter, dennoch können Aufgaben und Feedback auf die Bedürfnisse der Gruppe abgestimmt werden."
+        },
+        "it-IT": {
+          "question": "Le lezioni sono personalizzate in base ai miei obiettivi?",
+          "answer": "Le lezioni individuali possono essere adattate con grande precisione a livello, ritmo e obiettivi. Nei gruppi la personalizzazione è più limitata, ma attività e feedback possono comunque essere adeguati alle esigenze del gruppo."
+        },
+        "ja-JP": {
+          "question": "授業は自分の目標に合わせてカスタマイズされますか？",
+          "answer": "個人レッスンでは、レベル、ペース、目的により細かく合わせられます。グループでは調整の幅は小さくなりますが、教師は活動やフィードバックをグループのニーズに合わせることができます。"
+        },
+        "ru-RU": {
+          "question": "Адаптируются ли занятия под мои цели?",
+          "answer": "На индивидуальных занятиях программу можно точнее настроить под уровень, темп и цели. В группе персонализация ограниченнее, но преподаватель всё равно может адаптировать задания и обратную связь к потребностям группы."
+        },
+        "zh-CN": {
+          "question": "课程可以根据我的目标个性化吗？",
+          "answer": "一对一课程可以更精确地按照你的水平、节奏和目标调整。小组课的个性化空间较小，但教师仍可以根据小组需求调整活动和反馈。"
+        }
+      }
+    },
+    {
+      "id": "faq-028",
+      "intent": "online-vs-in-person",
+      "category": "modality",
+      "priority": "high",
+      "searchIntent": "commercial",
+      "featured": true,
+      "applicableCourseLanguages": [
+        "en",
+        "fr",
+        "es",
+        "de"
+      ],
+      "parameters": [],
+      "sourceKeywordsPtPT": [
+        "online ou presencial",
+        "curso inglês online",
+        "aulas presenciais"
+      ],
+      "localizations": {
+        "pt-PT": {
+          "question": "É melhor fazer aulas online ou presenciais?",
+          "answer": "As duas modalidades podem gerar bons resultados. Aulas online oferecem flexibilidade e eliminam deslocações; aulas presenciais podem facilitar a interação física e a criação de rotina. A melhor opção é aquela que consegue frequentar com consistência."
+        },
+        "en-US": {
+          "question": "Are online or in-person lessons better?",
+          "answer": "Both formats can work well. Online lessons offer flexibility and no travel time, while in-person lessons can strengthen physical interaction and routine. The best option is the one you can attend consistently."
+        },
+        "es-ES": {
+          "question": "¿Es mejor estudiar online o de forma presencial?",
+          "answer": "Ambas modalidades pueden funcionar bien. Las clases online ofrecen flexibilidad y evitan desplazamientos; las presenciales pueden reforzar la interacción física y la rutina. La mejor opción es la que puedas mantener con constancia."
+        },
+        "fr-FR": {
+          "question": "Vaut-il mieux suivre des cours en ligne ou en présentiel ?",
+          "answer": "Les deux formats peuvent être efficaces. Les cours en ligne offrent plus de flexibilité et évitent les déplacements ; le présentiel peut renforcer l'interaction physique et la routine. Le meilleur format est celui que vous pouvez suivre régulièrement."
+        },
+        "de-DE": {
+          "question": "Sind Online- oder Präsenzkurse besser?",
+          "answer": "Beide Formate können gut funktionieren. Onlineunterricht bietet Flexibilität und spart Wege; Präsenzunterricht kann direkte Interaktion und Routine fördern. Am besten ist das Format, das Sie regelmäßig besuchen können."
+        },
+        "it-IT": {
+          "question": "Sono meglio le lezioni online o in presenza?",
+          "answer": "Entrambi i formati possono funzionare bene. Le lezioni online offrono flessibilità e niente spostamenti; quelle in presenza possono rafforzare l'interazione diretta e la routine. La scelta migliore è quella che riesci a seguire con costanza."
+        },
+        "ja-JP": {
+          "question": "オンライン授業と対面授業では、どちらがよいですか？",
+          "answer": "どちらでも良い成果を得られます。オンラインは柔軟で移動が不要、対面はその場での交流や学習習慣を作りやすい利点があります。継続して参加できる形式を選ぶことが大切です。"
+        },
+        "ru-RU": {
+          "question": "Что лучше: онлайн-занятия или очные?",
+          "answer": "Оба формата могут давать хорошие результаты. Онлайн обеспечивает гибкость и экономит время на дорогу; очный формат помогает живому взаимодействию и формированию учебной рутины. Лучше выбирать формат, который вы сможете посещать регулярно."
+        },
+        "zh-CN": {
+          "question": "线上课和面授课哪种更好？",
+          "answer": "两种形式都能取得好效果。线上课更灵活、无需通勤；面授课有助于现场互动和建立学习习惯。最好的形式是你能够长期稳定参加的形式。"
+        }
+      }
+    },
+    {
+      "id": "faq-029",
+      "intent": "online-speaking",
+      "category": "modality",
+      "priority": "high",
+      "searchIntent": "commercial",
+      "featured": false,
+      "applicableCourseLanguages": [
+        "en",
+        "fr",
+        "es",
+        "de"
+      ],
+      "parameters": [],
+      "sourceKeywordsPtPT": [
+        "aulas online funcionam",
+        "inglês online funciona",
+        "speaking online"
+      ],
+      "localizations": {
+        "pt-PT": {
+          "question": "Aulas online funcionam mesmo para aprender a falar?",
+          "answer": "Sim. Quando são aulas ao vivo, com interação, prática oral e feedback, o formato online permite desenvolver conversação, compreensão e pronúncia. O resultado depende mais da qualidade da prática e da frequência do que do facto de a aula ocorrer num ecrã."
+        },
+        "en-US": {
+          "question": "Do online lessons really work for speaking?",
+          "answer": "Yes. Live online lessons with interaction, speaking practice and feedback can develop conversation, listening and pronunciation. Results depend more on practice quality and frequency than on the screen itself."
+        },
+        "es-ES": {
+          "question": "¿Las clases online realmente sirven para aprender a hablar?",
+          "answer": "Sí. Las clases online en directo con interacción, práctica oral y feedback pueden desarrollar conversación, comprensión y pronunciación. El resultado depende más de la calidad y frecuencia de la práctica que de la pantalla."
+        },
+        "fr-FR": {
+          "question": "Les cours en ligne fonctionnent-ils vraiment pour apprendre à parler ?",
+          "answer": "Oui. Des cours en direct avec interaction, pratique orale et feedback peuvent développer la conversation, la compréhension et la prononciation. Les résultats dépendent davantage de la qualité et de la fréquence de la pratique que de l'écran."
+        },
+        "de-DE": {
+          "question": "Funktioniert Onlineunterricht wirklich, um sprechen zu lernen?",
+          "answer": "Ja. Live-Onlineunterricht mit Interaktion, Sprechpraxis und Feedback kann Konversation, Hörverstehen und Aussprache entwickeln. Entscheidend sind eher Qualität und Häufigkeit der Übung als der Bildschirm selbst."
+        },
+        "it-IT": {
+          "question": "Le lezioni online funzionano davvero per imparare a parlare?",
+          "answer": "Sì. Lezioni online dal vivo con interazione, pratica orale e feedback possono sviluppare conversazione, comprensione e pronuncia. I risultati dipendono più dalla qualità e dalla frequenza della pratica che dallo schermo."
+        },
+        "ja-JP": {
+          "question": "オンライン授業でも本当に話せるようになりますか？",
+          "answer": "はい。ライブ授業で対話、発話練習、フィードバックがあれば、オンラインでも会話力、リスニング、発音を伸ばせます。結果は画面越しかどうかより、練習の質と頻度に左右されます。"
+        },
+        "ru-RU": {
+          "question": "Действительно ли онлайн-занятия помогают научиться говорить?",
+          "answer": "Да. Если уроки проходят вживую и включают взаимодействие, разговорную практику и обратную связь, онлайн можно развивать речь, понимание и произношение. Результат больше зависит от качества и частоты практики, чем от экрана."
+        },
+        "zh-CN": {
+          "question": "线上课真的能提高口语吗？",
+          "answer": "可以。只要是实时互动课程，并包含口语练习和反馈，线上形式同样可以提升会话、听力和发音。效果更多取决于练习质量和频率，而不是是否隔着屏幕。"
+        }
+      }
+    },
+    {
+      "id": "faq-030",
+      "intent": "private-vs-group",
+      "category": "modality",
+      "priority": "high",
+      "searchIntent": "commercial",
+      "featured": true,
+      "applicableCourseLanguages": [
+        "en",
+        "fr",
+        "es",
+        "de"
+      ],
+      "parameters": [],
+      "sourceKeywordsPtPT": [
+        "aula individual ou grupo",
+        "aulas particulares",
+        "turma inglês"
+      ],
+      "localizations": {
+        "pt-PT": {
+          "question": "É melhor fazer aulas individuais ou em grupo?",
+          "answer": "Aulas individuais oferecem maior personalização, mais tempo de fala por aluno e flexibilidade. Turmas reduzidas oferecem interação com diferentes pessoas e podem tornar a aprendizagem mais social. A escolha depende do perfil, objetivo e orçamento."
+        },
+        "en-US": {
+          "question": "Are private lessons or group lessons better?",
+          "answer": "Private lessons offer more personalisation, speaking time and flexibility. Small groups add interaction with different people and a more social learning experience. The best choice depends on your profile, goals and budget."
+        },
+        "es-ES": {
+          "question": "¿Es mejor hacer clases individuales o en grupo?",
+          "answer": "Las clases individuales ofrecen más personalización, tiempo de habla y flexibilidad. Los grupos reducidos aportan interacción con otras personas y una experiencia más social. La elección depende de tu perfil, objetivos y presupuesto."
+        },
+        "fr-FR": {
+          "question": "Vaut-il mieux prendre des cours particuliers ou en groupe ?",
+          "answer": "Les cours particuliers offrent davantage de personnalisation, de temps de parole et de flexibilité. Les petits groupes apportent une interaction avec différentes personnes et une dimension plus sociale. Le choix dépend de votre profil, de vos objectifs et de votre budget."
+        },
+        "de-DE": {
+          "question": "Sind Einzel- oder Gruppenkurse besser?",
+          "answer": "Einzelunterricht bietet mehr Personalisierung, Sprechzeit und Flexibilität. Kleine Gruppen ermöglichen Austausch mit verschiedenen Personen und ein sozialeres Lernerlebnis. Die Wahl hängt von Profil, Zielen und Budget ab."
+        },
+        "it-IT": {
+          "question": "Sono meglio le lezioni individuali o di gruppo?",
+          "answer": "Le lezioni individuali offrono più personalizzazione, tempo di parola e flessibilità. I piccoli gruppi aggiungono interazione con persone diverse e un'esperienza più sociale. La scelta dipende da profilo, obiettivi e budget."
+        },
+        "ja-JP": {
+          "question": "個人レッスンとグループレッスンでは、どちらがよいですか？",
+          "answer": "個人レッスンは、より高い個別対応、発話時間、柔軟性が得られます。少人数グループは、複数の相手と話す機会や社会的な学びがあります。目的、性格、予算に合わせて選びましょう。"
+        },
+        "ru-RU": {
+          "question": "Что лучше: индивидуальные или групповые занятия?",
+          "answer": "Индивидуальные занятия дают больше персонализации, времени на собственную речь и гибкости. Небольшая группа позволяет взаимодействовать с разными людьми и делает обучение более социальным. Выбор зависит от целей, характера и бюджета."
+        },
+        "zh-CN": {
+          "question": "一对一课程和小组课程哪种更好？",
+          "answer": "一对一课程更个性化、每个学生的发言时间更多，也更灵活。小班课可以与不同的人互动，学习体验更具社交性。选择取决于你的性格、目标和预算。"
+        }
+      }
+    },
+    {
+      "id": "faq-031",
+      "intent": "group-size",
+      "category": "modality",
+      "priority": "medium",
+      "searchIntent": "commercial",
+      "featured": false,
+      "applicableCourseLanguages": [
+        "en",
+        "fr",
+        "es",
+        "de"
+      ],
+      "parameters": [],
+      "sourceKeywordsPtPT": [
+        "tamanho turma inglês",
+        "turma reduzida",
+        "quantos alunos"
+      ],
+      "localizations": {
+        "pt-PT": {
+          "question": "Quantos alunos deve ter uma turma de idiomas?",
+          "answer": "Turmas menores tendem a proporcionar mais oportunidades de fala e feedback individual. Mais importante do que um número isolado é garantir que cada aluno tenha tempo real para participar e que os níveis sejam compatíveis."
+        },
+        "en-US": {
+          "question": "How many students should there be in a language class?",
+          "answer": "Smaller groups usually provide more speaking opportunities and individual feedback. More important than a fixed number is making sure every learner has real participation time and compatible proficiency levels."
+        },
+        "es-ES": {
+          "question": "¿Cuántos alumnos debería tener una clase de idiomas?",
+          "answer": "Los grupos pequeños suelen ofrecer más oportunidades para hablar y recibir feedback individual. Más importante que un número fijo es que todos tengan tiempo real de participación y niveles compatibles."
+        },
+        "fr-FR": {
+          "question": "Combien d'élèves devrait-il y avoir dans un cours de langue ?",
+          "answer": "Les petits groupes offrent généralement plus d'occasions de parler et de recevoir un feedback individuel. Plus qu'un nombre fixe, l'essentiel est que chacun dispose d'un vrai temps de participation et que les niveaux soient compatibles."
+        },
+        "de-DE": {
+          "question": "Wie viele Lernende sollte ein Sprachkurs haben?",
+          "answer": "Kleinere Gruppen bieten meist mehr Sprechgelegenheiten und individuelles Feedback. Wichtiger als eine feste Zahl ist, dass alle echte Beteiligungszeit haben und die Sprachniveaus zusammenpassen."
+        },
+        "it-IT": {
+          "question": "Quanti studenti dovrebbe avere una classe di lingue?",
+          "answer": "I gruppi più piccoli offrono di solito più opportunità di parlare e feedback individuale. Più di un numero fisso conta che ogni studente abbia un vero tempo di partecipazione e che i livelli siano compatibili."
+        },
+        "ja-JP": {
+          "question": "語学クラスは何人くらいが適切ですか？",
+          "answer": "少人数の方が一人ひとりの発話時間や個別フィードバックを確保しやすい傾向があります。人数そのものより、全員が十分に参加でき、レベルが合っていることが重要です。"
+        },
+        "ru-RU": {
+          "question": "Сколько учеников должно быть в языковой группе?",
+          "answer": "В небольших группах обычно легче обеспечить каждому больше времени на речь и индивидуальную обратную связь. Важнее точного числа то, чтобы все активно участвовали и имели сопоставимый уровень."
+        },
+        "zh-CN": {
+          "question": "语言班多少人比较合适？",
+          "answer": "人数较少的班级通常能给每位学生更多发言机会和个别反馈。比具体人数更重要的是每个人都有足够参与时间，而且学生水平相近。"
+        }
+      }
+    },
+    {
+      "id": "faq-032",
+      "intent": "hybrid-classes",
+      "category": "modality",
+      "priority": "medium",
+      "searchIntent": "commercial",
+      "featured": false,
+      "applicableCourseLanguages": [
+        "en",
+        "fr",
+        "es",
+        "de"
+      ],
+      "parameters": [],
+      "sourceKeywordsPtPT": [
+        "curso híbrido idiomas",
+        "online e presencial",
+        "aulas híbridas"
+      ],
+      "localizations": {
+        "pt-PT": {
+          "question": "Posso combinar aulas online e presenciais?",
+          "answer": "Um modelo híbrido pode ser uma boa solução para quem procura contacto presencial sem perder flexibilidade. A disponibilidade depende da organização, do idioma, do professor e dos horários oferecidos."
+        },
+        "en-US": {
+          "question": "Can I combine online and in-person lessons?",
+          "answer": "A hybrid format can work well if you want some in-person contact without losing flexibility. Availability depends on the language, teacher, schedule and course organisation."
+        },
+        "es-ES": {
+          "question": "¿Puedo combinar clases online y presenciales?",
+          "answer": "Un formato híbrido puede ser una buena solución si quieres contacto presencial sin perder flexibilidad. La disponibilidad depende del idioma, profesor, horario y organización del curso."
+        },
+        "fr-FR": {
+          "question": "Puis-je combiner des cours en ligne et en présentiel ?",
+          "answer": "Un format hybride peut convenir si vous souhaitez garder du contact en présentiel sans perdre en flexibilité. La disponibilité dépend de la langue, du professeur, des horaires et de l'organisation du cours."
+        },
+        "de-DE": {
+          "question": "Kann ich Online- und Präsenzunterricht kombinieren?",
+          "answer": "Ein hybrides Format kann sinnvoll sein, wenn Sie persönlichen Kontakt möchten, ohne auf Flexibilität zu verzichten. Die Verfügbarkeit hängt von Sprache, Lehrkraft, Zeiten und Kursorganisation ab."
+        },
+        "it-IT": {
+          "question": "Posso combinare lezioni online e in presenza?",
+          "answer": "Un formato ibrido può essere utile se vuoi mantenere il contatto in presenza senza perdere flessibilità. La disponibilità dipende da lingua, insegnante, orari e organizzazione del corso."
+        },
+        "ja-JP": {
+          "question": "オンライン授業と対面授業を組み合わせることはできますか？",
+          "answer": "ハイブリッド形式は、対面での交流とオンラインの柔軟性を両立したい方に適しています。利用可能かどうかは、言語、教師、時間割、提供形式によって異なります。"
+        },
+        "ru-RU": {
+          "question": "Можно ли совмещать онлайн- и очные занятия?",
+          "answer": "Гибридный формат может подойти тем, кому нужен живой контакт без потери гибкости. Доступность зависит от языка, преподавателя, расписания и предлагаемых форматов."
+        },
+        "zh-CN": {
+          "question": "可以把线上课和面授课结合起来吗？",
+          "answer": "混合模式适合既希望有面对面互动，又需要灵活性的人。是否提供取决于语言、教师、时间安排和可用课程形式。"
+        }
+      }
+    },
+    {
+      "id": "faq-033",
+      "intent": "class-duration",
+      "category": "modality",
+      "priority": "high",
+      "searchIntent": "commercial",
+      "featured": false,
+      "applicableCourseLanguages": [
+        "en",
+        "fr",
+        "es",
+        "de"
+      ],
+      "parameters": [],
+      "sourceKeywordsPtPT": [
+        "duração aula inglês",
+        "50 minutos",
+        "quanto dura aula"
+      ],
+      "localizations": {
+        "pt-PT": {
+          "question": "Quanto tempo dura uma aula?",
+          "answer": "A duração varia entre escolas e formatos. Na Best Fluency, a aula padrão tem 50 minutos, permitindo tempo para recuperação do conteúdo anterior, prática orientada e produção oral."
+        },
+        "en-US": {
+          "question": "How long is a lesson?",
+          "answer": "Lesson length varies by school and format. At Best Fluency, a standard lesson lasts 50 minutes, allowing time for review, guided practice and speaking."
+        },
+        "es-ES": {
+          "question": "¿Cuánto dura una clase?",
+          "answer": "La duración varía según la escuela y el formato. En Best Fluency, una clase estándar dura 50 minutos, con tiempo para repaso, práctica guiada y producción oral."
+        },
+        "fr-FR": {
+          "question": "Combien de temps dure un cours ?",
+          "answer": "La durée varie selon l'école et le format. Chez Best Fluency, un cours standard dure 50 minutes, avec du temps pour la révision, la pratique guidée et la production orale."
+        },
+        "de-DE": {
+          "question": "Wie lange dauert eine Unterrichtsstunde?",
+          "answer": "Die Dauer variiert je nach Schule und Format. Bei Best Fluency dauert eine Standardstunde 50 Minuten und bietet Zeit für Wiederholung, angeleitete Übung und Sprechen."
+        },
+        "it-IT": {
+          "question": "Quanto dura una lezione?",
+          "answer": "La durata varia a seconda della scuola e del formato. In Best Fluency una lezione standard dura 50 minuti, con tempo per ripasso, pratica guidata e produzione orale."
+        },
+        "ja-JP": {
+          "question": "1回の授業は何分ですか？",
+          "answer": "授業時間は学校や形式によって異なります。Best Fluencyの標準授業は50分で、前回内容の想起、ガイド付き練習、発話練習を行えるよう構成されています。"
+        },
+        "ru-RU": {
+          "question": "Сколько длится одно занятие?",
+          "answer": "Продолжительность зависит от школы и формата. Стандартное занятие Best Fluency длится 50 минут и позволяет повторить предыдущий материал, выполнить управляемую практику и поработать над устной речью."
+        },
+        "zh-CN": {
+          "question": "一节课多长时间？",
+          "answer": "不同学校和课程形式的时长不同。Best Fluency的标准课程为50分钟，可安排复习、引导式练习和口语输出。"
+        }
+      }
+    },
+    {
+      "id": "faq-034",
+      "intent": "intensive-classes",
+      "category": "modality",
+      "priority": "medium",
+      "searchIntent": "commercial",
+      "featured": false,
+      "applicableCourseLanguages": [
+        "en",
+        "fr",
+        "es",
+        "de"
+      ],
+      "parameters": [],
+      "sourceKeywordsPtPT": [
+        "curso intensivo inglês",
+        "aulas intensivas",
+        "aprender rápido"
+      ],
+      "localizations": {
+        "pt-PT": {
+          "question": "Existem aulas intensivas para aprender mais rápido?",
+          "answer": "Sim, é possível aumentar a frequência semanal quando existe disponibilidade. Um curso mais intensivo aumenta o contacto com a língua, mas deve manter tempo suficiente para revisão, prática e consolidação entre as sessões."
+        },
+        "en-US": {
+          "question": "Are intensive courses available for faster progress?",
+          "answer": "A higher weekly frequency can be arranged when availability allows. More intensive study increases contact with the language, but it should still leave time for review, practice and consolidation."
+        },
+        "es-ES": {
+          "question": "¿Hay cursos intensivos para avanzar más rápido?",
+          "answer": "Cuando hay disponibilidad, se puede aumentar la frecuencia semanal. Un formato intensivo incrementa el contacto con el idioma, pero debe dejar tiempo suficiente para repasar, practicar y consolidar."
+        },
+        "fr-FR": {
+          "question": "Existe-t-il des cours intensifs pour progresser plus vite ?",
+          "answer": "Lorsque les disponibilités le permettent, il est possible d'augmenter la fréquence hebdomadaire. Un rythme intensif accroît le contact avec la langue, tout en devant laisser suffisamment de temps pour réviser et consolider."
+        },
+        "de-DE": {
+          "question": "Gibt es Intensivkurse für schnellere Fortschritte?",
+          "answer": "Wenn es die Verfügbarkeit erlaubt, kann die wöchentliche Frequenz erhöht werden. Intensiveres Lernen steigert den Sprachkontakt, sollte aber genügend Zeit für Wiederholung, Übung und Festigung lassen."
+        },
+        "it-IT": {
+          "question": "Esistono corsi intensivi per progredire più rapidamente?",
+          "answer": "Quando la disponibilità lo permette, si può aumentare la frequenza settimanale. Uno studio più intensivo aumenta il contatto con la lingua, ma dovrebbe lasciare abbastanza tempo per ripasso, pratica e consolidamento."
+        },
+        "ja-JP": {
+          "question": "より早く上達するための集中コースはありますか？",
+          "answer": "スケジュールに空きがあれば、週あたりの授業回数を増やすことができます。集中形式は言語に触れる量を増やせますが、授業間の復習と定着の時間も必要です。"
+        },
+        "ru-RU": {
+          "question": "Есть ли интенсивные занятия для более быстрого прогресса?",
+          "answer": "При наличии мест можно увеличить количество занятий в неделю. Интенсивный формат увеличивает контакт с языком, но между уроками всё равно нужно оставлять время на повторение и закрепление."
+        },
+        "zh-CN": {
+          "question": "有可以更快进步的强化课程吗？",
+          "answer": "如果时间和教师安排允许，可以提高每周上课频率。强化学习能增加语言接触量，但课间仍需要留出复习和巩固时间。"
+        }
+      }
+    },
+    {
+      "id": "faq-035",
+      "intent": "course-price-portugal",
+      "category": "pricing-enrolment",
+      "priority": "high",
+      "searchIntent": "commercial",
+      "featured": true,
+      "applicableCourseLanguages": [
+        "en",
+        "fr",
+        "es",
+        "de"
+      ],
+      "parameters": [],
+      "sourceKeywordsPtPT": [
+        "preço curso inglês Portugal",
+        "preço francês",
+        "preço espanhol"
+      ],
+      "localizations": {
+        "pt-PT": {
+          "question": "Quanto custa um curso de inglês, francês, espanhol ou alemão em Portugal?",
+          "answer": "Os preços variam bastante conforme a escola, o idioma, o formato, a duração, a frequência e se as aulas são individuais ou em grupo. Para comparar corretamente, verifique também a duração de cada aula, o tamanho da turma e o acompanhamento incluído."
+        },
+        "en-US": {
+          "question": "How much does an English, French, Spanish or German course cost in Portugal?",
+          "answer": "Prices vary according to the school, language, format, lesson length, frequency and whether lessons are private or group-based. Compare the full format, not only the advertised price."
+        },
+        "es-ES": {
+          "question": "¿Cuánto cuesta un curso de inglés, francés, español o alemán en Portugal?",
+          "answer": "Los precios varían según la escuela, el idioma, el formato, la duración, la frecuencia y si las clases son individuales o en grupo. Conviene comparar el formato completo y no solo el precio anunciado."
+        },
+        "fr-FR": {
+          "question": "Combien coûte un cours d'anglais, de français, d'espagnol ou d'allemand au Portugal ?",
+          "answer": "Les prix varient selon l'école, la langue, le format, la durée, la fréquence et le caractère individuel ou collectif des cours. Comparez le format complet et pas seulement le prix affiché."
+        },
+        "de-DE": {
+          "question": "Wie viel kostet ein Englisch-, Französisch-, Spanisch- oder Deutschkurs in Portugal?",
+          "answer": "Die Preise unterscheiden sich je nach Schule, Sprache, Format, Dauer, Häufigkeit und Einzel- oder Gruppenunterricht. Vergleichen Sie das gesamte Angebot und nicht nur den beworbenen Preis."
+        },
+        "it-IT": {
+          "question": "Quanto costa un corso di inglese, francese, spagnolo o tedesco in Portogallo?",
+          "answer": "I prezzi variano in base a scuola, lingua, formato, durata, frequenza e lezioni individuali o di gruppo. Conviene confrontare l'intero formato e non soltanto il prezzo pubblicizzato."
+        },
+        "ja-JP": {
+          "question": "ポルトガルで英語・フランス語・スペイン語・ドイツ語のコースはいくらですか？",
+          "answer": "料金は学校、言語、受講形式、授業時間、頻度、個人かグループかによって大きく異なります。比較するときは、1回の授業時間、クラス人数、含まれるサポートも確認しましょう。"
+        },
+        "ru-RU": {
+          "question": "Сколько стоит курс английского, французского, испанского или немецкого языка в Португалии?",
+          "answer": "Цены сильно различаются в зависимости от школы, языка, формата, длительности и частоты занятий, а также от того, индивидуальные они или групповые. При сравнении учитывайте продолжительность урока, размер группы и включённую поддержку."
+        },
+        "zh-CN": {
+          "question": "在葡萄牙学习英语、法语、西班牙语或德语课程需要多少钱？",
+          "answer": "价格会因学校、语言、课程形式、时长、频率以及一对一或小组课而有较大差异。比较时也应关注每节课时长、班级人数以及是否包含学习支持。"
+        }
+      }
+    },
+    {
+      "id": "faq-036",
+      "intent": "private-lesson-price",
+      "category": "pricing-enrolment",
+      "priority": "high",
+      "searchIntent": "commercial",
+      "featured": false,
+      "applicableCourseLanguages": [
+        "en",
+        "fr",
+        "es",
+        "de"
+      ],
+      "parameters": [],
+      "sourceKeywordsPtPT": [
+        "preço aula particular inglês",
+        "quanto custa professor",
+        "aula idioma preço"
+      ],
+      "localizations": {
+        "pt-PT": {
+          "question": "Quanto custa uma aula particular de idiomas?",
+          "answer": "O preço de uma aula particular varia conforme o professor, idioma, duração, modalidade e região. Ao comparar valores, confirme se a aula é individual, quanto tempo dura e se materiais ou acompanhamento estão incluídos."
+        },
+        "en-US": {
+          "question": "How much does a private language lesson cost?",
+          "answer": "Private-lesson prices vary by teacher, language, duration, format and location. When comparing prices, check whether the lesson is truly one-to-one, how long it lasts and what support is included."
+        },
+        "es-ES": {
+          "question": "¿Cuánto cuesta una clase particular de idiomas?",
+          "answer": "El precio varía según el profesor, idioma, duración, modalidad y ubicación. Al comparar, comprueba si la clase es realmente individual, cuánto dura y qué acompañamiento incluye."
+        },
+        "fr-FR": {
+          "question": "Combien coûte un cours particulier de langue ?",
+          "answer": "Le prix varie selon le professeur, la langue, la durée, le format et la localisation. Vérifiez si le cours est réellement individuel, sa durée et l'accompagnement inclus."
+        },
+        "de-DE": {
+          "question": "Wie viel kostet eine private Sprachstunde?",
+          "answer": "Der Preis hängt von Lehrkraft, Sprache, Dauer, Format und Standort ab. Prüfen Sie beim Vergleich, ob es wirklich Einzelunterricht ist, wie lange die Stunde dauert und welche Betreuung enthalten ist."
+        },
+        "it-IT": {
+          "question": "Quanto costa una lezione privata di lingua?",
+          "answer": "Il prezzo varia in base a insegnante, lingua, durata, modalità e località. Quando confronti le offerte, verifica se la lezione è davvero individuale, quanto dura e quale supporto include."
+        },
+        "ja-JP": {
+          "question": "語学の個人レッスンはいくらですか？",
+          "answer": "料金は教師、言語、授業時間、オンラインか対面か、地域によって異なります。比較するときは、完全な個人授業か、何分授業か、教材やサポートが含まれるかを確認しましょう。"
+        },
+        "ru-RU": {
+          "question": "Сколько стоит индивидуальный урок языка?",
+          "answer": "Цена зависит от преподавателя, языка, длительности, формата и региона. При сравнении уточняйте, действительно ли урок индивидуальный, сколько он длится и входят ли материалы или сопровождение."
+        },
+        "zh-CN": {
+          "question": "一对一语言课一般多少钱？",
+          "answer": "价格取决于教师、语言、课程时长、线上或面授形式以及地区。比较时应确认是否真正是一对一、每节课多长，以及教材或学习支持是否包含在内。"
+        }
+      }
+    },
+    {
+      "id": "faq-037",
+      "intent": "trial-class",
+      "category": "pricing-enrolment",
+      "priority": "high",
+      "searchIntent": "commercial",
+      "featured": false,
+      "applicableCourseLanguages": [
+        "en",
+        "fr",
+        "es",
+        "de"
+      ],
+      "parameters": [],
+      "sourceKeywordsPtPT": [
+        "aula experimental inglês",
+        "primeira aula grátis",
+        "experimentar curso"
+      ],
+      "localizations": {
+        "pt-PT": {
+          "question": "Existe aula experimental antes da matrícula?",
+          "answer": "A Best Fluency disponibiliza aula experimental para conhecer a abordagem, identificar necessidades e perceber se o formato é adequado antes de avançar com o percurso de aprendizagem."
+        },
+        "en-US": {
+          "question": "Is there a trial lesson before enrolment?",
+          "answer": "Best Fluency offers a trial lesson so you can experience the approach, identify your needs and see whether the format suits you before starting your learning plan."
+        },
+        "es-ES": {
+          "question": "¿Hay una clase de prueba antes de matricularme?",
+          "answer": "Best Fluency ofrece una clase de prueba para conocer el enfoque, identificar tus necesidades y comprobar si el formato es adecuado antes de empezar el plan de aprendizaje."
+        },
+        "fr-FR": {
+          "question": "Existe-t-il un cours d'essai avant l'inscription ?",
+          "answer": "Best Fluency propose un cours d'essai pour découvrir l'approche, identifier vos besoins et vérifier si le format vous convient avant de commencer votre parcours."
+        },
+        "de-DE": {
+          "question": "Gibt es vor der Anmeldung eine Probestunde?",
+          "answer": "Best Fluency bietet eine Probestunde an, damit Sie die Lernmethode kennenlernen, Ihren Bedarf einschätzen und prüfen können, ob das Format zu Ihnen passt."
+        },
+        "it-IT": {
+          "question": "C'è una lezione di prova prima dell'iscrizione?",
+          "answer": "Best Fluency offre una lezione di prova per conoscere l'approccio, individuare le tue esigenze e capire se il formato è adatto prima di iniziare il percorso."
+        },
+        "ja-JP": {
+          "question": "申込み前に体験レッスンはありますか？",
+          "answer": "Best Fluencyでは、学習方法を知り、ニーズを確認し、その形式が自分に合うかを判断できる体験レッスンを用意しています。"
+        },
+        "ru-RU": {
+          "question": "Есть ли пробное занятие перед записью?",
+          "answer": "Best Fluency предлагает пробное занятие, чтобы познакомиться с подходом, определить потребности и понять, подходит ли вам выбранный формат до начала дальнейшего обучения."
+        },
+        "zh-CN": {
+          "question": "报名之前有体验课吗？",
+          "answer": "Best Fluency提供体验课，让你在正式开始前了解教学方式、识别学习需求并判断课程形式是否适合自己。"
+        }
+      }
+    },
+    {
+      "id": "faq-038",
+      "intent": "monthly-vs-full-course",
+      "category": "pricing-enrolment",
+      "priority": "high",
+      "searchIntent": "commercial",
+      "featured": false,
+      "applicableCourseLanguages": [
+        "en",
+        "fr",
+        "es",
+        "de"
+      ],
+      "parameters": [],
+      "sourceKeywordsPtPT": [
+        "mensalidade inglês",
+        "pack aulas",
+        "pagamento curso"
+      ],
+      "localizations": {
+        "pt-PT": {
+          "question": "Posso pagar as aulas por mês ou preciso comprar um curso completo?",
+          "answer": "As condições dependem do plano escolhido. Na Best Fluency existem formatos organizados por packs ou mensalidades, de acordo com a frequência e a modalidade. As condições são apresentadas antes da inscrição."
+        },
+        "en-US": {
+          "question": "Can I pay monthly, or do I need to buy a full course?",
+          "answer": "Payment conditions depend on the chosen plan. Best Fluency offers formats organised as lesson packs or monthly plans according to frequency and modality, with the conditions explained before enrolment."
+        },
+        "es-ES": {
+          "question": "¿Puedo pagar las clases mensualmente o tengo que comprar un curso completo?",
+          "answer": "Las condiciones dependen del plan elegido. Best Fluency ofrece formatos organizados por packs o mensualidades según la frecuencia y modalidad, con las condiciones explicadas antes de la matrícula."
+        },
+        "fr-FR": {
+          "question": "Puis-je payer les cours au mois ou dois-je acheter une formation complète ?",
+          "answer": "Les conditions dépendent de la formule choisie. Best Fluency propose des packs de cours ou des mensualités selon la fréquence et le format, avec des conditions expliquées avant l'inscription."
+        },
+        "de-DE": {
+          "question": "Kann ich monatlich zahlen oder muss ich einen kompletten Kurs kaufen?",
+          "answer": "Die Zahlungsbedingungen hängen vom gewählten Plan ab. Best Fluency bietet je nach Häufigkeit und Format Unterrichtspakete oder Monatsmodelle; die Bedingungen werden vor der Anmeldung erläutert."
+        },
+        "it-IT": {
+          "question": "Posso pagare le lezioni mensilmente o devo acquistare un corso completo?",
+          "answer": "Le condizioni dipendono dal piano scelto. Best Fluency propone pacchetti di lezioni o piani mensili in base a frequenza e modalità, con le condizioni spiegate prima dell'iscrizione."
+        },
+        "ja-JP": {
+          "question": "月ごとに支払えますか、それともコース全体を購入する必要がありますか？",
+          "answer": "支払条件は選ぶプランによって異なります。Best Fluencyでは、頻度や受講形式に応じてパックまたは月額形式があります。条件は申込み前に案内されます。"
+        },
+        "ru-RU": {
+          "question": "Можно платить помесячно или нужно покупать полный курс?",
+          "answer": "Условия зависят от выбранного плана. В Best Fluency есть пакеты и ежемесячные форматы в зависимости от частоты и типа занятий. Все условия сообщаются до записи."
+        },
+        "zh-CN": {
+          "question": "可以按月付费吗，还是必须一次购买整个课程？",
+          "answer": "具体条件取决于所选方案。Best Fluency根据上课频率和形式提供课包或月度方案，报名之前会清楚说明相关条件。"
+        }
+      }
+    },
+    {
+      "id": "faq-039",
+      "intent": "commitment-contract",
+      "category": "pricing-enrolment",
+      "priority": "medium",
+      "searchIntent": "commercial",
+      "featured": false,
+      "applicableCourseLanguages": [
+        "en",
+        "fr",
+        "es",
+        "de"
+      ],
+      "parameters": [],
+      "sourceKeywordsPtPT": [
+        "curso sem fidelização",
+        "contrato aulas inglês",
+        "cancelar curso"
+      ],
+      "localizations": {
+        "pt-PT": {
+          "question": "Existe fidelização ou contrato de permanência?",
+          "answer": "Na Best Fluency, os planos de aulas não exigem fidelização de longa duração. As condições específicas de cada pack ou mensalidade são comunicadas antes do início das aulas."
+        },
+        "en-US": {
+          "question": "Is there a long-term commitment or minimum contract?",
+          "answer": "Best Fluency lesson plans do not require a long-term commitment. The specific conditions of each pack or monthly plan are explained before lessons begin."
+        },
+        "es-ES": {
+          "question": "¿Existe permanencia o un contrato mínimo?",
+          "answer": "Los planes de Best Fluency no exigen una permanencia de larga duración. Las condiciones específicas de cada pack o mensualidad se explican antes de comenzar."
+        },
+        "fr-FR": {
+          "question": "Y a-t-il un engagement de longue durée ou une durée minimale de contrat ?",
+          "answer": "Les formules Best Fluency n'imposent pas d'engagement de longue durée. Les conditions propres à chaque pack ou mensualité sont expliquées avant le début des cours."
+        },
+        "de-DE": {
+          "question": "Gibt es eine langfristige Bindung oder Mindestvertragslaufzeit?",
+          "answer": "Die Unterrichtspläne von Best Fluency erfordern keine langfristige Bindung. Die konkreten Bedingungen jedes Pakets oder Monatsplans werden vor Beginn erklärt."
+        },
+        "it-IT": {
+          "question": "C'è un vincolo di permanenza o un contratto minimo?",
+          "answer": "I piani di Best Fluency non richiedono un impegno di lunga durata. Le condizioni specifiche di ogni pacchetto o piano mensile vengono spiegate prima dell'inizio."
+        },
+        "ja-JP": {
+          "question": "長期契約や最低継続期間はありますか？",
+          "answer": "Best Fluencyのレッスンプランには長期の継続契約はありません。各パックや月額プランの具体的な条件は、開始前に案内されます。"
+        },
+        "ru-RU": {
+          "question": "Есть ли долгосрочные обязательства или минимальный срок договора?",
+          "answer": "Планы Best Fluency не требуют долгосрочной привязки. Конкретные условия каждого пакета или ежемесячного плана сообщаются до начала занятий."
+        },
+        "zh-CN": {
+          "question": "有长期绑定或最低合同期限吗？",
+          "answer": "Best Fluency的课程方案不要求长期绑定。每种课包或月度方案的具体条件会在开课前说明。"
+        }
+      }
+    },
+    {
+      "id": "faq-040",
+      "intent": "cancellation-rescheduling",
+      "category": "pricing-enrolment",
+      "priority": "medium",
+      "searchIntent": "commercial",
+      "featured": false,
+      "applicableCourseLanguages": [
+        "en",
+        "fr",
+        "es",
+        "de"
+      ],
+      "parameters": [],
+      "sourceKeywordsPtPT": [
+        "cancelar aula inglês",
+        "remarcar aula",
+        "política cancelamento"
+      ],
+      "localizations": {
+        "pt-PT": {
+          "question": "O que acontece se eu precisar cancelar ou remarcar uma aula?",
+          "answer": "A Best Fluency trabalha com regras de cancelamento e reagendamento para organizar a disponibilidade dos professores. Para aulas previamente marcadas, o pedido deve ser feito com a antecedência definida nas condições do plano."
+        },
+        "en-US": {
+          "question": "What happens if I need to cancel or reschedule a lesson?",
+          "answer": "Best Fluency uses cancellation and rescheduling rules to manage teacher availability. Requests should be made within the notice period defined in the conditions of your plan."
+        },
+        "es-ES": {
+          "question": "¿Qué pasa si necesito cancelar o cambiar una clase?",
+          "answer": "Best Fluency aplica reglas de cancelación y cambio para gestionar la disponibilidad de los profesores. Las solicitudes deben realizarse dentro del plazo de aviso establecido en las condiciones del plan."
+        },
+        "fr-FR": {
+          "question": "Que se passe-t-il si je dois annuler ou déplacer un cours ?",
+          "answer": "Best Fluency applique des règles d'annulation et de report afin de gérer la disponibilité des professeurs. La demande doit respecter le délai de préavis prévu dans les conditions de votre formule."
+        },
+        "de-DE": {
+          "question": "Was passiert, wenn ich eine Stunde absagen oder verschieben muss?",
+          "answer": "Best Fluency arbeitet mit Regeln für Absagen und Umbuchungen, um die Verfügbarkeit der Lehrkräfte zu organisieren. Anfragen müssen innerhalb der in Ihrem Plan festgelegten Frist gestellt werden."
+        },
+        "it-IT": {
+          "question": "Che cosa succede se devo annullare o spostare una lezione?",
+          "answer": "Best Fluency applica regole di cancellazione e riprogrammazione per gestire la disponibilità degli insegnanti. Le richieste devono rispettare il preavviso indicato nelle condizioni del piano."
+        },
+        "ja-JP": {
+          "question": "授業をキャンセルまたは日程変更したい場合はどうなりますか？",
+          "answer": "教師のスケジュールを管理するため、Best Fluencyにはキャンセルと日程変更のルールがあります。予約済みの授業は、選択したプランの条件で定められた期限までに連絡する必要があります。"
+        },
+        "ru-RU": {
+          "question": "Что будет, если мне нужно отменить или перенести занятие?",
+          "answer": "В Best Fluency действуют правила отмены и переноса, чтобы корректно управлять расписанием преподавателей. Для уже забронированных занятий нужно сообщить об изменении в срок, указанный в условиях вашего плана."
+        },
+        "zh-CN": {
+          "question": "如果需要取消或改期怎么办？",
+          "answer": "Best Fluency设有取消和改期规则，以便合理安排教师时间。已经预约的课程需要按照所选方案规定的提前时间提出变更。"
+        }
+      }
+    },
+    {
+      "id": "faq-041",
+      "intent": "conversation-focus",
+      "category": "goals",
+      "priority": "high",
+      "searchIntent": "commercial",
+      "featured": false,
+      "applicableCourseLanguages": [
+        "en",
+        "fr",
+        "es",
+        "de"
+      ],
+      "parameters": [],
+      "sourceKeywordsPtPT": [
+        "curso conversação",
+        "aulas speaking",
+        "idioma para falar"
+      ],
+      "localizations": {
+        "pt-PT": {
+          "question": "Posso aprender o idioma apenas para conversação?",
+          "answer": "Sim. O percurso pode dar prioridade à comunicação oral, especialmente para viagens, trabalho ou vida quotidiana. Ainda assim, vocabulário, compreensão e estruturas básicas são necessários para sustentar uma conversa com autonomia."
+        },
+        "en-US": {
+          "question": "Can I learn a language mainly for conversation?",
+          "answer": "Yes. Your learning plan can prioritise speaking, especially for travel, work or everyday life. Vocabulary, listening and basic structures are still necessary to support independent conversation."
+        },
+        "es-ES": {
+          "question": "¿Puedo aprender el idioma principalmente para conversar?",
+          "answer": "Sí. El plan puede priorizar la comunicación oral, especialmente para viajes, trabajo o vida cotidiana. Aun así, necesitas vocabulario, comprensión y estructuras básicas para sostener conversaciones con autonomía."
+        },
+        "fr-FR": {
+          "question": "Puis-je apprendre la langue principalement pour la conversation ?",
+          "answer": "Oui. Le parcours peut donner la priorité à l'expression orale, notamment pour les voyages, le travail ou la vie quotidienne. Le vocabulaire, la compréhension et les structures de base restent nécessaires pour converser de façon autonome."
+        },
+        "de-DE": {
+          "question": "Kann ich eine Sprache hauptsächlich für Gespräche lernen?",
+          "answer": "Ja. Der Lernweg kann den Schwerpunkt auf mündliche Kommunikation legen, besonders für Reisen, Arbeit oder Alltag. Wortschatz, Hörverstehen und grundlegende Strukturen bleiben notwendig, um selbstständig zu sprechen."
+        },
+        "it-IT": {
+          "question": "Posso imparare la lingua soprattutto per conversare?",
+          "answer": "Sì. Il percorso può dare priorità alla comunicazione orale, in particolare per viaggi, lavoro o vita quotidiana. Vocabolario, comprensione e strutture di base restano necessari per conversare con autonomia."
+        },
+        "ja-JP": {
+          "question": "会話を中心に言語を学ぶことはできますか？",
+          "answer": "はい。旅行、仕事、日常生活などの目的に合わせて会話を優先できます。ただし、自立して会話を続けるためには、基礎語彙、リスニング、基本文型も必要です。"
+        },
+        "ru-RU": {
+          "question": "Можно ли учить язык в основном для разговорной практики?",
+          "answer": "Да. Программу можно ориентировать на устное общение для путешествий, работы или повседневной жизни. При этом для самостоятельного разговора всё равно нужны базовая лексика, понимание речи и основные конструкции."
+        },
+        "zh-CN": {
+          "question": "可以主要为了练口语而学习吗？",
+          "answer": "可以。课程可以优先培养旅行、工作或日常生活所需的口语能力。不过要独立维持对话，仍需要基础词汇、听力理解和核心句型。"
+        }
+      }
+    },
+    {
+      "id": "faq-042",
+      "intent": "work-career",
+      "category": "goals",
+      "priority": "high",
+      "searchIntent": "commercial",
+      "featured": false,
+      "applicableCourseLanguages": [
+        "en",
+        "fr",
+        "es",
+        "de"
+      ],
+      "parameters": [],
+      "sourceKeywordsPtPT": [
+        "inglês para trabalho",
+        "business english",
+        "idiomas carreira"
+      ],
+      "localizations": {
+        "pt-PT": {
+          "question": "Existem aulas de idiomas para trabalho e carreira?",
+          "answer": "Sim. O conteúdo pode ser direcionado para reuniões, entrevistas, apresentações, atendimento, e-mails, vocabulário profissional ou situações específicas da área de atuação do aluno."
+        },
+        "en-US": {
+          "question": "Are there language lessons for work and career goals?",
+          "answer": "Yes. Content can focus on meetings, interviews, presentations, customer service, emails, professional vocabulary or situations specific to your field."
+        },
+        "es-ES": {
+          "question": "¿Hay clases de idiomas orientadas al trabajo y la carrera profesional?",
+          "answer": "Sí. El contenido puede centrarse en reuniones, entrevistas, presentaciones, atención al cliente, correos electrónicos, vocabulario profesional o situaciones específicas de tu sector."
+        },
+        "fr-FR": {
+          "question": "Existe-t-il des cours de langue orientés vers le travail et la carrière ?",
+          "answer": "Oui. Le contenu peut cibler les réunions, entretiens, présentations, service client, e-mails, vocabulaire professionnel ou situations propres à votre secteur."
+        },
+        "de-DE": {
+          "question": "Gibt es Sprachunterricht für Beruf und Karriere?",
+          "answer": "Ja. Inhalte können auf Meetings, Bewerbungsgespräche, Präsentationen, Kundenkontakt, E-Mails, Fachwortschatz oder typische Situationen Ihres Berufsfelds ausgerichtet werden."
+        },
+        "it-IT": {
+          "question": "Esistono lezioni di lingua orientate al lavoro e alla carriera?",
+          "answer": "Sì. I contenuti possono concentrarsi su riunioni, colloqui, presentazioni, assistenza clienti, e-mail, vocabolario professionale o situazioni specifiche del tuo settore."
+        },
+        "ja-JP": {
+          "question": "仕事やキャリアを目的とした語学レッスンはありますか？",
+          "answer": "はい。会議、面接、プレゼンテーション、接客、メール、専門分野の語彙など、学習者の仕事で必要な場面に合わせて内容を調整できます。"
+        },
+        "ru-RU": {
+          "question": "Есть ли занятия языком для работы и карьерных целей?",
+          "answer": "Да. Содержание можно ориентировать на встречи, собеседования, презентации, обслуживание клиентов, электронную переписку, профессиональную лексику и ситуации из вашей сферы деятельности."
+        },
+        "zh-CN": {
+          "question": "有针对工作和职业发展的语言课程吗？",
+          "answer": "有。课程内容可以围绕会议、面试、演示、客户服务、电子邮件、专业词汇以及学生所在行业的具体场景进行调整。"
+        }
+      }
+    },
+    {
+      "id": "faq-043",
+      "intent": "job-interview",
+      "category": "goals",
+      "priority": "high",
+      "searchIntent": "commercial",
+      "featured": false,
+      "applicableCourseLanguages": [
+        "en"
+      ],
+      "parameters": [],
+      "sourceKeywordsPtPT": [
+        "inglês entrevista emprego",
+        "job interview english",
+        "preparação entrevista"
+      ],
+      "localizations": {
+        "pt-PT": {
+          "question": "Posso preparar-me para uma entrevista de emprego em inglês?",
+          "answer": "Sim. É possível trabalhar apresentação profissional, descrição de experiência, perguntas frequentes de entrevistas, vocabulário da área, pronúncia e simulações para ganhar segurança antes da entrevista."
+        },
+        "en-US": {
+          "question": "Can I prepare for a job interview in English?",
+          "answer": "Yes. You can work on professional introductions, experience descriptions, common interview questions, field-specific vocabulary, pronunciation and mock interviews."
+        },
+        "es-ES": {
+          "question": "¿Puedo prepararme para una entrevista de trabajo en inglés?",
+          "answer": "Sí. Puedes trabajar la presentación profesional, la descripción de experiencia, preguntas frecuentes, vocabulario del sector, pronunciación y simulaciones de entrevista."
+        },
+        "fr-FR": {
+          "question": "Puis-je me préparer à un entretien d'embauche en anglais ?",
+          "answer": "Oui. Vous pouvez travailler la présentation professionnelle, la description de votre expérience, les questions fréquentes, le vocabulaire du secteur, la prononciation et des simulations d'entretien."
+        },
+        "de-DE": {
+          "question": "Kann ich mich auf ein Bewerbungsgespräch auf Englisch vorbereiten?",
+          "answer": "Ja. Sie können Ihre berufliche Vorstellung, die Beschreibung Ihrer Erfahrung, häufige Interviewfragen, Fachwortschatz, Aussprache und simulierte Gespräche trainieren."
+        },
+        "it-IT": {
+          "question": "Posso prepararmi per un colloquio di lavoro in inglese?",
+          "answer": "Sì. Puoi lavorare sulla presentazione professionale, descrizione dell'esperienza, domande frequenti, vocabolario del settore, pronuncia e simulazioni di colloquio."
+        },
+        "ja-JP": {
+          "question": "英語の就職面接対策はできますか？",
+          "answer": "はい。自己紹介、職歴の説明、よくある面接質問、業界語彙、発音、模擬面接などを練習し、本番でより自信を持って話せるよう準備できます。"
+        },
+        "ru-RU": {
+          "question": "Можно ли подготовиться к собеседованию на английском языке?",
+          "answer": "Да. Можно отработать профессиональное представление, описание опыта, типичные вопросы, лексику вашей сферы, произношение и провести пробные собеседования, чтобы чувствовать себя увереннее."
+        },
+        "zh-CN": {
+          "question": "可以准备英语求职面试吗？",
+          "answer": "可以。可以练习职业自我介绍、工作经历、常见面试问题、行业词汇、发音和模拟面试，从而在正式面试时更有信心。"
+        }
+      }
+    },
+    {
+      "id": "faq-044",
+      "intent": "travel-daily-life",
+      "category": "goals",
+      "priority": "medium",
+      "searchIntent": "commercial",
+      "featured": false,
+      "applicableCourseLanguages": [
+        "en",
+        "fr",
+        "es",
+        "de"
+      ],
+      "parameters": [],
+      "sourceKeywordsPtPT": [
+        "inglês para viagem",
+        "francês viagem",
+        "espanhol viagem"
+      ],
+      "localizations": {
+        "pt-PT": {
+          "question": "Existem aulas focadas em viagens e situações do dia a dia?",
+          "answer": "Sim. Podem ser trabalhadas situações como aeroporto, hotel, restaurante, transportes, compras, pedir informações, resolver problemas e conversar com outras pessoas durante a viagem."
+        },
+        "en-US": {
+          "question": "Are there lessons focused on travel and everyday situations?",
+          "answer": "Yes. Lessons can cover airports, hotels, restaurants, transport, shopping, asking for information, solving problems and everyday conversations while travelling."
+        },
+        "es-ES": {
+          "question": "¿Hay clases centradas en viajes y situaciones cotidianas?",
+          "answer": "Sí. Se pueden trabajar situaciones como aeropuerto, hotel, restaurante, transporte, compras, pedir información, resolver problemas y conversaciones habituales durante un viaje."
+        },
+        "fr-FR": {
+          "question": "Existe-t-il des cours axés sur les voyages et les situations du quotidien ?",
+          "answer": "Oui. Les cours peuvent couvrir l'aéroport, l'hôtel, le restaurant, les transports, les achats, demander des renseignements, résoudre des problèmes et converser pendant un voyage."
+        },
+        "de-DE": {
+          "question": "Gibt es Unterricht für Reisen und Alltagssituationen?",
+          "answer": "Ja. Themen können Flughafen, Hotel, Restaurant, Verkehrsmittel, Einkaufen, nach Informationen fragen, Probleme lösen und typische Gespräche auf Reisen umfassen."
+        },
+        "it-IT": {
+          "question": "Esistono lezioni dedicate ai viaggi e alle situazioni quotidiane?",
+          "answer": "Sì. Si possono affrontare aeroporto, hotel, ristorante, trasporti, acquisti, richieste di informazioni, risoluzione di problemi e conversazioni comuni durante un viaggio."
+        },
+        "ja-JP": {
+          "question": "旅行や日常生活に特化したレッスンはありますか？",
+          "answer": "はい。空港、ホテル、レストラン、交通、買い物、道を尋ねる、問題を説明する、旅行中の会話など、実際に使う場面を練習できます。"
+        },
+        "ru-RU": {
+          "question": "Есть ли занятия, ориентированные на путешествия и повседневные ситуации?",
+          "answer": "Да. Можно тренировать ситуации в аэропорту, отеле, ресторане, транспорте, магазине, запрос информации, решение проблем и обычные разговоры во время поездок."
+        },
+        "zh-CN": {
+          "question": "有针对旅行和日常生活场景的课程吗？",
+          "answer": "有。可以练习机场、酒店、餐厅、交通、购物、询问信息、解决问题以及旅行中与他人交流等实际场景。"
+        }
+      }
+    },
+    {
+      "id": "faq-045",
+      "intent": "child-start-age",
+      "category": "kids-teens",
+      "priority": "high",
+      "searchIntent": "commercial",
+      "featured": false,
+      "applicableCourseLanguages": [
+        "en",
+        "fr",
+        "es",
+        "de"
+      ],
+      "parameters": [],
+      "sourceKeywordsPtPT": [
+        "inglês para crianças",
+        "idade começar inglês",
+        "curso kids"
+      ],
+      "localizations": {
+        "pt-PT": {
+          "question": "A partir de que idade uma criança pode ter aulas de idiomas?",
+          "answer": "Crianças podem ter contacto com outras línguas desde cedo, mas o formato da aula deve respeitar a idade. Para os mais novos, a aprendizagem funciona melhor com atividades curtas, visuais, histórias, jogos, movimento e muita interação."
+        },
+        "en-US": {
+          "question": "At what age can a child start language lessons?",
+          "answer": "Children can be exposed to other languages from an early age, but the lesson format should match their development. Younger learners benefit from short, visual, interactive activities, stories, games and movement."
+        },
+        "es-ES": {
+          "question": "¿A partir de qué edad puede un niño empezar clases de idiomas?",
+          "answer": "Los niños pueden tener contacto con otras lenguas desde pequeños, pero el formato debe adaptarse a su edad. Los más pequeños se benefician de actividades breves, visuales e interactivas, historias, juegos y movimiento."
+        },
+        "fr-FR": {
+          "question": "À partir de quel âge un enfant peut-il suivre des cours de langue ?",
+          "answer": "Un enfant peut être exposé à d'autres langues très tôt, mais le format doit correspondre à son âge. Les plus jeunes bénéficient d'activités courtes, visuelles et interactives, d'histoires, de jeux et de mouvement."
+        },
+        "de-DE": {
+          "question": "Ab welchem Alter kann ein Kind Sprachunterricht nehmen?",
+          "answer": "Kinder können schon früh mit anderen Sprachen in Kontakt kommen, aber das Format sollte zum Alter passen. Jüngere Kinder profitieren von kurzen, visuellen und interaktiven Aktivitäten, Geschichten, Spielen und Bewegung."
+        },
+        "it-IT": {
+          "question": "Da che età un bambino può iniziare lezioni di lingua?",
+          "answer": "I bambini possono entrare in contatto con altre lingue fin da piccoli, ma il formato deve essere adatto all'età. I più piccoli beneficiano di attività brevi, visive e interattive, storie, giochi e movimento."
+        },
+        "ja-JP": {
+          "question": "子どもは何歳から語学レッスンを始められますか？",
+          "answer": "子どもは幼い頃から他の言語に触れることができますが、授業形式は年齢に合っている必要があります。幼い子どもには、短い活動、視覚教材、物語、ゲーム、動き、たくさんのやり取りが効果的です。"
+        },
+        "ru-RU": {
+          "question": "С какого возраста ребёнок может начинать языковые занятия?",
+          "answer": "Дети могут знакомиться с другими языками с раннего возраста, но формат должен соответствовать возрасту. Для маленьких детей лучше работают короткие визуальные задания, истории, игры, движение и активное взаимодействие."
+        },
+        "zh-CN": {
+          "question": "孩子几岁可以开始上语言课？",
+          "answer": "孩子从很小就可以接触其他语言，但课程形式必须适合年龄。对于年幼儿童，短时、视觉化的活动、故事、游戏、动作和大量互动通常更有效。"
+        }
+      }
+    },
+    {
+      "id": "faq-046",
+      "intent": "online-kids",
+      "category": "kids-teens",
+      "priority": "medium",
+      "searchIntent": "commercial",
+      "featured": false,
+      "applicableCourseLanguages": [
+        "en",
+        "fr",
+        "es",
+        "de"
+      ],
+      "parameters": [],
+      "sourceKeywordsPtPT": [
+        "inglês online crianças",
+        "aula online kids",
+        "idiomas crianças"
+      ],
+      "localizations": {
+        "pt-PT": {
+          "question": "Aulas online funcionam para crianças?",
+          "answer": "Podem funcionar quando a duração, as atividades e o nível de interação são adequados à idade. Crianças mais novas normalmente precisam de aulas mais dinâmicas, recursos visuais e, em alguns casos, apoio inicial de um adulto."
+        },
+        "en-US": {
+          "question": "Do online lessons work for children?",
+          "answer": "They can, when lesson length, activities and interaction suit the child's age. Younger children usually need dynamic visual resources and may initially benefit from some adult support."
+        },
+        "es-ES": {
+          "question": "¿Funcionan las clases online para niños?",
+          "answer": "Pueden funcionar si la duración, las actividades y la interacción se adaptan a la edad. Los niños más pequeños suelen necesitar recursos visuales dinámicos y, al principio, algo de apoyo de un adulto."
+        },
+        "fr-FR": {
+          "question": "Les cours en ligne fonctionnent-ils pour les enfants ?",
+          "answer": "Oui, lorsque la durée, les activités et l'interaction sont adaptées à l'âge. Les plus jeunes ont généralement besoin de ressources visuelles dynamiques et peuvent bénéficier au début d'un peu d'aide d'un adulte."
+        },
+        "de-DE": {
+          "question": "Funktioniert Onlineunterricht auch für Kinder?",
+          "answer": "Ja, wenn Dauer, Aktivitäten und Interaktion dem Alter entsprechen. Jüngere Kinder brauchen meist dynamische visuelle Materialien und können anfangs von etwas Unterstützung durch Erwachsene profitieren."
+        },
+        "it-IT": {
+          "question": "Le lezioni online funzionano per i bambini?",
+          "answer": "Possono funzionare quando durata, attività e interazione sono adatte all'età. I bambini più piccoli hanno di solito bisogno di risorse visive dinamiche e possono beneficiare inizialmente di un po' di supporto adulto."
+        },
+        "ja-JP": {
+          "question": "子どもにもオンライン語学レッスンは効果がありますか？",
+          "answer": "年齢に合った授業時間、活動、やり取りがあれば効果があります。特に幼い子どもには、動きのある授業、視覚教材、場合によっては最初に保護者のサポートが役立ちます。"
+        },
+        "ru-RU": {
+          "question": "Работают ли онлайн-занятия для детей?",
+          "answer": "Да, если длительность, задания и уровень взаимодействия соответствуют возрасту. Маленьким детям обычно нужны более динамичные занятия, наглядные материалы и иногда помощь взрослого в начале."
+        },
+        "zh-CN": {
+          "question": "线上语言课对孩子有效吗？",
+          "answer": "如果课程时长、活动和互动程度符合年龄，就可以有效。年幼儿童通常需要更活泼的课堂、视觉材料，有时开始阶段也需要成人协助。"
+        }
+      }
+    },
+    {
+      "id": "faq-047",
+      "intent": "private-vs-group-kids",
+      "category": "kids-teens",
+      "priority": "medium",
+      "searchIntent": "commercial",
+      "featured": false,
+      "applicableCourseLanguages": [
+        "en",
+        "fr",
+        "es",
+        "de"
+      ],
+      "parameters": [],
+      "sourceKeywordsPtPT": [
+        "aula individual criança",
+        "turma inglês crianças",
+        "curso kids"
+      ],
+      "localizations": {
+        "pt-PT": {
+          "question": "É melhor aula individual ou em grupo para crianças?",
+          "answer": "A aula individual permite adaptar completamente o ritmo e trabalhar dificuldades específicas. O grupo acrescenta interação social e prática com outras crianças. A escolha depende da idade, personalidade, nível e objetivo."
+        },
+        "en-US": {
+          "question": "Are private or group lessons better for children?",
+          "answer": "Private lessons allow the pace to be tailored closely to the child, while groups add social interaction and practice with other children. The best choice depends on age, personality, level and goals."
+        },
+        "es-ES": {
+          "question": "¿Es mejor una clase individual o en grupo para niños?",
+          "answer": "La clase individual permite adaptar el ritmo al niño; el grupo aporta interacción social y práctica con otros niños. La elección depende de la edad, personalidad, nivel y objetivo."
+        },
+        "fr-FR": {
+          "question": "Vaut-il mieux des cours individuels ou en groupe pour les enfants ?",
+          "answer": "Le cours individuel permet d'adapter précisément le rythme à l'enfant, tandis que le groupe ajoute de l'interaction sociale et de la pratique avec d'autres enfants. Le choix dépend de l'âge, de la personnalité, du niveau et de l'objectif."
+        },
+        "de-DE": {
+          "question": "Sind Einzel- oder Gruppenkurse für Kinder besser?",
+          "answer": "Einzelunterricht lässt sich genau an das Tempo des Kindes anpassen, während Gruppen soziale Interaktion und Übung mit anderen Kindern bieten. Die Wahl hängt von Alter, Persönlichkeit, Niveau und Ziel ab."
+        },
+        "it-IT": {
+          "question": "Sono meglio lezioni individuali o di gruppo per i bambini?",
+          "answer": "La lezione individuale permette di adattare il ritmo al bambino; il gruppo aggiunge interazione sociale e pratica con altri bambini. La scelta dipende da età, personalità, livello e obiettivo."
+        },
+        "ja-JP": {
+          "question": "子どもには個人レッスンとグループレッスンのどちらがよいですか？",
+          "answer": "個人レッスンはペースを完全に合わせ、特定の苦手を集中的に扱えます。グループは他の子どもとの交流やコミュニケーション練習ができます。年齢、性格、レベル、目的に応じて選びます。"
+        },
+        "ru-RU": {
+          "question": "Что лучше для ребёнка: индивидуальные или групповые занятия?",
+          "answer": "Индивидуальный формат позволяет полностью адаптировать темп и работать с конкретными трудностями. Группа добавляет социальное взаимодействие и практику с другими детьми. Выбор зависит от возраста, характера, уровня и цели."
+        },
+        "zh-CN": {
+          "question": "孩子更适合一对一还是小组课？",
+          "answer": "一对一可以完全按照孩子的节奏，并集中解决具体困难；小组课则增加与其他孩子互动和练习的机会。选择取决于年龄、性格、水平和目标。"
+        }
+      }
+    },
+    {
+      "id": "faq-048",
+      "intent": "course-certificate",
+      "category": "certification",
+      "priority": "high",
+      "searchIntent": "commercial",
+      "featured": true,
+      "applicableCourseLanguages": [
+        "en",
+        "fr",
+        "es",
+        "de"
+      ],
+      "parameters": [],
+      "sourceKeywordsPtPT": [
+        "certificado curso idiomas",
+        "certificação inglês",
+        "diploma idioma"
+      ],
+      "localizations": {
+        "pt-PT": {
+          "question": "O curso dá certificado?",
+          "answer": "Um certificado de frequência ou conclusão de curso não é necessariamente o mesmo que uma certificação internacional de proficiência. Se precisa de comprovar oficialmente o nível para estudar, trabalhar ou emigrar, confirme qual exame é exigido pela instituição de destino."
+        },
+        "en-US": {
+          "question": "Does the course provide a certificate?",
+          "answer": "A course attendance or completion certificate is not necessarily the same as an international proficiency qualification. If you need official proof for study, work or immigration, check which examination the receiving institution requires."
+        },
+        "es-ES": {
+          "question": "¿El curso entrega un certificado?",
+          "answer": "Un certificado de asistencia o finalización no es necesariamente lo mismo que una certificación internacional de competencia. Si necesitas una prueba oficial para estudiar, trabajar o emigrar, confirma qué examen exige la institución de destino."
+        },
+        "fr-FR": {
+          "question": "Le cours délivre-t-il un certificat ?",
+          "answer": "Une attestation de présence ou de fin de cours n'est pas forcément équivalente à une certification internationale de niveau. Si vous avez besoin d'une preuve officielle pour étudier, travailler ou immigrer, vérifiez l'examen exigé par l'organisme destinataire."
+        },
+        "de-DE": {
+          "question": "Erhalte ich für den Kurs ein Zertifikat?",
+          "answer": "Eine Teilnahme- oder Abschlussbescheinigung ist nicht automatisch dasselbe wie ein internationaler Sprachnachweis. Wenn Sie einen offiziellen Nachweis für Studium, Arbeit oder Einwanderung benötigen, prüfen Sie, welche Prüfung die empfangende Institution verlangt."
+        },
+        "it-IT": {
+          "question": "Il corso rilascia un certificato?",
+          "answer": "Un attestato di frequenza o completamento non equivale necessariamente a una certificazione internazionale di competenza. Se ti serve una prova ufficiale per studio, lavoro o immigrazione, verifica quale esame richiede l'ente destinatario."
+        },
+        "ja-JP": {
+          "question": "コース修了証や証明書は発行されますか？",
+          "answer": "受講・修了証明と、国際的な語学力認定は同じものではありません。進学、就職、移住などで公式な証明が必要な場合は、提出先がどの試験や資格を求めているか確認してください。"
+        },
+        "ru-RU": {
+          "question": "Выдаётся ли сертификат после курса?",
+          "answer": "Сертификат о посещении или завершении курса — не то же самое, что международная сертификация уровня. Если официальное подтверждение нужно для учёбы, работы или миграции, уточните, какой экзамен принимает соответствующая организация."
+        },
+        "zh-CN": {
+          "question": "课程会提供证书吗？",
+          "answer": "课程出勤或结业证明并不等同于国际认可的语言能力认证。如果你需要为升学、工作或移民正式证明语言水平，应先确认接收机构要求哪一种考试或证书。"
+        }
+      }
+    },
+    {
+      "id": "faq-049",
+      "intent": "cambridge-vs-ielts",
+      "category": "certification",
+      "priority": "high",
+      "searchIntent": "informational",
+      "featured": false,
+      "applicableCourseLanguages": [
+        "en"
+      ],
+      "parameters": [],
+      "sourceKeywordsPtPT": [
+        "Cambridge ou IELTS",
+        "certificação inglês",
+        "exame inglês"
+      ],
+      "localizations": {
+        "pt-PT": {
+          "question": "Qual certificação de inglês devo fazer: Cambridge ou IELTS?",
+          "answer": "Depende do objetivo. Certificações Cambridge avaliam níveis específicos do QECR e são amplamente reconhecidas. O IELTS fornece uma pontuação e é frequentemente solicitado para estudos, trabalho e processos de mobilidade internacional. Confirme sempre o exame aceite pela instituição que irá receber o resultado."
+        },
+        "en-US": {
+          "question": "Which English qualification should I take: Cambridge or IELTS?",
+          "answer": "It depends on your goal. Cambridge qualifications assess specific CEFR levels and are widely recognised, while IELTS provides a band score and is often requested for study, work and international mobility. Always confirm what the receiving institution accepts."
+        },
+        "es-ES": {
+          "question": "¿Qué certificación de inglés debería hacer: Cambridge o IELTS?",
+          "answer": "Depende del objetivo. Cambridge evalúa niveles específicos del MCER y tiene amplio reconocimiento; IELTS ofrece una puntuación y suele solicitarse para estudios, trabajo y movilidad internacional. Confirma siempre qué acepta la institución de destino."
+        },
+        "fr-FR": {
+          "question": "Quelle certification d'anglais choisir : Cambridge ou IELTS ?",
+          "answer": "Cela dépend de votre objectif. Les certifications Cambridge évaluent des niveaux précis du CECRL et sont largement reconnues ; l'IELTS attribue un score et est souvent demandé pour les études, le travail et la mobilité internationale. Vérifiez toujours ce que l'organisme destinataire accepte."
+        },
+        "de-DE": {
+          "question": "Welche Englischprüfung sollte ich machen: Cambridge oder IELTS?",
+          "answer": "Das hängt vom Ziel ab. Cambridge-Zertifikate prüfen bestimmte GER-Niveaus und sind breit anerkannt; IELTS vergibt einen Punktwert und wird häufig für Studium, Arbeit und internationale Mobilität verlangt. Prüfen Sie immer, was die Zielinstitution akzeptiert."
+        },
+        "it-IT": {
+          "question": "Quale certificazione di inglese scegliere: Cambridge o IELTS?",
+          "answer": "Dipende dall'obiettivo. Le certificazioni Cambridge valutano livelli specifici del QCER e sono ampiamente riconosciute; IELTS assegna un punteggio ed è spesso richiesto per studio, lavoro e mobilità internazionale. Verifica sempre ciò che accetta l'ente destinatario."
+        },
+        "ja-JP": {
+          "question": "英語資格はCambridgeとIELTSのどちらを受けるべきですか？",
+          "answer": "目的によります。Cambridge Englishの資格はCEFRの特定レベルを評価し、広く認知されています。IELTSはスコアで評価され、留学、就職、国際的な移動手続きで求められることがあります。提出先が認める試験を必ず確認してください。"
+        },
+        "ru-RU": {
+          "question": "Какую сертификацию по английскому выбрать: Cambridge или IELTS?",
+          "answer": "Это зависит от цели. Экзамены Cambridge подтверждают конкретные уровни CEFR и широко признаются. IELTS выдаёт балльный результат и часто требуется для учёбы, работы и международной мобильности. Всегда проверяйте требования принимающей организации."
+        },
+        "zh-CN": {
+          "question": "英语认证应该选Cambridge还是IELTS？",
+          "answer": "取决于你的目标。Cambridge English考试对应具体CEFR级别并得到广泛认可；IELTS提供分数结果，常用于留学、工作和国际流动相关申请。应始终确认接收机构认可哪一种考试。"
+        }
+      }
+    },
+    {
+      "id": "faq-050",
+      "intent": "delf-dalf",
+      "category": "certification",
+      "priority": "high",
+      "searchIntent": "informational",
+      "featured": false,
+      "applicableCourseLanguages": [
+        "fr"
+      ],
+      "parameters": [],
+      "sourceKeywordsPtPT": [
+        "DELF DALF",
+        "certificado francês",
+        "exame francês"
+      ],
+      "localizations": {
+        "pt-PT": {
+          "question": "O que são DELF e DALF e para que servem?",
+          "answer": "DELF e DALF são diplomas oficiais de francês associados aos níveis do QECR. O DELF cobre níveis A1 a B2 e o DALF os níveis C1 e C2. Podem ser utilizados para comprovar proficiência em contextos académicos, profissionais e administrativos, conforme a exigência da entidade de destino."
+        },
+        "en-US": {
+          "question": "What are DELF and DALF, and what are they used for?",
+          "answer": "DELF and DALF are official French-language diplomas linked to CEFR levels. DELF covers A1-B2 and DALF covers C1-C2, and they can be used as proof of proficiency in academic, professional and administrative contexts."
+        },
+        "es-ES": {
+          "question": "¿Qué son DELF y DALF y para qué sirven?",
+          "answer": "DELF y DALF son diplomas oficiales de francés vinculados a los niveles del MCER. DELF cubre A1-B2 y DALF C1-C2, y pueden utilizarse para acreditar nivel en contextos académicos, profesionales y administrativos."
+        },
+        "fr-FR": {
+          "question": "Que sont le DELF et le DALF et à quoi servent-ils ?",
+          "answer": "Le DELF et le DALF sont des diplômes officiels de français associés aux niveaux du CECRL. Le DELF couvre A1-B2 et le DALF C1-C2 ; ils peuvent servir à attester un niveau dans des contextes universitaires, professionnels et administratifs."
+        },
+        "de-DE": {
+          "question": "Was sind DELF und DALF und wofür werden sie verwendet?",
+          "answer": "DELF und DALF sind offizielle französische Sprachdiplome auf Grundlage der GER-Niveaus. DELF deckt A1-B2 und DALF C1-C2 ab und kann in akademischen, beruflichen und administrativen Kontexten als Sprachnachweis dienen."
+        },
+        "it-IT": {
+          "question": "Che cosa sono DELF e DALF e a cosa servono?",
+          "answer": "DELF e DALF sono diplomi ufficiali di francese collegati ai livelli del QCER. DELF copre A1-B2 e DALF C1-C2 e possono essere utilizzati per dimostrare la competenza in contesti accademici, professionali e amministrativi."
+        },
+        "ja-JP": {
+          "question": "DELFとDALFとは何ですか？何に使われますか？",
+          "answer": "DELFとDALFはCEFRレベルに対応したフランス語の公式ディプロマです。DELFはA1〜B2、DALFはC1〜C2を対象とし、教育、仕事、行政手続きなどでフランス語能力の証明として利用されます。"
+        },
+        "ru-RU": {
+          "question": "Что такое DELF и DALF и для чего они нужны?",
+          "answer": "DELF и DALF — официальные дипломы по французскому языку, связанные с уровнями CEFR. DELF охватывает A1–B2, а DALF — C1–C2. Они используются для подтверждения владения французским в учебных, профессиональных и административных целях."
+        },
+        "zh-CN": {
+          "question": "DELF和DALF是什么？有什么用途？",
+          "answer": "DELF和DALF是与CEFR级别对应的官方法语文凭。DELF覆盖A1到B2，DALF覆盖C1和C2，可用于在教育、职业和行政场景中证明法语水平。"
+        }
+      }
+    },
+    {
+      "id": "faq-051",
+      "intent": "dele",
+      "category": "certification",
+      "priority": "high",
+      "searchIntent": "informational",
+      "featured": false,
+      "applicableCourseLanguages": [
+        "es"
+      ],
+      "parameters": [],
+      "sourceKeywordsPtPT": [
+        "DELE",
+        "certificado espanhol",
+        "exame espanhol"
+      ],
+      "localizations": {
+        "pt-PT": {
+          "question": "O que é o DELE e para que serve?",
+          "answer": "O DELE é um diploma oficial de espanhol emitido pelo Instituto Cervantes em nome do Ministério competente de Espanha. Certifica níveis de A1 a C2 e é reconhecido internacionalmente em contextos educativos e profissionais."
+        },
+        "en-US": {
+          "question": "What is the DELE, and what is it used for?",
+          "answer": "DELE is an official Spanish-language diploma issued by Instituto Cervantes on behalf of Spain's competent ministry. It certifies levels A1-C2 and is internationally recognised in educational and professional contexts."
+        },
+        "es-ES": {
+          "question": "¿Qué es el DELE y para qué sirve?",
+          "answer": "El DELE es un diploma oficial de español expedido por el Instituto Cervantes en nombre del ministerio competente de España. Certifica niveles A1-C2 y tiene reconocimiento internacional en contextos educativos y profesionales."
+        },
+        "fr-FR": {
+          "question": "Qu'est-ce que le DELE et à quoi sert-il ?",
+          "answer": "Le DELE est un diplôme officiel d'espagnol délivré par l'Instituto Cervantes au nom du ministère espagnol compétent. Il certifie les niveaux A1-C2 et est reconnu internationalement dans les domaines éducatif et professionnel."
+        },
+        "de-DE": {
+          "question": "Was ist das DELE und wofür wird es verwendet?",
+          "answer": "Das DELE ist ein offizielles Spanischdiplom des Instituto Cervantes im Namen des zuständigen spanischen Ministeriums. Es zertifiziert die Niveaus A1-C2 und ist international in Bildungs- und Berufskontexten anerkannt."
+        },
+        "it-IT": {
+          "question": "Che cos'è il DELE e a cosa serve?",
+          "answer": "Il DELE è un diploma ufficiale di spagnolo rilasciato dall'Instituto Cervantes per conto del ministero spagnolo competente. Certifica i livelli A1-C2 ed è riconosciuto a livello internazionale in contesti educativi e professionali."
+        },
+        "ja-JP": {
+          "question": "DELEとは何ですか？何に使われますか？",
+          "answer": "DELEは、スペインの管轄省を代表してInstituto Cervantesが発行するスペイン語の公式資格です。A1からC2までのレベルを認定し、教育や仕事など国際的な場面で利用されます。"
+        },
+        "ru-RU": {
+          "question": "Что такое DELE и для чего он нужен?",
+          "answer": "DELE — официальный диплом по испанскому языку, который Instituto Cervantes выдаёт от имени компетентного министерства Испании. Он подтверждает уровни от A1 до C2 и признаётся в образовательном и профессиональном контексте."
+        },
+        "zh-CN": {
+          "question": "DELE是什么？有什么用途？",
+          "answer": "DELE是由塞万提斯学院代表西班牙主管部门颁发的官方西班牙语文凭，可认证A1到C2级别，并在教育和职业等国际场景中得到认可。"
+        }
+      }
+    },
+    {
+      "id": "faq-052",
+      "intent": "exam-preparation",
+      "category": "certification",
+      "priority": "medium",
+      "searchIntent": "commercial",
+      "featured": false,
+      "applicableCourseLanguages": [
+        "en",
+        "fr",
+        "es",
+        "de"
+      ],
+      "parameters": [],
+      "sourceKeywordsPtPT": [
+        "preparação exame inglês",
+        "preparação DELF",
+        "preparação DELE"
+      ],
+      "localizations": {
+        "pt-PT": {
+          "question": "Preciso de um curso específico para me preparar para um exame oficial?",
+          "answer": "Não é sempre obrigatório, mas a preparação específica é recomendável. Além do domínio da língua, exames oficiais têm formatos, critérios, tempos e tipos de tarefa próprios. Conhecer a estrutura e praticar com feedback aumenta a preparação para o exame."
+        },
+        "en-US": {
+          "question": "Do I need a specific course to prepare for an official language exam?",
+          "answer": "It is not always mandatory, but exam-specific preparation is recommended. Official exams have their own formats, timing, task types and assessment criteria, so targeted practice and feedback can improve your preparation."
+        },
+        "es-ES": {
+          "question": "¿Necesito un curso específico para preparar un examen oficial de idiomas?",
+          "answer": "No siempre es obligatorio, pero se recomienda una preparación específica. Los exámenes oficiales tienen formatos, tiempos, tareas y criterios propios, por lo que la práctica dirigida y el feedback ayudan a llegar mejor preparado."
+        },
+        "fr-FR": {
+          "question": "Dois-je suivre un cours spécifique pour préparer un examen officiel de langue ?",
+          "answer": "Ce n'est pas toujours obligatoire, mais une préparation spécifique est recommandée. Les examens officiels ont leurs propres formats, durées, types d'épreuves et critères d'évaluation ; une pratique ciblée avec feedback améliore la préparation."
+        },
+        "de-DE": {
+          "question": "Brauche ich einen speziellen Kurs zur Vorbereitung auf eine offizielle Sprachprüfung?",
+          "answer": "Er ist nicht immer verpflichtend, aber eine prüfungsspezifische Vorbereitung ist empfehlenswert. Offizielle Prüfungen haben eigene Formate, Zeitvorgaben, Aufgabentypen und Bewertungskriterien; gezielte Übung und Feedback verbessern die Vorbereitung."
+        },
+        "it-IT": {
+          "question": "Mi serve un corso specifico per preparare un esame ufficiale di lingua?",
+          "answer": "Non è sempre obbligatorio, ma una preparazione specifica è consigliata. Gli esami ufficiali hanno formati, tempi, tipi di esercizio e criteri propri; una pratica mirata con feedback migliora la preparazione."
+        },
+        "ja-JP": {
+          "question": "公式語学試験のために専用コースを受ける必要がありますか？",
+          "answer": "必須とは限りませんが、試験対策に特化した準備はおすすめです。公式試験には独自の形式、評価基準、時間制限、課題タイプがあります。試験形式を理解し、フィードバック付きで練習することが重要です。"
+        },
+        "ru-RU": {
+          "question": "Нужен ли специальный курс для подготовки к официальному языковому экзамену?",
+          "answer": "Не всегда, но целевая подготовка рекомендуется. У официальных экзаменов есть собственные форматы, критерии оценки, ограничения по времени и типы заданий. Знание структуры и практика с обратной связью помогают подготовиться лучше."
+        },
+        "zh-CN": {
+          "question": "准备官方语言考试一定要上专门课程吗？",
+          "answer": "不一定强制，但建议进行针对性备考。官方考试有自己的题型、评分标准、时间限制和任务类型。熟悉考试结构并在有反馈的情况下练习，会更有利于备考。"
+        }
+      }
+    }
+  ],
+  "presentation": {
+    "homePreviewFaqIds": [
+      "faq-001",
+      "faq-006",
+      "faq-010",
+      "faq-013",
+      "faq-028",
+      "faq-030",
+      "faq-026",
+      "faq-037"
+    ]
+  }
+}

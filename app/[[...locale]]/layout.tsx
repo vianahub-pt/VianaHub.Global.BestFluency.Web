@@ -12,8 +12,9 @@ import "../globals.css";
 type Params = Promise<{ locale?: string[] }>;
 
 /**
- * Optional catch-all: /, /en/, /privacy/, /en/privacy/, etc.
- * Generates all 27 static variants: 9 landing + 9 privacy + 9 cookies.
+ * Optional catch-all: /, /en/, /privacy/, /faq/, /en/faq/, etc.
+ * Generates all 45 static variants: 9 landing + 9 privacy + 9 cookies
+ * + 9 faq + 9 new-amadora + 9 tvi (o default pt-PT não tem segmento).
  */
 export function generateStaticParams() {
   const localeSegments = locales
@@ -35,6 +36,12 @@ export function generateStaticParams() {
     for (const seg of localeSegments) {
       params.push({ locale: [seg, slug] });
     }
+  }
+
+  // FAQ knowledge base: /faq/ , /en/faq/ , ...
+  params.push({ locale: ["faq"] });
+  for (const seg of localeSegments) {
+    params.push({ locale: [seg, "faq"] });
   }
 
   // Reportage pages: /reportagens/new-amadora/ , /en/reportagens/new-amadora/ , ...
@@ -66,6 +73,11 @@ function getTviReportageMeta(locale: LocaleCode): { title: string; description: 
   return { title: reportage.title, description: reportage.intro };
 }
 
+function getFaqMeta(locale: LocaleCode): { title: string; description: string } {
+  const faqPage = getMessages(locale).faqPage;
+  return { title: faqPage.metaTitle, description: faqPage.metaDescription };
+}
+
 export async function generateMetadata({
   params,
 }: {
@@ -86,6 +98,12 @@ export async function generateMetadata({
       resolved.locale,
       getMessages(resolved.locale).landing.meta,
     );
+  }
+
+  if (resolved.page === "faq") {
+    return buildLocaleMetadata(resolved.locale, getFaqMeta(resolved.locale), {
+      page: "faq",
+    });
   }
 
   if (resolved.page === "new-amadora") {

@@ -211,37 +211,37 @@
         {
           "name": "Andreia Barros",
           "role": "Administrative Manager",
-          "photo": "/testimonials/andreia-foto.png",
+          "photo": "/testimonials/andreia-foto.webp",
           "quote": "I love the classes! The teacher is very attentive, patient and explains everything in a simple and easy-to-understand way. I have been improving a lot in English and I feel more and more comfortable speaking. Highly recommend!"
         },
         {
           "name": "Mauricio Moura",
           "role": "Bank Manager",
-          "photo": "/testimonials/mauricio-foto.png",
+          "photo": "/testimonials/mauricio-foto.webp",
           "quote": "I want to share my evaluation of the course. The teacher has vast knowledge of the English language and the ability to transfer that knowledge to students in a relaxed way. What I like most about my English class is the way she presents it, even when I don't know something. That helped me a lot to unlock my conversation. That's why I recommend Best Fluency."
         },
         {
           "name": "Pedro António",
           "role": "Midfielder",
-          "photo": "/testimonials/pedro-foto.png",
+          "photo": "/testimonials/pedro-foto.webp",
           "quote": "Great! I learn a lot with teacher Taty."
         },
         {
           "name": "Romerson Neves",
           "role": "Truck Driver",
-          "photo": "/testimonials/romerson-foto.png",
+          "photo": "/testimonials/romerson-foto.webp",
           "quote": "I have been in Portugal for 7 months and I realized the importance of learning English for my life. I started with in-person classes, but the person who was teaching me had to leave the country and couldn't continue. Then I tried online classes with another teacher, but I didn't adapt. That's when I met teacher Tatiana. We had a trial class and I really liked it. Since then, I have continued the classes and I feel that I am improving every day. Teacher Tatiana has a lot of patience, explains clearly and conducts the classes excellently. I recommend her to everyone who wants to learn English with quality."
         },
         {
           "name": "Sandro Vite",
           "role": "Google Review",
-          "photo": "/testimonials/sandro-foto.png",
+          "photo": "/testimonials/sandro-foto.webp",
           "quote": "Amazing, teaching that is very well applied and in a simple, objective way."
         },
         {
           "name": "Wanda Ramos",
           "role": "Back Office Assistant",
-          "photo": "/testimonials/wanda-foto.png",
+          "photo": "/testimonials/wanda-foto.webp",
           "quote": "I want to share my evaluation of the course. Everything was very clear, with easy-to-understand content. Teacher Taty was great, very caring, made me feel very comfortable, motivated me which made me ask my questions without any embarrassment or fear of being wrong. I intend to go back to training to do another level as soon as possible. Thank you so much for the attention, dedication and care, Taty Viana."
         }
       ],
@@ -267,10 +267,26 @@
       "h2": "Learn the language that brings you closer to your goals",
       "subtitle": "At Best Fluency, you will find English, French, Spanish and German lessons with a practical, personal and communication-focused approach.",
       "items": [
-        { "name": "English", "code": "EN", "text": "Build confidence to communicate at work, while travelling and in everyday life." },
-        { "name": "French", "code": "FR", "text": "Build a strong foundation and develop natural communication, step by step." },
-        { "name": "Spanish", "code": "ES", "text": "Learn a familiar language in a practical, clear way adapted to your pace." },
-        { "name": "German", "code": "DE", "text": "Structure your learning and move forward with close support and clear goals." }
+        {
+          "name": "English",
+          "code": "EN",
+          "text": "Build confidence to communicate at work, while travelling and in everyday life."
+        },
+        {
+          "name": "French",
+          "code": "FR",
+          "text": "Build a strong foundation and develop natural communication, step by step."
+        },
+        {
+          "name": "Spanish",
+          "code": "ES",
+          "text": "Learn a familiar language in a practical, clear way adapted to your pace."
+        },
+        {
+          "name": "German",
+          "code": "DE",
+          "text": "Structure your learning and move forward with close support and clear goals."
+        }
       ],
       "locationTitle": "Small classes in Venda Nova",
       "locationText": "In-person lessons at Espaço CASA, in Venda Nova — Amadora, with close attention to every student.",
@@ -282,59 +298,11 @@
     "faq": {
       "h2": "Frequently asked questions about Best Fluency lessons",
       "subtitle": "Find quick answers about in-person English lessons in Amadora and online.",
-      "items": [
-        {
-          "question": "Where do in-person lessons take place?",
-          "answer": "In-person lessons take place at Espaço CASA, Avenida Chaby Pinheiro, 5, Venda Nova — Amadora."
-        },
-        {
-          "question": "Are there also online lessons?",
-          "answer": "Yes. Best Fluency offers online lessons for students looking for more flexibility or who cannot travel to the in-person space."
-        },
-        {
-          "question": "Are there one-on-one and group lessons?",
-          "answer": "Yes. There are one-on-one lessons and small groups, organized according to the students' level and availability."
-        },
-        {
-          "question": "How many students are in each group?",
-          "answer": "Groups are small, allowing more participation and support during lessons."
-        },
-        {
-          "question": "Who are the lessons for?",
-          "answer": "There are lessons for children, teens and adults, with content defined according to each student's age, level and goals."
-        },
-        {
-          "question": "Do I need to know English to start?",
-          "answer": "No. Lessons are suitable for both beginners and students who already have some English knowledge and want to keep progressing."
-        },
-        {
-          "question": "How is my level identified?",
-          "answer": "Before the lessons start, we have a brief conversation to understand the student's current knowledge, main difficulties and goals."
-        },
-        {
-          "question": "Are the lessons personalized?",
-          "answer": "Yes. The content, activities and pace of the lessons are adjusted to each student's level, needs and progress."
-        },
-        {
-          "question": "How long does each lesson last?",
-          "answer": "Each lesson lasts 50 minutes, focused on practice, participation and continuous progress."
-        },
-        {
-          "question": "How does the trial lesson work?",
-          "answer": "The trial lesson lets you get to know Best Fluency's approach, ask questions and see how the teaching can be adapted to the student's goals."
-        },
-        {
-          "question": "How can I book a lesson?",
-          "answer": "Just click a WhatsApp button and tell us the type of lesson you want and your availability."
-        },
-        {
-          "question": "How can I get more information?",
-          "answer": "You can contact us via WhatsApp to clarify any questions you may have."
-        }
-      ],
       "ctaLabel": "Book a trial lesson",
       "ctaAriaLabel": "Book a trial lesson: open a WhatsApp conversation (new window)",
-      "whatsappMessage": "Hello! I would like to book a trial English lesson at Best Fluency."
+      "whatsappMessage": "Hello! I would like to book a trial English lesson at Best Fluency.",
+      "viewAllLabel": "View all questions",
+      "viewAllAriaLabel": "View all frequently asked questions — navigate to the full FAQ page"
     },
     "finalCta": {
       "eyebrow": "READY TO BOARD?",
@@ -682,5 +650,21 @@
         }
       ]
     }
+  },
+  "faqPage": {
+    "h1": "Frequently asked questions",
+    "subtitle": "Find answers to the most common questions about Best Fluency lessons and services.",
+    "searchLabel": "Search frequently asked questions",
+    "searchPlaceholder": "Search questions...",
+    "allCategoriesLabel": "All categories",
+    "categoryFilterLabel": "Filter by category",
+    "allCourseLanguagesLabel": "All languages",
+    "courseLanguageFilterLabel": "Filter by language",
+    "resultsCount": "{count} questions found",
+    "noResultsTitle": "No questions found",
+    "noResultsDescription": "We couldn’t find any questions matching your search. Try different terms or clear the filters.",
+    "clearFiltersLabel": "Clear filters",
+    "metaTitle": "Frequently Asked Questions | Best Fluency",
+    "metaDescription": "Find answers to the most common questions about Best Fluency in-person and online English lessons in Amadora."
   }
 }

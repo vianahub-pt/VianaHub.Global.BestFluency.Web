@@ -211,37 +211,37 @@
         {
           "name": "Andreia Barros",
           "role": "Verwaltungsleiter",
-          "photo": "/testimonials/andreia-foto.png",
+          "photo": "/testimonials/andreia-foto.webp",
           "quote": "Ich liebe die Kurse! Die Lehrerin ist sehr aufmerksam, geduldig und erklärt alles einfach und verständlich. Ich habe mich im Englischen sehr verbessert und fühle mich zunehmend sicher beim Sprechen. Sehr empfehlenswert!"
         },
         {
           "name": "Mauricio Moura",
           "role": "Bankmanager",
-          "photo": "/testimonials/mauricio-foto.png",
+          "photo": "/testimonials/mauricio-foto.webp",
           "quote": "Ich möchte meine Bewertung des Kurses abgeben. Die teacher verfügt über umfassende Kenntnisse der englischen Sprache und schafft es, dieses Wissen locker und verständlich an die Lernenden weiterzugeben. Was mir an meinem Englischkurs am besten gefällt, ist die Art zu erklären, auch wenn ich etwas nicht weiß. Das hat mir sehr geholfen, meine Konversation zu befreben. Deshalb empfehle ich Best Fluency."
         },
         {
           "name": "Pedro António",
           "role": "Mittelfeldspieler",
-          "photo": "/testimonials/pedro-foto.png",
+          "photo": "/testimonials/pedro-foto.webp",
           "quote": "Sehr gut! Ich lerne viel mit teacher Taty."
         },
         {
           "name": "Romerson Neves",
           "role": "Lkw-Fahrer",
-          "photo": "/testimonials/romerson-foto.png",
+          "photo": "/testimonials/romerson-foto.webp",
           "quote": "Ich bin seit 7 Monaten in Portugal und habe erkannt, wie wichtig es ist, Englisch zu lernen. Ich habe mit Präsenzunterricht angefangen, aber die Person, die mich unterrichtet hat, musste das Land verlassen und konnte nicht weitermachen. Dann habe ich Online-Unterricht mit einer anderen Lehrerin ausprobiert, aber ich konnte mich nicht anpassen. Da lernte ich Lehrerin Tatiana kennen. Wir hatten eine Probestunde und sie hat mir sehr gut gefallen. Seitdem mache ich die Stunden weiter und spüre, dass ich jeden Tag mehr vorankomme. Lehrerin Tatiana hat viel Geduld, erklärt klar und führt die Stunden exzellent durch. Ich empfehle sie allen, die Englisch von Qualität lernen möchten."
         },
         {
           "name": "Sandro Vite",
           "role": "Google-Bewertung",
-          "photo": "/testimonials/sandro-foto.png",
+          "photo": "/testimonials/sandro-foto.webp",
           "quote": "Unglaublich, ein sehr gut umgesetzter Unterricht, einfach und zielgerichtet."
         },
         {
           "name": "Wanda Ramos",
           "role": "Back-Office-Assistent",
-          "photo": "/testimonials/wanda-foto.png",
+          "photo": "/testimonials/wanda-foto.webp",
           "quote": "Ich möchte meine Bewertung des Kurses abgeben. Alles war sehr klar, mit leicht verständlichen Inhalten. Lehrerin Taty war toll, sehr fürsorglich, hat sich sehr für mich eingesetzt, mich motiviert und dadurch konnte ich meine Fragen ohne Scham oder Angst vor Fehlern stellen. Ich plane, die Weiterbildung so bald wie möglich auf dem nächsten Niveau fortzusetzen. Vielen Dank für die Aufmerksamkeit, Hingabe und Fürsorge, Taty Viana."
         }
       ],
@@ -267,10 +267,26 @@
       "h2": "Lernen Sie die Sprache, die Sie Ihren Zielen näherbringt",
       "subtitle": "Bei Best Fluency finden Sie Englisch-, Französisch-, Spanisch- und Deutschunterricht mit einem praktischen, persönlichen Fokus auf Kommunikation.",
       "items": [
-        { "name": "Englisch", "code": "EN", "text": "Gewinnen Sie Sicherheit für die Kommunikation im Beruf, auf Reisen und im Alltag." },
-        { "name": "Französisch", "code": "FR", "text": "Bauen Sie eine solide Grundlage auf und entwickeln Sie natürliche Kommunikation." },
-        { "name": "Spanisch", "code": "ES", "text": "Lernen Sie eine verwandte Sprache praktisch, klar und in Ihrem eigenen Tempo." },
-        { "name": "Deutsch", "code": "DE", "text": "Strukturieren Sie Ihr Lernen und machen Sie mit persönlicher Begleitung Fortschritte." }
+        {
+          "name": "Englisch",
+          "code": "EN",
+          "text": "Gewinnen Sie Sicherheit für die Kommunikation im Beruf, auf Reisen und im Alltag."
+        },
+        {
+          "name": "Französisch",
+          "code": "FR",
+          "text": "Bauen Sie eine solide Grundlage auf und entwickeln Sie natürliche Kommunikation."
+        },
+        {
+          "name": "Spanisch",
+          "code": "ES",
+          "text": "Lernen Sie eine verwandte Sprache praktisch, klar und in Ihrem eigenen Tempo."
+        },
+        {
+          "name": "Deutsch",
+          "code": "DE",
+          "text": "Strukturieren Sie Ihr Lernen und machen Sie mit persönlicher Begleitung Fortschritte."
+        }
       ],
       "locationTitle": "Kleine Gruppen in Venda Nova",
       "locationText": "Präsenzunterricht im Espaço CASA in Venda Nova — Amadora, mit persönlicher Betreuung.",
@@ -282,59 +298,11 @@
     "faq": {
       "h2": "Häufige Fragen zum Unterricht bei Best Fluency",
       "subtitle": "Finden Sie schnelle Antworten zum Englischunterricht vor Ort in Amadora und online.",
-      "items": [
-        {
-          "question": "Wo findet der Präsenzunterricht statt?",
-          "answer": "Der Präsenzunterricht findet im Espaço CASA, Avenida Chaby Pinheiro, 5, Venda Nova – Amadora statt."
-        },
-        {
-          "question": "Gibt es auch Online-Unterricht?",
-          "answer": "Ja. Best Fluency bietet Online-Unterricht für Lernende an, die mehr Flexibilität suchen oder nicht zum Präsenzort kommen können."
-        },
-        {
-          "question": "Gibt es Einzel- und Gruppenunterricht?",
-          "answer": "Ja. Es gibt Einzelunterricht und kleine Gruppen, die nach Niveau und Verfügbarkeit der Lernenden organisiert werden."
-        },
-        {
-          "question": "Wie viele Lernende sind in jeder Gruppe?",
-          "answer": "Die Gruppen sind klein, was mehr Teilnahme und Betreuung während des Unterrichts ermöglicht."
-        },
-        {
-          "question": "Für wen ist der Unterricht geeignet?",
-          "answer": "Es gibt Unterricht für Kinder, Jugendliche und Erwachsene, mit Inhalten, die nach Alter, Niveau und Zielen jedes Lernenden festgelegt werden."
-        },
-        {
-          "question": "Muss ich Englisch können, um zu beginnen?",
-          "answer": "Nein. Der Unterricht eignet sich sowohl für Anfänger als auch für Lernende, die bereits Englischkenntnisse haben und sich weiterentwickeln möchten."
-        },
-        {
-          "question": "Wie wird mein Niveau ermittelt?",
-          "answer": "Vor Unterrichtsbeginn führen wir ein kurzes Gespräch, um den aktuellen Kenntnisstand, die wichtigsten Schwierigkeiten und die Ziele des Lernenden zu verstehen."
-        },
-        {
-          "question": "Ist der Unterricht persönlich angepasst?",
-          "answer": "Ja. Inhalte, Aktivitäten und Tempo des Unterrichts werden an Niveau, Bedürfnisse und Fortschritt jedes Lernenden angepasst."
-        },
-        {
-          "question": "Wie lange dauert jede Stunde?",
-          "answer": "Jede Stunde dauert 50 Minuten und konzentriert sich auf Praxis, Teilnahme und kontinuierliche Weiterentwicklung."
-        },
-        {
-          "question": "Wie funktioniert die Probestunde?",
-          "answer": "Die Probestunde ermöglicht es, den Ansatz von Best Fluency kennenzulernen, Fragen zu klären und zu sehen, wie der Unterricht an die Ziele des Lernenden angepasst werden kann."
-        },
-        {
-          "question": "Wie kann ich eine Stunde buchen?",
-          "answer": "Klicken Sie einfach auf einen WhatsApp-Button und geben Sie die gewünschte Unterrichtsart und Ihre Verfügbarkeit an."
-        },
-        {
-          "question": "Wie kann ich mehr Informationen erhalten?",
-          "answer": "Sie können uns über WhatsApp kontaktieren, um alle Ihre Fragen zu klären."
-        }
-      ],
       "ctaLabel": "Probestunde buchen",
       "ctaAriaLabel": "Probestunde buchen — WhatsApp-Unterhaltung öffnen (neues Fenster)",
-      "whatsappMessage": "Hallo! Ich möchte gerne eine Englisch-Probestunde bei Best Fluency buchen."
+      "whatsappMessage": "Hallo! Ich möchte gerne eine Englisch-Probestunde bei Best Fluency buchen.",
+      "viewAllLabel": "Alle Fragen anzeigen",
+      "viewAllAriaLabel": "Alle häufig gestellte Fragen anzeigen — zur vollständigen FAQ-Seite navigieren"
     },
     "finalCta": {
       "eyebrow": "BEREIT ZUM BOARDING?",
@@ -682,5 +650,21 @@
         }
       ]
     }
+  },
+  "faqPage": {
+    "h1": "Häufig gestellte Fragen",
+    "subtitle": "Finden Sie Antworten auf die häufigsten Fragen zu Unterricht und Dienstleistungen von Best Fluency.",
+    "searchLabel": "Häufig gestellte Fragen durchsuchen",
+    "searchPlaceholder": "Frage suchen...",
+    "allCategoriesLabel": "Alle Kategorien",
+    "categoryFilterLabel": "Nach Kategorie filtern",
+    "allCourseLanguagesLabel": "Alle Sprachen",
+    "courseLanguageFilterLabel": "Nach Sprache filtern",
+    "resultsCount": "{count} Fragen gefunden",
+    "noResultsTitle": "Keine Fragen gefunden",
+    "noResultsDescription": "Wir haben keine Fragen gefunden, die Ihrer Suche entsprechen. Versuchen Sie andere Begriffe oder löschen Sie die Filter.",
+    "clearFiltersLabel": "Filter löschen",
+    "metaTitle": "Häufig Gestellte Fragen | Best Fluency",
+    "metaDescription": "Finden Sie Antworten auf die häufigsten Fragen zu den Präsenz- und Online-Englischkursen von Best Fluency in Amadora."
   }
 }
