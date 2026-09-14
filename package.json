@@ -17,9 +17,9 @@
   "scripts": {
     "dev": "next dev",
     "check:i18n": "node scripts/check-i18n-parity.mjs",
-    "check:faq": "node scripts/check-faq-data.mjs && node scripts/test-faq-behavior.mjs",
+    "check:faq": "node scripts/check-faq-data.mjs && node scripts/test-faq-behavior.mjs && npx tsx scripts/test-faq-search.mts",
     "check:images": "node scripts/check-image-assets.mjs",
-    "prebuild": "node scripts/check-i18n-parity.mjs && node scripts/check-faq-data.mjs && node scripts/test-faq-behavior.mjs && node scripts/check-image-assets.mjs",
+    "prebuild": "node scripts/check-i18n-parity.mjs && node scripts/check-faq-data.mjs && node scripts/test-faq-behavior.mjs && npx tsx scripts/test-faq-search.mts && node scripts/check-image-assets.mjs",
     "build": "next build",
     "preview": "serve out",
     "lint": "eslint .",
