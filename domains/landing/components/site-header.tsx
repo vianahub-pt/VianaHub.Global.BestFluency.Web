@@ -3,7 +3,7 @@ import { site } from "@/core/config/site";
 import { getMessages } from "@/core/i18n";
 import { LocaleSwitcher } from "@/shared/components/locale/locale-switcher";
 import { ThemeToggle } from "@/shared/components/theme/theme-toggle";
-import { buildHomePath } from "@/shared/lib/routes";
+import { buildHomePath, type PageKind } from "@/shared/lib/routes";
 
 import { MainNav } from "./main-nav";
 import { MobileMenu } from "./mobile-menu";
@@ -19,8 +19,11 @@ import { ReportagesSwitcher } from "./reportages-switcher";
  * - menu móvel acessível (MobileMenu) abaixo do breakpoint lg;
  * - mobile-first 360 px: uma linha com logótipo + tema + menu; o seletor de
  *   idiomas e o CTA concentram-se no painel móvel para evitar overflow.
+ *
+ * O prop `page` permite preservar o page kind atual ao trocar de idioma
+ * (FAQ → FAQ, reportagens → reportagens, nunca regressar à home).
  */
-export function SiteHeader({ locale }: { locale: LocaleCode }) {
+export function SiteHeader({ locale, page = "landing" }: { locale: LocaleCode; page?: PageKind }) {
   const content = getMessages(locale).landing;
   const homePath = buildHomePath(locale);
 
@@ -70,6 +73,7 @@ export function SiteHeader({ locale }: { locale: LocaleCode }) {
             <LocaleSwitcher
               currentLocale={locale}
               label={content.a11y.languageSwitcherLabel}
+              page={page}
             />
           </div>
           <ThemeToggle label={content.a11y.toggleTheme} />
@@ -79,6 +83,7 @@ export function SiteHeader({ locale }: { locale: LocaleCode }) {
             nav={content.nav}
             homePath={homePath}
             languageSwitcherLabel={content.a11y.languageSwitcherLabel}
+            page={page}
           />
         </div>
       </div>

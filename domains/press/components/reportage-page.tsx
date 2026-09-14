@@ -22,8 +22,8 @@ export function ReportagePage({
     type === "tvi" ? site.externalLinks.tviBomDiaAlegria : site.externalLinks.newInAmadora;
   const imageSrc =
     type === "tvi"
-      ? "/press/tvi-bom-dia-alegria.jpg"
-      : "/bestfluenty-newinamadora.jpeg";
+      ? "/press/tvi-bom-dia-alegria.webp"
+      : "/bestfluenty-newinamadora.webp";
   const pagePath =
     type === "tvi" ? `/reportagens/tvi/` : `/reportagens/new-amadora/`;
   const structuredData = {
@@ -59,7 +59,7 @@ export function ReportagePage({
 
   return (
     <div className="flex min-h-screen flex-col bg-background">
-      <SiteHeader locale={locale} />
+      <SiteHeader locale={locale} page={type} />
       <main id="main" className="flex-1">
         <script
           type="application/ld+json"

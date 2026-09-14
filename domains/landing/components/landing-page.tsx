@@ -1,5 +1,7 @@
 import { type LocaleCode } from "@/core/config/locales";
 import { getMessages } from "@/core/i18n";
+import { getHomePreviewFaqs } from "@/domains/faq/lib/faq-resolver";
+import { buildFaqPath } from "@/shared/lib/routes";
 
 import { BestKids } from "./best-kids";
 import { Faq } from "./faq";
@@ -34,6 +36,8 @@ import { Testimonials } from "./testimonials";
  */
 export function LandingPage({ locale }: { locale: LocaleCode }) {
   const content = getMessages(locale).landing;
+  const homeFaqs = getHomePreviewFaqs(locale);
+  const faqPath = buildFaqPath(locale);
 
   return (
     <>
@@ -48,7 +52,7 @@ export function LandingPage({ locale }: { locale: LocaleCode }) {
         <BestKids locale={locale} />
         <Testimonials locale={locale} />
         <Founder locale={locale} />
-        <Faq content={content.faq} />
+        <Faq content={content.faq} faqs={homeFaqs} faqPath={faqPath} />
       </main>
       <SiteFooter locale={locale} />
     </>

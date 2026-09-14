@@ -3,11 +3,16 @@ import type { MetadataRoute } from "next";
 import { locales } from "@/core/config/locales";
 import {
   absoluteUrl,
+  buildFaqAlternates,
   buildReportageAlternates,
   buildTviReportageAlternates,
   languageAlternates,
 } from "@/shared/lib/seo";
-import { buildReportagePath, buildTviReportagePath } from "@/shared/lib/routes";
+import {
+  buildFaqPath,
+  buildReportagePath,
+  buildTviReportagePath,
+} from "@/shared/lib/routes";
 
 export const dynamic = "force-static";
 
@@ -19,6 +24,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const languages = languageAlternates();
   const reportageLanguages = buildReportageAlternates();
   const tviReportageLanguages = buildTviReportageAlternates();
+  const faqLanguages = buildFaqAlternates();
 
   return [
     ...locales.map((locale) => ({
@@ -27,6 +33,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "weekly" as const,
       priority: locale.isDefault ? 1 : 0.9,
       alternates: { languages },
+    })),
+    ...locales.map((locale) => ({
+      url: absoluteUrl(buildFaqPath(locale.code)),
+      lastModified: new Date(),
+      changeFrequency: "weekly" as const,
+      priority: 0.8,
+      alternates: { languages: faqLanguages },
     })),
     ...locales.map((locale) => ({
       url: absoluteUrl(buildReportagePath(locale.code)),

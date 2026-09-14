@@ -211,37 +211,37 @@
         {
           "name": "Andreia Barros",
           "role": "Responsable administratif",
-          "photo": "/testimonials/andreia-foto.png",
+          "photo": "/testimonials/andreia-foto.webp",
           "quote": "J'adore les cours ! La professeure est très attentionnée, patiente et explique tout de manière simple et facile à comprendre. J'ai beaucoup progressé en anglais et je me sens de plus en plus à l'aise pour parler. Je recommande vivement !"
         },
         {
           "name": "Mauricio Moura",
           "role": "Responsable bancaire",
-          "photo": "/testimonials/mauricio-foto.png",
+          "photo": "/testimonials/mauricio-foto.webp",
           "quote": "Je souhaite donner mon évaluation du cours. La teacher possède une vaste connaissance de la langue anglaise et une facilité à transmettre ce savoir aux élèves, de façon décontractée. Ce que j'aime le plus dans mon cours d'anglais, c'est la façon d'exposer, même quand je ne sais pas. Cela m'a beaucoup aidé à débloquer ma conversation. C'est pourquoi je recommande Best Fluency."
         },
         {
           "name": "Pedro António",
           "role": "Milieu de terrain",
-          "photo": "/testimonials/pedro-foto.png",
+          "photo": "/testimonials/pedro-foto.webp",
           "quote": "Très bien ! J'apprends beaucoup avec la teacher Taty."
         },
         {
           "name": "Romerson Neves",
           "role": "Truck Driver",
-          "photo": "/testimonials/romerson-foto.png",
+          "photo": "/testimonials/romerson-foto.webp",
           "quote": "Je suis au Portugal depuis 7 mois et j'ai réalisé l'importance d'apprendre l'anglais pour ma vie. J'ai commencé avec des cours en personne, mais la personne qui m'enseignait a dû quitter le pays et n'a pas pu continuer. J'ai ensuite essayé des cours en ligne avec un autre professeur, mais je ne me suis pas adapté. C'est alors que j'ai rencontré la professeure Tatiana. Nous avons fait un cours d'essai et j'ai beaucoup aimé. Depuis, j'ai continué les cours et je sens que je progresse chaque jour davantage. La professeure Tatiana a beaucoup de patience, explique clairement et mène les cours de manière excellente. Je la recommande à tous ceux qui veulent apprendre l'anglais avec qualité."
         },
         {
           "name": "Sandro Vite",
           "role": "Avis Google",
-          "photo": "/testimonials/sandro-foto.png",
+          "photo": "/testimonials/sandro-foto.webp",
           "quote": "Incroyable, un enseignement très bien appliqué et de manière simple et objective."
         },
         {
           "name": "Wanda Ramos",
           "role": "Assistant Back Office",
-          "photo": "/testimonials/wanda-foto.png",
+          "photo": "/testimonials/wanda-foto.webp",
           "quote": "Je souhaite donner mon évaluation du cours. Tout était très explicite, avec un contenu facile à comprendre. La professeure Taty était top, très attentionnée, m'a mise très à l'aise, m'a motivée ce qui m'a permis de poser mes questions sans aucune gêne ni peur de me tromper. J'ai l'intention de reprendre la formation pour passer au niveau supérieur dès que possible. Merci beaucoup pour l'attention, la dédicace et l'affection, Taty Viana."
         }
       ],
@@ -267,10 +267,26 @@
       "h2": "Apprenez la langue qui vous rapproche de vos objectifs",
       "subtitle": "Chez Best Fluency, vous trouverez des cours d'anglais, de français, d'espagnol et d'allemand avec une approche pratique et axée sur la communication.",
       "items": [
-        { "name": "Anglais", "code": "EN", "text": "Gagnez en confiance pour communiquer au travail, en voyage et au quotidien." },
-        { "name": "Français", "code": "FR", "text": "Construisez des bases solides et développez une communication naturelle, étape par étape." },
-        { "name": "Espagnol", "code": "ES", "text": "Apprenez une langue proche de manière pratique, claire et adaptée à votre rythme." },
-        { "name": "Allemand", "code": "DE", "text": "Structurez votre apprentissage et progressez avec un accompagnement attentif." }
+        {
+          "name": "Anglais",
+          "code": "EN",
+          "text": "Gagnez en confiance pour communiquer au travail, en voyage et au quotidien."
+        },
+        {
+          "name": "Français",
+          "code": "FR",
+          "text": "Construisez des bases solides et développez une communication naturelle, étape par étape."
+        },
+        {
+          "name": "Espagnol",
+          "code": "ES",
+          "text": "Apprenez une langue proche de manière pratique, claire et adaptée à votre rythme."
+        },
+        {
+          "name": "Allemand",
+          "code": "DE",
+          "text": "Structurez votre apprentissage et progressez avec un accompagnement attentif."
+        }
       ],
       "locationTitle": "Petits groupes à Venda Nova",
       "locationText": "Cours en présentiel à l'Espaço CASA, à Venda Nova — Amadora, avec une attention personnalisée.",
@@ -282,59 +298,11 @@
     "faq": {
       "h2": "Questions fréquentes sur les cours de Best Fluency",
       "subtitle": "Trouvez des réponses rapides sur les cours d'anglais en présentiel à Amadora et en ligne.",
-      "items": [
-        {
-          "question": "Où se déroulent les cours en présentiel ?",
-          "answer": "Les cours en présentiel se déroulent à l'Espaço CASA, Avenida Chaby Pinheiro, 5, Venda Nova — Amadora."
-        },
-        {
-          "question": "Y a-t-il aussi des cours en ligne ?",
-          "answer": "Oui. Best Fluency propose des cours en ligne pour les élèves qui recherchent plus de flexibilité ou qui ne peuvent pas se déplacer dans l'espace en présentiel."
-        },
-        {
-          "question": "Y a-t-il des cours individuels et en groupe ?",
-          "answer": "Oui. Il existe des cours individuels et des petits groupes, organisés selon le niveau et la disponibilité des élèves."
-        },
-        {
-          "question": "Combien d'élèves y a-t-il dans chaque groupe ?",
-          "answer": "Les groupes sont réduits, ce qui permet une plus grande participation et un meilleur accompagnement pendant les cours."
-        },
-        {
-          "question": "À qui s'adressent les cours ?",
-          "answer": "Il existe des cours pour les enfants, les adolescents et les adultes, avec des contenus définis selon l'âge, le niveau et les objectifs de chaque élève."
-        },
-        {
-          "question": "Ai-je besoin de savoir parler anglais pour commencer ?",
-          "answer": "Non. Les cours conviennent aussi bien aux débutants qu'aux élèves qui ont déjà des connaissances en anglais et souhaitent continuer à progresser."
-        },
-        {
-          "question": "Comment mon niveau est-il identifié ?",
-          "answer": "Avant le début des cours, nous organisons une brève conversation pour comprendre les connaissances actuelles, les principales difficultés et les objectifs de l'élève."
-        },
-        {
-          "question": "Les cours sont-ils personnalisés ?",
-          "answer": "Oui. Les contenus, les activités et le rythme des cours sont ajustés au niveau, aux besoins et à la progression de chaque élève."
-        },
-        {
-          "question": "Combien de temps dure chaque cours ?",
-          "answer": "Chaque cours dure 50 minutes, avec un accent sur la pratique, la participation et la progression continue."
-        },
-        {
-          "question": "Comment fonctionne le cours d'essai ?",
-          "answer": "Le cours d'essai permet de découvrir l'approche de Best Fluency, de clarifier les questions et de voir comment l'enseignement peut être adapté aux objectifs de l'élève."
-        },
-        {
-          "question": "Comment puis-je réserver un cours ?",
-          "answer": "Il suffit de cliquer sur un bouton WhatsApp et d'indiquer le type de cours souhaité et votre disponibilité."
-        },
-        {
-          "question": "Comment puis-je payer les cours ?",
-          "answer": "Le paiement des cours peut être effectué par virement bancaire, carte de crédit ou d'autres méthodes convenues avec Best Fluency."
-        }
-      ],
       "ctaLabel": "Réserver un cours d'essai",
       "ctaAriaLabel": "Réserver un cours d'essai — ouvrir une conversation WhatsApp (nouvelle fenêtre)",
-      "whatsappMessage": "Bonjour ! Je souhaite réserver un cours d'essai d'anglais à Best Fluency."
+      "whatsappMessage": "Bonjour ! Je souhaite réserver un cours d'essai d'anglais à Best Fluency.",
+      "viewAllLabel": "Voir toutes les questions",
+      "viewAllAriaLabel": "Voir toutes les questions fréquentes — naviguer vers la page complète de FAQ"
     },
     "finalCta": {
       "eyebrow": "PRÊT À EMBARQUER ?",
@@ -682,5 +650,33 @@
         }
       ]
     }
+  },
+  "faqPage": {
+    "h1": "Questions fréquentes",
+    "subtitle": "Trouvez des réponses aux questions les plus courantes sur les cours et services de Best Fluency.",
+    "searchLabel": "Rechercher des questions fréquentes",
+    "searchPlaceholder": "Rechercher une question...",
+    "allCategoriesLabel": "Toutes les catégories",
+    "categoryFilterLabel": "Catégorie",
+    "allCourseLanguagesLabel": "Toutes les langues",
+    "courseLanguageFilterLabel": "Langue que vous souhaitez apprendre",
+    "resultsCount": "{count} questions trouvées",
+    "noResultsTitle": "Aucune question trouvée",
+    "noResultsDescription": "Nous n’avons trouvé aucune question correspondant à votre recherche. Essayez d’autres termes ou effacez les filtres.",
+    "clearFiltersLabel": "Effacer les filtres",
+    "metaTitle": "Questions Fréquentes | Best Fluency",
+    "metaDescription": "Trouvez des réponses aux questions les plus fréquentes sur l’apprentissage des langues et sur les cours d’anglais, français, espagnol et allemand de Best Fluency, en présentiel et en ligne.",
+    "courseLanguageFilterHint": "Ce filtre sélectionne la langue que vous souhaitez apprendre. Pour changer la langue du site, utilisez le sélecteur dans l’en-tête.",
+    "resultsCountWithLanguage": "{count} questions pertinentes pour {language}",
+    "noResultsContactTitle": "Vous n’avez pas trouvé votre question ?",
+    "noResultsContactDescription": "Contactez-nous sur WhatsApp et nous vous aiderons.",
+    "ctaLabel": "Réserver un cours d’essai",
+    "ctaAriaLabel": "Réserver un cours d’essai — ouvrir la conversation WhatsApp (nouvelle fenêtre)",
+    "whatsappMessage": "Bonjour! Je voudrais réserver un cours d’essai d’anglais chez Best Fluency.",
+    "categoryFilterAriaLabel": "Filtrer par catégorie",
+    "courseLanguageFilterAriaLabel": "Filtrer par langue que vous souhaitez apprendre",
+    "activeFiltersLabel": "Filtres actifs",
+    "ctaTitle": "Vous avez encore des questions ?",
+    "ctaDescription": "Contactez-nous sur WhatsApp et réservez un cours d’essai gratuit pour découvrir notre approche."
   }
 }

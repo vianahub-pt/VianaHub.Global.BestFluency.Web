@@ -12,20 +12,21 @@
  *   public/logo-80.webp                  — logótipo 80×80  (1x do render a 40px)
  *   public/logo-160.webp                 — logótipo 160×160 (2x/retina)
  *   public/logo-320.webp                 — logótipo 320×320 (retina do Hero)
- *   public/ceo.webp                      — fotografia da fundadora 400×400
+ *   public/ceo-640.webp                  — fotografia da fundadora 640×640
  *   public/assets/pt-BR/kids-*.webp      — Best Kids responsivo por locale
  *
- * NOTA: hero backgrounds, teacher-board e online-classes são assets WebP
- * pré-gerados fornecidos diretamente em /public (não gerados por este script).
+ * NOTA: hero backgrounds, teacher-board, online-classes e todos os assets
+ * pré-gerados (testimonials, press, etc.) são mantidos diretamente em /public
+ * e não são gerados por este script.
  */
-import { mkdirSync, statSync } from "node:fs";
+import { existsSync, mkdirSync, statSync } from "node:fs";
 import { dirname } from "node:path";
 
 import sharp from "sharp";
 
 const SOURCES = [
   {
-    input: "public/logo.jpeg",
+    input: "public/logo.webp",
     outputs: [
       { file: "public/logo-80.webp", width: 80, height: 80, quality: 82 },
       { file: "public/logo-160.webp", width: 160, height: 160, quality: 82 },
@@ -33,9 +34,9 @@ const SOURCES = [
     ],
   },
   {
-    input: "public/ceo.jpeg",
+    input: "public/ceo.webp",
     outputs: [
-      { file: "public/ceo.webp", width: 400, height: 400, quality: 82 },
+      { file: "public/ceo-640.webp", width: 640, height: 640, quality: 82 },
     ],
   },
   {
@@ -64,7 +65,15 @@ const SOURCES = [
 ];
 
 let changed = 0;
+let skipped = 0;
+
 for (const { input, outputs } of SOURCES) {
+  if (!existsSync(input)) {
+    console.error(`[optimize-images] SKIP — source not found: ${input}`);
+    skipped += outputs.length;
+    continue;
+  }
+
   for (const { file, width, height, quality } of outputs) {
     mkdirSync(dirname(file), { recursive: true });
     await sharp(input).resize(width, height).webp({ quality }).toFile(file);
@@ -75,7 +84,10 @@ for (const { input, outputs } of SOURCES) {
     changed += 1;
   }
 }
-console.log(`[optimize-images] done — ${changed} file(s)`);
+
+console.log(
+  `[optimize-images] done — ${changed} file(s) generated, ${skipped} skipped`,
+);
 
 function formatBytes(bytes) {
   if (bytes < 1024) return `${bytes} B`;

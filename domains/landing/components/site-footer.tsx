@@ -7,11 +7,12 @@ import { CookieSettingsButton } from "@/shared/components/analytics/cookie-setti
 import { PhoneLink } from "@/shared/components/phone-link";
 import { WhatsAppLink } from "@/shared/components/whatsapp-link";
 import { SocialLinks } from "@/shared/components/ui/social-links";
-import { buildLegalPath } from "@/shared/lib/routes";
+import { buildFaqPath, buildHomePath, buildLegalPath } from "@/shared/lib/routes";
 
 /**
  * Mapa de navegação do site para o footer — usa as âncoras de
  * secção definidas no spec §7 (ver main-nav.tsx).
+ * Para FAQ, usa a página dedicada em vez de âncora.
  */
 const siteMapItems = [
   { href: "#modalities", key: "modalities" },
@@ -20,7 +21,6 @@ const siteMapItems = [
   { href: "#testimonials", key: "testimonials" },
   { href: "#founder", key: "founder" },
   { href: "#languages", key: "languages" },
-  { href: "#faq", key: "faq" },
 ] as const;
 
 /**
@@ -37,6 +37,7 @@ const siteMapItems = [
 export function SiteFooter({ locale }: { locale: LocaleCode }) {
   const content = getMessages(locale).landing;
   const year = new Date().getFullYear();
+  const homePath = buildHomePath(locale);
 
   return (
     <footer className="mt-auto border-t border-border bg-black">
@@ -71,13 +72,21 @@ export function SiteFooter({ locale }: { locale: LocaleCode }) {
               {siteMapItems.map((item) => (
                 <li key={item.key}>
                   <a
-                    href={item.href}
+                    href={`${homePath}${item.href}`}
                     className="link-micro text-sm text-white transition-colors hover:text-accent focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring"
                   >
                     {content.nav.links[item.key]}
                   </a>
                 </li>
               ))}
+              <li>
+                <Link
+                  href={buildFaqPath(locale)}
+                  className="link-micro text-sm text-white transition-colors hover:text-accent focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring"
+                >
+                  {content.nav.links.faq}
+                </Link>
+              </li>
             </ul>
           </div>
 

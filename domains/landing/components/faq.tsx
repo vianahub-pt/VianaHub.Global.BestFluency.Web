@@ -1,9 +1,11 @@
 "use client";
 
 import { MessageCircle, Minus, Plus } from "lucide-react";
+import Link from "next/link";
 import { useState } from "react";
 
 import type { LandingContent } from "@/core/i18n";
+import type { ResolvedFaq } from "@/domains/faq/types";
 import { buttonVariants } from "@/shared/components/ui/button";
 import { ScrollReveal } from "@/shared/components/ui/scroll-reveal";
 import { WhatsAppLink } from "@/shared/components/whatsapp-link";
@@ -30,25 +32,33 @@ import { cn } from "@/shared/lib/utils";
  * restantes ocupam a coluna direita, de modo a não sobrecarregar a área
  * visível do utilizador.
  *
- * Client Component: recebe o namespace `faq` por props (serializado pelo
- * Server Component pai) — os dicionários de `core/i18n` não entram no
- * bundle client.
+ * Client Component: recebe o namespace `faq` e as FAQs resolvidas por props
+ * (serializado pelo Server Component pai) — os dicionários de `core/i18n`
+ * e a base JSON não entram no bundle client.
  */
-export function Faq({ content: faq }: { content: LandingContent["faq"] }) {
+export function Faq({
+  content: faq,
+  faqs,
+  faqPath,
+}: {
+  content: LandingContent["faq"];
+  faqs: ResolvedFaq[];
+  faqPath: string;
+}) {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
 
   function toggle(index: number) {
     setOpenIndex((current) => (current === index ? null : index));
   }
 
-  const renderItem = (item: (typeof faq.items)[number], index: number) => {
+  const renderItem = (item: ResolvedFaq, index: number) => {
     const isOpen = openIndex === index;
     const buttonId = `faq-trigger-${index}`;
     const panelId = `faq-panel-${index}`;
 
     return (
       <div
-        key={item.question}
+        key={item.id}
         className="rounded-lg border border-border bg-card shadow-sm"
       >
         <h3>
@@ -120,21 +130,34 @@ export function Faq({ content: faq }: { content: LandingContent["faq"] }) {
         <ScrollReveal animation="fade-up" delay={0.15}>
           <div className="mt-8 grid gap-2.5 sm:mt-10 sm:grid-cols-2 sm:gap-3">
             <div className="flex flex-col gap-2.5 sm:gap-3">
-              {faq.items
+              {faqs
                 .slice(0, 2)
                 .map((item, index) => renderItem(item, index))}
             </div>
             <div className="flex flex-col gap-2.5 sm:gap-3">
-              {faq.items
+              {faqs
                 .slice(2, 4)
                 .map((item, index) => renderItem(item, index + 2))}
             </div>
             <div className="grid w-full gap-2.5 sm:col-span-2 sm:grid-cols-2 sm:gap-3">
-              {faq.items
+              {faqs
                 .slice(4)
                 .map((item, index) => renderItem(item, index + 4))}
             </div>
           </div>
+        </ScrollReveal>
+
+        <ScrollReveal animation="fade-up" delay={0.2} className="mt-8 flex justify-center sm:mt-10">
+          <Link
+            href={faqPath}
+            className={cn(
+              buttonVariants({ variant: "outline", size: "lg" }),
+              "w-full sm:w-auto",
+            )}
+            aria-label={faq.viewAllAriaLabel}
+          >
+            {faq.viewAllLabel}
+          </Link>
         </ScrollReveal>
 
         <ScrollReveal animation="fade-up" delay={0.25} className="mt-10 flex justify-center sm:mt-12">
