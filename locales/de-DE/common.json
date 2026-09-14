@@ -211,37 +211,37 @@
         {
           "name": "Andreia Barros",
           "role": "Verwaltungsleiter",
-          "photo": "/testimonials/andreia-foto.webp",
+          "photo": "/testimonials/andreia-foto.png",
           "quote": "Ich liebe die Kurse! Die Lehrerin ist sehr aufmerksam, geduldig und erklärt alles einfach und verständlich. Ich habe mich im Englischen sehr verbessert und fühle mich zunehmend sicher beim Sprechen. Sehr empfehlenswert!"
         },
         {
           "name": "Mauricio Moura",
           "role": "Bankmanager",
-          "photo": "/testimonials/mauricio-foto.webp",
+          "photo": "/testimonials/mauricio-foto.png",
           "quote": "Ich möchte meine Bewertung des Kurses abgeben. Die teacher verfügt über umfassende Kenntnisse der englischen Sprache und schafft es, dieses Wissen locker und verständlich an die Lernenden weiterzugeben. Was mir an meinem Englischkurs am besten gefällt, ist die Art zu erklären, auch wenn ich etwas nicht weiß. Das hat mir sehr geholfen, meine Konversation zu befreben. Deshalb empfehle ich Best Fluency."
         },
         {
           "name": "Pedro António",
           "role": "Mittelfeldspieler",
-          "photo": "/testimonials/pedro-foto.webp",
+          "photo": "/testimonials/pedro-foto.png",
           "quote": "Sehr gut! Ich lerne viel mit teacher Taty."
         },
         {
           "name": "Romerson Neves",
           "role": "Lkw-Fahrer",
-          "photo": "/testimonials/romerson-foto.webp",
+          "photo": "/testimonials/romerson-foto.png",
           "quote": "Ich bin seit 7 Monaten in Portugal und habe erkannt, wie wichtig es ist, Englisch zu lernen. Ich habe mit Präsenzunterricht angefangen, aber die Person, die mich unterrichtet hat, musste das Land verlassen und konnte nicht weitermachen. Dann habe ich Online-Unterricht mit einer anderen Lehrerin ausprobiert, aber ich konnte mich nicht anpassen. Da lernte ich Lehrerin Tatiana kennen. Wir hatten eine Probestunde und sie hat mir sehr gut gefallen. Seitdem mache ich die Stunden weiter und spüre, dass ich jeden Tag mehr vorankomme. Lehrerin Tatiana hat viel Geduld, erklärt klar und führt die Stunden exzellent durch. Ich empfehle sie allen, die Englisch von Qualität lernen möchten."
         },
         {
           "name": "Sandro Vite",
           "role": "Google-Bewertung",
-          "photo": "/testimonials/sandro-foto.webp",
+          "photo": "/testimonials/sandro-foto.png",
           "quote": "Unglaublich, ein sehr gut umgesetzter Unterricht, einfach und zielgerichtet."
         },
         {
           "name": "Wanda Ramos",
           "role": "Back-Office-Assistent",
-          "photo": "/testimonials/wanda-foto.webp",
+          "photo": "/testimonials/wanda-foto.png",
           "quote": "Ich möchte meine Bewertung des Kurses abgeben. Alles war sehr klar, mit leicht verständlichen Inhalten. Lehrerin Taty war toll, sehr fürsorglich, hat sich sehr für mich eingesetzt, mich motiviert und dadurch konnte ich meine Fragen ohne Scham oder Angst vor Fehlern stellen. Ich plane, die Weiterbildung so bald wie möglich auf dem nächsten Niveau fortzusetzen. Vielen Dank für die Aufmerksamkeit, Hingabe und Fürsorge, Taty Viana."
         }
       ],
@@ -657,14 +657,26 @@
     "searchLabel": "Häufig gestellte Fragen durchsuchen",
     "searchPlaceholder": "Frage suchen...",
     "allCategoriesLabel": "Alle Kategorien",
-    "categoryFilterLabel": "Nach Kategorie filtern",
+    "categoryFilterLabel": "Kategorie",
     "allCourseLanguagesLabel": "Alle Sprachen",
-    "courseLanguageFilterLabel": "Nach Sprache filtern",
+    "courseLanguageFilterLabel": "Sprache, die Sie lernen möchten",
     "resultsCount": "{count} Fragen gefunden",
     "noResultsTitle": "Keine Fragen gefunden",
     "noResultsDescription": "Wir haben keine Fragen gefunden, die Ihrer Suche entsprechen. Versuchen Sie andere Begriffe oder löschen Sie die Filter.",
     "clearFiltersLabel": "Filter löschen",
     "metaTitle": "Häufig Gestellte Fragen | Best Fluency",
-    "metaDescription": "Finden Sie Antworten auf die häufigsten Fragen zu den Präsenz- und Online-Englischkursen von Best Fluency in Amadora."
+    "metaDescription": "Finden Sie Antworten auf die häufigsten Fragen zum Sprachenlernen und zu den Englisch-, Französisch-, Spanisch- und Deutschkursen von Best Fluency, Präsenz und online.",
+    "courseLanguageFilterHint": "Dieses Filter wählt die Sprache aus, die Sie lernen möchten. Um die Website-Sprache zu ändern, verwenden Sie den Selector in der Kopfzeile.",
+    "resultsCountWithLanguage": "{count} relevante Fragen für {language}",
+    "noResultsContactTitle": "Haben Sie Ihre Frage nicht gefunden?",
+    "noResultsContactDescription": "Kontaktieren Sie uns über WhatsApp und wir helfen Ihnen.",
+    "ctaLabel": "Probestunde buchen",
+    "ctaAriaLabel": "Probestunde buchen — WhatsApp-Gespräch öffnen (neues Fenster)",
+    "whatsappMessage": "Hallo! Ich möchte eine Probestunde für Englisch bei Best Fluency buchen.",
+    "categoryFilterAriaLabel": "Nach Kategorie filtern",
+    "courseLanguageFilterAriaLabel": "Nach Sprache filtern, die Sie lernen möchten",
+    "activeFiltersLabel": "Aktive Filter",
+    "ctaTitle": "Haben Sie noch Fragen?",
+    "ctaDescription": "Kontaktieren Sie uns über WhatsApp und buchen Sie eine kostenlose Probestunde, um unseren Ansatz kennenzulernen."
   }
 }

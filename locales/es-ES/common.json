@@ -211,37 +211,37 @@
         {
           "name": "Andreia Barros",
           "role": "Gerente administrativo",
-          "photo": "/testimonials/andreia-foto.webp",
+          "photo": "/testimonials/andreia-foto.png",
           "quote": "¡Me encantan las clases! La profesora es muy atenta, paciente y explica todo de una forma simple y fácil de entender. He estado mejorando mucho en inglés y me siento cada vez más cómoda para hablar. ¡Muy recomendable!"
         },
         {
           "name": "Mauricio Moura",
           "role": "Gerente de banco",
-          "photo": "/testimonials/mauricio-foto.webp",
+          "photo": "/testimonials/mauricio-foto.png",
           "quote": "Vengo a dar mi evaluación del curso. La teacher posee un vasto conocimiento de la lengua inglesa y facilidad para transmitir ese conocimiento a los alumnos, de una forma distendida. Lo que más me gusta de mi clase de inglés es la forma de exponer, aunque sea algo que no sé. Eso me ayudó mucho a desbloquear mi conversación. Por eso indico Best Fluency."
         },
         {
           "name": "Pedro António",
           "role": "Centrocampista",
-          "photo": "/testimonials/pedro-foto.webp",
+          "photo": "/testimonials/pedro-foto.png",
           "quote": "¡Muy bueno! Aprendo mucho con la teacher Taty."
         },
         {
           "name": "Romerson Neves",
           "role": "Conductor de camión",
-          "photo": "/testimonials/romerson-foto.webp",
+          "photo": "/testimonials/romerson-foto.png",
           "quote": "Llevo 7 meses en Portugal y me di cuenta de la importancia de aprender inglés para mi vida. Empecé con clases presenciales, pero la persona que me enseñaba tuvo que salir del país y no pudo continuar. Luego probé clases online con otra profesora, pero no me adapté. Fue entonces cuando conocí a la profesora Tatiana. Hicimos una clase experimental y me gustó mucho. Desde entonces, he continuado las clases y siento que estoy mejorando cada día más. La profesora Tatiana tiene mucha paciencia, explica con claridad y lleva las clases de forma excelente. La recomiendo a todos los que buscan aprender inglés con calidad."
         },
         {
           "name": "Sandro Vite",
           "role": "Reseña de Google",
-          "photo": "/testimonials/sandro-foto.webp",
+          "photo": "/testimonials/sandro-foto.png",
           "quote": "Increíble, una enseñanza muy bien aplicada y de manera simple y objetiva."
         },
         {
           "name": "Wanda Ramos",
           "role": "Asistente de operaciones internas",
-          "photo": "/testimonials/wanda-foto.webp",
+          "photo": "/testimonials/wanda-foto.png",
           "quote": "Vengo a dar mi evaluación del curso. Fue todo muy explícito, con contenido de fácil comprensión. La profesora Taty fue genial, muy cariñosa, me hizo sentir muy cómoda, me motivó y eso hizo que pudiera hacer mis preguntas sin vergüenza ni miedo a equivocarme. Pretendo volver a la formación para hacer otro nivel en cuanto sea posible. Muchísimas gracias por la atención, dedicación y cariño, Taty Viana."
         }
       ],
@@ -657,14 +657,26 @@
     "searchLabel": "Buscar preguntas frecuentes",
     "searchPlaceholder": "Buscar pregunta...",
     "allCategoriesLabel": "Todas las categorías",
-    "categoryFilterLabel": "Filtrar por categoría",
+    "categoryFilterLabel": "Categoría",
     "allCourseLanguagesLabel": "Todos los idiomas",
-    "courseLanguageFilterLabel": "Filtrar por idioma",
+    "courseLanguageFilterLabel": "Idioma que desea aprender",
     "resultsCount": "{count} preguntas encontradas",
     "noResultsTitle": "No se encontraron preguntas",
     "noResultsDescription": "No encontramos ninguna pregunta que coincida con su búsqueda. Intente con otros términos o limpie los filtros.",
     "clearFiltersLabel": "Limpiar filtros",
     "metaTitle": "Preguntas Frecuentes | Best Fluency",
-    "metaDescription": "Encuentra respuestas a las preguntas más comunes sobre las clases de inglés presenciales y online de Best Fluency en Amadora."
+    "metaDescription": "Encuentra respuestas a las preguntas más frecuentes sobre aprender idiomas y sobre las clases de inglés, francés, español y alemán de Best Fluency, presenciales y online.",
+    "courseLanguageFilterHint": "Este filtro selecciona el idioma que desea aprender. Para cambiar el idioma del sitio, utilice el selector en el encabezado.",
+    "resultsCountWithLanguage": "{count} preguntas relevantes para {language}",
+    "noResultsContactTitle": "¿No encontró su pregunta?",
+    "noResultsContactDescription": "Contáctenos por WhatsApp y le ayudaremos.",
+    "ctaLabel": "Reservar clase de prueba",
+    "ctaAriaLabel": "Reservar clase de prueba — abrir conversación de WhatsApp (nueva ventana)",
+    "whatsappMessage": "¡Hola! Me gustaría reservar una clase de prueba de inglés en Best Fluency.",
+    "categoryFilterAriaLabel": "Filtrar por categoría",
+    "courseLanguageFilterAriaLabel": "Filtrar por idioma que desea aprender",
+    "activeFiltersLabel": "Filtros activos",
+    "ctaTitle": "¿Todavía tiene dudas?",
+    "ctaDescription": "Contáctenos por WhatsApp y reserve una clase de prueba gratuita para conocer nuestro enfoque."
   }
 }

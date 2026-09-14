@@ -13,6 +13,10 @@ import { cn } from "@/shared/lib/utils";
  * - apenas uma resposta aberta de cada vez (accordion "exclusive");
  * - botão real por pergunta, com `aria-expanded` e `aria-controls`;
  * - painel com `role="region"` e `aria-labelledby` para o respetivo botão;
+ * - id estável baseado no FAQ ID (ex.: `faq-010`) com scroll-margin para
+ *   o header sticky;
+ * - ao carregar URL com hash correspondente a uma FAQ, abre esse item
+ *   automaticamente (sem scroll extra por JS);
  * - foco visível e área de toque ≥ 44 px;
  * - ícone `+` fechado e `−` aberto;
  * - animação curta apenas com `motion-safe` (grid-template-rows 0fr→1fr);
@@ -31,7 +35,12 @@ export function FaqAccordion({
   items: ResolvedFaq[];
   className?: string;
 }) {
-  const [openId, setOpenId] = useState<string | null>(null);
+  // Inicializa com o hash do URL se corresponder a uma FAQ.
+  const [openId, setOpenId] = useState<string | null>(() => {
+    if (typeof window === "undefined") return null;
+    const hash = window.location.hash.slice(1);
+    return items.some((item) => item.id === hash) ? hash : null;
+  });
 
   function toggle(id: string) {
     setOpenId((current) => (current === id ? null : id));
@@ -47,7 +56,8 @@ export function FaqAccordion({
         return (
           <div
             key={item.id}
-            className="h-fit rounded-lg border border-border bg-card shadow-sm"
+            id={item.id}
+            className="h-fit scroll-mt-24 rounded-lg border border-border bg-card shadow-sm"
           >
             <h3>
               <button

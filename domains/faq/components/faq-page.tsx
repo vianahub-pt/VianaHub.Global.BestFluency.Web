@@ -8,6 +8,10 @@ import {
 } from "@/domains/faq/lib/faq-resolver";
 import { SiteFooter } from "@/domains/landing/components/site-footer";
 import { SiteHeader } from "@/domains/landing/components/site-header";
+import { MessageCircle } from "lucide-react";
+import { buttonVariants } from "@/shared/components/ui/button";
+import { WhatsAppLink } from "@/shared/components/whatsapp-link";
+import { cn } from "@/shared/lib/utils";
 
 /**
  * Página da base de conhecimento de FAQ (/faq/, /en/faq/, …).
@@ -18,6 +22,7 @@ import { SiteHeader } from "@/domains/landing/components/site-header";
  * - HTML inicial contém as 52 perguntas e respostas (accordions fechados);
  * - exatamente um H1; header/footer partilhados com a landing;
  * - mobile-first: controlos empilhados em 360 px, linha a partir de sm/lg;
+ * - CTA comercial discreto no final da página;
  * - sem FAQPage schema (decisão explícita da issue).
  */
 export function FaqPage({ locale }: { locale: LocaleCode }) {
@@ -52,6 +57,42 @@ export function FaqPage({ locale }: { locale: LocaleCode }) {
                 courseLanguages={courseLanguages}
                 ui={ui}
               />
+            </div>
+          </div>
+        </section>
+
+        {/* CTA comercial discreto */}
+        <section
+          aria-labelledby="faq-cta-title"
+          className="border-t border-border bg-gradient-to-b from-accent/40 to-muted/40"
+        >
+          <div className="mx-auto w-full max-w-7xl px-4 py-12 text-center md:px-8 md:py-16">
+            <h2
+              id="faq-cta-title"
+              className="font-title text-xl font-bold tracking-tight text-accent dark:text-white sm:text-2xl"
+            >
+              {ui.ctaTitle}
+            </h2>
+            <p className="mx-auto mt-3 max-w-xl text-sm leading-6 text-muted-foreground sm:text-base sm:leading-7">
+              {ui.ctaDescription}
+            </p>
+            <div className="mt-6 flex justify-center">
+              <WhatsAppLink
+                message={ui.whatsappMessage}
+                section="faq"
+                ctaLabel={ui.ctaLabel}
+                ariaLabel={ui.ctaAriaLabel}
+                className={cn(
+                  buttonVariants({ variant: "orange", size: "lg" }),
+                  "w-full sm:w-auto",
+                )}
+              >
+                <MessageCircle
+                  className="h-5 w-5 shrink-0"
+                  aria-hidden="true"
+                />
+                {ui.ctaLabel}
+              </WhatsAppLink>
             </div>
           </div>
         </section>

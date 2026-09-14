@@ -1,6 +1,6 @@
 "use client";
 
-import { Search, X } from "lucide-react";
+import { MessageCircle, Search, X } from "lucide-react";
 import { useMemo, useState } from "react";
 
 import type { CommonMessages } from "@/core/i18n";
@@ -13,8 +13,12 @@ import {
 import type {
   FaqCategoryOption,
   FaqCourseLanguageOption,
+  FaqCourseLanguage,
   ResolvedFaq,
 } from "@/domains/faq/types";
+import { buttonVariants } from "@/shared/components/ui/button";
+import { WhatsAppLink } from "@/shared/components/whatsapp-link";
+import { cn } from "@/shared/lib/utils";
 
 interface FaqExplorerProps {
   /** As 52 FAQs resolvidas no locale (estado inicial: todas visíveis). */
@@ -29,13 +33,10 @@ interface FaqExplorerProps {
  * + filtros de categoria e idioma de curso.
  *
  * - Estado inicial: exatamente as 52 FAQs, accordions fechados;
- * - pesquisa considera perguntas, aliases, respostas, categoria, intent e
- *   idiomas de curso (ver lib/faq-search.ts);
- * - ao filtrar por idioma de curso, as perguntas parametrizadas são
- *   re-resolvidas para esse idioma (questionVariants) — nunca sobra
- *   `{targetLanguage}` por resolver;
- * - filtros com `<select>` nativo: acessível, mobile-first e sem bugs de
- *   touch (ver nota no LocaleSwitcher sobre Radix Select);
+ * - labels visíveis acima dos selects;
+ * - filtros ativos visíveis como chips removíveis;
+ * - contador contextual com nome do idioma quando filtrado;
+ * - CTA WhatsApp no estado sem resultados;
  * - sem hardcode visível: todos os textos vêm do namespace `faqPage`.
  */
 export function FaqExplorer({
@@ -54,15 +55,21 @@ export function FaqExplorer({
     return filterFaqsByCourseLanguage(byCategory, courseLanguage);
   }, [faqs, query, category, courseLanguage]);
 
-  // Re-resolve perguntas parametrizadas para o idioma de curso filtrado.
+  // Re-resolve perguntas parametrizadas: filtro explícito tem precedência,
+  // idioma inferido pela pesquisa é usado quando o filtro está em "all".
   const items = useMemo(
     () =>
-      courseLanguage === "all"
-        ? filtered
-        : filtered.map((faq) => {
-            const variant = faq.questionVariants?.[courseLanguage];
-            return variant ? { ...faq, question: variant } : faq;
-          }),
+      filtered.map((result) => {
+        const effectiveCl: FaqCourseLanguage | undefined =
+          courseLanguage !== "all"
+            ? courseLanguage
+            : result.matchedCourseLanguage;
+
+        if (!effectiveCl) return result.faq;
+
+        const variant = result.faq.questionVariants?.[effectiveCl];
+        return variant ? { ...result.faq, question: variant } : result.faq;
+      }),
     [filtered, courseLanguage],
   );
 
@@ -75,14 +82,35 @@ export function FaqExplorer({
     setCourseLanguage("all");
   }
 
-  const resultsLabel = ui.resultsCount.replaceAll(
-    "{count}",
-    String(items.length),
-  );
+  function removeFilter(type: "query" | "category" | "courseLanguage") {
+    if (type === "query") setQuery("");
+    else if (type === "category") setCategory("all");
+    else setCourseLanguage("all");
+  }
+
+  // Label do idioma de curso selecionado (para chips e contador contextual).
+  const selectedCourseLanguageLabel =
+    courseLanguage !== "all"
+      ? courseLanguages.find((cl) => cl.code === courseLanguage)?.label
+      : undefined;
+
+  // Label da categoria selecionada.
+  const selectedCategoryLabel =
+    category !== "all"
+      ? categories.find((c) => c.id === category)?.label
+      : undefined;
+
+  // Contador de resultados contextual.
+  const resultsLabel =
+    courseLanguage !== "all" && ui.resultsCountWithLanguage
+      ? ui.resultsCountWithLanguage
+          .replaceAll("{count}", String(items.length))
+          .replaceAll("{language}", selectedCourseLanguageLabel ?? courseLanguage)
+      : ui.resultsCount.replaceAll("{count}", String(items.length));
 
   return (
     <div>
-      {/* Controlos: pesquisa + filtros (mobile-first: empilhados → linha) */}
+      {/* Controlos: pesquisa + filtros */}
       <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-[1fr_auto_auto]">
         <div className="relative">
           <label htmlFor="faq-search" className="sr-only">
@@ -104,14 +132,17 @@ export function FaqExplorer({
         </div>
 
         <div>
-          <label htmlFor="faq-category" className="sr-only">
+          <label
+            htmlFor="faq-category"
+            className="mb-1.5 block text-xs font-medium text-foreground"
+          >
             {ui.categoryFilterLabel}
           </label>
           <select
             id="faq-category"
             value={category}
             onChange={(event) => setCategory(event.target.value)}
-            aria-label={ui.categoryFilterLabel}
+            aria-label={ui.categoryFilterAriaLabel}
             className="h-11 w-full rounded-md border border-border bg-background px-3 text-sm text-foreground focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring"
           >
             <option value="all">{ui.allCategoriesLabel}</option>
@@ -124,14 +155,17 @@ export function FaqExplorer({
         </div>
 
         <div>
-          <label htmlFor="faq-course-language" className="sr-only">
+          <label
+            htmlFor="faq-course-language"
+            className="mb-1.5 block text-xs font-medium text-foreground"
+          >
             {ui.courseLanguageFilterLabel}
           </label>
           <select
             id="faq-course-language"
             value={courseLanguage}
             onChange={(event) => setCourseLanguage(event.target.value)}
-            aria-label={ui.courseLanguageFilterLabel}
+            aria-label={ui.courseLanguageFilterAriaLabel}
             className="h-11 w-full rounded-md border border-border bg-background px-3 text-sm text-foreground focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring"
           >
             <option value="all">{ui.allCourseLanguagesLabel}</option>
@@ -141,8 +175,57 @@ export function FaqExplorer({
               </option>
             ))}
           </select>
+          <p className="mt-1 text-xs text-muted-foreground">
+            {ui.courseLanguageFilterHint}
+          </p>
         </div>
       </div>
+
+      {/* Filtros ativos */}
+      {hasActiveFilters && (
+        <div className="mt-4 flex flex-wrap items-center gap-2">
+          <span className="text-xs font-medium text-muted-foreground">
+            {ui.activeFiltersLabel}:
+          </span>
+          {query.trim() !== "" && (
+            <button
+              type="button"
+              onClick={() => removeFilter("query")}
+              className="inline-flex items-center gap-1 rounded-full border border-border bg-background px-3 py-1 text-xs font-medium text-foreground transition-colors hover:bg-muted focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring"
+            >
+              &ldquo;{query.trim()}&rdquo;
+              <X className="h-3 w-3" aria-hidden="true" />
+            </button>
+          )}
+          {category !== "all" && selectedCategoryLabel && (
+            <button
+              type="button"
+              onClick={() => removeFilter("category")}
+              className="inline-flex items-center gap-1 rounded-full border border-border bg-background px-3 py-1 text-xs font-medium text-foreground transition-colors hover:bg-muted focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring"
+            >
+              {selectedCategoryLabel}
+              <X className="h-3 w-3" aria-hidden="true" />
+            </button>
+          )}
+          {courseLanguage !== "all" && selectedCourseLanguageLabel && (
+            <button
+              type="button"
+              onClick={() => removeFilter("courseLanguage")}
+              className="inline-flex items-center gap-1 rounded-full border border-border bg-background px-3 py-1 text-xs font-medium text-foreground transition-colors hover:bg-muted focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring"
+            >
+              {selectedCourseLanguageLabel}
+              <X className="h-3 w-3" aria-hidden="true" />
+            </button>
+          )}
+          <button
+            type="button"
+            onClick={clearFilters}
+            className="inline-flex items-center gap-1 rounded-full border border-transparent px-3 py-1 text-xs font-medium text-accent underline transition-colors hover:text-accent/80 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring"
+          >
+            {ui.clearFiltersLabel}
+          </button>
+        </div>
+      )}
 
       {/* Contagem de resultados (live region para leitores de ecrã) */}
       <p aria-live="polite" className="mt-4 text-sm text-muted-foreground">
@@ -159,16 +242,31 @@ export function FaqExplorer({
           <p className="mx-auto mt-2 max-w-md text-sm text-muted-foreground">
             {ui.noResultsDescription}
           </p>
-          {hasActiveFilters && (
-            <button
-              type="button"
-              onClick={clearFilters}
-              className="mt-4 inline-flex min-h-11 items-center gap-2 rounded-md border border-border bg-background px-4 text-sm font-medium text-foreground transition-colors hover:bg-muted focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring"
+          <div className="mt-4 flex flex-col items-center gap-3 sm:flex-row sm:justify-center">
+            {hasActiveFilters && (
+              <button
+                type="button"
+                onClick={clearFilters}
+                className="inline-flex min-h-11 items-center gap-2 rounded-md border border-border bg-background px-4 text-sm font-medium text-foreground transition-colors hover:bg-muted focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring"
+              >
+                <X className="h-4 w-4" aria-hidden="true" />
+                {ui.clearFiltersLabel}
+              </button>
+            )}
+            <WhatsAppLink
+              message={ui.whatsappMessage}
+              section="faq"
+              ctaLabel={ui.noResultsContactTitle}
+              ariaLabel={ui.noResultsContactTitle}
+              className={cn(
+                buttonVariants({ variant: "orange", size: "lg" }),
+                "w-full sm:w-auto",
+              )}
             >
-              <X className="h-4 w-4" aria-hidden="true" />
-              {ui.clearFiltersLabel}
-            </button>
-          )}
+              <MessageCircle className="h-4 w-4 shrink-0" aria-hidden="true" />
+              {ui.noResultsContactTitle}
+            </WhatsAppLink>
+          </div>
         </div>
       )}
     </div>

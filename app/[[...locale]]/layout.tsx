@@ -13,8 +13,8 @@ type Params = Promise<{ locale?: string[] }>;
 
 /**
  * Optional catch-all: /, /en/, /privacy/, /faq/, /en/faq/, etc.
- * Generates all 45 static variants: 9 landing + 9 privacy + 9 cookies
- * + 9 faq + 9 new-amadora + 9 tvi (o default pt-PT não tem segmento).
+ * Generates all 54 static variants: 9 landing + 18 legal (9 privacy + 9 cookies)
+ * + 9 FAQ + 18 reportages (9 new-amadora + 9 tvi).
  */
 export function generateStaticParams() {
   const localeSegments = locales

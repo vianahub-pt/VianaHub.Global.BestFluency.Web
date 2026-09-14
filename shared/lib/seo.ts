@@ -8,7 +8,7 @@ import { getLocale, locales, type LocaleCode } from "@/core/config/locales";
  * (monograma "BF" + nome da escola). Sem rostos ou fotografias não autorizadas.
  * Fica em public/ para ser servida como asset estático em todas as rotas.
  */
-export const SOCIAL_IMAGE_PATH = "/og-image.webp";
+export const SOCIAL_IMAGE_PATH = "/og-image.png";
 
 /** URL absoluta a partir de um caminho do site. */
 export function absoluteUrl(path: string): string {
@@ -195,8 +195,8 @@ export function buildOrganizationJsonLd(): Record<string, unknown> {
     name: site.name,
     telephone: site.phoneDisplay,
     url: absoluteUrl("/"),
-    logo: absoluteUrl("/logo.webp"),
-    image: absoluteUrl("/logo.webp"),
+    logo: absoluteUrl("/logo.png"),
+    image: absoluteUrl("/logo.png"),
     address: {
       "@type": "PostalAddress",
       streetAddress: site.address.street,

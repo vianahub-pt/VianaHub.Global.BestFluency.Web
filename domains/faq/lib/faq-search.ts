@@ -1,4 +1,4 @@
-import type { ResolvedFaq } from "@/domains/faq/types";
+import type { FaqCourseLanguage, ResolvedFaq } from "@/domains/faq/types";
 
 /**
  * Pesquisa local determinística sobre FAQs resolvidas.
@@ -12,6 +12,8 @@ import type { ResolvedFaq } from "@/domains/faq/types";
  *   expandidos, resposta, categoria, intent e rótulos dos idiomas de curso.
  * - Determinística: pontuação fixa por campo e desempate estável por ID —
  *   a mesma query devolve sempre a mesma ordem.
+ * - Inferência de course language: quando a query corresponde a uma
+ *   questionVariant ou alias parametrizado, devolve o matchedCourseLanguage.
  *
  * Módulo puro (sem imports de dados): seguro para Client Components — opera
  * sobre `ResolvedFaq[]` recebido por props.
@@ -41,9 +43,12 @@ function tokenize(normalized: string): string[] {
   return normalized.split(" ").filter(Boolean);
 }
 
-interface ScoredFaq {
+/** Resultado de pesquisa com score e idioma inferido. */
+export interface FaqSearchResult {
   faq: ResolvedFaq;
   score: number;
+  /** Idioma de curso inferido da correspondência (quando aplicável). */
+  matchedCourseLanguage?: FaqCourseLanguage;
 }
 
 /**
@@ -58,7 +63,10 @@ interface ScoredFaq {
  *        resposta, categoria, intent, idiomas de curso);
  * - 1..: correspondência parcial de tokens no texto completo.
  */
-function scoreFaq(faq: ResolvedFaq, normalizedQuery: string): number {
+function scoreFaq(
+  faq: ResolvedFaq,
+  normalizedQuery: string,
+): { score: number; matchedCourseLanguage?: FaqCourseLanguage } {
   const questionTexts = [
     faq.question,
     ...Object.values(faq.questionVariants ?? {}),
@@ -67,14 +75,41 @@ function scoreFaq(faq: ResolvedFaq, normalizedQuery: string): number {
     .map(normalizeFaqText);
   const aliasTexts = faq.aliases.map(normalizeFaqText);
 
-  if (questionTexts.some((text) => text === normalizedQuery)) return 100;
-  if (aliasTexts.some((text) => text === normalizedQuery)) return 95;
-  if (questionTexts.some((text) => text.startsWith(normalizedQuery))) return 80;
-  if (questionTexts.some((text) => text.includes(normalizedQuery))) return 70;
-  if (aliasTexts.some((text) => text.includes(normalizedQuery))) return 65;
+  // Exact match on question (default or variant)
+  if (faq.question && normalizeFaqText(faq.question) === normalizedQuery) {
+    return { score: 100 };
+  }
+
+  // Exact match on a question variant — infer course language
+  for (const [cl, variant] of Object.entries(faq.questionVariants ?? {})) {
+    if (variant && normalizeFaqText(variant) === normalizedQuery) {
+      return { score: 100, matchedCourseLanguage: cl };
+    }
+  }
+
+  // Exact match on alias — infer course language from parametrized aliases
+  for (const alias of faq.aliases) {
+    if (normalizeFaqText(alias) === normalizedQuery) {
+      // Check if this alias matches a specific course language variant
+      const matchedCl = inferCourseLanguageFromAlias(faq, alias, normalizedQuery);
+      return { score: 95, matchedCourseLanguage: matchedCl };
+    }
+  }
+
+  // Starts with
+  if (questionTexts.some((text) => text.startsWith(normalizedQuery))) return { score: 80 };
+
+  // Contains in question
+  if (questionTexts.some((text) => text.includes(normalizedQuery))) return { score: 70 };
+
+  // Contains in alias
+  if (aliasTexts.some((text) => text.includes(normalizedQuery))) {
+    const matchedCl = inferCourseLanguageFromQuery(faq, normalizedQuery);
+    return { score: 65, matchedCourseLanguage: matchedCl };
+  }
 
   const tokens = tokenize(normalizedQuery);
-  if (tokens.length === 0) return 0;
+  if (tokens.length === 0) return { score: 0 };
 
   const questionAndAliases = [...questionTexts, ...aliasTexts].join(" ");
   const fullText = normalizeFaqText(
@@ -92,13 +127,57 @@ function scoreFaq(faq: ResolvedFaq, normalizedQuery: string): number {
   const tokensInQuestions = tokens.filter((token) =>
     questionAndAliases.includes(token),
   ).length;
-  if (tokensInQuestions === tokens.length) return 50 + tokens.length;
+  if (tokensInQuestions === tokens.length) {
+    const matchedCl = inferCourseLanguageFromQuery(faq, normalizedQuery);
+    return { score: 50 + tokens.length, matchedCourseLanguage: matchedCl };
+  }
 
   const tokensInFull = tokens.filter((token) => fullText.includes(token));
-  if (tokensInFull.length === tokens.length) return 30 + tokens.length;
-  if (tokensInFull.length > 0) return tokensInFull.length;
+  if (tokensInFull.length === tokens.length) return { score: 30 + tokens.length };
+  if (tokensInFull.length > 0) return { score: tokensInFull.length };
 
-  return 0;
+  return { score: 0 };
+}
+
+/**
+ * Tenta inferir o course language a partir de uma query que contém tokens
+ * dos nomes/aliases dos idiomas de curso.
+ */
+function inferCourseLanguageFromQuery(
+  faq: ResolvedFaq,
+  normalizedQuery: string,
+): FaqCourseLanguage | undefined {
+  // Procurar nos courseLanguageLabels (que incluem label, learningObject e aliases)
+  for (const label of faq.courseLanguageLabels) {
+    if (normalizedQuery.includes(normalizeFaqText(label))) {
+      // Encontrar o course language code correspondente
+      for (const [cl, variant] of Object.entries(faq.questionVariants ?? {})) {
+        if (variant && normalizeFaqText(variant).includes(normalizeFaqText(label))) {
+          return cl;
+        }
+      }
+    }
+  }
+  return undefined;
+}
+
+/**
+ * Tenta inferir o course language a partir de um alias exato correspondente.
+ * Para aliases parametrizados, cada course language gera uma variant do alias;
+ * este método identifica qual variante corresponde.
+ */
+function inferCourseLanguageFromAlias(
+  faq: ResolvedFaq,
+  alias: string,
+  normalizedQuery: string,
+): FaqCourseLanguage | undefined {
+  // Se o alias é parametrizado, verificar qual course language variant corresponde
+  for (const [cl, variant] of Object.entries(faq.questionVariants ?? {})) {
+    if (variant && normalizeFaqText(variant) === normalizedQuery) {
+      return cl;
+    }
+  }
+  return undefined;
 }
 
 /**
@@ -108,34 +187,37 @@ function scoreFaq(faq: ResolvedFaq, normalizedQuery: string): number {
 export function searchFaqs(
   faqs: ResolvedFaq[],
   query: string,
-): ResolvedFaq[] {
+): FaqSearchResult[] {
   const normalizedQuery = normalizeFaqText(query);
-  if (!normalizedQuery) return faqs;
+  if (!normalizedQuery) return faqs.map((faq) => ({ faq, score: 0 }));
 
-  const scored: ScoredFaq[] = faqs
-    .map((faq) => ({ faq, score: scoreFaq(faq, normalizedQuery) }))
+  const scored: FaqSearchResult[] = faqs
+    .map((faq) => {
+      const { score, matchedCourseLanguage } = scoreFaq(faq, normalizedQuery);
+      return { faq, score, matchedCourseLanguage };
+    })
     .filter((entry) => entry.score > 0);
 
   scored.sort((a, b) => b.score - a.score || a.faq.id.localeCompare(b.faq.id));
-  return scored.map((entry) => entry.faq);
+  return scored;
 }
 
 /** Filtra por categoria ("all" = sem filtro). */
 export function filterFaqsByCategory(
-  faqs: ResolvedFaq[],
+  faqs: FaqSearchResult[],
   category: string,
-): ResolvedFaq[] {
+): FaqSearchResult[] {
   if (category === "all") return faqs;
-  return faqs.filter((faq) => faq.category === category);
+  return faqs.filter((result) => result.faq.category === category);
 }
 
 /** Filtra por idioma de curso ("all" = sem filtro). */
 export function filterFaqsByCourseLanguage(
-  faqs: ResolvedFaq[],
+  faqs: FaqSearchResult[],
   courseLanguage: string,
-): ResolvedFaq[] {
+): FaqSearchResult[] {
   if (courseLanguage === "all") return faqs;
-  return faqs.filter((faq) =>
-    faq.applicableCourseLanguages.includes(courseLanguage),
+  return faqs.filter((result) =>
+    result.faq.applicableCourseLanguages.includes(courseLanguage),
   );
 }

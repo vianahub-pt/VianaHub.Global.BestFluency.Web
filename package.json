@@ -17,8 +17,8 @@
   "scripts": {
     "dev": "next dev",
     "check:i18n": "node scripts/check-i18n-parity.mjs",
-    "check:faq": "node scripts/check-faq-data.mjs",
-    "prebuild": "node scripts/check-i18n-parity.mjs && node scripts/check-faq-data.mjs",
+    "check:faq": "node scripts/check-faq-data.mjs && node scripts/test-faq-behavior.mjs",
+    "prebuild": "node scripts/check-i18n-parity.mjs && node scripts/check-faq-data.mjs && node scripts/test-faq-behavior.mjs",
     "build": "next build",
     "preview": "serve out",
     "lint": "eslint .",
