@@ -78,8 +78,10 @@ export function Tooltip({ content, children, side = "top", className }: TooltipP
           id="tooltip-content"
           role="tooltip"
           className={cn(
-            "absolute z-50 rounded-md border border-border bg-popover px-3 py-2 text-xs leading-5 text-popover-foreground shadow-md",
-            "max-w-[calc(100vw-32px)]",
+            "absolute z-50 rounded-md border border-border bg-popover",
+            "w-80 max-w-[calc(100vw-2rem)] sm:w-96",
+            "whitespace-normal break-normal text-left",
+            "px-3 py-2 text-sm leading-5 text-popover-foreground shadow-md",
             side === "top"
               ? "bottom-full left-1/2 mb-2 -translate-x-1/2"
               : "top-full left-1/2 mt-2 -translate-x-1/2",
