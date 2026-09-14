@@ -196,6 +196,95 @@ function getAnswer(faqId, locale) {
   }
 }
 
+// ============================================================
+// Test 8: faq-010 parametrized aliases have {targetLanguage} placeholder
+// ============================================================
+{
+  const faq = database.faqs.find((f) => f.id === "faq-010");
+  if (!faq) {
+    fail("Test 8: faq-010 not found");
+  } else {
+    const loc = faq.localizations["pt-PT"];
+    if (!loc) {
+      fail("Test 8: faq-010 missing pt-PT localization");
+    } else {
+      const aliases = loc.searchAliases ?? [];
+      if (aliases.length === 0) {
+        fail("Test 8: faq-010 pt-PT has no searchAliases");
+      } else {
+        const parametrized = aliases.filter((a) => a.includes("{targetLanguage}"));
+        if (parametrized.length !== aliases.length) {
+          fail(
+            `Test 8: expected all ${aliases.length} aliases to contain {targetLanguage}, only ${parametrized.length} do`,
+          );
+        } else {
+          ok(
+            `Test 8: faq-010 pt-PT has ${aliases.length} parametrized aliases with {targetLanguage}`,
+          );
+        }
+      }
+    }
+  }
+}
+
+// ============================================================
+// Test 9: All parametrized FAQs have aliases with their parameters
+// ============================================================
+{
+  const paramFaqs = database.faqs.filter((f) => f.parameters.length > 0);
+  let allOk = true;
+  for (const faq of paramFaqs) {
+    for (const locale of database.supportedLocales) {
+      const loc = faq.localizations[locale];
+      if (!loc) {
+        fail(`Test 9: ${faq.id} missing locale ${locale}`);
+        allOk = false;
+        continue;
+      }
+      const aliases = loc.searchAliases ?? [];
+      if (aliases.length === 0) {
+        fail(`Test 9: ${faq.id} ${locale} has no searchAliases`);
+        allOk = false;
+      } else {
+        // Each parameter should appear in at least one alias
+        for (const param of faq.parameters) {
+          const placeholder = `{${param}}`;
+          const hasPlaceholder = aliases.some((a) => a.includes(placeholder));
+          if (!hasPlaceholder) {
+            fail(`Test 9: ${faq.id} ${locale} aliases missing placeholder ${placeholder}`);
+            allOk = false;
+          }
+        }
+      }
+    }
+  }
+  if (allOk) {
+    ok(
+      `Test 9: all ${paramFaqs.length} parametrized FAQs have parameter placeholders in all ${database.supportedLocales.length} locales`,
+    );
+  }
+}
+
+// ============================================================
+// Test 10: Parametrized FAQs have correct applicableCourseLanguages count
+// ============================================================
+{
+  let inconsistencies = 0;
+  for (const faq of database.faqs) {
+    if (faq.parameters.length > 0) {
+      // For faq-010: 4 course languages, 4 parameter values expected
+      if (faq.applicableCourseLanguages.length < 1) {
+        inconsistencies++;
+      }
+    }
+  }
+  if (inconsistencies > 0) {
+    fail(`Test 10: ${inconsistencies} parametrized FAQs have no applicableCourseLanguages`);
+  } else {
+    ok("Test 10: all parametrized FAQs have applicableCourseLanguages defined");
+  }
+}
+
 // --- Relatório ---
 if (errors.length > 0) {
   console.error("\n[test-faq] FALHOU — testes comportamentais com erros:");

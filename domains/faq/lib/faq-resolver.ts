@@ -260,13 +260,16 @@ function resolveFaq(
   // Aliases totalmente expandidos: cada alias × cada idioma de curso
   // aplicável (quando há placeholders), nunca com `{...}` por resolver.
   const aliases: string[] = [];
+  const aliasCourseLanguages: (FaqCourseLanguage | undefined)[] = [];
   for (const alias of localization.searchAliases ?? []) {
     if (hasParameters) {
       for (const code of faq.applicableCourseLanguages) {
         aliases.push(resolveTemplate(alias, faq, locale, code));
+        aliasCourseLanguages.push(code);
       }
     } else {
       aliases.push(alias);
+      aliasCourseLanguages.push(undefined);
     }
   }
 
@@ -288,6 +291,7 @@ function resolveFaq(
     ...(questionVariants ? { questionVariants } : {}),
     answer: localization.answer,
     aliases,
+    aliasCourseLanguages,
     courseLanguageLabels,
   };
 }

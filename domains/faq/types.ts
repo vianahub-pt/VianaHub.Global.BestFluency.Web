@@ -126,6 +126,13 @@ export interface ResolvedFaq {
   answer: string;
   /** Aliases de pesquisa totalmente expandidos (sem placeholders). */
   aliases: string[];
+  /**
+   * Idioma de curso associado a cada alias (mesma ordem de `aliases`).
+   * Para FAQs sem placeholders, todos os valores são `undefined`.
+   * Para FAQs parametrizadas, cada alias expandido tem o course language
+   * correspondente, permitindo inferência na pesquisa.
+   */
+  aliasCourseLanguages: (FaqCourseLanguage | undefined)[];
   /** Rótulos dos idiomas de curso aplicáveis no locale (para pesquisa). */
   courseLanguageLabels: string[];
 }

@@ -3,15 +3,18 @@
 /**
  * Validação estática de assets de imagem.
  *
- * Verifica que todas as referências a imagens no código apontam para
- * ficheiros existentes, com formato real correto (magic bytes) e tamanho > 0.
+ * Regras:
+ * 1. Referências a .png/.jpg/.jpeg em código-fonte são PROIBIDAS (excepto allowlist técnica).
+ * 2. Referências a .webp devem apontar para ficheiros existentes e ser WebP reais.
+ * 3. Todos os .webp em public/ devem ser formato WebP real (magic bytes).
+ * 4. Assets críticos devem existir e ser válidos.
  *
  * Uso: `node scripts/check-image-assets.mjs`
  * Exit 0: tudo OK
  * Exit 1: problemas encontrados
  */
 import { existsSync, readFileSync, readdirSync, statSync } from "node:fs";
-import { dirname, join, resolve } from "node:path";
+import { dirname, join, resolve, sep } from "node:path";
 import { fileURLToPath } from "node:url";
 
 const ROOT = resolve(dirname(fileURLToPath(import.meta.url)), "..");
@@ -19,6 +22,13 @@ const ROOT = resolve(dirname(fileURLToPath(import.meta.url)), "..");
 const errors = [];
 const warn = (msg) => errors.push(msg);
 const ok = (msg) => console.log(`[check-images] OK: ${msg}`);
+
+// --- Allowlist de referências .png/.jpg/.jpeg permitidas ---
+// Estes são assets framework/infra que NÃO podem ser convertidos para WebP.
+const IMAGE_ALLOWLIST = new Set([
+  "/apple-icon.png",   // Next.js Apple Touch Icon (requer PNG por spec)
+  "/icon.png",         // Next.js Icon (requer PNG por spec)
+]);
 
 // --- Helpers ---
 
@@ -44,58 +54,23 @@ function isRealPNG(filePath) {
   }
 }
 
-function isRealJPEG(filePath) {
-  try {
-    const buf = readFileSync(filePath);
-    if (buf.length < 3) return false;
-    return buf[0] === 0xff && buf[1] === 0xd8 && buf[2] === 0xff;
-  } catch {
-    return false;
-  }
+/** Convert absolute path to repo-relative path using forward slashes. */
+function toRel(abs) {
+  return abs.slice(ROOT.length).split(sep).join("/");
 }
 
-function checkFile(ref, sourceFile, sourceLine) {
-  const fullPath = join(ROOT, "public", ref);
+// --- Recursive file scanner ---
 
-  if (!existsSync(fullPath)) {
-    warn(`${sourceFile}:${sourceLine} — reference "${ref}" → FILE NOT FOUND`);
-    return;
-  }
-
-  const buf = readFileSync(fullPath);
-  if (buf.length === 0) {
-    warn(`${sourceFile}:${sourceLine} — reference "${ref}" → FILE IS EMPTY`);
-    return;
-  }
-
-  if (ref.endsWith(".webp") && !isRealWebP(fullPath)) {
-    warn(`${sourceFile}:${sourceLine} — reference "${ref}" → NOT A REAL WEBP FILE`);
-    return;
-  }
-
-  if (ref.endsWith(".png") && !isRealPNG(fullPath)) {
-    warn(`${sourceFile}:${sourceLine} — reference "${ref}" → NOT A REAL PNG FILE`);
-    return;
-  }
-
-  if (ref.endsWith(".jpg") && !isRealJPEG(fullPath)) {
-    warn(`${sourceFile}:${sourceLine} — reference "${ref}" → NOT A REAL JPEG FILE`);
-    return;
-  }
-}
-
-// --- Scan for image references in source files ---
-
-function findFiles(dir, pattern) {
+function findSourceFiles(dir) {
   const results = [];
   try {
     for (const entry of readdirSync(dir)) {
+      if (["node_modules", ".next", "out", ".git"].includes(entry)) continue;
       const full = join(dir, entry);
       const st = statSync(full);
       if (st.isDirectory()) {
-        if (entry === "node_modules" || entry === ".next" || entry === "out") continue;
-        results.push(...findFiles(full, pattern));
-      } else if (entry.endsWith(pattern)) {
+        results.push(...findSourceFiles(full));
+      } else if (/\.(ts|tsx|js|json|css)$/.test(entry)) {
         results.push(full);
       }
     }
@@ -103,65 +78,86 @@ function findFiles(dir, pattern) {
   return results;
 }
 
-// Collect all .png/.jpg/.jpeg/.webp references from source
+// --- Scan for image references ---
+
+const IMAGE_RE = /["'`](\/[^\s"'`]+\.(?:webp|png|jpg|jpeg))["'`]/g;
+
 const imageRefs = new Map(); // ref -> [{file, line}]
 
-function scanFile(filePath) {
-  const content = readFileSync(filePath, "utf8");
+const sourceFiles = findSourceFiles(ROOT);
+let scannedCount = 0;
+
+for (const f of sourceFiles) {
+  let content;
+  try {
+    content = readFileSync(f, "utf8");
+  } catch {
+    continue;
+  }
+  scannedCount++;
+  const relFile = toRel(f);
   const lines = content.split("\n");
-  const relFile = filePath.replace(ROOT + "\\", "").replace(ROOT + "/", "");
 
   for (let i = 0; i < lines.length; i++) {
     const line = lines[i];
-    // Match quoted paths: "/something.webp", '/something.webp', `something.webp`
-    const matches = line.matchAll(/["'`]((?:\/[^\s"'`]+\.(?:webp|png|jpg|jpeg))|(?:\w[^"'`]*\.(?:webp|png|jpg|jpeg)))["'`]/g);
-    for (const m of matches) {
-      const ref = m[1].replace(/["`]/g, "");
-      if (!ref.startsWith("/")) continue; // skip relative refs in optimize script
+    let m;
+    IMAGE_RE.lastIndex = 0;
+    while ((m = IMAGE_RE.exec(line)) !== null) {
+      const ref = m[1];
       if (!imageRefs.has(ref)) imageRefs.set(ref, []);
       imageRefs.get(ref).push({ file: relFile, line: i + 1 });
     }
   }
 }
 
-// Scan locale files
-for (const locale of readdirSync(join(ROOT, "locales"))) {
-  const f = join(ROOT, "locales", locale, "common.json");
-  if (existsSync(f)) scanFile(f);
-}
-
-// Scan TS/TSX files
-const srcDirs = [
-  join(ROOT, "shared", "lib"),
-  join(ROOT, "domains", "landing", "components"),
-  join(ROOT, "domains", "press", "components"),
-  join(ROOT, "domains", "faq", "components"),
-  join(ROOT, "app"),
-];
-for (const dir of srcDirs) {
-  for (const f of findFiles(dir, ".tsx")) scanFile(f);
-  for (const f of findFiles(dir, ".ts")) scanFile(f);
-}
-
-// Scan CSS
-const cssFile = join(ROOT, "app", "globals.css");
-if (existsSync(cssFile)) scanFile(cssFile);
-
-// Scan SEO
-const seoFile = join(ROOT, "shared", "lib", "seo.ts");
-if (existsSync(seoFile)) scanFile(seoFile);
-
-console.log(`[check-images] Found ${imageRefs.size} unique image references in source`);
+console.log(
+  `[check-images] Scanned ${scannedCount} files, found ${imageRefs.size} unique image refs`,
+);
 
 // --- Validate each reference ---
 let checked = 0;
 for (const [ref, sources] of imageRefs) {
+  const isRaster = /\.(png|jpg|jpeg)$/i.test(ref);
+  const isAllowed = IMAGE_ALLOWLIST.has(ref);
+
   for (const { file, line } of sources) {
-    checkFile(ref, file, line);
     checked++;
+
+    // Rule 1: .png/.jpg/.jpeg references are PROHIBITED (unless allowlisted)
+    if (isRaster && !isAllowed) {
+      warn(
+        `${file}:${line} — RASTER REFERENCE PROHIBITED: "${ref}" → Use .webp instead`,
+      );
+      continue;
+    }
+
+    // Rule 2: All references must point to existing files
+    const fullPath = join(ROOT, "public", ref);
+    if (!existsSync(fullPath)) {
+      warn(`${file}:${line} — reference "${ref}" → FILE NOT FOUND`);
+      continue;
+    }
+
+    const buf = readFileSync(fullPath);
+    if (buf.length === 0) {
+      warn(`${file}:${line} — reference "${ref}" → FILE IS EMPTY`);
+      continue;
+    }
+
+    // Rule 3: .webp references must be real WebP
+    if (ref.endsWith(".webp") && !isRealWebP(fullPath)) {
+      warn(`${file}:${line} — reference "${ref}" → NOT A REAL WEBP FILE`);
+      continue;
+    }
+
+    // Rule 4: Allowlisted .png must be real PNG
+    if (ref.endsWith(".png") && isAllowed && !isRealPNG(fullPath)) {
+      warn(`${file}:${line} — reference "${ref}" → NOT A REAL PNG FILE`);
+      continue;
+    }
   }
 }
-ok(`Checked ${checked} references`);
+ok(`Validated ${checked} references across ${imageRefs.size} unique paths`);
 
 // --- Validate critical static files exist ---
 const criticalFiles = [
@@ -209,7 +205,7 @@ function validateDir(dir) {
         validateDir(full);
       } else if (entry.endsWith(".webp")) {
         if (!isRealWebP(full)) {
-          const rel = full.replace(ROOT + "\\", "").replace(ROOT + "/", "");
+          const rel = toRel(full);
           warn(`FAKE WEBP: ${rel} (${st.size} bytes, not real WebP format)`);
         }
       }

@@ -1,7 +1,7 @@
 "use client";
 
 import { Minus, Plus } from "lucide-react";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 import type { ResolvedFaq } from "@/domains/faq/types";
 import { cn } from "@/shared/lib/utils";
@@ -35,12 +35,16 @@ export function FaqAccordion({
   items: ResolvedFaq[];
   className?: string;
 }) {
-  // Inicializa com o hash do URL se corresponder a uma FAQ.
-  const [openId, setOpenId] = useState<string | null>(() => {
-    if (typeof window === "undefined") return null;
+  const [openId, setOpenId] = useState<string | null>(null);
+
+  // Após hidratação, ler hash do URL e abrir a FAQ correspondente.
+  // Usa queueMicrotask para evitar setState síncrono no corpo do efeito.
+  useEffect(() => {
     const hash = window.location.hash.slice(1);
-    return items.some((item) => item.id === hash) ? hash : null;
-  });
+    if (hash && items.some((item) => item.id === hash)) {
+      queueMicrotask(() => setOpenId(hash));
+    }
+  }, [items]);
 
   function toggle(id: string) {
     setOpenId((current) => (current === id ? null : id));

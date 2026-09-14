@@ -10,19 +10,19 @@ import { cn } from "@/shared/lib/utils";
 
 const languageVisuals = {
   EN: {
-    image: "/assets/english.jpg",
+    image: "/assets/english.webp",
     colors: "from-blue-950/95 via-blue-900/30 to-red-700/50",
   },
   FR: {
-    image: "/assets/francais.jpg",
+    image: "/assets/francais.webp",
     colors: "from-blue-950/95 via-white/10 to-red-700/70",
   },
   ES: {
-    image: "/assets/spañol.jpg",
+    image: "/assets/spañol.webp",
     colors: "from-red-950/95 via-red-700/30 to-yellow-500/70",
   },
   DE: {
-    image: "/assets/deutsch.jpg",
+    image: "/assets/deutsch.webp",
     colors: "from-black/95 via-red-700/30 to-yellow-500/70",
   },
 } as const;

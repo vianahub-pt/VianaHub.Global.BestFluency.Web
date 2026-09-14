@@ -87,11 +87,10 @@ function scoreFaq(
     }
   }
 
-  // Exact match on alias — infer course language from parametrized aliases
-  for (const alias of faq.aliases) {
-    if (normalizeFaqText(alias) === normalizedQuery) {
-      // Check if this alias matches a specific course language variant
-      const matchedCl = inferCourseLanguageFromAlias(faq, alias, normalizedQuery);
+  // Exact match on alias — infer course language from aliasCourseLanguages
+  for (let i = 0; i < faq.aliases.length; i++) {
+    if (normalizeFaqText(faq.aliases[i]) === normalizedQuery) {
+      const matchedCl = faq.aliasCourseLanguages[i];
       return { score: 95, matchedCourseLanguage: matchedCl };
     }
   }
@@ -156,25 +155,6 @@ function inferCourseLanguageFromQuery(
           return cl;
         }
       }
-    }
-  }
-  return undefined;
-}
-
-/**
- * Tenta inferir o course language a partir de um alias exato correspondente.
- * Para aliases parametrizados, cada course language gera uma variant do alias;
- * este método identifica qual variante corresponde.
- */
-function inferCourseLanguageFromAlias(
-  faq: ResolvedFaq,
-  alias: string,
-  normalizedQuery: string,
-): FaqCourseLanguage | undefined {
-  // Se o alias é parametrizado, verificar qual course language variant corresponde
-  for (const [cl, variant] of Object.entries(faq.questionVariants ?? {})) {
-    if (variant && normalizeFaqText(variant) === normalizedQuery) {
-      return cl;
     }
   }
   return undefined;
