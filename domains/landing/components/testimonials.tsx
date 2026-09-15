@@ -1,7 +1,6 @@
 import { type LocaleCode } from "@/core/config/locales";
 import { getMessages } from "@/core/i18n";
 import { ScrollReveal } from "@/shared/components/ui/scroll-reveal";
-import { VideoInfoBar } from "./video-info-bar";
 import { CarouselColumn } from "./carousel-column";
 
 export function Testimonials({ locale }: { locale: LocaleCode }) {
@@ -63,8 +62,6 @@ export function Testimonials({ locale }: { locale: LocaleCode }) {
             />
           </div>
         </ScrollReveal>
-
-        <VideoInfoBar locale={locale} />
       </div>
     </section>
   );
