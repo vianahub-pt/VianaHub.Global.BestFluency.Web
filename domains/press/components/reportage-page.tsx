@@ -5,6 +5,7 @@ import { getMessages } from "@/core/i18n";
 import { site } from "@/core/config/site";
 import { SiteFooter } from "@/domains/landing/components/site-footer";
 import { SiteHeader } from "@/domains/landing/components/site-header";
+import { TviVideoGallery } from "@/domains/press/components/tvi-video-gallery";
 import { buttonVariants } from "@/shared/components/ui/button";
 import { cn } from "@/shared/lib/utils";
 import { absoluteUrl } from "@/shared/lib/seo";
@@ -115,6 +116,17 @@ export function ReportagePage({
                   {content.highlight}
                 </p>
               </div>
+
+              {type === "tvi" && (
+                <div className="mt-12">
+                  <h2 className="font-title text-xl font-bold tracking-tight text-foreground sm:text-2xl">
+                    {messages.tviReportage.videoGalleryLabel}
+                  </h2>
+                  <div className="mt-6">
+                    <TviVideoGallery locale={locale} />
+                  </div>
+                </div>
+              )}
 
               <div className="mt-12 flex flex-col items-start gap-4 border-t border-border pt-8 sm:flex-row sm:items-center sm:justify-between">
                 <p className="max-w-md text-sm leading-6 text-muted-foreground">

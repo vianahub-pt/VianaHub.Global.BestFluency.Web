@@ -146,7 +146,7 @@ export function VideoModal({ open, onClose, src, ariaLabel, className }: VideoMo
           ref={videoRef}
           src={src}
           controls
-          autoPlay
+          preload="none"
           className="w-full"
           aria-label={ariaLabel}
         >

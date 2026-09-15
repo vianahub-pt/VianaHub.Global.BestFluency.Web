@@ -1,5 +1,4 @@
 import { MessageCircle } from "lucide-react";
-import Image from "next/image";
 
 import { type LocaleCode } from "@/core/config/locales";
 import { getMessages } from "@/core/i18n";
@@ -10,19 +9,31 @@ import { cn } from "@/shared/lib/utils";
 
 const languageVisuals = {
   EN: {
-    image: "/assets/english.webp",
+    image480: "/assets/english-480.webp",
+    image960: "/assets/english-960.webp",
+    image1440: "/assets/english-1440.webp",
+    alt: "English",
     colors: "from-blue-950/95 via-blue-900/30 to-red-700/50",
   },
   FR: {
-    image: "/assets/francais.webp",
+    image480: "/assets/francais-480.webp",
+    image960: "/assets/francais-960.webp",
+    image1440: "/assets/francais-1440.webp",
+    alt: "Français",
     colors: "from-blue-950/95 via-white/10 to-red-700/70",
   },
   ES: {
-    image: "/assets/spañol.webp",
+    image480: "/assets/espanol-480.webp",
+    image960: "/assets/espanol-960.webp",
+    image1440: "/assets/espanol-1440.webp",
+    alt: "Español",
     colors: "from-red-950/95 via-red-700/30 to-yellow-500/70",
   },
   DE: {
-    image: "/assets/deutsch.webp",
+    image480: "/assets/deutsch-480.webp",
+    image960: "/assets/deutsch-960.webp",
+    image1440: "/assets/deutsch-1440.webp",
+    alt: "Deutsch",
     colors: "from-black/95 via-red-700/30 to-yellow-500/70",
   },
 } as const;
@@ -71,13 +82,24 @@ export function Languages({ locale }: { locale: LocaleCode }) {
               >
                 <article className="group">
                   <div className="relative aspect-[4/5] overflow-hidden rounded-[2rem] bg-muted">
-                    <Image
-                      src={visual.image}
-                      alt={language.name}
-                      fill
-                      sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
-                      className="object-cover transition-transform duration-700 group-hover:scale-105"
-                    />
+                    <picture>
+                      <source
+                        media="(min-width: 1024px)"
+                        srcSet={visual.image1440}
+                      />
+                      <source
+                        media="(min-width: 640px)"
+                        srcSet={visual.image960}
+                      />
+                      <img
+                        src={visual.image480}
+                        alt={visual.alt}
+                        width={480}
+                        height={720}
+                        loading="lazy"
+                        className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
+                      />
+                    </picture>
                     <div
                       className={cn(
                         "absolute inset-0 bg-gradient-to-t",
