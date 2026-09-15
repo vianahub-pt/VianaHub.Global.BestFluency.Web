@@ -65,6 +65,15 @@ export function VideoModal({ open, onClose, src, ariaLabel, className }: VideoMo
     }
   }, [open]);
 
+  // Fallback: ensure video plays after modal opens (autoPlay may be blocked).
+  useEffect(() => {
+    if (!open || !videoRef.current) return;
+    const playPromise = videoRef.current.play();
+    if (playPromise !== undefined) {
+      playPromise.catch(() => {});
+    }
+  }, [open]);
+
   // Escape key handler.
   useEffect(() => {
     if (!open) return;
@@ -146,7 +155,9 @@ export function VideoModal({ open, onClose, src, ariaLabel, className }: VideoMo
           ref={videoRef}
           src={src}
           controls
+          autoPlay
           preload="none"
+          playsInline
           className="w-full"
           aria-label={ariaLabel}
         >

@@ -12,28 +12,24 @@ const languageVisuals = {
     image480: "/assets/english-480.webp",
     image960: "/assets/english-960.webp",
     image1440: "/assets/english-1440.webp",
-    alt: "English",
     colors: "from-blue-950/95 via-blue-900/30 to-red-700/50",
   },
   FR: {
     image480: "/assets/francais-480.webp",
     image960: "/assets/francais-960.webp",
     image1440: "/assets/francais-1440.webp",
-    alt: "Français",
     colors: "from-blue-950/95 via-white/10 to-red-700/70",
   },
   ES: {
     image480: "/assets/espanol-480.webp",
     image960: "/assets/espanol-960.webp",
     image1440: "/assets/espanol-1440.webp",
-    alt: "Español",
     colors: "from-red-950/95 via-red-700/30 to-yellow-500/70",
   },
   DE: {
     image480: "/assets/deutsch-480.webp",
     image960: "/assets/deutsch-960.webp",
     image1440: "/assets/deutsch-1440.webp",
-    alt: "Deutsch",
     colors: "from-black/95 via-red-700/30 to-yellow-500/70",
   },
 } as const;
@@ -93,7 +89,7 @@ export function Languages({ locale }: { locale: LocaleCode }) {
                       />
                       <img
                         src={visual.image480}
-                        alt={visual.alt}
+                        alt={language.name}
                         width={480}
                         height={720}
                         loading="lazy"

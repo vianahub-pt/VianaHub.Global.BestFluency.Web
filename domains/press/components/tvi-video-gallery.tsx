@@ -37,26 +37,24 @@ export function TviVideoGallery({ locale }: TviVideoGalleryProps) {
 
   return (
     <>
-      <section aria-label={content.videoGalleryLabel}>
-        <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
-          {videoItems.map((video) => (
-            <li key={video.src} className="list-none">
-              <button
-                type="button"
-                onClick={() => openVideo(video.src)}
-                className="flex w-full items-center gap-3 rounded-lg border border-border bg-card/60 px-4 py-3 text-left shadow-sm transition-colors hover:bg-card focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring"
-              >
-                <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-accent/80 text-black dark:text-white">
-                  <Play className="h-5 w-5" aria-hidden="true" />
-                </span>
-                <span className="text-sm font-medium text-black dark:text-white">
-                  {content[video.labelKey]}
-                </span>
-              </button>
-            </li>
-          ))}
-        </div>
-      </section>
+      <ul className="grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
+        {videoItems.map((video) => (
+          <li key={video.src}>
+            <button
+              type="button"
+              onClick={() => openVideo(video.src)}
+              className="flex w-full items-center gap-3 rounded-lg border border-border bg-card/60 px-4 py-3 text-left shadow-sm transition-colors hover:bg-card focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring"
+            >
+              <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-accent/80 text-black dark:text-white">
+                <Play className="h-5 w-5" aria-hidden="true" />
+              </span>
+              <span className="text-sm font-medium text-black dark:text-white">
+                {content[video.labelKey]}
+              </span>
+            </button>
+          </li>
+        ))}
+      </ul>
 
       {activeItem && (
         <VideoModal
