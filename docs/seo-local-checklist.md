@@ -36,25 +36,39 @@ NEXT_PUBLIC_CF_WEB_ANALYTICS_TOKEN=<token>             # Cloudflare Web Analytic
 npm run build
 ```
 
-Sem `NEXT_PUBLIC_SITE_INDEXABLE=true` as 7 rotas saem com `noindex`
-(comportamento intencional antes do lançamento — ver ADR 0001).
+Sem `NEXT_PUBLIC_SITE_INDEXABLE=true` as rotas públicas saem com `noindex`
+(comportamento intencional antes do lançamento — ver ADR 0001). Este bloqueio
+é o primeiro item a validar no lançamento (issue #79, cenário de insucesso).
 
-## 2. Google Search Console (GSC)
+## 2. Google Search Console (GSC) e Bing Webmaster Tools (BWT)
 
 - [ ] **Verificar a propriedade** do domínio definitivo (método "Domínio" ou
       "Prefixo de URL" com o HTTPS final) e adicionar todos os colaboradores
       responsáveis.
 - [ ] **Enviar o sitemap** em GSC → Sitemaps: `https://<dominio>/sitemap.xml`.
-      Confirmar estado "Sucesso" e o número de URLs descobertas (7 rotas).
-- [ ] **Confirmar robots.txt** acessível: `https://<dominio>/robots.txt` sem
-      bloqueios e com a referência ao sitemap.
-- [ ] **Validar indexação das 7 rotas** em GSC → Inspeção de URL:
-      `/`, `/en/`, `/es/`, `/fr/`, `/de/`, `/it/`, `/pt-br/`. Cada uma deve
-      estar "Indexada" ou "Pendente de rastreamento" (nunca "Excluída" por
-      noindex).
+      Confirmar estado "Sucesso" e o número de URLs descobertas (36 URLs:
+      home, FAQ e reportagens New in Amadora e TVI nas 9 variantes de idioma).
+- [ ] **Confirmar robots.txt** acessível: `https://<dominio>/robots.txt` com
+      `Allow: /`, referência ao sitemap, bloco de AI crawlers (GPTBot,
+      OAI-SearchBot, ChatGPT-User, PerplexityBot, ClaudeBot, Google-Extended,
+      Googlebot, Bingbot, Applebot, meta-externalagent, Bytespider, Amazonbot,
+      CCBot) e a diretiva `Content-Signal: ai-train=yes, search=yes, ai-input=yes`
+      (issue #79, ADR-0002).
+- [ ] **Confirmar llms.txt** acessível: `https://<dominio>/llms.txt` com as
+      URLs das 9 variantes de idioma para home, FAQ e as duas reportagens
+      (issue #79, ADR-0002).
+- [ ] **Validar indexação das 9 variantes** em GSC → Inspeção de URL:
+      `/`, `/en/`, `/es/`, `/fr/`, `/de/`, `/it/`, `/ja/`, `/ru/`, `/zh/`.
+      Cada uma deve estar "Indexada" ou "Pendente de rastreamento" (nunca
+      "Excluída" por noindex).
 - [ ] **Verificar canonical e hreflang** em GSC → Inspeção de URL → "Testar
       URL ativa": a canonical deve ser autorreferencial e os hreflang recíprocos
-      devem apontar para as 7 URLs + `x-default` para `/`.
+      devem apontar para as 9 URLs + `x-default` para `/`.
+- [ ] **Registar o domínio no Bing Webmaster Tools** (importação direta via
+      GSC ou verificação por meta tag/CNAME) e submeter o sitemap
+      `https://<dominio>/sitemap.xml` (issue #79).
+- [ ] **Confirmar indexação no Bing** das 9 variantes de idioma em BWT →
+      Explorador do site / Inspeção de URL.
 - [ ] **Monitorar Cobertura do índice** durante 2–4 semanas; corrigir erros
       reportados (duplicados, páginas alternadas, 404).
 - [ ] **Ligação GSC ↔ Analytics** (Cloudflare Web Analytics ou GA4 quando
